@@ -1,0 +1,28 @@
+# Agreement
+
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**employee_id** | [**SSNanoID**](SSNanoID.md) |  | 
+**is_manual_read** | **bool** |  | 
+**is_pricing_understood** | **bool** |  | 
+**is_twilio_terms_read** | **bool** |  | 
+**is_short_code_understood** | **bool** |  | 
+**is_short_code_timeline_understood** | **bool** |  | 
+**is_short_code_transfer_understood** | **bool** |  | 
+**is_opt_in_out_understood** | **bool** |  | 
+**is_privacy_policy_on_website** | **bool** |  | 
+**is_ctia_short_code_read** | **bool** |  | 
+**is_tos_on_website** | **bool** |  | 
+**is_standards_understood** | **bool** |  | 
+**is_stop_understood** | **bool** |  | 
+**id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
+**merchant_id** | [**SSNanoID**](SSNanoID.md) |  | 
+**created_at** | **datetime** |  | 
+**updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
