@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **message_template** | **str** |  | 
 **broadcast_scheduled_at** | **datetime** |  | 
 **to_cell_phone** | **str** |  | 
-**media_url** | **str** |  | [optional] 
+**media_urls** | **[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

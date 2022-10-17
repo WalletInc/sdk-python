@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **broadcast_scheduled_at** | **datetime** |  | 
 **locale** | **str** |  | 
 **timezone** | **str** |  | 
-**media_url** | **str** |  | [optional] 
+**media_urls** | **[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

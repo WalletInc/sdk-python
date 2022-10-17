@@ -87,7 +87,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast(ModelNormal):
             'broadcast_scheduled_at': (datetime,),  # noqa: E501
             'locale': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
-            'media_url': (str,),  # noqa: E501
+            'media_urls': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -102,7 +102,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast(ModelNormal):
         'broadcast_scheduled_at': 'broadcastScheduledAt',  # noqa: E501
         'locale': 'locale',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
-        'media_url': 'mediaURL',  # noqa: E501
+        'media_urls': 'mediaURLs',  # noqa: E501
     }
 
     read_only_vars = {
@@ -154,7 +154,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            media_url (str): [optional]  # noqa: E501
+            media_urls ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -250,7 +250,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            media_url (str): [optional]  # noqa: E501
+            media_urls ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

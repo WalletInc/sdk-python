@@ -86,7 +86,7 @@ class WTEmployeeSendHelpDeskResponse(ModelNormal):
         return {
             'help_desk_request_id': (NanoID,),  # noqa: E501
             'message': (str,),  # noqa: E501
-            'media_url': (str,),  # noqa: E501
+            'media_urls': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -97,7 +97,7 @@ class WTEmployeeSendHelpDeskResponse(ModelNormal):
     attribute_map = {
         'help_desk_request_id': 'helpDeskRequestID',  # noqa: E501
         'message': 'message',  # noqa: E501
-        'media_url': 'mediaURL',  # noqa: E501
+        'media_urls': 'mediaURLs',  # noqa: E501
     }
 
     read_only_vars = {
@@ -145,7 +145,7 @@ class WTEmployeeSendHelpDeskResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            media_url (str): [optional]  # noqa: E501
+            media_urls ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -233,7 +233,7 @@ class WTEmployeeSendHelpDeskResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            media_url (str): [optional]  # noqa: E501
+            media_urls ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

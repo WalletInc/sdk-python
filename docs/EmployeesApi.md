@@ -2311,7 +2311,7 @@ with wallet.ApiClient() as api_client:
     wt_employee_schedule_simple_sms = WTEmployeeScheduleSimpleSMS(
         phone_number_id=NanoID("C"),
         message_template="We're running a year end promo of flat 50% off!",
-        media_url="media_url_example",
+        media_urls=["https://example.com/media.jpeg"],
         broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
         list_type=None,
         list_id=NanoID("C"),
@@ -2394,7 +2394,7 @@ with wallet.ApiClient() as api_client:
     wt_employee_schedule_simple_sms = WTEmployeeScheduleSimpleSMS(
         phone_number_id=NanoID("C"),
         message_template="We're running a year end promo of flat 50% off!",
-        media_url="media_url_example",
+        media_urls=["https://example.com/media.jpeg"],
         broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
         list_type=None,
         list_id=NanoID("C"),
@@ -2477,7 +2477,7 @@ with wallet.ApiClient() as api_client:
     wt_employee_schedule_simple_smsto_recipient = WTEmployeeScheduleSimpleSMSToRecipient(
         phone_number_id=NanoID("C"),
         message_template="We're running a year end promo of flat 50% off!",
-        media_url="media_url_example",
+        media_urls=["https://example.com/media.jpeg"],
         broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
         to_cell_phone="+1809898989",
     ) # WTEmployeeScheduleSimpleSMSToRecipient | 
@@ -2558,7 +2558,7 @@ with wallet.ApiClient() as api_client:
     wt_employee_schedule_simple_sms = WTEmployeeScheduleSimpleSMS(
         phone_number_id=NanoID("C"),
         message_template="We're running a year end promo of flat 50% off!",
-        media_url="media_url_example",
+        media_urls=["https://example.com/media.jpeg"],
         broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
         list_type=None,
         list_id=NanoID("C"),
@@ -2639,7 +2639,7 @@ with wallet.ApiClient() as api_client:
     wt_employee_schedule_simple_smsto_recipient = WTEmployeeScheduleSimpleSMSToRecipient(
         phone_number_id=NanoID("C"),
         message_template="We're running a year end promo of flat 50% off!",
-        media_url="media_url_example",
+        media_urls=["https://example.com/media.jpeg"],
         broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
         to_cell_phone="+1809898989",
     ) # WTEmployeeScheduleSimpleSMSToRecipient | 
@@ -2718,7 +2718,7 @@ with wallet.ApiClient() as api_client:
     wt_employee_send_help_desk_response = WTEmployeeSendHelpDeskResponse(
         help_desk_request_id=NanoID("C"),
         message="Good morning! How can I help you today?",
-        media_url="media_url_example",
+        media_urls=["https://example.com/media.jpeg"],
     ) # WTEmployeeSendHelpDeskResponse | 
 
     # example passing only required values which don't have defaults set
@@ -2797,7 +2797,7 @@ with wallet.ApiClient() as api_client:
         phone_number_id=NanoID("C"),
         message_template="Here's your link to your voucher: [link]",
         send_qr_code=True,
-        media_url="media_url_example",
+        media_urls=["https://example.com/media.jpeg"],
         broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
         locale="en-US",
         timezone="America/New_York",

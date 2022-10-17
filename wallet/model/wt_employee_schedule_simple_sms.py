@@ -86,7 +86,7 @@ class WTEmployeeScheduleSimpleSMS(ModelNormal):
             'broadcast_scheduled_at': (datetime,),  # noqa: E501
             'list_type': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'list_id': (NanoID,),  # noqa: E501
-            'media_url': (str,),  # noqa: E501
+            'media_urls': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -100,7 +100,7 @@ class WTEmployeeScheduleSimpleSMS(ModelNormal):
         'broadcast_scheduled_at': 'broadcastScheduledAt',  # noqa: E501
         'list_type': 'listType',  # noqa: E501
         'list_id': 'listID',  # noqa: E501
-        'media_url': 'mediaURL',  # noqa: E501
+        'media_urls': 'mediaURLs',  # noqa: E501
     }
 
     read_only_vars = {
@@ -151,7 +151,7 @@ class WTEmployeeScheduleSimpleSMS(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            media_url (str): [optional]  # noqa: E501
+            media_urls ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,7 +245,7 @@ class WTEmployeeScheduleSimpleSMS(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            media_url (str): [optional]  # noqa: E501
+            media_urls ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
