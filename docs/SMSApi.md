@@ -732,13 +732,13 @@ with wallet.ApiClient() as api_client:
         opt_out_confirmed_response="Sorry to see you go",
         opt_in_confirmed_customer_receives="Welcome to the list",
         opt_out_confirmed_customer_receives="Sorry to see you go",
+        is_over21_required=True,
         opt_in_confirmed_media_urls=[
             "opt_in_confirmed_media_urls_example",
         ],
         opt_out_confirmed_media_urls=[
             "opt_out_confirmed_media_urls_example",
         ],
-        is_over21_required=True,
     ) # WTOptInListCreationParams | 
 
     # example passing only required values which don't have defaults set
@@ -2600,13 +2600,13 @@ with wallet.ApiClient() as api_client:
         opt_out_confirmed_response="Sorry to see you go",
         opt_in_confirmed_customer_receives="Welcome to the list",
         opt_out_confirmed_customer_receives="Sorry to see you go",
+        is_over21_required=True,
         opt_in_confirmed_media_urls=[
             "opt_in_confirmed_media_urls_example",
         ],
         opt_out_confirmed_media_urls=[
             "opt_out_confirmed_media_urls_example",
         ],
-        is_over21_required=True,
     ) # WTOptInListCreationParams | 
 
     # example passing only required values which don't have defaults set
