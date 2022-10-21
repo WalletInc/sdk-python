@@ -334,7 +334,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_pick_ss_opt_in_list_create_params_exclude_keyof_ss_opt_in_list_create_params_employee_idor_opt_in_confirmed_media_urls_or_opt_out_confirmed_media_urls.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
