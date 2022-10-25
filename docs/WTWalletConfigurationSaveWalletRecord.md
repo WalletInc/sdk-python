@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **is_chat_room** | **bool** |  | 
 **is_tickets** | **bool** |  | [optional] 
 **google_analytics_id** | **str** |  | [optional] 
+**facebook_pixel_id** | **str** |  | [optional] 
 **public_chat_room_channel_id** | **float** |  | [optional] 
 **vanity_handle** | **str** |  | [optional] 
 **vanity_page_wallet_prefix** | **str** |  | [optional] 

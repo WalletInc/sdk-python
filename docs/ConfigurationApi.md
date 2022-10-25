@@ -138,6 +138,7 @@ with wallet.ApiClient() as api_client:
         is_settings=True,
         is_chat_room=True,
         google_analytics_id="google_analytics_id_example",
+        facebook_pixel_id="facebook_pixel_id_example",
         public_chat_room_channel_id=3.14,
         vanity_handle="vanity_handle_example",
         vanity_page_wallet_prefix="vanity_page_wallet_prefix_example",

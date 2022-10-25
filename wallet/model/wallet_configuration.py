@@ -120,6 +120,7 @@ class WalletConfiguration(ModelNormal):
             'merchant_id': (MerchantID,),  # noqa: E501
             'is_tickets': (bool,),  # noqa: E501
             'google_analytics_id': (str,),  # noqa: E501
+            'facebook_pixel_id': (str,),  # noqa: E501
             'public_chat_room_channel_id': (float,),  # noqa: E501
             'vanity_handle': (str,),  # noqa: E501
             'vanity_page_wallet_prefix': (str,),  # noqa: E501
@@ -168,6 +169,7 @@ class WalletConfiguration(ModelNormal):
         'merchant_id': 'merchantID',  # noqa: E501
         'is_tickets': 'isTickets',  # noqa: E501
         'google_analytics_id': 'googleAnalyticsID',  # noqa: E501
+        'facebook_pixel_id': 'facebookPixelID',  # noqa: E501
         'public_chat_room_channel_id': 'publicChatRoomChannelID',  # noqa: E501
         'vanity_handle': 'vanityHandle',  # noqa: E501
         'vanity_page_wallet_prefix': 'vanityPageWalletPrefix',  # noqa: E501
@@ -253,6 +255,7 @@ class WalletConfiguration(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             is_tickets (bool): [optional]  # noqa: E501
             google_analytics_id (str): [optional]  # noqa: E501
+            facebook_pixel_id (str): [optional]  # noqa: E501
             public_chat_room_channel_id (float): [optional]  # noqa: E501
             vanity_handle (str): [optional]  # noqa: E501
             vanity_page_wallet_prefix (str): [optional]  # noqa: E501
@@ -411,6 +414,7 @@ class WalletConfiguration(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             is_tickets (bool): [optional]  # noqa: E501
             google_analytics_id (str): [optional]  # noqa: E501
+            facebook_pixel_id (str): [optional]  # noqa: E501
             public_chat_room_channel_id (float): [optional]  # noqa: E501
             vanity_handle (str): [optional]  # noqa: E501
             vanity_page_wallet_prefix (str): [optional]  # noqa: E501
