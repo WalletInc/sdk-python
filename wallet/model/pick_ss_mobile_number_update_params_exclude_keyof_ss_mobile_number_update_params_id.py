@@ -59,6 +59,12 @@ class PickSSMobileNumberUpdateParamsExcludeKeyofSSMobileNumberUpdateParamsId(Mod
     }
 
     validations = {
+        ('message_footer',): {
+            'min_length': 1,
+        },
+        ('company_name',): {
+            'min_length': 1,
+        },
     }
 
     @cached_property

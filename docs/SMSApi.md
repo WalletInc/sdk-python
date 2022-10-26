@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**fetch_payment_object_broadcasts**](SMSApi.md#fetch_payment_object_broadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Fetch payment object broadcasts
 [**fetch_sms_agreement**](SMSApi.md#fetch_sms_agreement) | **GET** /v2/sms/agreement | Fetch SMS agreement
 [**import_imported_list_recipients**](SMSApi.md#import_imported_list_recipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
+[**import_imported_list_recipients_from_membership_tier**](SMSApi.md#import_imported_list_recipients_from_membership_tier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
 [**import_opt_in_list_subscribers**](SMSApi.md#import_opt_in_list_subscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
 [**restore_phone_number**](SMSApi.md#restore_phone_number) | **PATCH** /v2/sms/phoneNumber/{phoneNumberID} | Restore phone number
 [**restore_recipient**](SMSApi.md#restore_recipient) | **PATCH** /v2/sms/importedList/recipients/{id} | Restore recipient
@@ -2164,6 +2165,81 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imported_list_id** | **NanoID**|  |
  **wt_employee_import_records** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md)|  |
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **import_imported_list_recipients_from_membership_tier**
+> str import_imported_list_recipients_from_membership_tier(wt_imported_list_recipient_from_membership_tier_import)
+
+Import imported list recipients from a given membership tier
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import sms_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from wallet.model.wt_imported_list_recipient_from_membership_tier_import import WTImportedListRecipientFromMembershipTierImport
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = sms_api.SMSApi(api_client)
+    wt_imported_list_recipient_from_membership_tier_import = WTImportedListRecipientFromMembershipTierImport(
+        list_name="Platinum Members List",
+        phone_number_id=SSNanoID("C"),
+        tier_id=SSNanoID("C"),
+    ) # WTImportedListRecipientFromMembershipTierImport | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Import imported list recipients from a given membership tier
+        api_response = api_instance.import_imported_list_recipients_from_membership_tier(wt_imported_list_recipient_from_membership_tier_import)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling SMSApi->import_imported_list_recipients_from_membership_tier: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_imported_list_recipient_from_membership_tier_import** | [**WTImportedListRecipientFromMembershipTierImport**](WTImportedListRecipientFromMembershipTierImport.md)|  |
 
 ### Return type
 
