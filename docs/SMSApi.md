@@ -2222,7 +2222,7 @@ with wallet.ApiClient() as api_client:
     wt_imported_list_recipient_from_membership_tier_import = WTImportedListRecipientFromMembershipTierImport(
         list_name="Platinum Members List",
         phone_number_id=SSNanoID("C"),
-        tier_id=SSNanoID("C"),
+        tier_id=None,
     ) # WTImportedListRecipientFromMembershipTierImport | 
 
     # example passing only required values which don't have defaults set
