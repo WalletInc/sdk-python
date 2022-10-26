@@ -336,8 +336,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_pick_ss_imported_list_recipient_from_membership_tier_import_exclude_keyof_ss_imported_list_recipient_from_membership_tier_import_employee_id.py
-test/test_wt_imported_list_recipient_from_membership_tier_import.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
