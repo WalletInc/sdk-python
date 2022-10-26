@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**fetch_blocked_tcpa_entries**](SMSApi.md#fetch_blocked_tcpa_entries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Fetch blocked TCPA entries
 [**fetch_imported_list_recipients**](SMSApi.md#fetch_imported_list_recipients) | **GET** /v2/sms/importedList/recipients/{listID} | Fetch imported list recipients
 [**fetch_imported_list_recipients_by_page**](SMSApi.md#fetch_imported_list_recipients_by_page) | **GET** /v2/sms/importedList/recipients/page/{listID} | Fetch imported list recipients by page
+[**fetch_opt_in_list_sources**](SMSApi.md#fetch_opt_in_list_sources) | **GET** /v2/sms/optInListSources/all | Fetch all opt in list sources
 [**fetch_opt_in_list_subscribers**](SMSApi.md#fetch_opt_in_list_subscribers) | **GET** /v2/sms/optInList/subscribers/{listID} | Fetch opt in list subscribers
 [**fetch_opt_in_list_subscribers_by_page**](SMSApi.md#fetch_opt_in_list_subscribers_by_page) | **GET** /v2/sms/optInList/subscribers/page/{listID} | Fetch opt in list subscribers by page
 [**fetch_opt_in_lists_associated_with_phone_number**](SMSApi.md#fetch_opt_in_lists_associated_with_phone_number) | **GET** /v2/sms/phoneNumber/lists/{phoneNumberID} | Fetch opt in lists
@@ -1369,6 +1370,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2008**](InlineResponse2008.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_opt_in_list_sources**
+> bool, date, datetime, dict, float, int, list, str, none_type fetch_opt_in_list_sources()
+
+Fetch all opt in list sources
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import sms_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = sms_api.SMSApi(api_client)
+    is_archive_included = True # bool |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Fetch all opt in list sources
+        api_response = api_instance.fetch_opt_in_list_sources(is_archive_included=is_archive_included)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling SMSApi->fetch_opt_in_list_sources: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_archive_included** | **bool**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 

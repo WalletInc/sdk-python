@@ -26,7 +26,7 @@ Method | HTTP request | Description
 [**fetch_merchant**](EmployeesApi.md#fetch_merchant) | **GET** /v2/employee/merchant | Fetch merchant information
 [**fetch_messages**](EmployeesApi.md#fetch_messages) | **GET** /v2/employee/messages/all | Fetch all messages
 [**fetch_opt_in_list_source**](EmployeesApi.md#fetch_opt_in_list_source) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source
-[**fetch_opt_in_list_sources**](EmployeesApi.md#fetch_opt_in_list_sources) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
+[**fetch_opt_in_list_sources_created_by_employee**](EmployeesApi.md#fetch_opt_in_list_sources_created_by_employee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
 [**fetch_peer_activity**](EmployeesApi.md#fetch_peer_activity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity
 [**fetch_peers_permissions**](EmployeesApi.md#fetch_peers_permissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions
 [**import_club_members**](EmployeesApi.md#import_club_members) | **POST** /v2/employee/import/members | Import club members
@@ -1631,8 +1631,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_opt_in_list_sources**
-> [OptInListSource] fetch_opt_in_list_sources()
+# **fetch_opt_in_list_sources_created_by_employee**
+> [OptInListSource] fetch_opt_in_list_sources_created_by_employee()
 
 Fetch all opt in list sources
 
@@ -1663,10 +1663,10 @@ with wallet.ApiClient() as api_client:
     # example, this endpoint has no required or optional parameters
     try:
         # Fetch all opt in list sources
-        api_response = api_instance.fetch_opt_in_list_sources()
+        api_response = api_instance.fetch_opt_in_list_sources_created_by_employee()
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling EmployeesApi->fetch_opt_in_list_sources: %s\n" % e)
+        print("Exception when calling EmployeesApi->fetch_opt_in_list_sources_created_by_employee: %s\n" % e)
 ```
 
 

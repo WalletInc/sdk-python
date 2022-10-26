@@ -249,7 +249,7 @@ Class | Method | HTTP request | Description
 *EmployeesApi* | [**fetch_merchant**](docs/EmployeesApi.md#fetch_merchant) | **GET** /v2/employee/merchant | Fetch merchant information
 *EmployeesApi* | [**fetch_messages**](docs/EmployeesApi.md#fetch_messages) | **GET** /v2/employee/messages/all | Fetch all messages
 *EmployeesApi* | [**fetch_opt_in_list_source**](docs/EmployeesApi.md#fetch_opt_in_list_source) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source
-*EmployeesApi* | [**fetch_opt_in_list_sources**](docs/EmployeesApi.md#fetch_opt_in_list_sources) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
+*EmployeesApi* | [**fetch_opt_in_list_sources_created_by_employee**](docs/EmployeesApi.md#fetch_opt_in_list_sources_created_by_employee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
 *EmployeesApi* | [**fetch_peer_activity**](docs/EmployeesApi.md#fetch_peer_activity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity
 *EmployeesApi* | [**fetch_peers_permissions**](docs/EmployeesApi.md#fetch_peers_permissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions
 *EmployeesApi* | [**import_club_members**](docs/EmployeesApi.md#import_club_members) | **POST** /v2/employee/import/members | Import club members
@@ -428,6 +428,7 @@ Class | Method | HTTP request | Description
 *SMSApi* | [**fetch_blocked_tcpa_entries**](docs/SMSApi.md#fetch_blocked_tcpa_entries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Fetch blocked TCPA entries
 *SMSApi* | [**fetch_imported_list_recipients**](docs/SMSApi.md#fetch_imported_list_recipients) | **GET** /v2/sms/importedList/recipients/{listID} | Fetch imported list recipients
 *SMSApi* | [**fetch_imported_list_recipients_by_page**](docs/SMSApi.md#fetch_imported_list_recipients_by_page) | **GET** /v2/sms/importedList/recipients/page/{listID} | Fetch imported list recipients by page
+*SMSApi* | [**fetch_opt_in_list_sources**](docs/SMSApi.md#fetch_opt_in_list_sources) | **GET** /v2/sms/optInListSources/all | Fetch all opt in list sources
 *SMSApi* | [**fetch_opt_in_list_subscribers**](docs/SMSApi.md#fetch_opt_in_list_subscribers) | **GET** /v2/sms/optInList/subscribers/{listID} | Fetch opt in list subscribers
 *SMSApi* | [**fetch_opt_in_list_subscribers_by_page**](docs/SMSApi.md#fetch_opt_in_list_subscribers_by_page) | **GET** /v2/sms/optInList/subscribers/page/{listID} | Fetch opt in list subscribers by page
 *SMSApi* | [**fetch_opt_in_lists_associated_with_phone_number**](docs/SMSApi.md#fetch_opt_in_lists_associated_with_phone_number) | **GET** /v2/sms/phoneNumber/lists/{phoneNumberID} | Fetch opt in lists
