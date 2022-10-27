@@ -324,6 +324,7 @@ Class | Method | HTTP request | Description
 *LinkBookApi* | [**archive_link_book**](docs/LinkBookApi.md#archive_link_book) | **DELETE** /v2/linkBook/{id} | Archive link
 *LinkBookApi* | [**create_link_book**](docs/LinkBookApi.md#create_link_book) | **POST** /v2/linkBook | Create link
 *LinkBookApi* | [**fetch_all_link_book**](docs/LinkBookApi.md#fetch_all_link_book) | **GET** /v2/linkBook/all | Fetch all links
+*LinkBookApi* | [**fetch_link_book_by_id**](docs/LinkBookApi.md#fetch_link_book_by_id) | **GET** /v2/linkBook/{id} | Fetch link book by id
 *LinkBookApi* | [**restore_link_book**](docs/LinkBookApi.md#restore_link_book) | **PATCH** /v2/linkBook/{id} | Restore link
 *LinkBookApi* | [**update_link_book**](docs/LinkBookApi.md#update_link_book) | **PUT** /v2/linkBook/{id} | Update link
 *LinkBookSectionApi* | [**archive_link_book_section**](docs/LinkBookSectionApi.md#archive_link_book_section) | **DELETE** /v2/linkBookSection/{id} | Archive link book section
@@ -728,6 +729,7 @@ Class | Method | HTTP request | Description
  - [WTInfoGenesisRecordFilterParameters](docs/WTInfoGenesisRecordFilterParameters.md)
  - [WTInfoGenesisRoutingIDs](docs/WTInfoGenesisRoutingIDs.md)
  - [WTInfoGenesisUniquePostingIDs](docs/WTInfoGenesisUniquePostingIDs.md)
+ - [WTLinkBook](docs/WTLinkBook.md)
  - [WTLinkBookCreateParams](docs/WTLinkBookCreateParams.md)
  - [WTLinkBookSectionCreateParams](docs/WTLinkBookSectionCreateParams.md)
  - [WTLinkBookSectionUpdateParams](docs/WTLinkBookSectionUpdateParams.md)
