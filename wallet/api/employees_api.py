@@ -1127,12 +1127,12 @@ class EmployeesApi(object):
             },
             api_client=api_client
         )
-        self.fetch_opt_in_list_sources_endpoint = _Endpoint(
+        self.fetch_opt_in_list_sources_created_by_employee_endpoint = _Endpoint(
             settings={
                 'response_type': ([OptInListSource],),
                 'auth': [],
                 'endpoint_path': '/v2/employee/optInListSources/all',
-                'operation_id': 'fetch_opt_in_list_sources',
+                'operation_id': 'fetch_opt_in_list_sources_created_by_employee',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -3928,7 +3928,7 @@ class EmployeesApi(object):
             source_id
         return self.fetch_opt_in_list_source_endpoint.call_with_http_info(**kwargs)
 
-    def fetch_opt_in_list_sources(
+    def fetch_opt_in_list_sources_created_by_employee(
         self,
         **kwargs
     ):
@@ -3937,7 +3937,7 @@ class EmployeesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.fetch_opt_in_list_sources(async_req=True)
+        >>> thread = api.fetch_opt_in_list_sources_created_by_employee(async_req=True)
         >>> result = thread.get()
 
 
@@ -3998,7 +3998,7 @@ class EmployeesApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.fetch_opt_in_list_sources_endpoint.call_with_http_info(**kwargs)
+        return self.fetch_opt_in_list_sources_created_by_employee_endpoint.call_with_http_info(**kwargs)
 
     def fetch_peer_activity(
         self,

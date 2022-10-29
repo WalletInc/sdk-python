@@ -267,6 +267,7 @@ docs/WTInfoGenesisLookupRequestErrors.md
 docs/WTInfoGenesisRecordFilterParameters.md
 docs/WTInfoGenesisRoutingIDs.md
 docs/WTInfoGenesisUniquePostingIDs.md
+docs/WTLinkBook.md
 docs/WTLinkBookCreateParams.md
 docs/WTLinkBookSectionCreateParams.md
 docs/WTLinkBookSectionUpdateParams.md
@@ -336,6 +337,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_wt_link_book.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -615,6 +617,7 @@ wallet/model/wt_info_genesis_lookup_request_errors.py
 wallet/model/wt_info_genesis_record_filter_parameters.py
 wallet/model/wt_info_genesis_routing_ids.py
 wallet/model/wt_info_genesis_unique_posting_ids.py
+wallet/model/wt_link_book.py
 wallet/model/wt_link_book_create_params.py
 wallet/model/wt_link_book_section_create_params.py
 wallet/model/wt_link_book_section_update_params.py
