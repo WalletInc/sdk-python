@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **create_public_chat_room**
-> bool, date, datetime, dict, float, int, list, str, none_type create_public_chat_room()
+> str create_public_chat_room()
 
 
 
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**str**
 
 ### Authorization
 
