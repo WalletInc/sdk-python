@@ -42,7 +42,7 @@ class ConfigurationApi(object):
         self.api_client = api_client
         self.create_public_chat_room_endpoint = _Endpoint(
             settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'response_type': (str,),
                 'auth': [],
                 'endpoint_path': '/v2/wallet/createPublicChatRoom',
                 'operation_id': 'create_public_chat_room',
@@ -176,7 +176,7 @@ class ConfigurationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            str
                 If the method is called asynchronously, returns the request
                 thread.
         """
