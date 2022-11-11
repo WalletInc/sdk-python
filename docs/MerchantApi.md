@@ -356,11 +356,21 @@ with wallet.ApiClient() as api_client:
     api_instance = merchant_api.MerchantApi(api_client)
     phone_number_id = NanoID("C") # NanoID | 
     locale = "locale_example" # str | 
+    payment_object_broadcast_id = NanoID("C") # NanoID |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Export outbound messages
         api_response = api_instance.export_outbound_messages(phone_number_id, locale)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling MerchantApi->export_outbound_messages: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Export outbound messages
+        api_response = api_instance.export_outbound_messages(phone_number_id, locale, payment_object_broadcast_id=payment_object_broadcast_id)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling MerchantApi->export_outbound_messages: %s\n" % e)
@@ -373,6 +383,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **phone_number_id** | **NanoID**|  |
  **locale** | **str**|  |
+ **payment_object_broadcast_id** | **NanoID**|  | [optional]
 
 ### Return type
 
