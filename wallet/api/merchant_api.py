@@ -278,7 +278,6 @@ class MerchantApi(object):
                 'required': [
                     'phone_number_id',
                     'locale',
-                    'payment_object_broadcast_id',
                 ],
                 'nullable': [
                 ],
@@ -1703,7 +1702,6 @@ class MerchantApi(object):
         self,
         phone_number_id,
         locale,
-        payment_object_broadcast_id,
         **kwargs
     ):
         """Export outbound messages  # noqa: E501
@@ -1711,15 +1709,15 @@ class MerchantApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.export_outbound_messages(phone_number_id, locale, payment_object_broadcast_id, async_req=True)
+        >>> thread = api.export_outbound_messages(phone_number_id, locale, async_req=True)
         >>> result = thread.get()
 
         Args:
             phone_number_id (NanoID):
             locale (str):
-            payment_object_broadcast_id (NanoID):
 
         Keyword Args:
+            payment_object_broadcast_id (NanoID): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1780,8 +1778,6 @@ class MerchantApi(object):
             phone_number_id
         kwargs['locale'] = \
             locale
-        kwargs['payment_object_broadcast_id'] = \
-            payment_object_broadcast_id
         return self.export_outbound_messages_endpoint.call_with_http_info(**kwargs)
 
     def fetch_advertisement_credit_broadcasts(
