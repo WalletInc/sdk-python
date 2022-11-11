@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **start_date** | **datetime** |  | 
 **title** | **str** |  | 
 **is_redeemed** | **bool** |  | 
+**display_value** | **str** |  | 
 **offer_amount_cents_decimal** | **str** |  | 
 **offer_amount_cents** | **float** |  | 
 **member_id** | **str** |  | 
