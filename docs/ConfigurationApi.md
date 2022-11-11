@@ -110,6 +110,7 @@ with wallet.ApiClient() as api_client:
         left_menu_section_color="#050343",
         left_menu_arrow_color="#812934",
         company_logo_url="https://example.com/company-info/logo.png",
+        header_image_url="https://example.com/company-info/logo.png",
         welcome_message="Welcome to Company!",
         is_apple_enabled=True,
         is_google_enabled=True,

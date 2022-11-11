@@ -81,6 +81,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             'left_menu_section_color': (str,),  # noqa: E501
             'left_menu_arrow_color': (str,),  # noqa: E501
             'company_logo_url': (str,),  # noqa: E501
+            'header_image_url': (str,),  # noqa: E501
             'welcome_message': (str,),  # noqa: E501
             'is_apple_enabled': (bool,),  # noqa: E501
             'is_google_enabled': (bool,),  # noqa: E501
@@ -126,6 +127,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
         'left_menu_section_color': 'leftMenuSectionColor',  # noqa: E501
         'left_menu_arrow_color': 'leftMenuArrowColor',  # noqa: E501
         'company_logo_url': 'companyLogoURL',  # noqa: E501
+        'header_image_url': 'headerImageURL',  # noqa: E501
         'welcome_message': 'welcomeMessage',  # noqa: E501
         'is_apple_enabled': 'isAppleEnabled',  # noqa: E501
         'is_google_enabled': 'isGoogleEnabled',  # noqa: E501
@@ -167,7 +169,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, header_background_color, header_button_color, left_menu_section_color, left_menu_arrow_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, header_background_color, header_button_color, left_menu_section_color, left_menu_arrow_color, company_logo_url, header_image_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, *args, **kwargs):  # noqa: E501
         """WTWalletConfigurationSaveWalletRecord - a model defined in OpenAPI
 
         Args:
@@ -176,6 +178,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             left_menu_section_color (str):
             left_menu_arrow_color (str):
             company_logo_url (str):
+            header_image_url (str):
             welcome_message (str):
             is_apple_enabled (bool):
             is_google_enabled (bool):
@@ -272,6 +275,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
         self.left_menu_section_color = left_menu_section_color
         self.left_menu_arrow_color = left_menu_arrow_color
         self.company_logo_url = company_logo_url
+        self.header_image_url = header_image_url
         self.welcome_message = welcome_message
         self.is_apple_enabled = is_apple_enabled
         self.is_google_enabled = is_google_enabled
@@ -318,7 +322,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, header_background_color, header_button_color, left_menu_section_color, left_menu_arrow_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, *args, **kwargs):  # noqa: E501
+    def __init__(self, header_background_color, header_button_color, left_menu_section_color, left_menu_arrow_color, company_logo_url, header_image_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, *args, **kwargs):  # noqa: E501
         """WTWalletConfigurationSaveWalletRecord - a model defined in OpenAPI
 
         Args:
@@ -327,6 +331,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             left_menu_section_color (str):
             left_menu_arrow_color (str):
             company_logo_url (str):
+            header_image_url (str):
             welcome_message (str):
             is_apple_enabled (bool):
             is_google_enabled (bool):
@@ -421,6 +426,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
         self.left_menu_section_color = left_menu_section_color
         self.left_menu_arrow_color = left_menu_arrow_color
         self.company_logo_url = company_logo_url
+        self.header_image_url = header_image_url
         self.welcome_message = welcome_message
         self.is_apple_enabled = is_apple_enabled
         self.is_google_enabled = is_google_enabled
