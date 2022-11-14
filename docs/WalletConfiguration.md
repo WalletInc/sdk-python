@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **left_menu_section_color** | **str** |  | 
 **left_menu_arrow_color** | **str** |  | 
 **company_logo_url** | **str** |  | 
-**header_image_url** | **str** |  | 
 **welcome_message** | **str** |  | 
 **is_apple_enabled** | **bool** |  | 
 **is_google_enabled** | **bool** |  | 
@@ -40,6 +39,8 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
+**header_image_url** | **str** |  | [optional] 
+**header_custom_icon** | **str** |  | [optional] 
 **is_tickets** | **bool** |  | [optional] 
 **google_analytics_id** | **str** |  | [optional] 
 **facebook_pixel_id** | **str** |  | [optional] 
