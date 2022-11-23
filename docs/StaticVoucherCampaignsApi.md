@@ -4,7 +4,7 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_static_voucher_campaign**](StaticVoucherCampaignsApi.md#archive_static_voucher_campaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
+[**archive_static_voucher_campaign**](StaticVoucherCampaignsApi.md#archive_static_voucher_campaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Archive static voucher campaign
 [**count_vouchers_loaded**](StaticVoucherCampaignsApi.md#count_vouchers_loaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count loaded vouchers
 [**count_vouchers_redeemed**](StaticVoucherCampaignsApi.md#count_vouchers_redeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers
 [**create_static_voucher_campaign**](StaticVoucherCampaignsApi.md#create_static_voucher_campaign) | **POST** /v2/payment/staticVoucherCampaign | Create static voucher campaign
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 [**fetch_vouchers_redeemed**](StaticVoucherCampaignsApi.md#fetch_vouchers_redeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Fetch redeemed vouchers
 [**preview_messages**](StaticVoucherCampaignsApi.md#preview_messages) | **PUT** /v2/payment/staticVoucherCampaign/preview/{campaignID} | Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance.
 [**preview_messages_by_page**](StaticVoucherCampaignsApi.md#preview_messages_by_page) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview static vouchers by page
-[**restore_static_voucher_campaign**](StaticVoucherCampaignsApi.md#restore_static_voucher_campaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
+[**restore_static_voucher_campaign**](StaticVoucherCampaignsApi.md#restore_static_voucher_campaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore static voucher campaign
 [**update_static_voucher_campaign**](StaticVoucherCampaignsApi.md#update_static_voucher_campaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
 [**update_static_voucher_campaign_with_voucher**](StaticVoucherCampaignsApi.md#update_static_voucher_campaign_with_voucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update static voucher campaign with voucher
 
@@ -30,7 +30,7 @@ Method | HTTP request | Description
 # **archive_static_voucher_campaign**
 > StaticVoucherCampaign archive_static_voucher_campaign(campaign_id)
 
-Update static voucher campaign
+Archive static voucher campaign
 
 ### Example
 
@@ -59,7 +59,7 @@ with wallet.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update static voucher campaign
+        # Archive static voucher campaign
         api_response = api_instance.archive_static_voucher_campaign(campaign_id)
         pprint(api_response)
     except wallet.ApiException as e:
@@ -1400,7 +1400,7 @@ No authorization required
 # **restore_static_voucher_campaign**
 > StaticVoucherCampaign restore_static_voucher_campaign(campaign_id)
 
-Update static voucher campaign
+Restore static voucher campaign
 
 ### Example
 
@@ -1429,7 +1429,7 @@ with wallet.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update static voucher campaign
+        # Restore static voucher campaign
         api_response = api_instance.restore_static_voucher_campaign(campaign_id)
         pprint(api_response)
     except wallet.ApiException as e:

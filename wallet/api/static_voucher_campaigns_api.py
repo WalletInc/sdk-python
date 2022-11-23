@@ -1148,7 +1148,7 @@ class StaticVoucherCampaignsApi(object):
         campaign_id,
         **kwargs
     ):
-        """Update static voucher campaign  # noqa: E501
+        """Archive static voucher campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2546,7 +2546,7 @@ class StaticVoucherCampaignsApi(object):
         campaign_id,
         **kwargs
     ):
-        """Update static voucher campaign  # noqa: E501
+        """Restore static voucher campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
