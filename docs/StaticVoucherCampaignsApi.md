@@ -4,6 +4,7 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**archive_static_voucher_campaign**](StaticVoucherCampaignsApi.md#archive_static_voucher_campaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
 [**count_vouchers_loaded**](StaticVoucherCampaignsApi.md#count_vouchers_loaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count loaded vouchers
 [**count_vouchers_redeemed**](StaticVoucherCampaignsApi.md#count_vouchers_redeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers
 [**create_static_voucher_campaign**](StaticVoucherCampaignsApi.md#create_static_voucher_campaign) | **POST** /v2/payment/staticVoucherCampaign | Create static voucher campaign
@@ -21,9 +22,81 @@ Method | HTTP request | Description
 [**fetch_vouchers_redeemed**](StaticVoucherCampaignsApi.md#fetch_vouchers_redeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Fetch redeemed vouchers
 [**preview_messages**](StaticVoucherCampaignsApi.md#preview_messages) | **PUT** /v2/payment/staticVoucherCampaign/preview/{campaignID} | Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance.
 [**preview_messages_by_page**](StaticVoucherCampaignsApi.md#preview_messages_by_page) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview static vouchers by page
+[**restore_static_voucher_campaign**](StaticVoucherCampaignsApi.md#restore_static_voucher_campaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
 [**update_static_voucher_campaign**](StaticVoucherCampaignsApi.md#update_static_voucher_campaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
 [**update_static_voucher_campaign_with_voucher**](StaticVoucherCampaignsApi.md#update_static_voucher_campaign_with_voucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update static voucher campaign with voucher
 
+
+# **archive_static_voucher_campaign**
+> StaticVoucherCampaign archive_static_voucher_campaign(campaign_id)
+
+Update static voucher campaign
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import static_voucher_campaigns_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.static_voucher_campaign import StaticVoucherCampaign
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update static voucher campaign
+        api_response = api_instance.archive_static_voucher_campaign(campaign_id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling StaticVoucherCampaignsApi->archive_static_voucher_campaign: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+
+### Return type
+
+[**StaticVoucherCampaign**](StaticVoucherCampaign.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_vouchers_loaded**
 > InlineResponse2002 count_vouchers_loaded(campaign_id)
@@ -1310,6 +1383,77 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **restore_static_voucher_campaign**
+> StaticVoucherCampaign restore_static_voucher_campaign(campaign_id)
+
+Update static voucher campaign
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import static_voucher_campaigns_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.static_voucher_campaign import StaticVoucherCampaign
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update static voucher campaign
+        api_response = api_instance.restore_static_voucher_campaign(campaign_id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling StaticVoucherCampaignsApi->restore_static_voucher_campaign: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+
+### Return type
+
+[**StaticVoucherCampaign**](StaticVoucherCampaign.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
