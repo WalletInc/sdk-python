@@ -99,7 +99,6 @@ class WTAdvertisementCreditScan(ModelNormal):
         lazy_import()
         return {
             'id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'transaction_type': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'register_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'redeemed_source': (str,),  # noqa: E501
@@ -114,6 +113,7 @@ class WTAdvertisementCreditScan(ModelNormal):
             'merchant_id': (MerchantID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'is_active': (bool,),  # noqa: E501
             'advertisement_credit_id': (NanoID,),  # noqa: E501
             'redeemed_amount_decimal': (str,),  # noqa: E501
             'redeemed_amount_string': (str,),  # noqa: E501
@@ -130,7 +130,6 @@ class WTAdvertisementCreditScan(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'transaction_type': 'transactionType',  # noqa: E501
         'register_id': 'registerID',  # noqa: E501
         'redeemed_source': 'redeemedSource',  # noqa: E501
@@ -145,6 +144,7 @@ class WTAdvertisementCreditScan(ModelNormal):
         'merchant_id': 'merchantID',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'is_active': 'isActive',  # noqa: E501
         'advertisement_credit_id': 'advertisementCreditID',  # noqa: E501
         'redeemed_amount_decimal': 'redeemedAmount_decimal',  # noqa: E501
         'redeemed_amount_string': 'redeemedAmount_string',  # noqa: E501
@@ -161,12 +161,11 @@ class WTAdvertisementCreditScan(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, is_active, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, advertisement_credit_id, redeemed_amount_decimal, redeemed_amount_string, authorized_amount_decimal, authorized_amount_string, date_time_redeemed, date_time_refunded, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, is_active, advertisement_credit_id, redeemed_amount_decimal, redeemed_amount_string, authorized_amount_decimal, authorized_amount_string, date_time_redeemed, date_time_refunded, *args, **kwargs):  # noqa: E501
         """WTAdvertisementCreditScan - a model defined in OpenAPI
 
         Args:
             id (bool, date, datetime, dict, float, int, list, str, none_type):
-            is_active (bool):
             transaction_type (bool, date, datetime, dict, float, int, list, str, none_type): The type of the transaction - only redemption at the moment
             register_id (bool, date, datetime, dict, float, int, list, str, none_type): The ID of the register where the transaction occurred
             redeemed_source (str):
@@ -181,6 +180,7 @@ class WTAdvertisementCreditScan(ModelNormal):
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             advertisement_credit_id (NanoID):
             redeemed_amount_decimal (str):
             redeemed_amount_string (str):
@@ -248,7 +248,6 @@ class WTAdvertisementCreditScan(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.id = id
-        self.is_active = is_active
         self.transaction_type = transaction_type
         self.register_id = register_id
         self.redeemed_source = redeemed_source
@@ -263,6 +262,7 @@ class WTAdvertisementCreditScan(ModelNormal):
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.advertisement_credit_id = advertisement_credit_id
         self.redeemed_amount_decimal = redeemed_amount_decimal
         self.redeemed_amount_string = redeemed_amount_string
@@ -290,12 +290,11 @@ class WTAdvertisementCreditScan(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, is_active, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, advertisement_credit_id, redeemed_amount_decimal, redeemed_amount_string, authorized_amount_decimal, authorized_amount_string, date_time_redeemed, date_time_refunded, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, is_active, advertisement_credit_id, redeemed_amount_decimal, redeemed_amount_string, authorized_amount_decimal, authorized_amount_string, date_time_redeemed, date_time_refunded, *args, **kwargs):  # noqa: E501
         """WTAdvertisementCreditScan - a model defined in OpenAPI
 
         Args:
             id (bool, date, datetime, dict, float, int, list, str, none_type):
-            is_active (bool):
             transaction_type (bool, date, datetime, dict, float, int, list, str, none_type): The type of the transaction - only redemption at the moment
             register_id (bool, date, datetime, dict, float, int, list, str, none_type): The ID of the register where the transaction occurred
             redeemed_source (str):
@@ -310,6 +309,7 @@ class WTAdvertisementCreditScan(ModelNormal):
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             advertisement_credit_id (NanoID):
             redeemed_amount_decimal (str):
             redeemed_amount_string (str):
@@ -375,7 +375,6 @@ class WTAdvertisementCreditScan(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.id = id
-        self.is_active = is_active
         self.transaction_type = transaction_type
         self.register_id = register_id
         self.redeemed_source = redeemed_source
@@ -390,6 +389,7 @@ class WTAdvertisementCreditScan(ModelNormal):
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.advertisement_credit_id = advertisement_credit_id
         self.redeemed_amount_decimal = redeemed_amount_decimal
         self.redeemed_amount_string = redeemed_amount_string

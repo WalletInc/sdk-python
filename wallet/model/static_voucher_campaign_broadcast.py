@@ -97,10 +97,10 @@ class StaticVoucherCampaignBroadcast(ModelNormal):
         return {
             'id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'employee_id': (SSNanoID,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'merchant_id': (SSNanoID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'is_active': (bool,),  # noqa: E501
             'phone_number_id': (SSNanoID,),  # noqa: E501
             'media_urls': ([str],),  # noqa: E501
             'broadcast_status': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -124,10 +124,10 @@ class StaticVoucherCampaignBroadcast(ModelNormal):
     attribute_map = {
         'id': 'id',  # noqa: E501
         'employee_id': 'employeeID',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'is_active': 'isActive',  # noqa: E501
         'phone_number_id': 'phoneNumberID',  # noqa: E501
         'media_urls': 'mediaURLs',  # noqa: E501
         'broadcast_status': 'broadcastStatus',  # noqa: E501
@@ -150,16 +150,16 @@ class StaticVoucherCampaignBroadcast(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, employee_id, is_active, merchant_id, created_at, updated_at, phone_number_id, media_urls, broadcast_status, broadcast_queued_at, broadcast_started_at, broadcast_completed_at, payment_object_prefix, payment_object_id, message_template, broadcast_scheduled_at, static_voucher_campaign, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, employee_id, merchant_id, created_at, updated_at, is_active, phone_number_id, media_urls, broadcast_status, broadcast_queued_at, broadcast_started_at, broadcast_completed_at, payment_object_prefix, payment_object_id, message_template, broadcast_scheduled_at, static_voucher_campaign, *args, **kwargs):  # noqa: E501
         """StaticVoucherCampaignBroadcast - a model defined in OpenAPI
 
         Args:
             id (bool, date, datetime, dict, float, int, list, str, none_type):
             employee_id (SSNanoID):
-            is_active (bool):
             merchant_id (SSNanoID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             phone_number_id (SSNanoID):
             media_urls ([str]):
             broadcast_status (bool, date, datetime, dict, float, int, list, str, none_type):
@@ -234,10 +234,10 @@ class StaticVoucherCampaignBroadcast(ModelNormal):
 
         self.id = id
         self.employee_id = employee_id
-        self.is_active = is_active
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.phone_number_id = phone_number_id
         self.media_urls = media_urls
         self.broadcast_status = broadcast_status
@@ -269,16 +269,16 @@ class StaticVoucherCampaignBroadcast(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, employee_id, is_active, merchant_id, created_at, updated_at, phone_number_id, media_urls, broadcast_status, broadcast_queued_at, broadcast_started_at, broadcast_completed_at, payment_object_prefix, payment_object_id, message_template, broadcast_scheduled_at, static_voucher_campaign, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, employee_id, merchant_id, created_at, updated_at, is_active, phone_number_id, media_urls, broadcast_status, broadcast_queued_at, broadcast_started_at, broadcast_completed_at, payment_object_prefix, payment_object_id, message_template, broadcast_scheduled_at, static_voucher_campaign, *args, **kwargs):  # noqa: E501
         """StaticVoucherCampaignBroadcast - a model defined in OpenAPI
 
         Args:
             id (bool, date, datetime, dict, float, int, list, str, none_type):
             employee_id (SSNanoID):
-            is_active (bool):
             merchant_id (SSNanoID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             phone_number_id (SSNanoID):
             media_urls ([str]):
             broadcast_status (bool, date, datetime, dict, float, int, list, str, none_type):
@@ -351,10 +351,10 @@ class StaticVoucherCampaignBroadcast(ModelNormal):
 
         self.id = id
         self.employee_id = employee_id
-        self.is_active = is_active
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.phone_number_id = phone_number_id
         self.media_urls = media_urls
         self.broadcast_status = broadcast_status

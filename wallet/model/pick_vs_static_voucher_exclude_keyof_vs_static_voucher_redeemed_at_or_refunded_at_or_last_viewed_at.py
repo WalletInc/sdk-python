@@ -117,7 +117,6 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'campaign_id': (NanoID,),  # noqa: E501
             'offer_amount_cents': (int,),  # noqa: E501
             'order_number': (int,),  # noqa: E501
@@ -135,6 +134,7 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
             'merchant_id': (MerchantID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'is_active': (bool,),  # noqa: E501
             'member_id': (str,),  # noqa: E501
             'cell_phone_number': (str,),  # noqa: E501
             'customer_id': (str,),  # noqa: E501
@@ -147,7 +147,6 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
 
     attribute_map = {
         'id': 'id',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'campaign_id': 'campaignID',  # noqa: E501
         'offer_amount_cents': 'offerAmountCents',  # noqa: E501
         'order_number': 'orderNumber',  # noqa: E501
@@ -165,6 +164,7 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
         'merchant_id': 'merchantID',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'is_active': 'isActive',  # noqa: E501
         'member_id': 'memberID',  # noqa: E501
         'cell_phone_number': 'cellPhoneNumber',  # noqa: E501
         'customer_id': 'customerID',  # noqa: E501
@@ -177,12 +177,11 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, is_active, campaign_id, offer_amount_cents, order_number, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, campaign_id, offer_amount_cents, order_number, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, is_active, *args, **kwargs):  # noqa: E501
         """PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt - a model defined in OpenAPI
 
         Args:
             id (str):
-            is_active (bool):
             campaign_id (NanoID):
             offer_amount_cents (int):
             order_number (int):
@@ -200,6 +199,7 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -263,7 +263,6 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.id = id
-        self.is_active = is_active
         self.campaign_id = campaign_id
         self.offer_amount_cents = offer_amount_cents
         self.order_number = order_number
@@ -281,6 +280,7 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -301,12 +301,11 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, is_active, campaign_id, offer_amount_cents, order_number, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, campaign_id, offer_amount_cents, order_number, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, is_active, *args, **kwargs):  # noqa: E501
         """PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt - a model defined in OpenAPI
 
         Args:
             id (str):
-            is_active (bool):
             campaign_id (NanoID):
             offer_amount_cents (int):
             order_number (int):
@@ -324,6 +323,7 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -385,7 +385,6 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.id = id
-        self.is_active = is_active
         self.campaign_id = campaign_id
         self.offer_amount_cents = offer_amount_cents
         self.order_number = order_number
@@ -403,6 +402,7 @@ class PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLast
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

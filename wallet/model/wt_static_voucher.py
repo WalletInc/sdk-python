@@ -110,7 +110,6 @@ class WTStaticVoucher(ModelNormal):
         lazy_import()
         return {
             'id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'campaign_id': (NanoID,),  # noqa: E501
             'offer_amount_cents': (int,),  # noqa: E501
             'order_number': (int,),  # noqa: E501
@@ -128,6 +127,7 @@ class WTStaticVoucher(ModelNormal):
             'merchant_id': (MerchantID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'is_active': (bool,),  # noqa: E501
             'authorized_amount_decimal': (str,),  # noqa: E501
             'authorized_amount_string': (str,),  # noqa: E501
             'offer_amount_cents_decimal': (str,),  # noqa: E501
@@ -150,7 +150,6 @@ class WTStaticVoucher(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'campaign_id': 'campaignID',  # noqa: E501
         'offer_amount_cents': 'offerAmountCents',  # noqa: E501
         'order_number': 'orderNumber',  # noqa: E501
@@ -168,6 +167,7 @@ class WTStaticVoucher(ModelNormal):
         'merchant_id': 'merchantID',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'is_active': 'isActive',  # noqa: E501
         'authorized_amount_decimal': 'authorizedAmount_decimal',  # noqa: E501
         'authorized_amount_string': 'authorizedAmount_string',  # noqa: E501
         'offer_amount_cents_decimal': 'offerAmountCents_decimal',  # noqa: E501
@@ -190,12 +190,11 @@ class WTStaticVoucher(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, is_active, campaign_id, offer_amount_cents, order_number, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, authorized_amount_decimal, authorized_amount_string, offer_amount_cents_decimal, offer_amount_cents_string, redeemed_amount_decimal, redeemed_amount_string, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, campaign_id, offer_amount_cents, order_number, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, is_active, authorized_amount_decimal, authorized_amount_string, offer_amount_cents_decimal, offer_amount_cents_string, redeemed_amount_decimal, redeemed_amount_string, *args, **kwargs):  # noqa: E501
         """WTStaticVoucher - a model defined in OpenAPI
 
         Args:
             id (bool, date, datetime, dict, float, int, list, str, none_type):
-            is_active (bool):
             campaign_id (NanoID):
             offer_amount_cents (int):
             order_number (int):
@@ -213,6 +212,7 @@ class WTStaticVoucher(ModelNormal):
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             authorized_amount_decimal (str):
             authorized_amount_string (str):
             offer_amount_cents_decimal (str):
@@ -286,7 +286,6 @@ class WTStaticVoucher(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.id = id
-        self.is_active = is_active
         self.campaign_id = campaign_id
         self.offer_amount_cents = offer_amount_cents
         self.order_number = order_number
@@ -304,6 +303,7 @@ class WTStaticVoucher(ModelNormal):
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.authorized_amount_decimal = authorized_amount_decimal
         self.authorized_amount_string = authorized_amount_string
         self.offer_amount_cents_decimal = offer_amount_cents_decimal
@@ -330,12 +330,11 @@ class WTStaticVoucher(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, is_active, campaign_id, offer_amount_cents, order_number, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, authorized_amount_decimal, authorized_amount_string, offer_amount_cents_decimal, offer_amount_cents_string, redeemed_amount_decimal, redeemed_amount_string, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, campaign_id, offer_amount_cents, order_number, transaction_type, register_id, redeemed_source, redeemed_transaction_id, redeemed_amount, is_redeemed, refunded_transaction_id, refunded_amount, status, authorized_against_check_number, authorized_amount, merchant_id, created_at, updated_at, is_active, authorized_amount_decimal, authorized_amount_string, offer_amount_cents_decimal, offer_amount_cents_string, redeemed_amount_decimal, redeemed_amount_string, *args, **kwargs):  # noqa: E501
         """WTStaticVoucher - a model defined in OpenAPI
 
         Args:
             id (bool, date, datetime, dict, float, int, list, str, none_type):
-            is_active (bool):
             campaign_id (NanoID):
             offer_amount_cents (int):
             order_number (int):
@@ -353,6 +352,7 @@ class WTStaticVoucher(ModelNormal):
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             authorized_amount_decimal (str):
             authorized_amount_string (str):
             offer_amount_cents_decimal (str):
@@ -424,7 +424,6 @@ class WTStaticVoucher(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.id = id
-        self.is_active = is_active
         self.campaign_id = campaign_id
         self.offer_amount_cents = offer_amount_cents
         self.order_number = order_number
@@ -442,6 +441,7 @@ class WTStaticVoucher(ModelNormal):
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.authorized_amount_decimal = authorized_amount_decimal
         self.authorized_amount_string = authorized_amount_string
         self.offer_amount_cents_decimal = offer_amount_cents_decimal

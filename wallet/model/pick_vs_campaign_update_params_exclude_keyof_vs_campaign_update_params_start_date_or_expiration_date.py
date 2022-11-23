@@ -110,7 +110,6 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
             'employee_id': (NanoID,),  # noqa: E501
             'reinvestment_sum': (int,),  # noqa: E501
             'number_of_vouchers_in_file': (int,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'display_value': (str,),  # noqa: E501
             'merchants_reference_id': (str,),  # noqa: E501
             'valid_only_at_pos_register_ids': ([str],),  # noqa: E501
@@ -131,7 +130,6 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         'employee_id': 'employeeID',  # noqa: E501
         'reinvestment_sum': 'reinvestmentSum',  # noqa: E501
         'number_of_vouchers_in_file': 'numberOfVouchersInFile',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'display_value': 'displayValue',  # noqa: E501
         'merchants_reference_id': 'merchantsReferenceID',  # noqa: E501
         'valid_only_at_pos_register_ids': 'validOnlyAtPOSRegisterIDs',  # noqa: E501
@@ -144,7 +142,7 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, title, notes, value_type, is_loaded, payment_design_id, employee_id, reinvestment_sum, number_of_vouchers_in_file, is_active, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, title, notes, value_type, is_loaded, payment_design_id, employee_id, reinvestment_sum, number_of_vouchers_in_file, *args, **kwargs):  # noqa: E501
         """PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate - a model defined in OpenAPI
 
         Args:
@@ -157,7 +155,6 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
             employee_id (NanoID):
             reinvestment_sum (int):
             number_of_vouchers_in_file (int):
-            is_active (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -229,7 +226,6 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         self.employee_id = employee_id
         self.reinvestment_sum = reinvestment_sum
         self.number_of_vouchers_in_file = number_of_vouchers_in_file
-        self.is_active = is_active
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -250,7 +246,7 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, title, notes, value_type, is_loaded, payment_design_id, employee_id, reinvestment_sum, number_of_vouchers_in_file, is_active, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, title, notes, value_type, is_loaded, payment_design_id, employee_id, reinvestment_sum, number_of_vouchers_in_file, *args, **kwargs):  # noqa: E501
         """PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate - a model defined in OpenAPI
 
         Args:
@@ -263,7 +259,6 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
             employee_id (NanoID):
             reinvestment_sum (int):
             number_of_vouchers_in_file (int):
-            is_active (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -333,7 +328,6 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         self.employee_id = employee_id
         self.reinvestment_sum = reinvestment_sum
         self.number_of_vouchers_in_file = number_of_vouchers_in_file
-        self.is_active = is_active
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

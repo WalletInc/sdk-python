@@ -103,10 +103,10 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
             'notes': (str,),  # noqa: E501
             'value_type': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'payment_design_id': (NanoID,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'start_date_time': (datetime,),  # noqa: E501
             'expiration_date_time': (datetime,),  # noqa: E501
             'offer_amount_cents': (int,),  # noqa: E501
+            'is_active': (bool,),  # noqa: E501
             'display_value': (str,),  # noqa: E501
             'merchants_reference_id': (str,),  # noqa: E501
             'valid_only_at_pos_register_ids': ([str],),  # noqa: E501
@@ -124,10 +124,10 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'notes': 'notes',  # noqa: E501
         'value_type': 'valueType',  # noqa: E501
         'payment_design_id': 'paymentDesignID',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'start_date_time': 'startDateTime',  # noqa: E501
         'expiration_date_time': 'expirationDateTime',  # noqa: E501
         'offer_amount_cents': 'offerAmountCents',  # noqa: E501
+        'is_active': 'isActive',  # noqa: E501
         'display_value': 'displayValue',  # noqa: E501
         'merchants_reference_id': 'merchantsReferenceID',  # noqa: E501
         'valid_only_at_pos_register_ids': 'validOnlyAtPOSRegisterIDs',  # noqa: E501
@@ -142,7 +142,7 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, title, notes, value_type, payment_design_id, is_active, start_date_time, expiration_date_time, offer_amount_cents, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, title, notes, value_type, payment_design_id, start_date_time, expiration_date_time, offer_amount_cents, is_active, *args, **kwargs):  # noqa: E501
         """PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID - a model defined in OpenAPI
 
         Args:
@@ -150,10 +150,10 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
             notes (str):
             value_type (bool, date, datetime, dict, float, int, list, str, none_type):
             payment_design_id (NanoID):
-            is_active (bool):
             start_date_time (datetime):
             expiration_date_time (datetime):
             offer_amount_cents (int):
+            is_active (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -222,10 +222,10 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         self.notes = notes
         self.value_type = value_type
         self.payment_design_id = payment_design_id
-        self.is_active = is_active
         self.start_date_time = start_date_time
         self.expiration_date_time = expiration_date_time
         self.offer_amount_cents = offer_amount_cents
+        self.is_active = is_active
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -246,7 +246,7 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, title, notes, value_type, payment_design_id, is_active, start_date_time, expiration_date_time, offer_amount_cents, *args, **kwargs):  # noqa: E501
+    def __init__(self, title, notes, value_type, payment_design_id, start_date_time, expiration_date_time, offer_amount_cents, is_active, *args, **kwargs):  # noqa: E501
         """PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID - a model defined in OpenAPI
 
         Args:
@@ -254,10 +254,10 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
             notes (str):
             value_type (bool, date, datetime, dict, float, int, list, str, none_type):
             payment_design_id (NanoID):
-            is_active (bool):
             start_date_time (datetime):
             expiration_date_time (datetime):
             offer_amount_cents (int):
+            is_active (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -324,10 +324,10 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         self.notes = notes
         self.value_type = value_type
         self.payment_design_id = payment_design_id
-        self.is_active = is_active
         self.start_date_time = start_date_time
         self.expiration_date_time = expiration_date_time
         self.offer_amount_cents = offer_amount_cents
+        self.is_active = is_active
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

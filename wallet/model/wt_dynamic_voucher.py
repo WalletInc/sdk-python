@@ -117,10 +117,10 @@ class WTDynamicVoucher(ModelNormal):
             'notes': (str,),  # noqa: E501
             'payment_design_id': (NanoID,),  # noqa: E501
             'employee_id': (NanoID,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'merchant_id': (MerchantID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'is_active': (bool,),  # noqa: E501
             'starting_value': (int,),  # noqa: E501
             'max_budget': (int,),  # noqa: E501
             'temporal_decrease_amount': (int,),  # noqa: E501
@@ -158,10 +158,10 @@ class WTDynamicVoucher(ModelNormal):
         'notes': 'notes',  # noqa: E501
         'payment_design_id': 'paymentDesignID',  # noqa: E501
         'employee_id': 'employeeID',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'is_active': 'isActive',  # noqa: E501
         'starting_value': 'startingValue',  # noqa: E501
         'max_budget': 'maxBudget',  # noqa: E501
         'temporal_decrease_amount': 'temporalDecreaseAmount',  # noqa: E501
@@ -193,7 +193,7 @@ class WTDynamicVoucher(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, start_date, expiration_date, id, title, notes, payment_design_id, employee_id, is_active, merchant_id, created_at, updated_at, starting_value, max_budget, temporal_decrease_amount, temporal_decrease_frequency, temporal_decrease_amount_decimal, temporal_decrease_amount_string, numerical_decrease_amount_decimal, numerical_decrease_amount_string, starting_value_decimal, starting_value_string, max_budget_decimal, max_budget_string, current_value, current_value_decimal, current_value_string, status, temporal_decrease_frequency_type, summary, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, start_date, expiration_date, id, title, notes, payment_design_id, employee_id, merchant_id, created_at, updated_at, is_active, starting_value, max_budget, temporal_decrease_amount, temporal_decrease_frequency, temporal_decrease_amount_decimal, temporal_decrease_amount_string, numerical_decrease_amount_decimal, numerical_decrease_amount_string, starting_value_decimal, starting_value_string, max_budget_decimal, max_budget_string, current_value, current_value_decimal, current_value_string, status, temporal_decrease_frequency_type, summary, *args, **kwargs):  # noqa: E501
         """WTDynamicVoucher - a model defined in OpenAPI
 
         Args:
@@ -204,10 +204,10 @@ class WTDynamicVoucher(ModelNormal):
             notes (str):
             payment_design_id (NanoID):
             employee_id (NanoID):
-            is_active (bool):
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             starting_value (int):
             max_budget (int):
             temporal_decrease_amount (int):
@@ -296,10 +296,10 @@ class WTDynamicVoucher(ModelNormal):
         self.notes = notes
         self.payment_design_id = payment_design_id
         self.employee_id = employee_id
-        self.is_active = is_active
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.starting_value = starting_value
         self.max_budget = max_budget
         self.temporal_decrease_amount = temporal_decrease_amount
@@ -338,7 +338,7 @@ class WTDynamicVoucher(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, start_date, expiration_date, id, title, notes, payment_design_id, employee_id, is_active, merchant_id, created_at, updated_at, starting_value, max_budget, temporal_decrease_amount, temporal_decrease_frequency, temporal_decrease_amount_decimal, temporal_decrease_amount_string, numerical_decrease_amount_decimal, numerical_decrease_amount_string, starting_value_decimal, starting_value_string, max_budget_decimal, max_budget_string, current_value, current_value_decimal, current_value_string, status, temporal_decrease_frequency_type, summary, *args, **kwargs):  # noqa: E501
+    def __init__(self, start_date, expiration_date, id, title, notes, payment_design_id, employee_id, merchant_id, created_at, updated_at, is_active, starting_value, max_budget, temporal_decrease_amount, temporal_decrease_frequency, temporal_decrease_amount_decimal, temporal_decrease_amount_string, numerical_decrease_amount_decimal, numerical_decrease_amount_string, starting_value_decimal, starting_value_string, max_budget_decimal, max_budget_string, current_value, current_value_decimal, current_value_string, status, temporal_decrease_frequency_type, summary, *args, **kwargs):  # noqa: E501
         """WTDynamicVoucher - a model defined in OpenAPI
 
         Args:
@@ -349,10 +349,10 @@ class WTDynamicVoucher(ModelNormal):
             notes (str):
             payment_design_id (NanoID):
             employee_id (NanoID):
-            is_active (bool):
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             starting_value (int):
             max_budget (int):
             temporal_decrease_amount (int):
@@ -439,10 +439,10 @@ class WTDynamicVoucher(ModelNormal):
         self.notes = notes
         self.payment_design_id = payment_design_id
         self.employee_id = employee_id
-        self.is_active = is_active
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.starting_value = starting_value
         self.max_budget = max_budget
         self.temporal_decrease_amount = temporal_decrease_amount

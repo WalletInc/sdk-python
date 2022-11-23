@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**PrefixedNanoID**](PrefixedNanoID.md) |  | 
-**is_active** | **bool** | Denotes if this resource is active | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** | The timestamp of when this resource was created | 
 **updated_at** | **datetime** | The timestamp of when this resource was updated | 
+**is_active** | **bool** | Denotes if this resource is active | 
 **membership_tier_id** | [**PrefixedNanoID**](PrefixedNanoID.md) |  | 
 **mobile_number** | **str** |  | 
 **points_accrued** | **int** | The number of points that the member has accrued | 

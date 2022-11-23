@@ -93,10 +93,10 @@ class WTMember(ModelNormal):
         lazy_import()
         return {
             'id': (PrefixedNanoID,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'merchant_id': (MerchantID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'is_active': (bool,),  # noqa: E501
             'membership_tier_id': (PrefixedNanoID,),  # noqa: E501
             'mobile_number': (str,),  # noqa: E501
             'points_accrued': (int,),  # noqa: E501
@@ -113,10 +113,10 @@ class WTMember(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'is_active': 'isActive',  # noqa: E501
         'membership_tier_id': 'membershipTierID',  # noqa: E501
         'mobile_number': 'mobileNumber',  # noqa: E501
         'points_accrued': 'pointsAccrued',  # noqa: E501
@@ -133,15 +133,15 @@ class WTMember(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, is_active, merchant_id, created_at, updated_at, membership_tier_id, mobile_number, points_accrued, member_id, membership_tier_redeemable_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, merchant_id, created_at, updated_at, is_active, membership_tier_id, mobile_number, points_accrued, member_id, membership_tier_redeemable_id, *args, **kwargs):  # noqa: E501
         """WTMember - a model defined in OpenAPI
 
         Args:
             id (PrefixedNanoID):
-            is_active (bool): Denotes if this resource is active
             merchant_id (MerchantID):
             created_at (datetime): The timestamp of when this resource was created
             updated_at (datetime): The timestamp of when this resource was updated
+            is_active (bool): Denotes if this resource is active
             membership_tier_id (PrefixedNanoID):
             mobile_number (str):
             points_accrued (int): The number of points that the member has accrued
@@ -209,10 +209,10 @@ class WTMember(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.id = id
-        self.is_active = is_active
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.membership_tier_id = membership_tier_id
         self.mobile_number = mobile_number
         self.points_accrued = points_accrued
@@ -238,15 +238,15 @@ class WTMember(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, is_active, merchant_id, created_at, updated_at, membership_tier_id, mobile_number, points_accrued, member_id, membership_tier_redeemable_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, merchant_id, created_at, updated_at, is_active, membership_tier_id, mobile_number, points_accrued, member_id, membership_tier_redeemable_id, *args, **kwargs):  # noqa: E501
         """WTMember - a model defined in OpenAPI
 
         Args:
             id (PrefixedNanoID):
-            is_active (bool): Denotes if this resource is active
             merchant_id (MerchantID):
             created_at (datetime): The timestamp of when this resource was created
             updated_at (datetime): The timestamp of when this resource was updated
+            is_active (bool): Denotes if this resource is active
             membership_tier_id (PrefixedNanoID):
             mobile_number (str):
             points_accrued (int): The number of points that the member has accrued
@@ -312,10 +312,10 @@ class WTMember(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.id = id
-        self.is_active = is_active
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.membership_tier_id = membership_tier_id
         self.mobile_number = mobile_number
         self.points_accrued = points_accrued

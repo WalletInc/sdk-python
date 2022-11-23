@@ -105,11 +105,11 @@ class WTStaticVoucherCampaign(ModelNormal):
             'employee_id': (NanoID,),  # noqa: E501
             'reinvestment_sum': (int,),  # noqa: E501
             'number_of_vouchers_in_file': (int,),  # noqa: E501
-            'is_active': (bool,),  # noqa: E501
             'created_by_source_id': (int,),  # noqa: E501
             'merchant_id': (MerchantID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'is_active': (bool,),  # noqa: E501
             'voucher_type': (float,),  # noqa: E501
             'reinvestment_sum_decimal': (str,),  # noqa: E501
             'reinvestment_sum_string': (str,),  # noqa: E501
@@ -138,11 +138,11 @@ class WTStaticVoucherCampaign(ModelNormal):
         'employee_id': 'employeeID',  # noqa: E501
         'reinvestment_sum': 'reinvestmentSum',  # noqa: E501
         'number_of_vouchers_in_file': 'numberOfVouchersInFile',  # noqa: E501
-        'is_active': 'isActive',  # noqa: E501
         'created_by_source_id': 'createdBySourceID',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'is_active': 'isActive',  # noqa: E501
         'voucher_type': 'voucherType',  # noqa: E501
         'reinvestment_sum_decimal': 'reinvestmentSum_decimal',  # noqa: E501
         'reinvestment_sum_string': 'reinvestmentSum_string',  # noqa: E501
@@ -163,7 +163,7 @@ class WTStaticVoucherCampaign(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, title, notes, value_type, is_loaded, payment_design_id, employee_id, reinvestment_sum, number_of_vouchers_in_file, is_active, created_by_source_id, merchant_id, created_at, updated_at, voucher_type, reinvestment_sum_decimal, reinvestment_sum_string, start_date, expiration_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, title, notes, value_type, is_loaded, payment_design_id, employee_id, reinvestment_sum, number_of_vouchers_in_file, created_by_source_id, merchant_id, created_at, updated_at, is_active, voucher_type, reinvestment_sum_decimal, reinvestment_sum_string, start_date, expiration_date, *args, **kwargs):  # noqa: E501
         """WTStaticVoucherCampaign - a model defined in OpenAPI
 
         Args:
@@ -176,11 +176,11 @@ class WTStaticVoucherCampaign(ModelNormal):
             employee_id (NanoID):
             reinvestment_sum (int):
             number_of_vouchers_in_file (int):
-            is_active (bool):
             created_by_source_id (int):
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             voucher_type (float):
             reinvestment_sum_decimal (str):
             reinvestment_sum_string (str):
@@ -260,11 +260,11 @@ class WTStaticVoucherCampaign(ModelNormal):
         self.employee_id = employee_id
         self.reinvestment_sum = reinvestment_sum
         self.number_of_vouchers_in_file = number_of_vouchers_in_file
-        self.is_active = is_active
         self.created_by_source_id = created_by_source_id
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.voucher_type = voucher_type
         self.reinvestment_sum_decimal = reinvestment_sum_decimal
         self.reinvestment_sum_string = reinvestment_sum_string
@@ -290,7 +290,7 @@ class WTStaticVoucherCampaign(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, title, notes, value_type, is_loaded, payment_design_id, employee_id, reinvestment_sum, number_of_vouchers_in_file, is_active, created_by_source_id, merchant_id, created_at, updated_at, voucher_type, reinvestment_sum_decimal, reinvestment_sum_string, start_date, expiration_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, title, notes, value_type, is_loaded, payment_design_id, employee_id, reinvestment_sum, number_of_vouchers_in_file, created_by_source_id, merchant_id, created_at, updated_at, is_active, voucher_type, reinvestment_sum_decimal, reinvestment_sum_string, start_date, expiration_date, *args, **kwargs):  # noqa: E501
         """WTStaticVoucherCampaign - a model defined in OpenAPI
 
         Args:
@@ -303,11 +303,11 @@ class WTStaticVoucherCampaign(ModelNormal):
             employee_id (NanoID):
             reinvestment_sum (int):
             number_of_vouchers_in_file (int):
-            is_active (bool):
             created_by_source_id (int):
             merchant_id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
+            is_active (bool):
             voucher_type (float):
             reinvestment_sum_decimal (str):
             reinvestment_sum_string (str):
@@ -385,11 +385,11 @@ class WTStaticVoucherCampaign(ModelNormal):
         self.employee_id = employee_id
         self.reinvestment_sum = reinvestment_sum
         self.number_of_vouchers_in_file = number_of_vouchers_in_file
-        self.is_active = is_active
         self.created_by_source_id = created_by_source_id
         self.merchant_id = merchant_id
         self.created_at = created_at
         self.updated_at = updated_at
+        self.is_active = is_active
         self.voucher_type = voucher_type
         self.reinvestment_sum_decimal = reinvestment_sum_decimal
         self.reinvestment_sum_string = reinvestment_sum_string

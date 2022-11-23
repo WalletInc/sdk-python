@@ -6,7 +6,6 @@ From T, pick a set of properties whose keys are in the union K
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**is_active** | **bool** |  | 
 **campaign_id** | [**NanoID**](NanoID.md) |  | 
 **offer_amount_cents** | **int** |  | 
 **order_number** | **int** |  | 
@@ -24,6 +23,7 @@ Name | Type | Description | Notes
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
 **member_id** | **str** |  | [optional] 
 **cell_phone_number** | **str** |  | [optional] 
 **customer_id** | **str** |  | [optional] 

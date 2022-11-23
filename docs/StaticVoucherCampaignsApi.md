@@ -1595,11 +1595,11 @@ with wallet.ApiClient() as api_client:
             "valid_only_at_pos_register_ids_example",
         ],
         payment_design_id=NanoID("C"),
-        is_active=True,
         start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
         expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
         member_id="MEM1001",
         offer_amount_cents=5400,
+        is_active=True,
         cell_phone="+18054052344",
         voucher_id=None,
     ) # UpdateStaticVoucherCampaignWithVoucher | 
