@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**fetch_wallet_payment_object_with_token**](InteractionsApi.md#fetch_wallet_payment_object_with_token) | **POST** /wallet/paymentObject/token | Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 [**find_by_vanity_handle**](InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 [**identify_item**](InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
+[**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
 
 
 # **create_advertisement_credit_scan**
@@ -786,6 +787,82 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **request_merchant_url_redirect**
+> bool, date, datetime, dict, float, int, list, str, none_type request_merchant_url_redirect(item_id, browser_details)
+
+Identify item
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import interactions_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.browser_details import BrowserDetails
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = interactions_api.InteractionsApi(api_client)
+    item_id = "itemID_example" # str | 
+    browser_details = BrowserDetails(
+        ip="ip_example",
+        phone_verification_token="phone_verification_token_example",
+        session_id="session_id_example",
+        navigator_agent="navigator_agent_example",
+    ) # BrowserDetails | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Identify item
+        api_response = api_instance.request_merchant_url_redirect(item_id, browser_details)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling InteractionsApi->request_merchant_url_redirect: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **item_id** | **str**|  |
+ **browser_details** | [**BrowserDetails**](BrowserDetails.md)|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

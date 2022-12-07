@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **notes** | **str** |  | 
 **value_type** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **payment_design_id** | [**NanoID**](NanoID.md) |  | 
-**is_active** | **bool** |  | 
 **bucket** | **str** |  | 
 **file_name** | **str** |  | 
 **source_id** | **int** |  | 

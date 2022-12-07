@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**PrefixedNanoID**](PrefixedNanoID.md) |  | 
-**is_active** | **bool** | Denotes if this resource is active | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** | The timestamp of when this resource was created | 
 **updated_at** | **datetime** | The timestamp of when this resource was updated | 
+**is_active** | **bool** | Denotes if this resource is active | 
 **mobile_number** | **str** |  | 
 **credit_amount** | **int** | The amount that needs to be credited to the member | 
 **credit_amount_decimal** | **str** | The amount that needs to be credited to the member (fixed to 2 decimals) | 

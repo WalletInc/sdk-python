@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **employee_id** | [**SSNanoID**](SSNanoID.md) |  | 
-**is_active** | **bool** |  | 
 **merchant_id** | [**SSNanoID**](SSNanoID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
 **phone_number_id** | [**SSNanoID**](SSNanoID.md) |  | 
 **media_urls** | **[str]** |  | 
 **broadcast_status** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 

@@ -6,7 +6,6 @@ From T, pick a set of properties whose keys are in the union K
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**is_active** | **bool** |  | 
 **transaction_type** | **bool, date, datetime, dict, float, int, list, str, none_type** | The type of the transaction - only redemption at the moment | 
 **register_id** | **bool, date, datetime, dict, float, int, list, str, none_type** | The ID of the register where the transaction occurred | 
 **redeemed_source** | **str** |  | 
@@ -21,6 +20,7 @@ Name | Type | Description | Notes
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
 **advertisement_credit_id** | [**NanoID**](NanoID.md) |  | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **notes** | **str** |  | 
 **value_type** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **payment_design_id** | [**NanoID**](NanoID.md) |  | 
-**is_active** | **bool** |  | 
 **start_date_time** | **datetime** |  | 
 **expiration_date_time** | **datetime** |  | 
 **offer_amount_cents** | **int** |  | 

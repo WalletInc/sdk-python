@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **decrease_amount** | **int** |  | 
 **frequency** | **int** |  | 
 **frequency_type** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
-**is_active** | **bool** |  | 
 **decrease_by** | **float** |  | [optional] 
 **decrease_every** | **float** |  | [optional] 
 

@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
-**is_active** | **bool** |  | 
 **campaign_id** | [**NanoID**](NanoID.md) |  | 
 **offer_amount_cents** | **int** |  | 
 **order_number** | **int** |  | 
@@ -23,6 +22,7 @@ Name | Type | Description | Notes
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
 **authorized_amount_decimal** | **str** |  | 
 **authorized_amount_string** | **str** |  | 
 **offer_amount_cents_decimal** | **str** |  | 

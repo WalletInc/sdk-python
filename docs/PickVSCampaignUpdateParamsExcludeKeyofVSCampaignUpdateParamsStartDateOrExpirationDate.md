@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **employee_id** | [**NanoID**](NanoID.md) |  | 
 **reinvestment_sum** | **int** |  | 
 **number_of_vouchers_in_file** | **int** |  | 
-**is_active** | **bool** |  | 
 **display_value** | **str** |  | [optional] 
 **merchants_reference_id** | **str** |  | [optional] 
 **valid_only_at_pos_register_ids** | **[str]** |  | [optional] 

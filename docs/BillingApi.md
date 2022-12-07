@@ -4,16 +4,160 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**buy_add_on**](BillingApi.md#buy_add_on) | **POST** /v2/billing/products/addOns/{productID} | Fetch add-on products, or 1-time purchase products (non-subscription products)
+[**buy_special_offer**](BillingApi.md#buy_special_offer) | **POST** /v2/billing/products/specialOffers/{productID} | Buy special offer
 [**cancel_plan**](BillingApi.md#cancel_plan) | **DELETE** /v2/billing/plan | Cancel billing plan and revert to default
 [**change_plan**](BillingApi.md#change_plan) | **PUT** /v2/billing/plan | Change billing plan
+[**fetch_add_ons**](BillingApi.md#fetch_add_ons) | **GET** /v2/billing/products/addOns | Fetch add-on products, or 1-time purchase products (non-subscription products)
 [**fetch_industry**](BillingApi.md#fetch_industry) | **GET** /v2/billing/industry | Fetch merchant&#39;s industry
 [**fetch_invoices**](BillingApi.md#fetch_invoices) | **GET** /v2/billing/invoices/all | Fetch all invoices
+[**fetch_special_offers**](BillingApi.md#fetch_special_offers) | **GET** /v2/billing/products/specialOffers | Fetch special offer products
 [**fetch_subscription**](BillingApi.md#fetch_subscription) | **GET** /v2/billing/subscription | Fetch subscription
 [**fetch_usage_summary**](BillingApi.md#fetch_usage_summary) | **GET** /v2/billing/summary | Fetch usage summary
 [**save_payment_method**](BillingApi.md#save_payment_method) | **PUT** /v2/billing/paymentMethod | Save payment method
 [**upcoming_invoices**](BillingApi.md#upcoming_invoices) | **GET** /v2/billing/invoices/upcoming | Fetch upcoming invoices
 [**verify_payment_method**](BillingApi.md#verify_payment_method) | **GET** /v2/billing/paymentMethod | Verify payment method
 
+
+# **buy_add_on**
+> bool, date, datetime, dict, float, int, list, str, none_type buy_add_on(product_id)
+
+Fetch add-on products, or 1-time purchase products (non-subscription products)
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import billing_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = billing_api.BillingApi(api_client)
+    product_id = "productID_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch add-on products, or 1-time purchase products (non-subscription products)
+        api_response = api_instance.buy_add_on(product_id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling BillingApi->buy_add_on: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **str**|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **buy_special_offer**
+> bool, date, datetime, dict, float, int, list, str, none_type buy_special_offer(product_id)
+
+Buy special offer
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import billing_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = billing_api.BillingApi(api_client)
+    product_id = "productID_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Buy special offer
+        api_response = api_instance.buy_special_offer(product_id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling BillingApi->buy_special_offer: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **str**|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_plan**
 > bool, date, datetime, dict, float, int, list, str, none_type cancel_plan()
@@ -154,6 +298,72 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **fetch_add_ons**
+> [bool, date, datetime, dict, float, int, list, str, none_type] fetch_add_ons()
+
+Fetch add-on products, or 1-time purchase products (non-subscription products)
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import billing_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = billing_api.BillingApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Fetch add-on products, or 1-time purchase products (non-subscription products)
+        api_response = api_instance.fetch_add_ons()
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling BillingApi->fetch_add_ons: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**[bool, date, datetime, dict, float, int, list, str, none_type]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **fetch_industry**
 > InlineResponse200 fetch_industry()
 
@@ -265,6 +475,72 @@ This endpoint does not need any parameter.
 ### Return type
 
 **bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_special_offers**
+> [bool, date, datetime, dict, float, int, list, str, none_type] fetch_special_offers()
+
+Fetch special offer products
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import billing_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = billing_api.BillingApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Fetch special offer products
+        api_response = api_instance.fetch_special_offers()
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling BillingApi->fetch_special_offers: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**[bool, date, datetime, dict, float, int, list, str, none_type]**
 
 ### Authorization
 

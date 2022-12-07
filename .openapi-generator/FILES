@@ -22,6 +22,7 @@ docs/ApplicableTerminalsAnyOf6.md
 docs/AuthError.md
 docs/AvailablePhoneNumbersRequest.md
 docs/BillingApi.md
+docs/BrowserDetails.md
 docs/ClickFunnelAmount.md
 docs/ClickFunnelContact.md
 docs/ClickFunnelContactProfile.md
@@ -34,7 +35,6 @@ docs/ClubMembersPointsApi.md
 docs/ConfigurationApi.md
 docs/CountriesApi.md
 docs/CreateStaticVoucherCampaign.md
-docs/CreateStaticVoucherCampaignWithVoucher.md
 docs/CreateStaticVoucherCampaignWithVoucherWithCSV.md
 docs/CustomerApi.md
 docs/DashboardApi.md
@@ -123,6 +123,7 @@ docs/ModuleError.md
 docs/NanoID.md
 docs/NewsApi.md
 docs/NewsArticle.md
+docs/OmitCreateStaticVoucherCampaignWithVoucherIsActive.md
 docs/OptInList.md
 docs/OptInListSource.md
 docs/OptInListSubscriber.md
@@ -137,6 +138,7 @@ docs/PaymentPrefixes.md
 docs/Performance.md
 docs/PerformancesApi.md
 docs/PhoneNumber.md
+docs/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive.md
 docs/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID.md
 docs/PickMSEmployeeAPIKeyCreateParamsExcludeKeyofMSEmployeeAPIKeyCreateParamsEmployeeID.md
 docs/PickMSEmployeeAPIKeyUpdateParamsExcludeKeyofMSEmployeeAPIKeyUpdateParamsId.md
@@ -337,6 +339,9 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_browser_details.py
+test/test_omit_create_static_voucher_campaign_with_voucher_is_active.py
+test/test_pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_is_active.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -403,6 +408,7 @@ wallet/model/applicable_terminals_any_of5.py
 wallet/model/applicable_terminals_any_of6.py
 wallet/model/auth_error.py
 wallet/model/available_phone_numbers_request.py
+wallet/model/browser_details.py
 wallet/model/click_funnel_amount.py
 wallet/model/click_funnel_contact.py
 wallet/model/click_funnel_contact_profile.py
@@ -412,7 +418,6 @@ wallet/model/click_funnel_product.py
 wallet/model/click_funnel_purchase.py
 wallet/model/click_funnel_registration.py
 wallet/model/create_static_voucher_campaign.py
-wallet/model/create_static_voucher_campaign_with_voucher.py
 wallet/model/create_static_voucher_campaign_with_voucher_with_csv.py
 wallet/model/dashboard_widget.py
 wallet/model/document.py
@@ -481,6 +486,7 @@ wallet/model/ms_nano_id.py
 wallet/model/ms_prefixed_nano_id.py
 wallet/model/nano_id.py
 wallet/model/news_article.py
+wallet/model/omit_create_static_voucher_campaign_with_voucher_is_active.py
 wallet/model/opt_in_list.py
 wallet/model/opt_in_list_source.py
 wallet/model/opt_in_list_subscriber.py
@@ -493,6 +499,7 @@ wallet/model/payment_design.py
 wallet/model/payment_prefixes.py
 wallet/model/performance.py
 wallet/model/phone_number.py
+wallet/model/pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_is_active.py
 wallet/model/pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_source_id.py
 wallet/model/pick_ms_employee_api_key_create_params_exclude_keyof_ms_employee_api_key_create_params_employee_id.py
 wallet/model/pick_ms_employee_api_key_update_params_exclude_keyof_ms_employee_api_key_update_params_id.py
