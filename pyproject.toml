@@ -1,6 +1,6 @@
 [project]
 name = "wallet"
-version = "2.1.523"
+version = "2.1.526"
 authors = [
   { name="Wallet SDK Development Team", email="sdk-python@wallet.inc" },
 ]
@@ -22,3 +22,4 @@ keywords = ["digital wallet", "mobile wallet", "wallet as a service", "customer 
 "Bug Tracker" =  "https://github.com/WalletInc/sdk-python/issues"
 "Blog" = "https://the.wallet.blog"
 "Platform" = "https://wall.et/login"
+"Sign Up" = "https://wall.et/MUo79TOZN4gJ"
