@@ -281,7 +281,6 @@ with wallet.ApiClient() as api_client:
             "valid_only_at_pos_register_ids_example",
         ],
         payment_design_id=NanoID("C"),
-        is_active=True,
         bucket="s3/bucket",
         file_name="offers.csv",
         source_id=4058,
@@ -370,7 +369,6 @@ with wallet.ApiClient() as api_client:
             "valid_only_at_pos_register_ids_example",
         ],
         payment_design_id=NanoID("C"),
-        is_active=True,
         bucket="s3/bucket",
         file_name="offers.csv",
         source_id=4058,
@@ -419,7 +417,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_static_voucher_campaign_with_voucher**
-> WTStaticVoucherCampaign create_static_voucher_campaign_with_voucher(create_static_voucher_campaign_with_voucher)
+> WTStaticVoucherCampaign create_static_voucher_campaign_with_voucher(body)
 
 Create static voucher campaign with voucher
 
@@ -434,7 +432,7 @@ from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
 from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
-from wallet.model.create_static_voucher_campaign_with_voucher import CreateStaticVoucherCampaignWithVoucher
+from wallet.model.pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_is_active import PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -447,9 +445,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    create_static_voucher_campaign_with_voucher = CreateStaticVoucherCampaignWithVoucher(
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+    body = PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive(
         title="This is the title of the news article",
         notes="This is the description of the campaign",
         value_type=None,
@@ -459,17 +455,18 @@ with wallet.ApiClient() as api_client:
             "valid_only_at_pos_register_ids_example",
         ],
         payment_design_id=NanoID("C"),
-        is_active=True,
+        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
         source_id=4058,
-        cell_phone="+18054052344",
         member_id="MEM1001",
         offer_amount_cents=5400,
-    ) # CreateStaticVoucherCampaignWithVoucher | 
+        cell_phone="+18054052344",
+    ) # PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive | 
 
     # example passing only required values which don't have defaults set
     try:
         # Create static voucher campaign with voucher
-        api_response = api_instance.create_static_voucher_campaign_with_voucher(create_static_voucher_campaign_with_voucher)
+        api_response = api_instance.create_static_voucher_campaign_with_voucher(body)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling StaticVoucherCampaignsApi->create_static_voucher_campaign_with_voucher: %s\n" % e)
@@ -480,7 +477,7 @@ with wallet.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_static_voucher_campaign_with_voucher** | [**CreateStaticVoucherCampaignWithVoucher**](CreateStaticVoucherCampaignWithVoucher.md)|  |
+ **body** | [**PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive**](PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive.md)|  |
 
 ### Return type
 
@@ -1510,7 +1507,6 @@ with wallet.ApiClient() as api_client:
             "valid_only_at_pos_register_ids_example",
         ],
         payment_design_id=NanoID("C"),
-        is_active=True,
     ) # StaticVoucherCampaignUpdate | 
 
     # example passing only required values which don't have defaults set
@@ -1599,7 +1595,6 @@ with wallet.ApiClient() as api_client:
         expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
         member_id="MEM1001",
         offer_amount_cents=5400,
-        is_active=True,
         cell_phone="+18054052344",
         voucher_id=None,
     ) # UpdateStaticVoucherCampaignWithVoucher | 

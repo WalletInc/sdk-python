@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **start_date_time** | **datetime** |  | 
 **expiration_date_time** | **datetime** |  | 
 **offer_amount_cents** | **int** |  | 
-**is_active** | **bool** |  | 
 **display_value** | **str** |  | [optional] 
 **merchants_reference_id** | **str** |  | [optional] 
 **valid_only_at_pos_register_ids** | **[str]** |  | [optional] 

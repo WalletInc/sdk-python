@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **start_date_time** | **datetime** |  | 
 **expiration_date_time** | **datetime** |  | 
 **offer_amount_cents** | **int** |  | 
-**is_active** | **bool** |  | 
 **voucher_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **display_value** | **str** |  | [optional] 
 **merchants_reference_id** | **str** |  | [optional] 
