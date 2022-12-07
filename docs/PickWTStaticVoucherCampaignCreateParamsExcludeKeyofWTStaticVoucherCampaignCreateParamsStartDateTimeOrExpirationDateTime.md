@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **is_loaded** | **bool** |  | 
 **payment_design_id** | [**NanoID**](NanoID.md) |  | 
 **employee_id** | [**NanoID**](NanoID.md) |  | 
-**is_active** | **bool** |  | 
 **created_by_source_id** | **int** |  | 
 **display_value** | **str** |  | [optional] 
 **merchants_reference_id** | **str** |  | [optional] 

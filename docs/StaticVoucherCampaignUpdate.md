@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **notes** | **str** |  | 
 **value_type** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **payment_design_id** | [**NanoID**](NanoID.md) |  | 
-**is_active** | **bool** |  | 
 **display_value** | **str** |  | [optional] 
 **merchants_reference_id** | **str** |  | [optional] 
 **valid_only_at_pos_register_ids** | **[str]** |  | [optional] 

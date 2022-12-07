@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
-**is_active** | **bool** |  | 
 **transaction_type** | **bool, date, datetime, dict, float, int, list, str, none_type** | The type of the transaction - only redemption at the moment | 
 **register_id** | **bool, date, datetime, dict, float, int, list, str, none_type** | The ID of the register where the transaction occurred | 
 **redeemed_source** | **str** |  | 
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
 **advertisement_credit_id** | [**NanoID**](NanoID.md) |  | 
 **redeemed_amount_decimal** | **str** |  | 
 **redeemed_amount_string** | **str** |  | 

@@ -6,10 +6,10 @@ From T, pick a set of properties whose keys are in the union K
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**NanoID**](NanoID.md) |  | 
-**is_active** | **bool** | Denotes if this resource is active | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** | The timestamp of when this resource was created | 
 **updated_at** | **datetime** | The timestamp of when this resource was updated | 
+**is_active** | **bool** | Denotes if this resource is active | 
 **membership_tier_id** | [**NanoID**](NanoID.md) |  | 
 **mobile_number** | **str** |  | 
 **points_accrued** | **int** | The number of points that the member has accrued | 

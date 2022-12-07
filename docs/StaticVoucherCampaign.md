@@ -13,11 +13,11 @@ Name | Type | Description | Notes
 **employee_id** | [**NanoID**](NanoID.md) |  | 
 **reinvestment_sum** | **int** |  | 
 **number_of_vouchers_in_file** | **int** |  | 
-**is_active** | **bool** |  | 
 **created_by_source_id** | **int** |  | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
 **voucher_type** | **float** |  | 
 **reinvestment_sum_decimal** | **str** |  | 
 **reinvestment_sum_string** | **str** |  | 

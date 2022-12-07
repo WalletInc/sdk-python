@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **notes** | **str** |  | 
 **payment_design_id** | [**NanoID**](NanoID.md) |  | 
 **employee_id** | [**NanoID**](NanoID.md) |  | 
-**is_active** | **bool** |  | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
 **starting_value** | **int** |  | 
 **max_budget** | **int** |  | 
 **temporal_decrease_amount** | **int** |  | 
