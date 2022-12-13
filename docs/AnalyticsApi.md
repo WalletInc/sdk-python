@@ -2302,11 +2302,14 @@ configuration = wallet.Configuration(
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Fetch distinct wallet sessions
-        api_response = api_instance.fetch_analytics_distinct_wallet_sessions()
+        api_response = api_instance.fetch_analytics_distinct_wallet_sessions(start_date=start_date, end_date=end_date)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling AnalyticsApi->fetch_analytics_distinct_wallet_sessions: %s\n" % e)
@@ -2314,7 +2317,11 @@ with wallet.ApiClient() as api_client:
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
 
 ### Return type
 

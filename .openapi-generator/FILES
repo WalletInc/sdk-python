@@ -339,9 +339,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_browser_details.py
-test/test_omit_create_static_voucher_campaign_with_voucher_is_active.py
-test/test_pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_is_active.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
