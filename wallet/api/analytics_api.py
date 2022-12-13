@@ -1821,6 +1821,8 @@ class AnalyticsApi(object):
             },
             params_map={
                 'all': [
+                    'start_date',
+                    'end_date',
                 ],
                 'required': [],
                 'nullable': [
@@ -1836,10 +1838,18 @@ class AnalyticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'start_date':
+                        (datetime,),
+                    'end_date':
+                        (datetime,),
                 },
                 'attribute_map': {
+                    'start_date': 'startDate',
+                    'end_date': 'endDate',
                 },
                 'location_map': {
+                    'start_date': 'query',
+                    'end_date': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -6624,6 +6634,8 @@ class AnalyticsApi(object):
 
 
         Keyword Args:
+            start_date (datetime): [optional]
+            end_date (datetime): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
