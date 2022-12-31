@@ -2910,7 +2910,7 @@ with wallet.ApiClient() as api_client:
     wtsms_update_phone_number_config = WTSMSUpdatePhoneNumberConfig(
         company_name="Wallet Inc",
         privacy_policy_url="https://example.com/privacy-policy",
-        terms_of_service_url="https://example.comterms-of-service",
+        terms_of_service_url="https://example.com/terms-of-service",
         message_footer="Info message from Wallet Inc",
         stop_response="Sorry to see you go",
         help_response="How can we help you?",
@@ -2998,7 +2998,7 @@ with wallet.ApiClient() as api_client:
     wtsms_update_phone_number_config = WTSMSUpdatePhoneNumberConfig(
         company_name="Wallet Inc",
         privacy_policy_url="https://example.com/privacy-policy",
-        terms_of_service_url="https://example.comterms-of-service",
+        terms_of_service_url="https://example.com/terms-of-service",
         message_footer="Info message from Wallet Inc",
         stop_response="Sorry to see you go",
         help_response="How can we help you?",
