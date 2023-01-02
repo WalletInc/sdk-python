@@ -48,7 +48,6 @@ from wallet.model.wtsms_acquire_phone_number import WTSMSAcquirePhoneNumber
 from wallet.model.wtsms_create_agreement import WTSMSCreateAgreement
 from wallet.model.wtsms_import_opt_in_list_subscribers import WTSMSImportOptInListSubscribers
 from wallet.model.wtsms_imported_list_create import WTSMSImportedListCreate
-from wallet.model.wtsms_limits import WTSMSLimits
 from wallet.model.wtsms_opt_in_list_source_create import WTSMSOptInListSourceCreate
 from wallet.model.wtsms_update_phone_number_config import WTSMSUpdatePhoneNumberConfig
 
@@ -1831,7 +1830,7 @@ class SMSApi(object):
         )
         self.retrieve_sent_and_max_count_of_messages_endpoint = _Endpoint(
             settings={
-                'response_type': (WTSMSLimits,),
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/v2/sms/sent',
                 'operation_id': 'retrieve_sent_and_max_count_of_messages',
@@ -4694,7 +4693,7 @@ class SMSApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            WTSMSLimits
+            bool, date, datetime, dict, float, int, list, str, none_type
                 If the method is called asynchronously, returns the request
                 thread.
         """

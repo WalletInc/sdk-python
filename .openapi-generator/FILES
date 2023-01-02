@@ -306,7 +306,6 @@ docs/WTSMSAcquirePhoneNumber.md
 docs/WTSMSCreateAgreement.md
 docs/WTSMSImportOptInListSubscribers.md
 docs/WTSMSImportedListCreate.md
-docs/WTSMSLimits.md
 docs/WTSMSOptInListSourceCreate.md
 docs/WTSMSUpdatePhoneNumberConfig.md
 docs/WTSettingsSetPassword.md
@@ -674,7 +673,6 @@ wallet/model/wtsms_acquire_phone_number.py
 wallet/model/wtsms_create_agreement.py
 wallet/model/wtsms_import_opt_in_list_subscribers.py
 wallet/model/wtsms_imported_list_create.py
-wallet/model/wtsms_limits.py
 wallet/model/wtsms_opt_in_list_source_create.py
 wallet/model/wtsms_update_phone_number_config.py
 wallet/model/wttcpa_opt.py

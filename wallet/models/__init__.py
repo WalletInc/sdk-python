@@ -274,7 +274,6 @@ from wallet.model.wtsms_acquire_phone_number import WTSMSAcquirePhoneNumber
 from wallet.model.wtsms_create_agreement import WTSMSCreateAgreement
 from wallet.model.wtsms_import_opt_in_list_subscribers import WTSMSImportOptInListSubscribers
 from wallet.model.wtsms_imported_list_create import WTSMSImportedListCreate
-from wallet.model.wtsms_limits import WTSMSLimits
 from wallet.model.wtsms_opt_in_list_source_create import WTSMSOptInListSourceCreate
 from wallet.model.wtsms_update_phone_number_config import WTSMSUpdatePhoneNumberConfig
 from wallet.model.wt_settings_set_password import WTSettingsSetPassword
