@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **company_name** | **str** |  | 
-**privacy_policy_url** | **str** |  | 
-**terms_of_service_url** | **str** |  | 
 **message_footer** | **str** |  | 
 **stop_response** | **str** |  | 
 **help_response** | **str** |  | 
 **help_desk_keyword** | **str** |  | 
 **help_desk_queue_response** | **str** |  | 
+**privacy_policy_url** | **str** |  | [optional] 
+**terms_of_service_url** | **str** |  | [optional] 
 **is_connected_to_watson** | **bool** |  | [optional] 
 **watson_username** | **str** |  | [optional] 
 **watson_password** | **str** |  | [optional] 

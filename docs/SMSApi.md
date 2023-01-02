@@ -2561,7 +2561,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_sent_and_max_count_of_messages**
-> WTSMSLimits retrieve_sent_and_max_count_of_messages()
+> bool, date, datetime, dict, float, int, list, str, none_type retrieve_sent_and_max_count_of_messages()
 
 Retrieve the number of messages sent by the merchant within the current billing cycle
 
@@ -2575,7 +2575,6 @@ from wallet.api import sms_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
-from wallet.model.wtsms_limits import WTSMSLimits
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -2604,7 +2603,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**WTSMSLimits**](WTSMSLimits.md)
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
@@ -2910,7 +2909,7 @@ with wallet.ApiClient() as api_client:
     wtsms_update_phone_number_config = WTSMSUpdatePhoneNumberConfig(
         company_name="Wallet Inc",
         privacy_policy_url="https://example.com/privacy-policy",
-        terms_of_service_url="https://example.comterms-of-service",
+        terms_of_service_url="https://example.com/terms-of-service",
         message_footer="Info message from Wallet Inc",
         stop_response="Sorry to see you go",
         help_response="How can we help you?",
@@ -2998,7 +2997,7 @@ with wallet.ApiClient() as api_client:
     wtsms_update_phone_number_config = WTSMSUpdatePhoneNumberConfig(
         company_name="Wallet Inc",
         privacy_policy_url="https://example.com/privacy-policy",
-        terms_of_service_url="https://example.comterms-of-service",
+        terms_of_service_url="https://example.com/terms-of-service",
         message_footer="Info message from Wallet Inc",
         stop_response="Sorry to see you go",
         help_response="How can we help you?",

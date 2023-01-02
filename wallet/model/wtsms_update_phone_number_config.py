@@ -77,13 +77,13 @@ class WTSMSUpdatePhoneNumberConfig(ModelNormal):
         """
         return {
             'company_name': (str,),  # noqa: E501
-            'privacy_policy_url': (str,),  # noqa: E501
-            'terms_of_service_url': (str,),  # noqa: E501
             'message_footer': (str,),  # noqa: E501
             'stop_response': (str,),  # noqa: E501
             'help_response': (str,),  # noqa: E501
             'help_desk_keyword': (str,),  # noqa: E501
             'help_desk_queue_response': (str,),  # noqa: E501
+            'privacy_policy_url': (str,),  # noqa: E501
+            'terms_of_service_url': (str,),  # noqa: E501
             'is_connected_to_watson': (bool,),  # noqa: E501
             'watson_username': (str,),  # noqa: E501
             'watson_password': (str,),  # noqa: E501
@@ -97,13 +97,13 @@ class WTSMSUpdatePhoneNumberConfig(ModelNormal):
 
     attribute_map = {
         'company_name': 'companyName',  # noqa: E501
-        'privacy_policy_url': 'privacyPolicyURL',  # noqa: E501
-        'terms_of_service_url': 'termsOfServiceURL',  # noqa: E501
         'message_footer': 'messageFooter',  # noqa: E501
         'stop_response': 'stopResponse',  # noqa: E501
         'help_response': 'helpResponse',  # noqa: E501
         'help_desk_keyword': 'helpDeskKeyword',  # noqa: E501
         'help_desk_queue_response': 'helpDeskQueueResponse',  # noqa: E501
+        'privacy_policy_url': 'privacyPolicyURL',  # noqa: E501
+        'terms_of_service_url': 'termsOfServiceURL',  # noqa: E501
         'is_connected_to_watson': 'isConnectedToWatson',  # noqa: E501
         'watson_username': 'watsonUsername',  # noqa: E501
         'watson_password': 'watsonPassword',  # noqa: E501
@@ -117,13 +117,11 @@ class WTSMSUpdatePhoneNumberConfig(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, company_name, privacy_policy_url, terms_of_service_url, message_footer, stop_response, help_response, help_desk_keyword, help_desk_queue_response, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, company_name, message_footer, stop_response, help_response, help_desk_keyword, help_desk_queue_response, *args, **kwargs):  # noqa: E501
         """WTSMSUpdatePhoneNumberConfig - a model defined in OpenAPI
 
         Args:
             company_name (str):
-            privacy_policy_url (str):
-            terms_of_service_url (str):
             message_footer (str):
             stop_response (str):
             help_response (str):
@@ -161,6 +159,8 @@ class WTSMSUpdatePhoneNumberConfig(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            privacy_policy_url (str): [optional]  # noqa: E501
+            terms_of_service_url (str): [optional]  # noqa: E501
             is_connected_to_watson (bool): [optional]  # noqa: E501
             watson_username (str): [optional]  # noqa: E501
             watson_password (str): [optional]  # noqa: E501
@@ -193,8 +193,6 @@ class WTSMSUpdatePhoneNumberConfig(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.company_name = company_name
-        self.privacy_policy_url = privacy_policy_url
-        self.terms_of_service_url = terms_of_service_url
         self.message_footer = message_footer
         self.stop_response = stop_response
         self.help_response = help_response
@@ -220,13 +218,11 @@ class WTSMSUpdatePhoneNumberConfig(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, company_name, privacy_policy_url, terms_of_service_url, message_footer, stop_response, help_response, help_desk_keyword, help_desk_queue_response, *args, **kwargs):  # noqa: E501
+    def __init__(self, company_name, message_footer, stop_response, help_response, help_desk_keyword, help_desk_queue_response, *args, **kwargs):  # noqa: E501
         """WTSMSUpdatePhoneNumberConfig - a model defined in OpenAPI
 
         Args:
             company_name (str):
-            privacy_policy_url (str):
-            terms_of_service_url (str):
             message_footer (str):
             stop_response (str):
             help_response (str):
@@ -264,6 +260,8 @@ class WTSMSUpdatePhoneNumberConfig(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            privacy_policy_url (str): [optional]  # noqa: E501
+            terms_of_service_url (str): [optional]  # noqa: E501
             is_connected_to_watson (bool): [optional]  # noqa: E501
             watson_username (str): [optional]  # noqa: E501
             watson_password (str): [optional]  # noqa: E501
@@ -294,8 +292,6 @@ class WTSMSUpdatePhoneNumberConfig(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.company_name = company_name
-        self.privacy_policy_url = privacy_policy_url
-        self.terms_of_service_url = terms_of_service_url
         self.message_footer = message_footer
         self.stop_response = stop_response
         self.help_response = help_response
