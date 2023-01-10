@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **cf_affiliate_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **contact_profile** | [**ClickFunnelContactProfile**](ClickFunnelContactProfile.md) |  | [optional] 
 **time_zone** | **str, none_type** |  | [optional] 
+**additional_info** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
