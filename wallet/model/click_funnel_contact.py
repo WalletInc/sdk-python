@@ -118,6 +118,7 @@ class ClickFunnelContact(ModelNormal):
             'cf_affiliate_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'contact_profile': (ClickFunnelContactProfile,),  # noqa: E501
             'time_zone': (str, none_type,),  # noqa: E501
+            'additional_info': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -163,6 +164,7 @@ class ClickFunnelContact(ModelNormal):
         'cf_affiliate_id': 'cf_affiliate_id',  # noqa: E501
         'contact_profile': 'contact_profile',  # noqa: E501
         'time_zone': 'time_zone',  # noqa: E501
+        'additional_info': 'additional_info',  # noqa: E501
     }
 
     read_only_vars = {
@@ -245,6 +247,7 @@ class ClickFunnelContact(ModelNormal):
             cf_affiliate_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             contact_profile (ClickFunnelContactProfile): [optional]  # noqa: E501
             time_zone (str, none_type): [optional]  # noqa: E501
+            additional_info (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -394,6 +397,7 @@ class ClickFunnelContact(ModelNormal):
             cf_affiliate_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             contact_profile (ClickFunnelContactProfile): [optional]  # noqa: E501
             time_zone (str, none_type): [optional]  # noqa: E501
+            additional_info (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
