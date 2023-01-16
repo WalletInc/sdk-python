@@ -15,10 +15,7 @@ Name | Type | Description | Notes
 **icon** | **str** |  | 
 **design_name** | **str** |  | 
 **display_name** | **str** |  | 
-**background_image** | **str** |  | [optional] 
-**background_image_ext** | **str** |  | [optional] 
-**company_logo** | **str** |  | [optional] 
-**company_logo_ext** | **str** |  | [optional] 
+**background_image_url** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

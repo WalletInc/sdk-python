@@ -122,10 +122,7 @@ class WTPaymentDesignCreateParams(ModelNormal):
             'icon': (str,),  # noqa: E501
             'design_name': (str,),  # noqa: E501
             'display_name': (str,),  # noqa: E501
-            'background_image': (str,),  # noqa: E501
-            'background_image_ext': (str,),  # noqa: E501
-            'company_logo': (str,),  # noqa: E501
-            'company_logo_ext': (str,),  # noqa: E501
+            'background_image_url': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -145,10 +142,7 @@ class WTPaymentDesignCreateParams(ModelNormal):
         'icon': 'icon',  # noqa: E501
         'design_name': 'designName',  # noqa: E501
         'display_name': 'displayName',  # noqa: E501
-        'background_image': 'backgroundImage',  # noqa: E501
-        'background_image_ext': 'backgroundImageExt',  # noqa: E501
-        'company_logo': 'companyLogo',  # noqa: E501
-        'company_logo_ext': 'companyLogoExt',  # noqa: E501
+        'background_image_url': 'backgroundImageURL',  # noqa: E501
     }
 
     read_only_vars = {
@@ -205,10 +199,7 @@ class WTPaymentDesignCreateParams(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            background_image (str): [optional]  # noqa: E501
-            background_image_ext (str): [optional]  # noqa: E501
-            company_logo (str): [optional]  # noqa: E501
-            company_logo_ext (str): [optional]  # noqa: E501
+            background_image_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -314,10 +305,7 @@ class WTPaymentDesignCreateParams(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            background_image (str): [optional]  # noqa: E501
-            background_image_ext (str): [optional]  # noqa: E501
-            company_logo (str): [optional]  # noqa: E501
-            company_logo_ext (str): [optional]  # noqa: E501
+            background_image_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
