@@ -123,6 +123,7 @@ class WTPaymentDesignCreateParams(ModelNormal):
             'design_name': (str,),  # noqa: E501
             'display_name': (str,),  # noqa: E501
             'background_image_url': (str,),  # noqa: E501
+            'company_logo_url': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -143,6 +144,7 @@ class WTPaymentDesignCreateParams(ModelNormal):
         'design_name': 'designName',  # noqa: E501
         'display_name': 'displayName',  # noqa: E501
         'background_image_url': 'backgroundImageURL',  # noqa: E501
+        'company_logo_url': 'companyLogoURL',  # noqa: E501
     }
 
     read_only_vars = {
@@ -200,6 +202,7 @@ class WTPaymentDesignCreateParams(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             background_image_url (str): [optional]  # noqa: E501
+            company_logo_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -306,6 +309,7 @@ class WTPaymentDesignCreateParams(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             background_image_url (str): [optional]  # noqa: E501
+            company_logo_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

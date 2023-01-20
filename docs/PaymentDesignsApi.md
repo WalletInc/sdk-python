@@ -127,6 +127,7 @@ with wallet.ApiClient() as api_client:
         design_name="Thanksgiving Design",
         display_name="Thanksgiving Coupon",
         background_image_url="background_image_url_example",
+        company_logo_url="https://example.com/company-logo",
     ) # WTPaymentDesignCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -431,6 +432,7 @@ with wallet.ApiClient() as api_client:
         design_name="Thanksgiving Design",
         display_name="Thanksgiving Coupon",
         background_image_url="background_image_url_example",
+        company_logo_url="https://example.com/company-logo",
     ) # WTPaymentDesignUpdateParams | 
 
     # example passing only required values which don't have defaults set

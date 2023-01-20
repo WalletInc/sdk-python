@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **design_name** | **str** |  | 
 **display_name** | **str** |  | 
 **background_image_url** | **str** |  | [optional] 
+**company_logo_url** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
