@@ -80,8 +80,6 @@ class WTAuthenticationRegister(ModelNormal):
             'last_name': (str,),  # noqa: E501
             'email': (str,),  # noqa: E501
             'password': (str,),  # noqa: E501
-            'hear_about_us': (str,),  # noqa: E501
-            'hear_about_us_details': (str,),  # noqa: E501
             'company_name': (str,),  # noqa: E501
             'merchant_type': (str,),  # noqa: E501
             'street_address1': (str,),  # noqa: E501
@@ -91,6 +89,8 @@ class WTAuthenticationRegister(ModelNormal):
             'zip': (str,),  # noqa: E501
             'country': (str,),  # noqa: E501
             'phone_number': (str,),  # noqa: E501
+            'hear_about_us': (str,),  # noqa: E501
+            'hear_about_us_details': (str,),  # noqa: E501
             'ein': (str,),  # noqa: E501
         }
 
@@ -104,8 +104,6 @@ class WTAuthenticationRegister(ModelNormal):
         'last_name': 'lastName',  # noqa: E501
         'email': 'email',  # noqa: E501
         'password': 'password',  # noqa: E501
-        'hear_about_us': 'hearAboutUs',  # noqa: E501
-        'hear_about_us_details': 'hearAboutUsDetails',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'merchant_type': 'merchantType',  # noqa: E501
         'street_address1': 'streetAddress1',  # noqa: E501
@@ -115,6 +113,8 @@ class WTAuthenticationRegister(ModelNormal):
         'zip': 'zip',  # noqa: E501
         'country': 'country',  # noqa: E501
         'phone_number': 'phoneNumber',  # noqa: E501
+        'hear_about_us': 'hearAboutUs',  # noqa: E501
+        'hear_about_us_details': 'hearAboutUsDetails',  # noqa: E501
         'ein': 'ein',  # noqa: E501
     }
 
@@ -125,7 +125,7 @@ class WTAuthenticationRegister(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, first_name, last_name, email, password, hear_about_us, hear_about_us_details, company_name, merchant_type, street_address1, street_address2, city, state, zip, country, phone_number, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, first_name, last_name, email, password, company_name, merchant_type, street_address1, street_address2, city, state, zip, country, phone_number, *args, **kwargs):  # noqa: E501
         """WTAuthenticationRegister - a model defined in OpenAPI
 
         Args:
@@ -133,8 +133,6 @@ class WTAuthenticationRegister(ModelNormal):
             last_name (str):
             email (str):
             password (str):
-            hear_about_us (str):
-            hear_about_us_details (str):
             company_name (str):
             merchant_type (str):
             street_address1 (str):
@@ -176,6 +174,8 @@ class WTAuthenticationRegister(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            hear_about_us (str): [optional]  # noqa: E501
+            hear_about_us_details (str): [optional]  # noqa: E501
             ein (str): [optional]  # noqa: E501
         """
 
@@ -208,8 +208,6 @@ class WTAuthenticationRegister(ModelNormal):
         self.last_name = last_name
         self.email = email
         self.password = password
-        self.hear_about_us = hear_about_us
-        self.hear_about_us_details = hear_about_us_details
         self.company_name = company_name
         self.merchant_type = merchant_type
         self.street_address1 = street_address1
@@ -239,7 +237,7 @@ class WTAuthenticationRegister(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, first_name, last_name, email, password, hear_about_us, hear_about_us_details, company_name, merchant_type, street_address1, street_address2, city, state, zip, country, phone_number, *args, **kwargs):  # noqa: E501
+    def __init__(self, first_name, last_name, email, password, company_name, merchant_type, street_address1, street_address2, city, state, zip, country, phone_number, *args, **kwargs):  # noqa: E501
         """WTAuthenticationRegister - a model defined in OpenAPI
 
         Args:
@@ -247,8 +245,6 @@ class WTAuthenticationRegister(ModelNormal):
             last_name (str):
             email (str):
             password (str):
-            hear_about_us (str):
-            hear_about_us_details (str):
             company_name (str):
             merchant_type (str):
             street_address1 (str):
@@ -290,6 +286,8 @@ class WTAuthenticationRegister(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            hear_about_us (str): [optional]  # noqa: E501
+            hear_about_us_details (str): [optional]  # noqa: E501
             ein (str): [optional]  # noqa: E501
         """
 
@@ -320,8 +318,6 @@ class WTAuthenticationRegister(ModelNormal):
         self.last_name = last_name
         self.email = email
         self.password = password
-        self.hear_about_us = hear_about_us
-        self.hear_about_us_details = hear_about_us_details
         self.company_name = company_name
         self.merchant_type = merchant_type
         self.street_address1 = street_address1
