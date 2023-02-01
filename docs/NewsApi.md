@@ -117,6 +117,7 @@ with wallet.ApiClient() as api_client:
         body="This is the description of the news article",
         url="https://example.com/news-article.html",
         media_url="https://wall.et/media/H847Sjudbw.png",
+        published_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
     ) # WTNewsArticleCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -338,6 +339,7 @@ with wallet.ApiClient() as api_client:
         url="https://example.com/news-article.html",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        published_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
     ) # WTNewsArticleUpdateParams | 
 
     # example passing only required values which don't have defaults set
