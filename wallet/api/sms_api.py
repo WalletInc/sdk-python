@@ -38,6 +38,7 @@ from wallet.model.opt_in_list_subscriber import OptInListSubscriber
 from wallet.model.outbound_sms import OutboundSMS
 from wallet.model.phone_number import PhoneNumber
 from wallet.model.ss_imported_list_recipient_create_params import SSImportedListRecipientCreateParams
+from wallet.model.ss_outbound_statuses import SSOutboundStatuses
 from wallet.model.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
 from wallet.model.tcpa import Tcpa
 from wallet.model.wt_count_result import WTCountResult
@@ -1424,6 +1425,7 @@ class SMSApi(object):
                     'payment_object_broadcast_id',
                     'page_size',
                     'page_num',
+                    'status',
                 ],
                 'required': [
                     'phone_number_id',
@@ -1451,6 +1453,8 @@ class SMSApi(object):
                         (float,),
                     'page_num':
                         (float,),
+                    'status':
+                        (SSOutboundStatuses,),
                 },
                 'attribute_map': {
                     'phone_number_id': 'phoneNumberID',
@@ -1458,6 +1462,7 @@ class SMSApi(object):
                     'payment_object_broadcast_id': 'paymentObjectBroadcastID',
                     'page_size': 'pageSize',
                     'page_num': 'pageNum',
+                    'status': 'status',
                 },
                 'location_map': {
                     'phone_number_id': 'path',
@@ -1465,6 +1470,7 @@ class SMSApi(object):
                     'payment_object_broadcast_id': 'query',
                     'page_size': 'query',
                     'page_num': 'query',
+                    'status': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -4049,6 +4055,7 @@ class SMSApi(object):
             payment_object_broadcast_id (NanoID): [optional]
             page_size (float): [optional]
             page_num (float): [optional]
+            status (SSOutboundStatuses): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
