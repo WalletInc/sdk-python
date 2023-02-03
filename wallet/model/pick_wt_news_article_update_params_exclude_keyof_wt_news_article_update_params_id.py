@@ -96,6 +96,7 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId(Model
             'body': (str,),  # noqa: E501
             'url': (str,),  # noqa: E501
             'media_url': (str,),  # noqa: E501
+            'published_date': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -109,6 +110,7 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId(Model
         'body': 'body',  # noqa: E501
         'url': 'url',  # noqa: E501
         'media_url': 'mediaURL',  # noqa: E501
+        'published_date': 'publishedDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +161,7 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId(Model
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             media_url (str): [optional]  # noqa: E501
+            published_date (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,6 +254,7 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId(Model
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             media_url (str): [optional]  # noqa: E501
+            published_date (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

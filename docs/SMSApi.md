@@ -1973,6 +1973,7 @@ import wallet
 from wallet.api import sms_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
+from wallet.model.ss_outbound_statuses import SSOutboundStatuses
 from wallet.model.nano_id import NanoID
 from wallet.model.inline_response2006 import InlineResponse2006
 from wallet.model.auth_error import AuthError
@@ -1993,6 +1994,7 @@ with wallet.ApiClient() as api_client:
     payment_object_broadcast_id = NanoID("C") # NanoID |  (optional)
     page_size = 3.14 # float |  (optional)
     page_num = 3.14 # float |  (optional)
+    status = SSOutboundStatuses(None) # SSOutboundStatuses |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2006,7 +2008,7 @@ with wallet.ApiClient() as api_client:
     # and optional values
     try:
         # Fetch outbound SMSes by page
-        api_response = api_instance.fetch_outbound_smsby_page(phone_number_id, to_phone_number=to_phone_number, payment_object_broadcast_id=payment_object_broadcast_id, page_size=page_size, page_num=page_num)
+        api_response = api_instance.fetch_outbound_smsby_page(phone_number_id, to_phone_number=to_phone_number, payment_object_broadcast_id=payment_object_broadcast_id, page_size=page_size, page_num=page_num, status=status)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling SMSApi->fetch_outbound_smsby_page: %s\n" % e)
@@ -2022,6 +2024,7 @@ Name | Type | Description  | Notes
  **payment_object_broadcast_id** | **NanoID**|  | [optional]
  **page_size** | **float**|  | [optional]
  **page_num** | **float**|  | [optional]
+ **status** | **SSOutboundStatuses**|  | [optional]
 
 ### Return type
 

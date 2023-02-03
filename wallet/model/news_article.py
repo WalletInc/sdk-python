@@ -100,6 +100,7 @@ class NewsArticle(ModelNormal):
             'is_active': (bool,),  # noqa: E501
             'merchant_id': (MerchantID,),  # noqa: E501
             'media_url': (str,),  # noqa: E501
+            'published_date': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -118,6 +119,7 @@ class NewsArticle(ModelNormal):
         'is_active': 'isActive',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
         'media_url': 'mediaURL',  # noqa: E501
+        'published_date': 'publishedDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -173,6 +175,7 @@ class NewsArticle(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             media_url (str): [optional]  # noqa: E501
+            published_date (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -275,6 +278,7 @@ class NewsArticle(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             media_url (str): [optional]  # noqa: E501
+            published_date (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

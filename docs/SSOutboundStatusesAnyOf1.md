@@ -1,15 +1,10 @@
-# WTNewsArticleCreateParams
+# SSOutboundStatusesAnyOf1
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**order_number** | **int** |  | 
-**body** | **str** |  | 
-**url** | **str** |  | 
-**media_url** | **str** |  | [optional] 
-**published_date** | **datetime** |  | [optional] 
+**value** | **str** |  | defaults to "sent",  must be one of ["sent", ]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
