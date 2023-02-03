@@ -166,6 +166,13 @@ from wallet.model.ss_imported_list_recipient_create_params import SSImportedList
 from wallet.model.ss_merchant_id import SSMerchantID
 from wallet.model.ss_nano_id import SSNanoID
 from wallet.model.ss_opt_in_source import SSOptInSource
+from wallet.model.ss_outbound_statuses import SSOutboundStatuses
+from wallet.model.ss_outbound_statuses_any_of import SSOutboundStatusesAnyOf
+from wallet.model.ss_outbound_statuses_any_of1 import SSOutboundStatusesAnyOf1
+from wallet.model.ss_outbound_statuses_any_of2 import SSOutboundStatusesAnyOf2
+from wallet.model.ss_outbound_statuses_any_of3 import SSOutboundStatusesAnyOf3
+from wallet.model.ss_outbound_statuses_any_of4 import SSOutboundStatusesAnyOf4
+from wallet.model.ss_outbound_statuses_any_of5 import SSOutboundStatusesAnyOf5
 from wallet.model.simple_sms_broadcast import SimpleSMSBroadcast
 from wallet.model.static_voucher import StaticVoucher
 from wallet.model.static_voucher_campaign import StaticVoucherCampaign
@@ -259,6 +266,7 @@ from wallet.model.wt_news_article_create_params import WTNewsArticleCreateParams
 from wallet.model.wt_news_article_update_params import WTNewsArticleUpdateParams
 from wallet.model.wt_opt_in_list import WTOptInList
 from wallet.model.wt_opt_in_list_creation_params import WTOptInListCreationParams
+from wallet.model.wt_outbound_statuses import WTOutboundStatuses
 from wallet.model.wt_payment_design import WTPaymentDesign
 from wallet.model.wt_payment_design_create_params import WTPaymentDesignCreateParams
 from wallet.model.wt_payment_design_update_params import WTPaymentDesignUpdateParams
