@@ -94,6 +94,7 @@ class Merchant(ModelNormal):
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'industry': (str,),  # noqa: E501
+            'industry_name': (str,),  # noqa: E501
             'info_genesis_property_id': (str,),  # noqa: E501
             'is_frozen': (bool,),  # noqa: E501
             'billing_contact_employee_id': (str,),  # noqa: E501
@@ -122,6 +123,7 @@ class Merchant(ModelNormal):
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'industry': 'industry',  # noqa: E501
+        'industry_name': 'industryName',  # noqa: E501
         'info_genesis_property_id': 'infoGenesisPropertyID',  # noqa: E501
         'is_frozen': 'isFrozen',  # noqa: E501
         'billing_contact_employee_id': 'billingContactEmployeeID',  # noqa: E501
@@ -138,7 +140,7 @@ class Merchant(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, company_name, address1, address2, city, state, country, phone_number, zip, currency_abbreviation, id, created_at, updated_at, industry, info_genesis_property_id, is_frozen, billing_contact_employee_id, stripe_customer_id, is_payment_method_provided, plan_nickname, max_sms_count, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, company_name, address1, address2, city, state, country, phone_number, zip, currency_abbreviation, id, created_at, updated_at, industry, industry_name, info_genesis_property_id, is_frozen, billing_contact_employee_id, stripe_customer_id, is_payment_method_provided, plan_nickname, max_sms_count, *args, **kwargs):  # noqa: E501
         """Merchant - a model defined in OpenAPI
 
         Args:
@@ -155,6 +157,7 @@ class Merchant(ModelNormal):
             created_at (datetime):
             updated_at (datetime):
             industry (str):
+            industry_name (str):
             info_genesis_property_id (str):
             is_frozen (bool):
             billing_contact_employee_id (str):
@@ -234,6 +237,7 @@ class Merchant(ModelNormal):
         self.created_at = created_at
         self.updated_at = updated_at
         self.industry = industry
+        self.industry_name = industry_name
         self.info_genesis_property_id = info_genesis_property_id
         self.is_frozen = is_frozen
         self.billing_contact_employee_id = billing_contact_employee_id
@@ -261,7 +265,7 @@ class Merchant(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, company_name, address1, address2, city, state, country, phone_number, zip, currency_abbreviation, id, created_at, updated_at, industry, info_genesis_property_id, is_frozen, billing_contact_employee_id, stripe_customer_id, is_payment_method_provided, plan_nickname, max_sms_count, *args, **kwargs):  # noqa: E501
+    def __init__(self, company_name, address1, address2, city, state, country, phone_number, zip, currency_abbreviation, id, created_at, updated_at, industry, industry_name, info_genesis_property_id, is_frozen, billing_contact_employee_id, stripe_customer_id, is_payment_method_provided, plan_nickname, max_sms_count, *args, **kwargs):  # noqa: E501
         """Merchant - a model defined in OpenAPI
 
         Args:
@@ -278,6 +282,7 @@ class Merchant(ModelNormal):
             created_at (datetime):
             updated_at (datetime):
             industry (str):
+            industry_name (str):
             info_genesis_property_id (str):
             is_frozen (bool):
             billing_contact_employee_id (str):
@@ -355,6 +360,7 @@ class Merchant(ModelNormal):
         self.created_at = created_at
         self.updated_at = updated_at
         self.industry = industry
+        self.industry_name = industry_name
         self.info_genesis_property_id = info_genesis_property_id
         self.is_frozen = is_frozen
         self.billing_contact_employee_id = billing_contact_employee_id
