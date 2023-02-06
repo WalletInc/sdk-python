@@ -346,14 +346,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_ss_outbound_statuses.py
-test/test_ss_outbound_statuses_any_of.py
-test/test_ss_outbound_statuses_any_of1.py
-test/test_ss_outbound_statuses_any_of2.py
-test/test_ss_outbound_statuses_any_of3.py
-test/test_ss_outbound_statuses_any_of4.py
-test/test_ss_outbound_statuses_any_of5.py
-test/test_wt_outbound_statuses.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
