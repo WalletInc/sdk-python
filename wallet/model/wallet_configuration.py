@@ -126,6 +126,7 @@ class WalletConfiguration(ModelNormal):
             'public_chat_room_channel_id': (float,),  # noqa: E501
             'vanity_handle': (str,),  # noqa: E501
             'vanity_page_wallet_prefix': (str,),  # noqa: E501
+            'merchant_credit_payment_design_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -177,6 +178,7 @@ class WalletConfiguration(ModelNormal):
         'public_chat_room_channel_id': 'publicChatRoomChannelID',  # noqa: E501
         'vanity_handle': 'vanityHandle',  # noqa: E501
         'vanity_page_wallet_prefix': 'vanityPageWalletPrefix',  # noqa: E501
+        'merchant_credit_payment_design_id': 'merchantCreditPaymentDesignID',  # noqa: E501
     }
 
     read_only_vars = {
@@ -265,6 +267,7 @@ class WalletConfiguration(ModelNormal):
             public_chat_room_channel_id (float): [optional]  # noqa: E501
             vanity_handle (str): [optional]  # noqa: E501
             vanity_page_wallet_prefix (str): [optional]  # noqa: E501
+            merchant_credit_payment_design_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -426,6 +429,7 @@ class WalletConfiguration(ModelNormal):
             public_chat_room_channel_id (float): [optional]  # noqa: E501
             vanity_handle (str): [optional]  # noqa: E501
             vanity_page_wallet_prefix (str): [optional]  # noqa: E501
+            merchant_credit_payment_design_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
