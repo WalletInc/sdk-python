@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **profile_picture_url** | **str** |  | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **session_token** | **str** |  | 
+**failed_login_attempts** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
