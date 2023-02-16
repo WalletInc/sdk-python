@@ -118,6 +118,8 @@ class WTEmployee(ModelNormal):
             'profile_picture_url': (str,),  # noqa: E501
             'merchant_id': (MerchantID,),  # noqa: E501
             'session_token': (str,),  # noqa: E501
+            'failed_login_attempts': (float,),  # noqa: E501
+            'last_login_date': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -143,6 +145,8 @@ class WTEmployee(ModelNormal):
         'profile_picture_url': 'profilePictureURL',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
         'session_token': 'sessionToken',  # noqa: E501
+        'failed_login_attempts': 'failedLoginAttempts',  # noqa: E501
+        'last_login_date': 'lastLoginDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -205,6 +209,8 @@ class WTEmployee(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            failed_login_attempts (float): [optional]  # noqa: E501
+            last_login_date (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -322,6 +328,8 @@ class WTEmployee(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            failed_login_attempts (float): [optional]  # noqa: E501
+            last_login_date (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
