@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **original_amount_currency** | **str** |  | 
 **manual** | **bool** |  | 
 **member_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**subscription_id** | **str** |  | [optional] 
+**subscription_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **charge_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **ctransreceipt** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **fulfillment_status** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
