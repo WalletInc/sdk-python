@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **stripe_customer_token** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
-**subscription_id** | **str** |  | 
 **status** | **str** |  | 
 **fulfillments** | **dict** |  | 
 **original_amount_cents** | **float** |  | 
@@ -19,6 +18,7 @@ Name | Type | Description | Notes
 **original_amount_currency** | **str** |  | 
 **manual** | **bool** |  | 
 **member_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**subscription_id** | **str** |  | [optional] 
 **charge_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **ctransreceipt** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **fulfillment_status** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
