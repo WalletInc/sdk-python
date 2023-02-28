@@ -99,7 +99,7 @@ class ClickFunnelPurchase(ModelNormal):
             'original_amount_currency': (str,),  # noqa: E501
             'manual': (bool,),  # noqa: E501
             'member_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'subscription_id': (str,),  # noqa: E501
+            'subscription_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'charge_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'ctransreceipt': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'fulfillment_status': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -202,7 +202,7 @@ class ClickFunnelPurchase(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             member_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            subscription_id (str): [optional]  # noqa: E501
+            subscription_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             charge_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             ctransreceipt (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             fulfillment_status (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -323,7 +323,7 @@ class ClickFunnelPurchase(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             member_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            subscription_id (str): [optional]  # noqa: E501
+            subscription_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             charge_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             ctransreceipt (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             fulfillment_status (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
