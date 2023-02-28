@@ -92,7 +92,6 @@ class ClickFunnelPurchase(ModelNormal):
             'stripe_customer_token': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
-            'subscription_id': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'fulfillments': (dict,),  # noqa: E501
             'original_amount_cents': (float,),  # noqa: E501
@@ -100,6 +99,7 @@ class ClickFunnelPurchase(ModelNormal):
             'original_amount_currency': (str,),  # noqa: E501
             'manual': (bool,),  # noqa: E501
             'member_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'subscription_id': (str,),  # noqa: E501
             'charge_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'ctransreceipt': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'fulfillment_status': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -125,7 +125,6 @@ class ClickFunnelPurchase(ModelNormal):
         'stripe_customer_token': 'stripe_customer_token',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
-        'subscription_id': 'subscription_id',  # noqa: E501
         'status': 'status',  # noqa: E501
         'fulfillments': 'fulfillments',  # noqa: E501
         'original_amount_cents': 'original_amount_cents',  # noqa: E501
@@ -133,6 +132,7 @@ class ClickFunnelPurchase(ModelNormal):
         'original_amount_currency': 'original_amount_currency',  # noqa: E501
         'manual': 'manual',  # noqa: E501
         'member_id': 'member_id',  # noqa: E501
+        'subscription_id': 'subscription_id',  # noqa: E501
         'charge_id': 'charge_id',  # noqa: E501
         'ctransreceipt': 'ctransreceipt',  # noqa: E501
         'fulfillment_status': 'fulfillment_status',  # noqa: E501
@@ -152,7 +152,7 @@ class ClickFunnelPurchase(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, products, contact, funnel_id, stripe_customer_token, created_at, updated_at, subscription_id, status, fulfillments, original_amount_cents, original_amount, original_amount_currency, manual, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, products, contact, funnel_id, stripe_customer_token, created_at, updated_at, status, fulfillments, original_amount_cents, original_amount, original_amount_currency, manual, *args, **kwargs):  # noqa: E501
         """ClickFunnelPurchase - a model defined in OpenAPI
 
         Args:
@@ -163,7 +163,6 @@ class ClickFunnelPurchase(ModelNormal):
             stripe_customer_token (str):
             created_at (datetime):
             updated_at (datetime):
-            subscription_id (str):
             status (str):
             fulfillments (dict):
             original_amount_cents (float):
@@ -203,6 +202,7 @@ class ClickFunnelPurchase(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             member_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            subscription_id (str): [optional]  # noqa: E501
             charge_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             ctransreceipt (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             fulfillment_status (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -247,7 +247,6 @@ class ClickFunnelPurchase(ModelNormal):
         self.stripe_customer_token = stripe_customer_token
         self.created_at = created_at
         self.updated_at = updated_at
-        self.subscription_id = subscription_id
         self.status = status
         self.fulfillments = fulfillments
         self.original_amount_cents = original_amount_cents
@@ -274,7 +273,7 @@ class ClickFunnelPurchase(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, products, contact, funnel_id, stripe_customer_token, created_at, updated_at, subscription_id, status, fulfillments, original_amount_cents, original_amount, original_amount_currency, manual, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, products, contact, funnel_id, stripe_customer_token, created_at, updated_at, status, fulfillments, original_amount_cents, original_amount, original_amount_currency, manual, *args, **kwargs):  # noqa: E501
         """ClickFunnelPurchase - a model defined in OpenAPI
 
         Args:
@@ -285,7 +284,6 @@ class ClickFunnelPurchase(ModelNormal):
             stripe_customer_token (str):
             created_at (datetime):
             updated_at (datetime):
-            subscription_id (str):
             status (str):
             fulfillments (dict):
             original_amount_cents (float):
@@ -325,6 +323,7 @@ class ClickFunnelPurchase(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             member_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            subscription_id (str): [optional]  # noqa: E501
             charge_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             ctransreceipt (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             fulfillment_status (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -367,7 +366,6 @@ class ClickFunnelPurchase(ModelNormal):
         self.stripe_customer_token = stripe_customer_token
         self.created_at = created_at
         self.updated_at = updated_at
-        self.subscription_id = subscription_id
         self.status = status
         self.fulfillments = fulfillments
         self.original_amount_cents = original_amount_cents
