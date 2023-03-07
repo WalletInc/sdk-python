@@ -102,6 +102,7 @@ class Merchant(ModelNormal):
             'is_payment_method_provided': (bool,),  # noqa: E501
             'plan_nickname': (str,),  # noqa: E501
             'max_sms_count': (float,),  # noqa: E501
+            'is_sms_agreement': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -131,6 +132,7 @@ class Merchant(ModelNormal):
         'is_payment_method_provided': 'isPaymentMethodProvided',  # noqa: E501
         'plan_nickname': 'planNickname',  # noqa: E501
         'max_sms_count': 'maxSMSCount',  # noqa: E501
+        'is_sms_agreement': 'isSmsAgreement',  # noqa: E501
     }
 
     read_only_vars = {
@@ -197,6 +199,7 @@ class Merchant(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            is_sms_agreement (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -322,6 +325,7 @@ class Merchant(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            is_sms_agreement (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
