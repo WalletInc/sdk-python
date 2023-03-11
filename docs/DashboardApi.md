@@ -1222,11 +1222,21 @@ with wallet.ApiClient() as api_client:
     api_instance = dashboard_api.DashboardApi(api_client)
     start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
     end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    wallet_object_prefix = "walletObjectPrefix_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Count Wallet page views
         api_response = api_instance.fetch_dashboard_wallet_page_views_count(start_date_time, end_date_time)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling DashboardApi->fetch_dashboard_wallet_page_views_count: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count Wallet page views
+        api_response = api_instance.fetch_dashboard_wallet_page_views_count(start_date_time, end_date_time, wallet_object_prefix=wallet_object_prefix)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling DashboardApi->fetch_dashboard_wallet_page_views_count: %s\n" % e)
@@ -1239,6 +1249,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_date_time** | **datetime**|  |
  **end_date_time** | **datetime**|  |
+ **wallet_object_prefix** | **str**|  | [optional]
 
 ### Return type
 
