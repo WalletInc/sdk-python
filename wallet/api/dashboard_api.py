@@ -933,6 +933,7 @@ class DashboardApi(object):
                 'all': [
                     'start_date_time',
                     'end_date_time',
+                    'wallet_object_prefix',
                 ],
                 'required': [
                     'start_date_time',
@@ -955,14 +956,18 @@ class DashboardApi(object):
                         (datetime,),
                     'end_date_time':
                         (datetime,),
+                    'wallet_object_prefix':
+                        (str,),
                 },
                 'attribute_map': {
                     'start_date_time': 'startDateTime',
                     'end_date_time': 'endDateTime',
+                    'wallet_object_prefix': 'walletObjectPrefix',
                 },
                 'location_map': {
                     'start_date_time': 'query',
                     'end_date_time': 'query',
+                    'wallet_object_prefix': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -2333,6 +2338,7 @@ class DashboardApi(object):
             end_date_time (datetime):
 
         Keyword Args:
+            wallet_object_prefix (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
