@@ -5,6 +5,7 @@ All URIs are relative to *https://api.wall.et*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_public_chat_room**](ConfigurationApi.md#create_public_chat_room) | **POST** /v2/wallet/createPublicChatRoom | 
+[**save_merchant_credit_payment_design**](ConfigurationApi.md#save_merchant_credit_payment_design) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update wallet record
 [**save_wallet_record**](ConfigurationApi.md#save_wallet_record) | **PUT** /v2/wallet | Update wallet record
 
 
@@ -61,6 +62,79 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **save_merchant_credit_payment_design**
+> bool, date, datetime, dict, float, int, list, str, none_type save_merchant_credit_payment_design(inline_object1)
+
+Update wallet record
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import configuration_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.inline_object1 import InlineObject1
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = configuration_api.ConfigurationApi(api_client)
+    inline_object1 = InlineObject1(
+        payment_design_id=NanoID("C"),
+    ) # InlineObject1 | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update wallet record
+        api_response = api_instance.save_merchant_credit_payment_design(inline_object1)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling ConfigurationApi->save_merchant_credit_payment_design: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object1** | [**InlineObject1**](InlineObject1.md)|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

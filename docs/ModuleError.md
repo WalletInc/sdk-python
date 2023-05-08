@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **method_type** | **str** |  | 
 **stack_trace** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **exception** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
+**severity** | **float** |  | 
 **microservice_url** | **str** |  | 
 **microservice_data** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **microservice_method** | **str** |  | 

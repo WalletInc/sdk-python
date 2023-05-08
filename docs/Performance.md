@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **title** | **str** |  | 
 **body** | **str** |  | 
 **start_date_time** | **datetime** |  | 
-**price** | **int** |  | 
+**price** | **str** |  | 
 **url** | **str** |  | 
 **order_number** | **int** | Stores the order number | 
 **is_sold_out** | **bool** | Denotes if the event has been sold out | 

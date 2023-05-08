@@ -5,7 +5,6 @@ All URIs are relative to *https://api.wall.et*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_peer_to_roles**](EmployeesApi.md#add_peer_to_roles) | **POST** /v2/employee/roles/peer/{userID} | Add peer to roles
-[**create_alert**](EmployeesApi.md#create_alert) | **POST** /v2/employee/alert | Create employee alert
 [**create_document**](EmployeesApi.md#create_document) | **POST** /v2/employee/document | Create document
 [**create_employee_peer**](EmployeesApi.md#create_employee_peer) | **POST** /v2/employee/peer | Create employee peer
 [**create_file**](EmployeesApi.md#create_file) | **POST** /v2/employee/file/create | Create file
@@ -23,12 +22,13 @@ Method | HTTP request | Description
 [**fetch_employee_static_voucher_campaign_groups**](EmployeesApi.md#fetch_employee_static_voucher_campaign_groups) | **GET** /v2/employee/staticVoucherCampaignGroups/all | Fetch static voucher campaign groups
 [**fetch_employee_static_voucher_campaigns**](EmployeesApi.md#fetch_employee_static_voucher_campaigns) | **GET** /v2/employee/staticVoucherCampaigns/all | Fetch static voucher campaigns
 [**fetch_media_files**](EmployeesApi.md#fetch_media_files) | **GET** /v2/employee/mediaFiles/all | Fetch all media files
-[**fetch_merchant**](EmployeesApi.md#fetch_merchant) | **GET** /v2/employee/merchant | Fetch merchant information
+[**fetch_merchant**](EmployeesApi.md#fetch_merchant) | **GET** /v2/employee/merchant | Create employee alert
 [**fetch_messages**](EmployeesApi.md#fetch_messages) | **GET** /v2/employee/messages/all | Fetch all messages
 [**fetch_opt_in_list_source**](EmployeesApi.md#fetch_opt_in_list_source) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source
 [**fetch_opt_in_list_sources_created_by_employee**](EmployeesApi.md#fetch_opt_in_list_sources_created_by_employee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
 [**fetch_peer_activity**](EmployeesApi.md#fetch_peer_activity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity
 [**fetch_peers_permissions**](EmployeesApi.md#fetch_peers_permissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions
+[**fetch_profile_info**](EmployeesApi.md#fetch_profile_info) | **GET** /v2/employee | Retrieve employee&#39;s webpages
 [**import_club_members**](EmployeesApi.md#import_club_members) | **POST** /v2/employee/import/members | Import club members
 [**import_merchant_credits**](EmployeesApi.md#import_merchant_credits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits
 [**load_webpages_of_employee**](EmployeesApi.md#load_webpages_of_employee) | **GET** /v2/employee/webpages/all | Retrieve employee&#39;s webpages
@@ -48,6 +48,7 @@ Method | HTTP request | Description
 [**set_messages_read**](EmployeesApi.md#set_messages_read) | **PATCH** /v2/employee/messages | Mark messages as read
 [**set_profile_picture**](EmployeesApi.md#set_profile_picture) | **PUT** /v2/employee/profile/picture | Set profile picture
 [**update_club_members**](EmployeesApi.md#update_club_members) | **PUT** /v2/employee/update/members | Update club members
+[**update_email_notification_preference**](EmployeesApi.md#update_email_notification_preference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled
 [**update_employee_peer**](EmployeesApi.md#update_employee_peer) | **PUT** /v2/employee/peer/{userID} | Update peer
 
 
@@ -106,81 +107,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_alert**
-> Alert create_alert(wt_employee_create_alert)
-
-Create employee alert
-
-### Example
-
-
-```python
-import time
-import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_create_alert import WTEmployeeCreateAlert
-from wallet.model.auth_error import AuthError
-from wallet.model.alert import Alert
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_create_alert = WTEmployeeCreateAlert(
-        title="Alert Title",
-        message="Alert Content",
-    ) # WTEmployeeCreateAlert | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Create employee alert
-        api_response = api_instance.create_alert(wt_employee_create_alert)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling EmployeesApi->create_alert: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create_alert** | [**WTEmployeeCreateAlert**](WTEmployeeCreateAlert.md)|  |
-
-### Return type
-
-[**Alert**](Alert.md)
 
 ### Authorization
 
@@ -318,6 +244,14 @@ with wallet.ApiClient() as api_client:
         employee_id="EMP005",
         job_title="Marketing Executive",
         department="Sales & Marketing",
+        schedule_start_day=None,
+        schedule_start_hour=None,
+        schedule_start_minute=None,
+        schedule_start_meridiem=None,
+        schedule_end_day=None,
+        schedule_end_hour=None,
+        schedule_end_minute=None,
+        schedule_end_meridiem=None,
     ) # WTEmployeeCreate | 
 
     # example passing only required values which don't have defaults set
@@ -1430,7 +1364,7 @@ No authorization required
 # **fetch_merchant**
 > bool, date, datetime, dict, float, int, list, str, none_type fetch_merchant()
 
-Fetch merchant information
+Create employee alert
 
 ### Example
 
@@ -1457,7 +1391,7 @@ with wallet.ApiClient() as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Fetch merchant information
+        # Create employee alert
         api_response = api_instance.fetch_merchant()
         pprint(api_response)
     except wallet.ApiException as e:
@@ -1817,6 +1751,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 **[bool, date, datetime, dict, float, int, list, str, none_type]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_profile_info**
+> Employee fetch_profile_info()
+
+Retrieve employee's webpages
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import employees_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.employee import Employee
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = employees_api.EmployeesApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Retrieve employee's webpages
+        api_response = api_instance.fetch_profile_info()
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling EmployeesApi->fetch_profile_info: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Employee**](Employee.md)
 
 ### Authorization
 
@@ -3264,6 +3265,80 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_email_notification_preference**
+> Employee update_email_notification_preference(inline_object)
+
+Changes the employee's email notification preference to enabled or disabled
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import employees_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.employee import Employee
+from wallet.model.inline_object import InlineObject
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = employees_api.EmployeesApi(api_client)
+    inline_object = InlineObject(
+        is_email_notification_disabled=True,
+    ) # InlineObject | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Changes the employee's email notification preference to enabled or disabled
+        api_response = api_instance.update_email_notification_preference(inline_object)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling EmployeesApi->update_email_notification_preference: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object** | [**InlineObject**](InlineObject.md)|  |
+
+### Return type
+
+[**Employee**](Employee.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_employee_peer**
 > Employee update_employee_peer(user_id, wt_employee_update)
 
@@ -3304,6 +3379,14 @@ with wallet.ApiClient() as api_client:
         wallet_sequence_number=1,
         job_title="Marketing Executive",
         department="Sales & Marketing",
+        schedule_start_day=None,
+        schedule_start_hour=None,
+        schedule_start_minute=None,
+        schedule_start_meridiem=None,
+        schedule_end_day=None,
+        schedule_end_hour=None,
+        schedule_end_minute=None,
+        schedule_end_meridiem=None,
     ) # WTEmployeeUpdate | 
 
     # example passing only required values which don't have defaults set

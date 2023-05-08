@@ -32,8 +32,6 @@ from wallet.api.industries_api import IndustriesApi
 from wallet.api.info_genesis_reports_api import InfoGenesisReportsApi
 from wallet.api.integrated_terminals_api import IntegratedTerminalsApi
 from wallet.api.interactions_api import InteractionsApi
-from wallet.api.link_book_api import LinkBookApi
-from wallet.api.link_book_section_api import LinkBookSectionApi
 from wallet.api.login_and_logout_api import LoginAndLogoutApi
 from wallet.api.membership_tiers_api import MembershipTiersApi
 from wallet.api.merchant_api import MerchantApi
@@ -43,7 +41,9 @@ from wallet.api.mobile_terminal_api import MobileTerminalApi
 from wallet.api.news_api import NewsApi
 from wallet.api.payment_designs_api import PaymentDesignsApi
 from wallet.api.performances_api import PerformancesApi
-from wallet.api.promo_codes_api import PromoCodesApi
+from wallet.api.promotion_codes_api import PromotionCodesApi
+from wallet.api.quick_links_api import QuickLinksApi
+from wallet.api.quick_links_section_api import QuickLinksSectionApi
 from wallet.api.sms_api import SMSApi
 from wallet.api.settings_api import SettingsApi
 from wallet.api.shopify_terminal_api import ShopifyTerminalApi
@@ -53,6 +53,7 @@ from wallet.api.static_vouchers_api import StaticVouchersApi
 from wallet.api.system_api import SystemApi
 from wallet.api.transaction_ledger_api import TransactionLedgerApi
 from wallet.api.utilities_api import UtilitiesApi
+from wallet.api.virtual_business_card_api import VirtualBusinessCardApi
 from wallet.api.web_terminal_api import WebTerminalApi
 from wallet.api.wix_terminal_api import WixTerminalApi
 from wallet.api.woo_commerce_terminal_api import WooCommerceTerminalApi
