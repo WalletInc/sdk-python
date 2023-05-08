@@ -28,8 +28,8 @@ Method | HTTP request | Description
 [**fetch_static_voucher_campaign_broadcasts**](MerchantApi.md#fetch_static_voucher_campaign_broadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Fetch all static voucher campaign broadcasts
 [**fetch_tcpa_filter**](MerchantApi.md#fetch_tcpa_filter) | **GET** /v2/merchant/tcpa/filter/all | Fetch all TCPA Filters
 [**fetch_wallet_configuration**](MerchantApi.md#fetch_wallet_configuration) | **GET** /v2/merchant/wallet/configuration | Fetch wallet configuration
-[**update_billing_contact**](MerchantApi.md#update_billing_contact) | **PUT** /v2/merchant/billing/contact | Update billing contact
 [**update_merchant**](MerchantApi.md#update_merchant) | **PUT** /v2/merchant | Update merchant details
+[**update_points_of_contact**](MerchantApi.md#update_points_of_contact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact
 [**update_pos_integration**](MerchantApi.md#update_pos_integration) | **PUT** /v2/merchant/pos/integration | Update POS Integration
 
 
@@ -1780,79 +1780,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_billing_contact**
-> bool, date, datetime, dict, float, int, list, str, none_type update_billing_contact(wt_merchant_update_billing_contact)
-
-Update billing contact
-
-### Example
-
-
-```python
-import time
-import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_merchant_update_billing_contact import WTMerchantUpdateBillingContact
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    wt_merchant_update_billing_contact = WTMerchantUpdateBillingContact(
-        employee_id=NanoID("C"),
-    ) # WTMerchantUpdateBillingContact | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Update billing contact
-        api_response = api_instance.update_billing_contact(wt_merchant_update_billing_contact)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling MerchantApi->update_billing_contact: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_merchant_update_billing_contact** | [**WTMerchantUpdateBillingContact**](WTMerchantUpdateBillingContact.md)|  |
-
-### Return type
-
-**bool, date, datetime, dict, float, int, list, str, none_type**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **update_merchant**
 > bool, date, datetime, dict, float, int, list, str, none_type update_merchant(wt_merchant_update)
 
@@ -1908,6 +1835,82 @@ with wallet.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **wt_merchant_update** | [**WTMerchantUpdate**](WTMerchantUpdate.md)|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_points_of_contact**
+> bool, date, datetime, dict, float, int, list, str, none_type update_points_of_contact(wt_merchant_update_points_of_contact)
+
+Update billing contact
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import merchant_api
+from wallet.model.wt_merchant_update_points_of_contact import WTMerchantUpdatePointsOfContact
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = merchant_api.MerchantApi(api_client)
+    wt_merchant_update_points_of_contact = WTMerchantUpdatePointsOfContact(
+        billing_employee_id=NanoID("C"),
+        marketing_employee_id=NanoID("C"),
+        technical_employee_id=NanoID("C"),
+        customer_service_employee_id=NanoID("C"),
+    ) # WTMerchantUpdatePointsOfContact | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update billing contact
+        api_response = api_instance.update_points_of_contact(wt_merchant_update_points_of_contact)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling MerchantApi->update_points_of_contact: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_merchant_update_points_of_contact** | [**WTMerchantUpdatePointsOfContact**](WTMerchantUpdatePointsOfContact.md)|  |
 
 ### Return type
 

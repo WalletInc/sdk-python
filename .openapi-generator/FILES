@@ -7,7 +7,6 @@ docs/AdvertisementCreditBroadcast.md
 docs/AdvertisementCreditScan.md
 docs/AdvertisementCreditsApi.md
 docs/Agreement.md
-docs/Alert.md
 docs/AnalyticsApi.md
 docs/Announcement.md
 docs/AppleWalletSubscribersApi.md
@@ -49,6 +48,7 @@ docs/EmployeeAPIKey.md
 docs/EmployeeAPIKeysApi.md
 docs/EmployeeAccessApi.md
 docs/EmployeeActivityLog.md
+docs/EmployeeAlert.md
 docs/EmployeesApi.md
 docs/EntityTooLarge.md
 docs/ExportDataFile.md
@@ -65,6 +65,8 @@ docs/ImportedListRecipient.md
 docs/InboundSMS.md
 docs/IndustriesApi.md
 docs/InfoGenesisReportsApi.md
+docs/InlineObject.md
+docs/InlineObject1.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
 docs/InlineResponse20010.md
@@ -81,9 +83,7 @@ docs/InteractionsApi.md
 docs/InternalServerError.md
 docs/LedgerEntry.md
 docs/LinkBook.md
-docs/LinkBookApi.md
 docs/LinkBookSection.md
-docs/LinkBookSectionApi.md
 docs/LoginAndLogoutApi.md
 docs/MSAnalyticsMemberCountPartitionedByDate.md
 docs/MSAnalyticsMemberPointsRedeemedPartitionedByDate.md
@@ -152,7 +152,7 @@ docs/PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedLi
 docs/PickSSImportedListUpdateParamsExcludeKeyofSSImportedListUpdateParamsId.md
 docs/PickSSMobileNumberUpdateParamsExcludeKeyofSSMobileNumberUpdateParamsId.md
 docs/PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs.md
-docs/PickSSOptInListMemberCreateParamsExcludeKeyofSSOptInListMemberCreateParamsMerchantCreatedAtOrMaxSMSCount.md
+docs/PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCount.md
 docs/PickSSOptInListUpdateParamsExcludeKeyofSSOptInListUpdateParamsId.md
 docs/PickSSOptInSourceUpdateParamsExcludeKeyofSSOptInSourceUpdateParamsId.md
 docs/PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone.md
@@ -179,7 +179,9 @@ docs/PresignedPost.md
 docs/PresignedPostFields.md
 docs/Product.md
 docs/PromoCode.md
-docs/PromoCodesApi.md
+docs/PromotionCodesApi.md
+docs/QuickLinksApi.md
+docs/QuickLinksSectionApi.md
 docs/ReachPerformanceStats.md
 docs/Request.md
 docs/Response.md
@@ -224,6 +226,8 @@ docs/UtilitiesApi.md
 docs/VSCampaignGeneratedMessage.md
 docs/VSCampaignGeneratedMessagePagination.md
 docs/VSDynamicVoucherStatus.md
+docs/VirtualBusinessCard.md
+docs/VirtualBusinessCardApi.md
 docs/WTAdvertisementCredit.md
 docs/WTAdvertisementCreditCreateParams.md
 docs/WTAdvertisementCreditScan.md
@@ -252,7 +256,6 @@ docs/WTEmployeeAPIKey.md
 docs/WTEmployeeAPIKeyCreateParams.md
 docs/WTEmployeeAPIKeyUpdateParams.md
 docs/WTEmployeeCreate.md
-docs/WTEmployeeCreateAlert.md
 docs/WTEmployeeCreateDocument.md
 docs/WTEmployeeCreateMediaFile.md
 docs/WTEmployeeCreateStaticVoucherCampaignGroup.md
@@ -292,8 +295,8 @@ docs/WTMerchantCreditCreationParams.md
 docs/WTMerchantURLCreate.md
 docs/WTMerchantURLUpdate.md
 docs/WTMerchantUpdate.md
-docs/WTMerchantUpdateBillingContact.md
 docs/WTMerchantUpdatePOSIntegration.md
+docs/WTMerchantUpdatePointsOfContact.md
 docs/WTNewsArticleCreateParams.md
 docs/WTNewsArticleUpdateParams.md
 docs/WTOptInList.md
@@ -328,6 +331,8 @@ docs/WTSystemRoleCreate.md
 docs/WTTCPAOpt.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
+docs/WTVirtualBusinessCardCreateParams.md
+docs/WTVirtualBusinessCardUpdateParams.md
 docs/WTWalletConfigurationSaveWalletRecord.md
 docs/WTWalletItemRedemption.md
 docs/WTWalletObjectPrefixCounts.md
@@ -346,6 +351,18 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_employee_alert.py
+test/test_inline_object.py
+test/test_inline_object1.py
+test/test_pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count.py
+test/test_promotion_codes_api.py
+test/test_quick_links_api.py
+test/test_quick_links_section_api.py
+test/test_virtual_business_card.py
+test/test_virtual_business_card_api.py
+test/test_wt_merchant_update_points_of_contact.py
+test/test_wt_virtual_business_card_create_params.py
+test/test_wt_virtual_business_card_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -367,8 +384,6 @@ wallet/api/industries_api.py
 wallet/api/info_genesis_reports_api.py
 wallet/api/integrated_terminals_api.py
 wallet/api/interactions_api.py
-wallet/api/link_book_api.py
-wallet/api/link_book_section_api.py
 wallet/api/login_and_logout_api.py
 wallet/api/membership_tiers_api.py
 wallet/api/merchant_api.py
@@ -378,7 +393,9 @@ wallet/api/mobile_terminal_api.py
 wallet/api/news_api.py
 wallet/api/payment_designs_api.py
 wallet/api/performances_api.py
-wallet/api/promo_codes_api.py
+wallet/api/promotion_codes_api.py
+wallet/api/quick_links_api.py
+wallet/api/quick_links_section_api.py
 wallet/api/settings_api.py
 wallet/api/shopify_terminal_api.py
 wallet/api/sms_api.py
@@ -388,6 +405,7 @@ wallet/api/static_vouchers_api.py
 wallet/api/system_api.py
 wallet/api/transaction_ledger_api.py
 wallet/api/utilities_api.py
+wallet/api/virtual_business_card_api.py
 wallet/api/web_terminal_api.py
 wallet/api/wix_terminal_api.py
 wallet/api/woo_commerce_terminal_api.py
@@ -400,7 +418,6 @@ wallet/model/advertisement_credit.py
 wallet/model/advertisement_credit_broadcast.py
 wallet/model/advertisement_credit_scan.py
 wallet/model/agreement.py
-wallet/model/alert.py
 wallet/model/announcement.py
 wallet/model/applicable_terminals.py
 wallet/model/applicable_terminals_any_of.py
@@ -430,6 +447,7 @@ wallet/model/dynamic_voucher.py
 wallet/model/dynamic_voucher_broadcast.py
 wallet/model/employee.py
 wallet/model/employee_activity_log.py
+wallet/model/employee_alert.py
 wallet/model/employee_api_key.py
 wallet/model/entity_too_large.py
 wallet/model/export_data_file.py
@@ -443,6 +461,8 @@ wallet/model/image_grid.py
 wallet/model/imported_list.py
 wallet/model/imported_list_recipient.py
 wallet/model/inbound_sms.py
+wallet/model/inline_object.py
+wallet/model/inline_object1.py
 wallet/model/inline_response200.py
 wallet/model/inline_response2001.py
 wallet/model/inline_response20010.py
@@ -517,7 +537,7 @@ wallet/model/pick_ss_imported_list_recipient_from_membership_tier_import_exclude
 wallet/model/pick_ss_imported_list_update_params_exclude_keyof_ss_imported_list_update_params_id.py
 wallet/model/pick_ss_mobile_number_update_params_exclude_keyof_ss_mobile_number_update_params_id.py
 wallet/model/pick_ss_opt_in_list_create_params_exclude_keyof_ss_opt_in_list_create_params_employee_idor_opt_in_confirmed_media_urls_or_opt_out_confirmed_media_urls.py
-wallet/model/pick_ss_opt_in_list_member_create_params_exclude_keyof_ss_opt_in_list_member_create_params_merchant_created_at_or_max_sms_count.py
+wallet/model/pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count.py
 wallet/model/pick_ss_opt_in_list_update_params_exclude_keyof_ss_opt_in_list_update_params_id.py
 wallet/model/pick_ss_opt_in_source_update_params_exclude_keyof_ss_opt_in_source_update_params_id.py
 wallet/model/pick_ss_outbound_message_log_exclude_keyof_ss_outbound_message_log_to_cell_phone.py
@@ -576,6 +596,7 @@ wallet/model/subscription_plan.py
 wallet/model/subscription_product.py
 wallet/model/tcpa.py
 wallet/model/update_static_voucher_campaign_with_voucher.py
+wallet/model/virtual_business_card.py
 wallet/model/vs_campaign_generated_message.py
 wallet/model/vs_campaign_generated_message_pagination.py
 wallet/model/vs_dynamic_voucher_status.py
@@ -610,7 +631,6 @@ wallet/model/wt_employee_api_key.py
 wallet/model/wt_employee_api_key_create_params.py
 wallet/model/wt_employee_api_key_update_params.py
 wallet/model/wt_employee_create.py
-wallet/model/wt_employee_create_alert.py
 wallet/model/wt_employee_create_document.py
 wallet/model/wt_employee_create_media_file.py
 wallet/model/wt_employee_create_static_voucher_campaign_group.py
@@ -648,7 +668,7 @@ wallet/model/wt_membership_tier_with_member_count.py
 wallet/model/wt_merchant_credit.py
 wallet/model/wt_merchant_credit_creation_params.py
 wallet/model/wt_merchant_update.py
-wallet/model/wt_merchant_update_billing_contact.py
+wallet/model/wt_merchant_update_points_of_contact.py
 wallet/model/wt_merchant_update_pos_integration.py
 wallet/model/wt_merchant_url_create.py
 wallet/model/wt_merchant_url_update.py
@@ -679,6 +699,8 @@ wallet/model/wt_system_approve_phone_number.py
 wallet/model/wt_system_role_create.py
 wallet/model/wt_twilio_request_authy_code.py
 wallet/model/wt_twilio_verify_authy_code.py
+wallet/model/wt_virtual_business_card_create_params.py
+wallet/model/wt_virtual_business_card_update_params.py
 wallet/model/wt_wallet_configuration_save_wallet_record.py
 wallet/model/wt_wallet_item_redemption.py
 wallet/model/wt_wallet_object_prefix_counts.py

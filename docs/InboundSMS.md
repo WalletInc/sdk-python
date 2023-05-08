@@ -38,6 +38,8 @@ Name | Type | Description | Notes
 **watson_intents** | **str** |  | [optional] 
 **watson_context** | **str** |  | [optional] 
 **watson_contexts** | **str** |  | [optional] 
+**is_opt_in** | **bool** |  | [optional] 
+**is_help_desk_request** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
