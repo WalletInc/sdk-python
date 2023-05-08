@@ -4,6 +4,16 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**count_all_subscribers**](AnalyticsApi.md#count_all_subscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers
+[**count_authenticated_sessions**](AnalyticsApi.md#count_authenticated_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions
+[**count_distinct_redemptions**](AnalyticsApi.md#count_distinct_redemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Fetch refund amount of campaigns by Campaign
+[**count_help_desk_requests**](AnalyticsApi.md#count_help_desk_requests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests by date
+[**count_inbound_messages**](AnalyticsApi.md#count_inbound_messages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers
+[**count_new_sessions**](AnalyticsApi.md#count_new_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions
+[**count_opt_in_list_subscribers_partitioned_by_date**](AnalyticsApi.md#count_opt_in_list_subscribers_partitioned_by_date) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date
+[**count_outbound_messages**](AnalyticsApi.md#count_outbound_messages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers
+[**count_total_sessions**](AnalyticsApi.md#count_total_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions
+[**count_transactions**](AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
 [**count_verified_wallet_page_views**](AnalyticsApi.md#count_verified_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
 [**count_wallet_page_views**](AnalyticsApi.md#count_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
 [**fetch_analytics_ad_credits_count_partitioned_by_employee**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_employee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
@@ -62,6 +72,8 @@ Method | HTTP request | Description
 [**fetch_analytics_sent_outbound_messages_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_sent_outbound_messages_count_partitioned_by_date) | **GET** /v2/analytics/outboundSMS/count/date/sent | Count sent outbound messages by date
 [**fetch_analytics_sent_outbound_messages_count_partitioned_by_phone_number**](AnalyticsApi.md#fetch_analytics_sent_outbound_messages_count_partitioned_by_phone_number) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/sent | Count sent outbound messages by phone number
 [**fetch_analytics_static_voucher_wallet_page_views**](AnalyticsApi.md#fetch_analytics_static_voucher_wallet_page_views) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Fetch a static voucher&#39;s wallet page views
+[**fetch_analytics_tcpa_filters_create_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_tcpa_filters_create_count_partitioned_by_date) | **GET** /v2/analytics/tcpafilters/count/date/create | Count created TCPA Filter entries by date
+[**fetch_analytics_tcpa_filters_delete_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_tcpa_filters_delete_count_partitioned_by_date) | **GET** /v2/analytics/tcpafilters/count/date/delete | Count deleted TCPA Filter entries by date
 [**fetch_analytics_tcpa_stop_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_tcpa_stop_count_partitioned_by_date) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date
 [**fetch_analytics_tcpa_stop_count_partitioned_by_phone_number**](AnalyticsApi.md#fetch_analytics_tcpa_stop_count_partitioned_by_phone_number) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number
 [**fetch_analytics_total_amount_redeemed_per_merchant_credit**](AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Fetch redeemed amount of merchant credits
@@ -72,7 +84,785 @@ Method | HTTP request | Description
 [**fetch_analytics_total_points_refunded**](AnalyticsApi.md#fetch_analytics_total_points_refunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
 [**fetch_analytics_wallet_session_activity**](AnalyticsApi.md#fetch_analytics_wallet_session_activity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
 [**fetch_wallet_page_view_by_id**](AnalyticsApi.md#fetch_wallet_page_view_by_id) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
+[**sum_revenue**](AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
+[**sum_transactions**](AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
 
+
+# **count_all_subscribers**
+> WTCountResult count_all_subscribers()
+
+Count opt in list subscribers
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from wallet.model.wt_count_result import WTCountResult
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    is_subscribed = True # bool |  (optional)
+    is_pending_age21_verification = True # bool |  (optional)
+    is_archive_included = True # bool |  (optional)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count opt in list subscribers
+        api_response = api_instance.count_all_subscribers(is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included, start_date=start_date, end_date=end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_all_subscribers: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_subscribed** | **bool**|  | [optional]
+ **is_pending_age21_verification** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional]
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
+
+### Return type
+
+[**WTCountResult**](WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_authenticated_sessions**
+> bool, date, datetime, dict, float, int, list, str, none_type count_authenticated_sessions()
+
+Count authenticated sessions
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count authenticated sessions
+        api_response = api_instance.count_authenticated_sessions(start_date=start_date, end_date=end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_authenticated_sessions: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_distinct_redemptions**
+> bool, date, datetime, dict, float, int, list, str, none_type count_distinct_redemptions(start_date, end_date)
+
+Fetch refund amount of campaigns by Campaign
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    transaction_type = "transactionType_example" # str |  (optional)
+    segment_type = "segmentType_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch refund amount of campaigns by Campaign
+        api_response = api_instance.count_distinct_redemptions(start_date, end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_distinct_redemptions: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Fetch refund amount of campaigns by Campaign
+        api_response = api_instance.count_distinct_redemptions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_distinct_redemptions: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  |
+ **end_date** | **datetime**|  |
+ **transaction_type** | **str**|  | [optional]
+ **segment_type** | **str**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_help_desk_requests**
+> bool, date, datetime, dict, float, int, list, str, none_type count_help_desk_requests(start_date, end_date, locale, timezone)
+
+Count help desk requests by date
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    locale = "locale_example" # str | 
+    timezone = "timezone_example" # str | 
+    is_resolved = True # bool |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Count help desk requests by date
+        api_response = api_instance.count_help_desk_requests(start_date, end_date, locale, timezone)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_help_desk_requests: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count help desk requests by date
+        api_response = api_instance.count_help_desk_requests(start_date, end_date, locale, timezone, is_resolved=is_resolved)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_help_desk_requests: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  |
+ **end_date** | **datetime**|  |
+ **locale** | **str**|  |
+ **timezone** | **str**|  |
+ **is_resolved** | **bool**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_inbound_messages**
+> WTCountResult count_inbound_messages()
+
+Count opt in list subscribers
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from wallet.model.wt_count_result import WTCountResult
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count opt in list subscribers
+        api_response = api_instance.count_inbound_messages(start_date=start_date, end_date=end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_inbound_messages: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
+
+### Return type
+
+[**WTCountResult**](WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_new_sessions**
+> bool, date, datetime, dict, float, int, list, str, none_type count_new_sessions()
+
+Count new sessions
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count new sessions
+        api_response = api_instance.count_new_sessions(start_date=start_date, end_date=end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_new_sessions: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_opt_in_list_subscribers_partitioned_by_date**
+> bool, date, datetime, dict, float, int, list, str, none_type count_opt_in_list_subscribers_partitioned_by_date(start_date, end_date)
+
+Count opt in list subscribers by date
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Count opt in list subscribers by date
+        api_response = api_instance.count_opt_in_list_subscribers_partitioned_by_date(start_date, end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_opt_in_list_subscribers_partitioned_by_date: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  |
+ **end_date** | **datetime**|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_outbound_messages**
+> WTCountResult count_outbound_messages()
+
+Count opt in list subscribers
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from wallet.model.wt_count_result import WTCountResult
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count opt in list subscribers
+        api_response = api_instance.count_outbound_messages(start_date=start_date, end_date=end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_outbound_messages: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
+
+### Return type
+
+[**WTCountResult**](WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_total_sessions**
+> bool, date, datetime, dict, float, int, list, str, none_type count_total_sessions()
+
+Count total sessions
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count total sessions
+        api_response = api_instance.count_total_sessions(start_date=start_date, end_date=end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_total_sessions: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_transactions**
+> bool, date, datetime, dict, float, int, list, str, none_type count_transactions(start_date, end_date)
+
+Fetch refund amount of campaigns by Campaign
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    transaction_type = "transactionType_example" # str |  (optional)
+    segment_type = "segmentType_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch refund amount of campaigns by Campaign
+        api_response = api_instance.count_transactions(start_date, end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_transactions: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Fetch refund amount of campaigns by Campaign
+        api_response = api_instance.count_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->count_transactions: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  |
+ **end_date** | **datetime**|  |
+ **transaction_type** | **str**|  | [optional]
+ **segment_type** | **str**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_verified_wallet_page_views**
 > [WTWalletObjectPrefixCounts] count_verified_wallet_page_views(start_date, end_date)
@@ -4342,6 +5132,150 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **fetch_analytics_tcpa_filters_create_count_partitioned_by_date**
+> bool, date, datetime, dict, float, int, list, str, none_type fetch_analytics_tcpa_filters_create_count_partitioned_by_date(start_date, end_date)
+
+Count created TCPA Filter entries by date
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Count created TCPA Filter entries by date
+        api_response = api_instance.fetch_analytics_tcpa_filters_create_count_partitioned_by_date(start_date, end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->fetch_analytics_tcpa_filters_create_count_partitioned_by_date: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  |
+ **end_date** | **datetime**|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_analytics_tcpa_filters_delete_count_partitioned_by_date**
+> bool, date, datetime, dict, float, int, list, str, none_type fetch_analytics_tcpa_filters_delete_count_partitioned_by_date(start_date, end_date)
+
+Count deleted TCPA Filter entries by date
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Count deleted TCPA Filter entries by date
+        api_response = api_instance.fetch_analytics_tcpa_filters_delete_count_partitioned_by_date(start_date, end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->fetch_analytics_tcpa_filters_delete_count_partitioned_by_date: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  |
+ **end_date** | **datetime**|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **fetch_analytics_tcpa_stop_count_partitioned_by_date**
 > bool, date, datetime, dict, float, int, list, str, none_type fetch_analytics_tcpa_stop_count_partitioned_by_date(start_date, end_date, locale, timezone)
 
@@ -5070,6 +6004,176 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletPageView**](WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sum_revenue**
+> bool, date, datetime, dict, float, int, list, str, none_type sum_revenue(start_date, end_date)
+
+Fetch refund amount of campaigns by Campaign
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    transaction_type = "transactionType_example" # str |  (optional)
+    segment_type = "segmentType_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch refund amount of campaigns by Campaign
+        api_response = api_instance.sum_revenue(start_date, end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->sum_revenue: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Fetch refund amount of campaigns by Campaign
+        api_response = api_instance.sum_revenue(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->sum_revenue: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  |
+ **end_date** | **datetime**|  |
+ **transaction_type** | **str**|  | [optional]
+ **segment_type** | **str**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sum_transactions**
+> bool, date, datetime, dict, float, int, list, str, none_type sum_transactions(start_date, end_date)
+
+Fetch refund amount of campaigns by Campaign
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    transaction_type = "transactionType_example" # str |  (optional)
+    segment_type = "segmentType_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch refund amount of campaigns by Campaign
+        api_response = api_instance.sum_transactions(start_date, end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->sum_transactions: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Fetch refund amount of campaigns by Campaign
+        api_response = api_instance.sum_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->sum_transactions: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  |
+ **end_date** | **datetime**|  |
+ **transaction_type** | **str**|  | [optional]
+ **segment_type** | **str**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 

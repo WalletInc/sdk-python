@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
+**caller_name** | **str** |  | [optional] 
+**caller_type** | **str** |  | [optional] 
 **opted_status** | **bool** |  | [optional] 
 **source** | [**SSOptInSource**](SSOptInSource.md) |  | [optional] 
 
