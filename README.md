@@ -335,6 +335,7 @@ Class | Method | HTTP request | Description
 *InteractionsApi* | [**create_advertisement_credit_scan**](docs/InteractionsApi.md#create_advertisement_credit_scan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
 *InteractionsApi* | [**create_employee_v_card**](docs/InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard
 *InteractionsApi* | [**create_ics_file**](docs/InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event
+*InteractionsApi* | [**create_virtual_business_card_v_card**](docs/InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Fetch an employee&#39;s VCard
 *InteractionsApi* | [**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](docs/InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID
 *InteractionsApi* | [**fetch_dynamic_voucher_with_voucher_id**](docs/InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Fetch dynamic voucher
 *InteractionsApi* | [**fetch_member_information**](docs/InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Fetch member information
