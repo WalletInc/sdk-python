@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_advertisement_credit_scan**](InteractionsApi.md#create_advertisement_credit_scan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
 [**create_employee_v_card**](InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard
 [**create_ics_file**](InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event
+[**create_virtual_business_card_v_card**](InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Fetch an employee&#39;s VCard
 [**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID
 [**fetch_dynamic_voucher_with_voucher_id**](InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Fetch dynamic voucher
 [**fetch_member_information**](InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Fetch member information
@@ -202,6 +203,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 **bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_virtual_business_card_v_card**
+> str create_virtual_business_card_v_card(id)
+
+Fetch an employee's VCard
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import interactions_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = interactions_api.InteractionsApi(api_client)
+    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch an employee's VCard
+        api_response = api_instance.create_virtual_business_card_v_card(id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling InteractionsApi->create_virtual_business_card_v_card: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+
+### Return type
+
+**str**
 
 ### Authorization
 

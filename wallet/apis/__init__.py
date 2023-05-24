@@ -42,6 +42,7 @@ from wallet.api.news_api import NewsApi
 from wallet.api.payment_designs_api import PaymentDesignsApi
 from wallet.api.performances_api import PerformancesApi
 from wallet.api.promotion_codes_api import PromotionCodesApi
+from wallet.api.qr_code_designs_api import QRCodeDesignsApi
 from wallet.api.quick_links_api import QuickLinksApi
 from wallet.api.quick_links_section_api import QuickLinksSectionApi
 from wallet.api.sms_api import SMSApi

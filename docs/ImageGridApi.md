@@ -116,6 +116,7 @@ with wallet.ApiClient() as api_client:
         url="https://example.com",
         media_url="https://example.com/image.gif",
         sequence_number=1,
+        is_pinned=True,
     ) # WTImageGridCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -336,6 +337,7 @@ with wallet.ApiClient() as api_client:
         url="https://example.com",
         media_url="https://example.com/image.gif",
         sequence_number=1,
+        is_pinned=True,
     ) # WTImageGridUpdateParams | 
 
     # example passing only required values which don't have defaults set

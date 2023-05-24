@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
+**is_pinned** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
