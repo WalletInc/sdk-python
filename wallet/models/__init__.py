@@ -159,6 +159,7 @@ from wallet.model.presigned_post import PresignedPost
 from wallet.model.presigned_post_fields import PresignedPostFields
 from wallet.model.product import Product
 from wallet.model.promo_code import PromoCode
+from wallet.model.qr_code_design import QRCodeDesign
 from wallet.model.reach_performance_stats import ReachPerformanceStats
 from wallet.model.request import Request
 from wallet.model.response import Response
@@ -279,6 +280,9 @@ from wallet.model.wt_pos_machine_create_params import WTPosMachineCreateParams
 from wallet.model.wt_pos_machine_update_params import WTPosMachineUpdateParams
 from wallet.model.wt_promo_code_create_params import WTPromoCodeCreateParams
 from wallet.model.wt_promo_code_update_params import WTPromoCodeUpdateParams
+from wallet.model.wtqr_code_design import WTQRCodeDesign
+from wallet.model.wtqr_code_design_create_params import WTQRCodeDesignCreateParams
+from wallet.model.wtqr_code_design_update_params import WTQRCodeDesignUpdateParams
 from wallet.model.wt_role import WTRole
 from wallet.model.wtsms_acquire_phone_number import WTSMSAcquirePhoneNumber
 from wallet.model.wtsms_create_agreement import WTSMSCreateAgreement

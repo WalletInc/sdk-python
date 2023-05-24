@@ -180,6 +180,8 @@ docs/PresignedPostFields.md
 docs/Product.md
 docs/PromoCode.md
 docs/PromotionCodesApi.md
+docs/QRCodeDesign.md
+docs/QRCodeDesignsApi.md
 docs/QuickLinksApi.md
 docs/QuickLinksSectionApi.md
 docs/ReachPerformanceStats.md
@@ -312,6 +314,9 @@ docs/WTPosMachineCreateParams.md
 docs/WTPosMachineUpdateParams.md
 docs/WTPromoCodeCreateParams.md
 docs/WTPromoCodeUpdateParams.md
+docs/WTQRCodeDesign.md
+docs/WTQRCodeDesignCreateParams.md
+docs/WTQRCodeDesignUpdateParams.md
 docs/WTRole.md
 docs/WTSMSAcquirePhoneNumber.md
 docs/WTSMSCreateAgreement.md
@@ -351,6 +356,11 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_qr_code_design.py
+test/test_qr_code_designs_api.py
+test/test_wtqr_code_design.py
+test/test_wtqr_code_design_create_params.py
+test/test_wtqr_code_design_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -382,6 +392,7 @@ wallet/api/news_api.py
 wallet/api/payment_designs_api.py
 wallet/api/performances_api.py
 wallet/api/promotion_codes_api.py
+wallet/api/qr_code_designs_api.py
 wallet/api/quick_links_api.py
 wallet/api/quick_links_section_api.py
 wallet/api/settings_api.py
@@ -552,6 +563,7 @@ wallet/model/presigned_post.py
 wallet/model/presigned_post_fields.py
 wallet/model/product.py
 wallet/model/promo_code.py
+wallet/model/qr_code_design.py
 wallet/model/reach_performance_stats.py
 wallet/model/request.py
 wallet/model/response.py
@@ -695,6 +707,9 @@ wallet/model/wt_wallet_object_prefix_counts.py
 wallet/model/wt_wallet_page_view.py
 wallet/model/wt_wallet_page_view_count.py
 wallet/model/wt_wallet_page_view_geo_point.py
+wallet/model/wtqr_code_design.py
+wallet/model/wtqr_code_design_create_params.py
+wallet/model/wtqr_code_design_update_params.py
 wallet/model/wtsms_acquire_phone_number.py
 wallet/model/wtsms_create_agreement.py
 wallet/model/wtsms_import_opt_in_list_subscribers.py
