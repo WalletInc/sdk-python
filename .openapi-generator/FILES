@@ -356,11 +356,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_qr_code_design.py
-test/test_qr_code_designs_api.py
-test/test_wtqr_code_design.py
-test/test_wtqr_code_design_create_params.py
-test/test_wtqr_code_design_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
