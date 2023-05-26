@@ -92,6 +92,7 @@ class SubscriptionProduct(ModelNormal):
             'icon_name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'is_hourly': (bool,),  # noqa: E501
+            'release_status': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -109,6 +110,7 @@ class SubscriptionProduct(ModelNormal):
         'icon_name': 'iconName',  # noqa: E501
         'description': 'description',  # noqa: E501
         'is_hourly': 'isHourly',  # noqa: E501
+        'release_status': 'releaseStatus',  # noqa: E501
     }
 
     read_only_vars = {
@@ -163,6 +165,7 @@ class SubscriptionProduct(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_hourly (bool): [optional]  # noqa: E501
+            release_status (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -263,6 +266,7 @@ class SubscriptionProduct(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_hourly (bool): [optional]  # noqa: E501
+            release_status (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
