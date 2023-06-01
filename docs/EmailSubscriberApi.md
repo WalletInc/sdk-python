@@ -185,13 +185,15 @@ configuration = wallet.Configuration(
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = email_subscriber_api.EmailSubscriberApi(api_client)
+    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
     is_archive_included = True # bool |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Fetch all email subscribers
-        api_response = api_instance.fetch_all_email_subscribers(is_archive_included=is_archive_included)
+        api_response = api_instance.fetch_all_email_subscribers(start_date_time=start_date_time, end_date_time=end_date_time, is_archive_included=is_archive_included)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling EmailSubscriberApi->fetch_all_email_subscribers: %s\n" % e)
@@ -202,6 +204,8 @@ with wallet.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **start_date_time** | **datetime**|  | [optional]
+ **end_date_time** | **datetime**|  | [optional]
  **is_archive_included** | **bool**|  | [optional]
 
 ### Return type

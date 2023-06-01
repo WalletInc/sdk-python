@@ -151,6 +151,8 @@ class EmailSubscriberApi(object):
             },
             params_map={
                 'all': [
+                    'start_date_time',
+                    'end_date_time',
                     'is_archive_included',
                 ],
                 'required': [],
@@ -167,13 +169,21 @@ class EmailSubscriberApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'start_date_time':
+                        (datetime,),
+                    'end_date_time':
+                        (datetime,),
                     'is_archive_included':
                         (bool,),
                 },
                 'attribute_map': {
+                    'start_date_time': 'startDateTime',
+                    'end_date_time': 'endDateTime',
                     'is_archive_included': 'isArchiveIncluded',
                 },
                 'location_map': {
+                    'start_date_time': 'query',
+                    'end_date_time': 'query',
                     'is_archive_included': 'query',
                 },
                 'collection_format_map': {
@@ -461,6 +471,8 @@ class EmailSubscriberApi(object):
 
 
         Keyword Args:
+            start_date_time (datetime): [optional]
+            end_date_time (datetime): [optional]
             is_archive_included (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
