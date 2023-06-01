@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 **is_profile** | **bool** |  | 
 **is_settings** | **bool** |  | 
 **is_chat_room** | **bool** |  | 
+**is_sms_opt_in** | **bool** |  | 
+**is_email_subscriber** | **bool** |  | 
 **id** | [**NanoID**](NanoID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
@@ -42,6 +44,7 @@ Name | Type | Description | Notes
 **header_image_url** | **str** |  | [optional] 
 **header_custom_icon** | **str** |  | [optional] 
 **is_tickets** | **bool** |  | [optional] 
+**sms_opt_in_source_id** | [**NanoID**](NanoID.md) |  | [optional] 
 **google_analytics_id** | **str** |  | [optional] 
 **facebook_pixel_id** | **str** |  | [optional] 
 **public_chat_room_channel_id** | **float** |  | [optional] 

@@ -24,6 +24,7 @@ from wallet.api.countries_api import CountriesApi
 from wallet.api.customer_api import CustomerApi
 from wallet.api.dashboard_api import DashboardApi
 from wallet.api.dynamic_vouchers_api import DynamicVouchersApi
+from wallet.api.email_subscriber_api import EmailSubscriberApi
 from wallet.api.employee_api_keys_api import EmployeeAPIKeysApi
 from wallet.api.employee_access_api import EmployeeAccessApi
 from wallet.api.employees_api import EmployeesApi

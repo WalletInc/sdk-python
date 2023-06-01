@@ -242,6 +242,11 @@ Class | Method | HTTP request | Description
 *DynamicVouchersApi* | [**fetch_reach_stats_of_individual_dynamic_voucher**](docs/DynamicVouchersApi.md#fetch_reach_stats_of_individual_dynamic_voucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher
 *DynamicVouchersApi* | [**restore_dynamic_voucher_campaign**](docs/DynamicVouchersApi.md#restore_dynamic_voucher_campaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore dynamic voucher campaign
 *DynamicVouchersApi* | [**save_dynamic_voucher**](docs/DynamicVouchersApi.md#save_dynamic_voucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update dynamic voucher
+*EmailSubscriberApi* | [**archive_email_subscriber**](docs/EmailSubscriberApi.md#archive_email_subscriber) | **DELETE** /v2/emailSubscriber/{id} | Archive email subscriber
+*EmailSubscriberApi* | [**create_email_subscriber**](docs/EmailSubscriberApi.md#create_email_subscriber) | **POST** /v2/emailSubscriber | Create email subscriber
+*EmailSubscriberApi* | [**fetch_all_email_subscribers**](docs/EmailSubscriberApi.md#fetch_all_email_subscribers) | **GET** /v2/emailSubscriber/all | Fetch all email subscribers
+*EmailSubscriberApi* | [**restore_email_subscriber**](docs/EmailSubscriberApi.md#restore_email_subscriber) | **PATCH** /v2/emailSubscriber/{id} | Restore email subscriber
+*EmailSubscriberApi* | [**update_email_subscriber**](docs/EmailSubscriberApi.md#update_email_subscriber) | **PUT** /v2/emailSubscriber/{id} | Update email subscriber
 *EmployeeAPIKeysApi* | [**archive_employee_api_keys**](docs/EmployeeAPIKeysApi.md#archive_employee_api_keys) | **DELETE** /v2/employee/apiKeys/{id} | Archive employee API Key
 *EmployeeAPIKeysApi* | [**create_employee_api_keys**](docs/EmployeeAPIKeysApi.md#create_employee_api_keys) | **POST** /v2/employee/apiKeys | Create employee API Key
 *EmployeeAPIKeysApi* | [**fetch_all_employee_api_keys**](docs/EmployeeAPIKeysApi.md#fetch_all_employee_api_keys) | **GET** /v2/employee/apiKeys/all | Fetch all employee API Keys
@@ -345,6 +350,7 @@ Class | Method | HTTP request | Description
 *InteractionsApi* | [**find_by_vanity_handle**](docs/InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 *InteractionsApi* | [**identify_item**](docs/InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
 *InteractionsApi* | [**request_merchant_url_redirect**](docs/InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
+*InteractionsApi* | [**subscribe_email**](docs/InteractionsApi.md#subscribe_email) | **POST** /wallet/subscribeEmail | Create email subscriber
 *LoginAndLogoutApi* | [**login**](docs/LoginAndLogoutApi.md#login) | **POST** /authentication/login | Login
 *LoginAndLogoutApi* | [**login_status**](docs/LoginAndLogoutApi.md#login_status) | **GET** /authentication/status/{token} | Retrieve status of session token
 *LoginAndLogoutApi* | [**logout**](docs/LoginAndLogoutApi.md#logout) | **DELETE** /authentication/logout | Logout
@@ -573,6 +579,7 @@ Class | Method | HTTP request | Description
  - [DuplicateRowFound](docs/DuplicateRowFound.md)
  - [DynamicVoucher](docs/DynamicVoucher.md)
  - [DynamicVoucherBroadcast](docs/DynamicVoucherBroadcast.md)
+ - [EmailSubscriber](docs/EmailSubscriber.md)
  - [Employee](docs/Employee.md)
  - [EmployeeAPIKey](docs/EmployeeAPIKey.md)
  - [EmployeeActivityLog](docs/EmployeeActivityLog.md)
@@ -677,6 +684,7 @@ Class | Method | HTTP request | Description
  - [PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID](docs/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.md)
  - [PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId](docs/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.md)
  - [PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt](docs/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.md)
+ - [PickWTEmailSubscriberUpdateParamsExcludeKeyofWTEmailSubscriberUpdateParamsId](docs/PickWTEmailSubscriberUpdateParamsExcludeKeyofWTEmailSubscriberUpdateParamsId.md)
  - [PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail](docs/PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail.md)
  - [PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber](docs/PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber.md)
  - [PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber](docs/PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md)
@@ -752,6 +760,9 @@ Class | Method | HTTP request | Description
  - [WTDynamicVoucherRedemption](docs/WTDynamicVoucherRedemption.md)
  - [WTDynamicVoucherSummary](docs/WTDynamicVoucherSummary.md)
  - [WTDynamicVoucherUpdateParams](docs/WTDynamicVoucherUpdateParams.md)
+ - [WTEmailSubscriberCreateParams](docs/WTEmailSubscriberCreateParams.md)
+ - [WTEmailSubscriberCreateParamsWalletUI](docs/WTEmailSubscriberCreateParamsWalletUI.md)
+ - [WTEmailSubscriberUpdateParams](docs/WTEmailSubscriberUpdateParams.md)
  - [WTEmployee](docs/WTEmployee.md)
  - [WTEmployeeAPIKey](docs/WTEmployeeAPIKey.md)
  - [WTEmployeeAPIKeyCreateParams](docs/WTEmployeeAPIKeyCreateParams.md)
