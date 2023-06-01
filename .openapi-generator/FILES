@@ -362,12 +362,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_email_subscriber.py
-test/test_email_subscriber_api.py
-test/test_pick_wt_email_subscriber_update_params_exclude_keyof_wt_email_subscriber_update_params_id.py
-test/test_wt_email_subscriber_create_params.py
-test/test_wt_email_subscriber_create_params_wallet_ui.py
-test/test_wt_email_subscriber_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
