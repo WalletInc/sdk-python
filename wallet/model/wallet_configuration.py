@@ -114,6 +114,8 @@ class WalletConfiguration(ModelNormal):
             'is_profile': (bool,),  # noqa: E501
             'is_settings': (bool,),  # noqa: E501
             'is_chat_room': (bool,),  # noqa: E501
+            'is_sms_opt_in': (bool,),  # noqa: E501
+            'is_email_subscriber': (bool,),  # noqa: E501
             'id': (NanoID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
@@ -121,6 +123,7 @@ class WalletConfiguration(ModelNormal):
             'header_image_url': (str,),  # noqa: E501
             'header_custom_icon': (str,),  # noqa: E501
             'is_tickets': (bool,),  # noqa: E501
+            'sms_opt_in_source_id': (NanoID,),  # noqa: E501
             'google_analytics_id': (str,),  # noqa: E501
             'facebook_pixel_id': (str,),  # noqa: E501
             'public_chat_room_channel_id': (float,),  # noqa: E501
@@ -166,6 +169,8 @@ class WalletConfiguration(ModelNormal):
         'is_profile': 'isProfile',  # noqa: E501
         'is_settings': 'isSettings',  # noqa: E501
         'is_chat_room': 'isChatRoom',  # noqa: E501
+        'is_sms_opt_in': 'isSmsOptIn',  # noqa: E501
+        'is_email_subscriber': 'isEmailSubscriber',  # noqa: E501
         'id': 'id',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
@@ -173,6 +178,7 @@ class WalletConfiguration(ModelNormal):
         'header_image_url': 'headerImageURL',  # noqa: E501
         'header_custom_icon': 'headerCustomIcon',  # noqa: E501
         'is_tickets': 'isTickets',  # noqa: E501
+        'sms_opt_in_source_id': 'smsOptInSourceID',  # noqa: E501
         'google_analytics_id': 'googleAnalyticsID',  # noqa: E501
         'facebook_pixel_id': 'facebookPixelID',  # noqa: E501
         'public_chat_room_channel_id': 'publicChatRoomChannelID',  # noqa: E501
@@ -188,7 +194,7 @@ class WalletConfiguration(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, header_background_color, header_button_color, left_menu_section_color, left_menu_arrow_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, id, created_at, updated_at, merchant_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, header_background_color, header_button_color, left_menu_section_color, left_menu_arrow_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, is_sms_opt_in, is_email_subscriber, id, created_at, updated_at, merchant_id, *args, **kwargs):  # noqa: E501
         """WalletConfiguration - a model defined in OpenAPI
 
         Args:
@@ -223,6 +229,8 @@ class WalletConfiguration(ModelNormal):
             is_profile (bool):
             is_settings (bool):
             is_chat_room (bool):
+            is_sms_opt_in (bool):
+            is_email_subscriber (bool):
             id (NanoID):
             created_at (datetime):
             updated_at (datetime):
@@ -262,6 +270,7 @@ class WalletConfiguration(ModelNormal):
             header_image_url (str): [optional]  # noqa: E501
             header_custom_icon (str): [optional]  # noqa: E501
             is_tickets (bool): [optional]  # noqa: E501
+            sms_opt_in_source_id (NanoID): [optional]  # noqa: E501
             google_analytics_id (str): [optional]  # noqa: E501
             facebook_pixel_id (str): [optional]  # noqa: E501
             public_chat_room_channel_id (float): [optional]  # noqa: E501
@@ -326,6 +335,8 @@ class WalletConfiguration(ModelNormal):
         self.is_profile = is_profile
         self.is_settings = is_settings
         self.is_chat_room = is_chat_room
+        self.is_sms_opt_in = is_sms_opt_in
+        self.is_email_subscriber = is_email_subscriber
         self.id = id
         self.created_at = created_at
         self.updated_at = updated_at
@@ -350,7 +361,7 @@ class WalletConfiguration(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, header_background_color, header_button_color, left_menu_section_color, left_menu_arrow_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, id, created_at, updated_at, merchant_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, header_background_color, header_button_color, left_menu_section_color, left_menu_arrow_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, is_sms_opt_in, is_email_subscriber, id, created_at, updated_at, merchant_id, *args, **kwargs):  # noqa: E501
         """WalletConfiguration - a model defined in OpenAPI
 
         Args:
@@ -385,6 +396,8 @@ class WalletConfiguration(ModelNormal):
             is_profile (bool):
             is_settings (bool):
             is_chat_room (bool):
+            is_sms_opt_in (bool):
+            is_email_subscriber (bool):
             id (NanoID):
             created_at (datetime):
             updated_at (datetime):
@@ -424,6 +437,7 @@ class WalletConfiguration(ModelNormal):
             header_image_url (str): [optional]  # noqa: E501
             header_custom_icon (str): [optional]  # noqa: E501
             is_tickets (bool): [optional]  # noqa: E501
+            sms_opt_in_source_id (NanoID): [optional]  # noqa: E501
             google_analytics_id (str): [optional]  # noqa: E501
             facebook_pixel_id (str): [optional]  # noqa: E501
             public_chat_room_channel_id (float): [optional]  # noqa: E501
@@ -486,6 +500,8 @@ class WalletConfiguration(ModelNormal):
         self.is_profile = is_profile
         self.is_settings = is_settings
         self.is_chat_room = is_chat_room
+        self.is_sms_opt_in = is_sms_opt_in
+        self.is_email_subscriber = is_email_subscriber
         self.id = id
         self.created_at = created_at
         self.updated_at = updated_at

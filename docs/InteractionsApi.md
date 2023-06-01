@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**find_by_vanity_handle**](InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 [**identify_item**](InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
 [**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
+[**subscribe_email**](InteractionsApi.md#subscribe_email) | **POST** /wallet/subscribeEmail | Create email subscriber
 
 
 # **create_advertisement_credit_scan**
@@ -924,6 +925,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 **bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **subscribe_email**
+> EmailSubscriber subscribe_email(wt_email_subscriber_create_params_wallet_ui)
+
+Create email subscriber
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import interactions_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.email_subscriber import EmailSubscriber
+from wallet.model.wt_email_subscriber_create_params_wallet_ui import WTEmailSubscriberCreateParamsWalletUI
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = interactions_api.InteractionsApi(api_client)
+    wt_email_subscriber_create_params_wallet_ui = WTEmailSubscriberCreateParamsWalletUI(
+        first_name="John",
+        last_name="Smith",
+        email_address="email_address_example",
+        merchant_id=MerchantID("C"),
+    ) # WTEmailSubscriberCreateParamsWalletUI | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create email subscriber
+        api_response = api_instance.subscribe_email(wt_email_subscriber_create_params_wallet_ui)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling InteractionsApi->subscribe_email: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_email_subscriber_create_params_wallet_ui** | [**WTEmailSubscriberCreateParamsWalletUI**](WTEmailSubscriberCreateParamsWalletUI.md)|  |
+
+### Return type
+
+[**EmailSubscriber**](EmailSubscriber.md)
 
 ### Authorization
 

@@ -43,6 +43,8 @@ docs/DuplicateRowFound.md
 docs/DynamicVoucher.md
 docs/DynamicVoucherBroadcast.md
 docs/DynamicVouchersApi.md
+docs/EmailSubscriber.md
+docs/EmailSubscriberApi.md
 docs/Employee.md
 docs/EmployeeAPIKey.md
 docs/EmployeeAPIKeysApi.md
@@ -164,6 +166,7 @@ docs/PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFrequencyTy
 docs/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.md
 docs/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.md
 docs/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.md
+docs/PickWTEmailSubscriberUpdateParamsExcludeKeyofWTEmailSubscriberUpdateParamsId.md
 docs/PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail.md
 docs/PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber.md
 docs/PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md
@@ -253,6 +256,9 @@ docs/WTDynamicVoucherCreateParams.md
 docs/WTDynamicVoucherRedemption.md
 docs/WTDynamicVoucherSummary.md
 docs/WTDynamicVoucherUpdateParams.md
+docs/WTEmailSubscriberCreateParams.md
+docs/WTEmailSubscriberCreateParamsWalletUI.md
+docs/WTEmailSubscriberUpdateParams.md
 docs/WTEmployee.md
 docs/WTEmployeeAPIKey.md
 docs/WTEmployeeAPIKeyCreateParams.md
@@ -356,6 +362,12 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_email_subscriber.py
+test/test_email_subscriber_api.py
+test/test_pick_wt_email_subscriber_update_params_exclude_keyof_wt_email_subscriber_update_params_id.py
+test/test_wt_email_subscriber_create_params.py
+test/test_wt_email_subscriber_create_params_wallet_ui.py
+test/test_wt_email_subscriber_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -369,6 +381,7 @@ wallet/api/countries_api.py
 wallet/api/customer_api.py
 wallet/api/dashboard_api.py
 wallet/api/dynamic_vouchers_api.py
+wallet/api/email_subscriber_api.py
 wallet/api/employee_access_api.py
 wallet/api/employee_api_keys_api.py
 wallet/api/employees_api.py
@@ -439,6 +452,7 @@ wallet/model/document.py
 wallet/model/duplicate_row_found.py
 wallet/model/dynamic_voucher.py
 wallet/model/dynamic_voucher_broadcast.py
+wallet/model/email_subscriber.py
 wallet/model/employee.py
 wallet/model/employee_activity_log.py
 wallet/model/employee_alert.py
@@ -543,6 +557,7 @@ wallet/model/pick_vs_dynamic_voucher_exclude_keyof_vs_dynamic_voucher_temporal_d
 wallet/model/pick_vs_payment_design_create_params_exclude_keyof_vs_payment_design_create_params_employee_id.py
 wallet/model/pick_vs_payment_design_update_params_exclude_keyof_vs_payment_design_update_params_id.py
 wallet/model/pick_vs_static_voucher_exclude_keyof_vs_static_voucher_redeemed_at_or_refunded_at_or_last_viewed_at.py
+wallet/model/pick_wt_email_subscriber_update_params_exclude_keyof_wt_email_subscriber_update_params_id.py
 wallet/model/pick_wt_employee_create_exclude_keyof_wt_employee_create_email.py
 wallet/model/pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number.py
 wallet/model/pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number.py
@@ -621,6 +636,9 @@ wallet/model/wt_dynamic_voucher_create_params.py
 wallet/model/wt_dynamic_voucher_redemption.py
 wallet/model/wt_dynamic_voucher_summary.py
 wallet/model/wt_dynamic_voucher_update_params.py
+wallet/model/wt_email_subscriber_create_params.py
+wallet/model/wt_email_subscriber_create_params_wallet_ui.py
+wallet/model/wt_email_subscriber_update_params.py
 wallet/model/wt_employee.py
 wallet/model/wt_employee_api_key.py
 wallet/model/wt_employee_api_key_create_params.py
