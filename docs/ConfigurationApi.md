@@ -181,8 +181,10 @@ with wallet.ApiClient() as api_client:
     wt_wallet_configuration_save_wallet_record = WTWalletConfigurationSaveWalletRecord(
         header_background_color="#F10A44",
         header_button_color="#FFFFFF",
-        left_menu_section_color="#050343",
-        left_menu_arrow_color="#812934",
+        left_menu_header_background_color="#050343",
+        left_menu_header_font_color="#812934",
+        left_menu_section_background_color="#812934",
+        left_menu_section_font_color="#812934",
         company_logo_url="https://example.com/company-info/logo.png",
         header_image_url="https://example.com/company-info/logo.png",
         header_custom_icon="header_custom_icon_example",

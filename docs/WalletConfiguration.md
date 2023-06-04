@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **header_background_color** | **str** |  | 
 **header_button_color** | **str** |  | 
-**left_menu_section_color** | **str** |  | 
-**left_menu_arrow_color** | **str** |  | 
+**left_menu_header_background_color** | **str** |  | 
+**left_menu_header_font_color** | **str** |  | 
+**left_menu_section_background_color** | **str** |  | 
+**left_menu_section_font_color** | **str** |  | 
 **company_logo_url** | **str** |  | 
 **welcome_message** | **str** |  | 
 **is_apple_enabled** | **bool** |  | 
