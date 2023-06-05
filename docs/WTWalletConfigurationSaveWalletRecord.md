@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **vanity_handle** | **str** |  | [optional] 
 **vanity_page_wallet_prefix** | **str** |  | [optional] 
 **merchant_credit_payment_design_id** | **str** |  | [optional] 
+**custom_domain** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
