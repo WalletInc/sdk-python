@@ -224,6 +224,7 @@ with wallet.ApiClient() as api_client:
         vanity_handle="vanity_handle_example",
         vanity_page_wallet_prefix="vanity_page_wallet_prefix_example",
         merchant_credit_payment_design_id="merchant_credit_payment_design_id_example",
+        custom_domain="custom_domain_example",
     ) # WTWalletConfigurationSaveWalletRecord | 
 
     # example passing only required values which don't have defaults set
