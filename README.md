@@ -95,6 +95,11 @@ Class | Method | HTTP request | Description
 *AdvertisementCreditsApi* | [**fetch_all_advertisement_credits**](docs/AdvertisementCreditsApi.md#fetch_all_advertisement_credits) | **GET** /v2/payment/advertisementCredit/all | Fetch all active ad credits
 *AdvertisementCreditsApi* | [**restore_advertisement_credit**](docs/AdvertisementCreditsApi.md#restore_advertisement_credit) | **PATCH** /v2/payment/advertisementCredit/{id} | Restore ad credit
 *AdvertisementCreditsApi* | [**update_advertisement_credit**](docs/AdvertisementCreditsApi.md#update_advertisement_credit) | **PUT** /v2/payment/advertisementCredit/{id} | Update ad credit
+*AmenitiesApi* | [**archive_amenity**](docs/AmenitiesApi.md#archive_amenity) | **DELETE** /v2/amenities/{id} | Archive amenity
+*AmenitiesApi* | [**create_amenity**](docs/AmenitiesApi.md#create_amenity) | **POST** /v2/amenities | Create amenity
+*AmenitiesApi* | [**fetch_all_amenities**](docs/AmenitiesApi.md#fetch_all_amenities) | **GET** /v2/amenities/all | Fetch all amenities
+*AmenitiesApi* | [**restore_amenity**](docs/AmenitiesApi.md#restore_amenity) | **PATCH** /v2/amenities/{id} | Restore amenity
+*AmenitiesApi* | [**update_amenity**](docs/AmenitiesApi.md#update_amenity) | **PUT** /v2/amenities/{id} | Update amenity
 *AnalyticsApi* | [**count_all_subscribers**](docs/AnalyticsApi.md#count_all_subscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers
 *AnalyticsApi* | [**count_authenticated_sessions**](docs/AnalyticsApi.md#count_authenticated_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions
 *AnalyticsApi* | [**count_distinct_redemptions**](docs/AnalyticsApi.md#count_distinct_redemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Fetch refund amount of campaigns by Campaign
@@ -426,6 +431,11 @@ Class | Method | HTTP request | Description
 *PerformancesApi* | [**fetch_all_performances**](docs/PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
 *PerformancesApi* | [**restore_performance**](docs/PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore performance
 *PerformancesApi* | [**update_performance**](docs/PerformancesApi.md#update_performance) | **PUT** /v2/performances/{id} | Update performance
+*ProductsApi* | [**archive_product**](docs/ProductsApi.md#archive_product) | **DELETE** /v2/products/{id} | Archive product
+*ProductsApi* | [**create_product**](docs/ProductsApi.md#create_product) | **POST** /v2/products | Create product
+*ProductsApi* | [**fetch_all_products**](docs/ProductsApi.md#fetch_all_products) | **GET** /v2/products/all | Fetch all products
+*ProductsApi* | [**restore_product**](docs/ProductsApi.md#restore_product) | **PATCH** /v2/products/{id} | Restore product
+*ProductsApi* | [**update_product**](docs/ProductsApi.md#update_product) | **PUT** /v2/products/{id} | Update product
 *PromotionCodesApi* | [**archive_promo_code**](docs/PromotionCodesApi.md#archive_promo_code) | **DELETE** /v2/promoCodes/{id} | Archive promo code
 *PromotionCodesApi* | [**create_promo_code**](docs/PromotionCodesApi.md#create_promo_code) | **POST** /v2/promoCodes | Create promo code
 *PromotionCodesApi* | [**fetch_all_promo_codes**](docs/PromotionCodesApi.md#fetch_all_promo_codes) | **GET** /v2/promoCodes/all | Fetch all promo codes
@@ -448,6 +458,11 @@ Class | Method | HTTP request | Description
 *QuickLinksSectionApi* | [**fetch_all_link_book_sections**](docs/QuickLinksSectionApi.md#fetch_all_link_book_sections) | **GET** /v2/linkBookSection/all | Fetch all link book sections
 *QuickLinksSectionApi* | [**restore_link_book_section**](docs/QuickLinksSectionApi.md#restore_link_book_section) | **PATCH** /v2/linkBookSection/{id} | Restore link book section
 *QuickLinksSectionApi* | [**update_link_book_section**](docs/QuickLinksSectionApi.md#update_link_book_section) | **PUT** /v2/linkBookSection/{id} | Update link book section
+*RoomRatesApi* | [**archive_room_rate**](docs/RoomRatesApi.md#archive_room_rate) | **DELETE** /v2/roomRates/{id} | Archive room rate
+*RoomRatesApi* | [**create_room_rate**](docs/RoomRatesApi.md#create_room_rate) | **POST** /v2/roomRates | Create room rate
+*RoomRatesApi* | [**fetch_all_room_rates**](docs/RoomRatesApi.md#fetch_all_room_rates) | **GET** /v2/roomRates/all | Fetch all room rates
+*RoomRatesApi* | [**restore_room_rate**](docs/RoomRatesApi.md#restore_room_rate) | **PATCH** /v2/roomRates/{id} | Restore room rate
+*RoomRatesApi* | [**update_room_rate**](docs/RoomRatesApi.md#update_room_rate) | **PUT** /v2/roomRates/{id} | Update room rate
 *SMSApi* | [**acquire_phone_number**](docs/SMSApi.md#acquire_phone_number) | **POST** /v2/sms/phoneNumber/acquire | Acquire phone number
 *SMSApi* | [**archive_phone_number**](docs/SMSApi.md#archive_phone_number) | **DELETE** /v2/sms/phoneNumber/{phoneNumberID} | Archive phone number
 *SMSApi* | [**archive_recipient**](docs/SMSApi.md#archive_recipient) | **DELETE** /v2/sms/importedList/recipients/{id} | Archive recipient
@@ -486,6 +501,11 @@ Class | Method | HTTP request | Description
 *SMSApi* | [**save_opt_in_list_source**](docs/SMSApi.md#save_opt_in_list_source) | **PUT** /v2/sms/optInListSource/{sourceID} | Save opt in list source
 *SMSApi* | [**send_phone_number_for_verification**](docs/SMSApi.md#send_phone_number_for_verification) | **PUT** /v2/sms/phoneNumber/verification/{phoneNumberID} | Request phone number verification
 *SMSApi* | [**update_phone_number**](docs/SMSApi.md#update_phone_number) | **PUT** /v2/sms/phoneNumber/{phoneNumberID} | Update phone number
+*ServicesApi* | [**archive_service**](docs/ServicesApi.md#archive_service) | **DELETE** /v2/services/{id} | Archive service
+*ServicesApi* | [**create_service**](docs/ServicesApi.md#create_service) | **POST** /v2/services | Create service
+*ServicesApi* | [**fetch_all_services**](docs/ServicesApi.md#fetch_all_services) | **GET** /v2/services/all | Fetch all services
+*ServicesApi* | [**restore_service**](docs/ServicesApi.md#restore_service) | **PATCH** /v2/services/{id} | Restore service
+*ServicesApi* | [**update_service**](docs/ServicesApi.md#update_service) | **PUT** /v2/services/{id} | Update service
 *SettingsApi* | [**get_active_campaigns**](docs/SettingsApi.md#get_active_campaigns) | **GET** /v2/settings/campaigns/active | Get active campaigns
 *SettingsApi* | [**get_vouchers_count**](docs/SettingsApi.md#get_vouchers_count) | **GET** /v2/settings/vouchers/count | Get vouchers count
 *ShopifyTerminalApi* | [**fetch_wallet_item_from_shopify_terminal**](docs/ShopifyTerminalApi.md#fetch_wallet_item_from_shopify_terminal) | **GET** /v2/pos/shopify/item/{itemID} | Fetch item
@@ -552,6 +572,7 @@ Class | Method | HTTP request | Description
  - [AdvertisementCreditBroadcast](docs/AdvertisementCreditBroadcast.md)
  - [AdvertisementCreditScan](docs/AdvertisementCreditScan.md)
  - [Agreement](docs/Agreement.md)
+ - [Amenity](docs/Amenity.md)
  - [Announcement](docs/Announcement.md)
  - [ApplicableTerminals](docs/ApplicableTerminals.md)
  - [ApplicableTerminalsAnyOf](docs/ApplicableTerminalsAnyOf.md)
@@ -706,6 +727,7 @@ Class | Method | HTTP request | Description
  - [Response](docs/Response.md)
  - [Role](docs/Role.md)
  - [RoleAuditLog](docs/RoleAuditLog.md)
+ - [RoomRate](docs/RoomRate.md)
  - [SSImportedListRecipientCreateParams](docs/SSImportedListRecipientCreateParams.md)
  - [SSMerchantID](docs/SSMerchantID.md)
  - [SSNanoID](docs/SSNanoID.md)
@@ -717,6 +739,7 @@ Class | Method | HTTP request | Description
  - [SSOutboundStatusesAnyOf3](docs/SSOutboundStatusesAnyOf3.md)
  - [SSOutboundStatusesAnyOf4](docs/SSOutboundStatusesAnyOf4.md)
  - [SSOutboundStatusesAnyOf5](docs/SSOutboundStatusesAnyOf5.md)
+ - [Service](docs/Service.md)
  - [SimpleSMSBroadcast](docs/SimpleSMSBroadcast.md)
  - [StaticVoucher](docs/StaticVoucher.md)
  - [StaticVoucherCampaign](docs/StaticVoucherCampaign.md)
@@ -741,6 +764,8 @@ Class | Method | HTTP request | Description
  - [WTAdvertisementCreditCreateParams](docs/WTAdvertisementCreditCreateParams.md)
  - [WTAdvertisementCreditScan](docs/WTAdvertisementCreditScan.md)
  - [WTAdvertisementCreditUpdateParams](docs/WTAdvertisementCreditUpdateParams.md)
+ - [WTAmenityCreateParams](docs/WTAmenityCreateParams.md)
+ - [WTAmenityUpdateParams](docs/WTAmenityUpdateParams.md)
  - [WTAuthenticationCheckSessionTokenStatusResponse](docs/WTAuthenticationCheckSessionTokenStatusResponse.md)
  - [WTAuthenticationForgotPassword](docs/WTAuthenticationForgotPassword.md)
  - [WTAuthenticationLoginRequest](docs/WTAuthenticationLoginRequest.md)
@@ -822,18 +847,24 @@ Class | Method | HTTP request | Description
  - [WTPosMachine](docs/WTPosMachine.md)
  - [WTPosMachineCreateParams](docs/WTPosMachineCreateParams.md)
  - [WTPosMachineUpdateParams](docs/WTPosMachineUpdateParams.md)
+ - [WTProductCreateParams](docs/WTProductCreateParams.md)
+ - [WTProductUpdateParams](docs/WTProductUpdateParams.md)
  - [WTPromoCodeCreateParams](docs/WTPromoCodeCreateParams.md)
  - [WTPromoCodeUpdateParams](docs/WTPromoCodeUpdateParams.md)
  - [WTQRCodeDesign](docs/WTQRCodeDesign.md)
  - [WTQRCodeDesignCreateParams](docs/WTQRCodeDesignCreateParams.md)
  - [WTQRCodeDesignUpdateParams](docs/WTQRCodeDesignUpdateParams.md)
  - [WTRole](docs/WTRole.md)
+ - [WTRoomRateCreateParams](docs/WTRoomRateCreateParams.md)
+ - [WTRoomRateUpdateParams](docs/WTRoomRateUpdateParams.md)
  - [WTSMSAcquirePhoneNumber](docs/WTSMSAcquirePhoneNumber.md)
  - [WTSMSCreateAgreement](docs/WTSMSCreateAgreement.md)
  - [WTSMSImportOptInListSubscribers](docs/WTSMSImportOptInListSubscribers.md)
  - [WTSMSImportedListCreate](docs/WTSMSImportedListCreate.md)
  - [WTSMSOptInListSourceCreate](docs/WTSMSOptInListSourceCreate.md)
  - [WTSMSUpdatePhoneNumberConfig](docs/WTSMSUpdatePhoneNumberConfig.md)
+ - [WTServiceCreateParams](docs/WTServiceCreateParams.md)
+ - [WTServiceUpdateParams](docs/WTServiceUpdateParams.md)
  - [WTSettingsSetPassword](docs/WTSettingsSetPassword.md)
  - [WTStaticVoucher](docs/WTStaticVoucher.md)
  - [WTStaticVoucherCampaign](docs/WTStaticVoucherCampaign.md)

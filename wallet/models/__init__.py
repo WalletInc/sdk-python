@@ -13,6 +13,7 @@ from wallet.model.advertisement_credit import AdvertisementCredit
 from wallet.model.advertisement_credit_broadcast import AdvertisementCreditBroadcast
 from wallet.model.advertisement_credit_scan import AdvertisementCreditScan
 from wallet.model.agreement import Agreement
+from wallet.model.amenity import Amenity
 from wallet.model.announcement import Announcement
 from wallet.model.applicable_terminals import ApplicableTerminals
 from wallet.model.applicable_terminals_any_of import ApplicableTerminalsAnyOf
@@ -167,6 +168,7 @@ from wallet.model.request import Request
 from wallet.model.response import Response
 from wallet.model.role import Role
 from wallet.model.role_audit_log import RoleAuditLog
+from wallet.model.room_rate import RoomRate
 from wallet.model.ss_imported_list_recipient_create_params import SSImportedListRecipientCreateParams
 from wallet.model.ss_merchant_id import SSMerchantID
 from wallet.model.ss_nano_id import SSNanoID
@@ -178,6 +180,7 @@ from wallet.model.ss_outbound_statuses_any_of2 import SSOutboundStatusesAnyOf2
 from wallet.model.ss_outbound_statuses_any_of3 import SSOutboundStatusesAnyOf3
 from wallet.model.ss_outbound_statuses_any_of4 import SSOutboundStatusesAnyOf4
 from wallet.model.ss_outbound_statuses_any_of5 import SSOutboundStatusesAnyOf5
+from wallet.model.service import Service
 from wallet.model.simple_sms_broadcast import SimpleSMSBroadcast
 from wallet.model.static_voucher import StaticVoucher
 from wallet.model.static_voucher_campaign import StaticVoucherCampaign
@@ -202,6 +205,8 @@ from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
 from wallet.model.wt_advertisement_credit_create_params import WTAdvertisementCreditCreateParams
 from wallet.model.wt_advertisement_credit_scan import WTAdvertisementCreditScan
 from wallet.model.wt_advertisement_credit_update_params import WTAdvertisementCreditUpdateParams
+from wallet.model.wt_amenity_create_params import WTAmenityCreateParams
+from wallet.model.wt_amenity_update_params import WTAmenityUpdateParams
 from wallet.model.wt_authentication_check_session_token_status_response import WTAuthenticationCheckSessionTokenStatusResponse
 from wallet.model.wt_authentication_forgot_password import WTAuthenticationForgotPassword
 from wallet.model.wt_authentication_login_request import WTAuthenticationLoginRequest
@@ -283,18 +288,24 @@ from wallet.model.wt_performance_update_params import WTPerformanceUpdateParams
 from wallet.model.wt_pos_machine import WTPosMachine
 from wallet.model.wt_pos_machine_create_params import WTPosMachineCreateParams
 from wallet.model.wt_pos_machine_update_params import WTPosMachineUpdateParams
+from wallet.model.wt_product_create_params import WTProductCreateParams
+from wallet.model.wt_product_update_params import WTProductUpdateParams
 from wallet.model.wt_promo_code_create_params import WTPromoCodeCreateParams
 from wallet.model.wt_promo_code_update_params import WTPromoCodeUpdateParams
 from wallet.model.wtqr_code_design import WTQRCodeDesign
 from wallet.model.wtqr_code_design_create_params import WTQRCodeDesignCreateParams
 from wallet.model.wtqr_code_design_update_params import WTQRCodeDesignUpdateParams
 from wallet.model.wt_role import WTRole
+from wallet.model.wt_room_rate_create_params import WTRoomRateCreateParams
+from wallet.model.wt_room_rate_update_params import WTRoomRateUpdateParams
 from wallet.model.wtsms_acquire_phone_number import WTSMSAcquirePhoneNumber
 from wallet.model.wtsms_create_agreement import WTSMSCreateAgreement
 from wallet.model.wtsms_import_opt_in_list_subscribers import WTSMSImportOptInListSubscribers
 from wallet.model.wtsms_imported_list_create import WTSMSImportedListCreate
 from wallet.model.wtsms_opt_in_list_source_create import WTSMSOptInListSourceCreate
 from wallet.model.wtsms_update_phone_number_config import WTSMSUpdatePhoneNumberConfig
+from wallet.model.wt_service_create_params import WTServiceCreateParams
+from wallet.model.wt_service_update_params import WTServiceUpdateParams
 from wallet.model.wt_settings_set_password import WTSettingsSetPassword
 from wallet.model.wt_static_voucher import WTStaticVoucher
 from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
