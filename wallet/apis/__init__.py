@@ -15,6 +15,7 @@
 
 # Import APIs into API package:
 from wallet.api.advertisement_credits_api import AdvertisementCreditsApi
+from wallet.api.amenities_api import AmenitiesApi
 from wallet.api.analytics_api import AnalyticsApi
 from wallet.api.apple_wallet_subscribers_api import AppleWalletSubscribersApi
 from wallet.api.billing_api import BillingApi
@@ -42,11 +43,14 @@ from wallet.api.mobile_terminal_api import MobileTerminalApi
 from wallet.api.news_api import NewsApi
 from wallet.api.payment_designs_api import PaymentDesignsApi
 from wallet.api.performances_api import PerformancesApi
+from wallet.api.products_api import ProductsApi
 from wallet.api.promotion_codes_api import PromotionCodesApi
 from wallet.api.qr_code_designs_api import QRCodeDesignsApi
 from wallet.api.quick_links_api import QuickLinksApi
 from wallet.api.quick_links_section_api import QuickLinksSectionApi
+from wallet.api.room_rates_api import RoomRatesApi
 from wallet.api.sms_api import SMSApi
+from wallet.api.services_api import ServicesApi
 from wallet.api.settings_api import SettingsApi
 from wallet.api.shopify_terminal_api import ShopifyTerminalApi
 from wallet.api.static_voucher_campaign_groups_api import StaticVoucherCampaignGroupsApi
