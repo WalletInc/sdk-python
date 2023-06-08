@@ -114,9 +114,10 @@ with wallet.ApiClient() as api_client:
     wt_amenity_create_params = WTAmenityCreateParams(
         title="This is the title of the amenity",
         description="This is the description of the amenity",
-        display_value="20% Off!",
+        displayed_price="20% Off!",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        additional_info_url="https://hotels.com/your-property/pool",
     ) # WTAmenityCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -335,9 +336,10 @@ with wallet.ApiClient() as api_client:
     wt_amenity_update_params = WTAmenityUpdateParams(
         title="This is the title of the amenity",
         description="This is the description of the amenity",
-        display_value="20% Off!",
+        displayed_price="20% Off!",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        additional_info_url="https://hotels.com/your-property/pool",
     ) # WTAmenityUpdateParams | 
 
     # example passing only required values which don't have defaults set
