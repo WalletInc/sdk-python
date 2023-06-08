@@ -238,6 +238,11 @@ Class | Method | HTTP request | Description
 *DashboardApi* | [**fetch_dashboard_refunds_count**](docs/DashboardApi.md#fetch_dashboard_refunds_count) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds
 *DashboardApi* | [**fetch_dashboard_wallet_page_views_count**](docs/DashboardApi.md#fetch_dashboard_wallet_page_views_count) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views
 *DashboardApi* | [**fetch_dashboard_widgets_catalog**](docs/DashboardApi.md#fetch_dashboard_widgets_catalog) | **GET** /v2/dashboard/widgets | Fetch widgets catalog
+*DiningApi* | [**archive_dining**](docs/DiningApi.md#archive_dining) | **DELETE** /v2/dining/{id} | Archive dining
+*DiningApi* | [**create_dining**](docs/DiningApi.md#create_dining) | **POST** /v2/dining | Create dining
+*DiningApi* | [**fetch_all_dining**](docs/DiningApi.md#fetch_all_dining) | **GET** /v2/dining/all | Fetch all dining
+*DiningApi* | [**restore_dining**](docs/DiningApi.md#restore_dining) | **PATCH** /v2/dining/{id} | Restore dining
+*DiningApi* | [**update_dining**](docs/DiningApi.md#update_dining) | **PUT** /v2/dining/{id} | Update dining
 *DynamicVouchersApi* | [**archive_dynamic_voucher_campaign**](docs/DynamicVouchersApi.md#archive_dynamic_voucher_campaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive dynamic voucher campaign
 *DynamicVouchersApi* | [**create_dynamic_voucher**](docs/DynamicVouchersApi.md#create_dynamic_voucher) | **POST** /v2/payment/dynamicVoucher | Create dynamic voucher
 *DynamicVouchersApi* | [**fetch_all_dynamic_vouchers**](docs/DynamicVouchersApi.md#fetch_all_dynamic_vouchers) | **GET** /v2/payment/dynamicVoucher/all | Fetch all active dynamic vouchers
@@ -304,6 +309,11 @@ Class | Method | HTTP request | Description
 *EmployeesApi* | [**update_club_members**](docs/EmployeesApi.md#update_club_members) | **PUT** /v2/employee/update/members | Update club members
 *EmployeesApi* | [**update_email_notification_preference**](docs/EmployeesApi.md#update_email_notification_preference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled
 *EmployeesApi* | [**update_employee_peer**](docs/EmployeesApi.md#update_employee_peer) | **PUT** /v2/employee/peer/{userID} | Update peer
+*GamingApi* | [**archive_gaming**](docs/GamingApi.md#archive_gaming) | **DELETE** /v2/gaming/{id} | Archive gaming
+*GamingApi* | [**create_gaming**](docs/GamingApi.md#create_gaming) | **POST** /v2/gaming | Create gaming
+*GamingApi* | [**fetch_all_gaming**](docs/GamingApi.md#fetch_all_gaming) | **GET** /v2/gaming/all | Fetch all gaming
+*GamingApi* | [**restore_gaming**](docs/GamingApi.md#restore_gaming) | **PATCH** /v2/gaming/{id} | Restore gaming
+*GamingApi* | [**update_gaming**](docs/GamingApi.md#update_gaming) | **PUT** /v2/gaming/{id} | Update gaming
 *ImageGridApi* | [**archive_image_grid**](docs/ImageGridApi.md#archive_image_grid) | **DELETE** /v2/imageGrid/{id} | Archive image
 *ImageGridApi* | [**create_image_grid**](docs/ImageGridApi.md#create_image_grid) | **POST** /v2/imageGrid | Create image
 *ImageGridApi* | [**fetch_all_image_grid**](docs/ImageGridApi.md#fetch_all_image_grid) | **GET** /v2/imageGrid/all | Fetch all images
@@ -359,6 +369,11 @@ Class | Method | HTTP request | Description
 *LoginAndLogoutApi* | [**login**](docs/LoginAndLogoutApi.md#login) | **POST** /authentication/login | Login
 *LoginAndLogoutApi* | [**login_status**](docs/LoginAndLogoutApi.md#login_status) | **GET** /authentication/status/{token} | Retrieve status of session token
 *LoginAndLogoutApi* | [**logout**](docs/LoginAndLogoutApi.md#logout) | **DELETE** /authentication/logout | Logout
+*LoungeApi* | [**archive_lounge**](docs/LoungeApi.md#archive_lounge) | **DELETE** /v2/lounge/{id} | Archive lounge
+*LoungeApi* | [**create_lounge**](docs/LoungeApi.md#create_lounge) | **POST** /v2/lounge | Create lounge
+*LoungeApi* | [**fetch_all_lounge**](docs/LoungeApi.md#fetch_all_lounge) | **GET** /v2/lounge/all | Fetch all lounge
+*LoungeApi* | [**restore_lounge**](docs/LoungeApi.md#restore_lounge) | **PATCH** /v2/lounge/{id} | Restore lounge
+*LoungeApi* | [**update_lounge**](docs/LoungeApi.md#update_lounge) | **PUT** /v2/lounge/{id} | Update lounge
 *MembershipTiersApi* | [**archive_membership_tier**](docs/MembershipTiersApi.md#archive_membership_tier) | **DELETE** /v2/membership/tier/{id} | Archive tier
 *MembershipTiersApi* | [**create_membership_tier**](docs/MembershipTiersApi.md#create_membership_tier) | **POST** /v2/membership/tier | Create tier
 *MembershipTiersApi* | [**fetch_all_membership_tiers**](docs/MembershipTiersApi.md#fetch_all_membership_tiers) | **GET** /v2/membership/tier/all | Fetch all tiers
@@ -596,6 +611,7 @@ Class | Method | HTTP request | Description
  - [CreateStaticVoucherCampaign](docs/CreateStaticVoucherCampaign.md)
  - [CreateStaticVoucherCampaignWithVoucherWithCSV](docs/CreateStaticVoucherCampaignWithVoucherWithCSV.md)
  - [DashboardWidget](docs/DashboardWidget.md)
+ - [Dining](docs/Dining.md)
  - [Document](docs/Document.md)
  - [DuplicateRowFound](docs/DuplicateRowFound.md)
  - [DynamicVoucher](docs/DynamicVoucher.md)
@@ -612,6 +628,7 @@ Class | Method | HTTP request | Description
  - [Feature](docs/Feature.md)
  - [ForbiddenRequest](docs/ForbiddenRequest.md)
  - [ForeignKeyDoesNotExist](docs/ForeignKeyDoesNotExist.md)
+ - [Gaming](docs/Gaming.md)
  - [HelpDeskRequest](docs/HelpDeskRequest.md)
  - [ImageGrid](docs/ImageGrid.md)
  - [ImportedList](docs/ImportedList.md)
@@ -634,6 +651,7 @@ Class | Method | HTTP request | Description
  - [LedgerEntry](docs/LedgerEntry.md)
  - [LinkBook](docs/LinkBook.md)
  - [LinkBookSection](docs/LinkBookSection.md)
+ - [Lounge](docs/Lounge.md)
  - [MSAnalyticsMemberCountPartitionedByDate](docs/MSAnalyticsMemberCountPartitionedByDate.md)
  - [MSAnalyticsMemberPointsRedeemedPartitionedByDate](docs/MSAnalyticsMemberPointsRedeemedPartitionedByDate.md)
  - [MSAnalyticsMemberPointsRefundedPartitionedByDate](docs/MSAnalyticsMemberPointsRefundedPartitionedByDate.md)
@@ -780,6 +798,8 @@ Class | Method | HTTP request | Description
  - [WTCountResult](docs/WTCountResult.md)
  - [WTCustomerSearchByMemberID](docs/WTCustomerSearchByMemberID.md)
  - [WTCustomerSearchByPhoneNumber](docs/WTCustomerSearchByPhoneNumber.md)
+ - [WTDiningCreateParams](docs/WTDiningCreateParams.md)
+ - [WTDiningUpdateParams](docs/WTDiningUpdateParams.md)
  - [WTDynamicVoucher](docs/WTDynamicVoucher.md)
  - [WTDynamicVoucherCreateParams](docs/WTDynamicVoucherCreateParams.md)
  - [WTDynamicVoucherRedemption](docs/WTDynamicVoucherRedemption.md)
@@ -808,6 +828,8 @@ Class | Method | HTTP request | Description
  - [WTEmployeeUpdate](docs/WTEmployeeUpdate.md)
  - [WTEmployeeUpdateRecords](docs/WTEmployeeUpdateRecords.md)
  - [WTFetchWalletPaymentObjectWithToken](docs/WTFetchWalletPaymentObjectWithToken.md)
+ - [WTGamingCreateParams](docs/WTGamingCreateParams.md)
+ - [WTGamingUpdateParams](docs/WTGamingUpdateParams.md)
  - [WTImageGridCreateParams](docs/WTImageGridCreateParams.md)
  - [WTImageGridUpdateParams](docs/WTImageGridUpdateParams.md)
  - [WTImportedList](docs/WTImportedList.md)
@@ -821,6 +843,8 @@ Class | Method | HTTP request | Description
  - [WTLinkBookSectionCreateParams](docs/WTLinkBookSectionCreateParams.md)
  - [WTLinkBookSectionUpdateParams](docs/WTLinkBookSectionUpdateParams.md)
  - [WTLinkBookUpdateParams](docs/WTLinkBookUpdateParams.md)
+ - [WTLoungeCreateParams](docs/WTLoungeCreateParams.md)
+ - [WTLoungeUpdateParams](docs/WTLoungeUpdateParams.md)
  - [WTMember](docs/WTMember.md)
  - [WTMemberCreationParams](docs/WTMemberCreationParams.md)
  - [WTMembershipTier](docs/WTMembershipTier.md)

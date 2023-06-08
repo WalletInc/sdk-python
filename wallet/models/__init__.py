@@ -37,6 +37,7 @@ from wallet.model.click_funnel_registration import ClickFunnelRegistration
 from wallet.model.create_static_voucher_campaign import CreateStaticVoucherCampaign
 from wallet.model.create_static_voucher_campaign_with_voucher_with_csv import CreateStaticVoucherCampaignWithVoucherWithCSV
 from wallet.model.dashboard_widget import DashboardWidget
+from wallet.model.dining import Dining
 from wallet.model.document import Document
 from wallet.model.duplicate_row_found import DuplicateRowFound
 from wallet.model.dynamic_voucher import DynamicVoucher
@@ -53,6 +54,7 @@ from wallet.model.falsum_field import FalsumField
 from wallet.model.feature import Feature
 from wallet.model.forbidden_request import ForbiddenRequest
 from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
+from wallet.model.gaming import Gaming
 from wallet.model.help_desk_request import HelpDeskRequest
 from wallet.model.image_grid import ImageGrid
 from wallet.model.imported_list import ImportedList
@@ -75,6 +77,7 @@ from wallet.model.internal_server_error import InternalServerError
 from wallet.model.ledger_entry import LedgerEntry
 from wallet.model.link_book import LinkBook
 from wallet.model.link_book_section import LinkBookSection
+from wallet.model.lounge import Lounge
 from wallet.model.ms_analytics_member_count_partitioned_by_date import MSAnalyticsMemberCountPartitionedByDate
 from wallet.model.ms_analytics_member_points_redeemed_partitioned_by_date import MSAnalyticsMemberPointsRedeemedPartitionedByDate
 from wallet.model.ms_analytics_member_points_refunded_partitioned_by_date import MSAnalyticsMemberPointsRefundedPartitionedByDate
@@ -221,6 +224,8 @@ from wallet.model.wt_billing_verify_payment_method_response import WTBillingVeri
 from wallet.model.wt_count_result import WTCountResult
 from wallet.model.wt_customer_search_by_member_id import WTCustomerSearchByMemberID
 from wallet.model.wt_customer_search_by_phone_number import WTCustomerSearchByPhoneNumber
+from wallet.model.wt_dining_create_params import WTDiningCreateParams
+from wallet.model.wt_dining_update_params import WTDiningUpdateParams
 from wallet.model.wt_dynamic_voucher import WTDynamicVoucher
 from wallet.model.wt_dynamic_voucher_create_params import WTDynamicVoucherCreateParams
 from wallet.model.wt_dynamic_voucher_redemption import WTDynamicVoucherRedemption
@@ -249,6 +254,8 @@ from wallet.model.wt_employee_send_help_desk_response import WTEmployeeSendHelpD
 from wallet.model.wt_employee_update import WTEmployeeUpdate
 from wallet.model.wt_employee_update_records import WTEmployeeUpdateRecords
 from wallet.model.wt_fetch_wallet_payment_object_with_token import WTFetchWalletPaymentObjectWithToken
+from wallet.model.wt_gaming_create_params import WTGamingCreateParams
+from wallet.model.wt_gaming_update_params import WTGamingUpdateParams
 from wallet.model.wt_image_grid_create_params import WTImageGridCreateParams
 from wallet.model.wt_image_grid_update_params import WTImageGridUpdateParams
 from wallet.model.wt_imported_list import WTImportedList
@@ -262,6 +269,8 @@ from wallet.model.wt_link_book_create_params import WTLinkBookCreateParams
 from wallet.model.wt_link_book_section_create_params import WTLinkBookSectionCreateParams
 from wallet.model.wt_link_book_section_update_params import WTLinkBookSectionUpdateParams
 from wallet.model.wt_link_book_update_params import WTLinkBookUpdateParams
+from wallet.model.wt_lounge_create_params import WTLoungeCreateParams
+from wallet.model.wt_lounge_update_params import WTLoungeUpdateParams
 from wallet.model.wt_member import WTMember
 from wallet.model.wt_member_creation_params import WTMemberCreationParams
 from wallet.model.wt_membership_tier import WTMembershipTier
