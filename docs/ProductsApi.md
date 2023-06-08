@@ -114,9 +114,10 @@ with wallet.ApiClient() as api_client:
     wt_product_create_params = WTProductCreateParams(
         title="This is the title of the product",
         description="This is the description of the product",
-        display_value="20% Off!",
+        displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        additional_info_url="https://your-website.com/product-1/buy-now",
     ) # WTProductCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -335,9 +336,10 @@ with wallet.ApiClient() as api_client:
     wt_product_update_params = WTProductUpdateParams(
         title="This is the title of the product",
         description="This is the description of the product",
-        display_value="20% Off!",
+        displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        additional_info_url="https://your-website.com/product-1/buy-now",
     ) # WTProductUpdateParams | 
 
     # example passing only required values which don't have defaults set
