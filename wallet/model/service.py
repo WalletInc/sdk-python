@@ -69,9 +69,6 @@ class Service(ModelNormal):
         ('description',): {
             'min_length': 1,
         },
-        ('display_value',): {
-            'min_length': 1,
-        },
         ('order_number',): {
             'inclusive_minimum': 1,
         },
@@ -95,14 +92,15 @@ class Service(ModelNormal):
         return {
             'title': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
-            'display_value': (str,),  # noqa: E501
             'order_number': (int,),  # noqa: E501
             'id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'merchant_id': (MerchantID,),  # noqa: E501
+            'displayed_price': (str,),  # noqa: E501
             'media_url': (str,),  # noqa: E501
+            'additional_info_url': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -113,14 +111,15 @@ class Service(ModelNormal):
     attribute_map = {
         'title': 'title',  # noqa: E501
         'description': 'description',  # noqa: E501
-        'display_value': 'displayValue',  # noqa: E501
         'order_number': 'orderNumber',  # noqa: E501
         'id': 'id',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'is_active': 'isActive',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
+        'displayed_price': 'displayedPrice',  # noqa: E501
         'media_url': 'mediaURL',  # noqa: E501
+        'additional_info_url': 'additionalInfoURL',  # noqa: E501
     }
 
     read_only_vars = {
@@ -130,13 +129,12 @@ class Service(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, title, description, display_value, order_number, id, created_at, updated_at, is_active, merchant_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, title, description, order_number, id, created_at, updated_at, is_active, merchant_id, *args, **kwargs):  # noqa: E501
         """Service - a model defined in OpenAPI
 
         Args:
             title (str):
             description (str):
-            display_value (str):
             order_number (int):
             id (bool, date, datetime, dict, float, int, list, str, none_type):
             created_at (datetime):
@@ -175,7 +173,9 @@ class Service(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            displayed_price (str): [optional]  # noqa: E501
             media_url (str): [optional]  # noqa: E501
+            additional_info_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -205,7 +205,6 @@ class Service(ModelNormal):
 
         self.title = title
         self.description = description
-        self.display_value = display_value
         self.order_number = order_number
         self.id = id
         self.created_at = created_at
@@ -232,13 +231,12 @@ class Service(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, title, description, display_value, order_number, id, created_at, updated_at, is_active, merchant_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, title, description, order_number, id, created_at, updated_at, is_active, merchant_id, *args, **kwargs):  # noqa: E501
         """Service - a model defined in OpenAPI
 
         Args:
             title (str):
             description (str):
-            display_value (str):
             order_number (int):
             id (bool, date, datetime, dict, float, int, list, str, none_type):
             created_at (datetime):
@@ -277,7 +275,9 @@ class Service(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            displayed_price (str): [optional]  # noqa: E501
             media_url (str): [optional]  # noqa: E501
+            additional_info_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -305,7 +305,6 @@ class Service(ModelNormal):
 
         self.title = title
         self.description = description
-        self.display_value = display_value
         self.order_number = order_number
         self.id = id
         self.created_at = created_at

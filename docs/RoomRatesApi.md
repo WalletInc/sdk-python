@@ -114,9 +114,10 @@ with wallet.ApiClient() as api_client:
     wt_room_rate_create_params = WTRoomRateCreateParams(
         title="This is the title of the room & rate",
         description="This is the description of the room & rate",
-        display_value="20% Off!",
+        displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        additional_info_url="https://hotels.com/your-property/king-bedroom",
     ) # WTRoomRateCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -335,9 +336,10 @@ with wallet.ApiClient() as api_client:
     wt_room_rate_update_params = WTRoomRateUpdateParams(
         title="This is the title of the room & rate",
         description="This is the description of the room & rate",
-        display_value="20% Off!",
+        displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        additional_info_url="https://hotels.com/your-property/king-bedroom",
     ) # WTRoomRateUpdateParams | 
 
     # example passing only required values which don't have defaults set

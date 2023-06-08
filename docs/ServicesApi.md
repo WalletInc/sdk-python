@@ -114,9 +114,10 @@ with wallet.ApiClient() as api_client:
     wt_service_create_params = WTServiceCreateParams(
         title="This is the title of the service",
         description="This is the description of the service",
-        display_value="$150/hour",
+        displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        additional_info_url="https://your-website.com/service-1/reserve-now",
     ) # WTServiceCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -335,9 +336,10 @@ with wallet.ApiClient() as api_client:
     wt_service_update_params = WTServiceUpdateParams(
         title="This is the title of the service",
         description="This is the description of the service",
-        display_value="$150/hour",
+        displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        additional_info_url="https://your-website.com/service-1/reserve-now",
     ) # WTServiceUpdateParams | 
 
     # example passing only required values which don't have defaults set

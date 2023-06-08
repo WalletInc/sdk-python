@@ -65,11 +65,11 @@ class WTAmenityUpdateParams(ModelNormal):
         ('description',): {
             'min_length': 1,
         },
-        ('display_value',): {
-            'min_length': 1,
-        },
         ('order_number',): {
             'inclusive_minimum': 1,
+        },
+        ('displayed_price',): {
+            'min_length': 1,
         },
     }
 
@@ -90,9 +90,10 @@ class WTAmenityUpdateParams(ModelNormal):
         return {
             'title': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
-            'display_value': (str,),  # noqa: E501
             'order_number': (int,),  # noqa: E501
+            'displayed_price': (str,),  # noqa: E501
             'media_url': (str,),  # noqa: E501
+            'additional_info_url': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -103,9 +104,10 @@ class WTAmenityUpdateParams(ModelNormal):
     attribute_map = {
         'title': 'title',  # noqa: E501
         'description': 'description',  # noqa: E501
-        'display_value': 'displayValue',  # noqa: E501
         'order_number': 'orderNumber',  # noqa: E501
+        'displayed_price': 'displayedPrice',  # noqa: E501
         'media_url': 'mediaURL',  # noqa: E501
+        'additional_info_url': 'additionalInfoURL',  # noqa: E501
     }
 
     read_only_vars = {
@@ -115,13 +117,12 @@ class WTAmenityUpdateParams(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, title, description, display_value, order_number, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, title, description, order_number, *args, **kwargs):  # noqa: E501
         """WTAmenityUpdateParams - a model defined in OpenAPI
 
         Args:
             title (str):
             description (str):
-            display_value (str):
             order_number (int):
 
         Keyword Args:
@@ -155,7 +156,9 @@ class WTAmenityUpdateParams(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            displayed_price (str): [optional]  # noqa: E501
             media_url (str): [optional]  # noqa: E501
+            additional_info_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -185,7 +188,6 @@ class WTAmenityUpdateParams(ModelNormal):
 
         self.title = title
         self.description = description
-        self.display_value = display_value
         self.order_number = order_number
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -207,13 +209,12 @@ class WTAmenityUpdateParams(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, title, description, display_value, order_number, *args, **kwargs):  # noqa: E501
+    def __init__(self, title, description, order_number, *args, **kwargs):  # noqa: E501
         """WTAmenityUpdateParams - a model defined in OpenAPI
 
         Args:
             title (str):
             description (str):
-            display_value (str):
             order_number (int):
 
         Keyword Args:
@@ -247,7 +248,9 @@ class WTAmenityUpdateParams(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            displayed_price (str): [optional]  # noqa: E501
             media_url (str): [optional]  # noqa: E501
+            additional_info_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -275,7 +278,6 @@ class WTAmenityUpdateParams(ModelNormal):
 
         self.title = title
         self.description = description
-        self.display_value = display_value
         self.order_number = order_number
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
