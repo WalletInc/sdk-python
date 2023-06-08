@@ -40,6 +40,8 @@ docs/CreateStaticVoucherCampaignWithVoucherWithCSV.md
 docs/CustomerApi.md
 docs/DashboardApi.md
 docs/DashboardWidget.md
+docs/Dining.md
+docs/DiningApi.md
 docs/Document.md
 docs/DuplicateRowFound.md
 docs/DynamicVoucher.md
@@ -61,6 +63,8 @@ docs/FalsumField.md
 docs/Feature.md
 docs/ForbiddenRequest.md
 docs/ForeignKeyDoesNotExist.md
+docs/Gaming.md
+docs/GamingApi.md
 docs/HelpDeskRequest.md
 docs/ImageGrid.md
 docs/ImageGridApi.md
@@ -89,6 +93,8 @@ docs/LedgerEntry.md
 docs/LinkBook.md
 docs/LinkBookSection.md
 docs/LoginAndLogoutApi.md
+docs/Lounge.md
+docs/LoungeApi.md
 docs/MSAnalyticsMemberCountPartitionedByDate.md
 docs/MSAnalyticsMemberPointsRedeemedPartitionedByDate.md
 docs/MSAnalyticsMemberPointsRefundedPartitionedByDate.md
@@ -260,6 +266,8 @@ docs/WTBillingVerifyPaymentMethodResponse.md
 docs/WTCountResult.md
 docs/WTCustomerSearchByMemberID.md
 docs/WTCustomerSearchByPhoneNumber.md
+docs/WTDiningCreateParams.md
+docs/WTDiningUpdateParams.md
 docs/WTDynamicVoucher.md
 docs/WTDynamicVoucherCreateParams.md
 docs/WTDynamicVoucherRedemption.md
@@ -288,6 +296,8 @@ docs/WTEmployeeSendHelpDeskResponse.md
 docs/WTEmployeeUpdate.md
 docs/WTEmployeeUpdateRecords.md
 docs/WTFetchWalletPaymentObjectWithToken.md
+docs/WTGamingCreateParams.md
+docs/WTGamingUpdateParams.md
 docs/WTImageGridCreateParams.md
 docs/WTImageGridUpdateParams.md
 docs/WTImportedList.md
@@ -301,6 +311,8 @@ docs/WTLinkBookCreateParams.md
 docs/WTLinkBookSectionCreateParams.md
 docs/WTLinkBookSectionUpdateParams.md
 docs/WTLinkBookUpdateParams.md
+docs/WTLoungeCreateParams.md
+docs/WTLoungeUpdateParams.md
 docs/WTMember.md
 docs/WTMemberCreationParams.md
 docs/WTMembershipTier.md
@@ -377,6 +389,18 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_dining.py
+test/test_dining_api.py
+test/test_gaming.py
+test/test_gaming_api.py
+test/test_lounge.py
+test/test_lounge_api.py
+test/test_wt_dining_create_params.py
+test/test_wt_dining_update_params.py
+test/test_wt_gaming_create_params.py
+test/test_wt_gaming_update_params.py
+test/test_wt_lounge_create_params.py
+test/test_wt_lounge_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -390,17 +414,20 @@ wallet/api/configuration_api.py
 wallet/api/countries_api.py
 wallet/api/customer_api.py
 wallet/api/dashboard_api.py
+wallet/api/dining_api.py
 wallet/api/dynamic_vouchers_api.py
 wallet/api/email_subscriber_api.py
 wallet/api/employee_access_api.py
 wallet/api/employee_api_keys_api.py
 wallet/api/employees_api.py
+wallet/api/gaming_api.py
 wallet/api/image_grid_api.py
 wallet/api/industries_api.py
 wallet/api/info_genesis_reports_api.py
 wallet/api/integrated_terminals_api.py
 wallet/api/interactions_api.py
 wallet/api/login_and_logout_api.py
+wallet/api/lounge_api.py
 wallet/api/membership_tiers_api.py
 wallet/api/merchant_api.py
 wallet/api/merchant_credits_api.py
@@ -462,6 +489,7 @@ wallet/model/click_funnel_registration.py
 wallet/model/create_static_voucher_campaign.py
 wallet/model/create_static_voucher_campaign_with_voucher_with_csv.py
 wallet/model/dashboard_widget.py
+wallet/model/dining.py
 wallet/model/document.py
 wallet/model/duplicate_row_found.py
 wallet/model/dynamic_voucher.py
@@ -478,6 +506,7 @@ wallet/model/falsum_field.py
 wallet/model/feature.py
 wallet/model/forbidden_request.py
 wallet/model/foreign_key_does_not_exist.py
+wallet/model/gaming.py
 wallet/model/help_desk_request.py
 wallet/model/image_grid.py
 wallet/model/imported_list.py
@@ -500,6 +529,7 @@ wallet/model/internal_server_error.py
 wallet/model/ledger_entry.py
 wallet/model/link_book.py
 wallet/model/link_book_section.py
+wallet/model/lounge.py
 wallet/model/media_file.py
 wallet/model/member.py
 wallet/model/member_search.py
@@ -649,6 +679,8 @@ wallet/model/wt_billing_verify_payment_method_response.py
 wallet/model/wt_count_result.py
 wallet/model/wt_customer_search_by_member_id.py
 wallet/model/wt_customer_search_by_phone_number.py
+wallet/model/wt_dining_create_params.py
+wallet/model/wt_dining_update_params.py
 wallet/model/wt_dynamic_voucher.py
 wallet/model/wt_dynamic_voucher_create_params.py
 wallet/model/wt_dynamic_voucher_redemption.py
@@ -677,6 +709,8 @@ wallet/model/wt_employee_send_help_desk_response.py
 wallet/model/wt_employee_update.py
 wallet/model/wt_employee_update_records.py
 wallet/model/wt_fetch_wallet_payment_object_with_token.py
+wallet/model/wt_gaming_create_params.py
+wallet/model/wt_gaming_update_params.py
 wallet/model/wt_image_grid_create_params.py
 wallet/model/wt_image_grid_update_params.py
 wallet/model/wt_imported_list.py
@@ -690,6 +724,8 @@ wallet/model/wt_link_book_create_params.py
 wallet/model/wt_link_book_section_create_params.py
 wallet/model/wt_link_book_section_update_params.py
 wallet/model/wt_link_book_update_params.py
+wallet/model/wt_lounge_create_params.py
+wallet/model/wt_lounge_update_params.py
 wallet/model/wt_member.py
 wallet/model/wt_member_creation_params.py
 wallet/model/wt_membership_tier.py
