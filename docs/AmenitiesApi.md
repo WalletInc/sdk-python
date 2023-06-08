@@ -114,7 +114,7 @@ with wallet.ApiClient() as api_client:
     wt_amenity_create_params = WTAmenityCreateParams(
         title="This is the title of the amenity",
         description="This is the description of the amenity",
-        displayed_price="20% Off!",
+        displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
         additional_info_url="https://hotels.com/your-property/pool",
@@ -336,7 +336,7 @@ with wallet.ApiClient() as api_client:
     wt_amenity_update_params = WTAmenityUpdateParams(
         title="This is the title of the amenity",
         description="This is the description of the amenity",
-        displayed_price="20% Off!",
+        displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
         additional_info_url="https://hotels.com/your-property/pool",
