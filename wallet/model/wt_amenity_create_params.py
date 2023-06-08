@@ -68,9 +68,6 @@ class WTAmenityCreateParams(ModelNormal):
         ('order_number',): {
             'inclusive_minimum': 1,
         },
-        ('displayed_price',): {
-            'min_length': 1,
-        },
     }
 
     additional_properties_type = None
