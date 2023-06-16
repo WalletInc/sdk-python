@@ -111,7 +111,7 @@ class WTMerchantUpdate(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, company_name, address1, address2, city, state, country, phone_number, zip, currency_abbreviation, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, company_name, address1, address2, city, state, country, phone_number, zip, *args, **kwargs):  # noqa: E501
         """WTMerchantUpdate - a model defined in OpenAPI
 
         Args:
@@ -123,7 +123,6 @@ class WTMerchantUpdate(ModelNormal):
             country (str):
             phone_number (str):
             zip (str):
-            currency_abbreviation (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -156,6 +155,7 @@ class WTMerchantUpdate(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            currency_abbreviation (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -191,7 +191,6 @@ class WTMerchantUpdate(ModelNormal):
         self.country = country
         self.phone_number = phone_number
         self.zip = zip
-        self.currency_abbreviation = currency_abbreviation
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -212,7 +211,7 @@ class WTMerchantUpdate(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, company_name, address1, address2, city, state, country, phone_number, zip, currency_abbreviation, *args, **kwargs):  # noqa: E501
+    def __init__(self, company_name, address1, address2, city, state, country, phone_number, zip, *args, **kwargs):  # noqa: E501
         """WTMerchantUpdate - a model defined in OpenAPI
 
         Args:
@@ -224,7 +223,6 @@ class WTMerchantUpdate(ModelNormal):
             country (str):
             phone_number (str):
             zip (str):
-            currency_abbreviation (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -257,6 +255,7 @@ class WTMerchantUpdate(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            currency_abbreviation (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -290,7 +289,6 @@ class WTMerchantUpdate(ModelNormal):
         self.country = country
         self.phone_number = phone_number
         self.zip = zip
-        self.currency_abbreviation = currency_abbreviation
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
