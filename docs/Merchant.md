@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **country** | **str** |  | 
 **phone_number** | **str** |  | 
 **zip** | **str** |  | 
-**currency_abbreviation** | **str** |  | 
 **id** | [**MerchantID**](MerchantID.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
@@ -28,6 +27,7 @@ Name | Type | Description | Notes
 **is_payment_method_provided** | **bool** |  | 
 **plan_nickname** | **str** |  | 
 **max_sms_count** | **float** |  | 
+**currency_abbreviation** | **str** |  | [optional] 
 **is_sms_agreement** | **bool** |  | [optional] 
 **is_white_labeled** | **bool** |  | [optional] 
 

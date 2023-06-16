@@ -89,7 +89,6 @@ class Merchant(ModelNormal):
             'country': (str,),  # noqa: E501
             'phone_number': (str,),  # noqa: E501
             'zip': (str,),  # noqa: E501
-            'currency_abbreviation': (str,),  # noqa: E501
             'id': (MerchantID,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
@@ -105,6 +104,7 @@ class Merchant(ModelNormal):
             'is_payment_method_provided': (bool,),  # noqa: E501
             'plan_nickname': (str,),  # noqa: E501
             'max_sms_count': (float,),  # noqa: E501
+            'currency_abbreviation': (str,),  # noqa: E501
             'is_sms_agreement': (bool,),  # noqa: E501
             'is_white_labeled': (bool,),  # noqa: E501
         }
@@ -123,7 +123,6 @@ class Merchant(ModelNormal):
         'country': 'country',  # noqa: E501
         'phone_number': 'phoneNumber',  # noqa: E501
         'zip': 'zip',  # noqa: E501
-        'currency_abbreviation': 'currencyAbbreviation',  # noqa: E501
         'id': 'id',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
@@ -139,6 +138,7 @@ class Merchant(ModelNormal):
         'is_payment_method_provided': 'isPaymentMethodProvided',  # noqa: E501
         'plan_nickname': 'planNickname',  # noqa: E501
         'max_sms_count': 'maxSMSCount',  # noqa: E501
+        'currency_abbreviation': 'currencyAbbreviation',  # noqa: E501
         'is_sms_agreement': 'isSmsAgreement',  # noqa: E501
         'is_white_labeled': 'isWhiteLabeled',  # noqa: E501
     }
@@ -150,7 +150,7 @@ class Merchant(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, company_name, address1, address2, city, state, country, phone_number, zip, currency_abbreviation, id, created_at, updated_at, industry, industry_name, info_genesis_property_id, is_frozen, billing_contact_employee_id, marketing_contact_employee_id, technical_contact_employee_id, customer_service_contact_employee_id, stripe_customer_id, is_payment_method_provided, plan_nickname, max_sms_count, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, company_name, address1, address2, city, state, country, phone_number, zip, id, created_at, updated_at, industry, industry_name, info_genesis_property_id, is_frozen, billing_contact_employee_id, marketing_contact_employee_id, technical_contact_employee_id, customer_service_contact_employee_id, stripe_customer_id, is_payment_method_provided, plan_nickname, max_sms_count, *args, **kwargs):  # noqa: E501
         """Merchant - a model defined in OpenAPI
 
         Args:
@@ -162,7 +162,6 @@ class Merchant(ModelNormal):
             country (str):
             phone_number (str):
             zip (str):
-            currency_abbreviation (str):
             id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
@@ -210,6 +209,7 @@ class Merchant(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            currency_abbreviation (str): [optional]  # noqa: E501
             is_sms_agreement (bool): [optional]  # noqa: E501
             is_white_labeled (bool): [optional]  # noqa: E501
         """
@@ -247,7 +247,6 @@ class Merchant(ModelNormal):
         self.country = country
         self.phone_number = phone_number
         self.zip = zip
-        self.currency_abbreviation = currency_abbreviation
         self.id = id
         self.created_at = created_at
         self.updated_at = updated_at
@@ -283,7 +282,7 @@ class Merchant(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, company_name, address1, address2, city, state, country, phone_number, zip, currency_abbreviation, id, created_at, updated_at, industry, industry_name, info_genesis_property_id, is_frozen, billing_contact_employee_id, marketing_contact_employee_id, technical_contact_employee_id, customer_service_contact_employee_id, stripe_customer_id, is_payment_method_provided, plan_nickname, max_sms_count, *args, **kwargs):  # noqa: E501
+    def __init__(self, company_name, address1, address2, city, state, country, phone_number, zip, id, created_at, updated_at, industry, industry_name, info_genesis_property_id, is_frozen, billing_contact_employee_id, marketing_contact_employee_id, technical_contact_employee_id, customer_service_contact_employee_id, stripe_customer_id, is_payment_method_provided, plan_nickname, max_sms_count, *args, **kwargs):  # noqa: E501
         """Merchant - a model defined in OpenAPI
 
         Args:
@@ -295,7 +294,6 @@ class Merchant(ModelNormal):
             country (str):
             phone_number (str):
             zip (str):
-            currency_abbreviation (str):
             id (MerchantID):
             created_at (datetime):
             updated_at (datetime):
@@ -343,6 +341,7 @@ class Merchant(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            currency_abbreviation (str): [optional]  # noqa: E501
             is_sms_agreement (bool): [optional]  # noqa: E501
             is_white_labeled (bool): [optional]  # noqa: E501
         """
@@ -378,7 +377,6 @@ class Merchant(ModelNormal):
         self.country = country
         self.phone_number = phone_number
         self.zip = zip
-        self.currency_abbreviation = currency_abbreviation
         self.id = id
         self.created_at = created_at
         self.updated_at = updated_at
