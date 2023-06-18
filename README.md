@@ -320,6 +320,7 @@ Class | Method | HTTP request | Description
 *ImageGridApi* | [**restore_image_grid**](docs/ImageGridApi.md#restore_image_grid) | **PATCH** /v2/imageGrid/{id} | Restore image
 *ImageGridApi* | [**update_image_grid**](docs/ImageGridApi.md#update_image_grid) | **PUT** /v2/imageGrid/{id} | Update image
 *IndustriesApi* | [**fetch_all_industries**](docs/IndustriesApi.md#fetch_all_industries) | **GET** /system/industries/all | Fetch all industries
+*IndustriesApi* | [**fetch_domains_by_industry**](docs/IndustriesApi.md#fetch_domains_by_industry) | **GET** /system/industries/domains | Fetch all industries
 *InfoGenesisReportsApi* | [**count_ad_credits_redemptions**](docs/InfoGenesisReportsApi.md#count_ad_credits_redemptions) | **POST** /v2/pos/infogenesis/count/adCredits/redemptions | Count redeemed ad credits
 *InfoGenesisReportsApi* | [**count_ad_credits_refunds**](docs/InfoGenesisReportsApi.md#count_ad_credits_refunds) | **POST** /v2/pos/infogenesis/count/adCredits/refunds | Count refunded ad credits
 *InfoGenesisReportsApi* | [**count_dynamic_voucher_redemptions**](docs/InfoGenesisReportsApi.md#count_dynamic_voucher_redemptions) | **POST** /v2/pos/infogenesis/count/dynamicVoucher/redemptions | Count dynamic voucher redemptions
@@ -639,6 +640,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse20010](docs/InlineResponse20010.md)
+ - [InlineResponse20011](docs/InlineResponse20011.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
  - [InlineResponse2003](docs/InlineResponse2003.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)

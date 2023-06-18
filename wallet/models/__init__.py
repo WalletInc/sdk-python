@@ -65,6 +65,7 @@ from wallet.model.inline_object1 import InlineObject1
 from wallet.model.inline_response200 import InlineResponse200
 from wallet.model.inline_response2001 import InlineResponse2001
 from wallet.model.inline_response20010 import InlineResponse20010
+from wallet.model.inline_response20011 import InlineResponse20011
 from wallet.model.inline_response2002 import InlineResponse2002
 from wallet.model.inline_response2003 import InlineResponse2003
 from wallet.model.inline_response2004 import InlineResponse2004
