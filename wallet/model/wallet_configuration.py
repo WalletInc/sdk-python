@@ -119,6 +119,7 @@ class WalletConfiguration(ModelNormal):
             'is_map_directions': (bool,),  # noqa: E501
             'is_link_book': (bool,),  # noqa: E501
             'is_image_grid': (bool,),  # noqa: E501
+            'is_videos': (bool,),  # noqa: E501
             'is_transaction_history': (bool,),  # noqa: E501
             'is_profile': (bool,),  # noqa: E501
             'is_settings': (bool,),  # noqa: E501
@@ -184,6 +185,7 @@ class WalletConfiguration(ModelNormal):
         'is_map_directions': 'isMapDirections',  # noqa: E501
         'is_link_book': 'isLinkBook',  # noqa: E501
         'is_image_grid': 'isImageGrid',  # noqa: E501
+        'is_videos': 'isVideos',  # noqa: E501
         'is_transaction_history': 'isTransactionHistory',  # noqa: E501
         'is_profile': 'isProfile',  # noqa: E501
         'is_settings': 'isSettings',  # noqa: E501
@@ -214,7 +216,7 @@ class WalletConfiguration(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, header_background_color, header_button_color, left_menu_header_background_color, left_menu_header_font_color, left_menu_section_background_color, left_menu_section_font_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_products, is_services, is_room_rates, is_amenities, is_gaming, is_dining, is_lounges, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, is_sms_opt_in, is_email_subscriber, id, created_at, updated_at, merchant_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, header_background_color, header_button_color, left_menu_header_background_color, left_menu_header_font_color, left_menu_section_background_color, left_menu_section_font_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_products, is_services, is_room_rates, is_amenities, is_gaming, is_dining, is_lounges, is_map_directions, is_link_book, is_image_grid, is_videos, is_transaction_history, is_profile, is_settings, is_chat_room, is_sms_opt_in, is_email_subscriber, id, created_at, updated_at, merchant_id, *args, **kwargs):  # noqa: E501
         """WalletConfiguration - a model defined in OpenAPI
 
         Args:
@@ -254,6 +256,7 @@ class WalletConfiguration(ModelNormal):
             is_map_directions (bool):
             is_link_book (bool):
             is_image_grid (bool):
+            is_videos (bool):
             is_transaction_history (bool):
             is_profile (bool):
             is_settings (bool):
@@ -370,6 +373,7 @@ class WalletConfiguration(ModelNormal):
         self.is_map_directions = is_map_directions
         self.is_link_book = is_link_book
         self.is_image_grid = is_image_grid
+        self.is_videos = is_videos
         self.is_transaction_history = is_transaction_history
         self.is_profile = is_profile
         self.is_settings = is_settings
@@ -400,7 +404,7 @@ class WalletConfiguration(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, header_background_color, header_button_color, left_menu_header_background_color, left_menu_header_font_color, left_menu_section_background_color, left_menu_section_font_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_products, is_services, is_room_rates, is_amenities, is_gaming, is_dining, is_lounges, is_map_directions, is_link_book, is_image_grid, is_transaction_history, is_profile, is_settings, is_chat_room, is_sms_opt_in, is_email_subscriber, id, created_at, updated_at, merchant_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, header_background_color, header_button_color, left_menu_header_background_color, left_menu_header_font_color, left_menu_section_background_color, left_menu_section_font_color, company_logo_url, welcome_message, is_apple_enabled, is_google_enabled, is_samsung_enabled, is_ad_credits, is_static_vouchers, is_dynamic_vouchers, is_membership_tier, is_membership_points, is_membership_level, is_gift_cards, is_gift_certificates, is_promotions, is_merchant_credit, is_news_articles, is_performances, is_messages, is_call, is_representatives, is_products, is_services, is_room_rates, is_amenities, is_gaming, is_dining, is_lounges, is_map_directions, is_link_book, is_image_grid, is_videos, is_transaction_history, is_profile, is_settings, is_chat_room, is_sms_opt_in, is_email_subscriber, id, created_at, updated_at, merchant_id, *args, **kwargs):  # noqa: E501
         """WalletConfiguration - a model defined in OpenAPI
 
         Args:
@@ -440,6 +444,7 @@ class WalletConfiguration(ModelNormal):
             is_map_directions (bool):
             is_link_book (bool):
             is_image_grid (bool):
+            is_videos (bool):
             is_transaction_history (bool):
             is_profile (bool):
             is_settings (bool):
@@ -554,6 +559,7 @@ class WalletConfiguration(ModelNormal):
         self.is_map_directions = is_map_directions
         self.is_link_book = is_link_book
         self.is_image_grid = is_image_grid
+        self.is_videos = is_videos
         self.is_transaction_history = is_transaction_history
         self.is_profile = is_profile
         self.is_settings = is_settings
