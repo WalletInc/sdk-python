@@ -91,6 +91,7 @@ class WTAuthenticationLoginResponse(ModelNormal):
             'merchant_name': (str,),  # noqa: E501
             'merchant_industry': (str,),  # noqa: E501
             'merchant_currency_abbreviation': (str,),  # noqa: E501
+            'custom_domain': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -114,6 +115,7 @@ class WTAuthenticationLoginResponse(ModelNormal):
         'merchant_name': 'merchantName',  # noqa: E501
         'merchant_industry': 'merchantIndustry',  # noqa: E501
         'merchant_currency_abbreviation': 'merchantCurrencyAbbreviation',  # noqa: E501
+        'custom_domain': 'customDomain',  # noqa: E501
     }
 
     read_only_vars = {
@@ -174,6 +176,7 @@ class WTAuthenticationLoginResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             merchant_currency_abbreviation (str): [optional]  # noqa: E501
+            custom_domain (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -286,6 +289,7 @@ class WTAuthenticationLoginResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             merchant_currency_abbreviation (str): [optional]  # noqa: E501
+            custom_domain (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

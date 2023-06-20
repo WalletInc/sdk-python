@@ -390,7 +390,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_inline_response20011.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
