@@ -218,6 +218,7 @@ with wallet.ApiClient() as api_client:
         is_map_directions=True,
         is_link_book=True,
         is_image_grid=True,
+        is_videos=True,
         is_transaction_history=True,
         is_profile=True,
         is_settings=True,
