@@ -65,6 +65,7 @@ from wallet.model.inline_object1 import InlineObject1
 from wallet.model.inline_response200 import InlineResponse200
 from wallet.model.inline_response2001 import InlineResponse2001
 from wallet.model.inline_response20010 import InlineResponse20010
+from wallet.model.inline_response20011 import InlineResponse20011
 from wallet.model.inline_response2002 import InlineResponse2002
 from wallet.model.inline_response2003 import InlineResponse2003
 from wallet.model.inline_response2004 import InlineResponse2004
@@ -203,6 +204,7 @@ from wallet.model.update_static_voucher_campaign_with_voucher import UpdateStati
 from wallet.model.vs_campaign_generated_message import VSCampaignGeneratedMessage
 from wallet.model.vs_campaign_generated_message_pagination import VSCampaignGeneratedMessagePagination
 from wallet.model.vs_dynamic_voucher_status import VSDynamicVoucherStatus
+from wallet.model.video import Video
 from wallet.model.virtual_business_card import VirtualBusinessCard
 from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
 from wallet.model.wt_advertisement_credit_create_params import WTAdvertisementCreditCreateParams
@@ -327,6 +329,8 @@ from wallet.model.wt_system_role_create import WTSystemRoleCreate
 from wallet.model.wttcpa_opt import WTTCPAOpt
 from wallet.model.wt_twilio_request_authy_code import WTTwilioRequestAuthyCode
 from wallet.model.wt_twilio_verify_authy_code import WTTwilioVerifyAuthyCode
+from wallet.model.wt_video_create_params import WTVideoCreateParams
+from wallet.model.wt_video_update_params import WTVideoUpdateParams
 from wallet.model.wt_virtual_business_card_create_params import WTVirtualBusinessCardCreateParams
 from wallet.model.wt_virtual_business_card_update_params import WTVirtualBusinessCardUpdateParams
 from wallet.model.wt_wallet_configuration_save_wallet_record import WTWalletConfigurationSaveWalletRecord

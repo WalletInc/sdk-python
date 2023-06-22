@@ -112,8 +112,8 @@ with wallet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = lounge_api.LoungeApi(api_client)
     wt_lounge_create_params = WTLoungeCreateParams(
-        title="This is the title of the amenity",
-        description="This is the description of the amenity",
+        title="This is the title of the lounge",
+        description="This is the description of the lounge",
         displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
@@ -334,8 +334,8 @@ with wallet.ApiClient() as api_client:
     api_instance = lounge_api.LoungeApi(api_client)
     id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
     wt_lounge_update_params = WTLoungeUpdateParams(
-        title="This is the title of the amenity",
-        description="This is the description of the amenity",
+        title="This is the title of the lounge",
+        description="This is the description of the lounge",
         displayed_price="$200-$350",
         order_number=1,
         media_url="https://wall.et/media/H847Sjudbw.png",
