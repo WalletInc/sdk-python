@@ -394,10 +394,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_video.py
-test/test_videos_api.py
-test/test_wt_video_create_params.py
-test/test_wt_video_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
