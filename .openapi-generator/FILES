@@ -245,6 +245,8 @@ docs/UtilitiesApi.md
 docs/VSCampaignGeneratedMessage.md
 docs/VSCampaignGeneratedMessagePagination.md
 docs/VSDynamicVoucherStatus.md
+docs/Video.md
+docs/VideosApi.md
 docs/VirtualBusinessCard.md
 docs/VirtualBusinessCardApi.md
 docs/WTAdvertisementCredit.md
@@ -370,6 +372,8 @@ docs/WTSystemRoleCreate.md
 docs/WTTCPAOpt.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
+docs/WTVideoCreateParams.md
+docs/WTVideoUpdateParams.md
 docs/WTVirtualBusinessCardCreateParams.md
 docs/WTVirtualBusinessCardUpdateParams.md
 docs/WTWalletConfigurationSaveWalletRecord.md
@@ -390,6 +394,10 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_video.py
+test/test_videos_api.py
+test/test_wt_video_create_params.py
+test/test_wt_video_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -441,6 +449,7 @@ wallet/api/static_vouchers_api.py
 wallet/api/system_api.py
 wallet/api/transaction_ledger_api.py
 wallet/api/utilities_api.py
+wallet/api/videos_api.py
 wallet/api/virtual_business_card_api.py
 wallet/api/web_terminal_api.py
 wallet/api/wix_terminal_api.py
@@ -642,6 +651,7 @@ wallet/model/subscription_plan.py
 wallet/model/subscription_product.py
 wallet/model/tcpa.py
 wallet/model/update_static_voucher_campaign_with_voucher.py
+wallet/model/video.py
 wallet/model/virtual_business_card.py
 wallet/model/vs_campaign_generated_message.py
 wallet/model/vs_campaign_generated_message_pagination.py
@@ -762,6 +772,8 @@ wallet/model/wt_system_approve_phone_number.py
 wallet/model/wt_system_role_create.py
 wallet/model/wt_twilio_request_authy_code.py
 wallet/model/wt_twilio_verify_authy_code.py
+wallet/model/wt_video_create_params.py
+wallet/model/wt_video_update_params.py
 wallet/model/wt_virtual_business_card_create_params.py
 wallet/model/wt_virtual_business_card_update_params.py
 wallet/model/wt_wallet_configuration_save_wallet_record.py

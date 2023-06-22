@@ -1,20 +1,20 @@
-# wallet.DiningApi
+# wallet.VideosApi
 
 All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_dining**](DiningApi.md#archive_dining) | **DELETE** /v2/dining/{id} | Archive dining
-[**create_dining**](DiningApi.md#create_dining) | **POST** /v2/dining | Create dining
-[**fetch_all_dining**](DiningApi.md#fetch_all_dining) | **GET** /v2/dining/all | Fetch all dining
-[**restore_dining**](DiningApi.md#restore_dining) | **PATCH** /v2/dining/{id} | Restore dining
-[**update_dining**](DiningApi.md#update_dining) | **PUT** /v2/dining/{id} | Update dining
+[**archive_video**](VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive video
+[**create_video**](VideosApi.md#create_video) | **POST** /v2/video | Create video
+[**fetch_all_video**](VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Fetch all video
+[**restore_video**](VideosApi.md#restore_video) | **PATCH** /v2/video/{id} | Restore video
+[**update_video**](VideosApi.md#update_video) | **PUT** /v2/video/{id} | Update video
 
 
-# **archive_dining**
-> Dining archive_dining(id)
+# **archive_video**
+> Video archive_video(id)
 
-Archive dining
+Archive video
 
 ### Example
 
@@ -22,9 +22,9 @@ Archive dining
 ```python
 import time
 import wallet
-from wallet.api import dining_api
+from wallet.api import videos_api
+from wallet.model.video import Video
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.dining import Dining
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
 from pprint import pprint
@@ -38,16 +38,16 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
+    api_instance = videos_api.VideosApi(api_client)
     id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
 
     # example passing only required values which don't have defaults set
     try:
-        # Archive dining
-        api_response = api_instance.archive_dining(id)
+        # Archive video
+        api_response = api_instance.archive_video(id)
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling DiningApi->archive_dining: %s\n" % e)
+        print("Exception when calling VideosApi->archive_video: %s\n" % e)
 ```
 
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Dining**](Dining.md)
+[**Video**](Video.md)
 
 ### Authorization
 
@@ -82,10 +82,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_dining**
-> Dining create_dining(wt_dining_create_params)
+# **create_video**
+> Video create_video(wt_video_create_params)
 
-Create dining
+Create video
 
 ### Example
 
@@ -93,11 +93,11 @@ Create dining
 ```python
 import time
 import wallet
-from wallet.api import dining_api
+from wallet.api import videos_api
+from wallet.model.video import Video
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.dining import Dining
 from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_dining_create_params import WTDiningCreateParams
+from wallet.model.wt_video_create_params import WTVideoCreateParams
 from wallet.model.auth_error import AuthError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
@@ -110,23 +110,22 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
-    wt_dining_create_params = WTDiningCreateParams(
-        title="This is the title of the dining option",
-        description="This is the description of the dining option",
-        displayed_price="$200-$350",
+    api_instance = videos_api.VideosApi(api_client)
+    wt_video_create_params = WTVideoCreateParams(
+        title="This is the title of the video",
+        description="This is the description of the video",
         order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://your-site.com/restaurants/steak-house",
-    ) # WTDiningCreateParams | 
+        media_url="https://wall.et/media/H847Sjudbw.mp4",
+        additional_info_url="https://your-site.com/videos/steak-house",
+    ) # WTVideoCreateParams | 
 
     # example passing only required values which don't have defaults set
     try:
-        # Create dining
-        api_response = api_instance.create_dining(wt_dining_create_params)
+        # Create video
+        api_response = api_instance.create_video(wt_video_create_params)
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling DiningApi->create_dining: %s\n" % e)
+        print("Exception when calling VideosApi->create_video: %s\n" % e)
 ```
 
 
@@ -134,11 +133,11 @@ with wallet.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_dining_create_params** | [**WTDiningCreateParams**](WTDiningCreateParams.md)|  |
+ **wt_video_create_params** | [**WTVideoCreateParams**](WTVideoCreateParams.md)|  |
 
 ### Return type
 
-[**Dining**](Dining.md)
+[**Video**](Video.md)
 
 ### Authorization
 
@@ -161,10 +160,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_all_dining**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_dining()
+# **fetch_all_video**
+> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_video()
 
-Fetch all dining
+Fetch all video
 
 ### Example
 
@@ -172,7 +171,7 @@ Fetch all dining
 ```python
 import time
 import wallet
-from wallet.api import dining_api
+from wallet.api import videos_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
@@ -187,17 +186,17 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
+    api_instance = videos_api.VideosApi(api_client)
     is_archive_included = True # bool |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Fetch all dining
-        api_response = api_instance.fetch_all_dining(is_archive_included=is_archive_included)
+        # Fetch all video
+        api_response = api_instance.fetch_all_video(is_archive_included=is_archive_included)
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling DiningApi->fetch_all_dining: %s\n" % e)
+        print("Exception when calling VideosApi->fetch_all_video: %s\n" % e)
 ```
 
 
@@ -232,10 +231,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **restore_dining**
-> Dining restore_dining(id)
+# **restore_video**
+> Video restore_video(id)
 
-Restore dining
+Restore video
 
 ### Example
 
@@ -243,9 +242,9 @@ Restore dining
 ```python
 import time
 import wallet
-from wallet.api import dining_api
+from wallet.api import videos_api
+from wallet.model.video import Video
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.dining import Dining
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
 from pprint import pprint
@@ -259,16 +258,16 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
+    api_instance = videos_api.VideosApi(api_client)
     id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
 
     # example passing only required values which don't have defaults set
     try:
-        # Restore dining
-        api_response = api_instance.restore_dining(id)
+        # Restore video
+        api_response = api_instance.restore_video(id)
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling DiningApi->restore_dining: %s\n" % e)
+        print("Exception when calling VideosApi->restore_video: %s\n" % e)
 ```
 
 
@@ -280,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Dining**](Dining.md)
+[**Video**](Video.md)
 
 ### Authorization
 
@@ -303,10 +302,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_dining**
-> Dining update_dining(id, wt_dining_update_params)
+# **update_video**
+> Video update_video(id, wt_video_update_params)
 
-Update dining
+Update video
 
 ### Example
 
@@ -314,12 +313,12 @@ Update dining
 ```python
 import time
 import wallet
-from wallet.api import dining_api
+from wallet.api import videos_api
+from wallet.model.video import Video
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.dining import Dining
+from wallet.model.wt_video_update_params import WTVideoUpdateParams
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
-from wallet.model.wt_dining_update_params import WTDiningUpdateParams
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -331,24 +330,23 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
+    api_instance = videos_api.VideosApi(api_client)
     id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_dining_update_params = WTDiningUpdateParams(
-        title="This is the title of the dining option",
-        description="This is the description of the dining option",
-        displayed_price="$200-$350",
+    wt_video_update_params = WTVideoUpdateParams(
+        title="This is the title of the video",
+        description="This is the description of the video",
         order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://your-site.com/restaurants/steak-house",
-    ) # WTDiningUpdateParams | 
+        media_url="https://wall.et/media/H847Sjudbw.mp4",
+        additional_info_url="https://your-site.com/videos/steak-house",
+    ) # WTVideoUpdateParams | 
 
     # example passing only required values which don't have defaults set
     try:
-        # Update dining
-        api_response = api_instance.update_dining(id, wt_dining_update_params)
+        # Update video
+        api_response = api_instance.update_video(id, wt_video_update_params)
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling DiningApi->update_dining: %s\n" % e)
+        print("Exception when calling VideosApi->update_video: %s\n" % e)
 ```
 
 
@@ -357,11 +355,11 @@ with wallet.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_dining_update_params** | [**WTDiningUpdateParams**](WTDiningUpdateParams.md)|  |
+ **wt_video_update_params** | [**WTVideoUpdateParams**](WTVideoUpdateParams.md)|  |
 
 ### Return type
 
-[**Dining**](Dining.md)
+[**Video**](Video.md)
 
 ### Authorization
 

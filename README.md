@@ -564,6 +564,11 @@ Class | Method | HTTP request | Description
 *SystemApi* | [**save_role**](docs/SystemApi.md#save_role) | **PUT** /v2/system/roles/{roleID} | Update role
 *TransactionLedgerApi* | [**fetch_all_ledger_transactions**](docs/TransactionLedgerApi.md#fetch_all_ledger_transactions) | **GET** /v2/pos/ledger/transactions/all | Fetch ledger transactions by page
 *UtilitiesApi* | [**get_payment_prefixes**](docs/UtilitiesApi.md#get_payment_prefixes) | **GET** /v2/payment/prefixes | Get payment prefixes
+*VideosApi* | [**archive_video**](docs/VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive video
+*VideosApi* | [**create_video**](docs/VideosApi.md#create_video) | **POST** /v2/video | Create video
+*VideosApi* | [**fetch_all_video**](docs/VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Fetch all video
+*VideosApi* | [**restore_video**](docs/VideosApi.md#restore_video) | **PATCH** /v2/video/{id} | Restore video
+*VideosApi* | [**update_video**](docs/VideosApi.md#update_video) | **PUT** /v2/video/{id} | Update video
 *VirtualBusinessCardApi* | [**archive_virtual_business_card**](docs/VirtualBusinessCardApi.md#archive_virtual_business_card) | **DELETE** /v2/virtualBusinessCard/{id} | Archive VirtualBusinessCard
 *VirtualBusinessCardApi* | [**create_virtual_business_card**](docs/VirtualBusinessCardApi.md#create_virtual_business_card) | **POST** /v2/virtualBusinessCard | Create VirtualBusinessCard
 *VirtualBusinessCardApi* | [**fetch_all_virtual_business_cards**](docs/VirtualBusinessCardApi.md#fetch_all_virtual_business_cards) | **GET** /v2/virtualBusinessCard/all | Fetch all VirtualBusinessCards
@@ -779,6 +784,7 @@ Class | Method | HTTP request | Description
  - [VSCampaignGeneratedMessage](docs/VSCampaignGeneratedMessage.md)
  - [VSCampaignGeneratedMessagePagination](docs/VSCampaignGeneratedMessagePagination.md)
  - [VSDynamicVoucherStatus](docs/VSDynamicVoucherStatus.md)
+ - [Video](docs/Video.md)
  - [VirtualBusinessCard](docs/VirtualBusinessCard.md)
  - [WTAdvertisementCredit](docs/WTAdvertisementCredit.md)
  - [WTAdvertisementCreditCreateParams](docs/WTAdvertisementCreditCreateParams.md)
@@ -903,6 +909,8 @@ Class | Method | HTTP request | Description
  - [WTTCPAOpt](docs/WTTCPAOpt.md)
  - [WTTwilioRequestAuthyCode](docs/WTTwilioRequestAuthyCode.md)
  - [WTTwilioVerifyAuthyCode](docs/WTTwilioVerifyAuthyCode.md)
+ - [WTVideoCreateParams](docs/WTVideoCreateParams.md)
+ - [WTVideoUpdateParams](docs/WTVideoUpdateParams.md)
  - [WTVirtualBusinessCardCreateParams](docs/WTVirtualBusinessCardCreateParams.md)
  - [WTVirtualBusinessCardUpdateParams](docs/WTVirtualBusinessCardUpdateParams.md)
  - [WTWalletConfigurationSaveWalletRecord](docs/WTWalletConfigurationSaveWalletRecord.md)
