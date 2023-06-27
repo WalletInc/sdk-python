@@ -609,6 +609,7 @@ class InteractionsApi(object):
                     'item_id',
                     'is_refresh',
                     'phone_verification_token',
+                    'referrer',
                 ],
                 'required': [
                     'item_id',
@@ -632,16 +633,20 @@ class InteractionsApi(object):
                         (bool,),
                     'phone_verification_token':
                         (str,),
+                    'referrer':
+                        (str,),
                 },
                 'attribute_map': {
                     'item_id': 'itemID',
                     'is_refresh': 'isRefresh',
                     'phone_verification_token': 'phoneVerificationToken',
+                    'referrer': 'referrer',
                 },
                 'location_map': {
                     'item_id': 'path',
                     'is_refresh': 'query',
                     'phone_verification_token': 'query',
+                    'referrer': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1631,6 +1636,7 @@ class InteractionsApi(object):
         Keyword Args:
             is_refresh (bool): [optional]
             phone_verification_token (str): [optional]
+            referrer (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
