@@ -84,6 +84,7 @@ Method | HTTP request | Description
 [**fetch_analytics_total_points_refunded**](AnalyticsApi.md#fetch_analytics_total_points_refunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
 [**fetch_analytics_wallet_session_activity**](AnalyticsApi.md#fetch_analytics_wallet_session_activity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
 [**fetch_wallet_page_view_by_id**](AnalyticsApi.md#fetch_wallet_page_view_by_id) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
+[**referring_sites_summary**](AnalyticsApi.md#referring_sites_summary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count new sessions
 [**sum_revenue**](AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
 [**sum_transactions**](AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
 
@@ -6004,6 +6005,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletPageView**](WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **referring_sites_summary**
+> bool, date, datetime, dict, float, int, list, str, none_type referring_sites_summary()
+
+Count new sessions
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count new sessions
+        api_response = api_instance.referring_sites_summary(start_date=start_date, end_date=end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->referring_sites_summary: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
