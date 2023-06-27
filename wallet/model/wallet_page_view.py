@@ -124,6 +124,7 @@ class WalletPageView(ModelNormal):
             'merchant_id': (MerchantID,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'geo_point': (WTWalletPageViewGeoPoint,),  # noqa: E501
+            'referrer': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -169,6 +170,7 @@ class WalletPageView(ModelNormal):
         'merchant_id': 'merchantID',  # noqa: E501
         'is_active': 'isActive',  # noqa: E501
         'geo_point': 'geoPoint',  # noqa: E501
+        'referrer': 'referrer',  # noqa: E501
     }
 
     read_only_vars = {
@@ -251,6 +253,7 @@ class WalletPageView(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            referrer (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -408,6 +411,7 @@ class WalletPageView(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            referrer (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
