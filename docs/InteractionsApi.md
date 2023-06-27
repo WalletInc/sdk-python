@@ -818,6 +818,7 @@ with wallet.ApiClient() as api_client:
     item_id = "itemID_example" # str | 
     is_refresh = True # bool |  (optional)
     phone_verification_token = "phoneVerificationToken_example" # str |  (optional)
+    referrer = "referrer_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -831,7 +832,7 @@ with wallet.ApiClient() as api_client:
     # and optional values
     try:
         # Identify item
-        api_response = api_instance.identify_item(item_id, is_refresh=is_refresh, phone_verification_token=phone_verification_token)
+        api_response = api_instance.identify_item(item_id, is_refresh=is_refresh, phone_verification_token=phone_verification_token, referrer=referrer)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling InteractionsApi->identify_item: %s\n" % e)
@@ -845,6 +846,7 @@ Name | Type | Description  | Notes
  **item_id** | **str**|  |
  **is_refresh** | **bool**|  | [optional]
  **phone_verification_token** | **str**|  | [optional]
+ **referrer** | **str**|  | [optional]
 
 ### Return type
 
