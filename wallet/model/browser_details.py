@@ -80,6 +80,7 @@ class BrowserDetails(ModelNormal):
             'phone_verification_token': (str,),  # noqa: E501
             'session_id': (str,),  # noqa: E501
             'navigator_agent': (str,),  # noqa: E501
+            'referrer': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -92,6 +93,7 @@ class BrowserDetails(ModelNormal):
         'phone_verification_token': 'phoneVerificationToken',  # noqa: E501
         'session_id': 'sessionID',  # noqa: E501
         'navigator_agent': 'navigatorAgent',  # noqa: E501
+        'referrer': 'referrer',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,6 +143,7 @@ class BrowserDetails(ModelNormal):
             phone_verification_token (str): [optional]  # noqa: E501
             session_id (str): [optional]  # noqa: E501
             navigator_agent (str): [optional]  # noqa: E501
+            referrer (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,6 +232,7 @@ class BrowserDetails(ModelNormal):
             phone_verification_token (str): [optional]  # noqa: E501
             session_id (str): [optional]  # noqa: E501
             navigator_agent (str): [optional]  # noqa: E501
+            referrer (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

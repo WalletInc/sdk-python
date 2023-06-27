@@ -604,6 +604,7 @@ with wallet.ApiClient() as api_client:
         merchant_id=MerchantID("C"),
         page_type="page_type_example",
         is_refresh=True,
+        referrer="https://google.com",
     ) # WTFetchWalletPaymentObjectWithToken | 
 
     # example passing only required values which don't have defaults set
@@ -678,6 +679,7 @@ with wallet.ApiClient() as api_client:
         merchant_id=MerchantID("C"),
         page_type="page_type_example",
         is_refresh=True,
+        referrer="https://google.com",
     ) # WTFetchWalletPaymentObjectWithToken | 
 
     # example passing only required values which don't have defaults set
@@ -905,6 +907,7 @@ with wallet.ApiClient() as api_client:
         phone_verification_token="phone_verification_token_example",
         session_id="session_id_example",
         navigator_agent="navigator_agent_example",
+        referrer="referrer_example",
     ) # BrowserDetails | 
 
     # example passing only required values which don't have defaults set
