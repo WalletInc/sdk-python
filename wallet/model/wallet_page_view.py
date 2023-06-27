@@ -124,6 +124,7 @@ class WalletPageView(ModelNormal):
             'merchant_id': (MerchantID,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'geo_point': (WTWalletPageViewGeoPoint,),  # noqa: E501
+            'referring_domain': (str,),  # noqa: E501
             'referrer': (str,),  # noqa: E501
         }
 
@@ -170,6 +171,7 @@ class WalletPageView(ModelNormal):
         'merchant_id': 'merchantID',  # noqa: E501
         'is_active': 'isActive',  # noqa: E501
         'geo_point': 'geoPoint',  # noqa: E501
+        'referring_domain': 'referringDomain',  # noqa: E501
         'referrer': 'referrer',  # noqa: E501
     }
 
@@ -253,6 +255,7 @@ class WalletPageView(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            referring_domain (str): [optional]  # noqa: E501
             referrer (str): [optional]  # noqa: E501
         """
 
@@ -411,6 +414,7 @@ class WalletPageView(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            referring_domain (str): [optional]  # noqa: E501
             referrer (str): [optional]  # noqa: E501
         """
 

@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
 **is_active** | **bool** | Denotes if this resource is active | 
 **geo_point** | [**WTWalletPageViewGeoPoint**](WTWalletPageViewGeoPoint.md) |  | 
+**referring_domain** | **str** |  | [optional] 
 **referrer** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
