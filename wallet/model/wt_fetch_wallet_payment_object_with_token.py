@@ -85,6 +85,7 @@ class WTFetchWalletPaymentObjectWithToken(ModelNormal):
             'merchant_id': (MerchantID,),  # noqa: E501
             'page_type': (str,),  # noqa: E501
             'is_refresh': (bool,),  # noqa: E501
+            'referrer': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -97,6 +98,7 @@ class WTFetchWalletPaymentObjectWithToken(ModelNormal):
         'merchant_id': 'merchantID',  # noqa: E501
         'page_type': 'pageType',  # noqa: E501
         'is_refresh': 'isRefresh',  # noqa: E501
+        'referrer': 'referrer',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,6 +148,7 @@ class WTFetchWalletPaymentObjectWithToken(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_refresh (bool): [optional]  # noqa: E501
+            referrer (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,6 +239,7 @@ class WTFetchWalletPaymentObjectWithToken(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_refresh (bool): [optional]  # noqa: E501
+            referrer (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
