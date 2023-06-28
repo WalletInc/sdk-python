@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**count_transactions**](AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
 [**count_verified_wallet_page_views**](AnalyticsApi.md#count_verified_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
 [**count_wallet_page_views**](AnalyticsApi.md#count_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
+[**exit_link_summary**](AnalyticsApi.md#exit_link_summary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count new sessions
 [**fetch_analytics_ad_credits_count_partitioned_by_employee**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_employee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
 [**fetch_analytics_ad_credits_count_partitioned_by_payment_design**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_payment_design) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design
 [**fetch_analytics_ad_credits_count_partitioned_by_value_type**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_value_type) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type
@@ -989,6 +990,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[WTWalletObjectPrefixCounts]**](WTWalletObjectPrefixCounts.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **exit_link_summary**
+> bool, date, datetime, dict, float, int, list, str, none_type exit_link_summary()
+
+Count new sessions
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import analytics_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Count new sessions
+        api_response = api_instance.exit_link_summary(start_date=start_date, end_date=end_date)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling AnalyticsApi->exit_link_summary: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional]
+ **end_date** | **datetime**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
