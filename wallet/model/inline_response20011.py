@@ -82,9 +82,13 @@ class InlineResponse20011(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'store': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'beauty': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'entertainment': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'grocery': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'service': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'casino': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'hospitality': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'food': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'retail': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
         }
 
     @cached_property
@@ -93,9 +97,13 @@ class InlineResponse20011(ModelNormal):
 
 
     attribute_map = {
-        'store': 'store',  # noqa: E501
-        'beauty': 'beauty',  # noqa: E501
+        'entertainment': 'entertainment',  # noqa: E501
+        'grocery': 'grocery',  # noqa: E501
+        'service': 'service',  # noqa: E501
         'casino': 'casino',  # noqa: E501
+        'hospitality': 'hospitality',  # noqa: E501
+        'food': 'food',  # noqa: E501
+        'retail': 'retail',  # noqa: E501
     }
 
     read_only_vars = {
@@ -105,13 +113,17 @@ class InlineResponse20011(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, store, beauty, casino, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, entertainment, grocery, service, casino, hospitality, food, retail, *args, **kwargs):  # noqa: E501
         """InlineResponse20011 - a model defined in OpenAPI
 
         Args:
-            store ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            beauty ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            entertainment ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            grocery ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            service ([bool, date, datetime, dict, float, int, list, str, none_type]):
             casino ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            hospitality ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            food ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            retail ([bool, date, datetime, dict, float, int, list, str, none_type]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -171,9 +183,13 @@ class InlineResponse20011(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.store = store
-        self.beauty = beauty
+        self.entertainment = entertainment
+        self.grocery = grocery
+        self.service = service
         self.casino = casino
+        self.hospitality = hospitality
+        self.food = food
+        self.retail = retail
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -194,13 +210,17 @@ class InlineResponse20011(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, store, beauty, casino, *args, **kwargs):  # noqa: E501
+    def __init__(self, entertainment, grocery, service, casino, hospitality, food, retail, *args, **kwargs):  # noqa: E501
         """InlineResponse20011 - a model defined in OpenAPI
 
         Args:
-            store ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            beauty ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            entertainment ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            grocery ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            service ([bool, date, datetime, dict, float, int, list, str, none_type]):
             casino ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            hospitality ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            food ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            retail ([bool, date, datetime, dict, float, int, list, str, none_type]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -258,9 +278,13 @@ class InlineResponse20011(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.store = store
-        self.beauty = beauty
+        self.entertainment = entertainment
+        self.grocery = grocery
+        self.service = service
         self.casino = casino
+        self.hospitality = hospitality
+        self.food = food
+        self.retail = retail
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
