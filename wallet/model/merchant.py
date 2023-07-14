@@ -107,6 +107,7 @@ class Merchant(ModelNormal):
             'currency_abbreviation': (str,),  # noqa: E501
             'is_sms_agreement': (bool,),  # noqa: E501
             'is_white_labeled': (bool,),  # noqa: E501
+            'is_featured': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -141,6 +142,7 @@ class Merchant(ModelNormal):
         'currency_abbreviation': 'currencyAbbreviation',  # noqa: E501
         'is_sms_agreement': 'isSmsAgreement',  # noqa: E501
         'is_white_labeled': 'isWhiteLabeled',  # noqa: E501
+        'is_featured': 'isFeatured',  # noqa: E501
     }
 
     read_only_vars = {
@@ -212,6 +214,7 @@ class Merchant(ModelNormal):
             currency_abbreviation (str): [optional]  # noqa: E501
             is_sms_agreement (bool): [optional]  # noqa: E501
             is_white_labeled (bool): [optional]  # noqa: E501
+            is_featured (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -344,6 +347,7 @@ class Merchant(ModelNormal):
             currency_abbreviation (str): [optional]  # noqa: E501
             is_sms_agreement (bool): [optional]  # noqa: E501
             is_white_labeled (bool): [optional]  # noqa: E501
+            is_featured (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
