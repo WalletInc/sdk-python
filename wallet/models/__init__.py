@@ -108,6 +108,20 @@ from wallet.model.merchant_id import MerchantID
 from wallet.model.merchant_not_initialized import MerchantNotInitialized
 from wallet.model.merchant_url import MerchantURL
 from wallet.model.message import Message
+from wallet.model.message_direction import MessageDirection
+from wallet.model.message_direction_any_of import MessageDirectionAnyOf
+from wallet.model.message_direction_any_of1 import MessageDirectionAnyOf1
+from wallet.model.message_direction_any_of2 import MessageDirectionAnyOf2
+from wallet.model.message_direction_any_of3 import MessageDirectionAnyOf3
+from wallet.model.message_status import MessageStatus
+from wallet.model.message_status_any_of import MessageStatusAnyOf
+from wallet.model.message_status_any_of1 import MessageStatusAnyOf1
+from wallet.model.message_status_any_of2 import MessageStatusAnyOf2
+from wallet.model.message_status_any_of3 import MessageStatusAnyOf3
+from wallet.model.message_status_any_of4 import MessageStatusAnyOf4
+from wallet.model.message_status_any_of5 import MessageStatusAnyOf5
+from wallet.model.message_status_any_of6 import MessageStatusAnyOf6
+from wallet.model.message_status_any_of7 import MessageStatusAnyOf7
 from wallet.model.module_error import ModuleError
 from wallet.model.nano_id import NanoID
 from wallet.model.news_article import NewsArticle
@@ -124,6 +138,7 @@ from wallet.model.payment_design import PaymentDesign
 from wallet.model.payment_prefixes import PaymentPrefixes
 from wallet.model.performance import Performance
 from wallet.model.phone_number import PhoneNumber
+from wallet.model.phone_number_capabilities import PhoneNumberCapabilities
 from wallet.model.pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_is_active import PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive
 from wallet.model.pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_source_id import PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID
 from wallet.model.pick_ms_employee_api_key_create_params_exclude_keyof_ms_employee_api_key_create_params_employee_id import PickMSEmployeeAPIKeyCreateParamsExcludeKeyofMSEmployeeAPIKeyCreateParamsEmployeeID
@@ -271,6 +286,7 @@ from wallet.model.wt_link_book_create_params import WTLinkBookCreateParams
 from wallet.model.wt_link_book_section_create_params import WTLinkBookSectionCreateParams
 from wallet.model.wt_link_book_section_update_params import WTLinkBookSectionUpdateParams
 from wallet.model.wt_link_book_update_params import WTLinkBookUpdateParams
+from wallet.model.wt_local_instance import WTLocalInstance
 from wallet.model.wt_lounge_create_params import WTLoungeCreateParams
 from wallet.model.wt_lounge_update_params import WTLoungeUpdateParams
 from wallet.model.wt_member import WTMember
@@ -286,6 +302,7 @@ from wallet.model.wt_merchant_url_update import WTMerchantURLUpdate
 from wallet.model.wt_merchant_update import WTMerchantUpdate
 from wallet.model.wt_merchant_update_pos_integration import WTMerchantUpdatePOSIntegration
 from wallet.model.wt_merchant_update_points_of_contact import WTMerchantUpdatePointsOfContact
+from wallet.model.wt_message_instance import WTMessageInstance
 from wallet.model.wt_news_article_create_params import WTNewsArticleCreateParams
 from wallet.model.wt_news_article_update_params import WTNewsArticleUpdateParams
 from wallet.model.wt_opt_in_list import WTOptInList
