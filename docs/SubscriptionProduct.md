@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **pages** | [**[PortalPage]**](PortalPage.md) |  | 
 **icon_name** | **str** |  | 
 **description** | **str** |  | 
+**volume** | **float** |  | [optional] 
 **is_hourly** | **bool** |  | [optional] 
 **release_status** | **str** |  | [optional] 
 
