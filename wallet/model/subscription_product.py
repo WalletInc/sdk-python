@@ -91,6 +91,7 @@ class SubscriptionProduct(ModelNormal):
             'pages': ([PortalPage],),  # noqa: E501
             'icon_name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'volume': (float,),  # noqa: E501
             'is_hourly': (bool,),  # noqa: E501
             'release_status': (str,),  # noqa: E501
         }
@@ -109,6 +110,7 @@ class SubscriptionProduct(ModelNormal):
         'pages': 'pages',  # noqa: E501
         'icon_name': 'iconName',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'volume': 'volume',  # noqa: E501
         'is_hourly': 'isHourly',  # noqa: E501
         'release_status': 'releaseStatus',  # noqa: E501
     }
@@ -164,6 +166,7 @@ class SubscriptionProduct(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            volume (float): [optional]  # noqa: E501
             is_hourly (bool): [optional]  # noqa: E501
             release_status (str): [optional]  # noqa: E501
         """
@@ -265,6 +268,7 @@ class SubscriptionProduct(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            volume (float): [optional]  # noqa: E501
             is_hourly (bool): [optional]  # noqa: E501
             release_status (str): [optional]  # noqa: E501
         """
