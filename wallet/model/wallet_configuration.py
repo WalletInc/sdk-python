@@ -141,7 +141,7 @@ class WalletConfiguration(ModelNormal):
             'vanity_page_wallet_prefix': (str,),  # noqa: E501
             'merchant_credit_payment_design_id': (str,),  # noqa: E501
             'custom_domain': (str,),  # noqa: E501
-            'custom_app_icon_url': (str,),  # noqa: E501
+            'mobile_app_icon_url': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -208,7 +208,7 @@ class WalletConfiguration(ModelNormal):
         'vanity_page_wallet_prefix': 'vanityPageWalletPrefix',  # noqa: E501
         'merchant_credit_payment_design_id': 'merchantCreditPaymentDesignID',  # noqa: E501
         'custom_domain': 'customDomain',  # noqa: E501
-        'custom_app_icon_url': 'customAppIconURL',  # noqa: E501
+        'mobile_app_icon_url': 'mobileAppIconURL',  # noqa: E501
     }
 
     read_only_vars = {
@@ -312,7 +312,7 @@ class WalletConfiguration(ModelNormal):
             vanity_page_wallet_prefix (str): [optional]  # noqa: E501
             merchant_credit_payment_design_id (str): [optional]  # noqa: E501
             custom_domain (str): [optional]  # noqa: E501
-            custom_app_icon_url (str): [optional]  # noqa: E501
+            mobile_app_icon_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -501,7 +501,7 @@ class WalletConfiguration(ModelNormal):
             vanity_page_wallet_prefix (str): [optional]  # noqa: E501
             merchant_credit_payment_design_id (str): [optional]  # noqa: E501
             custom_domain (str): [optional]  # noqa: E501
-            custom_app_icon_url (str): [optional]  # noqa: E501
+            mobile_app_icon_url (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
