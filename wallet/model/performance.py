@@ -32,7 +32,9 @@ from wallet.exceptions import ApiAttributeError
 
 def lazy_import():
     from wallet.model.merchant_id import MerchantID
+    from wallet.model.nano_id import NanoID
     globals()['MerchantID'] = MerchantID
+    globals()['NanoID'] = NanoID
 
 
 class Performance(ModelNormal):
@@ -105,6 +107,7 @@ class Performance(ModelNormal):
             'is_active': (bool,),  # noqa: E501
             'merchant_id': (MerchantID,),  # noqa: E501
             'media_url': (str,),  # noqa: E501
+            'payment_design_id': (NanoID,),  # noqa: E501
         }
 
     @cached_property
@@ -126,6 +129,7 @@ class Performance(ModelNormal):
         'is_active': 'isActive',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
         'media_url': 'mediaURL',  # noqa: E501
+        'payment_design_id': 'paymentDesignID',  # noqa: E501
     }
 
     read_only_vars = {
@@ -184,6 +188,7 @@ class Performance(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             media_url (str): [optional]  # noqa: E501
+            payment_design_id (NanoID): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -292,6 +297,7 @@ class Performance(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             media_url (str): [optional]  # noqa: E501
+            payment_design_id (NanoID): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

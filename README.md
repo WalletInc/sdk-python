@@ -365,7 +365,7 @@ Class | Method | HTTP request | Description
 *InteractionsApi* | [**fetch_member_information**](docs/InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Fetch member information
 *InteractionsApi* | [**fetch_static_voucher_with_voucher_id**](docs/InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Fetch static voucher
 *InteractionsApi* | [**fetch_wallet_page_with_token**](docs/InteractionsApi.md#fetch_wallet_page_with_token) | **POST** /wallet/page/token | Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
-*InteractionsApi* | [**fetch_wallet_payment_object_with_token**](docs/InteractionsApi.md#fetch_wallet_payment_object_with_token) | **POST** /wallet/paymentObject/token | Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+*InteractionsApi* | [**fetch_wallet_payment_objects_with_token**](docs/InteractionsApi.md#fetch_wallet_payment_objects_with_token) | **POST** /wallet/paymentObject/token | Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 *InteractionsApi* | [**find_by_vanity_handle**](docs/InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 *InteractionsApi* | [**identify_item**](docs/InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
 *InteractionsApi* | [**request_merchant_url_redirect**](docs/InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
@@ -853,7 +853,7 @@ Class | Method | HTTP request | Description
  - [WTEmployeeSendHelpDeskResponse](docs/WTEmployeeSendHelpDeskResponse.md)
  - [WTEmployeeUpdate](docs/WTEmployeeUpdate.md)
  - [WTEmployeeUpdateRecords](docs/WTEmployeeUpdateRecords.md)
- - [WTFetchWalletPaymentObjectWithToken](docs/WTFetchWalletPaymentObjectWithToken.md)
+ - [WTFetchWalletPaymentObjectsWithToken](docs/WTFetchWalletPaymentObjectsWithToken.md)
  - [WTGamingCreateParams](docs/WTGamingCreateParams.md)
  - [WTGamingUpdateParams](docs/WTGamingUpdateParams.md)
  - [WTImageGridCreateParams](docs/WTImageGridCreateParams.md)
