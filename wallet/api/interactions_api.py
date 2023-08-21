@@ -33,7 +33,7 @@ from wallet.model.member import Member
 from wallet.model.merchant_id import MerchantID
 from wallet.model.static_voucher import StaticVoucher
 from wallet.model.wt_email_subscriber_create_params_wallet_ui import WTEmailSubscriberCreateParamsWalletUI
-from wallet.model.wt_fetch_wallet_payment_object_with_token import WTFetchWalletPaymentObjectWithToken
+from wallet.model.wt_fetch_wallet_payment_objects_with_token import WTFetchWalletPaymentObjectsWithToken
 from wallet.model.wallet_configuration import WalletConfiguration
 
 
@@ -457,10 +457,10 @@ class InteractionsApi(object):
             },
             params_map={
                 'all': [
-                    'wt_fetch_wallet_payment_object_with_token',
+                    'wt_fetch_wallet_payment_objects_with_token',
                 ],
                 'required': [
-                    'wt_fetch_wallet_payment_object_with_token',
+                    'wt_fetch_wallet_payment_objects_with_token',
                 ],
                 'nullable': [
                 ],
@@ -475,13 +475,13 @@ class InteractionsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'wt_fetch_wallet_payment_object_with_token':
-                        (WTFetchWalletPaymentObjectWithToken,),
+                    'wt_fetch_wallet_payment_objects_with_token':
+                        (WTFetchWalletPaymentObjectsWithToken,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'wt_fetch_wallet_payment_object_with_token': 'body',
+                    'wt_fetch_wallet_payment_objects_with_token': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -496,21 +496,21 @@ class InteractionsApi(object):
             },
             api_client=api_client
         )
-        self.fetch_wallet_payment_object_with_token_endpoint = _Endpoint(
+        self.fetch_wallet_payment_objects_with_token_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/wallet/paymentObject/token',
-                'operation_id': 'fetch_wallet_payment_object_with_token',
+                'operation_id': 'fetch_wallet_payment_objects_with_token',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'wt_fetch_wallet_payment_object_with_token',
+                    'wt_fetch_wallet_payment_objects_with_token',
                 ],
                 'required': [
-                    'wt_fetch_wallet_payment_object_with_token',
+                    'wt_fetch_wallet_payment_objects_with_token',
                 ],
                 'nullable': [
                 ],
@@ -525,13 +525,13 @@ class InteractionsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'wt_fetch_wallet_payment_object_with_token':
-                        (WTFetchWalletPaymentObjectWithToken,),
+                    'wt_fetch_wallet_payment_objects_with_token':
+                        (WTFetchWalletPaymentObjectsWithToken,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'wt_fetch_wallet_payment_object_with_token': 'body',
+                    'wt_fetch_wallet_payment_objects_with_token': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1388,7 +1388,7 @@ class InteractionsApi(object):
 
     def fetch_wallet_page_with_token(
         self,
-        wt_fetch_wallet_payment_object_with_token,
+        wt_fetch_wallet_payment_objects_with_token,
         **kwargs
     ):
         """Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.  # noqa: E501
@@ -1396,11 +1396,11 @@ class InteractionsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.fetch_wallet_page_with_token(wt_fetch_wallet_payment_object_with_token, async_req=True)
+        >>> thread = api.fetch_wallet_page_with_token(wt_fetch_wallet_payment_objects_with_token, async_req=True)
         >>> result = thread.get()
 
         Args:
-            wt_fetch_wallet_payment_object_with_token (WTFetchWalletPaymentObjectWithToken):
+            wt_fetch_wallet_payment_objects_with_token (WTFetchWalletPaymentObjectsWithToken):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1459,25 +1459,25 @@ class InteractionsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['wt_fetch_wallet_payment_object_with_token'] = \
-            wt_fetch_wallet_payment_object_with_token
+        kwargs['wt_fetch_wallet_payment_objects_with_token'] = \
+            wt_fetch_wallet_payment_objects_with_token
         return self.fetch_wallet_page_with_token_endpoint.call_with_http_info(**kwargs)
 
-    def fetch_wallet_payment_object_with_token(
+    def fetch_wallet_payment_objects_with_token(
         self,
-        wt_fetch_wallet_payment_object_with_token,
+        wt_fetch_wallet_payment_objects_with_token,
         **kwargs
     ):
-        """Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.  # noqa: E501
+        """Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.fetch_wallet_payment_object_with_token(wt_fetch_wallet_payment_object_with_token, async_req=True)
+        >>> thread = api.fetch_wallet_payment_objects_with_token(wt_fetch_wallet_payment_objects_with_token, async_req=True)
         >>> result = thread.get()
 
         Args:
-            wt_fetch_wallet_payment_object_with_token (WTFetchWalletPaymentObjectWithToken):
+            wt_fetch_wallet_payment_objects_with_token (WTFetchWalletPaymentObjectsWithToken):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1536,9 +1536,9 @@ class InteractionsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['wt_fetch_wallet_payment_object_with_token'] = \
-            wt_fetch_wallet_payment_object_with_token
-        return self.fetch_wallet_payment_object_with_token_endpoint.call_with_http_info(**kwargs)
+        kwargs['wt_fetch_wallet_payment_objects_with_token'] = \
+            wt_fetch_wallet_payment_objects_with_token
+        return self.fetch_wallet_payment_objects_with_token_endpoint.call_with_http_info(**kwargs)
 
     def find_by_vanity_handle(
         self,

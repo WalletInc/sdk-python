@@ -120,6 +120,7 @@ with wallet.ApiClient() as api_client:
         order_number=5,
         is_sold_out=True,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        payment_design_id=NanoID("C"),
     ) # WTPerformanceCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -344,6 +345,7 @@ with wallet.ApiClient() as api_client:
         order_number=5,
         is_sold_out=True,
         media_url="https://wall.et/media/H847Sjudbw.png",
+        payment_design_id=NanoID("C"),
     ) # WTPerformanceUpdateParams | 
 
     # example passing only required values which don't have defaults set
