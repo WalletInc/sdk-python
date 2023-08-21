@@ -411,7 +411,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_wt_fetch_wallet_payment_objects_with_token.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
