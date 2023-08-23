@@ -27,9 +27,9 @@ from wallet.model.auth_error import AuthError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.imported_list import ImportedList
 from wallet.model.imported_list_recipient import ImportedListRecipient
-from wallet.model.inline_response2006 import InlineResponse2006
 from wallet.model.inline_response2007 import InlineResponse2007
 from wallet.model.inline_response2008 import InlineResponse2008
+from wallet.model.inline_response2009 import InlineResponse2009
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.nano_id import NanoID
 from wallet.model.opt_in_list import OptInList
@@ -936,7 +936,7 @@ class SMSApi(object):
         )
         self.fetch_imported_list_recipients_by_page_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2008,),
+                'response_type': (InlineResponse2009,),
                 'auth': [],
                 'endpoint_path': '/v2/sms/importedList/recipients/page/{listID}',
                 'operation_id': 'fetch_imported_list_recipients_by_page',
@@ -1111,7 +1111,7 @@ class SMSApi(object):
         )
         self.fetch_opt_in_list_subscribers_by_page_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2007,),
+                'response_type': (InlineResponse2008,),
                 'auth': [],
                 'endpoint_path': '/v2/sms/optInList/subscribers/page/{listID}',
                 'operation_id': 'fetch_opt_in_list_subscribers_by_page',
@@ -1411,7 +1411,7 @@ class SMSApi(object):
         )
         self.fetch_outbound_smsby_page_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2006,),
+                'response_type': (InlineResponse2007,),
                 'auth': [],
                 'endpoint_path': '/v2/sms/outbound/page/{phoneNumberID}',
                 'operation_id': 'fetch_outbound_smsby_page',
@@ -3453,7 +3453,7 @@ class SMSApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2008
+            InlineResponse2009
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3688,7 +3688,7 @@ class SMSApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2007
+            InlineResponse2008
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4084,7 +4084,7 @@ class SMSApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2006
+            InlineResponse2007
                 If the method is called asynchronously, returns the request
                 thread.
         """

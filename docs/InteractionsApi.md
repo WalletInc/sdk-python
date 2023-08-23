@@ -4,6 +4,7 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**claim_ticket**](InteractionsApi.md#claim_ticket) | **PUT** /wallet/ticket/claim/{id} | Update ticket
 [**create_advertisement_credit_scan**](InteractionsApi.md#create_advertisement_credit_scan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
 [**create_employee_v_card**](InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard
 [**create_ics_file**](InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event
@@ -19,6 +20,80 @@ Method | HTTP request | Description
 [**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
 [**subscribe_email**](InteractionsApi.md#subscribe_email) | **POST** /wallet/subscribeEmail | Create email subscriber
 
+
+# **claim_ticket**
+> Ticket claim_ticket(id, inline_object2)
+
+Update ticket
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import interactions_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.ticket import Ticket
+from wallet.model.inline_object2 import InlineObject2
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = interactions_api.InteractionsApi(api_client)
+    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    inline_object2 = InlineObject2(
+        claimed_by_phone_number="claimed_by_phone_number_example",
+    ) # InlineObject2 | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update ticket
+        api_response = api_instance.claim_ticket(id, inline_object2)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling InteractionsApi->claim_ticket: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **inline_object2** | [**InlineObject2**](InlineObject2.md)|  |
+
+### Return type
+
+[**Ticket**](Ticket.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_advertisement_credit_scan**
 > AdvertisementCreditScan create_advertisement_credit_scan(ad_credit_id)
@@ -294,7 +369,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_static_vouchers_associated_with_customer_with_voucher_id**
-> [InlineResponse2009] fetch_all_static_vouchers_associated_with_customer_with_voucher_id(voucher_id)
+> [InlineResponse20010] fetch_all_static_vouchers_associated_with_customer_with_voucher_id(voucher_id)
 
 Fetch a customer's static vouchers on the basis of a given voucher ID
 
@@ -307,7 +382,7 @@ import wallet
 from wallet.api import interactions_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_response2009 import InlineResponse2009
+from wallet.model.inline_response20010 import InlineResponse20010
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -340,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2009]**](InlineResponse2009.md)
+[**[InlineResponse20010]**](InlineResponse20010.md)
 
 ### Authorization
 

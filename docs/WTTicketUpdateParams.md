@@ -1,12 +1,13 @@
-# InlineResponse2005
+# WTTicketUpdateParams
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[WTTicket]**](WTTicket.md) |  | 
-**total_rows** | **float** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**recipient_phone_number** | **str** |  | 
+**recipient_email_address** | **str** |  | [optional] 
+**recipient_member_id** | **str** |  | [optional] 
+**is_comp** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

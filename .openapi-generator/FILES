@@ -75,10 +75,12 @@ docs/IndustriesApi.md
 docs/InfoGenesisReportsApi.md
 docs/InlineObject.md
 docs/InlineObject1.md
+docs/InlineObject2.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
 docs/InlineResponse20010.md
 docs/InlineResponse20011.md
+docs/InlineResponse20012.md
 docs/InlineResponse2002.md
 docs/InlineResponse2003.md
 docs/InlineResponse2004.md
@@ -254,6 +256,8 @@ docs/SubscriptionPlan.md
 docs/SubscriptionProduct.md
 docs/SystemApi.md
 docs/Tcpa.md
+docs/Ticket.md
+docs/TicketApi.md
 docs/TransactionLedgerApi.md
 docs/UpdateStaticVoucherCampaignWithVoucher.md
 docs/UtilitiesApi.md
@@ -387,6 +391,9 @@ docs/WTStaticVoucherUpdateParams.md
 docs/WTSystemApprovePhoneNumber.md
 docs/WTSystemRoleCreate.md
 docs/WTTCPAOpt.md
+docs/WTTicket.md
+docs/WTTicketCreateParams.md
+docs/WTTicketUpdateParams.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTVideoCreateParams.md
@@ -411,6 +418,13 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_inline_object2.py
+test/test_inline_response20012.py
+test/test_ticket.py
+test/test_ticket_api.py
+test/test_wt_ticket.py
+test/test_wt_ticket_create_params.py
+test/test_wt_ticket_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -460,6 +474,7 @@ wallet/api/static_voucher_campaign_groups_api.py
 wallet/api/static_voucher_campaigns_api.py
 wallet/api/static_vouchers_api.py
 wallet/api/system_api.py
+wallet/api/ticket_api.py
 wallet/api/transaction_ledger_api.py
 wallet/api/utilities_api.py
 wallet/api/videos_api.py
@@ -525,10 +540,12 @@ wallet/model/imported_list_recipient.py
 wallet/model/inbound_sms.py
 wallet/model/inline_object.py
 wallet/model/inline_object1.py
+wallet/model/inline_object2.py
 wallet/model/inline_response200.py
 wallet/model/inline_response2001.py
 wallet/model/inline_response20010.py
 wallet/model/inline_response20011.py
+wallet/model/inline_response20012.py
 wallet/model/inline_response2002.py
 wallet/model/inline_response2003.py
 wallet/model/inline_response2004.py
@@ -678,6 +695,7 @@ wallet/model/subscription_feature.py
 wallet/model/subscription_plan.py
 wallet/model/subscription_product.py
 wallet/model/tcpa.py
+wallet/model/ticket.py
 wallet/model/update_static_voucher_campaign_with_voucher.py
 wallet/model/video.py
 wallet/model/virtual_business_card.py
@@ -800,6 +818,9 @@ wallet/model/wt_static_voucher_create_params.py
 wallet/model/wt_static_voucher_update_params.py
 wallet/model/wt_system_approve_phone_number.py
 wallet/model/wt_system_role_create.py
+wallet/model/wt_ticket.py
+wallet/model/wt_ticket_create_params.py
+wallet/model/wt_ticket_update_params.py
 wallet/model/wt_twilio_request_authy_code.py
 wallet/model/wt_twilio_verify_authy_code.py
 wallet/model/wt_video_create_params.py

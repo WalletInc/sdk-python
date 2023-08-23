@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **fetch_all_countries**
-> [InlineResponse20010] fetch_all_countries()
+> [InlineResponse20011] fetch_all_countries()
 
 Fetch all countries
 
@@ -20,7 +20,7 @@ import time
 import wallet
 from wallet.api import countries_api
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.inline_response20010 import InlineResponse20010
+from wallet.model.inline_response20011 import InlineResponse20011
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[InlineResponse20010]**](InlineResponse20010.md)
+[**[InlineResponse20011]**](InlineResponse20011.md)
 
 ### Authorization
 

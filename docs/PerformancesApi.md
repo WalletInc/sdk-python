@@ -6,8 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**archive_performance**](PerformancesApi.md#archive_performance) | **DELETE** /v2/performances/{id} | Archive performance
 [**create_performance**](PerformancesApi.md#create_performance) | **POST** /v2/performances | Create performance
+[**fetch_all_performance_tickets**](PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
 [**fetch_all_performances**](PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
+[**fetch_performance**](PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Fetch a single performance
+[**fetch_performance_tickets_page**](PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page
 [**restore_performance**](PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore performance
+[**save_ticket_design**](PerformancesApi.md#save_ticket_design) | **PUT** /v2/performances/{id}/saveTicketDesign/{paymentDesignID} | Update performance
 [**update_performance**](PerformancesApi.md#update_performance) | **PUT** /v2/performances/{id} | Update performance
 
 
@@ -164,6 +168,88 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **fetch_all_performance_tickets**
+> [Ticket] fetch_all_performance_tickets(id)
+
+Fetch all tickets
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import performances_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.ticket import Ticket
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = performances_api.PerformancesApi(api_client)
+    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    is_archive_included = True # bool |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch all tickets
+        api_response = api_instance.fetch_all_performance_tickets(id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->fetch_all_performance_tickets: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Fetch all tickets
+        api_response = api_instance.fetch_all_performance_tickets(id, is_archive_included=is_archive_included)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->fetch_all_performance_tickets: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **is_archive_included** | **bool**|  | [optional]
+
+### Return type
+
+[**[Ticket]**](Ticket.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **fetch_all_performances**
 > bool, date, datetime, dict, float, int, list, str, none_type fetch_all_performances()
 
@@ -235,6 +321,163 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **fetch_performance**
+> Performance fetch_performance(id)
+
+Fetch a single performance
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import performances_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.performance import Performance
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = performances_api.PerformancesApi(api_client)
+    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch a single performance
+        api_response = api_instance.fetch_performance(id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->fetch_performance: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+
+### Return type
+
+[**Performance**](Performance.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_performance_tickets_page**
+> InlineResponse2005 fetch_performance_tickets_page(performance_id, page_num, page_size)
+
+Fetch tickets by page
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import performances_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.inline_response2005 import InlineResponse2005
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = performances_api.PerformancesApi(api_client)
+    performance_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    page_num = 3.14 # float | 
+    page_size = 3.14 # float | 
+    is_archive_included = True # bool |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch tickets by page
+        api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->fetch_performance_tickets_page: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Fetch tickets by page
+        api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size, is_archive_included=is_archive_included)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->fetch_performance_tickets_page: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **performance_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **page_num** | **float**|  |
+ **page_size** | **float**|  |
+ **is_archive_included** | **bool**|  | [optional]
+
+### Return type
+
+[**InlineResponse2005**](InlineResponse2005.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **restore_performance**
 > Performance restore_performance(id)
 
@@ -280,6 +523,79 @@ with wallet.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+
+### Return type
+
+[**Performance**](Performance.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **save_ticket_design**
+> Performance save_ticket_design(id, payment_design_id)
+
+Update performance
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import performances_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.performance import Performance
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = performances_api.PerformancesApi(api_client)
+    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    payment_design_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update performance
+        api_response = api_instance.save_ticket_design(id, payment_design_id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->save_ticket_design: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **payment_design_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
 
 ### Return type
 

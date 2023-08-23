@@ -73,7 +73,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_domains_by_industry**
-> InlineResponse20011 fetch_domains_by_industry()
+> InlineResponse20012 fetch_domains_by_industry()
 
 Fetch all industries
 
@@ -85,7 +85,7 @@ import time
 import wallet
 from wallet.api import industries_api
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.inline_response20011 import InlineResponse20011
+from wallet.model.inline_response20012 import InlineResponse20012
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -114,7 +114,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
