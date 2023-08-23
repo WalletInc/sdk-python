@@ -81,13 +81,13 @@ class Ticket(ModelNormal):
         """
         lazy_import()
         return {
-            'recipient_phone_number': (str,),  # noqa: E501
             'performance_id': (str,),  # noqa: E501
             'id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'is_active': (bool,),  # noqa: E501
             'merchant_id': (MerchantID,),  # noqa: E501
+            'recipient_phone_number': (str,),  # noqa: E501
             'recipient_email_address': (str,),  # noqa: E501
             'recipient_member_id': (str,),  # noqa: E501
             'is_comp': (bool,),  # noqa: E501
@@ -104,13 +104,13 @@ class Ticket(ModelNormal):
 
 
     attribute_map = {
-        'recipient_phone_number': 'recipientPhoneNumber',  # noqa: E501
         'performance_id': 'performanceID',  # noqa: E501
         'id': 'id',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'is_active': 'isActive',  # noqa: E501
         'merchant_id': 'merchantID',  # noqa: E501
+        'recipient_phone_number': 'recipientPhoneNumber',  # noqa: E501
         'recipient_email_address': 'recipientEmailAddress',  # noqa: E501
         'recipient_member_id': 'recipientMemberID',  # noqa: E501
         'is_comp': 'isComp',  # noqa: E501
@@ -128,11 +128,10 @@ class Ticket(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, recipient_phone_number, performance_id, id, created_at, updated_at, is_active, merchant_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, performance_id, id, created_at, updated_at, is_active, merchant_id, *args, **kwargs):  # noqa: E501
         """Ticket - a model defined in OpenAPI
 
         Args:
-            recipient_phone_number (str):
             performance_id (str):
             id (bool, date, datetime, dict, float, int, list, str, none_type):
             created_at (datetime):
@@ -171,6 +170,7 @@ class Ticket(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            recipient_phone_number (str): [optional]  # noqa: E501
             recipient_email_address (str): [optional]  # noqa: E501
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
@@ -206,7 +206,6 @@ class Ticket(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.recipient_phone_number = recipient_phone_number
         self.performance_id = performance_id
         self.id = id
         self.created_at = created_at
@@ -233,11 +232,10 @@ class Ticket(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, recipient_phone_number, performance_id, id, created_at, updated_at, is_active, merchant_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, performance_id, id, created_at, updated_at, is_active, merchant_id, *args, **kwargs):  # noqa: E501
         """Ticket - a model defined in OpenAPI
 
         Args:
-            recipient_phone_number (str):
             performance_id (str):
             id (bool, date, datetime, dict, float, int, list, str, none_type):
             created_at (datetime):
@@ -276,6 +274,7 @@ class Ticket(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            recipient_phone_number (str): [optional]  # noqa: E501
             recipient_email_address (str): [optional]  # noqa: E501
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
@@ -309,7 +308,6 @@ class Ticket(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.recipient_phone_number = recipient_phone_number
         self.performance_id = performance_id
         self.id = id
         self.created_at = created_at

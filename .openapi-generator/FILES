@@ -418,13 +418,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_inline_object2.py
-test/test_inline_response20012.py
-test/test_ticket.py
-test/test_ticket_api.py
-test/test_wt_ticket.py
-test/test_wt_ticket_create_params.py
-test/test_wt_ticket_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py

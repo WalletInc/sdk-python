@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recipient_phone_number** | **str** |  | 
 **performance_id** | **str** |  | 
 **id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
 **merchant_id** | [**MerchantID**](MerchantID.md) |  | 
+**recipient_phone_number** | **str** |  | [optional] 
 **recipient_email_address** | **str** |  | [optional] 
 **recipient_member_id** | **str** |  | [optional] 
 **is_comp** | **bool** |  | [optional] 

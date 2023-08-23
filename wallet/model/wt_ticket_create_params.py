@@ -76,8 +76,8 @@ class WTTicketCreateParams(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'recipient_phone_number': (str,),  # noqa: E501
             'performance_id': (str,),  # noqa: E501
+            'recipient_phone_number': (str,),  # noqa: E501
             'recipient_email_address': (str,),  # noqa: E501
             'recipient_member_id': (str,),  # noqa: E501
             'is_comp': (bool,),  # noqa: E501
@@ -89,8 +89,8 @@ class WTTicketCreateParams(ModelNormal):
 
 
     attribute_map = {
-        'recipient_phone_number': 'recipientPhoneNumber',  # noqa: E501
         'performance_id': 'performanceID',  # noqa: E501
+        'recipient_phone_number': 'recipientPhoneNumber',  # noqa: E501
         'recipient_email_address': 'recipientEmailAddress',  # noqa: E501
         'recipient_member_id': 'recipientMemberID',  # noqa: E501
         'is_comp': 'isComp',  # noqa: E501
@@ -103,11 +103,10 @@ class WTTicketCreateParams(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, recipient_phone_number, performance_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, performance_id, *args, **kwargs):  # noqa: E501
         """WTTicketCreateParams - a model defined in OpenAPI
 
         Args:
-            recipient_phone_number (str):
             performance_id (str):
 
         Keyword Args:
@@ -141,6 +140,7 @@ class WTTicketCreateParams(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            recipient_phone_number (str): [optional]  # noqa: E501
             recipient_email_address (str): [optional]  # noqa: E501
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
@@ -171,7 +171,6 @@ class WTTicketCreateParams(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.recipient_phone_number = recipient_phone_number
         self.performance_id = performance_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -193,11 +192,10 @@ class WTTicketCreateParams(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, recipient_phone_number, performance_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, performance_id, *args, **kwargs):  # noqa: E501
         """WTTicketCreateParams - a model defined in OpenAPI
 
         Args:
-            recipient_phone_number (str):
             performance_id (str):
 
         Keyword Args:
@@ -231,6 +229,7 @@ class WTTicketCreateParams(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            recipient_phone_number (str): [optional]  # noqa: E501
             recipient_email_address (str): [optional]  # noqa: E501
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
@@ -259,7 +258,6 @@ class WTTicketCreateParams(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.recipient_phone_number = recipient_phone_number
         self.performance_id = performance_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
