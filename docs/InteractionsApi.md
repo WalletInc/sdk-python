@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**create_ics_file**](InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event
 [**create_virtual_business_card_v_card**](InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Fetch an employee&#39;s VCard
 [**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID
+[**fetch_customer_tickets_with_token**](InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket
 [**fetch_dynamic_voucher_with_voucher_id**](InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Fetch dynamic voucher
 [**fetch_member_information**](InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Fetch member information
 [**fetch_static_voucher_with_voucher_id**](InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Fetch static voucher
@@ -424,6 +425,79 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_customer_tickets_with_token**
+> [Ticket] fetch_customer_tickets_with_token(inline_object3)
+
+Update ticket
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import interactions_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.inline_object3 import InlineObject3
+from wallet.model.ticket import Ticket
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = interactions_api.InteractionsApi(api_client)
+    inline_object3 = InlineObject3(
+        phone_verification_token="phone_verification_token_example",
+        merchant_id="merchant_id_example",
+    ) # InlineObject3 | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update ticket
+        api_response = api_instance.fetch_customer_tickets_with_token(inline_object3)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling InteractionsApi->fetch_customer_tickets_with_token: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object3** | [**InlineObject3**](InlineObject3.md)|  |
+
+### Return type
+
+[**[Ticket]**](Ticket.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

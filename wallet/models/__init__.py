@@ -63,6 +63,7 @@ from wallet.model.inbound_sms import InboundSMS
 from wallet.model.inline_object import InlineObject
 from wallet.model.inline_object1 import InlineObject1
 from wallet.model.inline_object2 import InlineObject2
+from wallet.model.inline_object3 import InlineObject3
 from wallet.model.inline_response200 import InlineResponse200
 from wallet.model.inline_response2001 import InlineResponse2001
 from wallet.model.inline_response20010 import InlineResponse20010
