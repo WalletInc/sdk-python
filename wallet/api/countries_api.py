@@ -22,7 +22,7 @@ from wallet.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from wallet.model.inline_response20010 import InlineResponse20010
+from wallet.model.inline_response20011 import InlineResponse20011
 from wallet.model.internal_server_error import InternalServerError
 
 
@@ -39,7 +39,7 @@ class CountriesApi(object):
         self.api_client = api_client
         self.fetch_all_countries_endpoint = _Endpoint(
             settings={
-                'response_type': ([InlineResponse20010],),
+                'response_type': ([InlineResponse20011],),
                 'auth': [],
                 'endpoint_path': '/system/countries/all',
                 'operation_id': 'fetch_all_countries',
@@ -122,7 +122,7 @@ class CountriesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            [InlineResponse20010]
+            [InlineResponse20011]
                 If the method is called asynchronously, returns the request
                 thread.
         """

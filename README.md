@@ -356,11 +356,13 @@ Class | Method | HTTP request | Description
 *IntegratedTerminalsApi* | [**fetch_all_pos_machines**](docs/IntegratedTerminalsApi.md#fetch_all_pos_machines) | **GET** /v2/pos/machine/all | Fetch all POS machines
 *IntegratedTerminalsApi* | [**restore_pos_machine**](docs/IntegratedTerminalsApi.md#restore_pos_machine) | **PATCH** /v2/pos/machine/{id} | Restore POS machine
 *IntegratedTerminalsApi* | [**update_pos_machine**](docs/IntegratedTerminalsApi.md#update_pos_machine) | **PUT** /v2/pos/machine/{id} | Update POS machine
+*InteractionsApi* | [**claim_ticket**](docs/InteractionsApi.md#claim_ticket) | **PUT** /wallet/ticket/claim/{id} | Update ticket
 *InteractionsApi* | [**create_advertisement_credit_scan**](docs/InteractionsApi.md#create_advertisement_credit_scan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
 *InteractionsApi* | [**create_employee_v_card**](docs/InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard
 *InteractionsApi* | [**create_ics_file**](docs/InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event
 *InteractionsApi* | [**create_virtual_business_card_v_card**](docs/InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Fetch an employee&#39;s VCard
 *InteractionsApi* | [**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](docs/InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID
+*InteractionsApi* | [**fetch_customer_tickets_with_token**](docs/InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket
 *InteractionsApi* | [**fetch_dynamic_voucher_with_voucher_id**](docs/InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Fetch dynamic voucher
 *InteractionsApi* | [**fetch_member_information**](docs/InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Fetch member information
 *InteractionsApi* | [**fetch_static_voucher_with_voucher_id**](docs/InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Fetch static voucher
@@ -447,8 +449,12 @@ Class | Method | HTTP request | Description
 *PaymentDesignsApi* | [**update_payment_design**](docs/PaymentDesignsApi.md#update_payment_design) | **PUT** /v2/payment/design/{id} | Update payment design
 *PerformancesApi* | [**archive_performance**](docs/PerformancesApi.md#archive_performance) | **DELETE** /v2/performances/{id} | Archive performance
 *PerformancesApi* | [**create_performance**](docs/PerformancesApi.md#create_performance) | **POST** /v2/performances | Create performance
+*PerformancesApi* | [**fetch_all_performance_tickets**](docs/PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
 *PerformancesApi* | [**fetch_all_performances**](docs/PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
+*PerformancesApi* | [**fetch_performance**](docs/PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Fetch a single performance
+*PerformancesApi* | [**fetch_performance_tickets_page**](docs/PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page
 *PerformancesApi* | [**restore_performance**](docs/PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore performance
+*PerformancesApi* | [**save_ticket_design**](docs/PerformancesApi.md#save_ticket_design) | **PUT** /v2/performances/{id}/saveTicketDesign/{paymentDesignID} | Update performance
 *PerformancesApi* | [**update_performance**](docs/PerformancesApi.md#update_performance) | **PUT** /v2/performances/{id} | Update performance
 *ProductsApi* | [**archive_product**](docs/ProductsApi.md#archive_product) | **DELETE** /v2/products/{id} | Archive product
 *ProductsApi* | [**create_product**](docs/ProductsApi.md#create_product) | **POST** /v2/products | Create product
@@ -565,6 +571,11 @@ Class | Method | HTTP request | Description
 *SystemApi* | [**fetch_webpages_for_role**](docs/SystemApi.md#fetch_webpages_for_role) | **GET** /v2/system/roles/webpages/{roleID} | Fetch webpages for role
 *SystemApi* | [**load_role**](docs/SystemApi.md#load_role) | **GET** /v2/system/roles/{roleID} | Fetch role
 *SystemApi* | [**save_role**](docs/SystemApi.md#save_role) | **PUT** /v2/system/roles/{roleID} | Update role
+*TicketApi* | [**archive_ticket**](docs/TicketApi.md#archive_ticket) | **DELETE** /v2/ticket/{id} | Archive ticket
+*TicketApi* | [**create_ticket**](docs/TicketApi.md#create_ticket) | **POST** /v2/ticket | Create ticket
+*TicketApi* | [**fetch_ticket**](docs/TicketApi.md#fetch_ticket) | **GET** /v2/ticket/{id} | Fetch static voucher
+*TicketApi* | [**restore_ticket**](docs/TicketApi.md#restore_ticket) | **PATCH** /v2/ticket/{id} | Restore ticket
+*TicketApi* | [**update_ticket**](docs/TicketApi.md#update_ticket) | **PUT** /v2/ticket/{id} | Update ticket
 *TransactionLedgerApi* | [**fetch_all_ledger_transactions**](docs/TransactionLedgerApi.md#fetch_all_ledger_transactions) | **GET** /v2/pos/ledger/transactions/all | Fetch ledger transactions by page
 *UtilitiesApi* | [**get_payment_prefixes**](docs/UtilitiesApi.md#get_payment_prefixes) | **GET** /v2/payment/prefixes | Get payment prefixes
 *VideosApi* | [**archive_video**](docs/VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive video
@@ -645,10 +656,13 @@ Class | Method | HTTP request | Description
  - [InboundSMS](docs/InboundSMS.md)
  - [InlineObject](docs/InlineObject.md)
  - [InlineObject1](docs/InlineObject1.md)
+ - [InlineObject2](docs/InlineObject2.md)
+ - [InlineObject3](docs/InlineObject3.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse20010](docs/InlineResponse20010.md)
  - [InlineResponse20011](docs/InlineResponse20011.md)
+ - [InlineResponse20012](docs/InlineResponse20012.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
  - [InlineResponse2003](docs/InlineResponse2003.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)
@@ -798,6 +812,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionPlan](docs/SubscriptionPlan.md)
  - [SubscriptionProduct](docs/SubscriptionProduct.md)
  - [Tcpa](docs/Tcpa.md)
+ - [Ticket](docs/Ticket.md)
  - [UpdateStaticVoucherCampaignWithVoucher](docs/UpdateStaticVoucherCampaignWithVoucher.md)
  - [VSCampaignGeneratedMessage](docs/VSCampaignGeneratedMessage.md)
  - [VSCampaignGeneratedMessagePagination](docs/VSCampaignGeneratedMessagePagination.md)
@@ -927,6 +942,9 @@ Class | Method | HTTP request | Description
  - [WTSystemApprovePhoneNumber](docs/WTSystemApprovePhoneNumber.md)
  - [WTSystemRoleCreate](docs/WTSystemRoleCreate.md)
  - [WTTCPAOpt](docs/WTTCPAOpt.md)
+ - [WTTicket](docs/WTTicket.md)
+ - [WTTicketCreateParams](docs/WTTicketCreateParams.md)
+ - [WTTicketUpdateParams](docs/WTTicketUpdateParams.md)
  - [WTTwilioRequestAuthyCode](docs/WTTwilioRequestAuthyCode.md)
  - [WTTwilioVerifyAuthyCode](docs/WTTwilioVerifyAuthyCode.md)
  - [WTVideoCreateParams](docs/WTVideoCreateParams.md)

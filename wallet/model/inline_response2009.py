@@ -31,8 +31,8 @@ from wallet.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from wallet.model.payment_design import PaymentDesign
-    globals()['PaymentDesign'] = PaymentDesign
+    from wallet.model.imported_list_recipient import ImportedListRecipient
+    globals()['ImportedListRecipient'] = ImportedListRecipient
 
 
 class InlineResponse2009(ModelNormal):
@@ -88,19 +88,9 @@ class InlineResponse2009(ModelNormal):
         """
         lazy_import()
         return {
-            'payment_design': (PaymentDesign,),  # noqa: E501
-            'value_type': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'voucher_type': (float,),  # noqa: E501
-            'expiration_date': (datetime,),  # noqa: E501
-            'start_date': (datetime,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'is_redeemed': (bool,),  # noqa: E501
-            'display_value': (str,),  # noqa: E501
-            'offer_amount_cents_decimal': (str,),  # noqa: E501
-            'offer_amount_cents': (float,),  # noqa: E501
-            'member_id': (str,),  # noqa: E501
-            'cell_phone_number': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
+            'total': (float,),  # noqa: E501
+            'length': (float,),  # noqa: E501
+            'results': ([ImportedListRecipient],),  # noqa: E501
         }
 
     @cached_property
@@ -109,19 +99,9 @@ class InlineResponse2009(ModelNormal):
 
 
     attribute_map = {
-        'payment_design': 'PaymentDesign',  # noqa: E501
-        'value_type': 'ValueType',  # noqa: E501
-        'voucher_type': 'VoucherType',  # noqa: E501
-        'expiration_date': 'ExpirationDate',  # noqa: E501
-        'start_date': 'StartDate',  # noqa: E501
-        'title': 'Title',  # noqa: E501
-        'is_redeemed': 'IsRedeemed',  # noqa: E501
-        'display_value': 'DisplayValue',  # noqa: E501
-        'offer_amount_cents_decimal': 'OfferAmountCents_decimal',  # noqa: E501
-        'offer_amount_cents': 'OfferAmountCents',  # noqa: E501
-        'member_id': 'MemberID',  # noqa: E501
-        'cell_phone_number': 'CellPhoneNumber',  # noqa: E501
-        'id': 'id',  # noqa: E501
+        'total': 'total',  # noqa: E501
+        'length': 'length',  # noqa: E501
+        'results': 'results',  # noqa: E501
     }
 
     read_only_vars = {
@@ -131,23 +111,13 @@ class InlineResponse2009(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, payment_design, value_type, voucher_type, expiration_date, start_date, title, is_redeemed, display_value, offer_amount_cents_decimal, offer_amount_cents, member_id, cell_phone_number, id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, total, length, results, *args, **kwargs):  # noqa: E501
         """InlineResponse2009 - a model defined in OpenAPI
 
         Args:
-            payment_design (PaymentDesign):
-            value_type (bool, date, datetime, dict, float, int, list, str, none_type):
-            voucher_type (float):
-            expiration_date (datetime):
-            start_date (datetime):
-            title (str):
-            is_redeemed (bool):
-            display_value (str):
-            offer_amount_cents_decimal (str):
-            offer_amount_cents (float):
-            member_id (str):
-            cell_phone_number (str):
-            id (str):
+            total (float):
+            length (float):
+            results ([ImportedListRecipient]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -207,19 +177,9 @@ class InlineResponse2009(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.payment_design = payment_design
-        self.value_type = value_type
-        self.voucher_type = voucher_type
-        self.expiration_date = expiration_date
-        self.start_date = start_date
-        self.title = title
-        self.is_redeemed = is_redeemed
-        self.display_value = display_value
-        self.offer_amount_cents_decimal = offer_amount_cents_decimal
-        self.offer_amount_cents = offer_amount_cents
-        self.member_id = member_id
-        self.cell_phone_number = cell_phone_number
-        self.id = id
+        self.total = total
+        self.length = length
+        self.results = results
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -240,23 +200,13 @@ class InlineResponse2009(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, payment_design, value_type, voucher_type, expiration_date, start_date, title, is_redeemed, display_value, offer_amount_cents_decimal, offer_amount_cents, member_id, cell_phone_number, id, *args, **kwargs):  # noqa: E501
+    def __init__(self, total, length, results, *args, **kwargs):  # noqa: E501
         """InlineResponse2009 - a model defined in OpenAPI
 
         Args:
-            payment_design (PaymentDesign):
-            value_type (bool, date, datetime, dict, float, int, list, str, none_type):
-            voucher_type (float):
-            expiration_date (datetime):
-            start_date (datetime):
-            title (str):
-            is_redeemed (bool):
-            display_value (str):
-            offer_amount_cents_decimal (str):
-            offer_amount_cents (float):
-            member_id (str):
-            cell_phone_number (str):
-            id (str):
+            total (float):
+            length (float):
+            results ([ImportedListRecipient]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -314,19 +264,9 @@ class InlineResponse2009(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.payment_design = payment_design
-        self.value_type = value_type
-        self.voucher_type = voucher_type
-        self.expiration_date = expiration_date
-        self.start_date = start_date
-        self.title = title
-        self.is_redeemed = is_redeemed
-        self.display_value = display_value
-        self.offer_amount_cents_decimal = offer_amount_cents_decimal
-        self.offer_amount_cents = offer_amount_cents
-        self.member_id = member_id
-        self.cell_phone_number = cell_phone_number
-        self.id = id
+        self.total = total
+        self.length = length
+        self.results = results
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

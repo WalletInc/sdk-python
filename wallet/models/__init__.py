@@ -62,10 +62,13 @@ from wallet.model.imported_list_recipient import ImportedListRecipient
 from wallet.model.inbound_sms import InboundSMS
 from wallet.model.inline_object import InlineObject
 from wallet.model.inline_object1 import InlineObject1
+from wallet.model.inline_object2 import InlineObject2
+from wallet.model.inline_object3 import InlineObject3
 from wallet.model.inline_response200 import InlineResponse200
 from wallet.model.inline_response2001 import InlineResponse2001
 from wallet.model.inline_response20010 import InlineResponse20010
 from wallet.model.inline_response20011 import InlineResponse20011
+from wallet.model.inline_response20012 import InlineResponse20012
 from wallet.model.inline_response2002 import InlineResponse2002
 from wallet.model.inline_response2003 import InlineResponse2003
 from wallet.model.inline_response2004 import InlineResponse2004
@@ -215,6 +218,7 @@ from wallet.model.subscription_feature import SubscriptionFeature
 from wallet.model.subscription_plan import SubscriptionPlan
 from wallet.model.subscription_product import SubscriptionProduct
 from wallet.model.tcpa import Tcpa
+from wallet.model.ticket import Ticket
 from wallet.model.update_static_voucher_campaign_with_voucher import UpdateStaticVoucherCampaignWithVoucher
 from wallet.model.vs_campaign_generated_message import VSCampaignGeneratedMessage
 from wallet.model.vs_campaign_generated_message_pagination import VSCampaignGeneratedMessagePagination
@@ -344,6 +348,9 @@ from wallet.model.wt_static_voucher_update_params import WTStaticVoucherUpdatePa
 from wallet.model.wt_system_approve_phone_number import WTSystemApprovePhoneNumber
 from wallet.model.wt_system_role_create import WTSystemRoleCreate
 from wallet.model.wttcpa_opt import WTTCPAOpt
+from wallet.model.wt_ticket import WTTicket
+from wallet.model.wt_ticket_create_params import WTTicketCreateParams
+from wallet.model.wt_ticket_update_params import WTTicketUpdateParams
 from wallet.model.wt_twilio_request_authy_code import WTTwilioRequestAuthyCode
 from wallet.model.wt_twilio_verify_authy_code import WTTwilioVerifyAuthyCode
 from wallet.model.wt_video_create_params import WTVideoCreateParams
