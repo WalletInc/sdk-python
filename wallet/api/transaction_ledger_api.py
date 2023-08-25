@@ -25,7 +25,7 @@ from wallet.model_utils import (  # noqa: F401
 from wallet.model.applicable_terminals import ApplicableTerminals
 from wallet.model.auth_error import AuthError
 from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_response2005 import InlineResponse2005
+from wallet.model.inline_response2006 import InlineResponse2006
 from wallet.model.internal_server_error import InternalServerError
 
 
@@ -42,7 +42,7 @@ class TransactionLedgerApi(object):
         self.api_client = api_client
         self.fetch_all_ledger_transactions_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2005,),
+                'response_type': (InlineResponse2006,),
                 'auth': [],
                 'endpoint_path': '/v2/pos/ledger/transactions/all',
                 'operation_id': 'fetch_all_ledger_transactions',
@@ -165,7 +165,7 @@ class TransactionLedgerApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2005
+            InlineResponse2006
                 If the method is called asynchronously, returns the request
                 thread.
         """

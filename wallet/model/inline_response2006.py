@@ -31,8 +31,8 @@ from wallet.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from wallet.model.outbound_sms import OutboundSMS
-    globals()['OutboundSMS'] = OutboundSMS
+    from wallet.model.ledger_entry import LedgerEntry
+    globals()['LedgerEntry'] = LedgerEntry
 
 
 class InlineResponse2006(ModelNormal):
@@ -88,9 +88,9 @@ class InlineResponse2006(ModelNormal):
         """
         lazy_import()
         return {
-            'total': (float,),  # noqa: E501
-            'length': (float,),  # noqa: E501
-            'results': ([OutboundSMS],),  # noqa: E501
+            'entries': ([LedgerEntry],),  # noqa: E501
+            'page_count': (float,),  # noqa: E501
+            'total_records': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -99,9 +99,9 @@ class InlineResponse2006(ModelNormal):
 
 
     attribute_map = {
-        'total': 'total',  # noqa: E501
-        'length': 'length',  # noqa: E501
-        'results': 'results',  # noqa: E501
+        'entries': 'entries',  # noqa: E501
+        'page_count': 'pageCount',  # noqa: E501
+        'total_records': 'totalRecords',  # noqa: E501
     }
 
     read_only_vars = {
@@ -111,13 +111,13 @@ class InlineResponse2006(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, total, length, results, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, entries, page_count, total_records, *args, **kwargs):  # noqa: E501
         """InlineResponse2006 - a model defined in OpenAPI
 
         Args:
-            total (float):
-            length (float):
-            results ([OutboundSMS]):
+            entries ([LedgerEntry]):
+            page_count (float):
+            total_records (float):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -177,9 +177,9 @@ class InlineResponse2006(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.total = total
-        self.length = length
-        self.results = results
+        self.entries = entries
+        self.page_count = page_count
+        self.total_records = total_records
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -200,13 +200,13 @@ class InlineResponse2006(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, total, length, results, *args, **kwargs):  # noqa: E501
+    def __init__(self, entries, page_count, total_records, *args, **kwargs):  # noqa: E501
         """InlineResponse2006 - a model defined in OpenAPI
 
         Args:
-            total (float):
-            length (float):
-            results ([OutboundSMS]):
+            entries ([LedgerEntry]):
+            page_count (float):
+            total_records (float):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -264,9 +264,9 @@ class InlineResponse2006(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.total = total
-        self.length = length
-        self.results = results
+        self.entries = entries
+        self.page_count = page_count
+        self.total_records = total_records
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

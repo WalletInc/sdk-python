@@ -60,6 +60,7 @@ from wallet.api.static_voucher_campaign_groups_api import StaticVoucherCampaignG
 from wallet.api.static_voucher_campaigns_api import StaticVoucherCampaignsApi
 from wallet.api.static_vouchers_api import StaticVouchersApi
 from wallet.api.system_api import SystemApi
+from wallet.api.ticket_api import TicketApi
 from wallet.api.transaction_ledger_api import TransactionLedgerApi
 from wallet.api.utilities_api import UtilitiesApi
 from wallet.api.videos_api import VideosApi

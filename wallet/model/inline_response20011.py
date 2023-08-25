@@ -82,13 +82,10 @@ class InlineResponse20011(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'entertainment': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'grocery': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'service': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'casino': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'hospitality': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'food': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'retail': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'currency_abbreviation': (str,),  # noqa: E501
+            'phone_code': (str,),  # noqa: E501
+            'iso2': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -97,13 +94,10 @@ class InlineResponse20011(ModelNormal):
 
 
     attribute_map = {
-        'entertainment': 'entertainment',  # noqa: E501
-        'grocery': 'grocery',  # noqa: E501
-        'service': 'service',  # noqa: E501
-        'casino': 'casino',  # noqa: E501
-        'hospitality': 'hospitality',  # noqa: E501
-        'food': 'food',  # noqa: E501
-        'retail': 'retail',  # noqa: E501
+        'currency_abbreviation': 'currency_abbreviation',  # noqa: E501
+        'phone_code': 'phone_code',  # noqa: E501
+        'iso2': 'iso2',  # noqa: E501
+        'name': 'name',  # noqa: E501
     }
 
     read_only_vars = {
@@ -113,17 +107,14 @@ class InlineResponse20011(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, entertainment, grocery, service, casino, hospitality, food, retail, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, currency_abbreviation, phone_code, iso2, name, *args, **kwargs):  # noqa: E501
         """InlineResponse20011 - a model defined in OpenAPI
 
         Args:
-            entertainment ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            grocery ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            service ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            casino ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            hospitality ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            food ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            retail ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            currency_abbreviation (str):
+            phone_code (str):
+            iso2 (str):
+            name (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -183,13 +174,10 @@ class InlineResponse20011(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.entertainment = entertainment
-        self.grocery = grocery
-        self.service = service
-        self.casino = casino
-        self.hospitality = hospitality
-        self.food = food
-        self.retail = retail
+        self.currency_abbreviation = currency_abbreviation
+        self.phone_code = phone_code
+        self.iso2 = iso2
+        self.name = name
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -210,17 +198,14 @@ class InlineResponse20011(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, entertainment, grocery, service, casino, hospitality, food, retail, *args, **kwargs):  # noqa: E501
+    def __init__(self, currency_abbreviation, phone_code, iso2, name, *args, **kwargs):  # noqa: E501
         """InlineResponse20011 - a model defined in OpenAPI
 
         Args:
-            entertainment ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            grocery ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            service ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            casino ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            hospitality ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            food ([bool, date, datetime, dict, float, int, list, str, none_type]):
-            retail ([bool, date, datetime, dict, float, int, list, str, none_type]):
+            currency_abbreviation (str):
+            phone_code (str):
+            iso2 (str):
+            name (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -278,13 +263,10 @@ class InlineResponse20011(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.entertainment = entertainment
-        self.grocery = grocery
-        self.service = service
-        self.casino = casino
-        self.hospitality = hospitality
-        self.food = food
-        self.retail = retail
+        self.currency_abbreviation = currency_abbreviation
+        self.phone_code = phone_code
+        self.iso2 = iso2
+        self.name = name
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

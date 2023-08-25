@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **fetch_all_ledger_transactions**
-> InlineResponse2005 fetch_all_ledger_transactions(start_date_time, end_date_time, page_num, page_size)
+> InlineResponse2006 fetch_all_ledger_transactions(start_date_time, end_date_time, page_num, page_size)
 
 Fetch ledger transactions by page
 
@@ -22,7 +22,7 @@ from wallet.api import transaction_ledger_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.applicable_terminals import ApplicableTerminals
-from wallet.model.inline_response2005 import InlineResponse2005
+from wallet.model.inline_response2006 import InlineResponse2006
 from wallet.model.auth_error import AuthError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 

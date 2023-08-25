@@ -23,7 +23,7 @@ from wallet.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from wallet.model.inline_response200 import InlineResponse200
-from wallet.model.inline_response20011 import InlineResponse20011
+from wallet.model.inline_response20012 import InlineResponse20012
 from wallet.model.internal_server_error import InternalServerError
 
 
@@ -82,7 +82,7 @@ class IndustriesApi(object):
         )
         self.fetch_domains_by_industry_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse20011,),
+                'response_type': (InlineResponse20012,),
                 'auth': [],
                 'endpoint_path': '/system/industries/domains',
                 'operation_id': 'fetch_domains_by_industry',
@@ -279,7 +279,7 @@ class IndustriesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20011
+            InlineResponse20012
                 If the method is called asynchronously, returns the request
                 thread.
         """
