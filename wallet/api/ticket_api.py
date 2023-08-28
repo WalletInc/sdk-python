@@ -456,7 +456,7 @@ class TicketApi(object):
         id,
         **kwargs
     ):
-        """Fetch static voucher  # noqa: E501
+        """Fetch ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
