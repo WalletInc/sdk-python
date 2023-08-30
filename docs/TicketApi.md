@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**archive_ticket**](TicketApi.md#archive_ticket) | **DELETE** /v2/ticket/{id} | Archive ticket
 [**create_ticket**](TicketApi.md#create_ticket) | **POST** /v2/ticket | Create ticket
-[**fetch_ticket**](TicketApi.md#fetch_ticket) | **GET** /v2/ticket/{id} | Fetch static voucher
+[**fetch_ticket**](TicketApi.md#fetch_ticket) | **GET** /v2/ticket/{id} | Fetch ticket
 [**restore_ticket**](TicketApi.md#restore_ticket) | **PATCH** /v2/ticket/{id} | Restore ticket
 [**update_ticket**](TicketApi.md#update_ticket) | **PUT** /v2/ticket/{id} | Update ticket
 
@@ -163,7 +163,7 @@ No authorization required
 # **fetch_ticket**
 > WTTicket fetch_ticket(id)
 
-Fetch static voucher
+Fetch ticket
 
 ### Example
 
@@ -193,7 +193,7 @@ with wallet.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Fetch static voucher
+        # Fetch ticket
         api_response = api_instance.fetch_ticket(id)
         pprint(api_response)
     except wallet.ApiException as e:
