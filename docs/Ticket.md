@@ -15,10 +15,14 @@ Name | Type | Description | Notes
 **recipient_member_id** | **str** |  | [optional] 
 **is_comp** | **bool** |  | [optional] 
 **is_claimed** | **bool** |  | [optional] 
-**is_redeemed** | **bool** |  | [optional] 
 **date_time_claimed** | **datetime** |  | [optional] 
-**date_time_redeemed** | **datetime** |  | [optional] 
 **claimed_by_phone_number** | **str** |  | [optional] 
+**redeemed_source** | **str** |  | [optional] 
+**redeemed_transaction_id** | **str** |  | [optional] 
+**transaction_type** | **str** |  | [optional] 
+**register_id** | **str** |  | [optional] 
+**is_redeemed** | **bool** |  | [optional] 
+**date_time_redeemed** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

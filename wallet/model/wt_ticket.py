@@ -92,10 +92,14 @@ class WTTicket(ModelNormal):
             'recipient_member_id': (str,),  # noqa: E501
             'is_comp': (bool,),  # noqa: E501
             'is_claimed': (bool,),  # noqa: E501
-            'is_redeemed': (bool,),  # noqa: E501
             'date_time_claimed': (datetime,),  # noqa: E501
-            'date_time_redeemed': (datetime,),  # noqa: E501
             'claimed_by_phone_number': (str,),  # noqa: E501
+            'redeemed_source': (str,),  # noqa: E501
+            'redeemed_transaction_id': (str,),  # noqa: E501
+            'transaction_type': (str,),  # noqa: E501
+            'register_id': (str,),  # noqa: E501
+            'is_redeemed': (bool,),  # noqa: E501
+            'date_time_redeemed': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -115,10 +119,14 @@ class WTTicket(ModelNormal):
         'recipient_member_id': 'recipientMemberID',  # noqa: E501
         'is_comp': 'isComp',  # noqa: E501
         'is_claimed': 'isClaimed',  # noqa: E501
-        'is_redeemed': 'isRedeemed',  # noqa: E501
         'date_time_claimed': 'dateTimeClaimed',  # noqa: E501
-        'date_time_redeemed': 'dateTimeRedeemed',  # noqa: E501
         'claimed_by_phone_number': 'claimedByPhoneNumber',  # noqa: E501
+        'redeemed_source': 'redeemedSource',  # noqa: E501
+        'redeemed_transaction_id': 'redeemedTransactionID',  # noqa: E501
+        'transaction_type': 'transactionType',  # noqa: E501
+        'register_id': 'registerID',  # noqa: E501
+        'is_redeemed': 'isRedeemed',  # noqa: E501
+        'date_time_redeemed': 'dateTimeRedeemed',  # noqa: E501
     }
 
     read_only_vars = {
@@ -175,10 +183,14 @@ class WTTicket(ModelNormal):
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
             is_claimed (bool): [optional]  # noqa: E501
-            is_redeemed (bool): [optional]  # noqa: E501
             date_time_claimed (datetime): [optional]  # noqa: E501
-            date_time_redeemed (datetime): [optional]  # noqa: E501
             claimed_by_phone_number (str): [optional]  # noqa: E501
+            redeemed_source (str): [optional]  # noqa: E501
+            redeemed_transaction_id (str): [optional]  # noqa: E501
+            transaction_type (str): [optional]  # noqa: E501
+            register_id (str): [optional]  # noqa: E501
+            is_redeemed (bool): [optional]  # noqa: E501
+            date_time_redeemed (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -279,10 +291,14 @@ class WTTicket(ModelNormal):
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
             is_claimed (bool): [optional]  # noqa: E501
-            is_redeemed (bool): [optional]  # noqa: E501
             date_time_claimed (datetime): [optional]  # noqa: E501
-            date_time_redeemed (datetime): [optional]  # noqa: E501
             claimed_by_phone_number (str): [optional]  # noqa: E501
+            redeemed_source (str): [optional]  # noqa: E501
+            redeemed_transaction_id (str): [optional]  # noqa: E501
+            transaction_type (str): [optional]  # noqa: E501
+            register_id (str): [optional]  # noqa: E501
+            is_redeemed (bool): [optional]  # noqa: E501
+            date_time_redeemed (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
