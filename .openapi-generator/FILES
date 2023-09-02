@@ -77,6 +77,7 @@ docs/InlineObject.md
 docs/InlineObject1.md
 docs/InlineObject2.md
 docs/InlineObject3.md
+docs/InlineObject4.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
 docs/InlineResponse20010.md
@@ -419,6 +420,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_inline_object4.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -536,6 +538,7 @@ wallet/model/inline_object.py
 wallet/model/inline_object1.py
 wallet/model/inline_object2.py
 wallet/model/inline_object3.py
+wallet/model/inline_object4.py
 wallet/model/inline_response200.py
 wallet/model/inline_response2001.py
 wallet/model/inline_response20010.py

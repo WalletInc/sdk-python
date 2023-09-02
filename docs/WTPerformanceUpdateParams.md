@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **is_sold_out** | **bool** | Denotes if the event has been sold out | 
 **media_url** | **str** |  | [optional] 
 **payment_design_id** | [**NanoID**](NanoID.md) |  | [optional] 
+**max_comp_tickets** | **float** |  | [optional] 
+**ticket_expiration_date_time** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
