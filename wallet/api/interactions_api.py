@@ -27,8 +27,8 @@ from wallet.model.browser_details import BrowserDetails
 from wallet.model.dynamic_voucher import DynamicVoucher
 from wallet.model.email_subscriber import EmailSubscriber
 from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_object2 import InlineObject2
 from wallet.model.inline_object3 import InlineObject3
+from wallet.model.inline_object4 import InlineObject4
 from wallet.model.inline_response20010 import InlineResponse20010
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.member import Member
@@ -63,11 +63,11 @@ class InteractionsApi(object):
             params_map={
                 'all': [
                     'id',
-                    'inline_object2',
+                    'inline_object3',
                 ],
                 'required': [
                     'id',
-                    'inline_object2',
+                    'inline_object3',
                 ],
                 'nullable': [
                 ],
@@ -84,15 +84,15 @@ class InteractionsApi(object):
                 'openapi_types': {
                     'id':
                         (bool, date, datetime, dict, float, int, list, str, none_type,),
-                    'inline_object2':
-                        (InlineObject2,),
+                    'inline_object3':
+                        (InlineObject3,),
                 },
                 'attribute_map': {
                     'id': 'id',
                 },
                 'location_map': {
                     'id': 'path',
-                    'inline_object2': 'body',
+                    'inline_object3': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -363,10 +363,10 @@ class InteractionsApi(object):
             },
             params_map={
                 'all': [
-                    'inline_object3',
+                    'inline_object4',
                 ],
                 'required': [
-                    'inline_object3',
+                    'inline_object4',
                 ],
                 'nullable': [
                 ],
@@ -381,13 +381,13 @@ class InteractionsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'inline_object3':
-                        (InlineObject3,),
+                    'inline_object4':
+                        (InlineObject4,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'inline_object3': 'body',
+                    'inline_object4': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -878,7 +878,7 @@ class InteractionsApi(object):
     def claim_ticket(
         self,
         id,
-        inline_object2,
+        inline_object3,
         **kwargs
     ):
         """Update ticket  # noqa: E501
@@ -886,12 +886,12 @@ class InteractionsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.claim_ticket(id, inline_object2, async_req=True)
+        >>> thread = api.claim_ticket(id, inline_object3, async_req=True)
         >>> result = thread.get()
 
         Args:
             id (bool, date, datetime, dict, float, int, list, str, none_type):
-            inline_object2 (InlineObject2):
+            inline_object3 (InlineObject3):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -952,8 +952,8 @@ class InteractionsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['id'] = \
             id
-        kwargs['inline_object2'] = \
-            inline_object2
+        kwargs['inline_object3'] = \
+            inline_object3
         return self.claim_ticket_endpoint.call_with_http_info(**kwargs)
 
     def create_advertisement_credit_scan(
@@ -1343,7 +1343,7 @@ class InteractionsApi(object):
 
     def fetch_customer_tickets_with_token(
         self,
-        inline_object3,
+        inline_object4,
         **kwargs
     ):
         """Update ticket  # noqa: E501
@@ -1351,11 +1351,11 @@ class InteractionsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.fetch_customer_tickets_with_token(inline_object3, async_req=True)
+        >>> thread = api.fetch_customer_tickets_with_token(inline_object4, async_req=True)
         >>> result = thread.get()
 
         Args:
-            inline_object3 (InlineObject3):
+            inline_object4 (InlineObject4):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1414,8 +1414,8 @@ class InteractionsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['inline_object3'] = \
-            inline_object3
+        kwargs['inline_object4'] = \
+            inline_object4
         return self.fetch_customer_tickets_with_token_endpoint.call_with_http_info(**kwargs)
 
     def fetch_dynamic_voucher_with_voucher_id(

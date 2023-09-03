@@ -108,6 +108,8 @@ class Performance(ModelNormal):
             'merchant_id': (MerchantID,),  # noqa: E501
             'media_url': (str,),  # noqa: E501
             'payment_design_id': (NanoID,),  # noqa: E501
+            'max_comp_tickets': (float,),  # noqa: E501
+            'ticket_expiration_date_time': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -130,6 +132,8 @@ class Performance(ModelNormal):
         'merchant_id': 'merchantID',  # noqa: E501
         'media_url': 'mediaURL',  # noqa: E501
         'payment_design_id': 'paymentDesignID',  # noqa: E501
+        'max_comp_tickets': 'maxCompTickets',  # noqa: E501
+        'ticket_expiration_date_time': 'ticketExpirationDateTime',  # noqa: E501
     }
 
     read_only_vars = {
@@ -189,6 +193,8 @@ class Performance(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             media_url (str): [optional]  # noqa: E501
             payment_design_id (NanoID): [optional]  # noqa: E501
+            max_comp_tickets (float): [optional]  # noqa: E501
+            ticket_expiration_date_time (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -298,6 +304,8 @@ class Performance(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             media_url (str): [optional]  # noqa: E501
             payment_design_id (NanoID): [optional]  # noqa: E501
+            max_comp_tickets (float): [optional]  # noqa: E501
+            ticket_expiration_date_time (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -448,13 +448,15 @@ Class | Method | HTTP request | Description
 *PaymentDesignsApi* | [**restore_payment_design**](docs/PaymentDesignsApi.md#restore_payment_design) | **PATCH** /v2/payment/design/{id} | Restore payment design
 *PaymentDesignsApi* | [**update_payment_design**](docs/PaymentDesignsApi.md#update_payment_design) | **PUT** /v2/payment/design/{id} | Update payment design
 *PerformancesApi* | [**archive_performance**](docs/PerformancesApi.md#archive_performance) | **DELETE** /v2/performances/{id} | Archive performance
+*PerformancesApi* | [**count_claimed_comps**](docs/PerformancesApi.md#count_claimed_comps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed
+*PerformancesApi* | [**count_redeemed_comps**](docs/PerformancesApi.md#count_redeemed_comps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed
 *PerformancesApi* | [**create_performance**](docs/PerformancesApi.md#create_performance) | **POST** /v2/performances | Create performance
 *PerformancesApi* | [**fetch_all_performance_tickets**](docs/PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
 *PerformancesApi* | [**fetch_all_performances**](docs/PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
 *PerformancesApi* | [**fetch_performance**](docs/PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Fetch a single performance
 *PerformancesApi* | [**fetch_performance_tickets_page**](docs/PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page
 *PerformancesApi* | [**restore_performance**](docs/PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore performance
-*PerformancesApi* | [**save_ticket_design**](docs/PerformancesApi.md#save_ticket_design) | **PUT** /v2/performances/{id}/saveTicketDesign/{paymentDesignID} | Update performance
+*PerformancesApi* | [**save_ticket_settings**](docs/PerformancesApi.md#save_ticket_settings) | **POST** /v2/performances/{id} | Update performance
 *PerformancesApi* | [**update_performance**](docs/PerformancesApi.md#update_performance) | **PUT** /v2/performances/{id} | Update performance
 *ProductsApi* | [**archive_product**](docs/ProductsApi.md#archive_product) | **DELETE** /v2/products/{id} | Archive product
 *ProductsApi* | [**create_product**](docs/ProductsApi.md#create_product) | **POST** /v2/products | Create product
@@ -658,6 +660,7 @@ Class | Method | HTTP request | Description
  - [InlineObject1](docs/InlineObject1.md)
  - [InlineObject2](docs/InlineObject2.md)
  - [InlineObject3](docs/InlineObject3.md)
+ - [InlineObject4](docs/InlineObject4.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse20010](docs/InlineResponse20010.md)

@@ -5,13 +5,15 @@ All URIs are relative to *https://api.wall.et*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**archive_performance**](PerformancesApi.md#archive_performance) | **DELETE** /v2/performances/{id} | Archive performance
+[**count_claimed_comps**](PerformancesApi.md#count_claimed_comps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed
+[**count_redeemed_comps**](PerformancesApi.md#count_redeemed_comps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed
 [**create_performance**](PerformancesApi.md#create_performance) | **POST** /v2/performances | Create performance
 [**fetch_all_performance_tickets**](PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
 [**fetch_all_performances**](PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
 [**fetch_performance**](PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Fetch a single performance
 [**fetch_performance_tickets_page**](PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page
 [**restore_performance**](PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore performance
-[**save_ticket_design**](PerformancesApi.md#save_ticket_design) | **PUT** /v2/performances/{id}/saveTicketDesign/{paymentDesignID} | Update performance
+[**save_ticket_settings**](PerformancesApi.md#save_ticket_settings) | **POST** /v2/performances/{id} | Update performance
 [**update_performance**](PerformancesApi.md#update_performance) | **PUT** /v2/performances/{id} | Update performance
 
 
@@ -86,6 +88,148 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **count_claimed_comps**
+> InlineResponse2002 count_claimed_comps(id)
+
+Count number claimed
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import performances_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from wallet.model.inline_response2002 import InlineResponse2002
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = performances_api.PerformancesApi(api_client)
+    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Count number claimed
+        api_response = api_instance.count_claimed_comps(id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->count_claimed_comps: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+
+### Return type
+
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_redeemed_comps**
+> InlineResponse2002 count_redeemed_comps(id)
+
+Count number redeemed
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import performances_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.auth_error import AuthError
+from wallet.model.inline_response2002 import InlineResponse2002
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = performances_api.PerformancesApi(api_client)
+    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Count number redeemed
+        api_response = api_instance.count_redeemed_comps(id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->count_redeemed_comps: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+
+### Return type
+
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_performance**
 > Performance create_performance(wt_performance_create_params)
 
@@ -125,6 +269,8 @@ with wallet.ApiClient() as api_client:
         is_sold_out=True,
         media_url="https://wall.et/media/H847Sjudbw.png",
         payment_design_id=NanoID("C"),
+        max_comp_tickets=3.14,
+        ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
     ) # WTPerformanceCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -549,8 +695,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_ticket_design**
-> Performance save_ticket_design(id, payment_design_id)
+# **save_ticket_settings**
+> Performance save_ticket_settings(id, inline_object1)
 
 Update performance
 
@@ -564,6 +710,7 @@ from wallet.api import performances_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.performance import Performance
 from wallet.model.falsum_error import FalsumError
+from wallet.model.inline_object1 import InlineObject1
 from wallet.model.auth_error import AuthError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
@@ -578,15 +725,19 @@ with wallet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = performances_api.PerformancesApi(api_client)
     id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    payment_design_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    inline_object1 = InlineObject1(
+        ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        max_comp_tickets=3.14,
+        payment_design_id=None,
+    ) # InlineObject1 | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update performance
-        api_response = api_instance.save_ticket_design(id, payment_design_id)
+        api_response = api_instance.save_ticket_settings(id, inline_object1)
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling PerformancesApi->save_ticket_design: %s\n" % e)
+        print("Exception when calling PerformancesApi->save_ticket_settings: %s\n" % e)
 ```
 
 
@@ -595,7 +746,7 @@ with wallet.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **payment_design_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **inline_object1** | [**InlineObject1**](InlineObject1.md)|  |
 
 ### Return type
 
@@ -607,7 +758,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -662,6 +813,8 @@ with wallet.ApiClient() as api_client:
         is_sold_out=True,
         media_url="https://wall.et/media/H847Sjudbw.png",
         payment_design_id=NanoID("C"),
+        max_comp_tickets=3.14,
+        ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
     ) # WTPerformanceUpdateParams | 
 
     # example passing only required values which don't have defaults set
