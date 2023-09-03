@@ -82,8 +82,7 @@ class InlineObject3(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'phone_verification_token': (str,),  # noqa: E501
-            'merchant_id': (str,),  # noqa: E501
+            'claimed_by_phone_number': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -92,8 +91,7 @@ class InlineObject3(ModelNormal):
 
 
     attribute_map = {
-        'phone_verification_token': 'phoneVerificationToken',  # noqa: E501
-        'merchant_id': 'merchantID',  # noqa: E501
+        'claimed_by_phone_number': 'claimedByPhoneNumber',  # noqa: E501
     }
 
     read_only_vars = {
@@ -103,12 +101,11 @@ class InlineObject3(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, phone_verification_token, merchant_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, claimed_by_phone_number, *args, **kwargs):  # noqa: E501
         """InlineObject3 - a model defined in OpenAPI
 
         Args:
-            phone_verification_token (str):
-            merchant_id (str):
+            claimed_by_phone_number (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -168,8 +165,7 @@ class InlineObject3(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.phone_verification_token = phone_verification_token
-        self.merchant_id = merchant_id
+        self.claimed_by_phone_number = claimed_by_phone_number
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -190,12 +186,11 @@ class InlineObject3(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, phone_verification_token, merchant_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, claimed_by_phone_number, *args, **kwargs):  # noqa: E501
         """InlineObject3 - a model defined in OpenAPI
 
         Args:
-            phone_verification_token (str):
-            merchant_id (str):
+            claimed_by_phone_number (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -253,8 +248,7 @@ class InlineObject3(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.phone_verification_token = phone_verification_token
-        self.merchant_id = merchant_id
+        self.claimed_by_phone_number = claimed_by_phone_number
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
