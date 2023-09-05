@@ -63,6 +63,9 @@ class WTTicket(ModelNormal):
     }
 
     validations = {
+        ('quantity',): {
+            'inclusive_minimum': 1,
+        },
     }
 
     additional_properties_type = None
@@ -91,6 +94,7 @@ class WTTicket(ModelNormal):
             'recipient_email_address': (str,),  # noqa: E501
             'recipient_member_id': (str,),  # noqa: E501
             'is_comp': (bool,),  # noqa: E501
+            'quantity': (float,),  # noqa: E501
             'is_claimed': (bool,),  # noqa: E501
             'date_time_claimed': (datetime,),  # noqa: E501
             'claimed_by_phone_number': (str,),  # noqa: E501
@@ -118,6 +122,7 @@ class WTTicket(ModelNormal):
         'recipient_email_address': 'recipientEmailAddress',  # noqa: E501
         'recipient_member_id': 'recipientMemberID',  # noqa: E501
         'is_comp': 'isComp',  # noqa: E501
+        'quantity': 'quantity',  # noqa: E501
         'is_claimed': 'isClaimed',  # noqa: E501
         'date_time_claimed': 'dateTimeClaimed',  # noqa: E501
         'claimed_by_phone_number': 'claimedByPhoneNumber',  # noqa: E501
@@ -182,6 +187,7 @@ class WTTicket(ModelNormal):
             recipient_email_address (str): [optional]  # noqa: E501
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
+            quantity (float): The number of tickets allocated to the recipient.. [optional]  # noqa: E501
             is_claimed (bool): [optional]  # noqa: E501
             date_time_claimed (datetime): [optional]  # noqa: E501
             claimed_by_phone_number (str): [optional]  # noqa: E501
@@ -290,6 +296,7 @@ class WTTicket(ModelNormal):
             recipient_email_address (str): [optional]  # noqa: E501
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
+            quantity (float): The number of tickets allocated to the recipient.. [optional]  # noqa: E501
             is_claimed (bool): [optional]  # noqa: E501
             date_time_claimed (datetime): [optional]  # noqa: E501
             claimed_by_phone_number (str): [optional]  # noqa: E501
