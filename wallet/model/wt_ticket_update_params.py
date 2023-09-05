@@ -59,6 +59,9 @@ class WTTicketUpdateParams(ModelNormal):
     }
 
     validations = {
+        ('quantity',): {
+            'inclusive_minimum': 1,
+        },
     }
 
     additional_properties_type = None
@@ -80,6 +83,7 @@ class WTTicketUpdateParams(ModelNormal):
             'recipient_email_address': (str,),  # noqa: E501
             'recipient_member_id': (str,),  # noqa: E501
             'is_comp': (bool,),  # noqa: E501
+            'quantity': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -92,6 +96,7 @@ class WTTicketUpdateParams(ModelNormal):
         'recipient_email_address': 'recipientEmailAddress',  # noqa: E501
         'recipient_member_id': 'recipientMemberID',  # noqa: E501
         'is_comp': 'isComp',  # noqa: E501
+        'quantity': 'quantity',  # noqa: E501
     }
 
     read_only_vars = {
@@ -139,6 +144,7 @@ class WTTicketUpdateParams(ModelNormal):
             recipient_email_address (str): [optional]  # noqa: E501
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
+            quantity (float): The number of tickets allocated to the recipient.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,6 +230,7 @@ class WTTicketUpdateParams(ModelNormal):
             recipient_email_address (str): [optional]  # noqa: E501
             recipient_member_id (str): [optional]  # noqa: E501
             is_comp (bool): [optional]  # noqa: E501
+            quantity (float): The number of tickets allocated to the recipient.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
