@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **recipient_email_address** | **str** |  | [optional] 
 **recipient_member_id** | **str** |  | [optional] 
 **is_comp** | **bool** |  | [optional] 
+**quantity** | **float** | The number of tickets allocated to the recipient. | [optional] 
 **is_claimed** | **bool** |  | [optional] 
 **date_time_claimed** | **datetime** |  | [optional] 
 **claimed_by_phone_number** | **str** |  | [optional] 

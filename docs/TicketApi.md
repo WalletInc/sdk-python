@@ -116,6 +116,7 @@ with wallet.ApiClient() as api_client:
         recipient_email_address="recipient_email_address_example",
         recipient_member_id="recipient_member_id_example",
         is_comp=True,
+        quantity=1,
         performance_id="performance_id_example",
     ) # WTTicketCreateParams | 
 
@@ -339,6 +340,7 @@ with wallet.ApiClient() as api_client:
         recipient_email_address="recipient_email_address_example",
         recipient_member_id="recipient_member_id_example",
         is_comp=True,
+        quantity=1,
     ) # WTTicketUpdateParams | 
 
     # example passing only required values which don't have defaults set
