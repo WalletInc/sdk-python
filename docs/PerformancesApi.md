@@ -569,6 +569,8 @@ with wallet.ApiClient() as api_client:
     performance_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
     page_num = 3.14 # float | 
     page_size = 3.14 # float | 
+    filter_comps = True # bool |  (optional)
+    filter_claimed = True # bool |  (optional)
     is_archive_included = True # bool |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -583,7 +585,7 @@ with wallet.ApiClient() as api_client:
     # and optional values
     try:
         # Fetch tickets by page
-        api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size, is_archive_included=is_archive_included)
+        api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size, filter_comps=filter_comps, filter_claimed=filter_claimed, is_archive_included=is_archive_included)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling PerformancesApi->fetch_performance_tickets_page: %s\n" % e)
@@ -597,6 +599,8 @@ Name | Type | Description  | Notes
  **performance_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
  **page_num** | **float**|  |
  **page_size** | **float**|  |
+ **filter_comps** | **bool**|  | [optional]
+ **filter_claimed** | **bool**|  | [optional]
  **is_archive_included** | **bool**|  | [optional]
 
 ### Return type

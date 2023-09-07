@@ -406,6 +406,8 @@ class PerformancesApi(object):
                     'performance_id',
                     'page_num',
                     'page_size',
+                    'filter_comps',
+                    'filter_claimed',
                     'is_archive_included',
                 ],
                 'required': [
@@ -432,6 +434,10 @@ class PerformancesApi(object):
                         (float,),
                     'page_size':
                         (float,),
+                    'filter_comps':
+                        (bool,),
+                    'filter_claimed':
+                        (bool,),
                     'is_archive_included':
                         (bool,),
                 },
@@ -439,12 +445,16 @@ class PerformancesApi(object):
                     'performance_id': 'performanceID',
                     'page_num': 'pageNum',
                     'page_size': 'pageSize',
+                    'filter_comps': 'filterComps',
+                    'filter_claimed': 'filterClaimed',
                     'is_archive_included': 'isArchiveIncluded',
                 },
                 'location_map': {
                     'performance_id': 'path',
                     'page_num': 'query',
                     'page_size': 'query',
+                    'filter_comps': 'query',
+                    'filter_claimed': 'query',
                     'is_archive_included': 'query',
                 },
                 'collection_format_map': {
@@ -1177,6 +1187,8 @@ class PerformancesApi(object):
             page_size (float):
 
         Keyword Args:
+            filter_comps (bool): [optional]
+            filter_claimed (bool): [optional]
             is_archive_included (bool): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
