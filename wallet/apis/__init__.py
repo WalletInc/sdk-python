@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.advertisement_credits_api import AdvertisementCreditsApi
+#   from .api.a2_p_api import A2PApi
 #
 # or import this package, but before doing it, use:
 #
@@ -14,6 +14,7 @@
 #   sys.setrecursionlimit(n)
 
 # Import APIs into API package:
+from wallet.api.a2_p_api import A2PApi
 from wallet.api.advertisement_credits_api import AdvertisementCreditsApi
 from wallet.api.amenities_api import AmenitiesApi
 from wallet.api.analytics_api import AnalyticsApi
@@ -62,7 +63,6 @@ from wallet.api.static_vouchers_api import StaticVouchersApi
 from wallet.api.system_api import SystemApi
 from wallet.api.ticket_api import TicketApi
 from wallet.api.transaction_ledger_api import TransactionLedgerApi
-from wallet.api.utilities_api import UtilitiesApi
 from wallet.api.videos_api import VideosApi
 from wallet.api.virtual_business_card_api import VirtualBusinessCardApi
 from wallet.api.web_terminal_api import WebTerminalApi

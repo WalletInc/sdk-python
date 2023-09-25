@@ -26,8 +26,8 @@ from wallet.model.auth_error import AuthError
 from wallet.model.create_static_voucher_campaign import CreateStaticVoucherCampaign
 from wallet.model.create_static_voucher_campaign_with_voucher_with_csv import CreateStaticVoucherCampaignWithVoucherWithCSV
 from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_response2002 import InlineResponse2002
-from wallet.model.inline_response2004 import InlineResponse2004
+from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.model.inline_response2008 import InlineResponse2008
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_is_active import PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive
 from wallet.model.reach_performance_stats import ReachPerformanceStats
@@ -105,7 +105,7 @@ class StaticVoucherCampaignsApi(object):
         )
         self.count_vouchers_loaded_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2002,),
+                'response_type': (InlineResponse2003,),
                 'auth': [],
                 'endpoint_path': '/v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID}',
                 'operation_id': 'count_vouchers_loaded',
@@ -154,7 +154,7 @@ class StaticVoucherCampaignsApi(object):
         )
         self.count_vouchers_redeemed_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2002,),
+                'response_type': (InlineResponse2003,),
                 'auth': [],
                 'endpoint_path': '/v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID}',
                 'operation_id': 'count_vouchers_redeemed',
@@ -712,7 +712,7 @@ class StaticVoucherCampaignsApi(object):
         )
         self.fetch_static_vouchers_page_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2004,),
+                'response_type': (InlineResponse2008,),
                 'auth': [],
                 'endpoint_path': '/v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID}',
                 'operation_id': 'fetch_static_vouchers_page',
@@ -1265,7 +1265,7 @@ class StaticVoucherCampaignsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2002
+            InlineResponse2003
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1342,7 +1342,7 @@ class StaticVoucherCampaignsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2002
+            InlineResponse2003
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2189,7 +2189,7 @@ class StaticVoucherCampaignsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2004
+            InlineResponse2008
                 If the method is called asynchronously, returns the request
                 thread.
         """

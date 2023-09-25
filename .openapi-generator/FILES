@@ -2,6 +2,7 @@
 .gitlab-ci.yml
 .travis.yml
 README.md
+docs/A2PApi.md
 docs/AdvertisementCredit.md
 docs/AdvertisementCreditBroadcast.md
 docs/AdvertisementCreditScan.md
@@ -24,6 +25,11 @@ docs/AuthError.md
 docs/AvailablePhoneNumbersRequest.md
 docs/BillingApi.md
 docs/BrowserDetails.md
+docs/BusinessClassification.md
+docs/BusinessIndustry.md
+docs/BusinessRegionsOfOperation.md
+docs/BusinessRegistrationIdentifier.md
+docs/BusinessType.md
 docs/ClickFunnelAmount.md
 docs/ClickFunnelContact.md
 docs/ClickFunnelContactProfile.md
@@ -94,6 +100,7 @@ docs/InlineResponse2009.md
 docs/IntegratedTerminalsApi.md
 docs/InteractionsApi.md
 docs/InternalServerError.md
+docs/JobPosition.md
 docs/LedgerEntry.md
 docs/LinkBook.md
 docs/LinkBookSection.md
@@ -163,7 +170,6 @@ docs/PaginationRequestWithIDAndWithoutSortOptions.md
 docs/PaginationRequestWithSortOptions.md
 docs/PaymentDesign.md
 docs/PaymentDesignsApi.md
-docs/PaymentPrefixes.md
 docs/Performance.md
 docs/PerformancesApi.md
 docs/PhoneNumber.md
@@ -262,7 +268,6 @@ docs/Ticket.md
 docs/TicketApi.md
 docs/TransactionLedgerApi.md
 docs/UpdateStaticVoucherCampaignWithVoucher.md
-docs/UtilitiesApi.md
 docs/VSCampaignGeneratedMessage.md
 docs/VSCampaignGeneratedMessagePagination.md
 docs/VSDynamicVoucherStatus.md
@@ -270,6 +275,7 @@ docs/Video.md
 docs/VideosApi.md
 docs/VirtualBusinessCard.md
 docs/VirtualBusinessCardApi.md
+docs/WTA2PApplicationCreateParams.md
 docs/WTAdvertisementCredit.md
 docs/WTAdvertisementCreditCreateParams.md
 docs/WTAdvertisementCreditScan.md
@@ -420,9 +426,18 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_a2_p_api.py
+test/test_business_classification.py
+test/test_business_industry.py
+test/test_business_regions_of_operation.py
+test/test_business_registration_identifier.py
+test/test_business_type.py
+test/test_job_position.py
+test/test_wta2_p_application_create_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
+wallet/api/a2_p_api.py
 wallet/api/advertisement_credits_api.py
 wallet/api/amenities_api.py
 wallet/api/analytics_api.py
@@ -471,7 +486,6 @@ wallet/api/static_vouchers_api.py
 wallet/api/system_api.py
 wallet/api/ticket_api.py
 wallet/api/transaction_ledger_api.py
-wallet/api/utilities_api.py
 wallet/api/videos_api.py
 wallet/api/virtual_business_card_api.py
 wallet/api/web_terminal_api.py
@@ -499,6 +513,11 @@ wallet/model/applicable_terminals_any_of6.py
 wallet/model/auth_error.py
 wallet/model/available_phone_numbers_request.py
 wallet/model/browser_details.py
+wallet/model/business_classification.py
+wallet/model/business_industry.py
+wallet/model/business_regions_of_operation.py
+wallet/model/business_registration_identifier.py
+wallet/model/business_type.py
 wallet/model/click_funnel_amount.py
 wallet/model/click_funnel_contact.py
 wallet/model/click_funnel_contact_profile.py
@@ -552,6 +571,7 @@ wallet/model/inline_response2007.py
 wallet/model/inline_response2008.py
 wallet/model/inline_response2009.py
 wallet/model/internal_server_error.py
+wallet/model/job_position.py
 wallet/model/ledger_entry.py
 wallet/model/link_book.py
 wallet/model/link_book_section.py
@@ -612,7 +632,6 @@ wallet/model/paginated_wt_merchant_credits.py
 wallet/model/pagination_request_with_id_and_without_sort_options.py
 wallet/model/pagination_request_with_sort_options.py
 wallet/model/payment_design.py
-wallet/model/payment_prefixes.py
 wallet/model/performance.py
 wallet/model/phone_number.py
 wallet/model/phone_number_capabilities.py
@@ -830,6 +849,7 @@ wallet/model/wt_wallet_object_prefix_counts.py
 wallet/model/wt_wallet_page_view.py
 wallet/model/wt_wallet_page_view_count.py
 wallet/model/wt_wallet_page_view_geo_point.py
+wallet/model/wta2_p_application_create_params.py
 wallet/model/wtqr_code_design.py
 wallet/model/wtqr_code_design_create_params.py
 wallet/model/wtqr_code_design_update_params.py

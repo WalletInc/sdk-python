@@ -25,8 +25,8 @@ from wallet.model_utils import (  # noqa: F401
 from wallet.model.auth_error import AuthError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.inline_object1 import InlineObject1
-from wallet.model.inline_response2002 import InlineResponse2002
-from wallet.model.inline_response2005 import InlineResponse2005
+from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.model.inline_response2004 import InlineResponse2004
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.performance import Performance
 from wallet.model.ticket import Ticket
@@ -96,7 +96,7 @@ class PerformancesApi(object):
         )
         self.count_claimed_comps_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2002,),
+                'response_type': (InlineResponse2003,),
                 'auth': [],
                 'endpoint_path': '/v2/performances/{id}/claimed/count',
                 'operation_id': 'count_claimed_comps',
@@ -145,7 +145,7 @@ class PerformancesApi(object):
         )
         self.count_redeemed_comps_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2002,),
+                'response_type': (InlineResponse2003,),
                 'auth': [],
                 'endpoint_path': '/v2/performances/{id}/redeemed/count',
                 'operation_id': 'count_redeemed_comps',
@@ -394,7 +394,7 @@ class PerformancesApi(object):
         )
         self.fetch_performance_tickets_page_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2005,),
+                'response_type': (InlineResponse2004,),
                 'auth': [],
                 'endpoint_path': '/v2/performances/tickets/page/{performanceID}',
                 'operation_id': 'fetch_performance_tickets_page',
@@ -752,7 +752,7 @@ class PerformancesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2002
+            InlineResponse2003
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -829,7 +829,7 @@ class PerformancesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2002
+            InlineResponse2003
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1218,7 +1218,7 @@ class PerformancesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2005
+            InlineResponse2004
                 If the method is called asynchronously, returns the request
                 thread.
         """

@@ -26,6 +26,11 @@ from wallet.model.applicable_terminals_any_of6 import ApplicableTerminalsAnyOf6
 from wallet.model.auth_error import AuthError
 from wallet.model.available_phone_numbers_request import AvailablePhoneNumbersRequest
 from wallet.model.browser_details import BrowserDetails
+from wallet.model.business_classification import BusinessClassification
+from wallet.model.business_industry import BusinessIndustry
+from wallet.model.business_regions_of_operation import BusinessRegionsOfOperation
+from wallet.model.business_registration_identifier import BusinessRegistrationIdentifier
+from wallet.model.business_type import BusinessType
 from wallet.model.click_funnel_amount import ClickFunnelAmount
 from wallet.model.click_funnel_contact import ClickFunnelContact
 from wallet.model.click_funnel_contact_profile import ClickFunnelContactProfile
@@ -79,6 +84,7 @@ from wallet.model.inline_response2007 import InlineResponse2007
 from wallet.model.inline_response2008 import InlineResponse2008
 from wallet.model.inline_response2009 import InlineResponse2009
 from wallet.model.internal_server_error import InternalServerError
+from wallet.model.job_position import JobPosition
 from wallet.model.ledger_entry import LedgerEntry
 from wallet.model.link_book import LinkBook
 from wallet.model.link_book_section import LinkBookSection
@@ -139,7 +145,6 @@ from wallet.model.paginated_wt_merchant_credits import PaginatedWTMerchantCredit
 from wallet.model.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
 from wallet.model.pagination_request_with_sort_options import PaginationRequestWithSortOptions
 from wallet.model.payment_design import PaymentDesign
-from wallet.model.payment_prefixes import PaymentPrefixes
 from wallet.model.performance import Performance
 from wallet.model.phone_number import PhoneNumber
 from wallet.model.phone_number_capabilities import PhoneNumberCapabilities
@@ -226,6 +231,7 @@ from wallet.model.vs_campaign_generated_message_pagination import VSCampaignGene
 from wallet.model.vs_dynamic_voucher_status import VSDynamicVoucherStatus
 from wallet.model.video import Video
 from wallet.model.virtual_business_card import VirtualBusinessCard
+from wallet.model.wta2_p_application_create_params import WTA2PApplicationCreateParams
 from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
 from wallet.model.wt_advertisement_credit_create_params import WTAdvertisementCreditCreateParams
 from wallet.model.wt_advertisement_credit_scan import WTAdvertisementCreditScan

@@ -49,17 +49,11 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import time
 import wallet
 from pprint import pprint
-from wallet.api import advertisement_credits_api
+from wallet.api import a2_p_api
 from wallet.model.auth_error import AuthError
-from wallet.model.duplicate_row_found import DuplicateRowFound
 from wallet.model.falsum_error import FalsumError
-from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.merchant_not_initialized import MerchantNotInitialized
-from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
-from wallet.model.wt_advertisement_credit_create_params import WTAdvertisementCreditCreateParams
-from wallet.model.wt_advertisement_credit_scan import WTAdvertisementCreditScan
-from wallet.model.wt_advertisement_credit_update_params import WTAdvertisementCreditUpdateParams
+from wallet.model.wta2_p_application_create_params import WTA2PApplicationCreateParams
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -71,15 +65,40 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = advertisement_credits_api.AdvertisementCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = a2_p_api.A2PApi(api_client)
+    wta2_p_application_create_params = WTA2PApplicationCreateParams(
+        business_name="Acme Corp",
+        business_type=BusinessType("Partnership"),
+        business_classification=BusinessClassification("public"),
+        business_industry=BusinessIndustry("AUTOMOTIVE"),
+        tax_id_type=BusinessRegistrationIdentifier("EIN"),
+        tax_id="23-235235",
+        website_url="https://google.com",
+        social_media_url="https://instagram.com/your_business",
+        regions_of_operation=[
+            BusinessRegionsOfOperation("AFRICA"),
+        ],
+        messaging_volume_high=True,
+        address1="address1_example",
+        address2="address2_example",
+        city="city_example",
+        state="state_example",
+        postal_code="postal_code_example",
+        country="country_example",
+        first_name="first_name_example",
+        last_name="last_name_example",
+        email="email_example",
+        job_title="job_title_example",
+        job_position=JobPosition("Director"),
+        phone_number="phone_number_example",
+    ) # WTA2PApplicationCreateParams | 
 
     try:
-        # Archive ad credit
-        api_response = api_instance.archive_advertisement_credit(id)
+        # Create A2P Application
+        api_response = api_instance.create_a2_p_application(wta2_p_application_create_params)
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling AdvertisementCreditsApi->archive_advertisement_credit: %s\n" % e)
+        print("Exception when calling A2PApi->create_a2_p_application: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -88,6 +107,10 @@ All URIs are relative to *https://api.wall.et*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*A2PApi* | [**create_a2_p_application**](docs/A2PApi.md#create_a2_p_application) | **POST** /v2/a2p/application | Create A2P Application
+*A2PApi* | [**create_a2_p_registration**](docs/A2PApi.md#create_a2_p_registration) | **POST** /v2/a2p/registration | Create A2P Registration
+*A2PApi* | [**fetch_a2_p_application**](docs/A2PApi.md#fetch_a2_p_application) | **GET** /v2/a2p/application | Fetch A2P Application
+*A2PApi* | [**fetch_a2_p_registration**](docs/A2PApi.md#fetch_a2_p_registration) | **GET** /v2/a2p/registration | Fetch A2P Registration
 *AdvertisementCreditsApi* | [**archive_advertisement_credit**](docs/AdvertisementCreditsApi.md#archive_advertisement_credit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive ad credit
 *AdvertisementCreditsApi* | [**create_advertisement_credit**](docs/AdvertisementCreditsApi.md#create_advertisement_credit) | **POST** /v2/payment/advertisementCredit | Create ad credit
 *AdvertisementCreditsApi* | [**fetch_advertisement_credit_by_id**](docs/AdvertisementCreditsApi.md#fetch_advertisement_credit_by_id) | **GET** /v2/payment/advertisementCredit/{id} | Fetch ad credit
@@ -571,6 +594,7 @@ Class | Method | HTTP request | Description
 *SystemApi* | [**fetch_audit_log_of_roles**](docs/SystemApi.md#fetch_audit_log_of_roles) | **GET** /v2/system/roles/auditLog | Fetch role&#39;s audit log
 *SystemApi* | [**fetch_employees_with_role**](docs/SystemApi.md#fetch_employees_with_role) | **GET** /v2/system/roles/employees/{roleID} | Fetch employees with role
 *SystemApi* | [**fetch_webpages_for_role**](docs/SystemApi.md#fetch_webpages_for_role) | **GET** /v2/system/roles/webpages/{roleID} | Fetch webpages for role
+*SystemApi* | [**get_payment_prefixes**](docs/SystemApi.md#get_payment_prefixes) | **GET** /v2/system/prefixes | Get payment prefixes
 *SystemApi* | [**load_role**](docs/SystemApi.md#load_role) | **GET** /v2/system/roles/{roleID} | Fetch role
 *SystemApi* | [**save_role**](docs/SystemApi.md#save_role) | **PUT** /v2/system/roles/{roleID} | Update role
 *TicketApi* | [**archive_ticket**](docs/TicketApi.md#archive_ticket) | **DELETE** /v2/ticket/{id} | Archive ticket
@@ -579,7 +603,6 @@ Class | Method | HTTP request | Description
 *TicketApi* | [**restore_ticket**](docs/TicketApi.md#restore_ticket) | **PATCH** /v2/ticket/{id} | Restore ticket
 *TicketApi* | [**update_ticket**](docs/TicketApi.md#update_ticket) | **PUT** /v2/ticket/{id} | Update ticket
 *TransactionLedgerApi* | [**fetch_all_ledger_transactions**](docs/TransactionLedgerApi.md#fetch_all_ledger_transactions) | **GET** /v2/pos/ledger/transactions/all | Fetch ledger transactions by page
-*UtilitiesApi* | [**get_payment_prefixes**](docs/UtilitiesApi.md#get_payment_prefixes) | **GET** /v2/payment/prefixes | Get payment prefixes
 *VideosApi* | [**archive_video**](docs/VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive video
 *VideosApi* | [**create_video**](docs/VideosApi.md#create_video) | **POST** /v2/video | Create video
 *VideosApi* | [**fetch_all_video**](docs/VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Fetch all video
@@ -622,6 +645,11 @@ Class | Method | HTTP request | Description
  - [AuthError](docs/AuthError.md)
  - [AvailablePhoneNumbersRequest](docs/AvailablePhoneNumbersRequest.md)
  - [BrowserDetails](docs/BrowserDetails.md)
+ - [BusinessClassification](docs/BusinessClassification.md)
+ - [BusinessIndustry](docs/BusinessIndustry.md)
+ - [BusinessRegionsOfOperation](docs/BusinessRegionsOfOperation.md)
+ - [BusinessRegistrationIdentifier](docs/BusinessRegistrationIdentifier.md)
+ - [BusinessType](docs/BusinessType.md)
  - [ClickFunnelAmount](docs/ClickFunnelAmount.md)
  - [ClickFunnelContact](docs/ClickFunnelContact.md)
  - [ClickFunnelContactProfile](docs/ClickFunnelContactProfile.md)
@@ -675,6 +703,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse2008](docs/InlineResponse2008.md)
  - [InlineResponse2009](docs/InlineResponse2009.md)
  - [InternalServerError](docs/InternalServerError.md)
+ - [JobPosition](docs/JobPosition.md)
  - [LedgerEntry](docs/LedgerEntry.md)
  - [LinkBook](docs/LinkBook.md)
  - [LinkBookSection](docs/LinkBookSection.md)
@@ -735,7 +764,6 @@ Class | Method | HTTP request | Description
  - [PaginationRequestWithIDAndWithoutSortOptions](docs/PaginationRequestWithIDAndWithoutSortOptions.md)
  - [PaginationRequestWithSortOptions](docs/PaginationRequestWithSortOptions.md)
  - [PaymentDesign](docs/PaymentDesign.md)
- - [PaymentPrefixes](docs/PaymentPrefixes.md)
  - [Performance](docs/Performance.md)
  - [PhoneNumber](docs/PhoneNumber.md)
  - [PhoneNumberCapabilities](docs/PhoneNumberCapabilities.md)
@@ -822,6 +850,7 @@ Class | Method | HTTP request | Description
  - [VSDynamicVoucherStatus](docs/VSDynamicVoucherStatus.md)
  - [Video](docs/Video.md)
  - [VirtualBusinessCard](docs/VirtualBusinessCard.md)
+ - [WTA2PApplicationCreateParams](docs/WTA2PApplicationCreateParams.md)
  - [WTAdvertisementCredit](docs/WTAdvertisementCredit.md)
  - [WTAdvertisementCreditCreateParams](docs/WTAdvertisementCreditCreateParams.md)
  - [WTAdvertisementCreditScan](docs/WTAdvertisementCreditScan.md)

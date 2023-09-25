@@ -1,12 +1,10 @@
-# InlineResponse2004
+# BusinessRegionsOfOperation
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[WTTicket]**](WTTicket.md) |  | 
-**total_rows** | **float** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**value** | **str** |  |  must be one of ["AFRICA", "ASIA", "EUROPE", "LATIN_AMERICA", "USA_AND_CANADA", "AUSTRALIA", ]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
