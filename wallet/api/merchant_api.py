@@ -29,7 +29,7 @@ from wallet.model.falsum_error import FalsumError
 from wallet.model.help_desk_request import HelpDeskRequest
 from wallet.model.imported_list import ImportedList
 from wallet.model.inbound_sms import InboundSMS
-from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.model.inline_response2002 import InlineResponse2002
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.nano_id import NanoID
 from wallet.model.opt_in_list import OptInList
@@ -704,7 +704,7 @@ class MerchantApi(object):
         )
         self.fetch_inbound_smsby_page_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2003,),
+                'response_type': (InlineResponse2002,),
                 'auth': [],
                 'endpoint_path': '/v2/merchant/sms/inbound/page/{phoneNumberID}',
                 'operation_id': 'fetch_inbound_smsby_page',
@@ -2424,7 +2424,7 @@ class MerchantApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2003
+            InlineResponse2002
                 If the method is called asynchronously, returns the request
                 thread.
         """

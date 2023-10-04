@@ -24,7 +24,7 @@ from wallet.model_utils import (  # noqa: F401
 )
 from wallet.model.auth_error import AuthError
 from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_object2 import InlineObject2
+from wallet.model.inline_object3 import InlineObject3
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.wt_wallet_configuration_save_wallet_record import WTWalletConfigurationSaveWalletRecord
 from wallet.model.wallet_configuration import WalletConfiguration
@@ -94,10 +94,10 @@ class ConfigurationApi(object):
             },
             params_map={
                 'all': [
-                    'inline_object2',
+                    'inline_object3',
                 ],
                 'required': [
-                    'inline_object2',
+                    'inline_object3',
                 ],
                 'nullable': [
                 ],
@@ -112,13 +112,13 @@ class ConfigurationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'inline_object2':
-                        (InlineObject2,),
+                    'inline_object3':
+                        (InlineObject3,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'inline_object2': 'body',
+                    'inline_object3': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -259,7 +259,7 @@ class ConfigurationApi(object):
 
     def save_merchant_credit_payment_design(
         self,
-        inline_object2,
+        inline_object3,
         **kwargs
     ):
         """Update wallet record  # noqa: E501
@@ -267,11 +267,11 @@ class ConfigurationApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.save_merchant_credit_payment_design(inline_object2, async_req=True)
+        >>> thread = api.save_merchant_credit_payment_design(inline_object3, async_req=True)
         >>> result = thread.get()
 
         Args:
-            inline_object2 (InlineObject2):
+            inline_object3 (InlineObject3):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -330,8 +330,8 @@ class ConfigurationApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['inline_object2'] = \
-            inline_object2
+        kwargs['inline_object3'] = \
+            inline_object3
         return self.save_merchant_credit_payment_design_endpoint.call_with_http_info(**kwargs)
 
     def save_wallet_record(

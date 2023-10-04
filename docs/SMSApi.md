@@ -1306,7 +1306,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_imported_list_recipients_by_page**
-> InlineResponse2009 fetch_imported_list_recipients_by_page(list_id)
+> InlineResponse2007 fetch_imported_list_recipients_by_page(list_id)
 
 Fetch imported list recipients by page
 
@@ -1320,8 +1320,8 @@ from wallet.api import sms_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.nano_id import NanoID
+from wallet.model.inline_response2007 import InlineResponse2007
 from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2009 import InlineResponse2009
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -1369,7 +1369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -1551,7 +1551,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_list_subscribers_by_page**
-> InlineResponse2008 fetch_opt_in_list_subscribers_by_page(list_id)
+> InlineResponse2006 fetch_opt_in_list_subscribers_by_page(list_id)
 
 Fetch opt in list subscribers by page
 
@@ -1565,8 +1565,8 @@ from wallet.api import sms_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.nano_id import NanoID
+from wallet.model.inline_response2006 import InlineResponse2006
 from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2008 import InlineResponse2008
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -1618,7 +1618,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -1960,7 +1960,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_outbound_smsby_page**
-> InlineResponse2007 fetch_outbound_smsby_page(phone_number_id)
+> InlineResponse2005 fetch_outbound_smsby_page(phone_number_id)
 
 Fetch outbound SMSes by page
 
@@ -1975,7 +1975,7 @@ from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.ss_outbound_statuses import SSOutboundStatuses
 from wallet.model.nano_id import NanoID
-from wallet.model.inline_response2007 import InlineResponse2007
+from wallet.model.inline_response2005 import InlineResponse2005
 from wallet.model.auth_error import AuthError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
@@ -2028,7 +2028,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

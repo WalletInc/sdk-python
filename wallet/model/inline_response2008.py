@@ -31,8 +31,8 @@ from wallet.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from wallet.model.opt_in_list_subscriber import OptInListSubscriber
-    globals()['OptInListSubscriber'] = OptInListSubscriber
+    from wallet.model.wt_static_voucher import WTStaticVoucher
+    globals()['WTStaticVoucher'] = WTStaticVoucher
 
 
 class InlineResponse2008(ModelNormal):
@@ -88,9 +88,8 @@ class InlineResponse2008(ModelNormal):
         """
         lazy_import()
         return {
-            'total': (float,),  # noqa: E501
-            'length': (float,),  # noqa: E501
-            'results': ([OptInListSubscriber],),  # noqa: E501
+            'data': ([WTStaticVoucher],),  # noqa: E501
+            'total_rows': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -99,9 +98,8 @@ class InlineResponse2008(ModelNormal):
 
 
     attribute_map = {
-        'total': 'total',  # noqa: E501
-        'length': 'length',  # noqa: E501
-        'results': 'results',  # noqa: E501
+        'data': 'data',  # noqa: E501
+        'total_rows': 'totalRows',  # noqa: E501
     }
 
     read_only_vars = {
@@ -111,13 +109,12 @@ class InlineResponse2008(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, total, length, results, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, data, total_rows, *args, **kwargs):  # noqa: E501
         """InlineResponse2008 - a model defined in OpenAPI
 
         Args:
-            total (float):
-            length (float):
-            results ([OptInListSubscriber]):
+            data ([WTStaticVoucher]):
+            total_rows (float):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -177,9 +174,8 @@ class InlineResponse2008(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.total = total
-        self.length = length
-        self.results = results
+        self.data = data
+        self.total_rows = total_rows
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -200,13 +196,12 @@ class InlineResponse2008(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, total, length, results, *args, **kwargs):  # noqa: E501
+    def __init__(self, data, total_rows, *args, **kwargs):  # noqa: E501
         """InlineResponse2008 - a model defined in OpenAPI
 
         Args:
-            total (float):
-            length (float):
-            results ([OptInListSubscriber]):
+            data ([WTStaticVoucher]):
+            total_rows (float):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -264,9 +259,8 @@ class InlineResponse2008(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.total = total
-        self.length = length
-        self.results = results
+        self.data = data
+        self.total_rows = total_rows
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

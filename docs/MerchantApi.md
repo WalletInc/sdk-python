@@ -993,7 +993,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_inbound_smsby_page**
-> InlineResponse2003 fetch_inbound_smsby_page(phone_number_id)
+> InlineResponse2002 fetch_inbound_smsby_page(phone_number_id)
 
 Fetch inbound SMSes by page
 
@@ -1007,7 +1007,7 @@ from wallet.api import merchant_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.model.inline_response2002 import InlineResponse2002
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -1055,7 +1055,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

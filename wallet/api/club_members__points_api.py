@@ -26,7 +26,7 @@ from wallet.model.auth_error import AuthError
 from wallet.model.duplicate_row_found import DuplicateRowFound
 from wallet.model.falsum_error import FalsumError
 from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
-from wallet.model.inline_response2002 import InlineResponse2002
+from wallet.model.inline_response2003 import InlineResponse2003
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.ms_member_history_pagination import MSMemberHistoryPagination
 from wallet.model.ms_member_redemption_pagination import MSMemberRedemptionPagination
@@ -351,7 +351,7 @@ class ClubMembersPointsApi(object):
         )
         self.fetch_members_count_endpoint = _Endpoint(
             settings={
-                'response_type': (InlineResponse2002,),
+                'response_type': (InlineResponse2003,),
                 'auth': [],
                 'endpoint_path': '/v2/membership/member/count',
                 'operation_id': 'fetch_members_count',
@@ -1051,7 +1051,7 @@ class ClubMembersPointsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2002
+            InlineResponse2003
                 If the method is called asynchronously, returns the request
                 thread.
         """
