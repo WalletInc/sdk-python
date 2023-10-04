@@ -84,6 +84,7 @@ docs/InlineObject1.md
 docs/InlineObject2.md
 docs/InlineObject3.md
 docs/InlineObject4.md
+docs/InlineObject5.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
 docs/InlineResponse20010.md
@@ -426,14 +427,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_a2_p_api.py
-test/test_business_classification.py
-test/test_business_industry.py
-test/test_business_regions_of_operation.py
-test/test_business_registration_identifier.py
-test/test_business_type.py
-test/test_job_position.py
-test/test_wta2_p_application_create_params.py
+test/test_inline_object5.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -557,6 +551,7 @@ wallet/model/inline_object1.py
 wallet/model/inline_object2.py
 wallet/model/inline_object3.py
 wallet/model/inline_object4.py
+wallet/model/inline_object5.py
 wallet/model/inline_response200.py
 wallet/model/inline_response2001.py
 wallet/model/inline_response20010.py

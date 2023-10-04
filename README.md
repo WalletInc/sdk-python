@@ -478,6 +478,7 @@ Class | Method | HTTP request | Description
 *PerformancesApi* | [**fetch_all_performances**](docs/PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
 *PerformancesApi* | [**fetch_performance**](docs/PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Fetch a single performance
 *PerformancesApi* | [**fetch_performance_tickets_page**](docs/PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page
+*PerformancesApi* | [**import_tickets**](docs/PerformancesApi.md#import_tickets) | **POST** /v2/performances/{id}/tickets/import | Update performance
 *PerformancesApi* | [**restore_performance**](docs/PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore performance
 *PerformancesApi* | [**save_ticket_settings**](docs/PerformancesApi.md#save_ticket_settings) | **POST** /v2/performances/{id} | Update performance
 *PerformancesApi* | [**update_performance**](docs/PerformancesApi.md#update_performance) | **PUT** /v2/performances/{id} | Update performance
@@ -689,6 +690,7 @@ Class | Method | HTTP request | Description
  - [InlineObject2](docs/InlineObject2.md)
  - [InlineObject3](docs/InlineObject3.md)
  - [InlineObject4](docs/InlineObject4.md)
+ - [InlineObject5](docs/InlineObject5.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse20010](docs/InlineResponse20010.md)

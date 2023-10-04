@@ -77,7 +77,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_merchant_credit_payment_design**
-> bool, date, datetime, dict, float, int, list, str, none_type save_merchant_credit_payment_design(inline_object2)
+> bool, date, datetime, dict, float, int, list, str, none_type save_merchant_credit_payment_design(inline_object3)
 
 Update wallet record
 
@@ -90,8 +90,8 @@ import wallet
 from wallet.api import configuration_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
+from wallet.model.inline_object3 import InlineObject3
 from wallet.model.auth_error import AuthError
-from wallet.model.inline_object2 import InlineObject2
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -104,14 +104,14 @@ configuration = wallet.Configuration(
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = configuration_api.ConfigurationApi(api_client)
-    inline_object2 = InlineObject2(
+    inline_object3 = InlineObject3(
         payment_design_id=NanoID("C"),
-    ) # InlineObject2 | 
+    ) # InlineObject3 | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update wallet record
-        api_response = api_instance.save_merchant_credit_payment_design(inline_object2)
+        api_response = api_instance.save_merchant_credit_payment_design(inline_object3)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling ConfigurationApi->save_merchant_credit_payment_design: %s\n" % e)
@@ -122,7 +122,7 @@ with wallet.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object2** | [**InlineObject2**](InlineObject2.md)|  |
+ **inline_object3** | [**InlineObject3**](InlineObject3.md)|  |
 
 ### Return type
 
