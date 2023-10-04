@@ -31,8 +31,8 @@ from wallet.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from wallet.model.nano_id import NanoID
-    globals()['NanoID'] = NanoID
+    from wallet.model.wt_ticket_update_params import WTTicketUpdateParams
+    globals()['WTTicketUpdateParams'] = WTTicketUpdateParams
 
 
 class InlineObject2(ModelNormal):
@@ -88,7 +88,7 @@ class InlineObject2(ModelNormal):
         """
         lazy_import()
         return {
-            'payment_design_id': (NanoID,),  # noqa: E501
+            'tickets': ([WTTicketUpdateParams],),  # noqa: E501
         }
 
     @cached_property
@@ -97,7 +97,7 @@ class InlineObject2(ModelNormal):
 
 
     attribute_map = {
-        'payment_design_id': 'paymentDesignID',  # noqa: E501
+        'tickets': 'tickets',  # noqa: E501
     }
 
     read_only_vars = {
@@ -107,11 +107,11 @@ class InlineObject2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, payment_design_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, tickets, *args, **kwargs):  # noqa: E501
         """InlineObject2 - a model defined in OpenAPI
 
         Args:
-            payment_design_id (NanoID):
+            tickets ([WTTicketUpdateParams]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -171,7 +171,7 @@ class InlineObject2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.payment_design_id = payment_design_id
+        self.tickets = tickets
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -192,11 +192,11 @@ class InlineObject2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, payment_design_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, tickets, *args, **kwargs):  # noqa: E501
         """InlineObject2 - a model defined in OpenAPI
 
         Args:
-            payment_design_id (NanoID):
+            tickets ([WTTicketUpdateParams]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -254,7 +254,7 @@ class InlineObject2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.payment_design_id = payment_design_id
+        self.tickets = tickets
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

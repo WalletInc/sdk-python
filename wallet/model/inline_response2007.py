@@ -31,8 +31,8 @@ from wallet.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from wallet.model.outbound_sms import OutboundSMS
-    globals()['OutboundSMS'] = OutboundSMS
+    from wallet.model.imported_list_recipient import ImportedListRecipient
+    globals()['ImportedListRecipient'] = ImportedListRecipient
 
 
 class InlineResponse2007(ModelNormal):
@@ -90,7 +90,7 @@ class InlineResponse2007(ModelNormal):
         return {
             'total': (float,),  # noqa: E501
             'length': (float,),  # noqa: E501
-            'results': ([OutboundSMS],),  # noqa: E501
+            'results': ([ImportedListRecipient],),  # noqa: E501
         }
 
     @cached_property
@@ -117,7 +117,7 @@ class InlineResponse2007(ModelNormal):
         Args:
             total (float):
             length (float):
-            results ([OutboundSMS]):
+            results ([ImportedListRecipient]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -206,7 +206,7 @@ class InlineResponse2007(ModelNormal):
         Args:
             total (float):
             length (float):
-            results ([OutboundSMS]):
+            results ([ImportedListRecipient]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

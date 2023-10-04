@@ -31,8 +31,8 @@ from wallet.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from wallet.model.wt_static_voucher import WTStaticVoucher
-    globals()['WTStaticVoucher'] = WTStaticVoucher
+    from wallet.model.wt_ticket import WTTicket
+    globals()['WTTicket'] = WTTicket
 
 
 class InlineResponse2004(ModelNormal):
@@ -88,7 +88,7 @@ class InlineResponse2004(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([WTStaticVoucher],),  # noqa: E501
+            'data': ([WTTicket],),  # noqa: E501
             'total_rows': (float,),  # noqa: E501
         }
 
@@ -113,7 +113,7 @@ class InlineResponse2004(ModelNormal):
         """InlineResponse2004 - a model defined in OpenAPI
 
         Args:
-            data ([WTStaticVoucher]):
+            data ([WTTicket]):
             total_rows (float):
 
         Keyword Args:
@@ -200,7 +200,7 @@ class InlineResponse2004(ModelNormal):
         """InlineResponse2004 - a model defined in OpenAPI
 
         Args:
-            data ([WTStaticVoucher]):
+            data ([WTTicket]):
             total_rows (float):
 
         Keyword Args:

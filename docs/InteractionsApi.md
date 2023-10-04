@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **claim_ticket**
-> Ticket claim_ticket(id, inline_object3)
+> Ticket claim_ticket(id, inline_object4)
 
 Update ticket
 
@@ -34,9 +34,9 @@ Update ticket
 import time
 import wallet
 from wallet.api import interactions_api
+from wallet.model.inline_object4 import InlineObject4
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_object3 import InlineObject3
 from wallet.model.ticket import Ticket
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
@@ -51,14 +51,14 @@ with wallet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = interactions_api.InteractionsApi(api_client)
     id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    inline_object3 = InlineObject3(
+    inline_object4 = InlineObject4(
         claimed_by_phone_number="claimed_by_phone_number_example",
-    ) # InlineObject3 | 
+    ) # InlineObject4 | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update ticket
-        api_response = api_instance.claim_ticket(id, inline_object3)
+        api_response = api_instance.claim_ticket(id, inline_object4)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling InteractionsApi->claim_ticket: %s\n" % e)
@@ -70,7 +70,7 @@ with wallet.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **inline_object3** | [**InlineObject3**](InlineObject3.md)|  |
+ **inline_object4** | [**InlineObject4**](InlineObject4.md)|  |
 
 ### Return type
 
@@ -439,7 +439,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_customer_tickets_with_token**
-> [Ticket] fetch_customer_tickets_with_token(inline_object4)
+> [Ticket] fetch_customer_tickets_with_token(inline_object5)
 
 Update ticket
 
@@ -450,9 +450,9 @@ Update ticket
 import time
 import wallet
 from wallet.api import interactions_api
-from wallet.model.inline_object4 import InlineObject4
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
+from wallet.model.inline_object5 import InlineObject5
 from wallet.model.ticket import Ticket
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
@@ -466,15 +466,15 @@ configuration = wallet.Configuration(
 with wallet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = interactions_api.InteractionsApi(api_client)
-    inline_object4 = InlineObject4(
+    inline_object5 = InlineObject5(
         phone_verification_token="phone_verification_token_example",
         merchant_id="merchant_id_example",
-    ) # InlineObject4 | 
+    ) # InlineObject5 | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update ticket
-        api_response = api_instance.fetch_customer_tickets_with_token(inline_object4)
+        api_response = api_instance.fetch_customer_tickets_with_token(inline_object5)
         pprint(api_response)
     except wallet.ApiException as e:
         print("Exception when calling InteractionsApi->fetch_customer_tickets_with_token: %s\n" % e)
@@ -485,7 +485,7 @@ with wallet.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object4** | [**InlineObject4**](InlineObject4.md)|  |
+ **inline_object5** | [**InlineObject5**](InlineObject5.md)|  |
 
 ### Return type
 

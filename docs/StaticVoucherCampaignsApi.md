@@ -99,7 +99,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_vouchers_loaded**
-> InlineResponse2002 count_vouchers_loaded(campaign_id)
+> InlineResponse2003 count_vouchers_loaded(campaign_id)
 
 Count loaded vouchers
 
@@ -113,7 +113,7 @@ from wallet.api import static_voucher_campaigns_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2002 import InlineResponse2002
+from wallet.model.inline_response2003 import InlineResponse2003
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_vouchers_redeemed**
-> InlineResponse2002 count_vouchers_redeemed(campaign_id)
+> InlineResponse2003 count_vouchers_redeemed(campaign_id)
 
 Count redeemed vouchers
 
@@ -184,7 +184,7 @@ from wallet.api import static_voucher_campaigns_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2002 import InlineResponse2002
+from wallet.model.inline_response2003 import InlineResponse2003
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -1020,7 +1020,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_static_vouchers_page**
-> InlineResponse2004 fetch_static_vouchers_page(campaign_id, pagenum, pagesize)
+> InlineResponse2008 fetch_static_vouchers_page(campaign_id, pagenum, pagesize)
 
 Fetch static vouchers by page
 
@@ -1033,8 +1033,8 @@ import wallet
 from wallet.api import static_voucher_campaigns_api
 from wallet.model.internal_server_error import InternalServerError
 from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_response2004 import InlineResponse2004
 from wallet.model.auth_error import AuthError
+from wallet.model.inline_response2008 import InlineResponse2008
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
@@ -1071,7 +1071,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
