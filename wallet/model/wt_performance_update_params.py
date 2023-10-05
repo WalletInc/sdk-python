@@ -103,6 +103,7 @@ class WTPerformanceUpdateParams(ModelNormal):
             'payment_design_id': (NanoID,),  # noqa: E501
             'max_comp_tickets': (float,),  # noqa: E501
             'ticket_expiration_date_time': (datetime,),  # noqa: E501
+            'redemption_instructions': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -122,6 +123,7 @@ class WTPerformanceUpdateParams(ModelNormal):
         'payment_design_id': 'paymentDesignID',  # noqa: E501
         'max_comp_tickets': 'maxCompTickets',  # noqa: E501
         'ticket_expiration_date_time': 'ticketExpirationDateTime',  # noqa: E501
+        'redemption_instructions': 'redemptionInstructions',  # noqa: E501
     }
 
     read_only_vars = {
@@ -178,6 +180,7 @@ class WTPerformanceUpdateParams(ModelNormal):
             payment_design_id (NanoID): [optional]  # noqa: E501
             max_comp_tickets (float): [optional]  # noqa: E501
             ticket_expiration_date_time (datetime): [optional]  # noqa: E501
+            redemption_instructions (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -279,6 +282,7 @@ class WTPerformanceUpdateParams(ModelNormal):
             payment_design_id (NanoID): [optional]  # noqa: E501
             max_comp_tickets (float): [optional]  # noqa: E501
             ticket_expiration_date_time (datetime): [optional]  # noqa: E501
+            redemption_instructions (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
