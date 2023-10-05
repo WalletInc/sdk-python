@@ -85,6 +85,7 @@ class InlineObject1(ModelNormal):
             'ticket_expiration_date_time': (datetime,),  # noqa: E501
             'max_comp_tickets': (float,),  # noqa: E501
             'payment_design_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'redemption_instructions': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -96,6 +97,7 @@ class InlineObject1(ModelNormal):
         'ticket_expiration_date_time': 'ticketExpirationDateTime',  # noqa: E501
         'max_comp_tickets': 'maxCompTickets',  # noqa: E501
         'payment_design_id': 'paymentDesignID',  # noqa: E501
+        'redemption_instructions': 'redemptionInstructions',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,6 +146,7 @@ class InlineObject1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            redemption_instructions (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -233,6 +236,7 @@ class InlineObject1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            redemption_instructions (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

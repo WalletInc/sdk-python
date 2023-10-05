@@ -427,15 +427,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_a2_p_api.py
-test/test_business_classification.py
-test/test_business_industry.py
-test/test_business_regions_of_operation.py
-test/test_business_registration_identifier.py
-test/test_business_type.py
-test/test_inline_object5.py
-test/test_job_position.py
-test/test_wta2_p_application_create_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py

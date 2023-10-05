@@ -272,6 +272,7 @@ with wallet.ApiClient() as api_client:
         payment_design_id=NanoID("C"),
         max_comp_tickets=3.14,
         ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        redemption_instructions="redemption_instructions_example",
     ) # WTPerformanceCreateParams | 
 
     # example passing only required values which don't have defaults set
@@ -814,6 +815,7 @@ with wallet.ApiClient() as api_client:
     api_instance = performances_api.PerformancesApi(api_client)
     id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
     inline_object1 = InlineObject1(
+        redemption_instructions="redemption_instructions_example",
         ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
         max_comp_tickets=3.14,
         payment_design_id=None,
@@ -903,6 +905,7 @@ with wallet.ApiClient() as api_client:
         payment_design_id=NanoID("C"),
         max_comp_tickets=3.14,
         ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        redemption_instructions="redemption_instructions_example",
     ) # WTPerformanceUpdateParams | 
 
     # example passing only required values which don't have defaults set

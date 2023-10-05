@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **payment_design_id** | [**NanoID**](NanoID.md) |  | [optional] 
 **max_comp_tickets** | **float** |  | [optional] 
 **ticket_expiration_date_time** | **datetime** |  | [optional] 
+**redemption_instructions** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
