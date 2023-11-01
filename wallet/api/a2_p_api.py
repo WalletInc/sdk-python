@@ -22,10 +22,12 @@ from wallet.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from wallet.model.a2_p_application_submission import A2PApplicationSubmission
 from wallet.model.auth_error import AuthError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.wta2_p_application_create_params import WTA2PApplicationCreateParams
+from wallet.model.nano_id import NanoID
+from wallet.model.wta2_p_application_update_params import WTA2PApplicationUpdateParams
 
 
 class A2PApi(object):
@@ -39,21 +41,21 @@ class A2PApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_a2_p_application_endpoint = _Endpoint(
+        self.begin_a2_p_application_endpoint = _Endpoint(
             settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'response_type': (bool,),
                 'auth': [],
                 'endpoint_path': '/v2/a2p/application',
-                'operation_id': 'create_a2_p_application',
+                'operation_id': 'begin_a2_p_application',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'wta2_p_application_create_params',
+                    'a2_p_application_submission',
                 ],
                 'required': [
-                    'wta2_p_application_create_params',
+                    'a2_p_application_submission',
                 ],
                 'nullable': [
                 ],
@@ -68,13 +70,13 @@ class A2PApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'wta2_p_application_create_params':
-                        (WTA2PApplicationCreateParams,),
+                    'a2_p_application_submission':
+                        (A2PApplicationSubmission,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'wta2_p_application_create_params': 'body',
+                    'a2_p_application_submission': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -86,48 +88,6 @@ class A2PApi(object):
                 'content_type': [
                     'application/json'
                 ]
-            },
-            api_client=api_client
-        )
-        self.create_a2_p_registration_endpoint = _Endpoint(
-            settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
-                'auth': [],
-                'endpoint_path': '/v2/a2p/registration',
-                'operation_id': 'create_a2_p_registration',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
             },
             api_client=api_client
         )
@@ -215,10 +175,66 @@ class A2PApi(object):
             },
             api_client=api_client
         )
+        self.update_a2_p_application_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool,),
+                'auth': [],
+                'endpoint_path': '/v2/a2p/application/{applicationID}',
+                'operation_id': 'update_a2_p_application',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'application_id',
+                    'wta2_p_application_update_params',
+                ],
+                'required': [
+                    'application_id',
+                    'wta2_p_application_update_params',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'application_id':
+                        (NanoID,),
+                    'wta2_p_application_update_params':
+                        (WTA2PApplicationUpdateParams,),
+                },
+                'attribute_map': {
+                    'application_id': 'applicationID',
+                },
+                'location_map': {
+                    'application_id': 'path',
+                    'wta2_p_application_update_params': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
 
-    def create_a2_p_application(
+    def begin_a2_p_application(
         self,
-        wta2_p_application_create_params,
+        a2_p_application_submission,
         **kwargs
     ):
         """Create A2P Application  # noqa: E501
@@ -226,11 +242,11 @@ class A2PApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_a2_p_application(wta2_p_application_create_params, async_req=True)
+        >>> thread = api.begin_a2_p_application(a2_p_application_submission, async_req=True)
         >>> result = thread.get()
 
         Args:
-            wta2_p_application_create_params (WTA2PApplicationCreateParams):
+            a2_p_application_submission (A2PApplicationSubmission):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -261,7 +277,7 @@ class A2PApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            bool
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -289,81 +305,9 @@ class A2PApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['wta2_p_application_create_params'] = \
-            wta2_p_application_create_params
-        return self.create_a2_p_application_endpoint.call_with_http_info(**kwargs)
-
-    def create_a2_p_registration(
-        self,
-        **kwargs
-    ):
-        """Create A2P Registration  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.create_a2_p_registration(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.create_a2_p_registration_endpoint.call_with_http_info(**kwargs)
+        kwargs['a2_p_application_submission'] = \
+            a2_p_application_submission
+        return self.begin_a2_p_application_endpoint.call_with_http_info(**kwargs)
 
     def fetch_a2_p_application(
         self,
@@ -508,4 +452,85 @@ class A2PApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         return self.fetch_a2_p_registration_endpoint.call_with_http_info(**kwargs)
+
+    def update_a2_p_application(
+        self,
+        application_id,
+        wta2_p_application_update_params,
+        **kwargs
+    ):
+        """Update A2P Application  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_a2_p_application(application_id, wta2_p_application_update_params, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            application_id (NanoID):
+            wta2_p_application_update_params (WTA2PApplicationUpdateParams):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['application_id'] = \
+            application_id
+        kwargs['wta2_p_application_update_params'] = \
+            wta2_p_application_update_params
+        return self.update_a2_p_application_endpoint.call_with_http_info(**kwargs)
 

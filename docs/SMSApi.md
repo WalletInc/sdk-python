@@ -15,7 +15,6 @@ Method | HTTP request | Description
 [**create_opt_in_list**](SMSApi.md#create_opt_in_list) | **POST** /v2/sms/optInList | Create opt in list
 [**create_opt_in_list_source**](SMSApi.md#create_opt_in_list_source) | **POST** /v2/sms/optInListSource | Send SMS to opt in list
 [**create_recipient_in_imported_list**](SMSApi.md#create_recipient_in_imported_list) | **POST** /v2/sms/importedList/recipients/create | Add new recipient in an imported list
-[**create_sms_agreement**](SMSApi.md#create_sms_agreement) | **POST** /v2/sms/agreement/create | Accept SMS agreement
 [**export_imported_list_recipients**](SMSApi.md#export_imported_list_recipients) | **POST** /v2/sms/importedList/recipients/export/{importedListID} | Export imported list recipients
 [**export_opt_in_list_subscribers**](SMSApi.md#export_opt_in_list_subscribers) | **POST** /v2/sms/optInList/subscribers/export/{listID} | Export opt in list subscribers
 [**fetch_blocked_tcpa_entries**](SMSApi.md#fetch_blocked_tcpa_entries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Fetch blocked TCPA entries
@@ -30,7 +29,7 @@ Method | HTTP request | Description
 [**fetch_outbound_sms**](SMSApi.md#fetch_outbound_sms) | **GET** /v2/sms/outbound/{phoneNumberID} | Fetch outbound SMS
 [**fetch_outbound_smsby_page**](SMSApi.md#fetch_outbound_smsby_page) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Fetch outbound SMSes by page
 [**fetch_payment_object_broadcasts**](SMSApi.md#fetch_payment_object_broadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Fetch payment object broadcasts
-[**fetch_sms_agreement**](SMSApi.md#fetch_sms_agreement) | **GET** /v2/sms/agreement | Fetch SMS agreement
+[**fetch_sms_agreement**](SMSApi.md#fetch_sms_agreement) | **GET** /v2/sms/agreement | Accept SMS agreement (DEPRECATED)
 [**import_imported_list_recipients**](SMSApi.md#import_imported_list_recipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
 [**import_imported_list_recipients_from_membership_tier**](SMSApi.md#import_imported_list_recipients_from_membership_tier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
 [**import_opt_in_list_subscribers**](SMSApi.md#import_opt_in_list_subscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
@@ -912,91 +911,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ImportedListRecipient**](ImportedListRecipient.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_sms_agreement**
-> Agreement create_sms_agreement(wtsms_create_agreement)
-
-Accept SMS agreement
-
-### Example
-
-
-```python
-import time
-import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.agreement import Agreement
-from wallet.model.wtsms_create_agreement import WTSMSCreateAgreement
-from wallet.model.auth_error import AuthError
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    wtsms_create_agreement = WTSMSCreateAgreement(
-        is_twilio_terms_read=True,
-        is_privacy_policy_on_website=True,
-        is_tos_on_website=True,
-        is_stop_understood=True,
-        is_manual_read=True,
-        is_ctia_short_code_read=True,
-        is_standards_understood=True,
-        is_short_code_understood=True,
-        is_opt_in_out_understood=True,
-        is_short_code_transfer_understood=True,
-        is_pricing_understood=True,
-        is_short_code_timeline_understood=True,
-    ) # WTSMSCreateAgreement | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Accept SMS agreement
-        api_response = api_instance.create_sms_agreement(wtsms_create_agreement)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->create_sms_agreement: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wtsms_create_agreement** | [**WTSMSCreateAgreement**](WTSMSCreateAgreement.md)|  |
-
-### Return type
-
-[**Agreement**](Agreement.md)
 
 ### Authorization
 
@@ -2126,7 +2040,7 @@ No authorization required
 # **fetch_sms_agreement**
 > bool, date, datetime, dict, float, int, list, str, none_type fetch_sms_agreement()
 
-Fetch SMS agreement
+Accept SMS agreement (DEPRECATED)
 
 ### Example
 
@@ -2153,7 +2067,7 @@ with wallet.ApiClient() as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Fetch SMS agreement
+        # Accept SMS agreement (DEPRECATED)
         api_response = api_instance.fetch_sms_agreement()
         pprint(api_response)
     except wallet.ApiException as e:

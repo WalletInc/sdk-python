@@ -3,11 +3,11 @@
 .travis.yml
 README.md
 docs/A2PApi.md
+docs/A2PApplicationSubmission.md
 docs/AdvertisementCredit.md
 docs/AdvertisementCreditBroadcast.md
 docs/AdvertisementCreditScan.md
 docs/AdvertisementCreditsApi.md
-docs/Agreement.md
 docs/AmenitiesApi.md
 docs/Amenity.md
 docs/AnalyticsApi.md
@@ -29,6 +29,7 @@ docs/BusinessClassification.md
 docs/BusinessIndustry.md
 docs/BusinessRegionsOfOperation.md
 docs/BusinessRegistrationIdentifier.md
+docs/BusinessStockExchanges.md
 docs/BusinessType.md
 docs/ClickFunnelAmount.md
 docs/ClickFunnelContact.md
@@ -217,6 +218,7 @@ docs/PresignedPost.md
 docs/PresignedPostFields.md
 docs/Product.md
 docs/ProductsApi.md
+docs/ProfileStatuses.md
 docs/PromoCode.md
 docs/PromotionCodesApi.md
 docs/QRCodeDesign.md
@@ -268,6 +270,7 @@ docs/Tcpa.md
 docs/Ticket.md
 docs/TicketApi.md
 docs/TransactionLedgerApi.md
+docs/TrustBundleStatuses.md
 docs/UpdateStaticVoucherCampaignWithVoucher.md
 docs/VSCampaignGeneratedMessage.md
 docs/VSCampaignGeneratedMessagePagination.md
@@ -276,7 +279,7 @@ docs/Video.md
 docs/VideosApi.md
 docs/VirtualBusinessCard.md
 docs/VirtualBusinessCardApi.md
-docs/WTA2PApplicationCreateParams.md
+docs/WTA2PApplicationUpdateParams.md
 docs/WTAdvertisementCredit.md
 docs/WTAdvertisementCreditCreateParams.md
 docs/WTAdvertisementCreditScan.md
@@ -383,7 +386,6 @@ docs/WTRole.md
 docs/WTRoomRateCreateParams.md
 docs/WTRoomRateUpdateParams.md
 docs/WTSMSAcquirePhoneNumber.md
-docs/WTSMSCreateAgreement.md
 docs/WTSMSImportOptInListSubscribers.md
 docs/WTSMSImportedListCreate.md
 docs/WTSMSOptInListSourceCreate.md
@@ -427,6 +429,11 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_a2_p_application_submission.py
+test/test_business_stock_exchanges.py
+test/test_profile_statuses.py
+test/test_trust_bundle_statuses.py
+test/test_wta2_p_application_update_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -489,10 +496,10 @@ wallet/apis/__init__.py
 wallet/configuration.py
 wallet/exceptions.py
 wallet/model/__init__.py
+wallet/model/a2_p_application_submission.py
 wallet/model/advertisement_credit.py
 wallet/model/advertisement_credit_broadcast.py
 wallet/model/advertisement_credit_scan.py
-wallet/model/agreement.py
 wallet/model/amenity.py
 wallet/model/announcement.py
 wallet/model/applicable_terminals.py
@@ -510,6 +517,7 @@ wallet/model/business_classification.py
 wallet/model/business_industry.py
 wallet/model/business_regions_of_operation.py
 wallet/model/business_registration_identifier.py
+wallet/model/business_stock_exchanges.py
 wallet/model/business_type.py
 wallet/model/click_funnel_amount.py
 wallet/model/click_funnel_contact.py
@@ -670,6 +678,7 @@ wallet/model/prefixed_nano_id.py
 wallet/model/presigned_post.py
 wallet/model/presigned_post_fields.py
 wallet/model/product.py
+wallet/model/profile_statuses.py
 wallet/model/promo_code.py
 wallet/model/qr_code_design.py
 wallet/model/reach_performance_stats.py
@@ -706,6 +715,7 @@ wallet/model/subscription_plan.py
 wallet/model/subscription_product.py
 wallet/model/tcpa.py
 wallet/model/ticket.py
+wallet/model/trust_bundle_statuses.py
 wallet/model/update_static_voucher_campaign_with_voucher.py
 wallet/model/video.py
 wallet/model/virtual_business_card.py
@@ -843,12 +853,11 @@ wallet/model/wt_wallet_object_prefix_counts.py
 wallet/model/wt_wallet_page_view.py
 wallet/model/wt_wallet_page_view_count.py
 wallet/model/wt_wallet_page_view_geo_point.py
-wallet/model/wta2_p_application_create_params.py
+wallet/model/wta2_p_application_update_params.py
 wallet/model/wtqr_code_design.py
 wallet/model/wtqr_code_design_create_params.py
 wallet/model/wtqr_code_design_update_params.py
 wallet/model/wtsms_acquire_phone_number.py
-wallet/model/wtsms_create_agreement.py
 wallet/model/wtsms_import_opt_in_list_subscribers.py
 wallet/model/wtsms_imported_list_create.py
 wallet/model/wtsms_opt_in_list_source_create.py

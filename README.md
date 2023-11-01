@@ -50,10 +50,12 @@ import time
 import wallet
 from pprint import pprint
 from wallet.api import a2_p_api
+from wallet.model.a2_p_application_submission import A2PApplicationSubmission
 from wallet.model.auth_error import AuthError
 from wallet.model.falsum_error import FalsumError
 from wallet.model.internal_server_error import InternalServerError
-from wallet.model.wta2_p_application_create_params import WTA2PApplicationCreateParams
+from wallet.model.nano_id import NanoID
+from wallet.model.wta2_p_application_update_params import WTA2PApplicationUpdateParams
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -66,7 +68,19 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = a2_p_api.A2PApi(api_client)
-    wta2_p_application_create_params = WTA2PApplicationCreateParams(
+    a2_p_application_submission = A2PApplicationSubmission(
+        is_twilio_terms_read=True,
+        is_privacy_policy_on_website=True,
+        is_tos_on_website=True,
+        is_stop_understood=True,
+        is_manual_read=True,
+        is_ctia_short_code_read=True,
+        is_standards_understood=True,
+        is_short_code_understood=True,
+        is_opt_in_out_understood=True,
+        is_short_code_transfer_understood=True,
+        is_pricing_understood=True,
+        is_short_code_timeline_understood=True,
         business_name="Acme Corp",
         business_type=BusinessType("Partnership"),
         business_classification=BusinessClassification("public"),
@@ -78,27 +92,29 @@ with wallet.ApiClient(configuration) as api_client:
         regions_of_operation=[
             BusinessRegionsOfOperation("AFRICA"),
         ],
+        stock_exchange=BusinessStockExchanges("NONE"),
+        stock_ticker="stock_ticker_example",
         messaging_volume_high=True,
-        address1="address1_example",
-        address2="address2_example",
-        city="city_example",
-        state="state_example",
-        postal_code="postal_code_example",
-        country="country_example",
-        first_name="first_name_example",
-        last_name="last_name_example",
+        address1="21 Jump Street",
+        address2="https://google.com",
+        city="Los Angeles",
+        state="California",
+        postal_code="90210",
+        country="US",
+        first_name="John",
+        last_name="Doe",
         email="email_example",
-        job_title="job_title_example",
+        job_title="VP of Marketing",
         job_position=JobPosition("Director"),
-        phone_number="phone_number_example",
-    ) # WTA2PApplicationCreateParams | 
+        phone_number="+1 800 123 4567",
+    ) # A2PApplicationSubmission | 
 
     try:
         # Create A2P Application
-        api_response = api_instance.create_a2_p_application(wta2_p_application_create_params)
+        api_response = api_instance.begin_a2_p_application(a2_p_application_submission)
         pprint(api_response)
     except wallet.ApiException as e:
-        print("Exception when calling A2PApi->create_a2_p_application: %s\n" % e)
+        print("Exception when calling A2PApi->begin_a2_p_application: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -107,10 +123,10 @@ All URIs are relative to *https://api.wall.et*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*A2PApi* | [**create_a2_p_application**](docs/A2PApi.md#create_a2_p_application) | **POST** /v2/a2p/application | Create A2P Application
-*A2PApi* | [**create_a2_p_registration**](docs/A2PApi.md#create_a2_p_registration) | **POST** /v2/a2p/registration | Create A2P Registration
+*A2PApi* | [**begin_a2_p_application**](docs/A2PApi.md#begin_a2_p_application) | **POST** /v2/a2p/application | Create A2P Application
 *A2PApi* | [**fetch_a2_p_application**](docs/A2PApi.md#fetch_a2_p_application) | **GET** /v2/a2p/application | Fetch A2P Application
 *A2PApi* | [**fetch_a2_p_registration**](docs/A2PApi.md#fetch_a2_p_registration) | **GET** /v2/a2p/registration | Fetch A2P Registration
+*A2PApi* | [**update_a2_p_application**](docs/A2PApi.md#update_a2_p_application) | **PUT** /v2/a2p/application/{applicationID} | Update A2P Application
 *AdvertisementCreditsApi* | [**archive_advertisement_credit**](docs/AdvertisementCreditsApi.md#archive_advertisement_credit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive ad credit
 *AdvertisementCreditsApi* | [**create_advertisement_credit**](docs/AdvertisementCreditsApi.md#create_advertisement_credit) | **POST** /v2/payment/advertisementCredit | Create ad credit
 *AdvertisementCreditsApi* | [**fetch_advertisement_credit_by_id**](docs/AdvertisementCreditsApi.md#fetch_advertisement_credit_by_id) | **GET** /v2/payment/advertisementCredit/{id} | Fetch ad credit
@@ -474,6 +490,7 @@ Class | Method | HTTP request | Description
 *PerformancesApi* | [**count_claimed_comps**](docs/PerformancesApi.md#count_claimed_comps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed
 *PerformancesApi* | [**count_redeemed_comps**](docs/PerformancesApi.md#count_redeemed_comps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed
 *PerformancesApi* | [**create_performance**](docs/PerformancesApi.md#create_performance) | **POST** /v2/performances | Create performance
+*PerformancesApi* | [**export_tickets**](docs/PerformancesApi.md#export_tickets) | **POST** /v2/performances/{id}/tickets/export | Update performance
 *PerformancesApi* | [**fetch_all_performance_tickets**](docs/PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
 *PerformancesApi* | [**fetch_all_performances**](docs/PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
 *PerformancesApi* | [**fetch_performance**](docs/PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Fetch a single performance
@@ -525,7 +542,6 @@ Class | Method | HTTP request | Description
 *SMSApi* | [**create_opt_in_list**](docs/SMSApi.md#create_opt_in_list) | **POST** /v2/sms/optInList | Create opt in list
 *SMSApi* | [**create_opt_in_list_source**](docs/SMSApi.md#create_opt_in_list_source) | **POST** /v2/sms/optInListSource | Send SMS to opt in list
 *SMSApi* | [**create_recipient_in_imported_list**](docs/SMSApi.md#create_recipient_in_imported_list) | **POST** /v2/sms/importedList/recipients/create | Add new recipient in an imported list
-*SMSApi* | [**create_sms_agreement**](docs/SMSApi.md#create_sms_agreement) | **POST** /v2/sms/agreement/create | Accept SMS agreement
 *SMSApi* | [**export_imported_list_recipients**](docs/SMSApi.md#export_imported_list_recipients) | **POST** /v2/sms/importedList/recipients/export/{importedListID} | Export imported list recipients
 *SMSApi* | [**export_opt_in_list_subscribers**](docs/SMSApi.md#export_opt_in_list_subscribers) | **POST** /v2/sms/optInList/subscribers/export/{listID} | Export opt in list subscribers
 *SMSApi* | [**fetch_blocked_tcpa_entries**](docs/SMSApi.md#fetch_blocked_tcpa_entries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Fetch blocked TCPA entries
@@ -540,7 +556,7 @@ Class | Method | HTTP request | Description
 *SMSApi* | [**fetch_outbound_sms**](docs/SMSApi.md#fetch_outbound_sms) | **GET** /v2/sms/outbound/{phoneNumberID} | Fetch outbound SMS
 *SMSApi* | [**fetch_outbound_smsby_page**](docs/SMSApi.md#fetch_outbound_smsby_page) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Fetch outbound SMSes by page
 *SMSApi* | [**fetch_payment_object_broadcasts**](docs/SMSApi.md#fetch_payment_object_broadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Fetch payment object broadcasts
-*SMSApi* | [**fetch_sms_agreement**](docs/SMSApi.md#fetch_sms_agreement) | **GET** /v2/sms/agreement | Fetch SMS agreement
+*SMSApi* | [**fetch_sms_agreement**](docs/SMSApi.md#fetch_sms_agreement) | **GET** /v2/sms/agreement | Accept SMS agreement (DEPRECATED)
 *SMSApi* | [**import_imported_list_recipients**](docs/SMSApi.md#import_imported_list_recipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
 *SMSApi* | [**import_imported_list_recipients_from_membership_tier**](docs/SMSApi.md#import_imported_list_recipients_from_membership_tier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
 *SMSApi* | [**import_opt_in_list_subscribers**](docs/SMSApi.md#import_opt_in_list_subscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
@@ -629,10 +645,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [A2PApplicationSubmission](docs/A2PApplicationSubmission.md)
  - [AdvertisementCredit](docs/AdvertisementCredit.md)
  - [AdvertisementCreditBroadcast](docs/AdvertisementCreditBroadcast.md)
  - [AdvertisementCreditScan](docs/AdvertisementCreditScan.md)
- - [Agreement](docs/Agreement.md)
  - [Amenity](docs/Amenity.md)
  - [Announcement](docs/Announcement.md)
  - [ApplicableTerminals](docs/ApplicableTerminals.md)
@@ -650,6 +666,7 @@ Class | Method | HTTP request | Description
  - [BusinessIndustry](docs/BusinessIndustry.md)
  - [BusinessRegionsOfOperation](docs/BusinessRegionsOfOperation.md)
  - [BusinessRegistrationIdentifier](docs/BusinessRegistrationIdentifier.md)
+ - [BusinessStockExchanges](docs/BusinessStockExchanges.md)
  - [BusinessType](docs/BusinessType.md)
  - [ClickFunnelAmount](docs/ClickFunnelAmount.md)
  - [ClickFunnelContact](docs/ClickFunnelContact.md)
@@ -810,6 +827,7 @@ Class | Method | HTTP request | Description
  - [PresignedPost](docs/PresignedPost.md)
  - [PresignedPostFields](docs/PresignedPostFields.md)
  - [Product](docs/Product.md)
+ - [ProfileStatuses](docs/ProfileStatuses.md)
  - [PromoCode](docs/PromoCode.md)
  - [QRCodeDesign](docs/QRCodeDesign.md)
  - [ReachPerformanceStats](docs/ReachPerformanceStats.md)
@@ -846,13 +864,14 @@ Class | Method | HTTP request | Description
  - [SubscriptionProduct](docs/SubscriptionProduct.md)
  - [Tcpa](docs/Tcpa.md)
  - [Ticket](docs/Ticket.md)
+ - [TrustBundleStatuses](docs/TrustBundleStatuses.md)
  - [UpdateStaticVoucherCampaignWithVoucher](docs/UpdateStaticVoucherCampaignWithVoucher.md)
  - [VSCampaignGeneratedMessage](docs/VSCampaignGeneratedMessage.md)
  - [VSCampaignGeneratedMessagePagination](docs/VSCampaignGeneratedMessagePagination.md)
  - [VSDynamicVoucherStatus](docs/VSDynamicVoucherStatus.md)
  - [Video](docs/Video.md)
  - [VirtualBusinessCard](docs/VirtualBusinessCard.md)
- - [WTA2PApplicationCreateParams](docs/WTA2PApplicationCreateParams.md)
+ - [WTA2PApplicationUpdateParams](docs/WTA2PApplicationUpdateParams.md)
  - [WTAdvertisementCredit](docs/WTAdvertisementCredit.md)
  - [WTAdvertisementCreditCreateParams](docs/WTAdvertisementCreditCreateParams.md)
  - [WTAdvertisementCreditScan](docs/WTAdvertisementCreditScan.md)
@@ -959,7 +978,6 @@ Class | Method | HTTP request | Description
  - [WTRoomRateCreateParams](docs/WTRoomRateCreateParams.md)
  - [WTRoomRateUpdateParams](docs/WTRoomRateUpdateParams.md)
  - [WTSMSAcquirePhoneNumber](docs/WTSMSAcquirePhoneNumber.md)
- - [WTSMSCreateAgreement](docs/WTSMSCreateAgreement.md)
  - [WTSMSImportOptInListSubscribers](docs/WTSMSImportOptInListSubscribers.md)
  - [WTSMSImportedListCreate](docs/WTSMSImportedListCreate.md)
  - [WTSMSOptInListSourceCreate](docs/WTSMSOptInListSourceCreate.md)
