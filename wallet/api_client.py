@@ -775,10 +775,10 @@ class Endpoint(object):
         Example:
 
         api_instance = A2PApi()
-        api_instance.create_a2_p_application  # this is an instance of the class Endpoint
-        api_instance.create_a2_p_application()  # this invokes api_instance.create_a2_p_application.__call__()
+        api_instance.begin_a2_p_application  # this is an instance of the class Endpoint
+        api_instance.begin_a2_p_application()  # this invokes api_instance.begin_a2_p_application.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.create_a2_p_application.callable or self.callable in this class
+        api_instance.begin_a2_p_application.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

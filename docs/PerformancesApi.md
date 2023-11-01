@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**count_claimed_comps**](PerformancesApi.md#count_claimed_comps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed
 [**count_redeemed_comps**](PerformancesApi.md#count_redeemed_comps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed
 [**create_performance**](PerformancesApi.md#create_performance) | **POST** /v2/performances | Create performance
+[**export_tickets**](PerformancesApi.md#export_tickets) | **POST** /v2/performances/{id}/tickets/export | Update performance
 [**fetch_all_performance_tickets**](PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
 [**fetch_all_performances**](PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
 [**fetch_performance**](PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Fetch a single performance
@@ -302,6 +303,77 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_tickets**
+> [Ticket] export_tickets(id)
+
+Update performance
+
+### Example
+
+
+```python
+import time
+import wallet
+from wallet.api import performances_api
+from wallet.model.internal_server_error import InternalServerError
+from wallet.model.falsum_error import FalsumError
+from wallet.model.ticket import Ticket
+from wallet.model.auth_error import AuthError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = performances_api.PerformancesApi(api_client)
+    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update performance
+        api_response = api_instance.export_tickets(id)
+        pprint(api_response)
+    except wallet.ApiException as e:
+        print("Exception when calling PerformancesApi->export_tickets: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+
+### Return type
+
+[**[Ticket]**](Ticket.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
