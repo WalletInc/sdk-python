@@ -136,6 +136,8 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             'merchant_credit_payment_design_id': (str,),  # noqa: E501
             'custom_domain': (str,),  # noqa: E501
             'mobile_app_icon_url': (str,),  # noqa: E501
+            'is_age_gate': (bool,),  # noqa: E501
+            'age_gate_minimum': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -199,6 +201,8 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
         'merchant_credit_payment_design_id': 'merchantCreditPaymentDesignID',  # noqa: E501
         'custom_domain': 'customDomain',  # noqa: E501
         'mobile_app_icon_url': 'mobileAppIconURL',  # noqa: E501
+        'is_age_gate': 'isAgeGate',  # noqa: E501
+        'age_gate_minimum': 'ageGateMinimum',  # noqa: E501
     }
 
     read_only_vars = {
@@ -299,6 +303,8 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             merchant_credit_payment_design_id (str): [optional]  # noqa: E501
             custom_domain (str): [optional]  # noqa: E501
             mobile_app_icon_url (str): [optional]  # noqa: E501
+            is_age_gate (bool): [optional]  # noqa: E501
+            age_gate_minimum (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -480,6 +486,8 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             merchant_credit_payment_design_id (str): [optional]  # noqa: E501
             custom_domain (str): [optional]  # noqa: E501
             mobile_app_icon_url (str): [optional]  # noqa: E501
+            is_age_gate (bool): [optional]  # noqa: E501
+            age_gate_minimum (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

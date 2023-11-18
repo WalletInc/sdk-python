@@ -63,6 +63,8 @@ Name | Type | Description | Notes
 **merchant_credit_payment_design_id** | **str** |  | [optional] 
 **custom_domain** | **str** |  | [optional] 
 **mobile_app_icon_url** | **str** |  | [optional] 
+**is_age_gate** | **bool** |  | [optional] 
+**age_gate_minimum** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
