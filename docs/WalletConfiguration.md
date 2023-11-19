@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **vanity_page_wallet_prefix** | **str** |  | [optional] 
 **merchant_credit_payment_design_id** | **str** |  | [optional] 
 **custom_domain** | **str** |  | [optional] 
+**is_claimed** | **bool** |  | [optional] 
 **mobile_app_icon_url** | **str** |  | [optional] 
 **is_age_gate** | **bool** |  | [optional] 
 **age_gate_minimum** | **float** |  | [optional] 

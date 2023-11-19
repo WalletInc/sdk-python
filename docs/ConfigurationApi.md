@@ -233,6 +233,7 @@ with wallet.ApiClient() as api_client:
         vanity_page_wallet_prefix="vanity_page_wallet_prefix_example",
         merchant_credit_payment_design_id="merchant_credit_payment_design_id_example",
         custom_domain="custom_domain_example",
+        is_claimed=True,
         mobile_app_icon_url="mobile_app_icon_url_example",
         is_age_gate=True,
         age_gate_minimum=3.14,

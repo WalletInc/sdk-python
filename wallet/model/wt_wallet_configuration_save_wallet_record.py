@@ -135,6 +135,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             'vanity_page_wallet_prefix': (str,),  # noqa: E501
             'merchant_credit_payment_design_id': (str,),  # noqa: E501
             'custom_domain': (str,),  # noqa: E501
+            'is_claimed': (bool,),  # noqa: E501
             'mobile_app_icon_url': (str,),  # noqa: E501
             'is_age_gate': (bool,),  # noqa: E501
             'age_gate_minimum': (float,),  # noqa: E501
@@ -200,6 +201,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
         'vanity_page_wallet_prefix': 'vanityPageWalletPrefix',  # noqa: E501
         'merchant_credit_payment_design_id': 'merchantCreditPaymentDesignID',  # noqa: E501
         'custom_domain': 'customDomain',  # noqa: E501
+        'is_claimed': 'isClaimed',  # noqa: E501
         'mobile_app_icon_url': 'mobileAppIconURL',  # noqa: E501
         'is_age_gate': 'isAgeGate',  # noqa: E501
         'age_gate_minimum': 'ageGateMinimum',  # noqa: E501
@@ -302,6 +304,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             vanity_page_wallet_prefix (str): [optional]  # noqa: E501
             merchant_credit_payment_design_id (str): [optional]  # noqa: E501
             custom_domain (str): [optional]  # noqa: E501
+            is_claimed (bool): [optional]  # noqa: E501
             mobile_app_icon_url (str): [optional]  # noqa: E501
             is_age_gate (bool): [optional]  # noqa: E501
             age_gate_minimum (float): [optional]  # noqa: E501
@@ -485,6 +488,7 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             vanity_page_wallet_prefix (str): [optional]  # noqa: E501
             merchant_credit_payment_design_id (str): [optional]  # noqa: E501
             custom_domain (str): [optional]  # noqa: E501
+            is_claimed (bool): [optional]  # noqa: E501
             mobile_app_icon_url (str): [optional]  # noqa: E501
             is_age_gate (bool): [optional]  # noqa: E501
             age_gate_minimum (float): [optional]  # noqa: E501
