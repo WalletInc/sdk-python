@@ -5993,7 +5993,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """Count new sessions  # noqa: E501
+        """Count exit clicks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -11788,7 +11788,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """Count new sessions  # noqa: E501
+        """Count referring sites  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
