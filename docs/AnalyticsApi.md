@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**count_transactions**](AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
 [**count_verified_wallet_page_views**](AnalyticsApi.md#count_verified_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
 [**count_wallet_page_views**](AnalyticsApi.md#count_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
-[**exit_link_summary**](AnalyticsApi.md#exit_link_summary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count new sessions
+[**exit_link_summary**](AnalyticsApi.md#exit_link_summary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks
 [**fetch_analytics_ad_credits_count_partitioned_by_employee**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_employee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
 [**fetch_analytics_ad_credits_count_partitioned_by_payment_design**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_payment_design) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design
 [**fetch_analytics_ad_credits_count_partitioned_by_value_type**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_value_type) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type
@@ -85,7 +85,7 @@ Method | HTTP request | Description
 [**fetch_analytics_total_points_refunded**](AnalyticsApi.md#fetch_analytics_total_points_refunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
 [**fetch_analytics_wallet_session_activity**](AnalyticsApi.md#fetch_analytics_wallet_session_activity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
 [**fetch_wallet_page_view_by_id**](AnalyticsApi.md#fetch_wallet_page_view_by_id) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
-[**referring_sites_summary**](AnalyticsApi.md#referring_sites_summary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count new sessions
+[**referring_sites_summary**](AnalyticsApi.md#referring_sites_summary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites
 [**sum_revenue**](AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
 [**sum_transactions**](AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
 
@@ -1015,7 +1015,7 @@ No authorization required
 # **exit_link_summary**
 > bool, date, datetime, dict, float, int, list, str, none_type exit_link_summary()
 
-Count new sessions
+Count exit clicks
 
 ### Example
 
@@ -1045,7 +1045,7 @@ with wallet.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Count new sessions
+        # Count exit clicks
         api_response = api_instance.exit_link_summary(start_date=start_date, end_date=end_date)
         pprint(api_response)
     except wallet.ApiException as e:
@@ -6104,7 +6104,7 @@ No authorization required
 # **referring_sites_summary**
 > bool, date, datetime, dict, float, int, list, str, none_type referring_sites_summary()
 
-Count new sessions
+Count referring sites
 
 ### Example
 
@@ -6134,7 +6134,7 @@ with wallet.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Count new sessions
+        # Count referring sites
         api_response = api_instance.referring_sites_summary(start_date=start_date, end_date=end_date)
         pprint(api_response)
     except wallet.ApiException as e:

@@ -151,7 +151,7 @@ Class | Method | HTTP request | Description
 *AnalyticsApi* | [**count_transactions**](docs/AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
 *AnalyticsApi* | [**count_verified_wallet_page_views**](docs/AnalyticsApi.md#count_verified_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
 *AnalyticsApi* | [**count_wallet_page_views**](docs/AnalyticsApi.md#count_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
-*AnalyticsApi* | [**exit_link_summary**](docs/AnalyticsApi.md#exit_link_summary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count new sessions
+*AnalyticsApi* | [**exit_link_summary**](docs/AnalyticsApi.md#exit_link_summary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks
 *AnalyticsApi* | [**fetch_analytics_ad_credits_count_partitioned_by_employee**](docs/AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_employee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
 *AnalyticsApi* | [**fetch_analytics_ad_credits_count_partitioned_by_payment_design**](docs/AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_payment_design) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design
 *AnalyticsApi* | [**fetch_analytics_ad_credits_count_partitioned_by_value_type**](docs/AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_value_type) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type
@@ -220,7 +220,7 @@ Class | Method | HTTP request | Description
 *AnalyticsApi* | [**fetch_analytics_total_points_refunded**](docs/AnalyticsApi.md#fetch_analytics_total_points_refunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
 *AnalyticsApi* | [**fetch_analytics_wallet_session_activity**](docs/AnalyticsApi.md#fetch_analytics_wallet_session_activity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
 *AnalyticsApi* | [**fetch_wallet_page_view_by_id**](docs/AnalyticsApi.md#fetch_wallet_page_view_by_id) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
-*AnalyticsApi* | [**referring_sites_summary**](docs/AnalyticsApi.md#referring_sites_summary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count new sessions
+*AnalyticsApi* | [**referring_sites_summary**](docs/AnalyticsApi.md#referring_sites_summary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites
 *AnalyticsApi* | [**sum_revenue**](docs/AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
 *AnalyticsApi* | [**sum_transactions**](docs/AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
 *AppleWalletSubscribersApi* | [**fetch_apple_wallet_subscriber_activity**](docs/AppleWalletSubscribersApi.md#fetch_apple_wallet_subscriber_activity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Fetch subscriber activity
