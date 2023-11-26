@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **str** |  |  must be one of ["Partnership", "Limited Liability Corporation", "Co-operative", "Non-profit Corporation", "Corporation", ]
+**value** | **str** |  |  must be one of ["Partnership", "Limited Liability Corporation", "Co-operative", "Non-profit Corporation", "Corporation", "Sole Proprietorship", ]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
