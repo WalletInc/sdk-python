@@ -237,6 +237,13 @@ with wallet.ApiClient() as api_client:
         mobile_app_icon_url="mobile_app_icon_url_example",
         is_age_gate=True,
         age_gate_minimum=3.14,
+        social_instagram_url="social_instagram_url_example",
+        social_facebook_url="social_facebook_url_example",
+        social_you_tube_url="social_you_tube_url_example",
+        social_twitter_url="social_twitter_url_example",
+        social_linked_in_url="social_linked_in_url_example",
+        primary_phone_number="primary_phone_number_example",
+        primary_email_address="primary_email_address_example",
     ) # WTWalletConfigurationSaveWalletRecord | 
 
     # example passing only required values which don't have defaults set
