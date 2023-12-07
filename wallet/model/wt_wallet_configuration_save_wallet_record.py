@@ -139,6 +139,13 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             'mobile_app_icon_url': (str,),  # noqa: E501
             'is_age_gate': (bool,),  # noqa: E501
             'age_gate_minimum': (float,),  # noqa: E501
+            'social_instagram_url': (str,),  # noqa: E501
+            'social_facebook_url': (str,),  # noqa: E501
+            'social_you_tube_url': (str,),  # noqa: E501
+            'social_twitter_url': (str,),  # noqa: E501
+            'social_linked_in_url': (str,),  # noqa: E501
+            'primary_phone_number': (str,),  # noqa: E501
+            'primary_email_address': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -205,6 +212,13 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
         'mobile_app_icon_url': 'mobileAppIconURL',  # noqa: E501
         'is_age_gate': 'isAgeGate',  # noqa: E501
         'age_gate_minimum': 'ageGateMinimum',  # noqa: E501
+        'social_instagram_url': 'socialInstagramURL',  # noqa: E501
+        'social_facebook_url': 'socialFacebookURL',  # noqa: E501
+        'social_you_tube_url': 'socialYouTubeURL',  # noqa: E501
+        'social_twitter_url': 'socialTwitterURL',  # noqa: E501
+        'social_linked_in_url': 'socialLinkedInURL',  # noqa: E501
+        'primary_phone_number': 'primaryPhoneNumber',  # noqa: E501
+        'primary_email_address': 'primaryEmailAddress',  # noqa: E501
     }
 
     read_only_vars = {
@@ -308,6 +322,13 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             mobile_app_icon_url (str): [optional]  # noqa: E501
             is_age_gate (bool): [optional]  # noqa: E501
             age_gate_minimum (float): [optional]  # noqa: E501
+            social_instagram_url (str): [optional]  # noqa: E501
+            social_facebook_url (str): [optional]  # noqa: E501
+            social_you_tube_url (str): [optional]  # noqa: E501
+            social_twitter_url (str): [optional]  # noqa: E501
+            social_linked_in_url (str): [optional]  # noqa: E501
+            primary_phone_number (str): [optional]  # noqa: E501
+            primary_email_address (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -492,6 +513,13 @@ class WTWalletConfigurationSaveWalletRecord(ModelNormal):
             mobile_app_icon_url (str): [optional]  # noqa: E501
             is_age_gate (bool): [optional]  # noqa: E501
             age_gate_minimum (float): [optional]  # noqa: E501
+            social_instagram_url (str): [optional]  # noqa: E501
+            social_facebook_url (str): [optional]  # noqa: E501
+            social_you_tube_url (str): [optional]  # noqa: E501
+            social_twitter_url (str): [optional]  # noqa: E501
+            social_linked_in_url (str): [optional]  # noqa: E501
+            primary_phone_number (str): [optional]  # noqa: E501
+            primary_email_address (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
