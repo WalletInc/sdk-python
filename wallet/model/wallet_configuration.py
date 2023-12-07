@@ -151,6 +151,7 @@ class WalletConfiguration(ModelNormal):
             'social_twitter_url': (str,),  # noqa: E501
             'social_linked_in_url': (str,),  # noqa: E501
             'primary_phone_number': (str,),  # noqa: E501
+            'primary_whats_app': (str,),  # noqa: E501
             'primary_email_address': (str,),  # noqa: E501
         }
 
@@ -228,6 +229,7 @@ class WalletConfiguration(ModelNormal):
         'social_twitter_url': 'socialTwitterURL',  # noqa: E501
         'social_linked_in_url': 'socialLinkedInURL',  # noqa: E501
         'primary_phone_number': 'primaryPhoneNumber',  # noqa: E501
+        'primary_whats_app': 'primaryWhatsApp',  # noqa: E501
         'primary_email_address': 'primaryEmailAddress',  # noqa: E501
     }
 
@@ -342,6 +344,7 @@ class WalletConfiguration(ModelNormal):
             social_twitter_url (str): [optional]  # noqa: E501
             social_linked_in_url (str): [optional]  # noqa: E501
             primary_phone_number (str): [optional]  # noqa: E501
+            primary_whats_app (str): [optional]  # noqa: E501
             primary_email_address (str): [optional]  # noqa: E501
         """
 
@@ -541,6 +544,7 @@ class WalletConfiguration(ModelNormal):
             social_twitter_url (str): [optional]  # noqa: E501
             social_linked_in_url (str): [optional]  # noqa: E501
             primary_phone_number (str): [optional]  # noqa: E501
+            primary_whats_app (str): [optional]  # noqa: E501
             primary_email_address (str): [optional]  # noqa: E501
         """
 
