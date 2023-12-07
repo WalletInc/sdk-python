@@ -72,6 +72,7 @@ Name | Type | Description | Notes
 **social_twitter_url** | **str** |  | [optional] 
 **social_linked_in_url** | **str** |  | [optional] 
 **primary_phone_number** | **str** |  | [optional] 
+**primary_whats_app** | **str** |  | [optional] 
 **primary_email_address** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
