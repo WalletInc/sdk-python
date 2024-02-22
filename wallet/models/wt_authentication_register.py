@@ -43,7 +43,9 @@ class WTAuthenticationRegister(BaseModel):
     country: StrictStr
     phone_number: StrictStr = Field(alias="phoneNumber")
     ein: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "password", "hearAboutUs", "hearAboutUsDetails", "companyName", "merchantType", "streetAddress1", "streetAddress2", "city", "state", "zip", "country", "phoneNumber", "ein"]
+    ga_client_id: Optional[StrictStr] = None
+    ga_measurement_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "password", "hearAboutUs", "hearAboutUsDetails", "companyName", "merchantType", "streetAddress1", "streetAddress2", "city", "state", "zip", "country", "phoneNumber", "ein", "ga_client_id", "ga_measurement_id"]
 
     model_config = {
         "populate_by_name": True,
@@ -111,7 +113,9 @@ class WTAuthenticationRegister(BaseModel):
             "zip": obj.get("zip"),
             "country": obj.get("country"),
             "phoneNumber": obj.get("phoneNumber"),
-            "ein": obj.get("ein")
+            "ein": obj.get("ein"),
+            "ga_client_id": obj.get("ga_client_id"),
+            "ga_measurement_id": obj.get("ga_measurement_id")
         })
         return _obj
 

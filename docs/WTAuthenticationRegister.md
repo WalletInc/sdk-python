@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **country** | **str** |  | 
 **phone_number** | **str** |  | 
 **ein** | **str** |  | [optional] 
+**ga_client_id** | **str** |  | [optional] 
+**ga_measurement_id** | **str** |  | [optional] 
 
 ## Example
 
