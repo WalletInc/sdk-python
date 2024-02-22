@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_twilio_terms_read** | **bool** |  | 
@@ -24,9 +25,12 @@ Name | Type | Description | Notes
 **tax_id** | **str** |  | 
 **website_url** | **str** |  | 
 **social_media_url** | **str** |  | 
-**regions_of_operation** | [**[BusinessRegionsOfOperation]**](BusinessRegionsOfOperation.md) |  | 
+**regions_of_operation** | [**List[BusinessRegionsOfOperation]**](BusinessRegionsOfOperation.md) |  | 
+**stock_exchange** | [**BusinessStockExchanges**](BusinessStockExchanges.md) |  | [optional] 
+**stock_ticker** | **str** |  | [optional] 
 **messaging_volume_high** | **bool** |  | 
 **address1** | **str** |  | 
+**address2** | **str** |  | [optional] 
 **city** | **str** |  | 
 **state** | **str** |  | 
 **postal_code** | **str** |  | 
@@ -37,10 +41,24 @@ Name | Type | Description | Notes
 **job_title** | **str** |  | 
 **job_position** | [**JobPosition**](JobPosition.md) |  | 
 **phone_number** | **str** |  | 
-**stock_exchange** | [**BusinessStockExchanges**](BusinessStockExchanges.md) |  | [optional] 
-**stock_ticker** | **str** |  | [optional] 
-**address2** | **str** |  | [optional] 
 
+## Example
+
+```python
+from wallet.models.a2_p_application_submission import A2PApplicationSubmission
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of A2PApplicationSubmission from a JSON string
+a2_p_application_submission_instance = A2PApplicationSubmission.from_json(json)
+# print the JSON string representation of the object
+print A2PApplicationSubmission.to_json()
+
+# convert the object into a dict
+a2_p_application_submission_dict = a2_p_application_submission_instance.to_dict()
+# create an instance of A2PApplicationSubmission from a dict
+a2_p_application_submission_form_dict = a2_p_application_submission.from_dict(a2_p_application_submission_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

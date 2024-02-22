@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sent_count** | **int** | Denotes the number of SMSes sent | 
@@ -16,6 +17,23 @@ Name | Type | Description | Notes
 **value_refunded** | **int** | Denotes the total value refunded (in the form of discounts, in cents) | 
 **revenue_lost** | **int** | Denotes the total revenue lost for the business on account of refunds (in cents) | 
 
+## Example
+
+```python
+from wallet.models.reach_performance_stats import ReachPerformanceStats
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ReachPerformanceStats from a JSON string
+reach_performance_stats_instance = ReachPerformanceStats.from_json(json)
+# print the JSON string representation of the object
+print ReachPerformanceStats.to_json()
+
+# convert the object into a dict
+reach_performance_stats_dict = reach_performance_stats_instance.to_dict()
+# create an instance of ReachPerformanceStats from a dict
+reach_performance_stats_form_dict = reach_performance_stats.from_dict(reach_performance_stats_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

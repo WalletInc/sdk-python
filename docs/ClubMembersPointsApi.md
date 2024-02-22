@@ -25,14 +25,11 @@ Archive member
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_member import WTMember
+from wallet.models.wt_member import WTMember
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -41,26 +38,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive member
         api_response = api_instance.archive_member(id)
+        print("The response of ClubMembersPointsApi->archive_member:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->archive_member: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -74,7 +73,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -96,17 +94,12 @@ Create member
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.merchant_not_initialized import MerchantNotInitialized
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.duplicate_row_found import DuplicateRowFound
-from wallet.model.wt_member import WTMember
-from wallet.model.wt_member_creation_params import WTMemberCreationParams
+from wallet.models.wt_member import WTMember
+from wallet.models.wt_member_creation_params import WTMemberCreationParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -115,33 +108,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    wt_member_creation_params = WTMemberCreationParams(
-        first_name="John",
-        last_name="Doe",
-        membership_tier_id=PrefixedNanoID("CMueJDL982Hs"),
-        mobile_number="+18047552674",
-        points_accrued=125,
-        member_id="1hdue82",
-    ) # WTMemberCreationParams | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    wt_member_creation_params = wallet.WTMemberCreationParams() # WTMemberCreationParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create member
         api_response = api_instance.create_member(wt_member_creation_params)
+        print("The response of ClubMembersPointsApi->create_member:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->create_member: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_member_creation_params** | [**WTMemberCreationParams**](WTMemberCreationParams.md)|  |
+ **wt_member_creation_params** | [**WTMemberCreationParams**](WTMemberCreationParams.md)|  | 
 
 ### Return type
 
@@ -155,7 +143,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -179,14 +166,11 @@ Fetch member
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_member import WTMember
+from wallet.models.wt_member import WTMember
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -195,26 +179,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch member
         api_response = api_instance.fetch_member_by_id(id)
+        print("The response of ClubMembersPointsApi->fetch_member_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->fetch_member_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -228,7 +214,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -250,15 +235,12 @@ Fetch history
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.ms_member_history_pagination import MSMemberHistoryPagination
+from wallet.models.ms_member_history_pagination import MSMemberHistoryPagination
+from wallet.models.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -267,30 +249,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    pagination_request_with_id_and_without_sort_options = PaginationRequestWithIDAndWithoutSortOptions(
-        page_size=20,
-        page_num=1,
-        id=PrefixedNanoID("CMueJDL982Hs"),
-    ) # PaginationRequestWithIDAndWithoutSortOptions | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch history
         api_response = api_instance.fetch_member_history_log(pagination_request_with_id_and_without_sort_options)
+        print("The response of ClubMembersPointsApi->fetch_member_history_log:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->fetch_member_history_log: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+ **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  | 
 
 ### Return type
 
@@ -304,7 +284,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -326,15 +305,12 @@ Fetch redemption log
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ms_member_redemption_pagination import MSMemberRedemptionPagination
-from wallet.model.auth_error import AuthError
+from wallet.models.ms_member_redemption_pagination import MSMemberRedemptionPagination
+from wallet.models.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -343,30 +319,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    pagination_request_with_id_and_without_sort_options = PaginationRequestWithIDAndWithoutSortOptions(
-        page_size=20,
-        page_num=1,
-        id=PrefixedNanoID("CMueJDL982Hs"),
-    ) # PaginationRequestWithIDAndWithoutSortOptions | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch redemption log
         api_response = api_instance.fetch_member_redemption_log(pagination_request_with_id_and_without_sort_options)
+        print("The response of ClubMembersPointsApi->fetch_member_redemption_log:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->fetch_member_redemption_log: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+ **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  | 
 
 ### Return type
 
@@ -381,7 +355,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -394,7 +367,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_members_by_page**
-> [WTMember] fetch_members_by_page(pagination_request_with_sort_options)
+> List[WTMember] fetch_members_by_page(pagination_request_with_sort_options)
 
 Fetch members by page
 
@@ -402,15 +375,12 @@ Fetch members by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.pagination_request_with_sort_options import PaginationRequestWithSortOptions
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_member import WTMember
+from wallet.models.pagination_request_with_sort_options import PaginationRequestWithSortOptions
+from wallet.models.wt_member import WTMember
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -419,36 +389,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    pagination_request_with_sort_options = PaginationRequestWithSortOptions(
-        is_archive_included=True,
-        page_size=20,
-        page_num=1,
-        sort_key="createdAt",
-        sort_order=None,
-    ) # PaginationRequestWithSortOptions | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    pagination_request_with_sort_options = wallet.PaginationRequestWithSortOptions() # PaginationRequestWithSortOptions | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch members by page
         api_response = api_instance.fetch_members_by_page(pagination_request_with_sort_options)
+        print("The response of ClubMembersPointsApi->fetch_members_by_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->fetch_members_by_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination_request_with_sort_options** | [**PaginationRequestWithSortOptions**](PaginationRequestWithSortOptions.md)|  |
+ **pagination_request_with_sort_options** | [**PaginationRequestWithSortOptions**](PaginationRequestWithSortOptions.md)|  | 
 
 ### Return type
 
-[**[WTMember]**](WTMember.md)
+[**List[WTMember]**](WTMember.md)
 
 ### Authorization
 
@@ -458,7 +424,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -472,7 +437,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_members_count**
-> InlineResponse2003 fetch_members_count()
+> FetchMembersCount200Response fetch_members_count()
 
 Count active members
 
@@ -480,14 +445,11 @@ Count active members
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.models.fetch_members_count200_response import FetchMembersCount200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -496,26 +458,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
+    api_instance = wallet.ClubMembersPointsApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Count active members
         api_response = api_instance.fetch_members_count()
+        print("The response of ClubMembersPointsApi->fetch_members_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->fetch_members_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**FetchMembersCount200Response**](FetchMembersCount200Response.md)
 
 ### Authorization
 
@@ -525,7 +489,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -547,14 +510,11 @@ Restore member
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_member import WTMember
+from wallet.models.wt_member import WTMember
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -563,26 +523,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore member
         api_response = api_instance.restore_member(id)
+        print("The response of ClubMembersPointsApi->restore_member:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->restore_member: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -596,7 +558,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -618,15 +579,12 @@ Search for members
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.member_search import MemberSearch
-from wallet.model.falsum_error import FalsumError
-from wallet.model.paginated_wt_members import PaginatedWTMembers
-from wallet.model.auth_error import AuthError
+from wallet.models.member_search import MemberSearch
+from wallet.models.paginated_wt_members import PaginatedWTMembers
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -635,34 +593,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    member_search = MemberSearch(
-        is_archive_included=True,
-        page_size=20,
-        page_num=1,
-        sort_order=None,
-        sort_key=None,
-        search_key=None,
-        search_value="MEM001",
-    ) # MemberSearch | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    member_search = wallet.MemberSearch() # MemberSearch | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Search for members
         api_response = api_instance.search_members(member_search)
+        print("The response of ClubMembersPointsApi->search_members:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->search_members: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **member_search** | [**MemberSearch**](MemberSearch.md)|  |
+ **member_search** | [**MemberSearch**](MemberSearch.md)|  | 
 
 ### Return type
 
@@ -677,7 +629,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -690,7 +641,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_member**
-> WTMember update_member(id, pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number)
+> WTMember update_member(id, pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday)
 
 Update member
 
@@ -698,17 +649,12 @@ Update member
 
 
 ```python
-import time
 import wallet
-from wallet.api import club_members__points_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
-from wallet.model.auth_error import AuthError
-from wallet.model.pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number import PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber
-from wallet.model.duplicate_row_found import DuplicateRowFound
-from wallet.model.wt_member import WTMember
+from wallet.models.pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday import PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday
+from wallet.models.wt_member import WTMember
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -717,35 +663,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = club_members__points_api.ClubMembersPointsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number = PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber(
-        member_id="1hdue82",
-        first_name="John",
-        last_name="Doe",
-        membership_tier_id=PrefixedNanoID("CMueJDL982Hs"),
-        mobile_number="+18047552674",
-        points_accrued=125,
-    ) # PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber | 
+    api_instance = wallet.ClubMembersPointsApi(api_client)
+    id = None # object | 
+    pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday = wallet.PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday() # PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update member
-        api_response = api_instance.update_member(id, pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number)
+        api_response = api_instance.update_member(id, pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday)
+        print("The response of ClubMembersPointsApi->update_member:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ClubMembersPointsApi->update_member: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number** | [**PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber**](PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber.md)|  |
+ **id** | [**object**](.md)|  | 
+ **pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday** | [**PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday**](PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday.md)|  | 
 
 ### Return type
 
@@ -759,7 +700,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

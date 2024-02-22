@@ -2,11 +2,12 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
-**transaction_type** | **bool, date, datetime, dict, float, int, list, str, none_type** | The type of the transaction - only redemption at the moment | 
-**register_id** | **bool, date, datetime, dict, float, int, list, str, none_type** | The ID of the register where the transaction occurred | 
+**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**transaction_type** | [**PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtTransactionType**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtTransactionType.md) |  | 
+**register_id** | [**PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md) |  | 
 **redeemed_source** | **str** |  | 
 **redeemed_transaction_id** | **str** |  | 
 **redeemed_amount** | **int** |  | 
@@ -16,18 +17,35 @@ Name | Type | Description | Notes
 **status** | [**Status**](Status.md) |  | 
 **authorized_against_check_number** | **str** |  | 
 **authorized_amount** | **int** |  | 
-**merchant_id** | [**MerchantID**](MerchantID.md) |  | 
+**merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
-**advertisement_credit_id** | [**NanoID**](NanoID.md) |  | 
+**advertisement_credit_id** | **str** |  | 
 **redeemed_amount_decimal** | **str** |  | 
 **redeemed_amount_string** | **str** |  | 
 **authorized_amount_decimal** | **str** |  | 
 **authorized_amount_string** | **str** |  | 
-**date_time_redeemed** | **datetime, none_type** |  | 
-**date_time_refunded** | **datetime, none_type** |  | 
+**date_time_redeemed** | **datetime** |  | 
+**date_time_refunded** | **datetime** |  | 
 
+## Example
+
+```python
+from wallet.models.advertisement_credit_scan import AdvertisementCreditScan
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AdvertisementCreditScan from a JSON string
+advertisement_credit_scan_instance = AdvertisementCreditScan.from_json(json)
+# print the JSON string representation of the object
+print AdvertisementCreditScan.to_json()
+
+# convert the object into a dict
+advertisement_credit_scan_dict = advertisement_credit_scan_instance.to_dict()
+# create an instance of AdvertisementCreditScan from a dict
+advertisement_credit_scan_form_dict = advertisement_credit_scan.from_dict(advertisement_credit_scan_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

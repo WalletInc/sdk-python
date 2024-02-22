@@ -1,3 +1,59 @@
-# do not import all apis into this module because that uses a lot of memory and stack frames
-# if you need the ability to import all apis from one package, import them with
-# from wallet.apis import A2PApi
+# flake8: noqa
+
+# import apis into api package
+from wallet.api.a2_p_api import A2PApi
+from wallet.api.advertisement_credits_api import AdvertisementCreditsApi
+from wallet.api.amenities_api import AmenitiesApi
+from wallet.api.analytics_api import AnalyticsApi
+from wallet.api.apple_wallet_subscribers_api import AppleWalletSubscribersApi
+from wallet.api.billing_api import BillingApi
+from wallet.api.club_members_points_api import ClubMembersPointsApi
+from wallet.api.configuration_api import ConfigurationApi
+from wallet.api.countries_api import CountriesApi
+from wallet.api.customer_api import CustomerApi
+from wallet.api.dashboard_api import DashboardApi
+from wallet.api.dining_api import DiningApi
+from wallet.api.dynamic_vouchers_api import DynamicVouchersApi
+from wallet.api.email_subscriber_api import EmailSubscriberApi
+from wallet.api.employee_api_keys_api import EmployeeAPIKeysApi
+from wallet.api.employee_access_api import EmployeeAccessApi
+from wallet.api.employees_api import EmployeesApi
+from wallet.api.gaming_api import GamingApi
+from wallet.api.image_grid_api import ImageGridApi
+from wallet.api.industries_api import IndustriesApi
+from wallet.api.info_genesis_reports_api import InfoGenesisReportsApi
+from wallet.api.integrated_terminals_api import IntegratedTerminalsApi
+from wallet.api.interactions_api import InteractionsApi
+from wallet.api.login_and_logout_api import LoginAndLogoutApi
+from wallet.api.lounge_api import LoungeApi
+from wallet.api.membership_tiers_api import MembershipTiersApi
+from wallet.api.merchant_api import MerchantApi
+from wallet.api.merchant_credits_api import MerchantCreditsApi
+from wallet.api.merchant_urls_api import MerchantURLsApi
+from wallet.api.mobile_terminal_api import MobileTerminalApi
+from wallet.api.news_api import NewsApi
+from wallet.api.payment_designs_api import PaymentDesignsApi
+from wallet.api.performances_api import PerformancesApi
+from wallet.api.products_api import ProductsApi
+from wallet.api.promotion_codes_api import PromotionCodesApi
+from wallet.api.qr_code_designs_api import QRCodeDesignsApi
+from wallet.api.quick_links_api import QuickLinksApi
+from wallet.api.quick_links_section_api import QuickLinksSectionApi
+from wallet.api.room_rates_api import RoomRatesApi
+from wallet.api.sms_api import SMSApi
+from wallet.api.services_api import ServicesApi
+from wallet.api.settings_api import SettingsApi
+from wallet.api.shopify_terminal_api import ShopifyTerminalApi
+from wallet.api.sms_subscriber_api import SmsSubscriberApi
+from wallet.api.static_voucher_campaign_groups_api import StaticVoucherCampaignGroupsApi
+from wallet.api.static_voucher_campaigns_api import StaticVoucherCampaignsApi
+from wallet.api.static_vouchers_api import StaticVouchersApi
+from wallet.api.system_api import SystemApi
+from wallet.api.ticket_api import TicketApi
+from wallet.api.transaction_ledger_api import TransactionLedgerApi
+from wallet.api.videos_api import VideosApi
+from wallet.api.virtual_business_card_api import VirtualBusinessCardApi
+from wallet.api.web_terminal_api import WebTerminalApi
+from wallet.api.wix_terminal_api import WixTerminalApi
+from wallet.api.woo_commerce_terminal_api import WooCommerceTerminalApi
+

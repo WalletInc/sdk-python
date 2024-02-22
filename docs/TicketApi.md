@@ -20,14 +20,11 @@ Archive ticket
 
 
 ```python
-import time
 import wallet
-from wallet.api import ticket_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ticket import Ticket
-from wallet.model.auth_error import AuthError
+from wallet.models.ticket import Ticket
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ticket_api.TicketApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.TicketApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive ticket
         api_response = api_instance.archive_ticket(id)
+        print("The response of TicketApi->archive_ticket:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling TicketApi->archive_ticket: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create ticket
 
 
 ```python
-import time
 import wallet
-from wallet.api import ticket_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_ticket_create_params import WTTicketCreateParams
-from wallet.model.ticket import Ticket
-from wallet.model.auth_error import AuthError
+from wallet.models.ticket import Ticket
+from wallet.models.wt_ticket_create_params import WTTicketCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,33 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ticket_api.TicketApi(api_client)
-    wt_ticket_create_params = WTTicketCreateParams(
-        recipient_phone_number="recipient_phone_number_example",
-        recipient_email_address="recipient_email_address_example",
-        recipient_member_id="recipient_member_id_example",
-        is_comp=True,
-        quantity=1,
-        performance_id="performance_id_example",
-    ) # WTTicketCreateParams | 
+    api_instance = wallet.TicketApi(api_client)
+    wt_ticket_create_params = wallet.WTTicketCreateParams() # WTTicketCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create ticket
         api_response = api_instance.create_ticket(wt_ticket_create_params)
+        print("The response of TicketApi->create_ticket:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling TicketApi->create_ticket: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_ticket_create_params** | [**WTTicketCreateParams**](WTTicketCreateParams.md)|  |
+ **wt_ticket_create_params** | [**WTTicketCreateParams**](WTTicketCreateParams.md)|  | 
 
 ### Return type
 
@@ -148,7 +138,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -170,15 +159,11 @@ Fetch ticket
 
 
 ```python
-import time
 import wallet
-from wallet.api import ticket_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
-from wallet.model.wt_ticket import WTTicket
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_ticket import WTTicket
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -187,26 +172,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ticket_api.TicketApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.TicketApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch ticket
         api_response = api_instance.fetch_ticket(id)
+        print("The response of TicketApi->fetch_ticket:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling TicketApi->fetch_ticket: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -220,7 +207,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -243,14 +229,11 @@ Restore ticket
 
 
 ```python
-import time
 import wallet
-from wallet.api import ticket_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ticket import Ticket
-from wallet.model.auth_error import AuthError
+from wallet.models.ticket import Ticket
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -259,26 +242,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ticket_api.TicketApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.TicketApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore ticket
         api_response = api_instance.restore_ticket(id)
+        print("The response of TicketApi->restore_ticket:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling TicketApi->restore_ticket: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -292,7 +277,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -314,15 +298,12 @@ Update ticket
 
 
 ```python
-import time
 import wallet
-from wallet.api import ticket_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_ticket_update_params import WTTicketUpdateParams
-from wallet.model.ticket import Ticket
-from wallet.model.auth_error import AuthError
+from wallet.models.ticket import Ticket
+from wallet.models.wt_ticket_update_params import WTTicketUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -331,34 +312,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ticket_api.TicketApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_ticket_update_params = WTTicketUpdateParams(
-        recipient_phone_number="recipient_phone_number_example",
-        recipient_email_address="recipient_email_address_example",
-        recipient_member_id="recipient_member_id_example",
-        is_comp=True,
-        quantity=1,
-    ) # WTTicketUpdateParams | 
+    api_instance = wallet.TicketApi(api_client)
+    id = None # object | 
+    wt_ticket_update_params = wallet.WTTicketUpdateParams() # WTTicketUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update ticket
         api_response = api_instance.update_ticket(id, wt_ticket_update_params)
+        print("The response of TicketApi->update_ticket:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling TicketApi->update_ticket: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_ticket_update_params** | [**WTTicketUpdateParams**](WTTicketUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_ticket_update_params** | [**WTTicketUpdateParams**](WTTicketUpdateParams.md)|  | 
 
 ### Return type
 
@@ -372,7 +349,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

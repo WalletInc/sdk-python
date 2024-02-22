@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **header_background_color** | **str** |  | 
@@ -11,6 +12,8 @@ Name | Type | Description | Notes
 **left_menu_section_background_color** | **str** |  | 
 **left_menu_section_font_color** | **str** |  | 
 **company_logo_url** | **str** |  | 
+**header_image_url** | **str** |  | [optional] 
+**header_custom_icon** | **str** |  | [optional] 
 **welcome_message** | **str** |  | 
 **is_apple_enabled** | **bool** |  | 
 **is_google_enabled** | **bool** |  | 
@@ -25,6 +28,7 @@ Name | Type | Description | Notes
 **is_gift_certificates** | **bool** |  | 
 **is_promotions** | **bool** |  | 
 **is_merchant_credit** | **bool** |  | 
+**is_tickets** | **bool** |  | [optional] 
 **is_news_articles** | **bool** |  | 
 **is_performances** | **bool** |  | 
 **is_messages** | **bool** |  | 
@@ -46,15 +50,8 @@ Name | Type | Description | Notes
 **is_settings** | **bool** |  | 
 **is_chat_room** | **bool** |  | 
 **is_sms_opt_in** | **bool** |  | 
+**sms_opt_in_source_id** | [**WalletConfigurationSmsOptInSourceID**](WalletConfigurationSmsOptInSourceID.md) |  | [optional] 
 **is_email_subscriber** | **bool** |  | 
-**id** | [**NanoID**](NanoID.md) |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**merchant_id** | [**MerchantID**](MerchantID.md) |  | 
-**header_image_url** | **str** |  | [optional] 
-**header_custom_icon** | **str** |  | [optional] 
-**is_tickets** | **bool** |  | [optional] 
-**sms_opt_in_source_id** | [**NanoID**](NanoID.md) |  | [optional] 
 **google_analytics_id** | **str** |  | [optional] 
 **facebook_pixel_id** | **str** |  | [optional] 
 **public_chat_room_channel_id** | **float** |  | [optional] 
@@ -74,7 +71,28 @@ Name | Type | Description | Notes
 **primary_phone_number** | **str** |  | [optional] 
 **primary_whats_app** | **str** |  | [optional] 
 **primary_email_address** | **str** |  | [optional] 
+**id** | **str** |  | 
+**created_at** | **datetime** |  | 
+**updated_at** | **datetime** |  | 
+**merchant_id** | **str** |  | 
 
+## Example
+
+```python
+from wallet.models.wallet_configuration import WalletConfiguration
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of WalletConfiguration from a JSON string
+wallet_configuration_instance = WalletConfiguration.from_json(json)
+# print the JSON string representation of the object
+print WalletConfiguration.to_json()
+
+# convert the object into a dict
+wallet_configuration_dict = wallet_configuration_instance.to_dict()
+# create an instance of WalletConfiguration from a dict
+wallet_configuration_form_dict = wallet_configuration.from_dict(wallet_configuration_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

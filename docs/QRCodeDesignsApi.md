@@ -21,14 +21,11 @@ Archive QR Code Design
 
 
 ```python
-import time
 import wallet
-from wallet.api import qr_code_designs_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wtqr_code_design import WTQRCodeDesign
+from wallet.models.wtqr_code_design import WTQRCodeDesign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -37,26 +34,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = qr_code_designs_api.QRCodeDesignsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.QRCodeDesignsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive QR Code Design
         api_response = api_instance.archive_qr_code_design(id)
+        print("The response of QRCodeDesignsApi->archive_qr_code_design:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QRCodeDesignsApi->archive_qr_code_design: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -70,7 +69,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -92,17 +90,12 @@ Create QR Code design
 
 
 ```python
-import time
 import wallet
-from wallet.api import qr_code_designs_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.merchant_not_initialized import MerchantNotInitialized
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wtqr_code_design import WTQRCodeDesign
-from wallet.model.duplicate_row_found import DuplicateRowFound
-from wallet.model.wtqr_code_design_create_params import WTQRCodeDesignCreateParams
+from wallet.models.wtqr_code_design import WTQRCodeDesign
+from wallet.models.wtqr_code_design_create_params import WTQRCodeDesignCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -111,37 +104,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = qr_code_designs_api.QRCodeDesignsApi(api_client)
-    wtqr_code_design_create_params = WTQRCodeDesignCreateParams(
-        name="This is the name of the design",
-        size=1,
-        margin=1,
-        corner_radius=1,
-        color_dark_hex="#000",
-        color_light_hex="#ffffff",
-        background_dimming_hex="#ffffff",
-        logo_image_url="#ffffff",
-        background_image_url="#ffffff",
-        animated_gif_background_url="#ffffff",
-    ) # WTQRCodeDesignCreateParams | 
+    api_instance = wallet.QRCodeDesignsApi(api_client)
+    wtqr_code_design_create_params = wallet.WTQRCodeDesignCreateParams() # WTQRCodeDesignCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create QR Code design
         api_response = api_instance.create_qr_code_design(wtqr_code_design_create_params)
+        print("The response of QRCodeDesignsApi->create_qr_code_design:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QRCodeDesignsApi->create_qr_code_design: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wtqr_code_design_create_params** | [**WTQRCodeDesignCreateParams**](WTQRCodeDesignCreateParams.md)|  |
+ **wtqr_code_design_create_params** | [**WTQRCodeDesignCreateParams**](WTQRCodeDesignCreateParams.md)|  | 
 
 ### Return type
 
@@ -155,7 +139,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -171,7 +154,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_qr_code_designs**
-> [WTQRCodeDesign] fetch_all_qr_code_designs()
+> List[WTQRCodeDesign] fetch_all_qr_code_designs(is_archive_included=is_archive_included)
 
 Fetch all active QR Code Designs
 
@@ -179,14 +162,11 @@ Fetch all active QR Code Designs
 
 
 ```python
-import time
 import wallet
-from wallet.api import qr_code_designs_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wtqr_code_design import WTQRCodeDesign
+from wallet.models.wtqr_code_design import WTQRCodeDesign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -195,31 +175,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = qr_code_designs_api.QRCodeDesignsApi(api_client)
+    api_instance = wallet.QRCodeDesignsApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all active QR Code Designs
         api_response = api_instance.fetch_all_qr_code_designs(is_archive_included=is_archive_included)
+        print("The response of QRCodeDesignsApi->fetch_all_qr_code_designs:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QRCodeDesignsApi->fetch_all_qr_code_designs: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[WTQRCodeDesign]**](WTQRCodeDesign.md)
+[**List[WTQRCodeDesign]**](WTQRCodeDesign.md)
 
 ### Authorization
 
@@ -229,7 +210,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -251,14 +231,11 @@ Fetch QR Code Design
 
 
 ```python
-import time
 import wallet
-from wallet.api import qr_code_designs_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wtqr_code_design import WTQRCodeDesign
+from wallet.models.wtqr_code_design import WTQRCodeDesign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -267,26 +244,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = qr_code_designs_api.QRCodeDesignsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.QRCodeDesignsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch QR Code Design
         api_response = api_instance.fetch_qr_code_design_by_id(id)
+        print("The response of QRCodeDesignsApi->fetch_qr_code_design_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QRCodeDesignsApi->fetch_qr_code_design_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -300,7 +279,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -322,14 +300,11 @@ Restore payment design
 
 
 ```python
-import time
 import wallet
-from wallet.api import qr_code_designs_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.qr_code_design import QRCodeDesign
+from wallet.models.qr_code_design import QRCodeDesign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -338,26 +313,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = qr_code_designs_api.QRCodeDesignsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.QRCodeDesignsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore payment design
         api_response = api_instance.restore_qr_code_design(id)
+        print("The response of QRCodeDesignsApi->restore_qr_code_design:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QRCodeDesignsApi->restore_qr_code_design: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -371,7 +348,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -393,17 +369,12 @@ Update QR Code Design
 
 
 ```python
-import time
 import wallet
-from wallet.api import qr_code_designs_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
-from wallet.model.auth_error import AuthError
-from wallet.model.wtqr_code_design_update_params import WTQRCodeDesignUpdateParams
-from wallet.model.wtqr_code_design import WTQRCodeDesign
-from wallet.model.duplicate_row_found import DuplicateRowFound
+from wallet.models.wtqr_code_design import WTQRCodeDesign
+from wallet.models.wtqr_code_design_update_params import WTQRCodeDesignUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -412,39 +383,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = qr_code_designs_api.QRCodeDesignsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wtqr_code_design_update_params = WTQRCodeDesignUpdateParams(
-        name="This is the name of the design",
-        size=1,
-        margin=1,
-        corner_radius=1,
-        color_dark_hex="#000",
-        color_light_hex="#ffffff",
-        background_dimming_hex="#ffffff",
-        logo_image_url="#ffffff",
-        background_image_url="#ffffff",
-        animated_gif_background_url="#ffffff",
-    ) # WTQRCodeDesignUpdateParams | 
+    api_instance = wallet.QRCodeDesignsApi(api_client)
+    id = None # object | 
+    wtqr_code_design_update_params = wallet.WTQRCodeDesignUpdateParams() # WTQRCodeDesignUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update QR Code Design
         api_response = api_instance.update_qr_code_design(id, wtqr_code_design_update_params)
+        print("The response of QRCodeDesignsApi->update_qr_code_design:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QRCodeDesignsApi->update_qr_code_design: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wtqr_code_design_update_params** | [**WTQRCodeDesignUpdateParams**](WTQRCodeDesignUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wtqr_code_design_update_params** | [**WTQRCodeDesignUpdateParams**](WTQRCodeDesignUpdateParams.md)|  | 
 
 ### Return type
 
@@ -458,7 +420,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

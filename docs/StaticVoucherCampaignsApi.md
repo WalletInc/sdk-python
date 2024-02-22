@@ -36,14 +36,11 @@ Archive static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.static_voucher_campaign import StaticVoucherCampaign
-from wallet.model.auth_error import AuthError
+from wallet.models.static_voucher_campaign import StaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -52,26 +49,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive static voucher campaign
         api_response = api_instance.archive_static_voucher_campaign(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->archive_static_voucher_campaign:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->archive_static_voucher_campaign: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -86,7 +85,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -99,7 +97,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_vouchers_loaded**
-> InlineResponse2003 count_vouchers_loaded(campaign_id)
+> FetchMembersCount200Response count_vouchers_loaded(campaign_id)
 
 Count loaded vouchers
 
@@ -107,14 +105,11 @@ Count loaded vouchers
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.models.fetch_members_count200_response import FetchMembersCount200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -123,30 +118,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count loaded vouchers
         api_response = api_instance.count_vouchers_loaded(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->count_vouchers_loaded:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->count_vouchers_loaded: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**FetchMembersCount200Response**](FetchMembersCount200Response.md)
 
 ### Authorization
 
@@ -156,7 +153,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -170,7 +166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_vouchers_redeemed**
-> InlineResponse2003 count_vouchers_redeemed(campaign_id)
+> FetchMembersCount200Response count_vouchers_redeemed(campaign_id)
 
 Count redeemed vouchers
 
@@ -178,14 +174,11 @@ Count redeemed vouchers
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.models.fetch_members_count200_response import FetchMembersCount200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -194,30 +187,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count redeemed vouchers
         api_response = api_instance.count_vouchers_redeemed(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->count_vouchers_redeemed:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->count_vouchers_redeemed: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**FetchMembersCount200Response**](FetchMembersCount200Response.md)
 
 ### Authorization
 
@@ -227,7 +222,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -249,15 +243,12 @@ Create static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.create_static_voucher_campaign import CreateStaticVoucherCampaign
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.models.create_static_voucher_campaign import CreateStaticVoucherCampaign
+from wallet.models.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -266,42 +257,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    create_static_voucher_campaign = CreateStaticVoucherCampaign(
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        title="This is the title of the news article",
-        notes="This is the description of the campaign",
-        value_type=None,
-        display_value="display_value_example",
-        merchants_reference_id="merchants_reference_id_example",
-        valid_only_at_pos_register_ids=[
-            "valid_only_at_pos_register_ids_example",
-        ],
-        payment_design_id=NanoID("C"),
-        bucket="s3/bucket",
-        file_name="offers.csv",
-        source_id=4058,
-        campaign_group_id=None,
-    ) # CreateStaticVoucherCampaign | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    create_static_voucher_campaign = wallet.CreateStaticVoucherCampaign() # CreateStaticVoucherCampaign | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create static voucher campaign
         api_response = api_instance.create_static_voucher_campaign(create_static_voucher_campaign)
+        print("The response of StaticVoucherCampaignsApi->create_static_voucher_campaign:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->create_static_voucher_campaign: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_static_voucher_campaign** | [**CreateStaticVoucherCampaign**](CreateStaticVoucherCampaign.md)|  |
+ **create_static_voucher_campaign** | [**CreateStaticVoucherCampaign**](CreateStaticVoucherCampaign.md)|  | 
 
 ### Return type
 
@@ -315,7 +292,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -337,15 +313,12 @@ Import static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.create_static_voucher_campaign_with_voucher_with_csv import CreateStaticVoucherCampaignWithVoucherWithCSV
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.models.create_static_voucher_campaign_with_voucher_with_csv import CreateStaticVoucherCampaignWithVoucherWithCSV
+from wallet.models.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -354,42 +327,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    create_static_voucher_campaign_with_voucher_with_csv = CreateStaticVoucherCampaignWithVoucherWithCSV(
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        title="This is the title of the news article",
-        notes="This is the description of the campaign",
-        value_type=None,
-        display_value="display_value_example",
-        merchants_reference_id="merchants_reference_id_example",
-        valid_only_at_pos_register_ids=[
-            "valid_only_at_pos_register_ids_example",
-        ],
-        payment_design_id=NanoID("C"),
-        bucket="s3/bucket",
-        file_name="offers.csv",
-        source_id=4058,
-        campaign_group_id=None,
-    ) # CreateStaticVoucherCampaignWithVoucherWithCSV | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    create_static_voucher_campaign_with_voucher_with_csv = wallet.CreateStaticVoucherCampaignWithVoucherWithCSV() # CreateStaticVoucherCampaignWithVoucherWithCSV | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Import static voucher campaign
         api_response = api_instance.create_static_voucher_campaign_from_csv(create_static_voucher_campaign_with_voucher_with_csv)
+        print("The response of StaticVoucherCampaignsApi->create_static_voucher_campaign_from_csv:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->create_static_voucher_campaign_from_csv: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_static_voucher_campaign_with_voucher_with_csv** | [**CreateStaticVoucherCampaignWithVoucherWithCSV**](CreateStaticVoucherCampaignWithVoucherWithCSV.md)|  |
+ **create_static_voucher_campaign_with_voucher_with_csv** | [**CreateStaticVoucherCampaignWithVoucherWithCSV**](CreateStaticVoucherCampaignWithVoucherWithCSV.md)|  | 
 
 ### Return type
 
@@ -403,7 +362,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -425,15 +383,12 @@ Create static voucher campaign with voucher
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
-from wallet.model.pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_is_active import PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive
+from wallet.models.pick_create_static_voucher_campaign_with_voucher_exclude_keyofcreate_static_voucher_campaign_with_voucher_is_active import PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive
+from wallet.models.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -442,42 +397,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    body = PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive(
-        title="This is the title of the news article",
-        notes="This is the description of the campaign",
-        value_type=None,
-        display_value="display_value_example",
-        merchants_reference_id="merchants_reference_id_example",
-        valid_only_at_pos_register_ids=[
-            "valid_only_at_pos_register_ids_example",
-        ],
-        payment_design_id=NanoID("C"),
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        source_id=4058,
-        member_id="MEM1001",
-        offer_amount_cents=5400,
-        cell_phone="+18054052344",
-    ) # PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    body = wallet.PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive() # PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create static voucher campaign with voucher
         api_response = api_instance.create_static_voucher_campaign_with_voucher(body)
+        print("The response of StaticVoucherCampaignsApi->create_static_voucher_campaign_with_voucher:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->create_static_voucher_campaign_with_voucher: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive**](PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive.md)|  |
+ **body** | **PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive**|  | 
 
 ### Return type
 
@@ -491,7 +432,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -513,14 +453,11 @@ Duplicate static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.models.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -529,26 +466,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Duplicate static voucher campaign
         api_response = api_instance.duplicate_static_voucher_campaign_by_id(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->duplicate_static_voucher_campaign_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->duplicate_static_voucher_campaign_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -563,7 +502,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -576,7 +514,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_performance_overview**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} fetch_performance_overview(campaign_id)
+> object fetch_performance_overview(campaign_id)
 
 Fetch performance overview
 
@@ -584,13 +522,10 @@ Fetch performance overview
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -599,30 +534,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch performance overview
         api_response = api_instance.fetch_performance_overview(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->fetch_performance_overview:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_performance_overview: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**object**
 
 ### Authorization
 
@@ -632,7 +569,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -646,7 +582,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_reach_stats_of_all_static_voucher_campaigns**
-> ReachPerformanceStats fetch_reach_stats_of_all_static_voucher_campaigns()
+> ReachPerformanceStats fetch_reach_stats_of_all_static_voucher_campaigns(broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
 
 Get the reach statistics of all the static voucher campaigns
 
@@ -654,14 +590,11 @@ Get the reach statistics of all the static voucher campaigns
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.reach_performance_stats import ReachPerformanceStats
+from wallet.models.reach_performance_stats import ReachPerformanceStats
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -670,29 +603,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    broadcast_scheduled_start_at = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    broadcast_scheduled_end_at = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    broadcast_scheduled_start_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    broadcast_scheduled_end_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Get the reach statistics of all the static voucher campaigns
         api_response = api_instance.fetch_reach_stats_of_all_static_voucher_campaigns(broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
+        print("The response of StaticVoucherCampaignsApi->fetch_reach_stats_of_all_static_voucher_campaigns:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_reach_stats_of_all_static_voucher_campaigns: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **broadcast_scheduled_start_at** | **datetime**|  | [optional]
- **broadcast_scheduled_end_at** | **datetime**|  | [optional]
+ **broadcast_scheduled_start_at** | **datetime**|  | [optional] 
+ **broadcast_scheduled_end_at** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -706,7 +640,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -720,7 +653,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_reach_stats_of_individual_static_voucher_campaign**
-> ReachPerformanceStats fetch_reach_stats_of_individual_static_voucher_campaign(static_voucher_campaign_id)
+> ReachPerformanceStats fetch_reach_stats_of_individual_static_voucher_campaign(static_voucher_campaign_id, broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
 
 Get the reach statistics of an individual static voucher campaign
 
@@ -728,14 +661,11 @@ Get the reach statistics of an individual static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.reach_performance_stats import ReachPerformanceStats
+from wallet.models.reach_performance_stats import ReachPerformanceStats
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -744,39 +674,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    static_voucher_campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    broadcast_scheduled_start_at = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    broadcast_scheduled_end_at = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    static_voucher_campaign_id = None # object | 
+    broadcast_scheduled_start_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    broadcast_scheduled_end_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Get the reach statistics of an individual static voucher campaign
-        api_response = api_instance.fetch_reach_stats_of_individual_static_voucher_campaign(static_voucher_campaign_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling StaticVoucherCampaignsApi->fetch_reach_stats_of_individual_static_voucher_campaign: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Get the reach statistics of an individual static voucher campaign
         api_response = api_instance.fetch_reach_stats_of_individual_static_voucher_campaign(static_voucher_campaign_id, broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
+        print("The response of StaticVoucherCampaignsApi->fetch_reach_stats_of_individual_static_voucher_campaign:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_reach_stats_of_individual_static_voucher_campaign: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **static_voucher_campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **broadcast_scheduled_start_at** | **datetime**|  | [optional]
- **broadcast_scheduled_end_at** | **datetime**|  | [optional]
+ **static_voucher_campaign_id** | [**object**](.md)|  | 
+ **broadcast_scheduled_start_at** | **datetime**|  | [optional] 
+ **broadcast_scheduled_end_at** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -790,7 +713,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -812,14 +734,11 @@ Fetch static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.models.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -828,26 +747,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch static voucher campaign
         api_response = api_instance.fetch_static_voucher_campaign_by_id(id)
+        print("The response of StaticVoucherCampaignsApi->fetch_static_voucher_campaign_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_static_voucher_campaign_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -862,7 +783,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -875,7 +795,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_static_voucher_campaigns**
-> [WTStaticVoucherCampaign] fetch_static_voucher_campaigns()
+> List[WTStaticVoucherCampaign] fetch_static_voucher_campaigns(is_archive_included=is_archive_included, source_id=source_id)
 
 Fetches all static vouchers campaigns
 
@@ -883,14 +803,11 @@ Fetches all static vouchers campaigns
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.models.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -899,33 +816,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
     is_archive_included = True # bool |  (optional)
-    source_id = 3.14 # float |  (optional)
+    source_id = 3.4 # float |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetches all static vouchers campaigns
         api_response = api_instance.fetch_static_voucher_campaigns(is_archive_included=is_archive_included, source_id=source_id)
+        print("The response of StaticVoucherCampaignsApi->fetch_static_voucher_campaigns:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_static_voucher_campaigns: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
- **source_id** | **float**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
+ **source_id** | **float**|  | [optional] 
 
 ### Return type
 
-[**[WTStaticVoucherCampaign]**](WTStaticVoucherCampaign.md)
+[**List[WTStaticVoucherCampaign]**](WTStaticVoucherCampaign.md)
 
 ### Authorization
 
@@ -935,7 +853,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -949,7 +866,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_static_vouchers**
-> [WTStaticVoucher] fetch_static_vouchers(campaign_id)
+> List[WTStaticVoucher] fetch_static_vouchers(campaign_id)
 
 Fetch static vouchers
 
@@ -957,14 +874,11 @@ Fetch static vouchers
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher import WTStaticVoucher
+from wallet.models.wt_static_voucher import WTStaticVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -973,30 +887,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch static vouchers
         api_response = api_instance.fetch_static_vouchers(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->fetch_static_vouchers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_static_vouchers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[WTStaticVoucher]**](WTStaticVoucher.md)
+[**List[WTStaticVoucher]**](WTStaticVoucher.md)
 
 ### Authorization
 
@@ -1006,7 +922,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1020,7 +935,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_static_vouchers_page**
-> InlineResponse2008 fetch_static_vouchers_page(campaign_id, pagenum, pagesize)
+> FetchStaticVouchersPage200Response fetch_static_vouchers_page(campaign_id, pagenum, pagesize)
 
 Fetch static vouchers by page
 
@@ -1028,14 +943,11 @@ Fetch static vouchers by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2008 import InlineResponse2008
+from wallet.models.fetch_static_vouchers_page200_response import FetchStaticVouchersPage200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1044,34 +956,36 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    pagenum = 3.14 # float | 
-    pagesize = 3.14 # float | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
+    pagenum = 3.4 # float | 
+    pagesize = 3.4 # float | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch static vouchers by page
         api_response = api_instance.fetch_static_vouchers_page(campaign_id, pagenum, pagesize)
+        print("The response of StaticVoucherCampaignsApi->fetch_static_vouchers_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_static_vouchers_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **pagenum** | **float**|  |
- **pagesize** | **float**|  |
+ **campaign_id** | [**object**](.md)|  | 
+ **pagenum** | **float**|  | 
+ **pagesize** | **float**|  | 
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**FetchStaticVouchersPage200Response**](FetchStaticVouchersPage200Response.md)
 
 ### Authorization
 
@@ -1081,7 +995,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1095,7 +1008,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_views**
-> [WTWalletPageView] fetch_views(campaign_id)
+> List[WTWalletPageView] fetch_views(campaign_id)
 
 Fetch views
 
@@ -1103,14 +1016,11 @@ Fetch views
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_wallet_page_view import WTWalletPageView
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_wallet_page_view import WTWalletPageView
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1119,30 +1029,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch views
         api_response = api_instance.fetch_views(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->fetch_views:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_views: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[WTWalletPageView]**](WTWalletPageView.md)
+[**List[WTWalletPageView]**](WTWalletPageView.md)
 
 ### Authorization
 
@@ -1152,7 +1064,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1166,7 +1077,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_vouchers_redeemed**
-> [WTStaticVoucher] fetch_vouchers_redeemed(campaign_id)
+> List[WTStaticVoucher] fetch_vouchers_redeemed(campaign_id)
 
 Fetch redeemed vouchers
 
@@ -1174,14 +1085,11 @@ Fetch redeemed vouchers
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher import WTStaticVoucher
+from wallet.models.wt_static_voucher import WTStaticVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1190,30 +1098,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch redeemed vouchers
         api_response = api_instance.fetch_vouchers_redeemed(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->fetch_vouchers_redeemed:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->fetch_vouchers_redeemed: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[WTStaticVoucher]**](WTStaticVoucher.md)
+[**List[WTStaticVoucher]**](WTStaticVoucher.md)
 
 ### Authorization
 
@@ -1223,7 +1133,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1237,7 +1146,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **preview_messages**
-> [VSCampaignGeneratedMessage] preview_messages(campaign_id, wt_static_voucher_campaign_preview_messages)
+> List[VSCampaignGeneratedMessage] preview_messages(campaign_id, wt_static_voucher_campaign_preview_messages)
 
 Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance.
 
@@ -1245,15 +1154,12 @@ Preview static vouchers. This method has been deprecated. Please use /preview/pa
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_static_voucher_campaign_preview_messages import WTStaticVoucherCampaignPreviewMessages
-from wallet.model.vs_campaign_generated_message import VSCampaignGeneratedMessage
-from wallet.model.auth_error import AuthError
+from wallet.models.vs_campaign_generated_message import VSCampaignGeneratedMessage
+from wallet.models.wt_static_voucher_campaign_preview_messages import WTStaticVoucherCampaignPreviewMessages
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1262,36 +1168,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_static_voucher_campaign_preview_messages = WTStaticVoucherCampaignPreviewMessages(
-        message="Hello [member]",
-        locale="en-US",
-        timezone="America/New_York",
-    ) # WTStaticVoucherCampaignPreviewMessages | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
+    wt_static_voucher_campaign_preview_messages = wallet.WTStaticVoucherCampaignPreviewMessages() # WTStaticVoucherCampaignPreviewMessages | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance.
         api_response = api_instance.preview_messages(campaign_id, wt_static_voucher_campaign_preview_messages)
+        print("The response of StaticVoucherCampaignsApi->preview_messages:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->preview_messages: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_static_voucher_campaign_preview_messages** | [**WTStaticVoucherCampaignPreviewMessages**](WTStaticVoucherCampaignPreviewMessages.md)|  |
+ **campaign_id** | [**object**](.md)|  | 
+ **wt_static_voucher_campaign_preview_messages** | [**WTStaticVoucherCampaignPreviewMessages**](WTStaticVoucherCampaignPreviewMessages.md)|  | 
 
 ### Return type
 
-[**[VSCampaignGeneratedMessage]**](VSCampaignGeneratedMessage.md)
+[**List[VSCampaignGeneratedMessage]**](VSCampaignGeneratedMessage.md)
 
 ### Authorization
 
@@ -1301,7 +1205,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1323,15 +1226,12 @@ Preview static vouchers by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.vs_campaign_generated_message_pagination import VSCampaignGeneratedMessagePagination
-from wallet.model.wt_static_voucher_campaign_preview_messages_by_page import WTStaticVoucherCampaignPreviewMessagesByPage
+from wallet.models.vs_campaign_generated_message_pagination import VSCampaignGeneratedMessagePagination
+from wallet.models.wt_static_voucher_campaign_preview_messages_by_page import WTStaticVoucherCampaignPreviewMessagesByPage
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1340,34 +1240,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_static_voucher_campaign_preview_messages_by_page = WTStaticVoucherCampaignPreviewMessagesByPage(
-        message="Hello [member]",
-        locale="en-US",
-        timezone="America/New_York",
-        page_num=5,
-        page_size=10,
-    ) # WTStaticVoucherCampaignPreviewMessagesByPage | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
+    wt_static_voucher_campaign_preview_messages_by_page = wallet.WTStaticVoucherCampaignPreviewMessagesByPage() # WTStaticVoucherCampaignPreviewMessagesByPage | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Preview static vouchers by page
         api_response = api_instance.preview_messages_by_page(campaign_id, wt_static_voucher_campaign_preview_messages_by_page)
+        print("The response of StaticVoucherCampaignsApi->preview_messages_by_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->preview_messages_by_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_static_voucher_campaign_preview_messages_by_page** | [**WTStaticVoucherCampaignPreviewMessagesByPage**](WTStaticVoucherCampaignPreviewMessagesByPage.md)|  |
+ **campaign_id** | [**object**](.md)|  | 
+ **wt_static_voucher_campaign_preview_messages_by_page** | [**WTStaticVoucherCampaignPreviewMessagesByPage**](WTStaticVoucherCampaignPreviewMessagesByPage.md)|  | 
 
 ### Return type
 
@@ -1381,7 +1277,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1403,14 +1298,11 @@ Restore static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.static_voucher_campaign import StaticVoucherCampaign
-from wallet.model.auth_error import AuthError
+from wallet.models.static_voucher_campaign import StaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1419,26 +1311,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore static voucher campaign
         api_response = api_instance.restore_static_voucher_campaign(campaign_id)
+        print("The response of StaticVoucherCampaignsApi->restore_static_voucher_campaign:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->restore_static_voucher_campaign: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -1452,7 +1346,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1474,15 +1367,12 @@ Update static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.static_voucher_campaign_update import StaticVoucherCampaignUpdate
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.models.static_voucher_campaign_update import StaticVoucherCampaignUpdate
+from wallet.models.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1491,40 +1381,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    static_voucher_campaign_update = StaticVoucherCampaignUpdate(
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        title="This is the title of the news article",
-        notes="This is the description of the campaign",
-        value_type=None,
-        display_value="display_value_example",
-        merchants_reference_id="merchants_reference_id_example",
-        valid_only_at_pos_register_ids=[
-            "valid_only_at_pos_register_ids_example",
-        ],
-        payment_design_id=NanoID("C"),
-    ) # StaticVoucherCampaignUpdate | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
+    static_voucher_campaign_update = wallet.StaticVoucherCampaignUpdate() # StaticVoucherCampaignUpdate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update static voucher campaign
         api_response = api_instance.update_static_voucher_campaign(campaign_id, static_voucher_campaign_update)
+        print("The response of StaticVoucherCampaignsApi->update_static_voucher_campaign:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->update_static_voucher_campaign: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **static_voucher_campaign_update** | [**StaticVoucherCampaignUpdate**](StaticVoucherCampaignUpdate.md)|  |
+ **campaign_id** | [**object**](.md)|  | 
+ **static_voucher_campaign_update** | [**StaticVoucherCampaignUpdate**](StaticVoucherCampaignUpdate.md)|  | 
 
 ### Return type
 
@@ -1538,7 +1418,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1560,15 +1439,12 @@ Update static voucher campaign with voucher
 
 
 ```python
-import time
 import wallet
-from wallet.api import static_voucher_campaigns_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_static_voucher_campaign import WTStaticVoucherCampaign
-from wallet.model.update_static_voucher_campaign_with_voucher import UpdateStaticVoucherCampaignWithVoucher
+from wallet.models.update_static_voucher_campaign_with_voucher import UpdateStaticVoucherCampaignWithVoucher
+from wallet.models.wt_static_voucher_campaign import WTStaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1577,44 +1453,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = static_voucher_campaigns_api.StaticVoucherCampaignsApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    update_static_voucher_campaign_with_voucher = UpdateStaticVoucherCampaignWithVoucher(
-        title="This is the title of the news article",
-        notes="This is the description of the campaign",
-        value_type=None,
-        display_value="display_value_example",
-        merchants_reference_id="merchants_reference_id_example",
-        valid_only_at_pos_register_ids=[
-            "valid_only_at_pos_register_ids_example",
-        ],
-        payment_design_id=NanoID("C"),
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        member_id="MEM1001",
-        offer_amount_cents=5400,
-        cell_phone="+18054052344",
-        voucher_id=None,
-    ) # UpdateStaticVoucherCampaignWithVoucher | 
+    api_instance = wallet.StaticVoucherCampaignsApi(api_client)
+    campaign_id = None # object | 
+    update_static_voucher_campaign_with_voucher = wallet.UpdateStaticVoucherCampaignWithVoucher() # UpdateStaticVoucherCampaignWithVoucher | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update static voucher campaign with voucher
         api_response = api_instance.update_static_voucher_campaign_with_voucher(campaign_id, update_static_voucher_campaign_with_voucher)
+        print("The response of StaticVoucherCampaignsApi->update_static_voucher_campaign_with_voucher:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling StaticVoucherCampaignsApi->update_static_voucher_campaign_with_voucher: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **update_static_voucher_campaign_with_voucher** | [**UpdateStaticVoucherCampaignWithVoucher**](UpdateStaticVoucherCampaignWithVoucher.md)|  |
+ **campaign_id** | [**object**](.md)|  | 
+ **update_static_voucher_campaign_with_voucher** | [**UpdateStaticVoucherCampaignWithVoucher**](UpdateStaticVoucherCampaignWithVoucher.md)|  | 
 
 ### Return type
 
@@ -1628,7 +1490,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

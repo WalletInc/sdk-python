@@ -24,14 +24,11 @@ Archive dynamic voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.dynamic_voucher import DynamicVoucher
+from wallet.models.dynamic_voucher import DynamicVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -40,26 +37,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive dynamic voucher campaign
         api_response = api_instance.archive_dynamic_voucher_campaign(campaign_id)
+        print("The response of DynamicVouchersApi->archive_dynamic_voucher_campaign:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->archive_dynamic_voucher_campaign: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -73,7 +72,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -95,17 +93,12 @@ Create dynamic voucher
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.merchant_not_initialized import MerchantNotInitialized
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_dynamic_voucher_create_params import WTDynamicVoucherCreateParams
-from wallet.model.wt_dynamic_voucher import WTDynamicVoucher
-from wallet.model.auth_error import AuthError
-from wallet.model.duplicate_row_found import DuplicateRowFound
+from wallet.models.wt_dynamic_voucher import WTDynamicVoucher
+from wallet.models.wt_dynamic_voucher_create_params import WTDynamicVoucherCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -114,39 +107,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
-    wt_dynamic_voucher_create_params = WTDynamicVoucherCreateParams(
-        title="Thanksgiving Marketing Campaign",
-        notes="This is a marketing campaign that needs to be run during the Thanksgiving week",
-        payment_design_id=NanoID("C"),
-        date_time_start=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        date_time_expiration=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        starting_value=250,
-        max_budget=5000,
-        decrease_amount=10,
-        frequency=15,
-        frequency_type=None,
-        decrease_by=3.14,
-        decrease_every=3.14,
-    ) # WTDynamicVoucherCreateParams | 
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    wt_dynamic_voucher_create_params = wallet.WTDynamicVoucherCreateParams() # WTDynamicVoucherCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create dynamic voucher
         api_response = api_instance.create_dynamic_voucher(wt_dynamic_voucher_create_params)
+        print("The response of DynamicVouchersApi->create_dynamic_voucher:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->create_dynamic_voucher: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_dynamic_voucher_create_params** | [**WTDynamicVoucherCreateParams**](WTDynamicVoucherCreateParams.md)|  |
+ **wt_dynamic_voucher_create_params** | [**WTDynamicVoucherCreateParams**](WTDynamicVoucherCreateParams.md)|  | 
 
 ### Return type
 
@@ -160,7 +142,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -176,7 +157,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_dynamic_vouchers**
-> [WTDynamicVoucher] fetch_all_dynamic_vouchers()
+> List[WTDynamicVoucher] fetch_all_dynamic_vouchers(is_archive_included=is_archive_included)
 
 Fetch all active dynamic vouchers
 
@@ -184,14 +165,11 @@ Fetch all active dynamic vouchers
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_dynamic_voucher import WTDynamicVoucher
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_dynamic_voucher import WTDynamicVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -200,31 +178,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
+    api_instance = wallet.DynamicVouchersApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all active dynamic vouchers
         api_response = api_instance.fetch_all_dynamic_vouchers(is_archive_included=is_archive_included)
+        print("The response of DynamicVouchersApi->fetch_all_dynamic_vouchers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->fetch_all_dynamic_vouchers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[WTDynamicVoucher]**](WTDynamicVoucher.md)
+[**List[WTDynamicVoucher]**](WTDynamicVoucher.md)
 
 ### Authorization
 
@@ -234,7 +213,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -256,14 +234,11 @@ Fetch dynamic voucher
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_dynamic_voucher import WTDynamicVoucher
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_dynamic_voucher import WTDynamicVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -272,26 +247,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch dynamic voucher
         api_response = api_instance.fetch_dynamic_voucher_by_id(id)
+        print("The response of DynamicVouchersApi->fetch_dynamic_voucher_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->fetch_dynamic_voucher_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -306,7 +283,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -319,7 +295,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_dynamic_voucher_redemptions**
-> [WTDynamicVoucherRedemption] fetch_dynamic_voucher_redemptions(id)
+> List[WTDynamicVoucherRedemption] fetch_dynamic_voucher_redemptions(id)
 
 Fetch redemptions
 
@@ -327,14 +303,11 @@ Fetch redemptions
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_dynamic_voucher_redemption import WTDynamicVoucherRedemption
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_dynamic_voucher_redemption import WTDynamicVoucherRedemption
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -343,30 +316,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch redemptions
         api_response = api_instance.fetch_dynamic_voucher_redemptions(id)
+        print("The response of DynamicVouchersApi->fetch_dynamic_voucher_redemptions:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->fetch_dynamic_voucher_redemptions: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[WTDynamicVoucherRedemption]**](WTDynamicVoucherRedemption.md)
+[**List[WTDynamicVoucherRedemption]**](WTDynamicVoucherRedemption.md)
 
 ### Authorization
 
@@ -376,7 +351,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -390,7 +364,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_reach_stats_of_all_dynamic_vouchers**
-> ReachPerformanceStats fetch_reach_stats_of_all_dynamic_vouchers()
+> ReachPerformanceStats fetch_reach_stats_of_all_dynamic_vouchers(broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
 
 Get the reach statistics of all the dynamic vouchers
 
@@ -398,14 +372,11 @@ Get the reach statistics of all the dynamic vouchers
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.reach_performance_stats import ReachPerformanceStats
+from wallet.models.reach_performance_stats import ReachPerformanceStats
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -414,29 +385,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
-    broadcast_scheduled_start_at = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    broadcast_scheduled_end_at = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    broadcast_scheduled_start_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    broadcast_scheduled_end_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Get the reach statistics of all the dynamic vouchers
         api_response = api_instance.fetch_reach_stats_of_all_dynamic_vouchers(broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
+        print("The response of DynamicVouchersApi->fetch_reach_stats_of_all_dynamic_vouchers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->fetch_reach_stats_of_all_dynamic_vouchers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **broadcast_scheduled_start_at** | **datetime**|  | [optional]
- **broadcast_scheduled_end_at** | **datetime**|  | [optional]
+ **broadcast_scheduled_start_at** | **datetime**|  | [optional] 
+ **broadcast_scheduled_end_at** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -450,7 +422,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -464,7 +435,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_reach_stats_of_individual_dynamic_voucher**
-> ReachPerformanceStats fetch_reach_stats_of_individual_dynamic_voucher(dynamic_voucher_id)
+> ReachPerformanceStats fetch_reach_stats_of_individual_dynamic_voucher(dynamic_voucher_id, broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
 
 Get the reach statistics of an individual dynamic voucher
 
@@ -472,14 +443,11 @@ Get the reach statistics of an individual dynamic voucher
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.reach_performance_stats import ReachPerformanceStats
+from wallet.models.reach_performance_stats import ReachPerformanceStats
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -488,39 +456,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
-    dynamic_voucher_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    broadcast_scheduled_start_at = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    broadcast_scheduled_end_at = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    dynamic_voucher_id = None # object | 
+    broadcast_scheduled_start_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    broadcast_scheduled_end_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Get the reach statistics of an individual dynamic voucher
-        api_response = api_instance.fetch_reach_stats_of_individual_dynamic_voucher(dynamic_voucher_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling DynamicVouchersApi->fetch_reach_stats_of_individual_dynamic_voucher: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Get the reach statistics of an individual dynamic voucher
         api_response = api_instance.fetch_reach_stats_of_individual_dynamic_voucher(dynamic_voucher_id, broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
+        print("The response of DynamicVouchersApi->fetch_reach_stats_of_individual_dynamic_voucher:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->fetch_reach_stats_of_individual_dynamic_voucher: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **broadcast_scheduled_start_at** | **datetime**|  | [optional]
- **broadcast_scheduled_end_at** | **datetime**|  | [optional]
+ **dynamic_voucher_id** | [**object**](.md)|  | 
+ **broadcast_scheduled_start_at** | **datetime**|  | [optional] 
+ **broadcast_scheduled_end_at** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -534,7 +495,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -556,14 +516,11 @@ Restore dynamic voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.dynamic_voucher import DynamicVoucher
+from wallet.models.dynamic_voucher import DynamicVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -572,26 +529,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore dynamic voucher campaign
         api_response = api_instance.restore_dynamic_voucher_campaign(campaign_id)
+        print("The response of DynamicVouchersApi->restore_dynamic_voucher_campaign:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->restore_dynamic_voucher_campaign: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -605,7 +564,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -627,17 +585,12 @@ Update dynamic voucher
 
 
 ```python
-import time
 import wallet
-from wallet.api import dynamic_vouchers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
-from wallet.model.wt_dynamic_voucher import WTDynamicVoucher
-from wallet.model.auth_error import AuthError
-from wallet.model.duplicate_row_found import DuplicateRowFound
-from wallet.model.wt_dynamic_voucher_update_params import WTDynamicVoucherUpdateParams
+from wallet.models.wt_dynamic_voucher import WTDynamicVoucher
+from wallet.models.wt_dynamic_voucher_update_params import WTDynamicVoucherUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -646,41 +599,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dynamic_vouchers_api.DynamicVouchersApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_dynamic_voucher_update_params = WTDynamicVoucherUpdateParams(
-        title="Thanksgiving Marketing Campaign",
-        notes="This is a marketing campaign that needs to be run during the Thanksgiving week",
-        payment_design_id=NanoID("C"),
-        date_time_start=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        date_time_expiration=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        starting_value=250,
-        max_budget=5000,
-        decrease_amount=10,
-        frequency=15,
-        frequency_type=None,
-        decrease_by=3.14,
-        decrease_every=3.14,
-    ) # WTDynamicVoucherUpdateParams | 
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    id = None # object | 
+    wt_dynamic_voucher_update_params = wallet.WTDynamicVoucherUpdateParams() # WTDynamicVoucherUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update dynamic voucher
         api_response = api_instance.save_dynamic_voucher(id, wt_dynamic_voucher_update_params)
+        print("The response of DynamicVouchersApi->save_dynamic_voucher:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DynamicVouchersApi->save_dynamic_voucher: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_dynamic_voucher_update_params** | [**WTDynamicVoucherUpdateParams**](WTDynamicVoucherUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_dynamic_voucher_update_params** | [**WTDynamicVoucherUpdateParams**](WTDynamicVoucherUpdateParams.md)|  | 
 
 ### Return type
 
@@ -694,7 +636,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

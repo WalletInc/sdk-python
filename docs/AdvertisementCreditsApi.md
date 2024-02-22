@@ -22,14 +22,11 @@ Archive ad credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import advertisement_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_advertisement_credit import WTAdvertisementCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -38,26 +35,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = advertisement_credits_api.AdvertisementCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.AdvertisementCreditsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive ad credit
         api_response = api_instance.archive_advertisement_credit(id)
+        print("The response of AdvertisementCreditsApi->archive_advertisement_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AdvertisementCreditsApi->archive_advertisement_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -71,7 +70,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -93,17 +91,12 @@ Create ad credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import advertisement_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.merchant_not_initialized import MerchantNotInitialized
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_advertisement_credit_create_params import WTAdvertisementCreditCreateParams
-from wallet.model.duplicate_row_found import DuplicateRowFound
+from wallet.models.wt_advertisement_credit import WTAdvertisementCredit
+from wallet.models.wt_advertisement_credit_create_params import WTAdvertisementCreditCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -112,32 +105,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = advertisement_credits_api.AdvertisementCreditsApi(api_client)
-    wt_advertisement_credit_create_params = WTAdvertisementCreditCreateParams(
-        title="Ad Credit Title",
-        value_type=None,
-        payment_design_id=NanoID("C"),
-        max_uses=250,
-        discount_value=250,
-    ) # WTAdvertisementCreditCreateParams | 
+    api_instance = wallet.AdvertisementCreditsApi(api_client)
+    wt_advertisement_credit_create_params = wallet.WTAdvertisementCreditCreateParams() # WTAdvertisementCreditCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create ad credit
         api_response = api_instance.create_advertisement_credit(wt_advertisement_credit_create_params)
+        print("The response of AdvertisementCreditsApi->create_advertisement_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AdvertisementCreditsApi->create_advertisement_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_advertisement_credit_create_params** | [**WTAdvertisementCreditCreateParams**](WTAdvertisementCreditCreateParams.md)|  |
+ **wt_advertisement_credit_create_params** | [**WTAdvertisementCreditCreateParams**](WTAdvertisementCreditCreateParams.md)|  | 
 
 ### Return type
 
@@ -151,7 +140,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -175,14 +163,11 @@ Fetch ad credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import advertisement_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_advertisement_credit import WTAdvertisementCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -191,26 +176,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = advertisement_credits_api.AdvertisementCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.AdvertisementCreditsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch ad credit
         api_response = api_instance.fetch_advertisement_credit_by_id(id)
+        print("The response of AdvertisementCreditsApi->fetch_advertisement_credit_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AdvertisementCreditsApi->fetch_advertisement_credit_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -225,7 +212,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -238,7 +224,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_advertisement_credit_scans**
-> [WTAdvertisementCreditScan] fetch_advertisement_credit_scans(id)
+> List[WTAdvertisementCreditScan] fetch_advertisement_credit_scans(id)
 
 Fetch scans
 
@@ -246,14 +232,11 @@ Fetch scans
 
 
 ```python
-import time
 import wallet
-from wallet.api import advertisement_credits_api
-from wallet.model.wt_advertisement_credit_scan import WTAdvertisementCreditScan
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_advertisement_credit_scan import WTAdvertisementCreditScan
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -262,30 +245,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = advertisement_credits_api.AdvertisementCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.AdvertisementCreditsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch scans
         api_response = api_instance.fetch_advertisement_credit_scans(id)
+        print("The response of AdvertisementCreditsApi->fetch_advertisement_credit_scans:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AdvertisementCreditsApi->fetch_advertisement_credit_scans: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[WTAdvertisementCreditScan]**](WTAdvertisementCreditScan.md)
+[**List[WTAdvertisementCreditScan]**](WTAdvertisementCreditScan.md)
 
 ### Authorization
 
@@ -295,7 +280,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -309,7 +293,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_advertisement_credits**
-> [WTAdvertisementCredit] fetch_all_advertisement_credits()
+> List[WTAdvertisementCredit] fetch_all_advertisement_credits(is_archive_included=is_archive_included)
 
 Fetch all active ad credits
 
@@ -317,14 +301,11 @@ Fetch all active ad credits
 
 
 ```python
-import time
 import wallet
-from wallet.api import advertisement_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_advertisement_credit import WTAdvertisementCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -333,31 +314,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = advertisement_credits_api.AdvertisementCreditsApi(api_client)
+    api_instance = wallet.AdvertisementCreditsApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all active ad credits
         api_response = api_instance.fetch_all_advertisement_credits(is_archive_included=is_archive_included)
+        print("The response of AdvertisementCreditsApi->fetch_all_advertisement_credits:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AdvertisementCreditsApi->fetch_all_advertisement_credits: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[WTAdvertisementCredit]**](WTAdvertisementCredit.md)
+[**List[WTAdvertisementCredit]**](WTAdvertisementCredit.md)
 
 ### Authorization
 
@@ -367,7 +349,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -389,14 +370,11 @@ Restore ad credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import advertisement_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_advertisement_credit import WTAdvertisementCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -405,26 +383,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = advertisement_credits_api.AdvertisementCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.AdvertisementCreditsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore ad credit
         api_response = api_instance.restore_advertisement_credit(id)
+        print("The response of AdvertisementCreditsApi->restore_advertisement_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AdvertisementCreditsApi->restore_advertisement_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -438,7 +418,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -460,17 +439,12 @@ Update ad credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import advertisement_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_advertisement_credit import WTAdvertisementCredit
-from wallet.model.wt_advertisement_credit_update_params import WTAdvertisementCreditUpdateParams
-from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
-from wallet.model.auth_error import AuthError
-from wallet.model.duplicate_row_found import DuplicateRowFound
+from wallet.models.wt_advertisement_credit import WTAdvertisementCredit
+from wallet.models.wt_advertisement_credit_update_params import WTAdvertisementCreditUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -479,34 +453,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = advertisement_credits_api.AdvertisementCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_advertisement_credit_update_params = WTAdvertisementCreditUpdateParams(
-        title="Ad Credit Title",
-        value_type=None,
-        payment_design_id=NanoID("C"),
-        max_uses=250,
-        discount_value=250,
-    ) # WTAdvertisementCreditUpdateParams | 
+    api_instance = wallet.AdvertisementCreditsApi(api_client)
+    id = None # object | 
+    wt_advertisement_credit_update_params = wallet.WTAdvertisementCreditUpdateParams() # WTAdvertisementCreditUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update ad credit
         api_response = api_instance.update_advertisement_credit(id, wt_advertisement_credit_update_params)
+        print("The response of AdvertisementCreditsApi->update_advertisement_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AdvertisementCreditsApi->update_advertisement_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_advertisement_credit_update_params** | [**WTAdvertisementCreditUpdateParams**](WTAdvertisementCreditUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_advertisement_credit_update_params** | [**WTAdvertisementCreditUpdateParams**](WTAdvertisementCreditUpdateParams.md)|  | 
 
 ### Return type
 
@@ -520,7 +490,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

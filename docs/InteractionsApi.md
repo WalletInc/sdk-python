@@ -18,12 +18,13 @@ Method | HTTP request | Description
 [**fetch_wallet_payment_objects_with_token**](InteractionsApi.md#fetch_wallet_payment_objects_with_token) | **POST** /wallet/paymentObject/token | Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 [**find_by_vanity_handle**](InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 [**identify_item**](InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
-[**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
+[**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL
 [**subscribe_email**](InteractionsApi.md#subscribe_email) | **POST** /wallet/subscribeEmail | Create email subscriber
+[**subscribe_sms**](InteractionsApi.md#subscribe_sms) | **POST** /wallet/subscribeSms | Create sms subscriber
 
 
 # **claim_ticket**
-> Ticket claim_ticket(id, inline_object4)
+> Ticket claim_ticket(id, claim_ticket_request)
 
 Update ticket
 
@@ -31,14 +32,12 @@ Update ticket
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.inline_object4 import InlineObject4
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ticket import Ticket
+from wallet.models.claim_ticket_request import ClaimTicketRequest
+from wallet.models.ticket import Ticket
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -47,30 +46,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    inline_object4 = InlineObject4(
-        claimed_by_phone_number="claimed_by_phone_number_example",
-    ) # InlineObject4 | 
+    api_instance = wallet.InteractionsApi(api_client)
+    id = None # object | 
+    claim_ticket_request = wallet.ClaimTicketRequest() # ClaimTicketRequest | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update ticket
-        api_response = api_instance.claim_ticket(id, inline_object4)
+        api_response = api_instance.claim_ticket(id, claim_ticket_request)
+        print("The response of InteractionsApi->claim_ticket:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->claim_ticket: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **inline_object4** | [**InlineObject4**](InlineObject4.md)|  |
+ **id** | [**object**](.md)|  | 
+ **claim_ticket_request** | [**ClaimTicketRequest**](ClaimTicketRequest.md)|  | 
 
 ### Return type
 
@@ -84,7 +83,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -105,13 +103,11 @@ Create ad credit scan
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.advertisement_credit_scan import AdvertisementCreditScan
+from wallet.models.advertisement_credit_scan import AdvertisementCreditScan
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -120,26 +116,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    ad_credit_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.InteractionsApi(api_client)
+    ad_credit_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create ad credit scan
         api_response = api_instance.create_advertisement_credit_scan(ad_credit_id)
+        print("The response of InteractionsApi->create_advertisement_credit_scan:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->create_advertisement_credit_scan: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ad_credit_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **ad_credit_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -153,7 +151,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -174,12 +171,10 @@ Fetch an employee's VCard
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -188,26 +183,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.InteractionsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch an employee's VCard
         api_response = api_instance.create_employee_v_card(id)
+        print("The response of InteractionsApi->create_employee_v_card:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->create_employee_v_card: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -222,7 +219,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -234,7 +230,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_ics_file**
-> bool, date, datetime, dict, float, int, list, str, none_type create_ics_file(id)
+> object create_ics_file(id)
 
 Fetch ICS for live event
 
@@ -242,12 +238,10 @@ Fetch ICS for live event
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -256,30 +250,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.InteractionsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch ICS for live event
         api_response = api_instance.create_ics_file(id)
+        print("The response of InteractionsApi->create_ics_file:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->create_ics_file: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -289,7 +285,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -310,12 +305,10 @@ Fetch an employee's VCard
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -324,26 +317,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.InteractionsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch an employee's VCard
         api_response = api_instance.create_virtual_business_card_v_card(id)
+        print("The response of InteractionsApi->create_virtual_business_card_v_card:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->create_virtual_business_card_v_card: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -358,7 +353,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -370,7 +364,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_static_vouchers_associated_with_customer_with_voucher_id**
-> [InlineResponse20010] fetch_all_static_vouchers_associated_with_customer_with_voucher_id(voucher_id)
+> List[FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner] fetch_all_static_vouchers_associated_with_customer_with_voucher_id(voucher_id)
 
 Fetch a customer's static vouchers on the basis of a given voucher ID
 
@@ -378,13 +372,11 @@ Fetch a customer's static vouchers on the basis of a given voucher ID
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_response20010 import InlineResponse20010
+from wallet.models.fetch_all_static_vouchers_associated_with_customer_with_voucher_id200_response_inner import FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -393,30 +385,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    voucher_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.InteractionsApi(api_client)
+    voucher_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch a customer's static vouchers on the basis of a given voucher ID
         api_response = api_instance.fetch_all_static_vouchers_associated_with_customer_with_voucher_id(voucher_id)
+        print("The response of InteractionsApi->fetch_all_static_vouchers_associated_with_customer_with_voucher_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->fetch_all_static_vouchers_associated_with_customer_with_voucher_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **voucher_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **voucher_id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[InlineResponse20010]**](InlineResponse20010.md)
+[**List[FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner]**](FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner.md)
 
 ### Authorization
 
@@ -426,7 +420,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -439,7 +432,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_customer_tickets_with_token**
-> [Ticket] fetch_customer_tickets_with_token(inline_object5)
+> List[Ticket] fetch_customer_tickets_with_token(fetch_customer_tickets_with_token_request)
 
 Update ticket
 
@@ -447,14 +440,12 @@ Update ticket
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_object5 import InlineObject5
-from wallet.model.ticket import Ticket
+from wallet.models.fetch_customer_tickets_with_token_request import FetchCustomerTicketsWithTokenRequest
+from wallet.models.ticket import Ticket
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -463,33 +454,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    inline_object5 = InlineObject5(
-        phone_verification_token="phone_verification_token_example",
-        merchant_id="merchant_id_example",
-    ) # InlineObject5 | 
+    api_instance = wallet.InteractionsApi(api_client)
+    fetch_customer_tickets_with_token_request = wallet.FetchCustomerTicketsWithTokenRequest() # FetchCustomerTicketsWithTokenRequest | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update ticket
-        api_response = api_instance.fetch_customer_tickets_with_token(inline_object5)
+        api_response = api_instance.fetch_customer_tickets_with_token(fetch_customer_tickets_with_token_request)
+        print("The response of InteractionsApi->fetch_customer_tickets_with_token:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->fetch_customer_tickets_with_token: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object5** | [**InlineObject5**](InlineObject5.md)|  |
+ **fetch_customer_tickets_with_token_request** | [**FetchCustomerTicketsWithTokenRequest**](FetchCustomerTicketsWithTokenRequest.md)|  | 
 
 ### Return type
 
-[**[Ticket]**](Ticket.md)
+[**List[Ticket]**](Ticket.md)
 
 ### Authorization
 
@@ -499,7 +489,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -520,13 +509,11 @@ Fetch dynamic voucher
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.dynamic_voucher import DynamicVoucher
+from wallet.models.dynamic_voucher import DynamicVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -535,26 +522,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    voucher_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.InteractionsApi(api_client)
+    voucher_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch dynamic voucher
         api_response = api_instance.fetch_dynamic_voucher_with_voucher_id(voucher_id)
+        print("The response of InteractionsApi->fetch_dynamic_voucher_with_voucher_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->fetch_dynamic_voucher_with_voucher_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **voucher_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **voucher_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -568,7 +557,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -589,14 +577,11 @@ Fetch member information
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.member import Member
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.merchant_id import MerchantID
+from wallet.models.member import Member
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -605,28 +590,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    member_id = "memberID_example" # str | 
-    merchant_id = MerchantID("C") # MerchantID | 
+    api_instance = wallet.InteractionsApi(api_client)
+    member_id = 'member_id_example' # str | 
+    merchant_id = 'merchant_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch member information
         api_response = api_instance.fetch_member_information(member_id, merchant_id)
+        print("The response of InteractionsApi->fetch_member_information:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->fetch_member_information: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **member_id** | **str**|  |
- **merchant_id** | **MerchantID**|  |
+ **member_id** | **str**|  | 
+ **merchant_id** | **str**|  | 
 
 ### Return type
 
@@ -640,7 +627,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -661,13 +647,11 @@ Fetch static voucher
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.static_voucher import StaticVoucher
+from wallet.models.static_voucher import StaticVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -676,26 +660,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    voucher_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.InteractionsApi(api_client)
+    voucher_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch static voucher
         api_response = api_instance.fetch_static_voucher_with_voucher_id(voucher_id)
+        print("The response of InteractionsApi->fetch_static_voucher_with_voucher_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->fetch_static_voucher_with_voucher_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **voucher_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **voucher_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -710,7 +696,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -722,7 +707,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_wallet_page_with_token**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_wallet_page_with_token(wt_fetch_wallet_payment_objects_with_token)
+> object fetch_wallet_page_with_token(wt_fetch_wallet_payment_objects_with_token)
 
 Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 
@@ -730,13 +715,11 @@ Fetch page with token NOTE: This route exists because a token can completely cha
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_fetch_wallet_payment_objects_with_token import WTFetchWalletPaymentObjectsWithToken
+from wallet.models.wt_fetch_wallet_payment_objects_with_token import WTFetchWalletPaymentObjectsWithToken
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -745,36 +728,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    wt_fetch_wallet_payment_objects_with_token = WTFetchWalletPaymentObjectsWithToken(
-        phone_verification_token="nuh787247",
-        merchant_id=MerchantID("C"),
-        page_type="page_type_example",
-        is_refresh=True,
-        referrer="https://google.com",
-    ) # WTFetchWalletPaymentObjectsWithToken | 
+    api_instance = wallet.InteractionsApi(api_client)
+    wt_fetch_wallet_payment_objects_with_token = wallet.WTFetchWalletPaymentObjectsWithToken() # WTFetchWalletPaymentObjectsWithToken | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
         api_response = api_instance.fetch_wallet_page_with_token(wt_fetch_wallet_payment_objects_with_token)
+        print("The response of InteractionsApi->fetch_wallet_page_with_token:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->fetch_wallet_page_with_token: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_fetch_wallet_payment_objects_with_token** | [**WTFetchWalletPaymentObjectsWithToken**](WTFetchWalletPaymentObjectsWithToken.md)|  |
+ **wt_fetch_wallet_payment_objects_with_token** | [**WTFetchWalletPaymentObjectsWithToken**](WTFetchWalletPaymentObjectsWithToken.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -784,7 +763,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -797,7 +775,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_wallet_payment_objects_with_token**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_wallet_payment_objects_with_token(wt_fetch_wallet_payment_objects_with_token)
+> object fetch_wallet_payment_objects_with_token(wt_fetch_wallet_payment_objects_with_token)
 
 Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 
@@ -805,13 +783,11 @@ Fetch payment objects with token NOTE: This route exists because a token can com
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_fetch_wallet_payment_objects_with_token import WTFetchWalletPaymentObjectsWithToken
+from wallet.models.wt_fetch_wallet_payment_objects_with_token import WTFetchWalletPaymentObjectsWithToken
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -820,36 +796,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    wt_fetch_wallet_payment_objects_with_token = WTFetchWalletPaymentObjectsWithToken(
-        phone_verification_token="nuh787247",
-        merchant_id=MerchantID("C"),
-        page_type="page_type_example",
-        is_refresh=True,
-        referrer="https://google.com",
-    ) # WTFetchWalletPaymentObjectsWithToken | 
+    api_instance = wallet.InteractionsApi(api_client)
+    wt_fetch_wallet_payment_objects_with_token = wallet.WTFetchWalletPaymentObjectsWithToken() # WTFetchWalletPaymentObjectsWithToken | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
         api_response = api_instance.fetch_wallet_payment_objects_with_token(wt_fetch_wallet_payment_objects_with_token)
+        print("The response of InteractionsApi->fetch_wallet_payment_objects_with_token:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->fetch_wallet_payment_objects_with_token: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_fetch_wallet_payment_objects_with_token** | [**WTFetchWalletPaymentObjectsWithToken**](WTFetchWalletPaymentObjectsWithToken.md)|  |
+ **wt_fetch_wallet_payment_objects_with_token** | [**WTFetchWalletPaymentObjectsWithToken**](WTFetchWalletPaymentObjectsWithToken.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -859,7 +831,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -880,13 +851,11 @@ Fetch vanity handle
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wallet_configuration import WalletConfiguration
+from wallet.models.wallet_configuration import WalletConfiguration
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -895,26 +864,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    handle = "handle_example" # str | 
+    api_instance = wallet.InteractionsApi(api_client)
+    handle = 'handle_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch vanity handle
         api_response = api_instance.find_by_vanity_handle(handle)
+        print("The response of InteractionsApi->find_by_vanity_handle:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->find_by_vanity_handle: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **handle** | **str**|  |
+ **handle** | **str**|  | 
 
 ### Return type
 
@@ -929,7 +900,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -941,7 +911,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **identify_item**
-> bool, date, datetime, dict, float, int, list, str, none_type identify_item(item_id)
+> object identify_item(item_id, is_refresh=is_refresh, phone_verification_token=phone_verification_token, referrer=referrer)
 
 Identify item
 
@@ -949,12 +919,10 @@ Identify item
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -963,45 +931,38 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    item_id = "itemID_example" # str | 
+    api_instance = wallet.InteractionsApi(api_client)
+    item_id = 'item_id_example' # str | 
     is_refresh = True # bool |  (optional)
-    phone_verification_token = "phoneVerificationToken_example" # str |  (optional)
-    referrer = "referrer_example" # str |  (optional)
+    phone_verification_token = 'phone_verification_token_example' # str |  (optional)
+    referrer = 'referrer_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Identify item
-        api_response = api_instance.identify_item(item_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling InteractionsApi->identify_item: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Identify item
         api_response = api_instance.identify_item(item_id, is_refresh=is_refresh, phone_verification_token=phone_verification_token, referrer=referrer)
+        print("The response of InteractionsApi->identify_item:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->identify_item: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item_id** | **str**|  |
- **is_refresh** | **bool**|  | [optional]
- **phone_verification_token** | **str**|  | [optional]
- **referrer** | **str**|  | [optional]
+ **item_id** | **str**|  | 
+ **is_refresh** | **bool**|  | [optional] 
+ **phone_verification_token** | **str**|  | [optional] 
+ **referrer** | **str**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1011,7 +972,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1024,21 +984,19 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **request_merchant_url_redirect**
-> bool, date, datetime, dict, float, int, list, str, none_type request_merchant_url_redirect(item_id, browser_details)
+> object request_merchant_url_redirect(item_id, browser_details)
 
-Identify item
+Request Merchant URL
 
 ### Example
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.browser_details import BrowserDetails
+from wallet.models.browser_details import BrowserDetails
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1047,38 +1005,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    item_id = "itemID_example" # str | 
-    browser_details = BrowserDetails(
-        ip="ip_example",
-        phone_verification_token="phone_verification_token_example",
-        session_id="session_id_example",
-        navigator_agent="navigator_agent_example",
-        referrer="referrer_example",
-    ) # BrowserDetails | 
+    api_instance = wallet.InteractionsApi(api_client)
+    item_id = 'item_id_example' # str | 
+    browser_details = wallet.BrowserDetails() # BrowserDetails | 
 
-    # example passing only required values which don't have defaults set
     try:
-        # Identify item
+        # Request Merchant URL
         api_response = api_instance.request_merchant_url_redirect(item_id, browser_details)
+        print("The response of InteractionsApi->request_merchant_url_redirect:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->request_merchant_url_redirect: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item_id** | **str**|  |
- **browser_details** | [**BrowserDetails**](BrowserDetails.md)|  |
+ **item_id** | **str**|  | 
+ **browser_details** | [**BrowserDetails**](BrowserDetails.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1088,7 +1042,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1109,14 +1062,12 @@ Create email subscriber
 
 
 ```python
-import time
 import wallet
-from wallet.api import interactions_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.email_subscriber import EmailSubscriber
-from wallet.model.wt_email_subscriber_create_params_wallet_ui import WTEmailSubscriberCreateParamsWalletUI
+from wallet.models.email_subscriber import EmailSubscriber
+from wallet.models.wt_email_subscriber_create_params_wallet_ui import WTEmailSubscriberCreateParamsWalletUI
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1125,31 +1076,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = interactions_api.InteractionsApi(api_client)
-    wt_email_subscriber_create_params_wallet_ui = WTEmailSubscriberCreateParamsWalletUI(
-        first_name="John",
-        last_name="Smith",
-        email_address="email_address_example",
-        merchant_id=MerchantID("C"),
-    ) # WTEmailSubscriberCreateParamsWalletUI | 
+    api_instance = wallet.InteractionsApi(api_client)
+    wt_email_subscriber_create_params_wallet_ui = wallet.WTEmailSubscriberCreateParamsWalletUI() # WTEmailSubscriberCreateParamsWalletUI | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create email subscriber
         api_response = api_instance.subscribe_email(wt_email_subscriber_create_params_wallet_ui)
+        print("The response of InteractionsApi->subscribe_email:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling InteractionsApi->subscribe_email: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_email_subscriber_create_params_wallet_ui** | [**WTEmailSubscriberCreateParamsWalletUI**](WTEmailSubscriberCreateParamsWalletUI.md)|  |
+ **wt_email_subscriber_create_params_wallet_ui** | [**WTEmailSubscriberCreateParamsWalletUI**](WTEmailSubscriberCreateParamsWalletUI.md)|  | 
 
 ### Return type
 
@@ -1164,6 +1112,74 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **subscribe_sms**
+> SmsSubscriber subscribe_sms(wt_sms_subscriber_create_params_wallet_ui)
+
+Create sms subscriber
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.sms_subscriber import SmsSubscriber
+from wallet.models.wt_sms_subscriber_create_params_wallet_ui import WTSmsSubscriberCreateParamsWalletUI
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.InteractionsApi(api_client)
+    wt_sms_subscriber_create_params_wallet_ui = wallet.WTSmsSubscriberCreateParamsWalletUI() # WTSmsSubscriberCreateParamsWalletUI | 
+
+    try:
+        # Create sms subscriber
+        api_response = api_instance.subscribe_sms(wt_sms_subscriber_create_params_wallet_ui)
+        print("The response of InteractionsApi->subscribe_sms:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InteractionsApi->subscribe_sms: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_sms_subscriber_create_params_wallet_ui** | [**WTSmsSubscriberCreateParamsWalletUI**](WTSmsSubscriberCreateParamsWalletUI.md)|  | 
+
+### Return type
+
+[**SmsSubscriber**](SmsSubscriber.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 

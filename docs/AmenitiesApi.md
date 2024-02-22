@@ -20,14 +20,11 @@ Archive amenity
 
 
 ```python
-import time
 import wallet
-from wallet.api import amenities_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.amenity import Amenity
-from wallet.model.auth_error import AuthError
+from wallet.models.amenity import Amenity
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = amenities_api.AmenitiesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.AmenitiesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive amenity
         api_response = api_instance.archive_amenity(id)
+        print("The response of AmenitiesApi->archive_amenity:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AmenitiesApi->archive_amenity: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create amenity
 
 
 ```python
-import time
 import wallet
-from wallet.api import amenities_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_amenity_create_params import WTAmenityCreateParams
-from wallet.model.amenity import Amenity
-from wallet.model.auth_error import AuthError
+from wallet.models.amenity import Amenity
+from wallet.models.wt_amenity_create_params import WTAmenityCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,33 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = amenities_api.AmenitiesApi(api_client)
-    wt_amenity_create_params = WTAmenityCreateParams(
-        title="This is the title of the amenity",
-        description="This is the description of the amenity",
-        displayed_price="$200-$350",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://hotels.com/your-property/pool",
-    ) # WTAmenityCreateParams | 
+    api_instance = wallet.AmenitiesApi(api_client)
+    wt_amenity_create_params = wallet.WTAmenityCreateParams() # WTAmenityCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create amenity
         api_response = api_instance.create_amenity(wt_amenity_create_params)
+        print("The response of AmenitiesApi->create_amenity:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AmenitiesApi->create_amenity: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_amenity_create_params** | [**WTAmenityCreateParams**](WTAmenityCreateParams.md)|  |
+ **wt_amenity_create_params** | [**WTAmenityCreateParams**](WTAmenityCreateParams.md)|  | 
 
 ### Return type
 
@@ -149,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -162,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_amenities**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_amenities()
+> object fetch_all_amenities(is_archive_included=is_archive_included)
 
 Fetch all amenities
 
@@ -170,13 +159,10 @@ Fetch all amenities
 
 
 ```python
-import time
 import wallet
-from wallet.api import amenities_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -185,31 +171,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = amenities_api.AmenitiesApi(api_client)
+    api_instance = wallet.AmenitiesApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all amenities
         api_response = api_instance.fetch_all_amenities(is_archive_included=is_archive_included)
+        print("The response of AmenitiesApi->fetch_all_amenities:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AmenitiesApi->fetch_all_amenities: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -219,7 +206,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -241,14 +227,11 @@ Restore amenity
 
 
 ```python
-import time
 import wallet
-from wallet.api import amenities_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.amenity import Amenity
-from wallet.model.auth_error import AuthError
+from wallet.models.amenity import Amenity
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -257,26 +240,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = amenities_api.AmenitiesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.AmenitiesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore amenity
         api_response = api_instance.restore_amenity(id)
+        print("The response of AmenitiesApi->restore_amenity:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AmenitiesApi->restore_amenity: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -290,7 +275,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -312,15 +296,12 @@ Update amenity
 
 
 ```python
-import time
 import wallet
-from wallet.api import amenities_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.amenity import Amenity
-from wallet.model.wt_amenity_update_params import WTAmenityUpdateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.amenity import Amenity
+from wallet.models.wt_amenity_update_params import WTAmenityUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -329,35 +310,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = amenities_api.AmenitiesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_amenity_update_params = WTAmenityUpdateParams(
-        title="This is the title of the amenity",
-        description="This is the description of the amenity",
-        displayed_price="$200-$350",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://hotels.com/your-property/pool",
-    ) # WTAmenityUpdateParams | 
+    api_instance = wallet.AmenitiesApi(api_client)
+    id = None # object | 
+    wt_amenity_update_params = wallet.WTAmenityUpdateParams() # WTAmenityUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update amenity
         api_response = api_instance.update_amenity(id, wt_amenity_update_params)
+        print("The response of AmenitiesApi->update_amenity:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AmenitiesApi->update_amenity: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_amenity_update_params** | [**WTAmenityUpdateParams**](WTAmenityUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_amenity_update_params** | [**WTAmenityUpdateParams**](WTAmenityUpdateParams.md)|  | 
 
 ### Return type
 
@@ -371,7 +347,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

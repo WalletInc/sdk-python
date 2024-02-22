@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_footer** | **str** |  | 
@@ -20,13 +21,30 @@ Name | Type | Description | Notes
 **is_short_code** | **bool** |  | 
 **twilio_sid** | **str** |  | 
 **twilio_account_sid** | **str** |  | 
-**id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
-**merchant_id** | [**SSNanoID**](SSNanoID.md) |  | 
+**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
 **is_approved** | **bool** |  | 
 
+## Example
+
+```python
+from wallet.models.phone_number import PhoneNumber
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of PhoneNumber from a JSON string
+phone_number_instance = PhoneNumber.from_json(json)
+# print the JSON string representation of the object
+print PhoneNumber.to_json()
+
+# convert the object into a dict
+phone_number_dict = phone_number_instance.to_dict()
+# create an instance of PhoneNumber from a dict
+phone_number_form_dict = phone_number.from_dict(phone_number_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -22,14 +22,11 @@ Archive VirtualBusinessCard
 
 
 ```python
-import time
 import wallet
-from wallet.api import virtual_business_card_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.virtual_business_card import VirtualBusinessCard
-from wallet.model.auth_error import AuthError
+from wallet.models.virtual_business_card import VirtualBusinessCard
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -38,26 +35,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = virtual_business_card_api.VirtualBusinessCardApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.VirtualBusinessCardApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive VirtualBusinessCard
         api_response = api_instance.archive_virtual_business_card(id)
+        print("The response of VirtualBusinessCardApi->archive_virtual_business_card:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling VirtualBusinessCardApi->archive_virtual_business_card: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -71,7 +70,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -93,15 +91,12 @@ Create VirtualBusinessCard
 
 
 ```python
-import time
 import wallet
-from wallet.api import virtual_business_card_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.virtual_business_card import VirtualBusinessCard
-from wallet.model.wt_virtual_business_card_create_params import WTVirtualBusinessCardCreateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.virtual_business_card import VirtualBusinessCard
+from wallet.models.wt_virtual_business_card_create_params import WTVirtualBusinessCardCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -110,40 +105,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = virtual_business_card_api.VirtualBusinessCardApi(api_client)
-    wt_virtual_business_card_create_params = WTVirtualBusinessCardCreateParams(
-        first_name="John",
-        last_name="Smith",
-        email_address="email_address_example",
-        designation="designation_example",
-        phone_number="+1 (800) 123-4567",
-        introduction="John was born into the F&B world. His grandparents owned a restaurant in the 1960s in Lorraine, France. His brother is a chef and his uncle is a famous chef in the U.S. ...",
-        instagram="your_IG_handle",
-        facebook="page ID or handle",
-        you_tube="channel ID or handle",
-        twitter="your_handle",
-        linked_in="company ID or handle",
-        whats_app="WhatsApp number",
-        avatar_url="WhatsApp number",
-    ) # WTVirtualBusinessCardCreateParams | 
+    api_instance = wallet.VirtualBusinessCardApi(api_client)
+    wt_virtual_business_card_create_params = wallet.WTVirtualBusinessCardCreateParams() # WTVirtualBusinessCardCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create VirtualBusinessCard
         api_response = api_instance.create_virtual_business_card(wt_virtual_business_card_create_params)
+        print("The response of VirtualBusinessCardApi->create_virtual_business_card:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling VirtualBusinessCardApi->create_virtual_business_card: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_virtual_business_card_create_params** | [**WTVirtualBusinessCardCreateParams**](WTVirtualBusinessCardCreateParams.md)|  |
+ **wt_virtual_business_card_create_params** | [**WTVirtualBusinessCardCreateParams**](WTVirtualBusinessCardCreateParams.md)|  | 
 
 ### Return type
 
@@ -158,7 +141,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -171,7 +153,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_virtual_business_cards**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_virtual_business_cards()
+> object fetch_all_virtual_business_cards(is_archive_included=is_archive_included)
 
 Fetch all VirtualBusinessCards
 
@@ -179,13 +161,10 @@ Fetch all VirtualBusinessCards
 
 
 ```python
-import time
 import wallet
-from wallet.api import virtual_business_card_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -194,31 +173,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = virtual_business_card_api.VirtualBusinessCardApi(api_client)
+    api_instance = wallet.VirtualBusinessCardApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all VirtualBusinessCards
         api_response = api_instance.fetch_all_virtual_business_cards(is_archive_included=is_archive_included)
+        print("The response of VirtualBusinessCardApi->fetch_all_virtual_business_cards:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling VirtualBusinessCardApi->fetch_all_virtual_business_cards: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -228,7 +208,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -250,14 +229,11 @@ Fetch virtual business card
 
 
 ```python
-import time
 import wallet
-from wallet.api import virtual_business_card_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.virtual_business_card import VirtualBusinessCard
-from wallet.model.auth_error import AuthError
+from wallet.models.virtual_business_card import VirtualBusinessCard
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -266,26 +242,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = virtual_business_card_api.VirtualBusinessCardApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.VirtualBusinessCardApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch virtual business card
         api_response = api_instance.fetch_virtual_business_card(id)
+        print("The response of VirtualBusinessCardApi->fetch_virtual_business_card:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling VirtualBusinessCardApi->fetch_virtual_business_card: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -300,7 +278,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -313,7 +290,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_virtual_business_card_requests**
-> [WalletPageView] fetch_virtual_business_card_requests(id)
+> List[WalletPageView] fetch_virtual_business_card_requests(id)
 
 Fetch requests
 
@@ -321,14 +298,11 @@ Fetch requests
 
 
 ```python
-import time
 import wallet
-from wallet.api import virtual_business_card_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wallet_page_view import WalletPageView
-from wallet.model.auth_error import AuthError
+from wallet.models.wallet_page_view import WalletPageView
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -337,30 +311,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = virtual_business_card_api.VirtualBusinessCardApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.VirtualBusinessCardApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch requests
         api_response = api_instance.fetch_virtual_business_card_requests(id)
+        print("The response of VirtualBusinessCardApi->fetch_virtual_business_card_requests:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling VirtualBusinessCardApi->fetch_virtual_business_card_requests: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[WalletPageView]**](WalletPageView.md)
+[**List[WalletPageView]**](WalletPageView.md)
 
 ### Authorization
 
@@ -370,7 +346,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -392,14 +367,11 @@ Restore VirtualBusinessCard
 
 
 ```python
-import time
 import wallet
-from wallet.api import virtual_business_card_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.virtual_business_card import VirtualBusinessCard
-from wallet.model.auth_error import AuthError
+from wallet.models.virtual_business_card import VirtualBusinessCard
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -408,26 +380,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = virtual_business_card_api.VirtualBusinessCardApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.VirtualBusinessCardApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore VirtualBusinessCard
         api_response = api_instance.restore_virtual_business_card(id)
+        print("The response of VirtualBusinessCardApi->restore_virtual_business_card:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling VirtualBusinessCardApi->restore_virtual_business_card: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -441,7 +415,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -463,15 +436,12 @@ Update VirtualBusinessCard
 
 
 ```python
-import time
 import wallet
-from wallet.api import virtual_business_card_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.virtual_business_card import VirtualBusinessCard
-from wallet.model.wt_virtual_business_card_update_params import WTVirtualBusinessCardUpdateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.virtual_business_card import VirtualBusinessCard
+from wallet.models.wt_virtual_business_card_update_params import WTVirtualBusinessCardUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -480,42 +450,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = virtual_business_card_api.VirtualBusinessCardApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_virtual_business_card_update_params = WTVirtualBusinessCardUpdateParams(
-        first_name="John",
-        last_name="Smith",
-        email_address="email_address_example",
-        designation="designation_example",
-        phone_number="+1 (800) 123-4567",
-        introduction="John was born into the F&B world. His grandparents owned a restaurant in the 1960s in Lorraine, France. His brother is a chef and his uncle is a famous chef in the U.S. ...",
-        instagram="your_IG_handle",
-        facebook="page ID or handle",
-        you_tube="channel ID or handle",
-        twitter="your_handle",
-        linked_in="company ID or handle",
-        whats_app="WhatsApp number",
-        avatar_url="WhatsApp number",
-    ) # WTVirtualBusinessCardUpdateParams | 
+    api_instance = wallet.VirtualBusinessCardApi(api_client)
+    id = None # object | 
+    wt_virtual_business_card_update_params = wallet.WTVirtualBusinessCardUpdateParams() # WTVirtualBusinessCardUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update VirtualBusinessCard
         api_response = api_instance.update_virtual_business_card(id, wt_virtual_business_card_update_params)
+        print("The response of VirtualBusinessCardApi->update_virtual_business_card:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling VirtualBusinessCardApi->update_virtual_business_card: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_virtual_business_card_update_params** | [**WTVirtualBusinessCardUpdateParams**](WTVirtualBusinessCardUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_virtual_business_card_update_params** | [**WTVirtualBusinessCardUpdateParams**](WTVirtualBusinessCardUpdateParams.md)|  | 
 
 ### Return type
 
@@ -529,7 +487,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

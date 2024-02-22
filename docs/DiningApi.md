@@ -20,14 +20,11 @@ Archive dining
 
 
 ```python
-import time
 import wallet
-from wallet.api import dining_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.dining import Dining
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.dining import Dining
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.DiningApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive dining
         api_response = api_instance.archive_dining(id)
+        print("The response of DiningApi->archive_dining:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DiningApi->archive_dining: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create dining
 
 
 ```python
-import time
 import wallet
-from wallet.api import dining_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.dining import Dining
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_dining_create_params import WTDiningCreateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.dining import Dining
+from wallet.models.wt_dining_create_params import WTDiningCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,33 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
-    wt_dining_create_params = WTDiningCreateParams(
-        title="This is the title of the dining option",
-        description="This is the description of the dining option",
-        displayed_price="$200-$350",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://your-site.com/restaurants/steak-house",
-    ) # WTDiningCreateParams | 
+    api_instance = wallet.DiningApi(api_client)
+    wt_dining_create_params = wallet.WTDiningCreateParams() # WTDiningCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create dining
         api_response = api_instance.create_dining(wt_dining_create_params)
+        print("The response of DiningApi->create_dining:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DiningApi->create_dining: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_dining_create_params** | [**WTDiningCreateParams**](WTDiningCreateParams.md)|  |
+ **wt_dining_create_params** | [**WTDiningCreateParams**](WTDiningCreateParams.md)|  | 
 
 ### Return type
 
@@ -149,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -162,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_dining**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_dining()
+> object fetch_all_dining(is_archive_included=is_archive_included)
 
 Fetch all dining
 
@@ -170,13 +159,10 @@ Fetch all dining
 
 
 ```python
-import time
 import wallet
-from wallet.api import dining_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -185,31 +171,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
+    api_instance = wallet.DiningApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all dining
         api_response = api_instance.fetch_all_dining(is_archive_included=is_archive_included)
+        print("The response of DiningApi->fetch_all_dining:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DiningApi->fetch_all_dining: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -219,7 +206,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -241,14 +227,11 @@ Restore dining
 
 
 ```python
-import time
 import wallet
-from wallet.api import dining_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.dining import Dining
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.dining import Dining
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -257,26 +240,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.DiningApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore dining
         api_response = api_instance.restore_dining(id)
+        print("The response of DiningApi->restore_dining:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DiningApi->restore_dining: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -290,7 +275,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -312,15 +296,12 @@ Update dining
 
 
 ```python
-import time
 import wallet
-from wallet.api import dining_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.dining import Dining
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_dining_update_params import WTDiningUpdateParams
+from wallet.models.dining import Dining
+from wallet.models.wt_dining_update_params import WTDiningUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -329,35 +310,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dining_api.DiningApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_dining_update_params = WTDiningUpdateParams(
-        title="This is the title of the dining option",
-        description="This is the description of the dining option",
-        displayed_price="$200-$350",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://your-site.com/restaurants/steak-house",
-    ) # WTDiningUpdateParams | 
+    api_instance = wallet.DiningApi(api_client)
+    id = None # object | 
+    wt_dining_update_params = wallet.WTDiningUpdateParams() # WTDiningUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update dining
         api_response = api_instance.update_dining(id, wt_dining_update_params)
+        print("The response of DiningApi->update_dining:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DiningApi->update_dining: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_dining_update_params** | [**WTDiningUpdateParams**](WTDiningUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_dining_update_params** | [**WTDiningUpdateParams**](WTDiningUpdateParams.md)|  | 
 
 ### Return type
 
@@ -371,7 +347,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

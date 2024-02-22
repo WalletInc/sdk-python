@@ -24,14 +24,11 @@ Archive tier
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_membership_tier import WTMembershipTier
+from wallet.models.wt_membership_tier import WTMembershipTier
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -40,26 +37,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MembershipTiersApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive tier
         api_response = api_instance.archive_membership_tier(id)
+        print("The response of MembershipTiersApi->archive_membership_tier:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->archive_membership_tier: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -73,7 +72,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -95,17 +93,12 @@ Create tier
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.merchant_not_initialized import MerchantNotInitialized
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_membership_tier import WTMembershipTier
-from wallet.model.wt_membership_tier_creation_params import WTMembershipTierCreationParams
-from wallet.model.duplicate_row_found import DuplicateRowFound
+from wallet.models.wt_membership_tier import WTMembershipTier
+from wallet.models.wt_membership_tier_creation_params import WTMembershipTierCreationParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -114,32 +107,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
-    wt_membership_tier_creation_params = WTMembershipTierCreationParams(
-        tier_number="101",
-        tier_name="Gold",
-        tier_discount=25,
-        tier_design_id=NanoID("C"),
-        points_design_id=NanoID("C"),
-    ) # WTMembershipTierCreationParams | 
+    api_instance = wallet.MembershipTiersApi(api_client)
+    wt_membership_tier_creation_params = wallet.WTMembershipTierCreationParams() # WTMembershipTierCreationParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create tier
         api_response = api_instance.create_membership_tier(wt_membership_tier_creation_params)
+        print("The response of MembershipTiersApi->create_membership_tier:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->create_membership_tier: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_membership_tier_creation_params** | [**WTMembershipTierCreationParams**](WTMembershipTierCreationParams.md)|  |
+ **wt_membership_tier_creation_params** | [**WTMembershipTierCreationParams**](WTMembershipTierCreationParams.md)|  | 
 
 ### Return type
 
@@ -153,7 +142,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -169,7 +157,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_membership_tiers**
-> [WTMembershipTier] fetch_all_membership_tiers()
+> List[WTMembershipTier] fetch_all_membership_tiers(is_archive_included=is_archive_included)
 
 Fetch all tiers
 
@@ -177,14 +165,11 @@ Fetch all tiers
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_membership_tier import WTMembershipTier
+from wallet.models.wt_membership_tier import WTMembershipTier
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -193,31 +178,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
+    api_instance = wallet.MembershipTiersApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all tiers
         api_response = api_instance.fetch_all_membership_tiers(is_archive_included=is_archive_included)
+        print("The response of MembershipTiersApi->fetch_all_membership_tiers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->fetch_all_membership_tiers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[WTMembershipTier]**](WTMembershipTier.md)
+[**List[WTMembershipTier]**](WTMembershipTier.md)
 
 ### Authorization
 
@@ -227,7 +213,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -241,7 +226,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_membership_tiers_with_member_count**
-> [WTMembershipTierWithMemberCount] fetch_all_membership_tiers_with_member_count()
+> List[WTMembershipTierWithMemberCount] fetch_all_membership_tiers_with_member_count(is_archive_included=is_archive_included)
 
 Fetch all tiers with member count
 
@@ -249,14 +234,11 @@ Fetch all tiers with member count
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_membership_tier_with_member_count import WTMembershipTierWithMemberCount
+from wallet.models.wt_membership_tier_with_member_count import WTMembershipTierWithMemberCount
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -265,31 +247,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
+    api_instance = wallet.MembershipTiersApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all tiers with member count
         api_response = api_instance.fetch_all_membership_tiers_with_member_count(is_archive_included=is_archive_included)
+        print("The response of MembershipTiersApi->fetch_all_membership_tiers_with_member_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->fetch_all_membership_tiers_with_member_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[WTMembershipTierWithMemberCount]**](WTMembershipTierWithMemberCount.md)
+[**List[WTMembershipTierWithMemberCount]**](WTMembershipTierWithMemberCount.md)
 
 ### Authorization
 
@@ -299,7 +282,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -321,14 +303,11 @@ Fetch tier
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_membership_tier import WTMembershipTier
+from wallet.models.wt_membership_tier import WTMembershipTier
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -337,26 +316,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MembershipTiersApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch tier
         api_response = api_instance.fetch_membership_tier_by_id(id)
+        print("The response of MembershipTiersApi->fetch_membership_tier_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->fetch_membership_tier_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -370,7 +351,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -392,15 +372,12 @@ Fetch history
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ms_membership_tier_history_pagination import MSMembershipTierHistoryPagination
-from wallet.model.auth_error import AuthError
+from wallet.models.ms_membership_tier_history_pagination import MSMembershipTierHistoryPagination
+from wallet.models.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -409,30 +386,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
-    pagination_request_with_id_and_without_sort_options = PaginationRequestWithIDAndWithoutSortOptions(
-        page_size=20,
-        page_num=1,
-        id=PrefixedNanoID("CMueJDL982Hs"),
-    ) # PaginationRequestWithIDAndWithoutSortOptions | 
+    api_instance = wallet.MembershipTiersApi(api_client)
+    pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch history
         api_response = api_instance.fetch_membership_tier_history_log(pagination_request_with_id_and_without_sort_options)
+        print("The response of MembershipTiersApi->fetch_membership_tier_history_log:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->fetch_membership_tier_history_log: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+ **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  | 
 
 ### Return type
 
@@ -446,7 +421,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -468,15 +442,12 @@ Fetch redemption log
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ms_membership_tier_redemption_pagination import MSMembershipTierRedemptionPagination
-from wallet.model.auth_error import AuthError
+from wallet.models.ms_membership_tier_redemption_pagination import MSMembershipTierRedemptionPagination
+from wallet.models.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -485,30 +456,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
-    pagination_request_with_id_and_without_sort_options = PaginationRequestWithIDAndWithoutSortOptions(
-        page_size=20,
-        page_num=1,
-        id=PrefixedNanoID("CMueJDL982Hs"),
-    ) # PaginationRequestWithIDAndWithoutSortOptions | 
+    api_instance = wallet.MembershipTiersApi(api_client)
+    pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch redemption log
         api_response = api_instance.fetch_membership_tier_redemption_log(pagination_request_with_id_and_without_sort_options)
+        print("The response of MembershipTiersApi->fetch_membership_tier_redemption_log:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->fetch_membership_tier_redemption_log: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+ **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  | 
 
 ### Return type
 
@@ -522,7 +491,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -544,15 +512,11 @@ Restore tier
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.prefixed_nano_id import PrefixedNanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_membership_tier import WTMembershipTier
+from wallet.models.wt_membership_tier import WTMembershipTier
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -561,26 +525,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
-    id = PrefixedNanoID("CMueJDL982Hs") # PrefixedNanoID | 
+    api_instance = wallet.MembershipTiersApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore tier
         api_response = api_instance.restore_membership_tier(id)
+        print("The response of MembershipTiersApi->restore_membership_tier:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->restore_membership_tier: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **PrefixedNanoID**|  |
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -594,7 +560,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -616,17 +581,12 @@ Update tier
 
 
 ```python
-import time
 import wallet
-from wallet.api import membership_tiers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_membership_tier import WTMembershipTier
-from wallet.model.duplicate_row_found import DuplicateRowFound
-from wallet.model.wt_membership_tier_update_params import WTMembershipTierUpdateParams
+from wallet.models.wt_membership_tier import WTMembershipTier
+from wallet.models.wt_membership_tier_update_params import WTMembershipTierUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -635,34 +595,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = membership_tiers_api.MembershipTiersApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_membership_tier_update_params = WTMembershipTierUpdateParams(
-        tier_number="101",
-        tier_name="Gold",
-        tier_discount=25,
-        tier_design_id=NanoID("C"),
-        points_design_id=NanoID("C"),
-    ) # WTMembershipTierUpdateParams | 
+    api_instance = wallet.MembershipTiersApi(api_client)
+    id = None # object | 
+    wt_membership_tier_update_params = wallet.WTMembershipTierUpdateParams() # WTMembershipTierUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update tier
         api_response = api_instance.update_membership_tier(id, wt_membership_tier_update_params)
+        print("The response of MembershipTiersApi->update_membership_tier:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MembershipTiersApi->update_membership_tier: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_membership_tier_update_params** | [**WTMembershipTierUpdateParams**](WTMembershipTierUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_membership_tier_update_params** | [**WTMembershipTierUpdateParams**](WTMembershipTierUpdateParams.md)|  | 
 
 ### Return type
 
@@ -676,7 +632,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

@@ -20,14 +20,11 @@ Archive image
 
 
 ```python
-import time
 import wallet
-from wallet.api import image_grid_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.image_grid import ImageGrid
-from wallet.model.auth_error import AuthError
+from wallet.models.image_grid import ImageGrid
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = image_grid_api.ImageGridApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.ImageGridApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive image
         api_response = api_instance.archive_image_grid(id)
+        print("The response of ImageGridApi->archive_image_grid:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ImageGridApi->archive_image_grid: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create image
 
 
 ```python
-import time
 import wallet
-from wallet.api import image_grid_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.image_grid import ImageGrid
-from wallet.model.wt_image_grid_create_params import WTImageGridCreateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.image_grid import ImageGrid
+from wallet.models.wt_image_grid_create_params import WTImageGridCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,32 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = image_grid_api.ImageGridApi(api_client)
-    wt_image_grid_create_params = WTImageGridCreateParams(
-        title="This is the title of the image",
-        url="https://example.com",
-        media_url="https://example.com/image.gif",
-        sequence_number=1,
-        is_pinned=True,
-    ) # WTImageGridCreateParams | 
+    api_instance = wallet.ImageGridApi(api_client)
+    wt_image_grid_create_params = wallet.WTImageGridCreateParams() # WTImageGridCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create image
         api_response = api_instance.create_image_grid(wt_image_grid_create_params)
+        print("The response of ImageGridApi->create_image_grid:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ImageGridApi->create_image_grid: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_image_grid_create_params** | [**WTImageGridCreateParams**](WTImageGridCreateParams.md)|  |
+ **wt_image_grid_create_params** | [**WTImageGridCreateParams**](WTImageGridCreateParams.md)|  | 
 
 ### Return type
 
@@ -148,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -161,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_image_grid**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_image_grid()
+> object fetch_all_image_grid(is_archive_included=is_archive_included)
 
 Fetch all images
 
@@ -169,13 +159,10 @@ Fetch all images
 
 
 ```python
-import time
 import wallet
-from wallet.api import image_grid_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -184,31 +171,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = image_grid_api.ImageGridApi(api_client)
+    api_instance = wallet.ImageGridApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all images
         api_response = api_instance.fetch_all_image_grid(is_archive_included=is_archive_included)
+        print("The response of ImageGridApi->fetch_all_image_grid:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ImageGridApi->fetch_all_image_grid: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -218,7 +206,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -240,14 +227,11 @@ Restore image
 
 
 ```python
-import time
 import wallet
-from wallet.api import image_grid_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.image_grid import ImageGrid
-from wallet.model.auth_error import AuthError
+from wallet.models.image_grid import ImageGrid
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -256,26 +240,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = image_grid_api.ImageGridApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.ImageGridApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore image
         api_response = api_instance.restore_image_grid(id)
+        print("The response of ImageGridApi->restore_image_grid:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ImageGridApi->restore_image_grid: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -289,7 +275,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -311,15 +296,12 @@ Update image
 
 
 ```python
-import time
 import wallet
-from wallet.api import image_grid_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.image_grid import ImageGrid
-from wallet.model.wt_image_grid_update_params import WTImageGridUpdateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.image_grid import ImageGrid
+from wallet.models.wt_image_grid_update_params import WTImageGridUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -328,34 +310,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = image_grid_api.ImageGridApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_image_grid_update_params = WTImageGridUpdateParams(
-        title="This is the title of the image",
-        url="https://example.com",
-        media_url="https://example.com/image.gif",
-        sequence_number=1,
-        is_pinned=True,
-    ) # WTImageGridUpdateParams | 
+    api_instance = wallet.ImageGridApi(api_client)
+    id = None # object | 
+    wt_image_grid_update_params = wallet.WTImageGridUpdateParams() # WTImageGridUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update image
         api_response = api_instance.update_image_grid(id, wt_image_grid_update_params)
+        print("The response of ImageGridApi->update_image_grid:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ImageGridApi->update_image_grid: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_image_grid_update_params** | [**WTImageGridUpdateParams**](WTImageGridUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_image_grid_update_params** | [**WTImageGridUpdateParams**](WTImageGridUpdateParams.md)|  | 
 
 ### Return type
 
@@ -369,7 +347,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

@@ -61,14 +61,11 @@ Add peer to roles
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_peer_roles import WTEmployeePeerRoles
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_employee_peer_roles import WTEmployeePeerRoles
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -77,32 +74,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    user_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_employee_peer_roles = WTEmployeePeerRoles(
-        roles_array=[
-            None,
-        ],
-    ) # WTEmployeePeerRoles | 
+    api_instance = wallet.EmployeesApi(api_client)
+    user_id = None # object | 
+    wt_employee_peer_roles = wallet.WTEmployeePeerRoles() # WTEmployeePeerRoles | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Add peer to roles
         api_response = api_instance.add_peer_to_roles(user_id, wt_employee_peer_roles)
+        print("The response of EmployeesApi->add_peer_to_roles:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->add_peer_to_roles: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_employee_peer_roles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md)|  |
+ **user_id** | [**object**](.md)|  | 
+ **wt_employee_peer_roles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md)|  | 
 
 ### Return type
 
@@ -116,7 +111,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -138,15 +132,12 @@ Create document
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_create_document import WTEmployeeCreateDocument
-from wallet.model.document import Document
-from wallet.model.auth_error import AuthError
+from wallet.models.document import Document
+from wallet.models.wt_employee_create_document import WTEmployeeCreateDocument
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -155,30 +146,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_create_document = WTEmployeeCreateDocument(
-        file_name="document.pdf",
-        file_data=None,
-        folder="folder_example",
-    ) # WTEmployeeCreateDocument | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_create_document = wallet.WTEmployeeCreateDocument() # WTEmployeeCreateDocument | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create document
         api_response = api_instance.create_document(wt_employee_create_document)
+        print("The response of EmployeesApi->create_document:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->create_document: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_create_document** | [**WTEmployeeCreateDocument**](WTEmployeeCreateDocument.md)|  |
+ **wt_employee_create_document** | [**WTEmployeeCreateDocument**](WTEmployeeCreateDocument.md)|  | 
 
 ### Return type
 
@@ -192,7 +181,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -214,15 +202,12 @@ Create employee peer
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.wt_employee_create import WTEmployeeCreate
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.employee import Employee
-from wallet.model.auth_error import AuthError
+from wallet.models.employee import Employee
+from wallet.models.wt_employee_create import WTEmployeeCreate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -231,44 +216,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_create = WTEmployeeCreate(
-        first_name="John",
-        last_name="Doe",
-        email="email_example",
-        phone_number="+1809898765",
-        is_public_representative=True,
-        wallet_sequence_number=1,
-        employee_id="EMP005",
-        job_title="Marketing Executive",
-        department="Sales & Marketing",
-        schedule_start_day=None,
-        schedule_start_hour=None,
-        schedule_start_minute=None,
-        schedule_start_meridiem=None,
-        schedule_end_day=None,
-        schedule_end_hour=None,
-        schedule_end_minute=None,
-        schedule_end_meridiem=None,
-    ) # WTEmployeeCreate | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_create = wallet.WTEmployeeCreate() # WTEmployeeCreate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create employee peer
         api_response = api_instance.create_employee_peer(wt_employee_create)
+        print("The response of EmployeesApi->create_employee_peer:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->create_employee_peer: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_create** | [**WTEmployeeCreate**](WTEmployeeCreate.md)|  |
+ **wt_employee_create** | [**WTEmployeeCreate**](WTEmployeeCreate.md)|  | 
 
 ### Return type
 
@@ -283,7 +252,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -296,7 +264,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_file**
-> InlineResponse2001 create_file(wt_employee_file_create)
+> CreateFile200Response create_file(wt_employee_file_create)
 
 Create file
 
@@ -304,15 +272,12 @@ Create file
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_file_create import WTEmployeeFileCreate
-from wallet.model.inline_response2001 import InlineResponse2001
-from wallet.model.auth_error import AuthError
+from wallet.models.create_file200_response import CreateFile200Response
+from wallet.models.wt_employee_file_create import WTEmployeeFileCreate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -321,33 +286,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_file_create = WTEmployeeFileCreate(
-        file_name="club-members-upload.csv",
-        file_data="file_data_example",
-    ) # WTEmployeeFileCreate | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_file_create = wallet.WTEmployeeFileCreate() # WTEmployeeFileCreate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create file
         api_response = api_instance.create_file(wt_employee_file_create)
+        print("The response of EmployeesApi->create_file:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->create_file: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_file_create** | [**WTEmployeeFileCreate**](WTEmployeeFileCreate.md)|  |
+ **wt_employee_file_create** | [**WTEmployeeFileCreate**](WTEmployeeFileCreate.md)|  | 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**CreateFile200Response**](CreateFile200Response.md)
 
 ### Authorization
 
@@ -357,7 +321,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -379,15 +342,12 @@ Create media file
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.media_file import MediaFile
-from wallet.model.wt_employee_create_media_file import WTEmployeeCreateMediaFile
+from wallet.models.media_file import MediaFile
+from wallet.models.wt_employee_create_media_file import WTEmployeeCreateMediaFile
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -396,30 +356,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_create_media_file = WTEmployeeCreateMediaFile(
-        file_name="picture.jpeg",
-        file_data=None,
-        folder="folder_example",
-    ) # WTEmployeeCreateMediaFile | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_create_media_file = wallet.WTEmployeeCreateMediaFile() # WTEmployeeCreateMediaFile | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create media file
         api_response = api_instance.create_media_file(wt_employee_create_media_file)
+        print("The response of EmployeesApi->create_media_file:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->create_media_file: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_create_media_file** | [**WTEmployeeCreateMediaFile**](WTEmployeeCreateMediaFile.md)|  |
+ **wt_employee_create_media_file** | [**WTEmployeeCreateMediaFile**](WTEmployeeCreateMediaFile.md)|  | 
 
 ### Return type
 
@@ -433,7 +391,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -455,15 +412,12 @@ Create static voucher campaign group
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.wt_employee_create_static_voucher_campaign_group import WTEmployeeCreateStaticVoucherCampaignGroup
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.static_voucher_campaign_group import StaticVoucherCampaignGroup
+from wallet.models.static_voucher_campaign_group import StaticVoucherCampaignGroup
+from wallet.models.wt_employee_create_static_voucher_campaign_group import WTEmployeeCreateStaticVoucherCampaignGroup
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -472,28 +426,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_create_static_voucher_campaign_group = WTEmployeeCreateStaticVoucherCampaignGroup(
-        name="Christmas Static Voucher Campaign Group",
-    ) # WTEmployeeCreateStaticVoucherCampaignGroup | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_create_static_voucher_campaign_group = wallet.WTEmployeeCreateStaticVoucherCampaignGroup() # WTEmployeeCreateStaticVoucherCampaignGroup | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create static voucher campaign group
         api_response = api_instance.create_static_voucher_campaigns_group(wt_employee_create_static_voucher_campaign_group)
+        print("The response of EmployeesApi->create_static_voucher_campaigns_group:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->create_static_voucher_campaigns_group: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_create_static_voucher_campaign_group** | [**WTEmployeeCreateStaticVoucherCampaignGroup**](WTEmployeeCreateStaticVoucherCampaignGroup.md)|  |
+ **wt_employee_create_static_voucher_campaign_group** | [**WTEmployeeCreateStaticVoucherCampaignGroup**](WTEmployeeCreateStaticVoucherCampaignGroup.md)|  | 
 
 ### Return type
 
@@ -507,7 +461,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -529,14 +482,11 @@ Delete document
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.document import Document
-from wallet.model.auth_error import AuthError
+from wallet.models.document import Document
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -545,26 +495,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    document_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmployeesApi(api_client)
+    document_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Delete document
         api_response = api_instance.delete_document(document_id)
+        print("The response of EmployeesApi->delete_document:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->delete_document: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **document_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -578,7 +530,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -600,14 +551,11 @@ Delete media file
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.media_file import MediaFile
+from wallet.models.media_file import MediaFile
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -616,26 +564,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    media_file_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmployeesApi(api_client)
+    media_file_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Delete media file
         api_response = api_instance.delete_media_file(media_file_id)
+        print("The response of EmployeesApi->delete_media_file:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->delete_media_file: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **media_file_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **media_file_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -649,7 +599,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -671,13 +620,10 @@ Fetch URL for file download
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -686,26 +632,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    file_id = "fileID_example" # str | 
+    api_instance = wallet.EmployeesApi(api_client)
+    file_id = 'file_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch URL for file download
         api_response = api_instance.download_file(file_id)
+        print("The response of EmployeesApi->download_file:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->download_file: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_id** | **str**|  |
+ **file_id** | **str**|  | 
 
 ### Return type
 
@@ -719,7 +667,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -741,13 +688,10 @@ Export club members
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -756,21 +700,23 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Export club members
         api_response = api_instance.export_club_members()
+        print("The response of EmployeesApi->export_club_members:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->export_club_members: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -785,7 +731,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -807,13 +752,10 @@ Export merchant credits
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -822,21 +764,23 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Export merchant credits
         api_response = api_instance.export_merchant_credits()
+        print("The response of EmployeesApi->export_merchant_credits:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->export_merchant_credits: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -851,7 +795,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -873,13 +816,10 @@ Export static voucher campaign
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -888,26 +828,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmployeesApi(api_client)
+    campaign_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Export static voucher campaign
         api_response = api_instance.export_static_voucher_campaign(campaign_id)
+        print("The response of EmployeesApi->export_static_voucher_campaign:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->export_static_voucher_campaign: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **campaign_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -921,7 +863,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -943,13 +884,10 @@ Fetch URL to download a failed import
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -958,26 +896,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    file_id = "fileID_example" # str | 
+    api_instance = wallet.EmployeesApi(api_client)
+    file_id = 'file_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch URL to download a failed import
         api_response = api_instance.failed_import(file_id)
+        print("The response of EmployeesApi->failed_import:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->failed_import: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_id** | **str**|  |
+ **file_id** | **str**|  | 
 
 ### Return type
 
@@ -992,7 +932,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1005,7 +944,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_documents**
-> [Document] fetch_documents()
+> List[Document] fetch_documents(folder=folder)
 
 Fetch all documents
 
@@ -1013,14 +952,11 @@ Fetch all documents
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.document import Document
-from wallet.model.auth_error import AuthError
+from wallet.models.document import Document
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1029,31 +965,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    folder = "folder_example" # str |  (optional)
+    api_instance = wallet.EmployeesApi(api_client)
+    folder = 'folder_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all documents
         api_response = api_instance.fetch_documents(folder=folder)
+        print("The response of EmployeesApi->fetch_documents:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_documents: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder** | **str**|  | [optional]
+ **folder** | **str**|  | [optional] 
 
 ### Return type
 
-[**[Document]**](Document.md)
+[**List[Document]**](Document.md)
 
 ### Authorization
 
@@ -1063,7 +1000,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1077,7 +1013,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_dynamic_vouchers**
-> [DynamicVoucher] fetch_dynamic_vouchers()
+> List[DynamicVoucher] fetch_dynamic_vouchers(is_archive_included=is_archive_included)
 
 Fetch all dynamic vouchers
 
@@ -1085,14 +1021,11 @@ Fetch all dynamic vouchers
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.dynamic_voucher import DynamicVoucher
+from wallet.models.dynamic_voucher import DynamicVoucher
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1101,31 +1034,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all dynamic vouchers
         api_response = api_instance.fetch_dynamic_vouchers(is_archive_included=is_archive_included)
+        print("The response of EmployeesApi->fetch_dynamic_vouchers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_dynamic_vouchers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[DynamicVoucher]**](DynamicVoucher.md)
+[**List[DynamicVoucher]**](DynamicVoucher.md)
 
 ### Authorization
 
@@ -1135,7 +1069,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1149,7 +1082,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_employee_static_voucher_campaign_groups**
-> [StaticVoucherCampaignGroup] fetch_employee_static_voucher_campaign_groups()
+> List[StaticVoucherCampaignGroup] fetch_employee_static_voucher_campaign_groups()
 
 Fetch static voucher campaign groups
 
@@ -1157,14 +1090,11 @@ Fetch static voucher campaign groups
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.static_voucher_campaign_group import StaticVoucherCampaignGroup
+from wallet.models.static_voucher_campaign_group import StaticVoucherCampaignGroup
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1173,26 +1103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch static voucher campaign groups
         api_response = api_instance.fetch_employee_static_voucher_campaign_groups()
+        print("The response of EmployeesApi->fetch_employee_static_voucher_campaign_groups:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_employee_static_voucher_campaign_groups: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**[StaticVoucherCampaignGroup]**](StaticVoucherCampaignGroup.md)
+[**List[StaticVoucherCampaignGroup]**](StaticVoucherCampaignGroup.md)
 
 ### Authorization
 
@@ -1202,7 +1134,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1216,7 +1147,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_employee_static_voucher_campaigns**
-> [StaticVoucherCampaign] fetch_employee_static_voucher_campaigns()
+> List[StaticVoucherCampaign] fetch_employee_static_voucher_campaigns(is_archive_included=is_archive_included, source_id=source_id)
 
 Fetch static voucher campaigns
 
@@ -1224,14 +1155,11 @@ Fetch static voucher campaigns
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.static_voucher_campaign import StaticVoucherCampaign
-from wallet.model.auth_error import AuthError
+from wallet.models.static_voucher_campaign import StaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1240,33 +1168,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
     is_archive_included = True # bool |  (optional)
-    source_id = 3.14 # float |  (optional)
+    source_id = 3.4 # float |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch static voucher campaigns
         api_response = api_instance.fetch_employee_static_voucher_campaigns(is_archive_included=is_archive_included, source_id=source_id)
+        print("The response of EmployeesApi->fetch_employee_static_voucher_campaigns:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_employee_static_voucher_campaigns: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
- **source_id** | **float**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
+ **source_id** | **float**|  | [optional] 
 
 ### Return type
 
-[**[StaticVoucherCampaign]**](StaticVoucherCampaign.md)
+[**List[StaticVoucherCampaign]**](StaticVoucherCampaign.md)
 
 ### Authorization
 
@@ -1276,7 +1205,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1290,7 +1218,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_media_files**
-> [MediaFile] fetch_media_files()
+> List[MediaFile] fetch_media_files(folder=folder)
 
 Fetch all media files
 
@@ -1298,14 +1226,11 @@ Fetch all media files
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.media_file import MediaFile
+from wallet.models.media_file import MediaFile
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1314,31 +1239,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    folder = "folder_example" # str |  (optional)
+    api_instance = wallet.EmployeesApi(api_client)
+    folder = 'folder_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all media files
         api_response = api_instance.fetch_media_files(folder=folder)
+        print("The response of EmployeesApi->fetch_media_files:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_media_files: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder** | **str**|  | [optional]
+ **folder** | **str**|  | [optional] 
 
 ### Return type
 
-[**[MediaFile]**](MediaFile.md)
+[**List[MediaFile]**](MediaFile.md)
 
 ### Authorization
 
@@ -1348,7 +1274,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1362,7 +1287,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_merchant**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_merchant()
+> object fetch_merchant()
 
 Create employee alert
 
@@ -1370,13 +1295,10 @@ Create employee alert
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1385,26 +1307,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Create employee alert
         api_response = api_instance.fetch_merchant()
+        print("The response of EmployeesApi->fetch_merchant:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_merchant: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1414,7 +1338,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1428,7 +1351,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_messages**
-> [Message] fetch_messages()
+> List[Message] fetch_messages()
 
 Fetch all messages
 
@@ -1436,14 +1359,11 @@ Fetch all messages
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.message import Message
-from wallet.model.auth_error import AuthError
+from wallet.models.message import Message
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1452,26 +1372,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch all messages
         api_response = api_instance.fetch_messages()
+        print("The response of EmployeesApi->fetch_messages:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_messages: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Message]**](Message.md)
+[**List[Message]**](Message.md)
 
 ### Authorization
 
@@ -1481,7 +1403,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1503,14 +1424,11 @@ Fetch opt in list source
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.opt_in_list_source import OptInListSource
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list_source import OptInListSource
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1519,26 +1437,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    source_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmployeesApi(api_client)
+    source_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch opt in list source
         api_response = api_instance.fetch_opt_in_list_source(source_id)
+        print("The response of EmployeesApi->fetch_opt_in_list_source:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_opt_in_list_source: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **source_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -1553,7 +1473,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1566,7 +1485,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_list_sources_created_by_employee**
-> [OptInListSource] fetch_opt_in_list_sources_created_by_employee()
+> List[OptInListSource] fetch_opt_in_list_sources_created_by_employee()
 
 Fetch all opt in list sources
 
@@ -1574,14 +1493,11 @@ Fetch all opt in list sources
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.opt_in_list_source import OptInListSource
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list_source import OptInListSource
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1590,26 +1506,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch all opt in list sources
         api_response = api_instance.fetch_opt_in_list_sources_created_by_employee()
+        print("The response of EmployeesApi->fetch_opt_in_list_sources_created_by_employee:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_opt_in_list_sources_created_by_employee: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**[OptInListSource]**](OptInListSource.md)
+[**List[OptInListSource]**](OptInListSource.md)
 
 ### Authorization
 
@@ -1619,7 +1537,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1633,7 +1550,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_peer_activity**
-> [EmployeeActivityLog] fetch_peer_activity(employee_id)
+> List[EmployeeActivityLog] fetch_peer_activity(employee_id)
 
 Fetch peer activity
 
@@ -1641,14 +1558,11 @@ Fetch peer activity
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.employee_activity_log import EmployeeActivityLog
+from wallet.models.employee_activity_log import EmployeeActivityLog
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1657,30 +1571,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    employee_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmployeesApi(api_client)
+    employee_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch peer activity
         api_response = api_instance.fetch_peer_activity(employee_id)
+        print("The response of EmployeesApi->fetch_peer_activity:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_peer_activity: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employee_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **employee_id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[EmployeeActivityLog]**](EmployeeActivityLog.md)
+[**List[EmployeeActivityLog]**](EmployeeActivityLog.md)
 
 ### Authorization
 
@@ -1690,7 +1606,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1704,7 +1619,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_peers_permissions**
-> [bool, date, datetime, dict, float, int, list, str, none_type] fetch_peers_permissions(user_id)
+> List[object] fetch_peers_permissions(user_id)
 
 Fetch peer permissions
 
@@ -1712,13 +1627,10 @@ Fetch peer permissions
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1727,30 +1639,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    user_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmployeesApi(api_client)
+    user_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch peer permissions
         api_response = api_instance.fetch_peers_permissions(user_id)
+        print("The response of EmployeesApi->fetch_peers_permissions:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_peers_permissions: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **user_id** | [**object**](.md)|  | 
 
 ### Return type
 
-**[bool, date, datetime, dict, float, int, list, str, none_type]**
+**List[object]**
 
 ### Authorization
 
@@ -1760,7 +1674,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1782,14 +1695,11 @@ Retrieve employee's webpages
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.employee import Employee
-from wallet.model.auth_error import AuthError
+from wallet.models.employee import Employee
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1798,21 +1708,23 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Retrieve employee's webpages
         api_response = api_instance.fetch_profile_info()
+        print("The response of EmployeesApi->fetch_profile_info:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->fetch_profile_info: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -1827,7 +1739,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1849,14 +1760,11 @@ Import club members
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_import_records import WTEmployeeImportRecords
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_employee_import_records import WTEmployeeImportRecords
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1865,29 +1773,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_import_records = WTEmployeeImportRecords(
-        file_name="club-members-upload.csv",
-        bucket="members",
-    ) # WTEmployeeImportRecords | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_import_records = wallet.WTEmployeeImportRecords() # WTEmployeeImportRecords | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Import club members
         api_response = api_instance.import_club_members(wt_employee_import_records)
+        print("The response of EmployeesApi->import_club_members:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->import_club_members: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_import_records** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md)|  |
+ **wt_employee_import_records** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md)|  | 
 
 ### Return type
 
@@ -1901,7 +1808,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1923,14 +1829,11 @@ Import merchant credits
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_import_records import WTEmployeeImportRecords
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_employee_import_records import WTEmployeeImportRecords
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1939,29 +1842,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_import_records = WTEmployeeImportRecords(
-        file_name="club-members-upload.csv",
-        bucket="members",
-    ) # WTEmployeeImportRecords | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_import_records = wallet.WTEmployeeImportRecords() # WTEmployeeImportRecords | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Import merchant credits
         api_response = api_instance.import_merchant_credits(wt_employee_import_records)
+        print("The response of EmployeesApi->import_merchant_credits:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->import_merchant_credits: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_import_records** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md)|  |
+ **wt_employee_import_records** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md)|  | 
 
 ### Return type
 
@@ -1976,7 +1878,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1989,7 +1890,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **load_webpages_of_employee**
-> [Webpage] load_webpages_of_employee()
+> List[Webpage] load_webpages_of_employee()
 
 Retrieve employee's webpages
 
@@ -1997,14 +1898,11 @@ Retrieve employee's webpages
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.webpage import Webpage
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.webpage import Webpage
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2013,26 +1911,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Retrieve employee's webpages
         api_response = api_instance.load_webpages_of_employee()
+        print("The response of EmployeesApi->load_webpages_of_employee:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->load_webpages_of_employee: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Webpage]**](Webpage.md)
+[**List[Webpage]**](Webpage.md)
 
 ### Authorization
 
@@ -2042,7 +1942,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2056,7 +1955,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **modify_peers_roles**
-> [bool, date, datetime, dict, float, int, list, str, none_type] modify_peers_roles(user_id, wt_employee_peer_roles)
+> List[object] modify_peers_roles(user_id, wt_employee_peer_roles)
 
 Modify peer's roles
 
@@ -2064,14 +1963,11 @@ Modify peer's roles
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_peer_roles import WTEmployeePeerRoles
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_employee_peer_roles import WTEmployeePeerRoles
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2080,36 +1976,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    user_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_employee_peer_roles = WTEmployeePeerRoles(
-        roles_array=[
-            None,
-        ],
-    ) # WTEmployeePeerRoles | 
+    api_instance = wallet.EmployeesApi(api_client)
+    user_id = None # object | 
+    wt_employee_peer_roles = wallet.WTEmployeePeerRoles() # WTEmployeePeerRoles | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Modify peer's roles
         api_response = api_instance.modify_peers_roles(user_id, wt_employee_peer_roles)
+        print("The response of EmployeesApi->modify_peers_roles:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->modify_peers_roles: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_employee_peer_roles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md)|  |
+ **user_id** | [**object**](.md)|  | 
+ **wt_employee_peer_roles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md)|  | 
 
 ### Return type
 
-**[bool, date, datetime, dict, float, int, list, str, none_type]**
+**List[object]**
 
 ### Authorization
 
@@ -2119,7 +2013,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2141,15 +2034,12 @@ Presign file for upload
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.presigned_post import PresignedPost
-from wallet.model.wt_employee_s3_file_presign import WTEmployeeS3FilePresign
+from wallet.models.presigned_post import PresignedPost
+from wallet.models.wt_employee_s3_file_presign import WTEmployeeS3FilePresign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2158,30 +2048,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_s3_file_presign = WTEmployeeS3FilePresign(
-        file_name="club-members-upload.csv",
-        file_type="csv",
-        context=None,
-    ) # WTEmployeeS3FilePresign | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_s3_file_presign = wallet.WTEmployeeS3FilePresign() # WTEmployeeS3FilePresign | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Presign file for upload
         api_response = api_instance.presign_file(wt_employee_s3_file_presign)
+        print("The response of EmployeesApi->presign_file:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->presign_file: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_s3_file_presign** | [**WTEmployeeS3FilePresign**](WTEmployeeS3FilePresign.md)|  |
+ **wt_employee_s3_file_presign** | [**WTEmployeeS3FilePresign**](WTEmployeeS3FilePresign.md)|  | 
 
 ### Return type
 
@@ -2195,7 +2083,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2217,13 +2104,10 @@ Remove peer from all roles
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2232,26 +2116,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    user_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmployeesApi(api_client)
+    user_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Remove peer from all roles
         api_response = api_instance.remove_peer_from_all_roles(user_id)
+        print("The response of EmployeesApi->remove_peer_from_all_roles:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->remove_peer_from_all_roles: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **user_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -2265,7 +2151,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2287,16 +2172,12 @@ Schedule Ad Credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.entity_too_large import EntityTooLarge
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
-from wallet.model.auth_error import AuthError
-from wallet.model.advertisement_credit_broadcast import AdvertisementCreditBroadcast
+from wallet.models.advertisement_credit_broadcast import AdvertisementCreditBroadcast
+from wallet.models.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2305,35 +2186,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    advertisement_credit_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_employee_schedule_simple_sms = WTEmployeeScheduleSimpleSMS(
-        phone_number_id=NanoID("C"),
-        message_template="We're running a year end promo of flat 50% off!",
-        media_urls=["https://example.com/media.jpeg"],
-        broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
-        list_type=None,
-        list_id=NanoID("C"),
-    ) # WTEmployeeScheduleSimpleSMS | 
+    api_instance = wallet.EmployeesApi(api_client)
+    advertisement_credit_id = None # object | 
+    wt_employee_schedule_simple_sms = wallet.WTEmployeeScheduleSimpleSMS() # WTEmployeeScheduleSimpleSMS | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Schedule Ad Credit
         api_response = api_instance.schedule_advertisement_credit(advertisement_credit_id, wt_employee_schedule_simple_sms)
+        print("The response of EmployeesApi->schedule_advertisement_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->schedule_advertisement_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertisement_credit_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  |
+ **advertisement_credit_id** | [**object**](.md)|  | 
+ **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  | 
 
 ### Return type
 
@@ -2347,7 +2223,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2370,16 +2245,12 @@ Schedule Dynamic Voucher to list
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.entity_too_large import EntityTooLarge
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
-from wallet.model.auth_error import AuthError
-from wallet.model.dynamic_voucher_broadcast import DynamicVoucherBroadcast
+from wallet.models.dynamic_voucher_broadcast import DynamicVoucherBroadcast
+from wallet.models.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2388,35 +2259,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    dynamic_voucher_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_employee_schedule_simple_sms = WTEmployeeScheduleSimpleSMS(
-        phone_number_id=NanoID("C"),
-        message_template="We're running a year end promo of flat 50% off!",
-        media_urls=["https://example.com/media.jpeg"],
-        broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
-        list_type=None,
-        list_id=NanoID("C"),
-    ) # WTEmployeeScheduleSimpleSMS | 
+    api_instance = wallet.EmployeesApi(api_client)
+    dynamic_voucher_id = None # object | 
+    wt_employee_schedule_simple_sms = wallet.WTEmployeeScheduleSimpleSMS() # WTEmployeeScheduleSimpleSMS | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Schedule Dynamic Voucher to list
         api_response = api_instance.schedule_dynamic_voucher(dynamic_voucher_id, wt_employee_schedule_simple_sms)
+        print("The response of EmployeesApi->schedule_dynamic_voucher:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->schedule_dynamic_voucher: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  |
+ **dynamic_voucher_id** | [**object**](.md)|  | 
+ **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  | 
 
 ### Return type
 
@@ -2430,7 +2296,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2453,16 +2318,12 @@ Schedule Dyanamic Voucher to recipient
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.entity_too_large import EntityTooLarge
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_employee_schedule_simple_smsto_recipient import WTEmployeeScheduleSimpleSMSToRecipient
-from wallet.model.dynamic_voucher_broadcast import DynamicVoucherBroadcast
+from wallet.models.dynamic_voucher_broadcast import DynamicVoucherBroadcast
+from wallet.models.wt_employee_schedule_simple_smsto_recipient import WTEmployeeScheduleSimpleSMSToRecipient
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2471,34 +2332,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    dynamic_voucher_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_employee_schedule_simple_smsto_recipient = WTEmployeeScheduleSimpleSMSToRecipient(
-        phone_number_id=NanoID("C"),
-        message_template="We're running a year end promo of flat 50% off!",
-        media_urls=["https://example.com/media.jpeg"],
-        broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
-        to_cell_phone="+1809898989",
-    ) # WTEmployeeScheduleSimpleSMSToRecipient | 
+    api_instance = wallet.EmployeesApi(api_client)
+    dynamic_voucher_id = None # object | 
+    wt_employee_schedule_simple_smsto_recipient = wallet.WTEmployeeScheduleSimpleSMSToRecipient() # WTEmployeeScheduleSimpleSMSToRecipient | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Schedule Dyanamic Voucher to recipient
         api_response = api_instance.schedule_dynamic_voucher_to_recipient(dynamic_voucher_id, wt_employee_schedule_simple_smsto_recipient)
+        print("The response of EmployeesApi->schedule_dynamic_voucher_to_recipient:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->schedule_dynamic_voucher_to_recipient: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_employee_schedule_simple_smsto_recipient** | [**WTEmployeeScheduleSimpleSMSToRecipient**](WTEmployeeScheduleSimpleSMSToRecipient.md)|  |
+ **dynamic_voucher_id** | [**object**](.md)|  | 
+ **wt_employee_schedule_simple_smsto_recipient** | [**WTEmployeeScheduleSimpleSMSToRecipient**](WTEmployeeScheduleSimpleSMSToRecipient.md)|  | 
 
 ### Return type
 
@@ -2513,7 +2370,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -2527,7 +2383,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **schedule_simple_sms**
-> SimpleSMSBroadcast schedule_simple_sms(wt_employee_schedule_simple_sms)
+> bool schedule_simple_sms(wt_employee_schedule_simple_sms)
 
 Schedule Simple SMS broadcast to list
 
@@ -2535,16 +2391,11 @@ Schedule Simple SMS broadcast to list
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.simple_sms_broadcast import SimpleSMSBroadcast
-from wallet.model.entity_too_large import EntityTooLarge
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2553,37 +2404,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_schedule_simple_sms = WTEmployeeScheduleSimpleSMS(
-        phone_number_id=NanoID("C"),
-        message_template="We're running a year end promo of flat 50% off!",
-        media_urls=["https://example.com/media.jpeg"],
-        broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
-        list_type=None,
-        list_id=NanoID("C"),
-    ) # WTEmployeeScheduleSimpleSMS | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_schedule_simple_sms = wallet.WTEmployeeScheduleSimpleSMS() # WTEmployeeScheduleSimpleSMS | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Schedule Simple SMS broadcast to list
         api_response = api_instance.schedule_simple_sms(wt_employee_schedule_simple_sms)
+        print("The response of EmployeesApi->schedule_simple_sms:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->schedule_simple_sms: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  |
+ **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  | 
 
 ### Return type
 
-[**SimpleSMSBroadcast**](SimpleSMSBroadcast.md)
+**bool**
 
 ### Authorization
 
@@ -2593,7 +2439,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2608,7 +2453,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **schedule_simple_smsto_recipient**
-> SimpleSMSBroadcast schedule_simple_smsto_recipient(wt_employee_schedule_simple_smsto_recipient)
+> bool schedule_simple_smsto_recipient(wt_employee_schedule_simple_smsto_recipient)
 
 Schedule Simple SMS broadcast to recipient
 
@@ -2616,16 +2461,11 @@ Schedule Simple SMS broadcast to recipient
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.simple_sms_broadcast import SimpleSMSBroadcast
-from wallet.model.entity_too_large import EntityTooLarge
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_employee_schedule_simple_smsto_recipient import WTEmployeeScheduleSimpleSMSToRecipient
+from wallet.models.wt_employee_schedule_simple_smsto_recipient import WTEmployeeScheduleSimpleSMSToRecipient
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2634,36 +2474,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_schedule_simple_smsto_recipient = WTEmployeeScheduleSimpleSMSToRecipient(
-        phone_number_id=NanoID("C"),
-        message_template="We're running a year end promo of flat 50% off!",
-        media_urls=["https://example.com/media.jpeg"],
-        broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
-        to_cell_phone="+1809898989",
-    ) # WTEmployeeScheduleSimpleSMSToRecipient | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_schedule_simple_smsto_recipient = wallet.WTEmployeeScheduleSimpleSMSToRecipient() # WTEmployeeScheduleSimpleSMSToRecipient | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Schedule Simple SMS broadcast to recipient
         api_response = api_instance.schedule_simple_smsto_recipient(wt_employee_schedule_simple_smsto_recipient)
+        print("The response of EmployeesApi->schedule_simple_smsto_recipient:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->schedule_simple_smsto_recipient: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_schedule_simple_smsto_recipient** | [**WTEmployeeScheduleSimpleSMSToRecipient**](WTEmployeeScheduleSimpleSMSToRecipient.md)|  |
+ **wt_employee_schedule_simple_smsto_recipient** | [**WTEmployeeScheduleSimpleSMSToRecipient**](WTEmployeeScheduleSimpleSMSToRecipient.md)|  | 
 
 ### Return type
 
-[**SimpleSMSBroadcast**](SimpleSMSBroadcast.md)
+**bool**
 
 ### Authorization
 
@@ -2673,7 +2509,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2696,15 +2531,12 @@ Send help desk response
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_send_help_desk_response import WTEmployeeSendHelpDeskResponse
-from wallet.model.auth_error import AuthError
-from wallet.model.outbound_sms import OutboundSMS
+from wallet.models.outbound_sms import OutboundSMS
+from wallet.models.wt_employee_send_help_desk_response import WTEmployeeSendHelpDeskResponse
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2713,30 +2545,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_send_help_desk_response = WTEmployeeSendHelpDeskResponse(
-        help_desk_request_id=NanoID("C"),
-        message="Good morning! How can I help you today?",
-        media_urls=["https://example.com/media.jpeg"],
-    ) # WTEmployeeSendHelpDeskResponse | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_send_help_desk_response = wallet.WTEmployeeSendHelpDeskResponse() # WTEmployeeSendHelpDeskResponse | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Send help desk response
         api_response = api_instance.send_help_desk_response(wt_employee_send_help_desk_response)
+        print("The response of EmployeesApi->send_help_desk_response:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->send_help_desk_response: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_send_help_desk_response** | [**WTEmployeeSendHelpDeskResponse**](WTEmployeeSendHelpDeskResponse.md)|  |
+ **wt_employee_send_help_desk_response** | [**WTEmployeeSendHelpDeskResponse**](WTEmployeeSendHelpDeskResponse.md)|  | 
 
 ### Return type
 
@@ -2750,7 +2580,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2772,16 +2601,12 @@ Schedule SMS Campaign Broadcast
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.wt_employee_schedule_sms_campaign_broadcast import WTEmployeeScheduleSMSCampaignBroadcast
-from wallet.model.entity_too_large import EntityTooLarge
-from wallet.model.falsum_error import FalsumError
-from wallet.model.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
-from wallet.model.auth_error import AuthError
+from wallet.models.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
+from wallet.models.wt_employee_schedule_sms_campaign_broadcast import WTEmployeeScheduleSMSCampaignBroadcast
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2790,36 +2615,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    static_voucher_campaign_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_employee_schedule_sms_campaign_broadcast = WTEmployeeScheduleSMSCampaignBroadcast(
-        phone_number_id=NanoID("C"),
-        message_template="Here's your link to your voucher: [link]",
-        send_qr_code=True,
-        media_urls=["https://example.com/media.jpeg"],
-        broadcast_scheduled_at=dateutil_parser('2022-08-17T18:42:50.713Z'),
-        locale="en-US",
-        timezone="America/New_York",
-    ) # WTEmployeeScheduleSMSCampaignBroadcast | 
+    api_instance = wallet.EmployeesApi(api_client)
+    static_voucher_campaign_id = None # object | 
+    wt_employee_schedule_sms_campaign_broadcast = wallet.WTEmployeeScheduleSMSCampaignBroadcast() # WTEmployeeScheduleSMSCampaignBroadcast | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Schedule SMS Campaign Broadcast
         api_response = api_instance.send_sms_campaign_broadcast(static_voucher_campaign_id, wt_employee_schedule_sms_campaign_broadcast)
+        print("The response of EmployeesApi->send_sms_campaign_broadcast:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->send_sms_campaign_broadcast: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **static_voucher_campaign_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_employee_schedule_sms_campaign_broadcast** | [**WTEmployeeScheduleSMSCampaignBroadcast**](WTEmployeeScheduleSMSCampaignBroadcast.md)|  |
+ **static_voucher_campaign_id** | [**object**](.md)|  | 
+ **wt_employee_schedule_sms_campaign_broadcast** | [**WTEmployeeScheduleSMSCampaignBroadcast**](WTEmployeeScheduleSMSCampaignBroadcast.md)|  | 
 
 ### Return type
 
@@ -2833,7 +2652,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2856,13 +2674,10 @@ Mark alerts as read
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2871,21 +2686,23 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Mark alerts as read
         api_response = api_instance.set_alerts_read()
+        print("The response of EmployeesApi->set_alerts_read:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->set_alerts_read: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -2900,7 +2717,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2922,13 +2738,10 @@ Mark export data files as read
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2937,21 +2750,23 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Mark export data files as read
         api_response = api_instance.set_export_data_files_read()
+        print("The response of EmployeesApi->set_export_data_files_read:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->set_export_data_files_read: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -2966,7 +2781,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2988,14 +2802,11 @@ Resolve help desk request
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.help_desk_request import HelpDeskRequest
-from wallet.model.auth_error import AuthError
+from wallet.models.help_desk_request import HelpDeskRequest
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -3004,26 +2815,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    help_desk_request_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmployeesApi(api_client)
+    help_desk_request_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Resolve help desk request
         api_response = api_instance.set_help_desk_request_resolved(help_desk_request_id)
+        print("The response of EmployeesApi->set_help_desk_request_resolved:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->set_help_desk_request_resolved: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **help_desk_request_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **help_desk_request_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -3037,7 +2850,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -3059,13 +2871,10 @@ Mark messages as read
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -3074,21 +2883,23 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
+    api_instance = wallet.EmployeesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Mark messages as read
         api_response = api_instance.set_messages_read()
+        print("The response of EmployeesApi->set_messages_read:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->set_messages_read: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -3103,7 +2914,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -3125,14 +2935,11 @@ Set profile picture
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_employee_create_media_file import WTEmployeeCreateMediaFile
+from wallet.models.wt_employee_create_media_file import WTEmployeeCreateMediaFile
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -3141,30 +2948,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_create_media_file = WTEmployeeCreateMediaFile(
-        file_name="picture.jpeg",
-        file_data=None,
-        folder="folder_example",
-    ) # WTEmployeeCreateMediaFile | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_create_media_file = wallet.WTEmployeeCreateMediaFile() # WTEmployeeCreateMediaFile | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Set profile picture
         api_response = api_instance.set_profile_picture(wt_employee_create_media_file)
+        print("The response of EmployeesApi->set_profile_picture:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->set_profile_picture: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_create_media_file** | [**WTEmployeeCreateMediaFile**](WTEmployeeCreateMediaFile.md)|  |
+ **wt_employee_create_media_file** | [**WTEmployeeCreateMediaFile**](WTEmployeeCreateMediaFile.md)|  | 
 
 ### Return type
 
@@ -3178,7 +2983,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -3200,14 +3004,11 @@ Update club members
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_update_records import WTEmployeeUpdateRecords
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_employee_update_records import WTEmployeeUpdateRecords
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -3216,29 +3017,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    wt_employee_update_records = WTEmployeeUpdateRecords(
-        file_name="club-members-upload.csv",
-        bucket="members",
-    ) # WTEmployeeUpdateRecords | 
+    api_instance = wallet.EmployeesApi(api_client)
+    wt_employee_update_records = wallet.WTEmployeeUpdateRecords() # WTEmployeeUpdateRecords | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update club members
         api_response = api_instance.update_club_members(wt_employee_update_records)
+        print("The response of EmployeesApi->update_club_members:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->update_club_members: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_update_records** | [**WTEmployeeUpdateRecords**](WTEmployeeUpdateRecords.md)|  |
+ **wt_employee_update_records** | [**WTEmployeeUpdateRecords**](WTEmployeeUpdateRecords.md)|  | 
 
 ### Return type
 
@@ -3253,7 +3053,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -3266,7 +3065,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_email_notification_preference**
-> Employee update_email_notification_preference(inline_object)
+> Employee update_email_notification_preference(update_email_notification_preference_request)
 
 Changes the employee's email notification preference to enabled or disabled
 
@@ -3274,15 +3073,12 @@ Changes the employee's email notification preference to enabled or disabled
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.employee import Employee
-from wallet.model.inline_object import InlineObject
-from wallet.model.auth_error import AuthError
+from wallet.models.employee import Employee
+from wallet.models.update_email_notification_preference_request import UpdateEmailNotificationPreferenceRequest
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -3291,28 +3087,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    inline_object = InlineObject(
-        is_email_notification_disabled=True,
-    ) # InlineObject | 
+    api_instance = wallet.EmployeesApi(api_client)
+    update_email_notification_preference_request = wallet.UpdateEmailNotificationPreferenceRequest() # UpdateEmailNotificationPreferenceRequest | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Changes the employee's email notification preference to enabled or disabled
-        api_response = api_instance.update_email_notification_preference(inline_object)
+        api_response = api_instance.update_email_notification_preference(update_email_notification_preference_request)
+        print("The response of EmployeesApi->update_email_notification_preference:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->update_email_notification_preference: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object** | [**InlineObject**](InlineObject.md)|  |
+ **update_email_notification_preference_request** | [**UpdateEmailNotificationPreferenceRequest**](UpdateEmailNotificationPreferenceRequest.md)|  | 
 
 ### Return type
 
@@ -3326,7 +3122,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -3348,16 +3143,12 @@ Update peer
 
 
 ```python
-import time
 import wallet
-from wallet.api import employees_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_employee_update import WTEmployeeUpdate
-from wallet.model.employee import Employee
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.employee import Employee
+from wallet.models.wt_employee_update import WTEmployeeUpdate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -3366,45 +3157,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = employees_api.EmployeesApi(api_client)
-    user_id = NanoID("C") # NanoID | 
-    wt_employee_update = WTEmployeeUpdate(
-        employee_id="EMP005",
-        first_name="John",
-        last_name="Doe",
-        phone_number="+1809898765",
-        is_public_representative=True,
-        wallet_sequence_number=1,
-        job_title="Marketing Executive",
-        department="Sales & Marketing",
-        schedule_start_day=None,
-        schedule_start_hour=None,
-        schedule_start_minute=None,
-        schedule_start_meridiem=None,
-        schedule_end_day=None,
-        schedule_end_hour=None,
-        schedule_end_minute=None,
-        schedule_end_meridiem=None,
-    ) # WTEmployeeUpdate | 
+    api_instance = wallet.EmployeesApi(api_client)
+    user_id = 'user_id_example' # str | 
+    wt_employee_update = wallet.WTEmployeeUpdate() # WTEmployeeUpdate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update peer
         api_response = api_instance.update_employee_peer(user_id, wt_employee_update)
+        print("The response of EmployeesApi->update_employee_peer:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmployeesApi->update_employee_peer: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **NanoID**|  |
- **wt_employee_update** | [**WTEmployeeUpdate**](WTEmployeeUpdate.md)|  |
+ **user_id** | **str**|  | 
+ **wt_employee_update** | [**WTEmployeeUpdate**](WTEmployeeUpdate.md)|  | 
 
 ### Return type
 
@@ -3418,7 +3194,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
