@@ -1,0 +1,28 @@
+# PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+
+## Example
+
+```python
+from wallet.models.pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count_opt_in_source_id import PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID from a JSON string
+pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count_opt_in_source_id_instance = PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID.from_json(json)
+# print the JSON string representation of the object
+print PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID.to_json()
+
+# convert the object into a dict
+pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count_opt_in_source_id_dict = pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count_opt_in_source_id_instance.to_dict()
+# create an instance of PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID from a dict
+pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count_opt_in_source_id_form_dict = pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count_opt_in_source_id.from_dict(pick_ss_opt_in_list_member_update_params_exclude_keyof_ss_opt_in_list_member_update_params_merchant_created_at_or_max_sms_count_opt_in_source_id_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

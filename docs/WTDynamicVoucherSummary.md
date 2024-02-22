@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **calc_error** | **bool** |  | 
@@ -25,10 +26,27 @@ Name | Type | Description | Notes
 **total_amount_subtracted_decimal** | **str** |  | 
 **total_amount_subtracted_string** | **str** |  | 
 **total_decremented_multiple** | **float** |  | 
-**redeemed_keys** | **[str]** |  | 
-**status** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
+**redeemed_keys** | **List[str]** |  | 
+**status** | [**WTDynamicVoucherSummaryStatus**](WTDynamicVoucherSummaryStatus.md) |  | 
 **expired** | **bool** |  | 
 
+## Example
+
+```python
+from wallet.models.wt_dynamic_voucher_summary import WTDynamicVoucherSummary
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of WTDynamicVoucherSummary from a JSON string
+wt_dynamic_voucher_summary_instance = WTDynamicVoucherSummary.from_json(json)
+# print the JSON string representation of the object
+print WTDynamicVoucherSummary.to_json()
+
+# convert the object into a dict
+wt_dynamic_voucher_summary_dict = wt_dynamic_voucher_summary_instance.to_dict()
+# create an instance of WTDynamicVoucherSummary from a dict
+wt_dynamic_voucher_summary_form_dict = wt_dynamic_voucher_summary.from_dict(wt_dynamic_voucher_summary_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

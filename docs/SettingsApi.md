@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_active_campaigns**
-> [StaticVoucherCampaign] get_active_campaigns()
+> List[StaticVoucherCampaign] get_active_campaigns()
 
 Get active campaigns
 
@@ -17,14 +17,11 @@ Get active campaigns
 
 
 ```python
-import time
 import wallet
-from wallet.api import settings_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.static_voucher_campaign import StaticVoucherCampaign
-from wallet.model.auth_error import AuthError
+from wallet.models.static_voucher_campaign import StaticVoucherCampaign
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -33,26 +30,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = settings_api.SettingsApi(api_client)
+    api_instance = wallet.SettingsApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Get active campaigns
         api_response = api_instance.get_active_campaigns()
+        print("The response of SettingsApi->get_active_campaigns:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SettingsApi->get_active_campaigns: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**[StaticVoucherCampaign]**](StaticVoucherCampaign.md)
+[**List[StaticVoucherCampaign]**](StaticVoucherCampaign.md)
 
 ### Authorization
 
@@ -62,7 +61,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -84,14 +82,11 @@ Get vouchers count
 
 
 ```python
-import time
 import wallet
-from wallet.api import settings_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -100,21 +95,23 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = settings_api.SettingsApi(api_client)
+    api_instance = wallet.SettingsApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Get vouchers count
         api_response = api_instance.get_vouchers_count()
+        print("The response of SettingsApi->get_vouchers_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SettingsApi->get_vouchers_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -129,7 +126,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

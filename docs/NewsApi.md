@@ -20,14 +20,11 @@ Archive news article
 
 
 ```python
-import time
 import wallet
-from wallet.api import news_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.news_article import NewsArticle
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.news_article import NewsArticle
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.NewsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive news article
         api_response = api_instance.archive_news_article(id)
+        print("The response of NewsApi->archive_news_article:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling NewsApi->archive_news_article: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create news article
 
 
 ```python
-import time
 import wallet
-from wallet.api import news_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.news_article import NewsArticle
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_news_article_create_params import WTNewsArticleCreateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.news_article import NewsArticle
+from wallet.models.wt_news_article_create_params import WTNewsArticleCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,33 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
-    wt_news_article_create_params = WTNewsArticleCreateParams(
-        title="This is the title of the news article",
-        order_number=1,
-        body="This is the description of the news article",
-        url="https://example.com/news-article.html",
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        published_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-    ) # WTNewsArticleCreateParams | 
+    api_instance = wallet.NewsApi(api_client)
+    wt_news_article_create_params = wallet.WTNewsArticleCreateParams() # WTNewsArticleCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create news article
         api_response = api_instance.create_news_article(wt_news_article_create_params)
+        print("The response of NewsApi->create_news_article:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling NewsApi->create_news_article: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_news_article_create_params** | [**WTNewsArticleCreateParams**](WTNewsArticleCreateParams.md)|  |
+ **wt_news_article_create_params** | [**WTNewsArticleCreateParams**](WTNewsArticleCreateParams.md)|  | 
 
 ### Return type
 
@@ -149,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -162,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_news_articles**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_news_articles()
+> object fetch_all_news_articles(is_archive_included=is_archive_included)
 
 Fetch all news articles
 
@@ -170,13 +159,10 @@ Fetch all news articles
 
 
 ```python
-import time
 import wallet
-from wallet.api import news_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -185,31 +171,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+    api_instance = wallet.NewsApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all news articles
         api_response = api_instance.fetch_all_news_articles(is_archive_included=is_archive_included)
+        print("The response of NewsApi->fetch_all_news_articles:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling NewsApi->fetch_all_news_articles: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -219,7 +206,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -241,14 +227,11 @@ Restore news article
 
 
 ```python
-import time
 import wallet
-from wallet.api import news_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.news_article import NewsArticle
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.news_article import NewsArticle
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -257,26 +240,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.NewsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore news article
         api_response = api_instance.restore_news_article(id)
+        print("The response of NewsApi->restore_news_article:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling NewsApi->restore_news_article: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -290,7 +275,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -312,15 +296,12 @@ Update news article
 
 
 ```python
-import time
 import wallet
-from wallet.api import news_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.news_article import NewsArticle
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_news_article_update_params import WTNewsArticleUpdateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.news_article import NewsArticle
+from wallet.models.wt_news_article_update_params import WTNewsArticleUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -329,35 +310,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_news_article_update_params = WTNewsArticleUpdateParams(
-        title="This is the title of the news article",
-        body="This is the description of the news article",
-        url="https://example.com/news-article.html",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        published_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-    ) # WTNewsArticleUpdateParams | 
+    api_instance = wallet.NewsApi(api_client)
+    id = None # object | 
+    wt_news_article_update_params = wallet.WTNewsArticleUpdateParams() # WTNewsArticleUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update news article
         api_response = api_instance.update_news_article(id, wt_news_article_update_params)
+        print("The response of NewsApi->update_news_article:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling NewsApi->update_news_article: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_news_article_update_params** | [**WTNewsArticleUpdateParams**](WTNewsArticleUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_news_article_update_params** | [**WTNewsArticleUpdateParams**](WTNewsArticleUpdateParams.md)|  | 
 
 ### Return type
 
@@ -371,7 +347,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

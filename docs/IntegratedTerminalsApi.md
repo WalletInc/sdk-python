@@ -20,14 +20,11 @@ Archive POS machine
 
 
 ```python
-import time
 import wallet
-from wallet.api import integrated_terminals_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_pos_machine import WTPosMachine
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_pos_machine import WTPosMachine
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = integrated_terminals_api.IntegratedTerminalsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.IntegratedTerminalsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive POS machine
         api_response = api_instance.archive_pos_machine(id)
+        print("The response of IntegratedTerminalsApi->archive_pos_machine:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling IntegratedTerminalsApi->archive_pos_machine: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create POS machine
 
 
 ```python
-import time
 import wallet
-from wallet.api import integrated_terminals_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_pos_machine import WTPosMachine
-from wallet.model.wt_pos_machine_create_params import WTPosMachineCreateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_pos_machine import WTPosMachine
+from wallet.models.wt_pos_machine_create_params import WTPosMachineCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,32 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = integrated_terminals_api.IntegratedTerminalsApi(api_client)
-    wt_pos_machine_create_params = WTPosMachineCreateParams(
-        register_id="1",
-        register_name="Register 1",
-        outlet_name="California",
-        outlet_number=5,
-        profit_center="profit_center_example",
-    ) # WTPosMachineCreateParams | 
+    api_instance = wallet.IntegratedTerminalsApi(api_client)
+    wt_pos_machine_create_params = wallet.WTPosMachineCreateParams() # WTPosMachineCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create POS machine
         api_response = api_instance.create_pos_machine(wt_pos_machine_create_params)
+        print("The response of IntegratedTerminalsApi->create_pos_machine:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling IntegratedTerminalsApi->create_pos_machine: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_pos_machine_create_params** | [**WTPosMachineCreateParams**](WTPosMachineCreateParams.md)|  |
+ **wt_pos_machine_create_params** | [**WTPosMachineCreateParams**](WTPosMachineCreateParams.md)|  | 
 
 ### Return type
 
@@ -148,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -161,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_pos_machines**
-> [bool, date, datetime, dict, float, int, list, str, none_type] fetch_all_pos_machines()
+> List[object] fetch_all_pos_machines(is_archive_included=is_archive_included)
 
 Fetch all POS machines
 
@@ -169,13 +159,10 @@ Fetch all POS machines
 
 
 ```python
-import time
 import wallet
-from wallet.api import integrated_terminals_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -184,31 +171,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = integrated_terminals_api.IntegratedTerminalsApi(api_client)
+    api_instance = wallet.IntegratedTerminalsApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all POS machines
         api_response = api_instance.fetch_all_pos_machines(is_archive_included=is_archive_included)
+        print("The response of IntegratedTerminalsApi->fetch_all_pos_machines:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling IntegratedTerminalsApi->fetch_all_pos_machines: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**[bool, date, datetime, dict, float, int, list, str, none_type]**
+**List[object]**
 
 ### Authorization
 
@@ -218,7 +206,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -240,14 +227,11 @@ Restore POS machine
 
 
 ```python
-import time
 import wallet
-from wallet.api import integrated_terminals_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_pos_machine import WTPosMachine
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_pos_machine import WTPosMachine
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -256,26 +240,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = integrated_terminals_api.IntegratedTerminalsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.IntegratedTerminalsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore POS machine
         api_response = api_instance.restore_pos_machine(id)
+        print("The response of IntegratedTerminalsApi->restore_pos_machine:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling IntegratedTerminalsApi->restore_pos_machine: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -289,7 +275,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -311,15 +296,12 @@ Update POS machine
 
 
 ```python
-import time
 import wallet
-from wallet.api import integrated_terminals_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_pos_machine import WTPosMachine
-from wallet.model.wt_pos_machine_update_params import WTPosMachineUpdateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_pos_machine import WTPosMachine
+from wallet.models.wt_pos_machine_update_params import WTPosMachineUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -328,34 +310,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = integrated_terminals_api.IntegratedTerminalsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_pos_machine_update_params = WTPosMachineUpdateParams(
-        register_id="1",
-        register_name="Register 1",
-        outlet_name="California",
-        outlet_number=5,
-        profit_center="profit_center_example",
-    ) # WTPosMachineUpdateParams | 
+    api_instance = wallet.IntegratedTerminalsApi(api_client)
+    id = None # object | 
+    wt_pos_machine_update_params = wallet.WTPosMachineUpdateParams() # WTPosMachineUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update POS machine
         api_response = api_instance.update_pos_machine(id, wt_pos_machine_update_params)
+        print("The response of IntegratedTerminalsApi->update_pos_machine:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling IntegratedTerminalsApi->update_pos_machine: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_pos_machine_update_params** | [**WTPosMachineUpdateParams**](WTPosMachineUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_pos_machine_update_params** | [**WTPosMachineUpdateParams**](WTPosMachineUpdateParams.md)|  | 
 
 ### Return type
 
@@ -369,7 +347,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

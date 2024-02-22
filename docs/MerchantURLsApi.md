@@ -22,14 +22,11 @@ Archive merchant url
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_urls_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.merchant_url import MerchantURL
-from wallet.model.auth_error import AuthError
+from wallet.models.merchant_url import MerchantURL
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -38,26 +35,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_urls_api.MerchantURLsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantURLsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive merchant url
         api_response = api_instance.archive_merchant_url(id)
+        print("The response of MerchantURLsApi->archive_merchant_url:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantURLsApi->archive_merchant_url: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -71,7 +70,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -93,15 +91,12 @@ Create merchant url
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_urls_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.merchant_url import MerchantURL
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_merchant_url_create import WTMerchantURLCreate
+from wallet.models.merchant_url import MerchantURL
+from wallet.models.wt_merchant_url_create import WTMerchantURLCreate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -110,29 +105,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_urls_api.MerchantURLsApi(api_client)
-    wt_merchant_url_create = WTMerchantURLCreate(
-        nickname="Title",
-        destination_url="https://example.com",
-    ) # WTMerchantURLCreate | 
+    api_instance = wallet.MerchantURLsApi(api_client)
+    wt_merchant_url_create = wallet.WTMerchantURLCreate() # WTMerchantURLCreate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create merchant url
         api_response = api_instance.create_merchant_url(wt_merchant_url_create)
+        print("The response of MerchantURLsApi->create_merchant_url:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantURLsApi->create_merchant_url: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_merchant_url_create** | [**WTMerchantURLCreate**](WTMerchantURLCreate.md)|  |
+ **wt_merchant_url_create** | [**WTMerchantURLCreate**](WTMerchantURLCreate.md)|  | 
 
 ### Return type
 
@@ -147,7 +141,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -160,7 +153,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_merchant_urls**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_merchant_urls()
+> object fetch_all_merchant_urls(is_archive_included=is_archive_included)
 
 Fetch all merchant urls
 
@@ -168,13 +161,10 @@ Fetch all merchant urls
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_urls_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -183,31 +173,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_urls_api.MerchantURLsApi(api_client)
+    api_instance = wallet.MerchantURLsApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all merchant urls
         api_response = api_instance.fetch_all_merchant_urls(is_archive_included=is_archive_included)
+        print("The response of MerchantURLsApi->fetch_all_merchant_urls:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantURLsApi->fetch_all_merchant_urls: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -217,7 +208,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -239,14 +229,11 @@ Fetch merchant url
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_urls_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.merchant_url import MerchantURL
-from wallet.model.auth_error import AuthError
+from wallet.models.merchant_url import MerchantURL
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -255,26 +242,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_urls_api.MerchantURLsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantURLsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch merchant url
         api_response = api_instance.fetch_merchant_url(id)
+        print("The response of MerchantURLsApi->fetch_merchant_url:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantURLsApi->fetch_merchant_url: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -289,7 +278,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -302,7 +290,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_merchant_url_requests**
-> [WalletPageView] fetch_merchant_url_requests(id)
+> List[WalletPageView] fetch_merchant_url_requests(id)
 
 Fetch requests
 
@@ -310,14 +298,11 @@ Fetch requests
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_urls_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wallet_page_view import WalletPageView
-from wallet.model.auth_error import AuthError
+from wallet.models.wallet_page_view import WalletPageView
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -326,30 +311,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_urls_api.MerchantURLsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantURLsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch requests
         api_response = api_instance.fetch_merchant_url_requests(id)
+        print("The response of MerchantURLsApi->fetch_merchant_url_requests:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantURLsApi->fetch_merchant_url_requests: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[WalletPageView]**](WalletPageView.md)
+[**List[WalletPageView]**](WalletPageView.md)
 
 ### Authorization
 
@@ -359,7 +346,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -381,14 +367,11 @@ Restore merchant url
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_urls_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.merchant_url import MerchantURL
-from wallet.model.auth_error import AuthError
+from wallet.models.merchant_url import MerchantURL
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -397,26 +380,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_urls_api.MerchantURLsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantURLsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore merchant url
         api_response = api_instance.restore_merchant_url(id)
+        print("The response of MerchantURLsApi->restore_merchant_url:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantURLsApi->restore_merchant_url: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -430,7 +415,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -452,15 +436,12 @@ Update merchant url
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_urls_api
-from wallet.model.wt_merchant_url_update import WTMerchantURLUpdate
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.merchant_url import MerchantURL
-from wallet.model.auth_error import AuthError
+from wallet.models.merchant_url import MerchantURL
+from wallet.models.wt_merchant_url_update import WTMerchantURLUpdate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -469,31 +450,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_urls_api.MerchantURLsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_merchant_url_update = WTMerchantURLUpdate(
-        nickname="Title",
-        destination_url="https://example.com",
-    ) # WTMerchantURLUpdate | 
+    api_instance = wallet.MerchantURLsApi(api_client)
+    id = None # object | 
+    wt_merchant_url_update = wallet.WTMerchantURLUpdate() # WTMerchantURLUpdate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update merchant url
         api_response = api_instance.update_merchant_url(id, wt_merchant_url_update)
+        print("The response of MerchantURLsApi->update_merchant_url:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantURLsApi->update_merchant_url: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_merchant_url_update** | [**WTMerchantURLUpdate**](WTMerchantURLUpdate.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_merchant_url_update** | [**WTMerchantURLUpdate**](WTMerchantURLUpdate.md)|  | 
 
 ### Return type
 
@@ -507,7 +487,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

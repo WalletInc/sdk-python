@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **header_background_color** | **str** |  | 
@@ -11,6 +12,8 @@ Name | Type | Description | Notes
 **left_menu_section_background_color** | **str** |  | 
 **left_menu_section_font_color** | **str** |  | 
 **company_logo_url** | **str** |  | 
+**header_image_url** | **str** |  | [optional] 
+**header_custom_icon** | **str** |  | [optional] 
 **welcome_message** | **str** |  | 
 **is_apple_enabled** | **bool** |  | 
 **is_google_enabled** | **bool** |  | 
@@ -25,6 +28,7 @@ Name | Type | Description | Notes
 **is_gift_certificates** | **bool** |  | 
 **is_promotions** | **bool** |  | 
 **is_merchant_credit** | **bool** |  | 
+**is_tickets** | **bool** |  | [optional] 
 **is_news_articles** | **bool** |  | 
 **is_performances** | **bool** |  | 
 **is_messages** | **bool** |  | 
@@ -46,11 +50,8 @@ Name | Type | Description | Notes
 **is_settings** | **bool** |  | 
 **is_chat_room** | **bool** |  | 
 **is_sms_opt_in** | **bool** |  | 
+**sms_opt_in_source_id** | [**WalletConfigurationSmsOptInSourceID**](WalletConfigurationSmsOptInSourceID.md) |  | [optional] 
 **is_email_subscriber** | **bool** |  | 
-**header_image_url** | **str** |  | [optional] 
-**header_custom_icon** | **str** |  | [optional] 
-**is_tickets** | **bool** |  | [optional] 
-**sms_opt_in_source_id** | [**NanoID**](NanoID.md) |  | [optional] 
 **google_analytics_id** | **str** |  | [optional] 
 **facebook_pixel_id** | **str** |  | [optional] 
 **public_chat_room_channel_id** | **float** |  | [optional] 
@@ -71,6 +72,23 @@ Name | Type | Description | Notes
 **primary_whats_app** | **str** |  | [optional] 
 **primary_email_address** | **str** |  | [optional] 
 
+## Example
+
+```python
+from wallet.models.wt_wallet_configuration_save_wallet_record import WTWalletConfigurationSaveWalletRecord
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of WTWalletConfigurationSaveWalletRecord from a JSON string
+wt_wallet_configuration_save_wallet_record_instance = WTWalletConfigurationSaveWalletRecord.from_json(json)
+# print the JSON string representation of the object
+print WTWalletConfigurationSaveWalletRecord.to_json()
+
+# convert the object into a dict
+wt_wallet_configuration_save_wallet_record_dict = wt_wallet_configuration_save_wallet_record_instance.to_dict()
+# create an instance of WTWalletConfigurationSaveWalletRecord from a dict
+wt_wallet_configuration_save_wallet_record_form_dict = wt_wallet_configuration_save_wallet_record.from_dict(wt_wallet_configuration_save_wallet_record_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

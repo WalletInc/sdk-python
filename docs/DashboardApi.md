@@ -33,14 +33,11 @@ Count active static voucher campaigns
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -49,28 +46,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count active static voucher campaigns
         api_response = api_instance.fetch_dashboard_active_static_voucher_campaigns_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_active_static_voucher_campaigns_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_active_static_voucher_campaigns_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -84,7 +83,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -106,14 +104,11 @@ Count active static vouchers
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -122,28 +117,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count active static vouchers
         api_response = api_instance.fetch_dashboard_active_static_vouchers_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_active_static_vouchers_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_active_static_vouchers_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -157,7 +154,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -179,14 +175,11 @@ Count Apple Wallet Subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -195,28 +188,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count Apple Wallet Subscribers
         api_response = api_instance.fetch_dashboard_apple_wallet_subscribers_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_apple_wallet_subscribers_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_apple_wallet_subscribers_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -230,7 +225,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -252,14 +246,11 @@ Count employees
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -268,28 +259,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count employees
         api_response = api_instance.fetch_dashboard_employees_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_employees_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_employees_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -303,7 +296,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -325,14 +317,11 @@ Count members
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -341,28 +330,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count members
         api_response = api_instance.fetch_dashboard_members_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_members_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_members_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -376,7 +367,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -398,14 +388,11 @@ Count tiers
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -414,28 +401,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count tiers
         api_response = api_instance.fetch_dashboard_membership_tiers_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_membership_tiers_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_membership_tiers_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -449,7 +438,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -471,14 +459,11 @@ Count News Articles
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -487,28 +472,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count News Articles
         api_response = api_instance.fetch_dashboard_news_articles_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_news_articles_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_news_articles_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -522,7 +509,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -544,14 +530,11 @@ Count opt in lists
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -560,28 +543,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count opt in lists
         api_response = api_instance.fetch_dashboard_opt_in_lists_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_opt_in_lists_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_opt_in_lists_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -595,7 +580,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -617,14 +601,11 @@ Count opt in sources
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -633,28 +614,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count opt in sources
         api_response = api_instance.fetch_dashboard_opt_in_sources_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_opt_in_sources_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_opt_in_sources_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -668,7 +651,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -690,14 +672,11 @@ Count Outbound SMS
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -706,28 +685,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count Outbound SMS
         api_response = api_instance.fetch_dashboard_outbound_sms_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_outbound_sms_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_outbound_sms_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -741,7 +722,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -763,14 +743,11 @@ Count Performances
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -779,28 +756,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count Performances
         api_response = api_instance.fetch_dashboard_performances_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_performances_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_performances_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -814,7 +793,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -836,14 +814,11 @@ Count phone numbers
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -852,28 +827,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count phone numbers
         api_response = api_instance.fetch_dashboard_phone_numbers_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_phone_numbers_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_phone_numbers_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -887,7 +864,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -909,14 +885,11 @@ Count POS Machines
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -925,28 +898,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count POS Machines
         api_response = api_instance.fetch_dashboard_pos_machines_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_pos_machines_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_pos_machines_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -960,7 +935,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -982,14 +956,11 @@ Count POS Transactions
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -998,28 +969,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count POS Transactions
         api_response = api_instance.fetch_dashboard_pos_transactions_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_pos_transactions_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_pos_transactions_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -1033,7 +1006,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1055,14 +1027,11 @@ Count POS redemptions
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1071,28 +1040,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count POS redemptions
         api_response = api_instance.fetch_dashboard_redemptions_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_redemptions_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_redemptions_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -1106,7 +1077,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1128,14 +1098,11 @@ Count POS refunds
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1144,28 +1111,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count POS refunds
         api_response = api_instance.fetch_dashboard_refunds_count(start_date_time, end_date_time)
+        print("The response of DashboardApi->fetch_dashboard_refunds_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_refunds_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
 
 ### Return type
 
@@ -1179,7 +1148,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1193,7 +1161,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_dashboard_wallet_page_views_count**
-> WTCountResult fetch_dashboard_wallet_page_views_count(start_date_time, end_date_time)
+> WTCountResult fetch_dashboard_wallet_page_views_count(start_date_time, end_date_time, wallet_object_prefix=wallet_object_prefix)
 
 Count Wallet page views
 
@@ -1201,14 +1169,11 @@ Count Wallet page views
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1217,39 +1182,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | 
-    wallet_object_prefix = "walletObjectPrefix_example" # str |  (optional)
+    api_instance = wallet.DashboardApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
+    wallet_object_prefix = 'wallet_object_prefix_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Count Wallet page views
-        api_response = api_instance.fetch_dashboard_wallet_page_views_count(start_date_time, end_date_time)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling DashboardApi->fetch_dashboard_wallet_page_views_count: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Count Wallet page views
         api_response = api_instance.fetch_dashboard_wallet_page_views_count(start_date_time, end_date_time, wallet_object_prefix=wallet_object_prefix)
+        print("The response of DashboardApi->fetch_dashboard_wallet_page_views_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_wallet_page_views_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  |
- **end_date_time** | **datetime**|  |
- **wallet_object_prefix** | **str**|  | [optional]
+ **start_date_time** | **datetime**|  | 
+ **end_date_time** | **datetime**|  | 
+ **wallet_object_prefix** | **str**|  | [optional] 
 
 ### Return type
 
@@ -1264,7 +1222,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1277,7 +1234,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_dashboard_widgets_catalog**
-> [DashboardWidget] fetch_dashboard_widgets_catalog()
+> List[DashboardWidget] fetch_dashboard_widgets_catalog()
 
 Fetch widgets catalog
 
@@ -1285,14 +1242,11 @@ Fetch widgets catalog
 
 
 ```python
-import time
 import wallet
-from wallet.api import dashboard_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.dashboard_widget import DashboardWidget
+from wallet.models.dashboard_widget import DashboardWidget
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1301,26 +1255,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dashboard_api.DashboardApi(api_client)
+    api_instance = wallet.DashboardApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch widgets catalog
         api_response = api_instance.fetch_dashboard_widgets_catalog()
+        print("The response of DashboardApi->fetch_dashboard_widgets_catalog:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling DashboardApi->fetch_dashboard_widgets_catalog: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**[DashboardWidget]**](DashboardWidget.md)
+[**List[DashboardWidget]**](DashboardWidget.md)
 
 ### Authorization
 
@@ -1330,7 +1286,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

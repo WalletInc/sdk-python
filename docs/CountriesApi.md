@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **fetch_all_countries**
-> [InlineResponse20011] fetch_all_countries()
+> List[FetchAllCountries200ResponseInner] fetch_all_countries()
 
 Fetch all countries
 
@@ -16,12 +16,11 @@ Fetch all countries
 
 
 ```python
-import time
 import wallet
-from wallet.api import countries_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.inline_response20011 import InlineResponse20011
+from wallet.models.fetch_all_countries200_response_inner import FetchAllCountries200ResponseInner
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -30,26 +29,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = countries_api.CountriesApi(api_client)
+    api_instance = wallet.CountriesApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch all countries
         api_response = api_instance.fetch_all_countries()
+        print("The response of CountriesApi->fetch_all_countries:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling CountriesApi->fetch_all_countries: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**[InlineResponse20011]**](InlineResponse20011.md)
+[**List[FetchAllCountries200ResponseInner]**](FetchAllCountries200ResponseInner.md)
 
 ### Authorization
 
@@ -59,7 +60,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

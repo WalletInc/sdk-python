@@ -18,15 +18,12 @@ Login
 
 
 ```python
-import time
 import wallet
-from wallet.api import login_and_logout_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_authentication_login_request import WTAuthenticationLoginRequest
-from wallet.model.wt_authentication_login_response import WTAuthenticationLoginResponse
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_authentication_login_request import WTAuthenticationLoginRequest
+from wallet.models.wt_authentication_login_response import WTAuthenticationLoginResponse
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -35,29 +32,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = login_and_logout_api.LoginAndLogoutApi(api_client)
-    wt_authentication_login_request = WTAuthenticationLoginRequest(
-        username="username",
-        password="password_example",
-    ) # WTAuthenticationLoginRequest | 
+    api_instance = wallet.LoginAndLogoutApi(api_client)
+    wt_authentication_login_request = wallet.WTAuthenticationLoginRequest() # WTAuthenticationLoginRequest | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Login
         api_response = api_instance.login(wt_authentication_login_request)
+        print("The response of LoginAndLogoutApi->login:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling LoginAndLogoutApi->login: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_authentication_login_request** | [**WTAuthenticationLoginRequest**](WTAuthenticationLoginRequest.md)|  |
+ **wt_authentication_login_request** | [**WTAuthenticationLoginRequest**](WTAuthenticationLoginRequest.md)|  | 
 
 ### Return type
 
@@ -72,7 +68,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -85,7 +80,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **login_status**
-> bool, date, datetime, dict, float, int, list, str, none_type login_status(token)
+> LoginStatus200Response login_status(token)
 
 Retrieve status of session token
 
@@ -93,13 +88,11 @@ Retrieve status of session token
 
 
 ```python
-import time
 import wallet
-from wallet.api import login_and_logout_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.login_status200_response import LoginStatus200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,30 +101,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = login_and_logout_api.LoginAndLogoutApi(api_client)
-    token = "token_example" # str | 
+    api_instance = wallet.LoginAndLogoutApi(api_client)
+    token = 'token_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Retrieve status of session token
         api_response = api_instance.login_status(token)
+        print("The response of LoginAndLogoutApi->login_status:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling LoginAndLogoutApi->login_status: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **str**|  |
+ **token** | **str**|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**LoginStatus200Response**](LoginStatus200Response.md)
 
 ### Authorization
 
@@ -141,7 +136,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -163,13 +157,10 @@ Logout
 
 
 ```python
-import time
 import wallet
-from wallet.api import login_and_logout_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -178,21 +169,23 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = login_and_logout_api.LoginAndLogoutApi(api_client)
+    api_instance = wallet.LoginAndLogoutApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Logout
         api_response = api_instance.logout()
+        print("The response of LoginAndLogoutApi->logout:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling LoginAndLogoutApi->logout: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -207,7 +200,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

@@ -25,14 +25,11 @@ Archive merchant credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_merchant_credit import WTMerchantCredit
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_merchant_credit import WTMerchantCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -41,26 +38,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive merchant credit
         api_response = api_instance.archive_merchant_credit(id)
+        print("The response of MerchantCreditsApi->archive_merchant_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->archive_merchant_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -74,7 +73,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -96,17 +94,12 @@ Create merchant credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.merchant_not_initialized import MerchantNotInitialized
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_merchant_credit import WTMerchantCredit
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_merchant_credit_creation_params import WTMerchantCreditCreationParams
-from wallet.model.duplicate_row_found import DuplicateRowFound
+from wallet.models.wt_merchant_credit import WTMerchantCredit
+from wallet.models.wt_merchant_credit_creation_params import WTMerchantCreditCreationParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -115,30 +108,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    wt_merchant_credit_creation_params = WTMerchantCreditCreationParams(
-        mobile_number="+18047552674",
-        credit_amount=125,
-        member_id="1hdue82",
-    ) # WTMerchantCreditCreationParams | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    wt_merchant_credit_creation_params = wallet.WTMerchantCreditCreationParams() # WTMerchantCreditCreationParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create merchant credit
         api_response = api_instance.create_merchant_credit(wt_merchant_credit_creation_params)
+        print("The response of MerchantCreditsApi->create_merchant_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->create_merchant_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_merchant_credit_creation_params** | [**WTMerchantCreditCreationParams**](WTMerchantCreditCreationParams.md)|  |
+ **wt_merchant_credit_creation_params** | [**WTMerchantCreditCreationParams**](WTMerchantCreditCreationParams.md)|  | 
 
 ### Return type
 
@@ -152,7 +143,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -176,14 +166,11 @@ Fetch merchant credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_merchant_credit import WTMerchantCredit
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_merchant_credit import WTMerchantCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -192,26 +179,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch merchant credit
         api_response = api_instance.fetch_merchant_credit_by_id(id)
+        print("The response of MerchantCreditsApi->fetch_merchant_credit_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->fetch_merchant_credit_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -226,7 +215,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -239,7 +227,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_merchant_credit_count**
-> InlineResponse2003 fetch_merchant_credit_count()
+> FetchMembersCount200Response fetch_merchant_credit_count()
 
 Fetch all active merchant credits
 
@@ -247,14 +235,11 @@ Fetch all active merchant credits
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.models.fetch_members_count200_response import FetchMembersCount200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -263,26 +248,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
+    api_instance = wallet.MerchantCreditsApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch all active merchant credits
         api_response = api_instance.fetch_merchant_credit_count()
+        print("The response of MerchantCreditsApi->fetch_merchant_credit_count:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->fetch_merchant_credit_count: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**FetchMembersCount200Response**](FetchMembersCount200Response.md)
 
 ### Authorization
 
@@ -292,7 +279,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -314,15 +300,12 @@ Fetch history
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.ms_merchant_credit_history_pagination import MSMerchantCreditHistoryPagination
+from wallet.models.ms_merchant_credit_history_pagination import MSMerchantCreditHistoryPagination
+from wallet.models.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -331,30 +314,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    pagination_request_with_id_and_without_sort_options = PaginationRequestWithIDAndWithoutSortOptions(
-        page_size=20,
-        page_num=1,
-        id=PrefixedNanoID("CMueJDL982Hs"),
-    ) # PaginationRequestWithIDAndWithoutSortOptions | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch history
         api_response = api_instance.fetch_merchant_credit_history_log(pagination_request_with_id_and_without_sort_options)
+        print("The response of MerchantCreditsApi->fetch_merchant_credit_history_log:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->fetch_merchant_credit_history_log: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+ **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  | 
 
 ### Return type
 
@@ -368,7 +349,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -390,15 +370,12 @@ Fetch redemption log
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ms_merchant_credit_redemption_pagination import MSMerchantCreditRedemptionPagination
-from wallet.model.auth_error import AuthError
+from wallet.models.ms_merchant_credit_redemption_pagination import MSMerchantCreditRedemptionPagination
+from wallet.models.pagination_request_with_id_and_without_sort_options import PaginationRequestWithIDAndWithoutSortOptions
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -407,30 +384,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    pagination_request_with_id_and_without_sort_options = PaginationRequestWithIDAndWithoutSortOptions(
-        page_size=20,
-        page_num=1,
-        id=PrefixedNanoID("CMueJDL982Hs"),
-    ) # PaginationRequestWithIDAndWithoutSortOptions | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch redemption log
         api_response = api_instance.fetch_merchant_credit_redemption_log(pagination_request_with_id_and_without_sort_options)
+        print("The response of MerchantCreditsApi->fetch_merchant_credit_redemption_log:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->fetch_merchant_credit_redemption_log: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+ **pagination_request_with_id_and_without_sort_options** | [**PaginationRequestWithIDAndWithoutSortOptions**](PaginationRequestWithIDAndWithoutSortOptions.md)|  | 
 
 ### Return type
 
@@ -445,7 +420,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -458,7 +432,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_merchant_credits_by_page**
-> [WTMerchantCredit] fetch_merchant_credits_by_page(pagination_request_with_sort_options)
+> List[WTMerchantCredit] fetch_merchant_credits_by_page(pagination_request_with_sort_options)
 
 Fetch merchant credits by page
 
@@ -466,15 +440,12 @@ Fetch merchant credits by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.pagination_request_with_sort_options import PaginationRequestWithSortOptions
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_merchant_credit import WTMerchantCredit
-from wallet.model.auth_error import AuthError
+from wallet.models.pagination_request_with_sort_options import PaginationRequestWithSortOptions
+from wallet.models.wt_merchant_credit import WTMerchantCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -483,36 +454,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    pagination_request_with_sort_options = PaginationRequestWithSortOptions(
-        is_archive_included=True,
-        page_size=20,
-        page_num=1,
-        sort_key="createdAt",
-        sort_order=None,
-    ) # PaginationRequestWithSortOptions | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    pagination_request_with_sort_options = wallet.PaginationRequestWithSortOptions() # PaginationRequestWithSortOptions | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch merchant credits by page
         api_response = api_instance.fetch_merchant_credits_by_page(pagination_request_with_sort_options)
+        print("The response of MerchantCreditsApi->fetch_merchant_credits_by_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->fetch_merchant_credits_by_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pagination_request_with_sort_options** | [**PaginationRequestWithSortOptions**](PaginationRequestWithSortOptions.md)|  |
+ **pagination_request_with_sort_options** | [**PaginationRequestWithSortOptions**](PaginationRequestWithSortOptions.md)|  | 
 
 ### Return type
 
-[**[WTMerchantCredit]**](WTMerchantCredit.md)
+[**List[WTMerchantCredit]**](WTMerchantCredit.md)
 
 ### Authorization
 
@@ -522,7 +489,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -544,14 +510,11 @@ Restore merchant credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_merchant_credit import WTMerchantCredit
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_merchant_credit import WTMerchantCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -560,26 +523,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore merchant credit
         api_response = api_instance.restore_merchant_credit(id)
+        print("The response of MerchantCreditsApi->restore_merchant_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->restore_merchant_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -593,7 +558,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -615,15 +579,12 @@ Search for merchant credits
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.merchant_credit_search import MerchantCreditSearch
-from wallet.model.auth_error import AuthError
-from wallet.model.paginated_wt_merchant_credits import PaginatedWTMerchantCredits
+from wallet.models.merchant_credit_search import MerchantCreditSearch
+from wallet.models.paginated_wt_merchant_credits import PaginatedWTMerchantCredits
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -632,31 +593,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    merchant_credit_search = MerchantCreditSearch(
-        is_archive_included=True,
-        page_size=20,
-        page_num=1,
-        key="MEM001",
-    ) # MerchantCreditSearch | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    merchant_credit_search = wallet.MerchantCreditSearch() # MerchantCreditSearch | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Search for merchant credits
         api_response = api_instance.search_merchant_credits(merchant_credit_search)
+        print("The response of MerchantCreditsApi->search_merchant_credits:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->search_merchant_credits: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_credit_search** | [**MerchantCreditSearch**](MerchantCreditSearch.md)|  |
+ **merchant_credit_search** | [**MerchantCreditSearch**](MerchantCreditSearch.md)|  | 
 
 ### Return type
 
@@ -670,7 +628,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -692,17 +649,12 @@ Update merchant credit
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_credits_api
-from wallet.model.pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number import PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_merchant_credit import WTMerchantCredit
-from wallet.model.foreign_key_does_not_exist import ForeignKeyDoesNotExist
-from wallet.model.auth_error import AuthError
-from wallet.model.duplicate_row_found import DuplicateRowFound
+from wallet.models.pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number import PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber
+from wallet.models.wt_merchant_credit import WTMerchantCredit
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -711,32 +663,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_credits_api.MerchantCreditsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number = PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber(
-        member_id="1hdue82",
-        mobile_number="+18047552674",
-        credit_amount=125,
-    ) # PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber | 
+    api_instance = wallet.MerchantCreditsApi(api_client)
+    id = None # object | 
+    pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number = wallet.PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber() # PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update merchant credit
         api_response = api_instance.update_merchant_credit(id, pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number)
+        print("The response of MerchantCreditsApi->update_merchant_credit:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantCreditsApi->update_merchant_credit: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number** | [**PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber**](PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md)|  |
+ **id** | [**object**](.md)|  | 
+ **pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number** | [**PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber**](PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md)|  | 
 
 ### Return type
 
@@ -750,7 +700,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

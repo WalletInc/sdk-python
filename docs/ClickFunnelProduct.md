@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  | 
@@ -14,25 +15,42 @@ Name | Type | Description | Notes
 **subject** | **str** |  | 
 **html_body** | **str** |  | 
 **thank_you_page_id** | **float** |  | 
+**stripe_cancel_after_payments** | **object** |  | [optional] 
 **bump** | **bool** |  | 
+**cart_product_id** | **object** |  | [optional] 
 **billing_integration** | **str** |  | 
+**infusionsoft_product_id** | **object** |  | [optional] 
+**infusionsoft_subscription_id** | **object** |  | [optional] 
+**ontraport_product_id** | **object** |  | [optional] 
+**ontraport_payment_count** | **object** |  | [optional] 
+**ontraport_payment_type** | **object** |  | [optional] 
+**ontraport_unit** | **object** |  | [optional] 
+**ontraport_gateway_id** | **object** |  | [optional] 
+**ontraport_invoice_id** | **object** |  | [optional] 
 **commissionable** | **bool** |  | 
 **statement_descriptor** | **str** |  | 
+**netsuite_id** | **object** |  | [optional] 
+**netsuite_tag** | **object** |  | [optional] 
+**netsuite_class** | **object** |  | [optional] 
 **description** | **str** |  | 
-**stripe_cancel_after_payments** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**cart_product_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**infusionsoft_product_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**infusionsoft_subscription_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**ontraport_product_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**ontraport_payment_count** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**ontraport_payment_type** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**ontraport_unit** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**ontraport_gateway_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**ontraport_invoice_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**netsuite_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**netsuite_tag** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**netsuite_class** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 
+## Example
+
+```python
+from wallet.models.click_funnel_product import ClickFunnelProduct
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ClickFunnelProduct from a JSON string
+click_funnel_product_instance = ClickFunnelProduct.from_json(json)
+# print the JSON string representation of the object
+print ClickFunnelProduct.to_json()
+
+# convert the object into a dict
+click_funnel_product_dict = click_funnel_product_instance.to_dict()
+# create an instance of ClickFunnelProduct from a dict
+click_funnel_product_form_dict = click_funnel_product.from_dict(click_funnel_product_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
