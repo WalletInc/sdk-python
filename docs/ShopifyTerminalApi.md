@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **fetch_wallet_item_from_shopify_terminal**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_wallet_item_from_shopify_terminal(item_id)
+> object fetch_wallet_item_from_shopify_terminal(item_id)
 
 Fetch item
 
@@ -18,13 +18,10 @@ Fetch item
 
 
 ```python
-import time
 import wallet
-from wallet.api import shopify_terminal_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -33,30 +30,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = shopify_terminal_api.ShopifyTerminalApi(api_client)
-    item_id = "itemID_example" # str | 
+    api_instance = wallet.ShopifyTerminalApi(api_client)
+    item_id = 'item_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch item
         api_response = api_instance.fetch_wallet_item_from_shopify_terminal(item_id)
+        print("The response of ShopifyTerminalApi->fetch_wallet_item_from_shopify_terminal:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ShopifyTerminalApi->fetch_wallet_item_from_shopify_terminal: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item_id** | **str**|  |
+ **item_id** | **str**|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -66,7 +65,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -80,7 +78,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **redeem_wallet_item_from_shopify_terminal**
-> bool, date, datetime, dict, float, int, list, str, none_type redeem_wallet_item_from_shopify_terminal(item_id, wt_wallet_item_redemption)
+> object redeem_wallet_item_from_shopify_terminal(item_id, wt_wallet_item_redemption)
 
 Redeem item
 
@@ -88,14 +86,11 @@ Redeem item
 
 
 ```python
-import time
 import wallet
-from wallet.api import shopify_terminal_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_wallet_item_redemption import WTWalletItemRedemption
+from wallet.models.wt_wallet_item_redemption import WTWalletItemRedemption
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -104,36 +99,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = shopify_terminal_api.ShopifyTerminalApi(api_client)
-    item_id = "itemID_example" # str | 
-    wt_wallet_item_redemption = WTWalletItemRedemption(
-        check_amount=500,
-        transaction_number="jdfju8uy832hn4ujbh",
-        meta_value="JD-344",
-    ) # WTWalletItemRedemption | 
+    api_instance = wallet.ShopifyTerminalApi(api_client)
+    item_id = 'item_id_example' # str | 
+    wt_wallet_item_redemption = wallet.WTWalletItemRedemption() # WTWalletItemRedemption | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Redeem item
         api_response = api_instance.redeem_wallet_item_from_shopify_terminal(item_id, wt_wallet_item_redemption)
+        print("The response of ShopifyTerminalApi->redeem_wallet_item_from_shopify_terminal:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ShopifyTerminalApi->redeem_wallet_item_from_shopify_terminal: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item_id** | **str**|  |
- **wt_wallet_item_redemption** | [**WTWalletItemRedemption**](WTWalletItemRedemption.md)|  |
+ **item_id** | **str**|  | 
+ **wt_wallet_item_redemption** | [**WTWalletItemRedemption**](WTWalletItemRedemption.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -143,7 +136,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -157,7 +149,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **refund_wallet_item_from_shopify_terminal**
-> bool, date, datetime, dict, float, int, list, str, none_type refund_wallet_item_from_shopify_terminal(ledger_entry_id)
+> object refund_wallet_item_from_shopify_terminal(ledger_entry_id)
 
 Refund transaction
 
@@ -165,14 +157,10 @@ Refund transaction
 
 
 ```python
-import time
 import wallet
-from wallet.api import shopify_terminal_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -181,30 +169,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = shopify_terminal_api.ShopifyTerminalApi(api_client)
-    ledger_entry_id = NanoID("C") # NanoID | 
+    api_instance = wallet.ShopifyTerminalApi(api_client)
+    ledger_entry_id = 'ledger_entry_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Refund transaction
         api_response = api_instance.refund_wallet_item_from_shopify_terminal(ledger_entry_id)
+        print("The response of ShopifyTerminalApi->refund_wallet_item_from_shopify_terminal:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ShopifyTerminalApi->refund_wallet_item_from_shopify_terminal: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ledger_entry_id** | **NanoID**|  |
+ **ledger_entry_id** | **str**|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -214,7 +204,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

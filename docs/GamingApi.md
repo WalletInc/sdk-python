@@ -20,14 +20,11 @@ Archive gaming
 
 
 ```python
-import time
 import wallet
-from wallet.api import gaming_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.gaming import Gaming
+from wallet.models.gaming import Gaming
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = gaming_api.GamingApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.GamingApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive gaming
         api_response = api_instance.archive_gaming(id)
+        print("The response of GamingApi->archive_gaming:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling GamingApi->archive_gaming: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create gaming
 
 
 ```python
-import time
 import wallet
-from wallet.api import gaming_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_gaming_create_params import WTGamingCreateParams
-from wallet.model.auth_error import AuthError
-from wallet.model.gaming import Gaming
+from wallet.models.gaming import Gaming
+from wallet.models.wt_gaming_create_params import WTGamingCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,33 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = gaming_api.GamingApi(api_client)
-    wt_gaming_create_params = WTGamingCreateParams(
-        title="This is the title of the gaming option",
-        description="This is the description of the gaming option",
-        displayed_price="$200-$350",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://your-site.com/games/blackjack",
-    ) # WTGamingCreateParams | 
+    api_instance = wallet.GamingApi(api_client)
+    wt_gaming_create_params = wallet.WTGamingCreateParams() # WTGamingCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create gaming
         api_response = api_instance.create_gaming(wt_gaming_create_params)
+        print("The response of GamingApi->create_gaming:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling GamingApi->create_gaming: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_gaming_create_params** | [**WTGamingCreateParams**](WTGamingCreateParams.md)|  |
+ **wt_gaming_create_params** | [**WTGamingCreateParams**](WTGamingCreateParams.md)|  | 
 
 ### Return type
 
@@ -149,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -162,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_gaming**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_gaming()
+> object fetch_all_gaming(is_archive_included=is_archive_included)
 
 Fetch all gaming
 
@@ -170,13 +159,10 @@ Fetch all gaming
 
 
 ```python
-import time
 import wallet
-from wallet.api import gaming_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -185,31 +171,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = gaming_api.GamingApi(api_client)
+    api_instance = wallet.GamingApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all gaming
         api_response = api_instance.fetch_all_gaming(is_archive_included=is_archive_included)
+        print("The response of GamingApi->fetch_all_gaming:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling GamingApi->fetch_all_gaming: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -219,7 +206,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -241,14 +227,11 @@ Restore gaming
 
 
 ```python
-import time
 import wallet
-from wallet.api import gaming_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.gaming import Gaming
+from wallet.models.gaming import Gaming
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -257,26 +240,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = gaming_api.GamingApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.GamingApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore gaming
         api_response = api_instance.restore_gaming(id)
+        print("The response of GamingApi->restore_gaming:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling GamingApi->restore_gaming: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -290,7 +275,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -312,15 +296,12 @@ Update gaming
 
 
 ```python
-import time
 import wallet
-from wallet.api import gaming_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_gaming_update_params import WTGamingUpdateParams
-from wallet.model.auth_error import AuthError
-from wallet.model.gaming import Gaming
+from wallet.models.gaming import Gaming
+from wallet.models.wt_gaming_update_params import WTGamingUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -329,35 +310,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = gaming_api.GamingApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_gaming_update_params = WTGamingUpdateParams(
-        title="This is the title of the gaming option",
-        description="This is the description of the gaming option",
-        displayed_price="$200-$350",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://your-site.com/games/blackjack",
-    ) # WTGamingUpdateParams | 
+    api_instance = wallet.GamingApi(api_client)
+    id = None # object | 
+    wt_gaming_update_params = wallet.WTGamingUpdateParams() # WTGamingUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update gaming
         api_response = api_instance.update_gaming(id, wt_gaming_update_params)
+        print("The response of GamingApi->update_gaming:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling GamingApi->update_gaming: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_gaming_update_params** | [**WTGamingUpdateParams**](WTGamingUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_gaming_update_params** | [**WTGamingUpdateParams**](WTGamingUpdateParams.md)|  | 
 
 ### Return type
 
@@ -371,7 +347,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

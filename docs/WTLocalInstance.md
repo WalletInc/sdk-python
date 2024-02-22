@@ -3,6 +3,7 @@
 tsoaModel
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **capabilities** | [**PhoneNumberCapabilities**](PhoneNumberCapabilities.md) |  | 
@@ -18,8 +19,24 @@ Name | Type | Description | Notes
 **lata** | **str** |  | 
 **phone_number** | **str** |  | 
 **friendly_name** | **str** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from wallet.models.wt_local_instance import WTLocalInstance
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of WTLocalInstance from a JSON string
+wt_local_instance_instance = WTLocalInstance.from_json(json)
+# print the JSON string representation of the object
+print WTLocalInstance.to_json()
+
+# convert the object into a dict
+wt_local_instance_dict = wt_local_instance_instance.to_dict()
+# create an instance of WTLocalInstance from a dict
+wt_local_instance_form_dict = wt_local_instance.from_dict(wt_local_instance_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

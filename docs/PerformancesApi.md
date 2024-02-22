@@ -28,14 +28,11 @@ Archive performance
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.performance import Performance
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.performance import Performance
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -44,26 +41,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive performance
         api_response = api_instance.archive_performance(id)
+        print("The response of PerformancesApi->archive_performance:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->archive_performance: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -78,7 +77,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -91,7 +89,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_claimed_comps**
-> InlineResponse2003 count_claimed_comps(id)
+> CountClaimedComps200Response count_claimed_comps(id)
 
 Count number claimed
 
@@ -99,14 +97,11 @@ Count number claimed
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.models.count_claimed_comps200_response import CountClaimedComps200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -115,30 +110,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count number claimed
         api_response = api_instance.count_claimed_comps(id)
+        print("The response of PerformancesApi->count_claimed_comps:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->count_claimed_comps: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**CountClaimedComps200Response**](CountClaimedComps200Response.md)
 
 ### Authorization
 
@@ -148,7 +145,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -162,7 +158,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_redeemed_comps**
-> InlineResponse2003 count_redeemed_comps(id)
+> CountClaimedComps200Response count_redeemed_comps(id)
 
 Count number redeemed
 
@@ -170,14 +166,11 @@ Count number redeemed
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2003 import InlineResponse2003
+from wallet.models.count_claimed_comps200_response import CountClaimedComps200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -186,30 +179,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Count number redeemed
         api_response = api_instance.count_redeemed_comps(id)
+        print("The response of PerformancesApi->count_redeemed_comps:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->count_redeemed_comps: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**CountClaimedComps200Response**](CountClaimedComps200Response.md)
 
 ### Authorization
 
@@ -219,7 +214,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -241,15 +235,12 @@ Create performance
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.performance import Performance
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_performance_create_params import WTPerformanceCreateParams
+from wallet.models.performance import Performance
+from wallet.models.wt_performance_create_params import WTPerformanceCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -258,39 +249,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    wt_performance_create_params = WTPerformanceCreateParams(
-        title="This is the title of the performance",
-        body="This is the description of the performance",
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        price="43.29",
-        url="https://example.com/performance.html",
-        order_number=5,
-        is_sold_out=True,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        payment_design_id=NanoID("C"),
-        max_comp_tickets=3.14,
-        ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        redemption_instructions="redemption_instructions_example",
-    ) # WTPerformanceCreateParams | 
+    api_instance = wallet.PerformancesApi(api_client)
+    wt_performance_create_params = wallet.WTPerformanceCreateParams() # WTPerformanceCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create performance
         api_response = api_instance.create_performance(wt_performance_create_params)
+        print("The response of PerformancesApi->create_performance:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->create_performance: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_performance_create_params** | [**WTPerformanceCreateParams**](WTPerformanceCreateParams.md)|  |
+ **wt_performance_create_params** | [**WTPerformanceCreateParams**](WTPerformanceCreateParams.md)|  | 
 
 ### Return type
 
@@ -305,7 +285,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -318,7 +297,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_tickets**
-> [Ticket] export_tickets(id)
+> List[Ticket] export_tickets(id)
 
 Update performance
 
@@ -326,14 +305,11 @@ Update performance
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ticket import Ticket
-from wallet.model.auth_error import AuthError
+from wallet.models.ticket import Ticket
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -342,30 +318,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update performance
         api_response = api_instance.export_tickets(id)
+        print("The response of PerformancesApi->export_tickets:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->export_tickets: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
-[**[Ticket]**](Ticket.md)
+[**List[Ticket]**](Ticket.md)
 
 ### Authorization
 
@@ -375,7 +353,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -389,7 +366,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_performance_tickets**
-> [Ticket] fetch_all_performance_tickets(id)
+> List[Ticket] fetch_all_performance_tickets(id, is_archive_included=is_archive_included)
 
 Fetch all tickets
 
@@ -397,14 +374,11 @@ Fetch all tickets
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ticket import Ticket
-from wallet.model.auth_error import AuthError
+from wallet.models.ticket import Ticket
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -413,41 +387,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch all tickets
-        api_response = api_instance.fetch_all_performance_tickets(id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling PerformancesApi->fetch_all_performance_tickets: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all tickets
         api_response = api_instance.fetch_all_performance_tickets(id, is_archive_included=is_archive_included)
+        print("The response of PerformancesApi->fetch_all_performance_tickets:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->fetch_all_performance_tickets: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **is_archive_included** | **bool**|  | [optional]
+ **id** | [**object**](.md)|  | 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[Ticket]**](Ticket.md)
+[**List[Ticket]**](Ticket.md)
 
 ### Authorization
 
@@ -457,7 +424,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -471,7 +437,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_performances**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_performances()
+> object fetch_all_performances(is_archive_included=is_archive_included)
 
 Fetch all performances
 
@@ -479,13 +445,10 @@ Fetch all performances
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -494,31 +457,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
+    api_instance = wallet.PerformancesApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all performances
         api_response = api_instance.fetch_all_performances(is_archive_included=is_archive_included)
+        print("The response of PerformancesApi->fetch_all_performances:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->fetch_all_performances: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -528,7 +492,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -550,14 +513,11 @@ Fetch a single performance
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.performance import Performance
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.performance import Performance
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -566,26 +526,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch a single performance
         api_response = api_instance.fetch_performance(id)
+        print("The response of PerformancesApi->fetch_performance:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->fetch_performance: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -600,7 +562,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -613,7 +574,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_performance_tickets_page**
-> InlineResponse2004 fetch_performance_tickets_page(performance_id, page_num, page_size)
+> FetchPerformanceTicketsPage200Response fetch_performance_tickets_page(performance_id, page_num, page_size, filter_comps=filter_comps, filter_claimed=filter_claimed, sort_by=sort_by, sort_direction=sort_direction, is_archive_included=is_archive_included)
 
 Fetch tickets by page
 
@@ -621,14 +582,11 @@ Fetch tickets by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_response2004 import InlineResponse2004
-from wallet.model.auth_error import AuthError
+from wallet.models.fetch_performance_tickets_page200_response import FetchPerformanceTicketsPage200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -637,49 +595,46 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    performance_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    page_num = 3.14 # float | 
-    page_size = 3.14 # float | 
+    api_instance = wallet.PerformancesApi(api_client)
+    performance_id = None # object | 
+    page_num = 3.4 # float | 
+    page_size = 3.4 # float | 
     filter_comps = True # bool |  (optional)
     filter_claimed = True # bool |  (optional)
+    sort_by = None # object |  (optional)
+    sort_direction = None # object |  (optional)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch tickets by page
-        api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size)
+        api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size, filter_comps=filter_comps, filter_claimed=filter_claimed, sort_by=sort_by, sort_direction=sort_direction, is_archive_included=is_archive_included)
+        print("The response of PerformancesApi->fetch_performance_tickets_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling PerformancesApi->fetch_performance_tickets_page: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Fetch tickets by page
-        api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size, filter_comps=filter_comps, filter_claimed=filter_claimed, is_archive_included=is_archive_included)
-        pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->fetch_performance_tickets_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **performance_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **page_num** | **float**|  |
- **page_size** | **float**|  |
- **filter_comps** | **bool**|  | [optional]
- **filter_claimed** | **bool**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
+ **performance_id** | [**object**](.md)|  | 
+ **page_num** | **float**|  | 
+ **page_size** | **float**|  | 
+ **filter_comps** | **bool**|  | [optional] 
+ **filter_claimed** | **bool**|  | [optional] 
+ **sort_by** | [**object**](.md)|  | [optional] 
+ **sort_direction** | [**object**](.md)|  | [optional] 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**FetchPerformanceTicketsPage200Response**](FetchPerformanceTicketsPage200Response.md)
 
 ### Authorization
 
@@ -689,7 +644,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -703,7 +657,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **import_tickets**
-> str import_tickets(id, inline_object2)
+> str import_tickets(id, import_tickets_request)
 
 Update performance
 
@@ -711,14 +665,11 @@ Update performance
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_object2 import InlineObject2
+from wallet.models.import_tickets_request import ImportTicketsRequest
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -727,38 +678,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    inline_object2 = InlineObject2(
-        tickets=[
-            WTTicketUpdateParams(
-                recipient_phone_number="recipient_phone_number_example",
-                recipient_email_address="recipient_email_address_example",
-                recipient_member_id="recipient_member_id_example",
-                is_comp=True,
-                quantity=1,
-            ),
-        ],
-    ) # InlineObject2 | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
+    import_tickets_request = wallet.ImportTicketsRequest() # ImportTicketsRequest | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update performance
-        api_response = api_instance.import_tickets(id, inline_object2)
+        api_response = api_instance.import_tickets(id, import_tickets_request)
+        print("The response of PerformancesApi->import_tickets:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->import_tickets: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **inline_object2** | [**InlineObject2**](InlineObject2.md)|  |
+ **id** | [**object**](.md)|  | 
+ **import_tickets_request** | [**ImportTicketsRequest**](ImportTicketsRequest.md)|  | 
 
 ### Return type
 
@@ -772,7 +715,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -794,14 +736,11 @@ Restore performance
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.performance import Performance
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.performance import Performance
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -810,26 +749,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore performance
         api_response = api_instance.restore_performance(id)
+        print("The response of PerformancesApi->restore_performance:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->restore_performance: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -844,7 +785,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -857,7 +797,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_ticket_settings**
-> Performance save_ticket_settings(id, inline_object1)
+> Performance save_ticket_settings(id, save_ticket_settings_request)
 
 Update performance
 
@@ -865,15 +805,12 @@ Update performance
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.performance import Performance
-from wallet.model.falsum_error import FalsumError
-from wallet.model.inline_object1 import InlineObject1
-from wallet.model.auth_error import AuthError
+from wallet.models.performance import Performance
+from wallet.models.save_ticket_settings_request import SaveTicketSettingsRequest
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -882,33 +819,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    inline_object1 = InlineObject1(
-        redemption_instructions="redemption_instructions_example",
-        ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        max_comp_tickets=3.14,
-        payment_design_id=None,
-    ) # InlineObject1 | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
+    save_ticket_settings_request = wallet.SaveTicketSettingsRequest() # SaveTicketSettingsRequest | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update performance
-        api_response = api_instance.save_ticket_settings(id, inline_object1)
+        api_response = api_instance.save_ticket_settings(id, save_ticket_settings_request)
+        print("The response of PerformancesApi->save_ticket_settings:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->save_ticket_settings: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **inline_object1** | [**InlineObject1**](InlineObject1.md)|  |
+ **id** | [**object**](.md)|  | 
+ **save_ticket_settings_request** | [**SaveTicketSettingsRequest**](SaveTicketSettingsRequest.md)|  | 
 
 ### Return type
 
@@ -922,7 +856,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -944,15 +877,12 @@ Update performance
 
 
 ```python
-import time
 import wallet
-from wallet.api import performances_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.performance import Performance
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_performance_update_params import WTPerformanceUpdateParams
+from wallet.models.performance import Performance
+from wallet.models.wt_performance_update_params import WTPerformanceUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -961,41 +891,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = performances_api.PerformancesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_performance_update_params = WTPerformanceUpdateParams(
-        title="This is the title of the performance",
-        body="This is the description of the performance",
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        price="43.29",
-        url="https://example.com/performance.html",
-        order_number=5,
-        is_sold_out=True,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        payment_design_id=NanoID("C"),
-        max_comp_tickets=3.14,
-        ticket_expiration_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        redemption_instructions="redemption_instructions_example",
-    ) # WTPerformanceUpdateParams | 
+    api_instance = wallet.PerformancesApi(api_client)
+    id = None # object | 
+    wt_performance_update_params = wallet.WTPerformanceUpdateParams() # WTPerformanceUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update performance
         api_response = api_instance.update_performance(id, wt_performance_update_params)
+        print("The response of PerformancesApi->update_performance:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PerformancesApi->update_performance: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_performance_update_params** | [**WTPerformanceUpdateParams**](WTPerformanceUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_performance_update_params** | [**WTPerformanceUpdateParams**](WTPerformanceUpdateParams.md)|  | 
 
 ### Return type
 
@@ -1009,7 +928,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

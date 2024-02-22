@@ -20,14 +20,11 @@ Archive email subscriber
 
 
 ```python
-import time
 import wallet
-from wallet.api import email_subscriber_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.email_subscriber import EmailSubscriber
-from wallet.model.auth_error import AuthError
+from wallet.models.email_subscriber import EmailSubscriber
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = email_subscriber_api.EmailSubscriberApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmailSubscriberApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive email subscriber
         api_response = api_instance.archive_email_subscriber(id)
+        print("The response of EmailSubscriberApi->archive_email_subscriber:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmailSubscriberApi->archive_email_subscriber: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create email subscriber
 
 
 ```python
-import time
 import wallet
-from wallet.api import email_subscriber_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.email_subscriber import EmailSubscriber
-from wallet.model.wt_email_subscriber_create_params import WTEmailSubscriberCreateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.email_subscriber import EmailSubscriber
+from wallet.models.wt_email_subscriber_create_params import WTEmailSubscriberCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,30 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = email_subscriber_api.EmailSubscriberApi(api_client)
-    wt_email_subscriber_create_params = WTEmailSubscriberCreateParams(
-        first_name="John",
-        last_name="Smith",
-        email_address="email_address_example",
-    ) # WTEmailSubscriberCreateParams | 
+    api_instance = wallet.EmailSubscriberApi(api_client)
+    wt_email_subscriber_create_params = wallet.WTEmailSubscriberCreateParams() # WTEmailSubscriberCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create email subscriber
         api_response = api_instance.create_email_subscriber(wt_email_subscriber_create_params)
+        print("The response of EmailSubscriberApi->create_email_subscriber:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmailSubscriberApi->create_email_subscriber: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_email_subscriber_create_params** | [**WTEmailSubscriberCreateParams**](WTEmailSubscriberCreateParams.md)|  |
+ **wt_email_subscriber_create_params** | [**WTEmailSubscriberCreateParams**](WTEmailSubscriberCreateParams.md)|  | 
 
 ### Return type
 
@@ -146,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -159,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_email_subscribers**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_email_subscribers()
+> object fetch_all_email_subscribers(start_date_time=start_date_time, end_date_time=end_date_time, is_archive_included=is_archive_included)
 
 Fetch all email subscribers
 
@@ -167,13 +159,10 @@ Fetch all email subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import email_subscriber_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -182,35 +171,36 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = email_subscriber_api.EmailSubscriberApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    api_instance = wallet.EmailSubscriberApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all email subscribers
         api_response = api_instance.fetch_all_email_subscribers(start_date_time=start_date_time, end_date_time=end_date_time, is_archive_included=is_archive_included)
+        print("The response of EmailSubscriberApi->fetch_all_email_subscribers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmailSubscriberApi->fetch_all_email_subscribers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  | [optional]
- **end_date_time** | **datetime**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
+ **start_date_time** | **datetime**|  | [optional] 
+ **end_date_time** | **datetime**|  | [optional] 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -220,7 +210,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -242,14 +231,11 @@ Restore email subscriber
 
 
 ```python
-import time
 import wallet
-from wallet.api import email_subscriber_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.email_subscriber import EmailSubscriber
-from wallet.model.auth_error import AuthError
+from wallet.models.email_subscriber import EmailSubscriber
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -258,26 +244,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = email_subscriber_api.EmailSubscriberApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.EmailSubscriberApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore email subscriber
         api_response = api_instance.restore_email_subscriber(id)
+        print("The response of EmailSubscriberApi->restore_email_subscriber:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmailSubscriberApi->restore_email_subscriber: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -291,7 +279,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -313,15 +300,12 @@ Update email subscriber
 
 
 ```python
-import time
 import wallet
-from wallet.api import email_subscriber_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.email_subscriber import EmailSubscriber
-from wallet.model.wt_email_subscriber_update_params import WTEmailSubscriberUpdateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.email_subscriber import EmailSubscriber
+from wallet.models.wt_email_subscriber_update_params import WTEmailSubscriberUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -330,32 +314,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = email_subscriber_api.EmailSubscriberApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_email_subscriber_update_params = WTEmailSubscriberUpdateParams(
-        first_name="John",
-        last_name="Smith",
-        email_address="email_address_example",
-    ) # WTEmailSubscriberUpdateParams | 
+    api_instance = wallet.EmailSubscriberApi(api_client)
+    id = None # object | 
+    wt_email_subscriber_update_params = wallet.WTEmailSubscriberUpdateParams() # WTEmailSubscriberUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update email subscriber
         api_response = api_instance.update_email_subscriber(id, wt_email_subscriber_update_params)
+        print("The response of EmailSubscriberApi->update_email_subscriber:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling EmailSubscriberApi->update_email_subscriber: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_email_subscriber_update_params** | [**WTEmailSubscriberUpdateParams**](WTEmailSubscriberUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_email_subscriber_update_params** | [**WTEmailSubscriberUpdateParams**](WTEmailSubscriberUpdateParams.md)|  | 
 
 ### Return type
 
@@ -369,7 +351,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

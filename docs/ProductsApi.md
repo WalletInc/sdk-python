@@ -20,14 +20,11 @@ Archive product
 
 
 ```python
-import time
 import wallet
-from wallet.api import products_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.product import Product
-from wallet.model.auth_error import AuthError
+from wallet.models.product import Product
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = products_api.ProductsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.ProductsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive product
         api_response = api_instance.archive_product(id)
+        print("The response of ProductsApi->archive_product:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProductsApi->archive_product: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create product
 
 
 ```python
-import time
 import wallet
-from wallet.api import products_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.product import Product
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_product_create_params import WTProductCreateParams
+from wallet.models.product import Product
+from wallet.models.wt_product_create_params import WTProductCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,33 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = products_api.ProductsApi(api_client)
-    wt_product_create_params = WTProductCreateParams(
-        title="This is the title of the product",
-        description="This is the description of the product",
-        displayed_price="$200-$350",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://your-website.com/product-1/buy-now",
-    ) # WTProductCreateParams | 
+    api_instance = wallet.ProductsApi(api_client)
+    wt_product_create_params = wallet.WTProductCreateParams() # WTProductCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create product
         api_response = api_instance.create_product(wt_product_create_params)
+        print("The response of ProductsApi->create_product:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProductsApi->create_product: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_product_create_params** | [**WTProductCreateParams**](WTProductCreateParams.md)|  |
+ **wt_product_create_params** | [**WTProductCreateParams**](WTProductCreateParams.md)|  | 
 
 ### Return type
 
@@ -149,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -162,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_products**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_products()
+> object fetch_all_products(is_archive_included=is_archive_included)
 
 Fetch all products
 
@@ -170,13 +159,10 @@ Fetch all products
 
 
 ```python
-import time
 import wallet
-from wallet.api import products_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -185,31 +171,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = products_api.ProductsApi(api_client)
+    api_instance = wallet.ProductsApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all products
         api_response = api_instance.fetch_all_products(is_archive_included=is_archive_included)
+        print("The response of ProductsApi->fetch_all_products:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProductsApi->fetch_all_products: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -219,7 +206,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -241,14 +227,11 @@ Restore product
 
 
 ```python
-import time
 import wallet
-from wallet.api import products_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.product import Product
-from wallet.model.auth_error import AuthError
+from wallet.models.product import Product
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -257,26 +240,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = products_api.ProductsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.ProductsApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore product
         api_response = api_instance.restore_product(id)
+        print("The response of ProductsApi->restore_product:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProductsApi->restore_product: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -290,7 +275,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -312,15 +296,12 @@ Update product
 
 
 ```python
-import time
 import wallet
-from wallet.api import products_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_product_update_params import WTProductUpdateParams
-from wallet.model.product import Product
-from wallet.model.auth_error import AuthError
+from wallet.models.product import Product
+from wallet.models.wt_product_update_params import WTProductUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -329,35 +310,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = products_api.ProductsApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_product_update_params = WTProductUpdateParams(
-        title="This is the title of the product",
-        description="This is the description of the product",
-        displayed_price="$200-$350",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        additional_info_url="https://your-website.com/product-1/buy-now",
-    ) # WTProductUpdateParams | 
+    api_instance = wallet.ProductsApi(api_client)
+    id = None # object | 
+    wt_product_update_params = wallet.WTProductUpdateParams() # WTProductUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update product
         api_response = api_instance.update_product(id, wt_product_update_params)
+        print("The response of ProductsApi->update_product:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling ProductsApi->update_product: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_product_update_params** | [**WTProductUpdateParams**](WTProductUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_product_update_params** | [**WTProductUpdateParams**](WTProductUpdateParams.md)|  | 
 
 ### Return type
 
@@ -371,7 +347,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

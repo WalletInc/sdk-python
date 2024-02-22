@@ -21,14 +21,11 @@ Archive link
 
 
 ```python
-import time
 import wallet
-from wallet.api import quick_links_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.link_book import LinkBook
-from wallet.model.auth_error import AuthError
+from wallet.models.link_book import LinkBook
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -37,26 +34,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = quick_links_api.QuickLinksApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.QuickLinksApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive link
         api_response = api_instance.archive_link_book(id)
+        print("The response of QuickLinksApi->archive_link_book:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QuickLinksApi->archive_link_book: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -70,7 +69,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -92,15 +90,12 @@ Create link
 
 
 ```python
-import time
 import wallet
-from wallet.api import quick_links_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_link_book_create_params import WTLinkBookCreateParams
-from wallet.model.link_book import LinkBook
-from wallet.model.auth_error import AuthError
+from wallet.models.link_book import LinkBook
+from wallet.models.wt_link_book_create_params import WTLinkBookCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -109,32 +104,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = quick_links_api.QuickLinksApi(api_client)
-    wt_link_book_create_params = WTLinkBookCreateParams(
-        title="This is the title of the link",
-        url="https://example.com",
-        icon="fa-clock",
-        order_number=1,
-        link_book_section_id=None,
-    ) # WTLinkBookCreateParams | 
+    api_instance = wallet.QuickLinksApi(api_client)
+    wt_link_book_create_params = wallet.WTLinkBookCreateParams() # WTLinkBookCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create link
         api_response = api_instance.create_link_book(wt_link_book_create_params)
+        print("The response of QuickLinksApi->create_link_book:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QuickLinksApi->create_link_book: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_link_book_create_params** | [**WTLinkBookCreateParams**](WTLinkBookCreateParams.md)|  |
+ **wt_link_book_create_params** | [**WTLinkBookCreateParams**](WTLinkBookCreateParams.md)|  | 
 
 ### Return type
 
@@ -149,7 +140,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -162,7 +152,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_link_book**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_link_book()
+> object fetch_all_link_book(is_archive_included=is_archive_included)
 
 Fetch all links
 
@@ -170,13 +160,10 @@ Fetch all links
 
 
 ```python
-import time
 import wallet
-from wallet.api import quick_links_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -185,31 +172,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = quick_links_api.QuickLinksApi(api_client)
+    api_instance = wallet.QuickLinksApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all links
         api_response = api_instance.fetch_all_link_book(is_archive_included=is_archive_included)
+        print("The response of QuickLinksApi->fetch_all_link_book:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QuickLinksApi->fetch_all_link_book: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -219,7 +207,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -241,14 +228,11 @@ Fetch link book by id
 
 
 ```python
-import time
 import wallet
-from wallet.api import quick_links_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_link_book import WTLinkBook
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_link_book import WTLinkBook
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -257,26 +241,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = quick_links_api.QuickLinksApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.QuickLinksApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch link book by id
         api_response = api_instance.fetch_link_book_by_id(id)
+        print("The response of QuickLinksApi->fetch_link_book_by_id:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QuickLinksApi->fetch_link_book_by_id: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -290,7 +276,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -312,14 +297,11 @@ Restore link
 
 
 ```python
-import time
 import wallet
-from wallet.api import quick_links_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.link_book import LinkBook
-from wallet.model.auth_error import AuthError
+from wallet.models.link_book import LinkBook
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -328,26 +310,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = quick_links_api.QuickLinksApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.QuickLinksApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore link
         api_response = api_instance.restore_link_book(id)
+        print("The response of QuickLinksApi->restore_link_book:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QuickLinksApi->restore_link_book: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -361,7 +345,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -383,15 +366,12 @@ Update link
 
 
 ```python
-import time
 import wallet
-from wallet.api import quick_links_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.link_book import LinkBook
-from wallet.model.wt_link_book_update_params import WTLinkBookUpdateParams
-from wallet.model.auth_error import AuthError
+from wallet.models.link_book import LinkBook
+from wallet.models.wt_link_book_update_params import WTLinkBookUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -400,34 +380,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = quick_links_api.QuickLinksApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_link_book_update_params = WTLinkBookUpdateParams(
-        title="This is the title of the link",
-        url="https://example.com",
-        icon="fa-clock",
-        order_number=1,
-        link_book_section_id=None,
-    ) # WTLinkBookUpdateParams | 
+    api_instance = wallet.QuickLinksApi(api_client)
+    id = None # object | 
+    wt_link_book_update_params = wallet.WTLinkBookUpdateParams() # WTLinkBookUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update link
         api_response = api_instance.update_link_book(id, wt_link_book_update_params)
+        print("The response of QuickLinksApi->update_link_book:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling QuickLinksApi->update_link_book: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_link_book_update_params** | [**WTLinkBookUpdateParams**](WTLinkBookUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_link_book_update_params** | [**WTLinkBookUpdateParams**](WTLinkBookUpdateParams.md)|  | 
 
 ### Return type
 
@@ -441,7 +417,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

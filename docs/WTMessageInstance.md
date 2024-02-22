@@ -3,9 +3,10 @@
 tsoaModel
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subresource_uris** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Construct a type with a set of properties K of type T | 
+**subresource_uris** | **object** | Construct a type with a set of properties K of type T | 
 **api_version** | **str** |  | 
 **price_unit** | **str** |  | 
 **error_code** | **float** |  | 
@@ -21,12 +22,28 @@ Name | Type | Description | Notes
 **price** | **str** |  | 
 **date_updated** | **datetime** |  | 
 **to** | **str** |  | 
-**_from** | **str** |  | 
+**var_from** | **str** |  | 
 **direction** | [**MessageDirection**](MessageDirection.md) |  | 
 **num_segments** | **str** |  | 
 **body** | **str** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from wallet.models.wt_message_instance import WTMessageInstance
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of WTMessageInstance from a JSON string
+wt_message_instance_instance = WTMessageInstance.from_json(json)
+# print the JSON string representation of the object
+print WTMessageInstance.to_json()
+
+# convert the object into a dict
+wt_message_instance_dict = wt_message_instance_instance.to_dict()
+# create an instance of WTMessageInstance from a dict
+wt_message_instance_form_dict = wt_message_instance.from_dict(wt_message_instance_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

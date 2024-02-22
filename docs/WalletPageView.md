@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ip** | **str** |  | 
@@ -22,7 +23,9 @@ Name | Type | Description | Notes
 **device_model** | **str** |  | 
 **device_type** | **str** |  | 
 **phone_verification_token** | **str** |  | 
-**id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
+**referring_domain** | **str** |  | [optional] 
+**referrer** | **str** |  | [optional] 
+**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
 **status** | **str** |  | 
 **country** | **str** |  | 
 **country_code** | **str** |  | 
@@ -38,12 +41,27 @@ Name | Type | Description | Notes
 **asn** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
-**merchant_id** | [**MerchantID**](MerchantID.md) |  | 
+**merchant_id** | **str** |  | 
 **is_active** | **bool** | Denotes if this resource is active | 
 **geo_point** | [**WTWalletPageViewGeoPoint**](WTWalletPageViewGeoPoint.md) |  | 
-**referring_domain** | **str** |  | [optional] 
-**referrer** | **str** |  | [optional] 
 
+## Example
+
+```python
+from wallet.models.wallet_page_view import WalletPageView
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of WalletPageView from a JSON string
+wallet_page_view_instance = WalletPageView.from_json(json)
+# print the JSON string representation of the object
+print WalletPageView.to_json()
+
+# convert the object into a dict
+wallet_page_view_dict = wallet_page_view_instance.to_dict()
+# create an instance of WalletPageView from a dict
+wallet_page_view_form_dict = wallet_page_view.from_dict(wallet_page_view_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

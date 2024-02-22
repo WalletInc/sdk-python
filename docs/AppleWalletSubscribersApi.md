@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **fetch_apple_wallet_subscriber_activity**
-> [bool, date, datetime, dict, float, int, list, str, none_type] fetch_apple_wallet_subscriber_activity(subscription_id)
+> List[object] fetch_apple_wallet_subscriber_activity(subscription_id)
 
 Fetch subscriber activity
 
@@ -17,13 +17,10 @@ Fetch subscriber activity
 
 
 ```python
-import time
 import wallet
-from wallet.api import apple_wallet_subscribers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -32,30 +29,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = apple_wallet_subscribers_api.AppleWalletSubscribersApi(api_client)
-    subscription_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.AppleWalletSubscribersApi(api_client)
+    subscription_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch subscriber activity
         api_response = api_instance.fetch_apple_wallet_subscriber_activity(subscription_id)
+        print("The response of AppleWalletSubscribersApi->fetch_apple_wallet_subscriber_activity:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AppleWalletSubscribersApi->fetch_apple_wallet_subscriber_activity: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **subscription_id** | [**object**](.md)|  | 
 
 ### Return type
 
-**[bool, date, datetime, dict, float, int, list, str, none_type]**
+**List[object]**
 
 ### Authorization
 
@@ -65,7 +64,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -79,7 +77,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_apple_wallet_subscribers**
-> [bool, date, datetime, dict, float, int, list, str, none_type] fetch_apple_wallet_subscribers()
+> List[object] fetch_apple_wallet_subscribers(start_date_time=start_date_time, end_date_time=end_date_time)
 
 Fetch all subscribers
 
@@ -87,13 +85,10 @@ Fetch all subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import apple_wallet_subscribers_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -102,33 +97,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = apple_wallet_subscribers_api.AppleWalletSubscribersApi(api_client)
-    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    api_instance = wallet.AppleWalletSubscribersApi(api_client)
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all subscribers
         api_response = api_instance.fetch_apple_wallet_subscribers(start_date_time=start_date_time, end_date_time=end_date_time)
+        print("The response of AppleWalletSubscribersApi->fetch_apple_wallet_subscribers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling AppleWalletSubscribersApi->fetch_apple_wallet_subscribers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_time** | **datetime**|  | [optional]
- **end_date_time** | **datetime**|  | [optional]
+ **start_date_time** | **datetime**|  | [optional] 
+ **end_date_time** | **datetime**|  | [optional] 
 
 ### Return type
 
-**[bool, date, datetime, dict, float, int, list, str, none_type]**
+**List[object]**
 
 ### Authorization
 
@@ -138,7 +134,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

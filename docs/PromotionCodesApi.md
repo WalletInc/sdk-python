@@ -20,14 +20,11 @@ Archive promo code
 
 
 ```python
-import time
 import wallet
-from wallet.api import promotion_codes_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.promo_code import PromoCode
-from wallet.model.auth_error import AuthError
+from wallet.models.promo_code import PromoCode
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -36,26 +33,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = promotion_codes_api.PromotionCodesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PromotionCodesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive promo code
         api_response = api_instance.archive_promo_code(id)
+        print("The response of PromotionCodesApi->archive_promo_code:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PromotionCodesApi->archive_promo_code: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -69,7 +68,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -91,15 +89,12 @@ Create promo code
 
 
 ```python
-import time
 import wallet
-from wallet.api import promotion_codes_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.promo_code import PromoCode
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_promo_code_create_params import WTPromoCodeCreateParams
+from wallet.models.promo_code import PromoCode
+from wallet.models.wt_promo_code_create_params import WTPromoCodeCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -108,35 +103,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = promotion_codes_api.PromotionCodesApi(api_client)
-    wt_promo_code_create_params = WTPromoCodeCreateParams(
-        title="This is the title of the promo code",
-        description="This is the description of the promo code",
-        promo_code="XMAS20",
-        display_value="20% Off!",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiration_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-    ) # WTPromoCodeCreateParams | 
+    api_instance = wallet.PromotionCodesApi(api_client)
+    wt_promo_code_create_params = wallet.WTPromoCodeCreateParams() # WTPromoCodeCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create promo code
         api_response = api_instance.create_promo_code(wt_promo_code_create_params)
+        print("The response of PromotionCodesApi->create_promo_code:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PromotionCodesApi->create_promo_code: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_promo_code_create_params** | [**WTPromoCodeCreateParams**](WTPromoCodeCreateParams.md)|  |
+ **wt_promo_code_create_params** | [**WTPromoCodeCreateParams**](WTPromoCodeCreateParams.md)|  | 
 
 ### Return type
 
@@ -151,7 +139,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -164,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_all_promo_codes**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_all_promo_codes()
+> object fetch_all_promo_codes(is_archive_included=is_archive_included)
 
 Fetch all promo codes
 
@@ -172,13 +159,10 @@ Fetch all promo codes
 
 
 ```python
-import time
 import wallet
-from wallet.api import promotion_codes_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -187,31 +171,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = promotion_codes_api.PromotionCodesApi(api_client)
+    api_instance = wallet.PromotionCodesApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all promo codes
         api_response = api_instance.fetch_all_promo_codes(is_archive_included=is_archive_included)
+        print("The response of PromotionCodesApi->fetch_all_promo_codes:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PromotionCodesApi->fetch_all_promo_codes: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -221,7 +206,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -243,14 +227,11 @@ Restore promo code
 
 
 ```python
-import time
 import wallet
-from wallet.api import promotion_codes_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.promo_code import PromoCode
-from wallet.model.auth_error import AuthError
+from wallet.models.promo_code import PromoCode
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -259,26 +240,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = promotion_codes_api.PromotionCodesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.PromotionCodesApi(api_client)
+    id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore promo code
         api_response = api_instance.restore_promo_code(id)
+        print("The response of PromotionCodesApi->restore_promo_code:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PromotionCodesApi->restore_promo_code: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -292,7 +275,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -314,15 +296,12 @@ Update promo code
 
 
 ```python
-import time
 import wallet
-from wallet.api import promotion_codes_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.promo_code import PromoCode
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_promo_code_update_params import WTPromoCodeUpdateParams
+from wallet.models.promo_code import PromoCode
+from wallet.models.wt_promo_code_update_params import WTPromoCodeUpdateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -331,37 +310,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = promotion_codes_api.PromotionCodesApi(api_client)
-    id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    wt_promo_code_update_params = WTPromoCodeUpdateParams(
-        title="This is the title of the promo code",
-        description="This is the description of the promo code",
-        promo_code="XMAS20",
-        display_value="20% Off!",
-        order_number=1,
-        media_url="https://wall.et/media/H847Sjudbw.png",
-        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiration_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-    ) # WTPromoCodeUpdateParams | 
+    api_instance = wallet.PromotionCodesApi(api_client)
+    id = None # object | 
+    wt_promo_code_update_params = wallet.WTPromoCodeUpdateParams() # WTPromoCodeUpdateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update promo code
         api_response = api_instance.update_promo_code(id, wt_promo_code_update_params)
+        print("The response of PromotionCodesApi->update_promo_code:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling PromotionCodesApi->update_promo_code: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **wt_promo_code_update_params** | [**WTPromoCodeUpdateParams**](WTPromoCodeUpdateParams.md)|  |
+ **id** | [**object**](.md)|  | 
+ **wt_promo_code_update_params** | [**WTPromoCodeUpdateParams**](WTPromoCodeUpdateParams.md)|  | 
 
 ### Return type
 
@@ -375,7 +347,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

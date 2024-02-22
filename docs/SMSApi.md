@@ -52,15 +52,12 @@ Acquire phone number
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wtsms_acquire_phone_number import WTSMSAcquirePhoneNumber
-from wallet.model.phone_number import PhoneNumber
-from wallet.model.auth_error import AuthError
+from wallet.models.phone_number import PhoneNumber
+from wallet.models.wtsms_acquire_phone_number import WTSMSAcquirePhoneNumber
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -69,28 +66,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    wtsms_acquire_phone_number = WTSMSAcquirePhoneNumber(
-        phone_number="+1808987878",
-    ) # WTSMSAcquirePhoneNumber | 
+    api_instance = wallet.SMSApi(api_client)
+    wtsms_acquire_phone_number = wallet.WTSMSAcquirePhoneNumber() # WTSMSAcquirePhoneNumber | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Acquire phone number
         api_response = api_instance.acquire_phone_number(wtsms_acquire_phone_number)
+        print("The response of SMSApi->acquire_phone_number:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->acquire_phone_number: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wtsms_acquire_phone_number** | [**WTSMSAcquirePhoneNumber**](WTSMSAcquirePhoneNumber.md)|  |
+ **wtsms_acquire_phone_number** | [**WTSMSAcquirePhoneNumber**](WTSMSAcquirePhoneNumber.md)|  | 
 
 ### Return type
 
@@ -104,7 +101,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -126,15 +122,11 @@ Archive phone number
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.phone_number import PhoneNumber
-from wallet.model.auth_error import AuthError
+from wallet.models.phone_number import PhoneNumber
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -143,26 +135,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive phone number
         api_response = api_instance.archive_phone_number(phone_number_id)
+        print("The response of SMSApi->archive_phone_number:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->archive_phone_number: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
+ **phone_number_id** | **str**|  | 
 
 ### Return type
 
@@ -176,7 +170,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -198,15 +191,11 @@ Archive recipient
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.imported_list_recipient import ImportedListRecipient
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.imported_list_recipient import ImportedListRecipient
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -215,26 +204,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive recipient
         api_response = api_instance.archive_recipient(id)
+        print("The response of SMSApi->archive_recipient:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->archive_recipient: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **NanoID**|  |
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -249,7 +240,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -262,7 +252,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_imported_list_recipients**
-> WTCountResult count_imported_list_recipients(list_id)
+> WTCountResult count_imported_list_recipients(list_id, is_archive_included=is_archive_included, start_date=start_date, end_date=end_date)
 
 Count imported list recipients
 
@@ -270,15 +260,11 @@ Count imported list recipients
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -287,41 +273,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
     is_archive_included = True # bool |  (optional)
-    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Count imported list recipients
-        api_response = api_instance.count_imported_list_recipients(list_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->count_imported_list_recipients: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Count imported list recipients
         api_response = api_instance.count_imported_list_recipients(list_id, is_archive_included=is_archive_included, start_date=start_date, end_date=end_date)
+        print("The response of SMSApi->count_imported_list_recipients:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->count_imported_list_recipients: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
- **is_archive_included** | **bool**|  | [optional]
- **start_date** | **datetime**|  | [optional]
- **end_date** | **datetime**|  | [optional]
+ **list_id** | **str**|  | 
+ **is_archive_included** | **bool**|  | [optional] 
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -335,7 +314,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -349,7 +327,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_opt_in_list_subscribers**
-> WTCountResult count_opt_in_list_subscribers(list_id)
+> WTCountResult count_opt_in_list_subscribers(list_id, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included, start_date=start_date, end_date=end_date)
 
 Count opt in list subscribers
 
@@ -357,15 +335,11 @@ Count opt in list subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -374,45 +348,38 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
     is_subscribed = True # bool |  (optional)
     is_pending_age21_verification = True # bool |  (optional)
     is_archive_included = True # bool |  (optional)
-    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Count opt in list subscribers
-        api_response = api_instance.count_opt_in_list_subscribers(list_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->count_opt_in_list_subscribers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Count opt in list subscribers
         api_response = api_instance.count_opt_in_list_subscribers(list_id, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included, start_date=start_date, end_date=end_date)
+        print("The response of SMSApi->count_opt_in_list_subscribers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->count_opt_in_list_subscribers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
- **is_subscribed** | **bool**|  | [optional]
- **is_pending_age21_verification** | **bool**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
- **start_date** | **datetime**|  | [optional]
- **end_date** | **datetime**|  | [optional]
+ **list_id** | **str**|  | 
+ **is_subscribed** | **bool**|  | [optional] 
+ **is_pending_age21_verification** | **bool**|  | [optional] 
+ **is_archive_included** | **bool**|  | [optional] 
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -426,7 +393,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -440,7 +406,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_opt_in_source_subscribers**
-> WTCountResult count_opt_in_source_subscribers(source_id)
+> WTCountResult count_opt_in_source_subscribers(source_id, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included, start_date=start_date, end_date=end_date)
 
 Count opt in source subscribers
 
@@ -448,15 +414,11 @@ Count opt in source subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -465,45 +427,38 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    source_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    source_id = 'source_id_example' # str | 
     is_subscribed = True # bool |  (optional)
     is_pending_age21_verification = True # bool |  (optional)
     is_archive_included = True # bool |  (optional)
-    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Count opt in source subscribers
-        api_response = api_instance.count_opt_in_source_subscribers(source_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->count_opt_in_source_subscribers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Count opt in source subscribers
         api_response = api_instance.count_opt_in_source_subscribers(source_id, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included, start_date=start_date, end_date=end_date)
+        print("The response of SMSApi->count_opt_in_source_subscribers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->count_opt_in_source_subscribers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source_id** | **NanoID**|  |
- **is_subscribed** | **bool**|  | [optional]
- **is_pending_age21_verification** | **bool**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
- **start_date** | **datetime**|  | [optional]
- **end_date** | **datetime**|  | [optional]
+ **source_id** | **str**|  | 
+ **is_subscribed** | **bool**|  | [optional] 
+ **is_pending_age21_verification** | **bool**|  | [optional] 
+ **is_archive_included** | **bool**|  | [optional] 
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -517,7 +472,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -531,7 +485,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_outbound_sms**
-> WTCountResult count_outbound_sms(phone_number_id)
+> WTCountResult count_outbound_sms(phone_number_id, to_phone_number=to_phone_number, status=status, payment_object_broadcast_id=payment_object_broadcast_id)
 
 Count outbound SMS
 
@@ -539,15 +493,11 @@ Count outbound SMS
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -556,41 +506,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
-    to_phone_number = "toPhoneNumber_example" # str |  (optional)
-    status = "status_example" # str |  (optional)
-    payment_object_broadcast_id = NanoID("C") # NanoID |  (optional)
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
+    to_phone_number = 'to_phone_number_example' # str |  (optional)
+    status = 'status_example' # str |  (optional)
+    payment_object_broadcast_id = 'payment_object_broadcast_id_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Count outbound SMS
-        api_response = api_instance.count_outbound_sms(phone_number_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->count_outbound_sms: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Count outbound SMS
         api_response = api_instance.count_outbound_sms(phone_number_id, to_phone_number=to_phone_number, status=status, payment_object_broadcast_id=payment_object_broadcast_id)
+        print("The response of SMSApi->count_outbound_sms:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->count_outbound_sms: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
- **to_phone_number** | **str**|  | [optional]
- **status** | **str**|  | [optional]
- **payment_object_broadcast_id** | **NanoID**|  | [optional]
+ **phone_number_id** | **str**|  | 
+ **to_phone_number** | **str**|  | [optional] 
+ **status** | **str**|  | [optional] 
+ **payment_object_broadcast_id** | **str**|  | [optional] 
 
 ### Return type
 
@@ -604,7 +547,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -626,15 +568,12 @@ Create imported list
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wtsms_imported_list_create import WTSMSImportedListCreate
-from wallet.model.imported_list import ImportedList
-from wallet.model.auth_error import AuthError
+from wallet.models.imported_list import ImportedList
+from wallet.models.wtsms_imported_list_create import WTSMSImportedListCreate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -643,30 +582,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    wtsms_imported_list_create = WTSMSImportedListCreate(
-        phone_number_id=NanoID("C"),
-        is_active=True,
-        list_name="Import on 19 Dec, 2021",
-    ) # WTSMSImportedListCreate | 
+    api_instance = wallet.SMSApi(api_client)
+    wtsms_imported_list_create = wallet.WTSMSImportedListCreate() # WTSMSImportedListCreate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create imported list
         api_response = api_instance.create_imported_list(wtsms_imported_list_create)
+        print("The response of SMSApi->create_imported_list:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->create_imported_list: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wtsms_imported_list_create** | [**WTSMSImportedListCreate**](WTSMSImportedListCreate.md)|  |
+ **wtsms_imported_list_create** | [**WTSMSImportedListCreate**](WTSMSImportedListCreate.md)|  | 
 
 ### Return type
 
@@ -680,7 +617,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -702,15 +638,12 @@ Create opt in list
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_opt_in_list_creation_params import WTOptInListCreationParams
-from wallet.model.opt_in_list import OptInList
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list import OptInList
+from wallet.models.wt_opt_in_list_creation_params import WTOptInListCreationParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -719,44 +652,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    wt_opt_in_list_creation_params = WTOptInListCreationParams(
-        is_active=True,
-        list_name="Christmas Offers",
-        phone_number_id=SSNanoID("C"),
-        estimated_messages_per_month=2500,
-        opt_in_keyword="SUBS",
-        opt_out_keyword="UNSUB",
-        opt_in_confirmed_response="Welcome to the list",
-        opt_out_confirmed_response="Sorry to see you go",
-        opt_in_confirmed_customer_receives="Welcome to the list",
-        opt_out_confirmed_customer_receives="Sorry to see you go",
-        is_over21_required=True,
-        opt_in_confirmed_media_urls=[
-            "opt_in_confirmed_media_urls_example",
-        ],
-        opt_out_confirmed_media_urls=[
-            "opt_out_confirmed_media_urls_example",
-        ],
-    ) # WTOptInListCreationParams | 
+    api_instance = wallet.SMSApi(api_client)
+    wt_opt_in_list_creation_params = wallet.WTOptInListCreationParams() # WTOptInListCreationParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Create opt in list
         api_response = api_instance.create_opt_in_list(wt_opt_in_list_creation_params)
+        print("The response of SMSApi->create_opt_in_list:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->create_opt_in_list: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_opt_in_list_creation_params** | [**WTOptInListCreationParams**](WTOptInListCreationParams.md)|  |
+ **wt_opt_in_list_creation_params** | [**WTOptInListCreationParams**](WTOptInListCreationParams.md)|  | 
 
 ### Return type
 
@@ -770,7 +687,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -792,15 +708,12 @@ Send SMS to opt in list
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.opt_in_list_source import OptInListSource
-from wallet.model.wtsms_opt_in_list_source_create import WTSMSOptInListSourceCreate
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list_source import OptInListSource
+from wallet.models.wtsms_opt_in_list_source_create import WTSMSOptInListSourceCreate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -809,29 +722,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    wtsms_opt_in_list_source_create = WTSMSOptInListSourceCreate(
-        list_id=NanoID("C"),
-        source_name="Social Media",
-    ) # WTSMSOptInListSourceCreate | 
+    api_instance = wallet.SMSApi(api_client)
+    wtsms_opt_in_list_source_create = wallet.WTSMSOptInListSourceCreate() # WTSMSOptInListSourceCreate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Send SMS to opt in list
         api_response = api_instance.create_opt_in_list_source(wtsms_opt_in_list_source_create)
+        print("The response of SMSApi->create_opt_in_list_source:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->create_opt_in_list_source: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wtsms_opt_in_list_source_create** | [**WTSMSOptInListSourceCreate**](WTSMSOptInListSourceCreate.md)|  |
+ **wtsms_opt_in_list_source_create** | [**WTSMSOptInListSourceCreate**](WTSMSOptInListSourceCreate.md)|  | 
 
 ### Return type
 
@@ -845,7 +757,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -867,15 +778,12 @@ Add new recipient in an imported list
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ss_imported_list_recipient_create_params import SSImportedListRecipientCreateParams
-from wallet.model.imported_list_recipient import ImportedListRecipient
-from wallet.model.auth_error import AuthError
+from wallet.models.imported_list_recipient import ImportedListRecipient
+from wallet.models.ss_imported_list_recipient_create_params import SSImportedListRecipientCreateParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -884,29 +792,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    ss_imported_list_recipient_create_params = SSImportedListRecipientCreateParams(
-        imported_list_id=SSNanoID("C"),
-        mobile_phone_number="+18047552674",
-    ) # SSImportedListRecipientCreateParams | 
+    api_instance = wallet.SMSApi(api_client)
+    ss_imported_list_recipient_create_params = wallet.SSImportedListRecipientCreateParams() # SSImportedListRecipientCreateParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Add new recipient in an imported list
         api_response = api_instance.create_recipient_in_imported_list(ss_imported_list_recipient_create_params)
+        print("The response of SMSApi->create_recipient_in_imported_list:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->create_recipient_in_imported_list: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ss_imported_list_recipient_create_params** | [**SSImportedListRecipientCreateParams**](SSImportedListRecipientCreateParams.md)|  |
+ **ss_imported_list_recipient_create_params** | [**SSImportedListRecipientCreateParams**](SSImportedListRecipientCreateParams.md)|  | 
 
 ### Return type
 
@@ -920,7 +827,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -942,14 +848,10 @@ Export imported list recipients
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -958,26 +860,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    imported_list_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    imported_list_id = 'imported_list_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Export imported list recipients
         api_response = api_instance.export_imported_list_recipients(imported_list_id)
+        print("The response of SMSApi->export_imported_list_recipients:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->export_imported_list_recipients: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **imported_list_id** | **NanoID**|  |
+ **imported_list_id** | **str**|  | 
 
 ### Return type
 
@@ -991,7 +895,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1013,14 +916,10 @@ Export opt in list subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1029,26 +928,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Export opt in list subscribers
         api_response = api_instance.export_opt_in_list_subscribers(list_id)
+        print("The response of SMSApi->export_opt_in_list_subscribers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->export_opt_in_list_subscribers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
+ **list_id** | **str**|  | 
 
 ### Return type
 
@@ -1063,7 +964,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1076,7 +976,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_blocked_tcpa_entries**
-> [Tcpa] fetch_blocked_tcpa_entries(phone_number_id)
+> List[Tcpa] fetch_blocked_tcpa_entries(phone_number_id)
 
 Fetch blocked TCPA entries
 
@@ -1084,15 +984,11 @@ Fetch blocked TCPA entries
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.tcpa import Tcpa
+from wallet.models.tcpa import Tcpa
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1101,30 +997,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch blocked TCPA entries
         api_response = api_instance.fetch_blocked_tcpa_entries(phone_number_id)
+        print("The response of SMSApi->fetch_blocked_tcpa_entries:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_blocked_tcpa_entries: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
+ **phone_number_id** | **str**|  | 
 
 ### Return type
 
-[**[Tcpa]**](Tcpa.md)
+[**List[Tcpa]**](Tcpa.md)
 
 ### Authorization
 
@@ -1134,7 +1032,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1148,7 +1045,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_imported_list_recipients**
-> [ImportedListRecipient] fetch_imported_list_recipients(list_id)
+> List[ImportedListRecipient] fetch_imported_list_recipients(list_id)
 
 Fetch imported list recipients
 
@@ -1156,15 +1053,11 @@ Fetch imported list recipients
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.imported_list_recipient import ImportedListRecipient
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.imported_list_recipient import ImportedListRecipient
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1173,30 +1066,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch imported list recipients
         api_response = api_instance.fetch_imported_list_recipients(list_id)
+        print("The response of SMSApi->fetch_imported_list_recipients:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_imported_list_recipients: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
+ **list_id** | **str**|  | 
 
 ### Return type
 
-[**[ImportedListRecipient]**](ImportedListRecipient.md)
+[**List[ImportedListRecipient]**](ImportedListRecipient.md)
 
 ### Authorization
 
@@ -1206,7 +1101,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1220,7 +1114,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_imported_list_recipients_by_page**
-> InlineResponse2007 fetch_imported_list_recipients_by_page(list_id)
+> FetchImportedListRecipientsByPage200Response fetch_imported_list_recipients_by_page(list_id, page_size=page_size, page_num=page_num, is_archive_included=is_archive_included)
 
 Fetch imported list recipients by page
 
@@ -1228,15 +1122,11 @@ Fetch imported list recipients by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.inline_response2007 import InlineResponse2007
-from wallet.model.auth_error import AuthError
+from wallet.models.fetch_imported_list_recipients_by_page200_response import FetchImportedListRecipientsByPage200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1245,45 +1135,38 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
-    page_size = 3.14 # float |  (optional)
-    page_num = 3.14 # float |  (optional)
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
+    page_size = 3.4 # float |  (optional)
+    page_num = 3.4 # float |  (optional)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch imported list recipients by page
-        api_response = api_instance.fetch_imported_list_recipients_by_page(list_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->fetch_imported_list_recipients_by_page: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch imported list recipients by page
         api_response = api_instance.fetch_imported_list_recipients_by_page(list_id, page_size=page_size, page_num=page_num, is_archive_included=is_archive_included)
+        print("The response of SMSApi->fetch_imported_list_recipients_by_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_imported_list_recipients_by_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
- **page_size** | **float**|  | [optional]
- **page_num** | **float**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
+ **list_id** | **str**|  | 
+ **page_size** | **float**|  | [optional] 
+ **page_num** | **float**|  | [optional] 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**FetchImportedListRecipientsByPage200Response**](FetchImportedListRecipientsByPage200Response.md)
 
 ### Authorization
 
@@ -1293,7 +1176,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1307,7 +1189,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_list_sources**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_opt_in_list_sources()
+> object fetch_opt_in_list_sources(is_archive_included=is_archive_included)
 
 Fetch all opt in list sources
 
@@ -1315,13 +1197,10 @@ Fetch all opt in list sources
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1330,31 +1209,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
+    api_instance = wallet.SMSApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all opt in list sources
         api_response = api_instance.fetch_opt_in_list_sources(is_archive_included=is_archive_included)
+        print("The response of SMSApi->fetch_opt_in_list_sources:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_opt_in_list_sources: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1364,7 +1244,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1378,7 +1257,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_list_subscribers**
-> [OptInListSubscriber] fetch_opt_in_list_subscribers(list_id)
+> List[OptInListSubscriber] fetch_opt_in_list_subscribers(list_id, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included)
 
 Fetch opt in list subscribers
 
@@ -1386,15 +1265,11 @@ Fetch opt in list subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.opt_in_list_subscriber import OptInListSubscriber
+from wallet.models.opt_in_list_subscriber import OptInListSubscriber
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1403,45 +1278,38 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
     is_subscribed = True # bool |  (optional)
     is_pending_age21_verification = True # bool |  (optional)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch opt in list subscribers
-        api_response = api_instance.fetch_opt_in_list_subscribers(list_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->fetch_opt_in_list_subscribers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch opt in list subscribers
         api_response = api_instance.fetch_opt_in_list_subscribers(list_id, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included)
+        print("The response of SMSApi->fetch_opt_in_list_subscribers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_opt_in_list_subscribers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
- **is_subscribed** | **bool**|  | [optional]
- **is_pending_age21_verification** | **bool**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
+ **list_id** | **str**|  | 
+ **is_subscribed** | **bool**|  | [optional] 
+ **is_pending_age21_verification** | **bool**|  | [optional] 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[OptInListSubscriber]**](OptInListSubscriber.md)
+[**List[OptInListSubscriber]**](OptInListSubscriber.md)
 
 ### Authorization
 
@@ -1451,7 +1319,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1465,7 +1332,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_list_subscribers_by_page**
-> InlineResponse2006 fetch_opt_in_list_subscribers_by_page(list_id)
+> FetchOptInListSubscribersByPage200Response fetch_opt_in_list_subscribers_by_page(list_id, page_size=page_size, page_num=page_num, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included)
 
 Fetch opt in list subscribers by page
 
@@ -1473,15 +1340,11 @@ Fetch opt in list subscribers by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.inline_response2006 import InlineResponse2006
-from wallet.model.auth_error import AuthError
+from wallet.models.fetch_opt_in_list_subscribers_by_page200_response import FetchOptInListSubscribersByPage200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1490,49 +1353,42 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
-    page_size = 3.14 # float |  (optional)
-    page_num = 3.14 # float |  (optional)
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
+    page_size = 3.4 # float |  (optional)
+    page_num = 3.4 # float |  (optional)
     is_subscribed = True # bool |  (optional)
     is_pending_age21_verification = True # bool |  (optional)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch opt in list subscribers by page
-        api_response = api_instance.fetch_opt_in_list_subscribers_by_page(list_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->fetch_opt_in_list_subscribers_by_page: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch opt in list subscribers by page
         api_response = api_instance.fetch_opt_in_list_subscribers_by_page(list_id, page_size=page_size, page_num=page_num, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included)
+        print("The response of SMSApi->fetch_opt_in_list_subscribers_by_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_opt_in_list_subscribers_by_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
- **page_size** | **float**|  | [optional]
- **page_num** | **float**|  | [optional]
- **is_subscribed** | **bool**|  | [optional]
- **is_pending_age21_verification** | **bool**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
+ **list_id** | **str**|  | 
+ **page_size** | **float**|  | [optional] 
+ **page_num** | **float**|  | [optional] 
+ **is_subscribed** | **bool**|  | [optional] 
+ **is_pending_age21_verification** | **bool**|  | [optional] 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**FetchOptInListSubscribersByPage200Response**](FetchOptInListSubscribersByPage200Response.md)
 
 ### Authorization
 
@@ -1542,7 +1398,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1556,7 +1411,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_lists_associated_with_phone_number**
-> [OptInList] fetch_opt_in_lists_associated_with_phone_number(phone_number_id)
+> List[OptInList] fetch_opt_in_lists_associated_with_phone_number(phone_number_id)
 
 Fetch opt in lists
 
@@ -1564,15 +1419,11 @@ Fetch opt in lists
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.opt_in_list import OptInList
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list import OptInList
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1581,30 +1432,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch opt in lists
         api_response = api_instance.fetch_opt_in_lists_associated_with_phone_number(phone_number_id)
+        print("The response of SMSApi->fetch_opt_in_lists_associated_with_phone_number:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_opt_in_lists_associated_with_phone_number: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
+ **phone_number_id** | **str**|  | 
 
 ### Return type
 
-[**[OptInList]**](OptInList.md)
+[**List[OptInList]**](OptInList.md)
 
 ### Authorization
 
@@ -1614,7 +1467,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1628,7 +1480,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_source_subscribers**
-> [OptInListSubscriber] fetch_opt_in_source_subscribers(source_id)
+> List[OptInListSubscriber] fetch_opt_in_source_subscribers(source_id, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included)
 
 Fetch opt in source subscribers
 
@@ -1636,15 +1488,11 @@ Fetch opt in source subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.opt_in_list_subscriber import OptInListSubscriber
+from wallet.models.opt_in_list_subscriber import OptInListSubscriber
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1653,45 +1501,38 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    source_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    source_id = 'source_id_example' # str | 
     is_subscribed = True # bool |  (optional)
     is_pending_age21_verification = True # bool |  (optional)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch opt in source subscribers
-        api_response = api_instance.fetch_opt_in_source_subscribers(source_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->fetch_opt_in_source_subscribers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch opt in source subscribers
         api_response = api_instance.fetch_opt_in_source_subscribers(source_id, is_subscribed=is_subscribed, is_pending_age21_verification=is_pending_age21_verification, is_archive_included=is_archive_included)
+        print("The response of SMSApi->fetch_opt_in_source_subscribers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_opt_in_source_subscribers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source_id** | **NanoID**|  |
- **is_subscribed** | **bool**|  | [optional]
- **is_pending_age21_verification** | **bool**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
+ **source_id** | **str**|  | 
+ **is_subscribed** | **bool**|  | [optional] 
+ **is_pending_age21_verification** | **bool**|  | [optional] 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[OptInListSubscriber]**](OptInListSubscriber.md)
+[**List[OptInListSubscriber]**](OptInListSubscriber.md)
 
 ### Authorization
 
@@ -1701,7 +1542,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1715,7 +1555,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_sources_associated_with_phone_number**
-> [OptInListSource] fetch_opt_in_sources_associated_with_phone_number(phone_number_id)
+> List[OptInListSource] fetch_opt_in_sources_associated_with_phone_number(phone_number_id)
 
 Fetch opt in sources
 
@@ -1723,15 +1563,11 @@ Fetch opt in sources
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.opt_in_list_source import OptInListSource
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list_source import OptInListSource
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1740,30 +1576,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch opt in sources
         api_response = api_instance.fetch_opt_in_sources_associated_with_phone_number(phone_number_id)
+        print("The response of SMSApi->fetch_opt_in_sources_associated_with_phone_number:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_opt_in_sources_associated_with_phone_number: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
+ **phone_number_id** | **str**|  | 
 
 ### Return type
 
-[**[OptInListSource]**](OptInListSource.md)
+[**List[OptInListSource]**](OptInListSource.md)
 
 ### Authorization
 
@@ -1773,7 +1611,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1787,7 +1624,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_outbound_sms**
-> [OutboundSMS] fetch_outbound_sms(phone_number_id)
+> List[OutboundSMS] fetch_outbound_sms(phone_number_id, to_phone_number=to_phone_number, status=status, payment_object_broadcast_id=payment_object_broadcast_id)
 
 Fetch outbound SMS
 
@@ -1795,15 +1632,11 @@ Fetch outbound SMS
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
-from wallet.model.outbound_sms import OutboundSMS
+from wallet.models.outbound_sms import OutboundSMS
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1812,45 +1645,38 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
-    to_phone_number = "toPhoneNumber_example" # str |  (optional)
-    status = "status_example" # str |  (optional)
-    payment_object_broadcast_id = NanoID("C") # NanoID |  (optional)
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
+    to_phone_number = 'to_phone_number_example' # str |  (optional)
+    status = 'status_example' # str |  (optional)
+    payment_object_broadcast_id = 'payment_object_broadcast_id_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch outbound SMS
-        api_response = api_instance.fetch_outbound_sms(phone_number_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->fetch_outbound_sms: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch outbound SMS
         api_response = api_instance.fetch_outbound_sms(phone_number_id, to_phone_number=to_phone_number, status=status, payment_object_broadcast_id=payment_object_broadcast_id)
+        print("The response of SMSApi->fetch_outbound_sms:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_outbound_sms: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
- **to_phone_number** | **str**|  | [optional]
- **status** | **str**|  | [optional]
- **payment_object_broadcast_id** | **NanoID**|  | [optional]
+ **phone_number_id** | **str**|  | 
+ **to_phone_number** | **str**|  | [optional] 
+ **status** | **str**|  | [optional] 
+ **payment_object_broadcast_id** | **str**|  | [optional] 
 
 ### Return type
 
-[**[OutboundSMS]**](OutboundSMS.md)
+[**List[OutboundSMS]**](OutboundSMS.md)
 
 ### Authorization
 
@@ -1860,7 +1686,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1874,7 +1699,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_outbound_smsby_page**
-> InlineResponse2005 fetch_outbound_smsby_page(phone_number_id)
+> FetchOutboundSMSByPage200Response fetch_outbound_smsby_page(phone_number_id, to_phone_number=to_phone_number, payment_object_broadcast_id=payment_object_broadcast_id, page_size=page_size, page_num=page_num, status=status)
 
 Fetch outbound SMSes by page
 
@@ -1882,16 +1707,11 @@ Fetch outbound SMSes by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.ss_outbound_statuses import SSOutboundStatuses
-from wallet.model.nano_id import NanoID
-from wallet.model.inline_response2005 import InlineResponse2005
-from wallet.model.auth_error import AuthError
+from wallet.models.fetch_outbound_smsby_page200_response import FetchOutboundSMSByPage200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1900,49 +1720,42 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
-    to_phone_number = "toPhoneNumber_example" # str |  (optional)
-    payment_object_broadcast_id = NanoID("C") # NanoID |  (optional)
-    page_size = 3.14 # float |  (optional)
-    page_num = 3.14 # float |  (optional)
-    status = SSOutboundStatuses(None) # SSOutboundStatuses |  (optional)
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
+    to_phone_number = 'to_phone_number_example' # str |  (optional)
+    payment_object_broadcast_id = 'payment_object_broadcast_id_example' # str |  (optional)
+    page_size = 3.4 # float |  (optional)
+    page_num = 3.4 # float |  (optional)
+    status = wallet.SSOutboundStatuses() # SSOutboundStatuses |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch outbound SMSes by page
-        api_response = api_instance.fetch_outbound_smsby_page(phone_number_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling SMSApi->fetch_outbound_smsby_page: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch outbound SMSes by page
         api_response = api_instance.fetch_outbound_smsby_page(phone_number_id, to_phone_number=to_phone_number, payment_object_broadcast_id=payment_object_broadcast_id, page_size=page_size, page_num=page_num, status=status)
+        print("The response of SMSApi->fetch_outbound_smsby_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_outbound_smsby_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
- **to_phone_number** | **str**|  | [optional]
- **payment_object_broadcast_id** | **NanoID**|  | [optional]
- **page_size** | **float**|  | [optional]
- **page_num** | **float**|  | [optional]
- **status** | **SSOutboundStatuses**|  | [optional]
+ **phone_number_id** | **str**|  | 
+ **to_phone_number** | **str**|  | [optional] 
+ **payment_object_broadcast_id** | **str**|  | [optional] 
+ **page_size** | **float**|  | [optional] 
+ **page_num** | **float**|  | [optional] 
+ **status** | [**SSOutboundStatuses**](.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**FetchOutboundSMSByPage200Response**](FetchOutboundSMSByPage200Response.md)
 
 ### Authorization
 
@@ -1952,7 +1765,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1966,7 +1778,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_payment_object_broadcasts**
-> [StaticVoucherCampaignBroadcast] fetch_payment_object_broadcasts(phone_number_id)
+> List[StaticVoucherCampaignBroadcast] fetch_payment_object_broadcasts(phone_number_id)
 
 Fetch payment object broadcasts
 
@@ -1974,15 +1786,11 @@ Fetch payment object broadcasts
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
-from wallet.model.auth_error import AuthError
+from wallet.models.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1991,30 +1799,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch payment object broadcasts
         api_response = api_instance.fetch_payment_object_broadcasts(phone_number_id)
+        print("The response of SMSApi->fetch_payment_object_broadcasts:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_payment_object_broadcasts: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
+ **phone_number_id** | **str**|  | 
 
 ### Return type
 
-[**[StaticVoucherCampaignBroadcast]**](StaticVoucherCampaignBroadcast.md)
+[**List[StaticVoucherCampaignBroadcast]**](StaticVoucherCampaignBroadcast.md)
 
 ### Authorization
 
@@ -2024,7 +1834,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2038,7 +1847,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_sms_agreement**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_sms_agreement()
+> object fetch_sms_agreement()
 
 Accept SMS agreement (DEPRECATED)
 
@@ -2046,13 +1855,10 @@ Accept SMS agreement (DEPRECATED)
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2061,26 +1867,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
+    api_instance = wallet.SMSApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Accept SMS agreement (DEPRECATED)
         api_response = api_instance.fetch_sms_agreement()
+        print("The response of SMSApi->fetch_sms_agreement:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->fetch_sms_agreement: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -2090,7 +1898,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2112,15 +1919,11 @@ Import imported list recipients
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.wt_employee_import_records import WTEmployeeImportRecords
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_employee_import_records import WTEmployeeImportRecords
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2129,31 +1932,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    imported_list_id = NanoID("C") # NanoID | 
-    wt_employee_import_records = WTEmployeeImportRecords(
-        file_name="club-members-upload.csv",
-        bucket="members",
-    ) # WTEmployeeImportRecords | 
+    api_instance = wallet.SMSApi(api_client)
+    imported_list_id = 'imported_list_id_example' # str | 
+    wt_employee_import_records = wallet.WTEmployeeImportRecords() # WTEmployeeImportRecords | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Import imported list recipients
         api_response = api_instance.import_imported_list_recipients(imported_list_id, wt_employee_import_records)
+        print("The response of SMSApi->import_imported_list_recipients:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->import_imported_list_recipients: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **imported_list_id** | **NanoID**|  |
- **wt_employee_import_records** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md)|  |
+ **imported_list_id** | **str**|  | 
+ **wt_employee_import_records** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md)|  | 
 
 ### Return type
 
@@ -2167,7 +1969,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2189,14 +1990,11 @@ Import imported list recipients from a given membership tier
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_imported_list_recipient_from_membership_tier_import import WTImportedListRecipientFromMembershipTierImport
+from wallet.models.wt_imported_list_recipient_from_membership_tier_import import WTImportedListRecipientFromMembershipTierImport
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2205,30 +2003,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    wt_imported_list_recipient_from_membership_tier_import = WTImportedListRecipientFromMembershipTierImport(
-        list_name="Platinum Members List",
-        phone_number_id=SSNanoID("C"),
-        tier_id=None,
-    ) # WTImportedListRecipientFromMembershipTierImport | 
+    api_instance = wallet.SMSApi(api_client)
+    wt_imported_list_recipient_from_membership_tier_import = wallet.WTImportedListRecipientFromMembershipTierImport() # WTImportedListRecipientFromMembershipTierImport | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Import imported list recipients from a given membership tier
         api_response = api_instance.import_imported_list_recipients_from_membership_tier(wt_imported_list_recipient_from_membership_tier_import)
+        print("The response of SMSApi->import_imported_list_recipients_from_membership_tier:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->import_imported_list_recipients_from_membership_tier: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_imported_list_recipient_from_membership_tier_import** | [**WTImportedListRecipientFromMembershipTierImport**](WTImportedListRecipientFromMembershipTierImport.md)|  |
+ **wt_imported_list_recipient_from_membership_tier_import** | [**WTImportedListRecipientFromMembershipTierImport**](WTImportedListRecipientFromMembershipTierImport.md)|  | 
 
 ### Return type
 
@@ -2242,7 +2038,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2264,15 +2059,11 @@ Import opt in list subscribers
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.wtsms_import_opt_in_list_subscribers import WTSMSImportOptInListSubscribers
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.wtsms_import_opt_in_list_subscribers import WTSMSImportOptInListSubscribers
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2281,32 +2072,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
-    wtsms_import_opt_in_list_subscribers = WTSMSImportOptInListSubscribers(
-        file_name="club-members-upload.csv",
-        bucket="members",
-        opt_in_source_id=NanoID("C"),
-    ) # WTSMSImportOptInListSubscribers | 
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
+    wtsms_import_opt_in_list_subscribers = wallet.WTSMSImportOptInListSubscribers() # WTSMSImportOptInListSubscribers | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Import opt in list subscribers
         api_response = api_instance.import_opt_in_list_subscribers(list_id, wtsms_import_opt_in_list_subscribers)
+        print("The response of SMSApi->import_opt_in_list_subscribers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->import_opt_in_list_subscribers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
- **wtsms_import_opt_in_list_subscribers** | [**WTSMSImportOptInListSubscribers**](WTSMSImportOptInListSubscribers.md)|  |
+ **list_id** | **str**|  | 
+ **wtsms_import_opt_in_list_subscribers** | [**WTSMSImportOptInListSubscribers**](WTSMSImportOptInListSubscribers.md)|  | 
 
 ### Return type
 
@@ -2320,7 +2109,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2342,15 +2130,11 @@ Restore phone number
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.phone_number import PhoneNumber
-from wallet.model.auth_error import AuthError
+from wallet.models.phone_number import PhoneNumber
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2359,26 +2143,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore phone number
         api_response = api_instance.restore_phone_number(phone_number_id)
+        print("The response of SMSApi->restore_phone_number:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->restore_phone_number: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
+ **phone_number_id** | **str**|  | 
 
 ### Return type
 
@@ -2392,7 +2178,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2414,15 +2199,11 @@ Restore recipient
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.imported_list_recipient import ImportedListRecipient
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.imported_list_recipient import ImportedListRecipient
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2431,26 +2212,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    id = NanoID("C") # NanoID | 
+    api_instance = wallet.SMSApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Restore recipient
         api_response = api_instance.restore_recipient(id)
+        print("The response of SMSApi->restore_recipient:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->restore_recipient: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **NanoID**|  |
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -2465,7 +2248,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -2478,7 +2260,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_sent_and_max_count_of_messages**
-> bool, date, datetime, dict, float, int, list, str, none_type retrieve_sent_and_max_count_of_messages()
+> object retrieve_sent_and_max_count_of_messages()
 
 Retrieve the number of messages sent by the merchant within the current billing cycle
 
@@ -2486,13 +2268,10 @@ Retrieve the number of messages sent by the merchant within the current billing 
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2501,26 +2280,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
+    api_instance = wallet.SMSApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Retrieve the number of messages sent by the merchant within the current billing cycle
         api_response = api_instance.retrieve_sent_and_max_count_of_messages()
+        print("The response of SMSApi->retrieve_sent_and_max_count_of_messages:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->retrieve_sent_and_max_count_of_messages: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -2530,7 +2311,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2552,16 +2332,12 @@ Save imported list
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wtsms_imported_list_create import WTSMSImportedListCreate
-from wallet.model.nano_id import NanoID
-from wallet.model.imported_list import ImportedList
-from wallet.model.auth_error import AuthError
+from wallet.models.imported_list import ImportedList
+from wallet.models.wtsms_imported_list_create import WTSMSImportedListCreate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2570,32 +2346,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
-    wtsms_imported_list_create = WTSMSImportedListCreate(
-        phone_number_id=NanoID("C"),
-        is_active=True,
-        list_name="Import on 19 Dec, 2021",
-    ) # WTSMSImportedListCreate | 
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
+    wtsms_imported_list_create = wallet.WTSMSImportedListCreate() # WTSMSImportedListCreate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Save imported list
         api_response = api_instance.save_imported_list(list_id, wtsms_imported_list_create)
+        print("The response of SMSApi->save_imported_list:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->save_imported_list: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
- **wtsms_imported_list_create** | [**WTSMSImportedListCreate**](WTSMSImportedListCreate.md)|  |
+ **list_id** | **str**|  | 
+ **wtsms_imported_list_create** | [**WTSMSImportedListCreate**](WTSMSImportedListCreate.md)|  | 
 
 ### Return type
 
@@ -2609,7 +2383,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2631,16 +2404,12 @@ Save opt in list
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.wt_opt_in_list_creation_params import WTOptInListCreationParams
-from wallet.model.opt_in_list import OptInList
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list import OptInList
+from wallet.models.wt_opt_in_list_creation_params import WTOptInListCreationParams
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2649,46 +2418,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    list_id = NanoID("C") # NanoID | 
-    wt_opt_in_list_creation_params = WTOptInListCreationParams(
-        is_active=True,
-        list_name="Christmas Offers",
-        phone_number_id=SSNanoID("C"),
-        estimated_messages_per_month=2500,
-        opt_in_keyword="SUBS",
-        opt_out_keyword="UNSUB",
-        opt_in_confirmed_response="Welcome to the list",
-        opt_out_confirmed_response="Sorry to see you go",
-        opt_in_confirmed_customer_receives="Welcome to the list",
-        opt_out_confirmed_customer_receives="Sorry to see you go",
-        is_over21_required=True,
-        opt_in_confirmed_media_urls=[
-            "opt_in_confirmed_media_urls_example",
-        ],
-        opt_out_confirmed_media_urls=[
-            "opt_out_confirmed_media_urls_example",
-        ],
-    ) # WTOptInListCreationParams | 
+    api_instance = wallet.SMSApi(api_client)
+    list_id = 'list_id_example' # str | 
+    wt_opt_in_list_creation_params = wallet.WTOptInListCreationParams() # WTOptInListCreationParams | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Save opt in list
         api_response = api_instance.save_opt_in_list(list_id, wt_opt_in_list_creation_params)
+        print("The response of SMSApi->save_opt_in_list:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->save_opt_in_list: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **NanoID**|  |
- **wt_opt_in_list_creation_params** | [**WTOptInListCreationParams**](WTOptInListCreationParams.md)|  |
+ **list_id** | **str**|  | 
+ **wt_opt_in_list_creation_params** | [**WTOptInListCreationParams**](WTOptInListCreationParams.md)|  | 
 
 ### Return type
 
@@ -2702,7 +2455,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2724,16 +2476,12 @@ Save opt in list source
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.opt_in_list_source import OptInListSource
-from wallet.model.nano_id import NanoID
-from wallet.model.wtsms_opt_in_list_source_create import WTSMSOptInListSourceCreate
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list_source import OptInListSource
+from wallet.models.wtsms_opt_in_list_source_create import WTSMSOptInListSourceCreate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2742,31 +2490,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    source_id = NanoID("C") # NanoID | 
-    wtsms_opt_in_list_source_create = WTSMSOptInListSourceCreate(
-        list_id=NanoID("C"),
-        source_name="Social Media",
-    ) # WTSMSOptInListSourceCreate | 
+    api_instance = wallet.SMSApi(api_client)
+    source_id = 'source_id_example' # str | 
+    wtsms_opt_in_list_source_create = wallet.WTSMSOptInListSourceCreate() # WTSMSOptInListSourceCreate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Save opt in list source
         api_response = api_instance.save_opt_in_list_source(source_id, wtsms_opt_in_list_source_create)
+        print("The response of SMSApi->save_opt_in_list_source:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->save_opt_in_list_source: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source_id** | **NanoID**|  |
- **wtsms_opt_in_list_source_create** | [**WTSMSOptInListSourceCreate**](WTSMSOptInListSourceCreate.md)|  |
+ **source_id** | **str**|  | 
+ **wtsms_opt_in_list_source_create** | [**WTSMSOptInListSourceCreate**](WTSMSOptInListSourceCreate.md)|  | 
 
 ### Return type
 
@@ -2780,7 +2527,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2802,15 +2548,11 @@ Request phone number verification
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.wtsms_update_phone_number_config import WTSMSUpdatePhoneNumberConfig
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.models.wtsms_update_phone_number_config import WTSMSUpdatePhoneNumberConfig
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2819,41 +2561,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
-    wtsms_update_phone_number_config = WTSMSUpdatePhoneNumberConfig(
-        company_name="Wallet Inc",
-        privacy_policy_url="https://example.com/privacy-policy",
-        terms_of_service_url="https://example.com/terms-of-service",
-        message_footer="Info message from Wallet Inc",
-        stop_response="Sorry to see you go",
-        help_response="How can we help you?",
-        help_desk_keyword="HELPME",
-        help_desk_queue_response="How can we help you?",
-        is_connected_to_watson=True,
-        watson_username="watson_username_example",
-        watson_password="watson_password_example",
-        watson_conversation_workplace_id="watson_conversation_workplace_id_example",
-    ) # WTSMSUpdatePhoneNumberConfig | 
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
+    wtsms_update_phone_number_config = wallet.WTSMSUpdatePhoneNumberConfig() # WTSMSUpdatePhoneNumberConfig | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Request phone number verification
         api_response = api_instance.send_phone_number_for_verification(phone_number_id, wtsms_update_phone_number_config)
+        print("The response of SMSApi->send_phone_number_for_verification:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->send_phone_number_for_verification: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
- **wtsms_update_phone_number_config** | [**WTSMSUpdatePhoneNumberConfig**](WTSMSUpdatePhoneNumberConfig.md)|  |
+ **phone_number_id** | **str**|  | 
+ **wtsms_update_phone_number_config** | [**WTSMSUpdatePhoneNumberConfig**](WTSMSUpdatePhoneNumberConfig.md)|  | 
 
 ### Return type
 
@@ -2867,7 +2598,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -2889,16 +2619,12 @@ Update phone number
 
 
 ```python
-import time
 import wallet
-from wallet.api import sms_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.wtsms_update_phone_number_config import WTSMSUpdatePhoneNumberConfig
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.phone_number import PhoneNumber
-from wallet.model.auth_error import AuthError
+from wallet.models.phone_number import PhoneNumber
+from wallet.models.wtsms_update_phone_number_config import WTSMSUpdatePhoneNumberConfig
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -2907,41 +2633,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sms_api.SMSApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
-    wtsms_update_phone_number_config = WTSMSUpdatePhoneNumberConfig(
-        company_name="Wallet Inc",
-        privacy_policy_url="https://example.com/privacy-policy",
-        terms_of_service_url="https://example.com/terms-of-service",
-        message_footer="Info message from Wallet Inc",
-        stop_response="Sorry to see you go",
-        help_response="How can we help you?",
-        help_desk_keyword="HELPME",
-        help_desk_queue_response="How can we help you?",
-        is_connected_to_watson=True,
-        watson_username="watson_username_example",
-        watson_password="watson_password_example",
-        watson_conversation_workplace_id="watson_conversation_workplace_id_example",
-    ) # WTSMSUpdatePhoneNumberConfig | 
+    api_instance = wallet.SMSApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
+    wtsms_update_phone_number_config = wallet.WTSMSUpdatePhoneNumberConfig() # WTSMSUpdatePhoneNumberConfig | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update phone number
         api_response = api_instance.update_phone_number(phone_number_id, wtsms_update_phone_number_config)
+        print("The response of SMSApi->update_phone_number:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling SMSApi->update_phone_number: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
- **wtsms_update_phone_number_config** | [**WTSMSUpdatePhoneNumberConfig**](WTSMSUpdatePhoneNumberConfig.md)|  |
+ **phone_number_id** | **str**|  | 
+ **wtsms_update_phone_number_config** | [**WTSMSUpdatePhoneNumberConfig**](WTSMSUpdatePhoneNumberConfig.md)|  | 
 
 ### Return type
 
@@ -2955,7 +2670,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 

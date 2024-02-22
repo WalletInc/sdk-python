@@ -34,7 +34,7 @@ Method | HTTP request | Description
 
 
 # **archive_merchant_profile**
-> bool, date, datetime, dict, float, int, list, str, none_type archive_merchant_profile()
+> object archive_merchant_profile()
 
 Archive Merchant
 
@@ -42,13 +42,10 @@ Archive Merchant
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -57,26 +54,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Archive Merchant
         api_response = api_instance.archive_merchant_profile()
+        print("The response of MerchantApi->archive_merchant_profile:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->archive_merchant_profile: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -86,7 +85,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -100,7 +98,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **archive_payment_object_broadcast**
-> bool, date, datetime, dict, float, int, list, str, none_type archive_payment_object_broadcast(broadcast_id)
+> object archive_payment_object_broadcast(broadcast_id)
 
 Archive payment object broadcast
 
@@ -108,13 +106,10 @@ Archive payment object broadcast
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -123,30 +118,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    broadcast_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantApi(api_client)
+    broadcast_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Archive payment object broadcast
         api_response = api_instance.archive_payment_object_broadcast(broadcast_id)
+        print("The response of MerchantApi->archive_payment_object_broadcast:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->archive_payment_object_broadcast: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **broadcast_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **broadcast_id** | [**object**](.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -156,7 +153,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -170,7 +166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_inbound_sms**
-> WTCountResult count_inbound_sms(phone_number_id)
+> WTCountResult count_inbound_sms(phone_number_id, from_phone_number=from_phone_number, body=body)
 
 Count inbound SMSes
 
@@ -178,14 +174,11 @@ Count inbound SMSes
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_count_result import WTCountResult
+from wallet.models.wt_count_result import WTCountResult
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -194,39 +187,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    phone_number_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    from_phone_number = "fromPhoneNumber_example" # str |  (optional)
-    body = "body_example" # str |  (optional)
+    api_instance = wallet.MerchantApi(api_client)
+    phone_number_id = None # object | 
+    from_phone_number = 'from_phone_number_example' # str |  (optional)
+    body = 'body_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Count inbound SMSes
-        api_response = api_instance.count_inbound_sms(phone_number_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling MerchantApi->count_inbound_sms: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Count inbound SMSes
         api_response = api_instance.count_inbound_sms(phone_number_id, from_phone_number=from_phone_number, body=body)
+        print("The response of MerchantApi->count_inbound_sms:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->count_inbound_sms: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **from_phone_number** | **str**|  | [optional]
- **body** | **str**|  | [optional]
+ **phone_number_id** | [**object**](.md)|  | 
+ **from_phone_number** | **str**|  | [optional] 
+ **body** | **str**|  | [optional] 
 
 ### Return type
 
@@ -240,7 +226,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -262,14 +247,10 @@ Export inbound messages
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -278,28 +259,30 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
-    locale = "locale_example" # str | 
+    api_instance = wallet.MerchantApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
+    locale = 'locale_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Export inbound messages
         api_response = api_instance.export_inbound_messages(phone_number_id, locale)
+        print("The response of MerchantApi->export_inbound_messages:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->export_inbound_messages: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
- **locale** | **str**|  |
+ **phone_number_id** | **str**|  | 
+ **locale** | **str**|  | 
 
 ### Return type
 
@@ -313,7 +296,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -327,7 +309,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_outbound_messages**
-> str export_outbound_messages(phone_number_id, locale)
+> str export_outbound_messages(phone_number_id, locale, payment_object_broadcast_id=payment_object_broadcast_id)
 
 Export outbound messages
 
@@ -335,14 +317,10 @@ Export outbound messages
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.nano_id import NanoID
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -351,39 +329,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    phone_number_id = NanoID("C") # NanoID | 
-    locale = "locale_example" # str | 
-    payment_object_broadcast_id = NanoID("C") # NanoID |  (optional)
+    api_instance = wallet.MerchantApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
+    locale = 'locale_example' # str | 
+    payment_object_broadcast_id = 'payment_object_broadcast_id_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Export outbound messages
-        api_response = api_instance.export_outbound_messages(phone_number_id, locale)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling MerchantApi->export_outbound_messages: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Export outbound messages
         api_response = api_instance.export_outbound_messages(phone_number_id, locale, payment_object_broadcast_id=payment_object_broadcast_id)
+        print("The response of MerchantApi->export_outbound_messages:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->export_outbound_messages: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **NanoID**|  |
- **locale** | **str**|  |
- **payment_object_broadcast_id** | **NanoID**|  | [optional]
+ **phone_number_id** | **str**|  | 
+ **locale** | **str**|  | 
+ **payment_object_broadcast_id** | **str**|  | [optional] 
 
 ### Return type
 
@@ -398,7 +369,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -411,7 +381,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_advertisement_credit_broadcasts**
-> [AdvertisementCreditBroadcast] fetch_advertisement_credit_broadcasts()
+> List[AdvertisementCreditBroadcast] fetch_advertisement_credit_broadcasts(is_archive_included=is_archive_included)
 
 Fetch all ad credit broadcasts
 
@@ -419,14 +389,11 @@ Fetch all ad credit broadcasts
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.advertisement_credit_broadcast import AdvertisementCreditBroadcast
+from wallet.models.advertisement_credit_broadcast import AdvertisementCreditBroadcast
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -435,31 +402,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all ad credit broadcasts
         api_response = api_instance.fetch_advertisement_credit_broadcasts(is_archive_included=is_archive_included)
+        print("The response of MerchantApi->fetch_advertisement_credit_broadcasts:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_advertisement_credit_broadcasts: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[AdvertisementCreditBroadcast]**](AdvertisementCreditBroadcast.md)
+[**List[AdvertisementCreditBroadcast]**](AdvertisementCreditBroadcast.md)
 
 ### Authorization
 
@@ -469,7 +437,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -483,7 +450,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_custom_roles**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_custom_roles()
+> object fetch_custom_roles()
 
 Fetch custom roles
 
@@ -491,13 +458,10 @@ Fetch custom roles
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -506,26 +470,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch custom roles
         api_response = api_instance.fetch_custom_roles()
+        print("The response of MerchantApi->fetch_custom_roles:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_custom_roles: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -535,7 +501,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -549,7 +514,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_dynamic_voucher_broadcasts**
-> [DynamicVoucherBroadcast] fetch_dynamic_voucher_broadcasts()
+> List[DynamicVoucherBroadcast] fetch_dynamic_voucher_broadcasts(is_archive_included=is_archive_included)
 
 Fetch all dynamic voucher broadcasts
 
@@ -557,14 +522,11 @@ Fetch all dynamic voucher broadcasts
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.dynamic_voucher_broadcast import DynamicVoucherBroadcast
+from wallet.models.dynamic_voucher_broadcast import DynamicVoucherBroadcast
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -573,31 +535,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all dynamic voucher broadcasts
         api_response = api_instance.fetch_dynamic_voucher_broadcasts(is_archive_included=is_archive_included)
+        print("The response of MerchantApi->fetch_dynamic_voucher_broadcasts:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_dynamic_voucher_broadcasts: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[DynamicVoucherBroadcast]**](DynamicVoucherBroadcast.md)
+[**List[DynamicVoucherBroadcast]**](DynamicVoucherBroadcast.md)
 
 ### Authorization
 
@@ -607,7 +570,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -621,7 +583,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_employees**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_employees()
+> object fetch_employees()
 
 Fetch all employees
 
@@ -629,13 +591,10 @@ Fetch all employees
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -644,26 +603,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch all employees
         api_response = api_instance.fetch_employees()
+        print("The response of MerchantApi->fetch_employees:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_employees: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -673,7 +634,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -687,7 +647,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_help_desk_requests**
-> [HelpDeskRequest] fetch_help_desk_requests(phone_number_id)
+> List[HelpDeskRequest] fetch_help_desk_requests(phone_number_id, is_resolved=is_resolved)
 
 Fetch help desk requests
 
@@ -695,14 +655,11 @@ Fetch help desk requests
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.help_desk_request import HelpDeskRequest
-from wallet.model.auth_error import AuthError
+from wallet.models.help_desk_request import HelpDeskRequest
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -711,41 +668,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    phone_number_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantApi(api_client)
+    phone_number_id = None # object | 
     is_resolved = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch help desk requests
-        api_response = api_instance.fetch_help_desk_requests(phone_number_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling MerchantApi->fetch_help_desk_requests: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch help desk requests
         api_response = api_instance.fetch_help_desk_requests(phone_number_id, is_resolved=is_resolved)
+        print("The response of MerchantApi->fetch_help_desk_requests:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_help_desk_requests: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **is_resolved** | **bool**|  | [optional]
+ **phone_number_id** | [**object**](.md)|  | 
+ **is_resolved** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[HelpDeskRequest]**](HelpDeskRequest.md)
+[**List[HelpDeskRequest]**](HelpDeskRequest.md)
 
 ### Authorization
 
@@ -755,7 +705,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -777,14 +726,11 @@ Fetch imported list
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.imported_list import ImportedList
-from wallet.model.auth_error import AuthError
+from wallet.models.imported_list import ImportedList
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -793,26 +739,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    list_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantApi(api_client)
+    list_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch imported list
         api_response = api_instance.fetch_imported_list(list_id)
+        print("The response of MerchantApi->fetch_imported_list:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_imported_list: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **list_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -827,7 +775,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -840,7 +787,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_imported_lists**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_imported_lists()
+> object fetch_imported_lists(is_archive_included=is_archive_included)
 
 Fetch all imported lists
 
@@ -848,13 +795,10 @@ Fetch all imported lists
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -863,31 +807,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all imported lists
         api_response = api_instance.fetch_imported_lists(is_archive_included=is_archive_included)
+        print("The response of MerchantApi->fetch_imported_lists:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_imported_lists: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -897,7 +842,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -911,7 +855,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_inbound_sms**
-> [InboundSMS] fetch_inbound_sms(phone_number_id)
+> List[InboundSMS] fetch_inbound_sms(phone_number_id, from_phone_number=from_phone_number)
 
 Fetch inbound SMSes
 
@@ -919,14 +863,11 @@ Fetch inbound SMSes
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.inbound_sms import InboundSMS
-from wallet.model.auth_error import AuthError
+from wallet.models.inbound_sms import InboundSMS
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -935,41 +876,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    phone_number_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    from_phone_number = "fromPhoneNumber_example" # str |  (optional)
+    api_instance = wallet.MerchantApi(api_client)
+    phone_number_id = None # object | 
+    from_phone_number = 'from_phone_number_example' # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch inbound SMSes
-        api_response = api_instance.fetch_inbound_sms(phone_number_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling MerchantApi->fetch_inbound_sms: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch inbound SMSes
         api_response = api_instance.fetch_inbound_sms(phone_number_id, from_phone_number=from_phone_number)
+        print("The response of MerchantApi->fetch_inbound_sms:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_inbound_sms: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **from_phone_number** | **str**|  | [optional]
+ **phone_number_id** | [**object**](.md)|  | 
+ **from_phone_number** | **str**|  | [optional] 
 
 ### Return type
 
-[**[InboundSMS]**](InboundSMS.md)
+[**List[InboundSMS]**](InboundSMS.md)
 
 ### Authorization
 
@@ -979,7 +913,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -993,7 +926,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_inbound_smsby_page**
-> InlineResponse2002 fetch_inbound_smsby_page(phone_number_id)
+> FetchInboundSMSByPage200Response fetch_inbound_smsby_page(phone_number_id, from_phone_number=from_phone_number, page_size=page_size, page_num=page_num)
 
 Fetch inbound SMSes by page
 
@@ -1001,14 +934,11 @@ Fetch inbound SMSes by page
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.inline_response2002 import InlineResponse2002
+from wallet.models.fetch_inbound_smsby_page200_response import FetchInboundSMSByPage200Response
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1017,45 +947,38 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    phone_number_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    from_phone_number = "fromPhoneNumber_example" # str |  (optional)
-    page_size = 3.14 # float |  (optional)
-    page_num = 3.14 # float |  (optional)
+    api_instance = wallet.MerchantApi(api_client)
+    phone_number_id = None # object | 
+    from_phone_number = 'from_phone_number_example' # str |  (optional)
+    page_size = 3.4 # float |  (optional)
+    page_num = 3.4 # float |  (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Fetch inbound SMSes by page
-        api_response = api_instance.fetch_inbound_smsby_page(phone_number_id)
-        pprint(api_response)
-    except wallet.ApiException as e:
-        print("Exception when calling MerchantApi->fetch_inbound_smsby_page: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch inbound SMSes by page
         api_response = api_instance.fetch_inbound_smsby_page(phone_number_id, from_phone_number=from_phone_number, page_size=page_size, page_num=page_num)
+        print("The response of MerchantApi->fetch_inbound_smsby_page:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_inbound_smsby_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **from_phone_number** | **str**|  | [optional]
- **page_size** | **float**|  | [optional]
- **page_num** | **float**|  | [optional]
+ **phone_number_id** | [**object**](.md)|  | 
+ **from_phone_number** | **str**|  | [optional] 
+ **page_size** | **float**|  | [optional] 
+ **page_num** | **float**|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**FetchInboundSMSByPage200Response**](FetchInboundSMSByPage200Response.md)
 
 ### Authorization
 
@@ -1065,7 +988,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1079,7 +1001,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_merchant_outbound_sms**
-> [OutboundSMS] fetch_merchant_outbound_sms(phone_number_id, to_phone_number)
+> List[OutboundSMS] fetch_merchant_outbound_sms(phone_number_id, to_phone_number)
 
 Fetch outbound SMSes
 
@@ -1087,14 +1009,11 @@ Fetch outbound SMSes
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.outbound_sms import OutboundSMS
+from wallet.models.outbound_sms import OutboundSMS
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1103,32 +1022,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    phone_number_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
-    to_phone_number = "toPhoneNumber_example" # str | 
+    api_instance = wallet.MerchantApi(api_client)
+    phone_number_id = None # object | 
+    to_phone_number = 'to_phone_number_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch outbound SMSes
         api_response = api_instance.fetch_merchant_outbound_sms(phone_number_id, to_phone_number)
+        print("The response of MerchantApi->fetch_merchant_outbound_sms:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_merchant_outbound_sms: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
- **to_phone_number** | **str**|  |
+ **phone_number_id** | [**object**](.md)|  | 
+ **to_phone_number** | **str**|  | 
 
 ### Return type
 
-[**[OutboundSMS]**](OutboundSMS.md)
+[**List[OutboundSMS]**](OutboundSMS.md)
 
 ### Authorization
 
@@ -1138,7 +1059,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1152,7 +1072,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_merchant_phone_numbers**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_merchant_phone_numbers()
+> object fetch_merchant_phone_numbers(is_archive_included=is_archive_included, is_approved=is_approved)
 
 Fetch all phone numbers
 
@@ -1160,13 +1080,10 @@ Fetch all phone numbers
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1175,33 +1092,34 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
     is_archive_included = True # bool |  (optional)
     is_approved = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all phone numbers
         api_response = api_instance.fetch_merchant_phone_numbers(is_archive_included=is_archive_included, is_approved=is_approved)
+        print("The response of MerchantApi->fetch_merchant_phone_numbers:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_merchant_phone_numbers: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
- **is_approved** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
+ **is_approved** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1211,7 +1129,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1233,14 +1150,11 @@ Fetch opt in list
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.opt_in_list import OptInList
-from wallet.model.auth_error import AuthError
+from wallet.models.opt_in_list import OptInList
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1249,26 +1163,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    list_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantApi(api_client)
+    list_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch opt in list
         api_response = api_instance.fetch_opt_in_list(list_id)
+        print("The response of MerchantApi->fetch_opt_in_list:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_opt_in_list: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **list_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -1283,7 +1199,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1296,7 +1211,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_opt_in_lists**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_opt_in_lists()
+> object fetch_opt_in_lists(is_archive_included=is_archive_included)
 
 Fetch all opt in lists
 
@@ -1304,13 +1219,10 @@ Fetch all opt in lists
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1319,31 +1231,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all opt in lists
         api_response = api_instance.fetch_opt_in_lists(is_archive_included=is_archive_included)
+        print("The response of MerchantApi->fetch_opt_in_lists:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_opt_in_lists: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1353,7 +1266,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1375,14 +1287,11 @@ Fetch phone number
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.phone_number import PhoneNumber
-from wallet.model.auth_error import AuthError
+from wallet.models.phone_number import PhoneNumber
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1391,26 +1300,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    phone_number_id = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    api_instance = wallet.MerchantApi(api_client)
+    phone_number_id = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Fetch phone number
         api_response = api_instance.fetch_phone_number(phone_number_id)
+        print("The response of MerchantApi->fetch_phone_number:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_phone_number: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **phone_number_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -1425,7 +1336,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-
 ### HTTP response details
 
 | Status code | Description | Response headers |
@@ -1438,7 +1348,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_public_employees**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_public_employees()
+> object fetch_public_employees()
 
 Fetch public representative employees of the merchant
 
@@ -1446,13 +1356,10 @@ Fetch public representative employees of the merchant
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1461,26 +1368,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch public representative employees of the merchant
         api_response = api_instance.fetch_public_employees()
+        print("The response of MerchantApi->fetch_public_employees:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_public_employees: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1490,7 +1399,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1504,7 +1412,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_simple_sms_broadcasts**
-> [SimpleSMSBroadcast] fetch_simple_sms_broadcasts()
+> List[SimpleSMSBroadcast] fetch_simple_sms_broadcasts(is_archive_included=is_archive_included)
 
 Fetch all simple SMS broadcasts
 
@@ -1512,14 +1420,11 @@ Fetch all simple SMS broadcasts
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.simple_sms_broadcast import SimpleSMSBroadcast
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.simple_sms_broadcast import SimpleSMSBroadcast
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1528,31 +1433,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all simple SMS broadcasts
         api_response = api_instance.fetch_simple_sms_broadcasts(is_archive_included=is_archive_included)
+        print("The response of MerchantApi->fetch_simple_sms_broadcasts:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_simple_sms_broadcasts: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[SimpleSMSBroadcast]**](SimpleSMSBroadcast.md)
+[**List[SimpleSMSBroadcast]**](SimpleSMSBroadcast.md)
 
 ### Authorization
 
@@ -1562,7 +1468,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1576,7 +1481,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_static_voucher_campaign_broadcasts**
-> [StaticVoucherCampaignBroadcast] fetch_static_voucher_campaign_broadcasts()
+> List[StaticVoucherCampaignBroadcast] fetch_static_voucher_campaign_broadcasts(is_archive_included=is_archive_included)
 
 Fetch all static voucher campaign broadcasts
 
@@ -1584,14 +1489,11 @@ Fetch all static voucher campaign broadcasts
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
-from wallet.model.auth_error import AuthError
+from wallet.models.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1600,31 +1502,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
     is_archive_included = True # bool |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Fetch all static voucher campaign broadcasts
         api_response = api_instance.fetch_static_voucher_campaign_broadcasts(is_archive_included=is_archive_included)
+        print("The response of MerchantApi->fetch_static_voucher_campaign_broadcasts:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_static_voucher_campaign_broadcasts: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**[StaticVoucherCampaignBroadcast]**](StaticVoucherCampaignBroadcast.md)
+[**List[StaticVoucherCampaignBroadcast]**](StaticVoucherCampaignBroadcast.md)
 
 ### Authorization
 
@@ -1634,7 +1537,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1648,7 +1550,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_tcpa_filter**
-> [Tcpa] fetch_tcpa_filter()
+> List[Tcpa] fetch_tcpa_filter()
 
 Fetch all TCPA Filters
 
@@ -1656,14 +1558,11 @@ Fetch all TCPA Filters
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.tcpa import Tcpa
+from wallet.models.tcpa import Tcpa
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1672,26 +1571,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch all TCPA Filters
         api_response = api_instance.fetch_tcpa_filter()
+        print("The response of MerchantApi->fetch_tcpa_filter:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_tcpa_filter: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Tcpa]**](Tcpa.md)
+[**List[Tcpa]**](Tcpa.md)
 
 ### Authorization
 
@@ -1701,7 +1602,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1715,7 +1615,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_wallet_configuration**
-> bool, date, datetime, dict, float, int, list, str, none_type fetch_wallet_configuration()
+> object fetch_wallet_configuration()
 
 Fetch wallet configuration
 
@@ -1723,13 +1623,10 @@ Fetch wallet configuration
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1738,26 +1635,28 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
+    api_instance = wallet.MerchantApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Fetch wallet configuration
         api_response = api_instance.fetch_wallet_configuration()
+        print("The response of MerchantApi->fetch_wallet_configuration:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->fetch_wallet_configuration: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1767,7 +1666,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1781,7 +1679,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_merchant**
-> bool, date, datetime, dict, float, int, list, str, none_type update_merchant(wt_merchant_update)
+> object update_merchant(wt_merchant_update)
 
 Update merchant details
 
@@ -1789,14 +1687,11 @@ Update merchant details
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_merchant_update import WTMerchantUpdate
+from wallet.models.wt_merchant_update import WTMerchantUpdate
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1805,40 +1700,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    wt_merchant_update = WTMerchantUpdate(
-        company_name="Wallet Inc",
-        address1="address1_example",
-        address2="address2_example",
-        city="city_example",
-        state="state_example",
-        country="country_example",
-        phone_number="phone_number_example",
-        zip="zip_example",
-        currency_abbreviation="currency_abbreviation_example",
-    ) # WTMerchantUpdate | 
+    api_instance = wallet.MerchantApi(api_client)
+    wt_merchant_update = wallet.WTMerchantUpdate() # WTMerchantUpdate | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update merchant details
         api_response = api_instance.update_merchant(wt_merchant_update)
+        print("The response of MerchantApi->update_merchant:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->update_merchant: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_merchant_update** | [**WTMerchantUpdate**](WTMerchantUpdate.md)|  |
+ **wt_merchant_update** | [**WTMerchantUpdate**](WTMerchantUpdate.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1848,7 +1735,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1862,7 +1748,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_points_of_contact**
-> bool, date, datetime, dict, float, int, list, str, none_type update_points_of_contact(wt_merchant_update_points_of_contact)
+> object update_points_of_contact(wt_merchant_update_points_of_contact)
 
 Update billing contact
 
@@ -1870,14 +1756,11 @@ Update billing contact
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.wt_merchant_update_points_of_contact import WTMerchantUpdatePointsOfContact
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
+from wallet.models.wt_merchant_update_points_of_contact import WTMerchantUpdatePointsOfContact
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1886,35 +1769,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    wt_merchant_update_points_of_contact = WTMerchantUpdatePointsOfContact(
-        billing_employee_id=NanoID("C"),
-        marketing_employee_id=NanoID("C"),
-        technical_employee_id=NanoID("C"),
-        customer_service_employee_id=NanoID("C"),
-    ) # WTMerchantUpdatePointsOfContact | 
+    api_instance = wallet.MerchantApi(api_client)
+    wt_merchant_update_points_of_contact = wallet.WTMerchantUpdatePointsOfContact() # WTMerchantUpdatePointsOfContact | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update billing contact
         api_response = api_instance.update_points_of_contact(wt_merchant_update_points_of_contact)
+        print("The response of MerchantApi->update_points_of_contact:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->update_points_of_contact: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_merchant_update_points_of_contact** | [**WTMerchantUpdatePointsOfContact**](WTMerchantUpdatePointsOfContact.md)|  |
+ **wt_merchant_update_points_of_contact** | [**WTMerchantUpdatePointsOfContact**](WTMerchantUpdatePointsOfContact.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1924,7 +1804,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1938,7 +1817,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_pos_integration**
-> bool, date, datetime, dict, float, int, list, str, none_type update_pos_integration(wt_merchant_update_pos_integration)
+> object update_pos_integration(wt_merchant_update_pos_integration)
 
 Update POS Integration
 
@@ -1946,14 +1825,11 @@ Update POS Integration
 
 
 ```python
-import time
 import wallet
-from wallet.api import merchant_api
-from wallet.model.internal_server_error import InternalServerError
-from wallet.model.falsum_error import FalsumError
-from wallet.model.auth_error import AuthError
-from wallet.model.wt_merchant_update_pos_integration import WTMerchantUpdatePOSIntegration
+from wallet.models.wt_merchant_update_pos_integration import WTMerchantUpdatePOSIntegration
+from wallet.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.wall.et
 # See configuration.py for a list of all supported configuration parameters.
 configuration = wallet.Configuration(
@@ -1962,32 +1838,32 @@ configuration = wallet.Configuration(
 
 
 # Enter a context with an instance of the API client
-with wallet.ApiClient() as api_client:
+with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = merchant_api.MerchantApi(api_client)
-    wt_merchant_update_pos_integration = WTMerchantUpdatePOSIntegration(
-        info_genesis_property_id="info_genesis_property_id_example",
-    ) # WTMerchantUpdatePOSIntegration | 
+    api_instance = wallet.MerchantApi(api_client)
+    wt_merchant_update_pos_integration = wallet.WTMerchantUpdatePOSIntegration() # WTMerchantUpdatePOSIntegration | 
 
-    # example passing only required values which don't have defaults set
     try:
         # Update POS Integration
         api_response = api_instance.update_pos_integration(wt_merchant_update_pos_integration)
+        print("The response of MerchantApi->update_pos_integration:\n")
         pprint(api_response)
-    except wallet.ApiException as e:
+    except Exception as e:
         print("Exception when calling MerchantApi->update_pos_integration: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_merchant_update_pos_integration** | [**WTMerchantUpdatePOSIntegration**](WTMerchantUpdatePOSIntegration.md)|  |
+ **wt_merchant_update_pos_integration** | [**WTMerchantUpdatePOSIntegration**](WTMerchantUpdatePOSIntegration.md)|  | 
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**object**
 
 ### Authorization
 
@@ -1997,7 +1873,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
 
 ### HTTP response details
 
