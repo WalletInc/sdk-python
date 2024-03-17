@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **additional_info** | **object** |  | [optional] 
 **ga_client_id** | **str** |  | [optional] 
 **ga_measurement_id** | **str** |  | [optional] 
+**funnel_name** | **str** |  | [optional] 
 
 ## Example
 
