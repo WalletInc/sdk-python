@@ -69,7 +69,8 @@ class ClickFunnelContact(BaseModel):
     additional_info: Optional[Any] = None
     ga_client_id: Optional[StrictStr] = None
     ga_measurement_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "page_id", "first_name", "last_name", "name", "address", "city", "country", "state", "zip", "email", "phone", "webinar_at", "webinar_last_time", "webinar_ext", "created_at", "updated_at", "ip", "funnel_id", "funnel_step_id", "unsubscribed_at", "cf_uvid", "cart_affiliate_id", "shipping_address", "shipping_city", "shipping_country", "shipping_state", "shipping_zip", "vat_number", "affiliate_id", "aff_sub", "aff_sub2", "cf_affiliate_id", "contact_profile", "time_zone", "company_name", "company_industry", "additional_info", "ga_client_id", "ga_measurement_id"]
+    funnel_name: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["id", "page_id", "first_name", "last_name", "name", "address", "city", "country", "state", "zip", "email", "phone", "webinar_at", "webinar_last_time", "webinar_ext", "created_at", "updated_at", "ip", "funnel_id", "funnel_step_id", "unsubscribed_at", "cf_uvid", "cart_affiliate_id", "shipping_address", "shipping_city", "shipping_country", "shipping_state", "shipping_zip", "vat_number", "affiliate_id", "aff_sub", "aff_sub2", "cf_affiliate_id", "contact_profile", "time_zone", "company_name", "company_industry", "additional_info", "ga_client_id", "ga_measurement_id", "funnel_name"]
 
     model_config = {
         "populate_by_name": True,
@@ -199,7 +200,8 @@ class ClickFunnelContact(BaseModel):
             "company_industry": obj.get("company_industry"),
             "additional_info": obj.get("additional_info"),
             "ga_client_id": obj.get("ga_client_id"),
-            "ga_measurement_id": obj.get("ga_measurement_id")
+            "ga_measurement_id": obj.get("ga_measurement_id"),
+            "funnel_name": obj.get("funnel_name")
         })
         return _obj
 
