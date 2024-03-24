@@ -93,6 +93,8 @@ class WalletConfiguration(BaseModel):
     social_you_tube_url: Optional[StrictStr] = Field(default=None, alias="socialYouTubeURL")
     social_twitter_url: Optional[StrictStr] = Field(default=None, alias="socialTwitterURL")
     social_linked_in_url: Optional[StrictStr] = Field(default=None, alias="socialLinkedInURL")
+    social_background_color: Optional[StrictStr] = Field(default=None, alias="socialBackgroundColor")
+    social_font_color: Optional[StrictStr] = Field(default=None, alias="socialFontColor")
     primary_phone_number: Optional[StrictStr] = Field(default=None, alias="primaryPhoneNumber")
     primary_whats_app: Optional[StrictStr] = Field(default=None, alias="primaryWhatsApp")
     primary_email_address: Optional[StrictStr] = Field(default=None, alias="primaryEmailAddress")
@@ -100,7 +102,7 @@ class WalletConfiguration(BaseModel):
     created_at: datetime = Field(alias="createdAt")
     updated_at: datetime = Field(alias="updatedAt")
     merchant_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="merchantID")
-    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "ageGateMinimum", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "id", "createdAt", "updatedAt", "merchantID"]
+    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "ageGateMinimum", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "id", "createdAt", "updatedAt", "merchantID"]
 
     @field_validator('id')
     def id_validate_regular_expression(cls, value):
@@ -233,6 +235,8 @@ class WalletConfiguration(BaseModel):
             "socialYouTubeURL": obj.get("socialYouTubeURL"),
             "socialTwitterURL": obj.get("socialTwitterURL"),
             "socialLinkedInURL": obj.get("socialLinkedInURL"),
+            "socialBackgroundColor": obj.get("socialBackgroundColor"),
+            "socialFontColor": obj.get("socialFontColor"),
             "primaryPhoneNumber": obj.get("primaryPhoneNumber"),
             "primaryWhatsApp": obj.get("primaryWhatsApp"),
             "primaryEmailAddress": obj.get("primaryEmailAddress"),
