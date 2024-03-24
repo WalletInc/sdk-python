@@ -68,6 +68,8 @@ Name | Type | Description | Notes
 **social_you_tube_url** | **str** |  | [optional] 
 **social_twitter_url** | **str** |  | [optional] 
 **social_linked_in_url** | **str** |  | [optional] 
+**social_background_color** | **str** |  | [optional] 
+**social_font_color** | **str** |  | [optional] 
 **primary_phone_number** | **str** |  | [optional] 
 **primary_whats_app** | **str** |  | [optional] 
 **primary_email_address** | **str** |  | [optional] 
