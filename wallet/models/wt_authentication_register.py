@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,22 +28,22 @@ class WTAuthenticationRegister(BaseModel):
     """
     WTAuthenticationRegister
     """ # noqa: E501
-    first_name: StrictStr = Field(alias="firstName")
-    last_name: StrictStr = Field(alias="lastName")
-    email: StrictStr
-    password: StrictStr
-    hear_about_us: Optional[StrictStr] = Field(default=None, alias="hearAboutUs")
-    hear_about_us_details: Optional[StrictStr] = Field(default=None, alias="hearAboutUsDetails")
-    company_name: StrictStr = Field(alias="companyName")
-    merchant_type: StrictStr = Field(alias="merchantType")
-    street_address1: StrictStr = Field(alias="streetAddress1")
-    street_address2: StrictStr = Field(alias="streetAddress2")
-    city: StrictStr
-    state: StrictStr
-    zip: StrictStr
-    country: StrictStr
-    phone_number: StrictStr = Field(alias="phoneNumber")
-    ein: Optional[StrictStr] = None
+    first_name: Annotated[str, Field(strict=True, max_length=100)] = Field(alias="firstName")
+    last_name: Annotated[str, Field(strict=True, max_length=100)] = Field(alias="lastName")
+    email: Annotated[str, Field(strict=True, max_length=100)]
+    password: Annotated[str, Field(strict=True, max_length=100)]
+    hear_about_us: Optional[Annotated[str, Field(strict=True, max_length=100)]] = Field(default=None, alias="hearAboutUs")
+    hear_about_us_details: Optional[Annotated[str, Field(strict=True, max_length=100)]] = Field(default=None, alias="hearAboutUsDetails")
+    company_name: Annotated[str, Field(strict=True, max_length=100)] = Field(alias="companyName")
+    merchant_type: Annotated[str, Field(strict=True, max_length=100)] = Field(alias="merchantType")
+    street_address1: Annotated[str, Field(strict=True, max_length=200)] = Field(alias="streetAddress1")
+    street_address2: Annotated[str, Field(strict=True, max_length=200)] = Field(alias="streetAddress2")
+    city: Annotated[str, Field(strict=True, max_length=100)]
+    state: Annotated[str, Field(strict=True, max_length=100)]
+    zip: Annotated[str, Field(strict=True, max_length=100)]
+    country: Annotated[str, Field(strict=True, max_length=100)]
+    phone_number: Annotated[str, Field(strict=True, max_length=100)] = Field(alias="phoneNumber")
+    ein: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
     ga_client_id: Optional[StrictStr] = None
     ga_measurement_id: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "password", "hearAboutUs", "hearAboutUsDetails", "companyName", "merchantType", "streetAddress1", "streetAddress2", "city", "state", "zip", "country", "phoneNumber", "ein", "ga_client_id", "ga_measurement_id"]
