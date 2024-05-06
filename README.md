@@ -545,7 +545,6 @@ Class | Method | HTTP request | Description
 *SmsSubscriberApi* | [**fetch_all_sms_subscribers**](docs/SmsSubscriberApi.md#fetch_all_sms_subscribers) | **GET** /v2/SmsSubscriber/all | Fetch all email subscribers
 *SmsSubscriberApi* | [**restore_sms_subscriber**](docs/SmsSubscriberApi.md#restore_sms_subscriber) | **PATCH** /v2/SmsSubscriber/{id} | Restore email subscriber
 *SmsSubscriberApi* | [**update_sms_subscriber**](docs/SmsSubscriberApi.md#update_sms_subscriber) | **PUT** /v2/SmsSubscriber/{id} | Update email subscriber
-*StaticVoucherCampaignGroupsApi* | [**fetch_static_voucher_campaign_groups**](docs/StaticVoucherCampaignGroupsApi.md#fetch_static_voucher_campaign_groups) | **GET** /v2/payment/staticVoucherCampaignGroups/campaigns/{campaignsGroupID} | Fetch all campaigns
 *StaticVoucherCampaignsApi* | [**archive_static_voucher_campaign**](docs/StaticVoucherCampaignsApi.md#archive_static_voucher_campaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Archive static voucher campaign
 *StaticVoucherCampaignsApi* | [**count_vouchers_loaded**](docs/StaticVoucherCampaignsApi.md#count_vouchers_loaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count loaded vouchers
 *StaticVoucherCampaignsApi* | [**count_vouchers_redeemed**](docs/StaticVoucherCampaignsApi.md#count_vouchers_redeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers
