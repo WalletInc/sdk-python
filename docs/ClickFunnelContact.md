@@ -46,6 +46,8 @@ Name | Type | Description | Notes
 **ga_client_id** | **str** |  | [optional] 
 **ga_measurement_id** | **str** |  | [optional] 
 **funnel_name** | **str** |  | [optional] 
+**http_referrer** | **str** |  | [optional] 
+**landing_page** | **str** |  | [optional] 
 
 ## Example
 
