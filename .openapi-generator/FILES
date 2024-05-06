@@ -248,7 +248,6 @@ docs/StaticVoucher.md
 docs/StaticVoucherCampaign.md
 docs/StaticVoucherCampaignBroadcast.md
 docs/StaticVoucherCampaignGroup.md
-docs/StaticVoucherCampaignGroupsApi.md
 docs/StaticVoucherCampaignUpdate.md
 docs/StaticVoucherCampaignsApi.md
 docs/StaticVouchersApi.md
@@ -484,7 +483,6 @@ wallet/api/settings_api.py
 wallet/api/shopify_terminal_api.py
 wallet/api/sms_api.py
 wallet/api/sms_subscriber_api.py
-wallet/api/static_voucher_campaign_groups_api.py
 wallet/api/static_voucher_campaigns_api.py
 wallet/api/static_vouchers_api.py
 wallet/api/system_api.py

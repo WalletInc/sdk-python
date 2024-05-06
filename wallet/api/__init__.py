@@ -45,7 +45,6 @@ from wallet.api.services_api import ServicesApi
 from wallet.api.settings_api import SettingsApi
 from wallet.api.shopify_terminal_api import ShopifyTerminalApi
 from wallet.api.sms_subscriber_api import SmsSubscriberApi
-from wallet.api.static_voucher_campaign_groups_api import StaticVoucherCampaignGroupsApi
 from wallet.api.static_voucher_campaigns_api import StaticVoucherCampaignsApi
 from wallet.api.static_vouchers_api import StaticVouchersApi
 from wallet.api.system_api import SystemApi
