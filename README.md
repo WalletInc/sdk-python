@@ -191,12 +191,14 @@ Class | Method | HTTP request | Description
 *BillingApi* | [**cancel_plan**](docs/BillingApi.md#cancel_plan) | **DELETE** /v2/billing/plan | Cancel billing plan and revert to default
 *BillingApi* | [**change_plan**](docs/BillingApi.md#change_plan) | **PUT** /v2/billing/plan | Change billing plan
 *BillingApi* | [**fetch_add_ons**](docs/BillingApi.md#fetch_add_ons) | **GET** /v2/billing/products/addOns | Fetch add-on products, or 1-time purchase products (non-subscription products)
+*BillingApi* | [**fetch_customer_payment_methods**](docs/BillingApi.md#fetch_customer_payment_methods) | **GET** /v2/billing/paymentMethods/all | Fetch customer payment methods
 *BillingApi* | [**fetch_industry**](docs/BillingApi.md#fetch_industry) | **GET** /v2/billing/industry | Fetch merchant&#39;s industry
 *BillingApi* | [**fetch_invoices**](docs/BillingApi.md#fetch_invoices) | **GET** /v2/billing/invoices/all | Fetch all invoices
 *BillingApi* | [**fetch_special_offers**](docs/BillingApi.md#fetch_special_offers) | **GET** /v2/billing/products/specialOffers | Fetch special offer products
 *BillingApi* | [**fetch_subscription**](docs/BillingApi.md#fetch_subscription) | **GET** /v2/billing/subscription | Fetch subscription
 *BillingApi* | [**fetch_usage_summary**](docs/BillingApi.md#fetch_usage_summary) | **GET** /v2/billing/summary | Fetch usage summary
 *BillingApi* | [**save_payment_method**](docs/BillingApi.md#save_payment_method) | **PUT** /v2/billing/paymentMethod | Save payment method
+*BillingApi* | [**set_default_payment_method**](docs/BillingApi.md#set_default_payment_method) | **POST** /v2/billing/paymentMethod/default | Verify payment method
 *BillingApi* | [**upcoming_invoices**](docs/BillingApi.md#upcoming_invoices) | **GET** /v2/billing/invoices/upcoming | Fetch upcoming invoices
 *BillingApi* | [**verify_payment_method**](docs/BillingApi.md#verify_payment_method) | **GET** /v2/billing/paymentMethod | Verify payment method
 *ClubMembersPointsApi* | [**archive_member**](docs/ClubMembersPointsApi.md#archive_member) | **DELETE** /v2/membership/member/{id} | Archive member
@@ -806,6 +808,7 @@ Class | Method | HTTP request | Description
  - [SaveTicketSettingsRequest](docs/SaveTicketSettingsRequest.md)
  - [SaveTicketSettingsRequestPaymentDesignID](docs/SaveTicketSettingsRequestPaymentDesignID.md)
  - [Service](docs/Service.md)
+ - [SetDefaultPaymentMethodRequest](docs/SetDefaultPaymentMethodRequest.md)
  - [SimpleSMSBroadcast](docs/SimpleSMSBroadcast.md)
  - [SmsSubscriber](docs/SmsSubscriber.md)
  - [StaticVoucher](docs/StaticVoucher.md)

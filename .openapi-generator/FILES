@@ -239,6 +239,7 @@ docs/SaveTicketSettingsRequest.md
 docs/SaveTicketSettingsRequestPaymentDesignID.md
 docs/Service.md
 docs/ServicesApi.md
+docs/SetDefaultPaymentMethodRequest.md
 docs/SettingsApi.md
 docs/ShopifyTerminalApi.md
 docs/SimpleSMSBroadcast.md
@@ -436,6 +437,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_set_default_payment_method_request.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -690,6 +692,7 @@ wallet/models/save_merchant_credit_payment_design_request.py
 wallet/models/save_ticket_settings_request.py
 wallet/models/save_ticket_settings_request_payment_design_id.py
 wallet/models/service.py
+wallet/models/set_default_payment_method_request.py
 wallet/models/simple_sms_broadcast.py
 wallet/models/sms_subscriber.py
 wallet/models/ss_imported_list_recipient_create_params.py

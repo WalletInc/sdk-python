@@ -9,12 +9,14 @@ Method | HTTP request | Description
 [**cancel_plan**](BillingApi.md#cancel_plan) | **DELETE** /v2/billing/plan | Cancel billing plan and revert to default
 [**change_plan**](BillingApi.md#change_plan) | **PUT** /v2/billing/plan | Change billing plan
 [**fetch_add_ons**](BillingApi.md#fetch_add_ons) | **GET** /v2/billing/products/addOns | Fetch add-on products, or 1-time purchase products (non-subscription products)
+[**fetch_customer_payment_methods**](BillingApi.md#fetch_customer_payment_methods) | **GET** /v2/billing/paymentMethods/all | Fetch customer payment methods
 [**fetch_industry**](BillingApi.md#fetch_industry) | **GET** /v2/billing/industry | Fetch merchant&#39;s industry
 [**fetch_invoices**](BillingApi.md#fetch_invoices) | **GET** /v2/billing/invoices/all | Fetch all invoices
 [**fetch_special_offers**](BillingApi.md#fetch_special_offers) | **GET** /v2/billing/products/specialOffers | Fetch special offer products
 [**fetch_subscription**](BillingApi.md#fetch_subscription) | **GET** /v2/billing/subscription | Fetch subscription
 [**fetch_usage_summary**](BillingApi.md#fetch_usage_summary) | **GET** /v2/billing/summary | Fetch usage summary
 [**save_payment_method**](BillingApi.md#save_payment_method) | **PUT** /v2/billing/paymentMethod | Save payment method
+[**set_default_payment_method**](BillingApi.md#set_default_payment_method) | **POST** /v2/billing/paymentMethod/default | Verify payment method
 [**upcoming_invoices**](BillingApi.md#upcoming_invoices) | **GET** /v2/billing/invoices/upcoming | Fetch upcoming invoices
 [**verify_payment_method**](BillingApi.md#verify_payment_method) | **GET** /v2/billing/paymentMethod | Verify payment method
 
@@ -331,6 +333,70 @@ This endpoint does not need any parameter.
 ### Return type
 
 **List[object]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_customer_payment_methods**
+> object fetch_customer_payment_methods()
+
+Fetch customer payment methods
+
+### Example
+
+
+```python
+import wallet
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BillingApi(api_client)
+
+    try:
+        # Fetch customer payment methods
+        api_response = api_instance.fetch_customer_payment_methods()
+        print("The response of BillingApi->fetch_customer_payment_methods:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingApi->fetch_customer_payment_methods: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
 
 ### Authorization
 
@@ -727,6 +793,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 **object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_default_payment_method**
+> Merchant set_default_payment_method(set_default_payment_method_request)
+
+Verify payment method
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.merchant import Merchant
+from wallet.models.set_default_payment_method_request import SetDefaultPaymentMethodRequest
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BillingApi(api_client)
+    set_default_payment_method_request = wallet.SetDefaultPaymentMethodRequest() # SetDefaultPaymentMethodRequest | 
+
+    try:
+        # Verify payment method
+        api_response = api_instance.set_default_payment_method(set_default_payment_method_request)
+        print("The response of BillingApi->set_default_payment_method:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingApi->set_default_payment_method: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **set_default_payment_method_request** | [**SetDefaultPaymentMethodRequest**](SetDefaultPaymentMethodRequest.md)|  | 
+
+### Return type
+
+[**Merchant**](Merchant.md)
 
 ### Authorization
 
