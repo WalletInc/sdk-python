@@ -210,6 +210,7 @@ from wallet.models.save_merchant_credit_payment_design_request import SaveMercha
 from wallet.models.save_ticket_settings_request import SaveTicketSettingsRequest
 from wallet.models.save_ticket_settings_request_payment_design_id import SaveTicketSettingsRequestPaymentDesignID
 from wallet.models.service import Service
+from wallet.models.set_default_payment_method_request import SetDefaultPaymentMethodRequest
 from wallet.models.simple_sms_broadcast import SimpleSMSBroadcast
 from wallet.models.sms_subscriber import SmsSubscriber
 from wallet.models.static_voucher import StaticVoucher
