@@ -437,7 +437,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_set_default_payment_method_request.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
