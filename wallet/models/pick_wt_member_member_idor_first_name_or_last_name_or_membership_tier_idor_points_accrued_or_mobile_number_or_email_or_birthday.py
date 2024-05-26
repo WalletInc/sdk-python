@@ -29,14 +29,14 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
     From T, pick a set of properties whose keys are in the union K
     """ # noqa: E501
     member_id: Annotated[str, Field(min_length=1, strict=True)] = Field(description="Member ID as represented by the merchant", alias="memberID")
+    mobile_number: StrictStr = Field(alias="mobileNumber")
     first_name: Optional[StrictStr] = Field(default=None, description="An optional first name of the member", alias="firstName")
     last_name: Optional[StrictStr] = Field(default=None, description="An optional last name of the member", alias="lastName")
     membership_tier_id: Annotated[str, Field(min_length=12, strict=True, max_length=12)] = Field(alias="membershipTierID")
-    mobile_number: StrictStr = Field(alias="mobileNumber")
     email: StrictStr
     birthday: StrictStr = Field(description="Represents the date of birth of the member. Defaults to 0000-00-00, which represents that the date of birth has not been configured")
     points_accrued: Annotated[int, Field(strict=True, ge=0)] = Field(description="The number of points that the member has accrued", alias="pointsAccrued")
-    __properties: ClassVar[List[str]] = ["memberID", "firstName", "lastName", "membershipTierID", "mobileNumber", "email", "birthday", "pointsAccrued"]
+    __properties: ClassVar[List[str]] = ["memberID", "mobileNumber", "firstName", "lastName", "membershipTierID", "email", "birthday", "pointsAccrued"]
 
     @field_validator('member_id')
     def member_id_validate_regular_expression(cls, value):
@@ -104,10 +104,10 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
 
         _obj = cls.model_validate({
             "memberID": obj.get("memberID"),
+            "mobileNumber": obj.get("mobileNumber"),
             "firstName": obj.get("firstName"),
             "lastName": obj.get("lastName"),
             "membershipTierID": obj.get("membershipTierID"),
-            "mobileNumber": obj.get("mobileNumber"),
             "email": obj.get("email"),
             "birthday": obj.get("birthday"),
             "pointsAccrued": obj.get("pointsAccrued")

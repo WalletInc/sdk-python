@@ -28,14 +28,14 @@ class PickMSMemberCreationParamsExcludeKeyofMSMemberCreationParamsMemberIdentifi
     """
     From T, pick a set of properties whose keys are in the union K
     """ # noqa: E501
+    mobile_number: StrictStr = Field(alias="mobileNumber")
     first_name: Optional[StrictStr] = Field(default=None, description="An optional first name of the member", alias="firstName")
     last_name: Optional[StrictStr] = Field(default=None, description="An optional last name of the member", alias="lastName")
     membership_tier_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="membershipTierID")
-    mobile_number: StrictStr = Field(alias="mobileNumber")
     email: StrictStr
     birthday: StrictStr = Field(description="Represents the date of birth of the member. Defaults to 0000-00-00, which represents that the date of birth has not been configured")
     points_accrued: Annotated[int, Field(strict=True, ge=0)] = Field(description="The number of points that the member has accrued", alias="pointsAccrued")
-    __properties: ClassVar[List[str]] = ["firstName", "lastName", "membershipTierID", "mobileNumber", "email", "birthday", "pointsAccrued"]
+    __properties: ClassVar[List[str]] = ["mobileNumber", "firstName", "lastName", "membershipTierID", "email", "birthday", "pointsAccrued"]
 
     @field_validator('membership_tier_id')
     def membership_tier_id_validate_regular_expression(cls, value):
@@ -95,10 +95,10 @@ class PickMSMemberCreationParamsExcludeKeyofMSMemberCreationParamsMemberIdentifi
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "mobileNumber": obj.get("mobileNumber"),
             "firstName": obj.get("firstName"),
             "lastName": obj.get("lastName"),
             "membershipTierID": obj.get("membershipTierID"),
-            "mobileNumber": obj.get("mobileNumber"),
             "email": obj.get("email"),
             "birthday": obj.get("birthday"),
             "pointsAccrued": obj.get("pointsAccrued")
