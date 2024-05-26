@@ -34,14 +34,14 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier(BaseModel):
     created_at: datetime = Field(description="The timestamp of when this resource was created", alias="createdAt")
     updated_at: datetime = Field(description="The timestamp of when this resource was updated", alias="updatedAt")
     is_active: StrictBool = Field(description="Denotes if this resource is active", alias="isActive")
-    mobile_number: StrictStr = Field(alias="mobileNumber")
     first_name: Optional[StrictStr] = Field(default=None, description="An optional first name of the member", alias="firstName")
     last_name: Optional[StrictStr] = Field(default=None, description="An optional last name of the member", alias="lastName")
     membership_tier_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="membershipTierID")
+    mobile_number: StrictStr = Field(alias="mobileNumber")
     email: StrictStr
     birthday: StrictStr = Field(description="Represents the date of birth of the member. Defaults to 0000-00-00, which represents that the date of birth has not been configured")
     points_accrued: Annotated[int, Field(strict=True, ge=0)] = Field(description="The number of points that the member has accrued", alias="pointsAccrued")
-    __properties: ClassVar[List[str]] = ["id", "merchantID", "createdAt", "updatedAt", "isActive", "mobileNumber", "firstName", "lastName", "membershipTierID", "email", "birthday", "pointsAccrued"]
+    __properties: ClassVar[List[str]] = ["id", "merchantID", "createdAt", "updatedAt", "isActive", "firstName", "lastName", "membershipTierID", "mobileNumber", "email", "birthday", "pointsAccrued"]
 
     @field_validator('id')
     def id_validate_regular_expression(cls, value):
@@ -120,10 +120,10 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier(BaseModel):
             "createdAt": obj.get("createdAt"),
             "updatedAt": obj.get("updatedAt"),
             "isActive": obj.get("isActive"),
-            "mobileNumber": obj.get("mobileNumber"),
             "firstName": obj.get("firstName"),
             "lastName": obj.get("lastName"),
             "membershipTierID": obj.get("membershipTierID"),
+            "mobileNumber": obj.get("mobileNumber"),
             "email": obj.get("email"),
             "birthday": obj.get("birthday"),
             "pointsAccrued": obj.get("pointsAccrued")
