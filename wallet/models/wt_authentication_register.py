@@ -46,7 +46,8 @@ class WTAuthenticationRegister(BaseModel):
     ein: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
     ga_client_id: Optional[StrictStr] = None
     ga_measurement_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "password", "hearAboutUs", "hearAboutUsDetails", "companyName", "merchantType", "streetAddress1", "streetAddress2", "city", "state", "zip", "country", "phoneNumber", "ein", "ga_client_id", "ga_measurement_id"]
+    recaptcha_token: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "password", "hearAboutUs", "hearAboutUsDetails", "companyName", "merchantType", "streetAddress1", "streetAddress2", "city", "state", "zip", "country", "phoneNumber", "ein", "ga_client_id", "ga_measurement_id", "recaptcha_token"]
 
     model_config = {
         "populate_by_name": True,
@@ -116,7 +117,8 @@ class WTAuthenticationRegister(BaseModel):
             "phoneNumber": obj.get("phoneNumber"),
             "ein": obj.get("ein"),
             "ga_client_id": obj.get("ga_client_id"),
-            "ga_measurement_id": obj.get("ga_measurement_id")
+            "ga_measurement_id": obj.get("ga_measurement_id"),
+            "recaptcha_token": obj.get("recaptcha_token")
         })
         return _obj
 
