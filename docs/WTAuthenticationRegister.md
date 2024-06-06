@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **ein** | **str** |  | [optional] 
 **ga_client_id** | **str** |  | [optional] 
 **ga_measurement_id** | **str** |  | [optional] 
+**recaptcha_token** | **str** |  | [optional] 
 
 ## Example
 
