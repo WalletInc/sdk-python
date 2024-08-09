@@ -48,7 +48,9 @@ class WTAuthenticationRegister(BaseModel):
     ga_measurement_id: Optional[StrictStr] = None
     recaptcha_token: Optional[StrictStr] = None
     affiliate_id: Optional[StrictStr] = Field(default=None, alias="affiliateID")
-    __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "password", "hearAboutUs", "hearAboutUsDetails", "companyName", "merchantType", "streetAddress1", "streetAddress2", "city", "state", "zip", "country", "phoneNumber", "ein", "ga_client_id", "ga_measurement_id", "recaptcha_token", "affiliateID"]
+    first_promoter_tracking_id: Optional[StrictStr] = Field(default=None, alias="firstPromoterTrackingID")
+    first_promoter_affiliate_id: Optional[StrictStr] = Field(default=None, alias="firstPromoterAffiliateID")
+    __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "password", "hearAboutUs", "hearAboutUsDetails", "companyName", "merchantType", "streetAddress1", "streetAddress2", "city", "state", "zip", "country", "phoneNumber", "ein", "ga_client_id", "ga_measurement_id", "recaptcha_token", "affiliateID", "firstPromoterTrackingID", "firstPromoterAffiliateID"]
 
     model_config = {
         "populate_by_name": True,
@@ -120,7 +122,9 @@ class WTAuthenticationRegister(BaseModel):
             "ga_client_id": obj.get("ga_client_id"),
             "ga_measurement_id": obj.get("ga_measurement_id"),
             "recaptcha_token": obj.get("recaptcha_token"),
-            "affiliateID": obj.get("affiliateID")
+            "affiliateID": obj.get("affiliateID"),
+            "firstPromoterTrackingID": obj.get("firstPromoterTrackingID"),
+            "firstPromoterAffiliateID": obj.get("firstPromoterAffiliateID")
         })
         return _obj
 
