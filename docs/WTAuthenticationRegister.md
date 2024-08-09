@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **ga_measurement_id** | **str** |  | [optional] 
 **recaptcha_token** | **str** |  | [optional] 
 **affiliate_id** | **str** |  | [optional] 
+**first_promoter_tracking_id** | **str** |  | [optional] 
+**first_promoter_affiliate_id** | **str** |  | [optional] 
 
 ## Example
 
