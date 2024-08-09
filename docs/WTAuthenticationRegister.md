@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **ga_client_id** | **str** |  | [optional] 
 **ga_measurement_id** | **str** |  | [optional] 
 **recaptcha_token** | **str** |  | [optional] 
+**affiliate_id** | **str** |  | [optional] 
 
 ## Example
 
