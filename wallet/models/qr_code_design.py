@@ -32,7 +32,7 @@ class QRCodeDesign(BaseModel):
     """ # noqa: E501
     name: Annotated[str, Field(min_length=1, strict=True)]
     size: Annotated[int, Field(strict=True, ge=1)]
-    margin: Annotated[int, Field(strict=True, ge=1)]
+    margin: Annotated[int, Field(strict=True, ge=0)]
     is_margin_white: StrictBool = Field(alias="isMarginWhite")
     corner_radius: Annotated[int, Field(strict=True, ge=0)] = Field(alias="cornerRadius")
     color_dark_hex: Annotated[str, Field(min_length=0, strict=True)] = Field(alias="colorDarkHex")
