@@ -34,13 +34,14 @@ class SubscriptionProduct(BaseModel):
     title_full: StrictStr = Field(alias="titleFull")
     category: StrictStr
     volume: Optional[Union[StrictFloat, StrictInt]] = None
+    value: Optional[Union[StrictFloat, StrictInt]] = None
     features: List[SubscriptionFeature]
     pages: List[PortalPage]
     icon_name: StrictStr = Field(alias="iconName")
     description: StrictStr
     is_hourly: Optional[StrictBool] = Field(default=None, alias="isHourly")
     release_status: Optional[StrictStr] = Field(default=None, alias="releaseStatus")
-    __properties: ClassVar[List[str]] = ["id", "title", "titleFull", "category", "volume", "features", "pages", "iconName", "description", "isHourly", "releaseStatus"]
+    __properties: ClassVar[List[str]] = ["id", "title", "titleFull", "category", "volume", "value", "features", "pages", "iconName", "description", "isHourly", "releaseStatus"]
 
     model_config = {
         "populate_by_name": True,
@@ -105,6 +106,7 @@ class SubscriptionProduct(BaseModel):
             "titleFull": obj.get("titleFull"),
             "category": obj.get("category"),
             "volume": obj.get("volume"),
+            "value": obj.get("value"),
             "features": [SubscriptionFeature.from_dict(_item) for _item in obj["features"]] if obj.get("features") is not None else None,
             "pages": obj.get("pages"),
             "iconName": obj.get("iconName"),
