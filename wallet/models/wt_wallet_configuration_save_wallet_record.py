@@ -86,6 +86,7 @@ class WTWalletConfigurationSaveWalletRecord(BaseModel):
     mobile_app_icon_url: Optional[StrictStr] = Field(default=None, alias="mobileAppIconURL")
     is_age_gate: Optional[StrictBool] = Field(default=None, alias="isAgeGate")
     age_gate_minimum: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="ageGateMinimum")
+    age_gate_decline_url: Optional[StrictStr] = Field(default=None, alias="ageGateDeclineURL")
     social_instagram_url: Optional[StrictStr] = Field(default=None, alias="socialInstagramURL")
     social_facebook_url: Optional[StrictStr] = Field(default=None, alias="socialFacebookURL")
     social_you_tube_url: Optional[StrictStr] = Field(default=None, alias="socialYouTubeURL")
@@ -96,7 +97,12 @@ class WTWalletConfigurationSaveWalletRecord(BaseModel):
     primary_phone_number: Optional[StrictStr] = Field(default=None, alias="primaryPhoneNumber")
     primary_whats_app: Optional[StrictStr] = Field(default=None, alias="primaryWhatsApp")
     primary_email_address: Optional[StrictStr] = Field(default=None, alias="primaryEmailAddress")
-    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "ageGateMinimum", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress"]
+    custom_js: Optional[StrictStr] = Field(default=None, alias="customJS")
+    custom_css: Optional[StrictStr] = Field(default=None, alias="customCSS")
+    non_mobile_redirect_url: Optional[StrictStr] = Field(default=None, alias="nonMobileRedirectURL")
+    apple_app_store_url: Optional[StrictStr] = Field(default=None, alias="appleAppStoreURL")
+    google_play_store_url: Optional[StrictStr] = Field(default=None, alias="googlePlayStoreURL")
+    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "ageGateMinimum", "ageGateDeclineURL", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "customJS", "customCSS", "nonMobileRedirectURL", "appleAppStoreURL", "googlePlayStoreURL"]
 
     model_config = {
         "populate_by_name": True,
@@ -210,6 +216,7 @@ class WTWalletConfigurationSaveWalletRecord(BaseModel):
             "mobileAppIconURL": obj.get("mobileAppIconURL"),
             "isAgeGate": obj.get("isAgeGate"),
             "ageGateMinimum": obj.get("ageGateMinimum"),
+            "ageGateDeclineURL": obj.get("ageGateDeclineURL"),
             "socialInstagramURL": obj.get("socialInstagramURL"),
             "socialFacebookURL": obj.get("socialFacebookURL"),
             "socialYouTubeURL": obj.get("socialYouTubeURL"),
@@ -219,7 +226,12 @@ class WTWalletConfigurationSaveWalletRecord(BaseModel):
             "socialFontColor": obj.get("socialFontColor"),
             "primaryPhoneNumber": obj.get("primaryPhoneNumber"),
             "primaryWhatsApp": obj.get("primaryWhatsApp"),
-            "primaryEmailAddress": obj.get("primaryEmailAddress")
+            "primaryEmailAddress": obj.get("primaryEmailAddress"),
+            "customJS": obj.get("customJS"),
+            "customCSS": obj.get("customCSS"),
+            "nonMobileRedirectURL": obj.get("nonMobileRedirectURL"),
+            "appleAppStoreURL": obj.get("appleAppStoreURL"),
+            "googlePlayStoreURL": obj.get("googlePlayStoreURL")
         })
         return _obj
 
