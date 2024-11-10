@@ -63,6 +63,7 @@ Name | Type | Description | Notes
 **mobile_app_icon_url** | **str** |  | [optional] 
 **is_age_gate** | **bool** |  | [optional] 
 **age_gate_minimum** | **float** |  | [optional] 
+**age_gate_decline_url** | **str** |  | [optional] 
 **social_instagram_url** | **str** |  | [optional] 
 **social_facebook_url** | **str** |  | [optional] 
 **social_you_tube_url** | **str** |  | [optional] 
@@ -73,6 +74,11 @@ Name | Type | Description | Notes
 **primary_phone_number** | **str** |  | [optional] 
 **primary_whats_app** | **str** |  | [optional] 
 **primary_email_address** | **str** |  | [optional] 
+**custom_js** | **str** |  | [optional] 
+**custom_css** | **str** |  | [optional] 
+**non_mobile_redirect_url** | **str** |  | [optional] 
+**apple_app_store_url** | **str** |  | [optional] 
+**google_play_store_url** | **str** |  | [optional] 
 
 ## Example
 

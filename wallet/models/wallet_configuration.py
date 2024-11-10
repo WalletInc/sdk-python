@@ -88,6 +88,7 @@ class WalletConfiguration(BaseModel):
     mobile_app_icon_url: Optional[StrictStr] = Field(default=None, alias="mobileAppIconURL")
     is_age_gate: Optional[StrictBool] = Field(default=None, alias="isAgeGate")
     age_gate_minimum: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="ageGateMinimum")
+    age_gate_decline_url: Optional[StrictStr] = Field(default=None, alias="ageGateDeclineURL")
     social_instagram_url: Optional[StrictStr] = Field(default=None, alias="socialInstagramURL")
     social_facebook_url: Optional[StrictStr] = Field(default=None, alias="socialFacebookURL")
     social_you_tube_url: Optional[StrictStr] = Field(default=None, alias="socialYouTubeURL")
@@ -98,11 +99,16 @@ class WalletConfiguration(BaseModel):
     primary_phone_number: Optional[StrictStr] = Field(default=None, alias="primaryPhoneNumber")
     primary_whats_app: Optional[StrictStr] = Field(default=None, alias="primaryWhatsApp")
     primary_email_address: Optional[StrictStr] = Field(default=None, alias="primaryEmailAddress")
+    custom_js: Optional[StrictStr] = Field(default=None, alias="customJS")
+    custom_css: Optional[StrictStr] = Field(default=None, alias="customCSS")
+    non_mobile_redirect_url: Optional[StrictStr] = Field(default=None, alias="nonMobileRedirectURL")
+    apple_app_store_url: Optional[StrictStr] = Field(default=None, alias="appleAppStoreURL")
+    google_play_store_url: Optional[StrictStr] = Field(default=None, alias="googlePlayStoreURL")
     id: Annotated[str, Field(min_length=10, strict=True, max_length=10)]
     created_at: datetime = Field(alias="createdAt")
     updated_at: datetime = Field(alias="updatedAt")
     merchant_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="merchantID")
-    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "ageGateMinimum", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "id", "createdAt", "updatedAt", "merchantID"]
+    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "ageGateMinimum", "ageGateDeclineURL", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "customJS", "customCSS", "nonMobileRedirectURL", "appleAppStoreURL", "googlePlayStoreURL", "id", "createdAt", "updatedAt", "merchantID"]
 
     @field_validator('id')
     def id_validate_regular_expression(cls, value):
@@ -230,6 +236,7 @@ class WalletConfiguration(BaseModel):
             "mobileAppIconURL": obj.get("mobileAppIconURL"),
             "isAgeGate": obj.get("isAgeGate"),
             "ageGateMinimum": obj.get("ageGateMinimum"),
+            "ageGateDeclineURL": obj.get("ageGateDeclineURL"),
             "socialInstagramURL": obj.get("socialInstagramURL"),
             "socialFacebookURL": obj.get("socialFacebookURL"),
             "socialYouTubeURL": obj.get("socialYouTubeURL"),
@@ -240,6 +247,11 @@ class WalletConfiguration(BaseModel):
             "primaryPhoneNumber": obj.get("primaryPhoneNumber"),
             "primaryWhatsApp": obj.get("primaryWhatsApp"),
             "primaryEmailAddress": obj.get("primaryEmailAddress"),
+            "customJS": obj.get("customJS"),
+            "customCSS": obj.get("customCSS"),
+            "nonMobileRedirectURL": obj.get("nonMobileRedirectURL"),
+            "appleAppStoreURL": obj.get("appleAppStoreURL"),
+            "googlePlayStoreURL": obj.get("googlePlayStoreURL"),
             "id": obj.get("id"),
             "createdAt": obj.get("createdAt"),
             "updatedAt": obj.get("updatedAt"),
