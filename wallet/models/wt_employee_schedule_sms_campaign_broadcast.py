@@ -30,7 +30,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast(BaseModel):
     WTEmployeeScheduleSMSCampaignBroadcast
     """ # noqa: E501
     phone_number_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="phoneNumberID")
-    message_template: StrictStr = Field(alias="messageTemplate")
+    message_template: Annotated[str, Field(strict=True, max_length=1600)] = Field(alias="messageTemplate")
     send_qr_code: StrictBool = Field(alias="sendQRCode")
     media_urls: Optional[List[StrictStr]] = Field(default=None, alias="mediaURLs")
     broadcast_scheduled_at: datetime = Field(alias="broadcastScheduledAt")
