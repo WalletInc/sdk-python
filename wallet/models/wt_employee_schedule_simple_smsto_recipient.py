@@ -30,7 +30,7 @@ class WTEmployeeScheduleSimpleSMSToRecipient(BaseModel):
     WTEmployeeScheduleSimpleSMSToRecipient
     """ # noqa: E501
     phone_number_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="phoneNumberID")
-    message_template: StrictStr = Field(alias="messageTemplate")
+    message_template: Annotated[str, Field(strict=True, max_length=1600)] = Field(alias="messageTemplate")
     media_urls: Optional[List[StrictStr]] = Field(default=None, alias="mediaURLs")
     broadcast_scheduled_at: datetime = Field(alias="broadcastScheduledAt")
     to_cell_phone: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="toCellPhone")
