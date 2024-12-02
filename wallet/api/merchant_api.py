@@ -17,6 +17,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
+from datetime import datetime
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, Optional, Union
 from typing_extensions import Annotated
@@ -572,6 +573,8 @@ class MerchantApi:
         phone_number_id: Any,
         from_phone_number: Optional[StrictStr] = None,
         body: Optional[StrictStr] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -594,6 +597,10 @@ class MerchantApi:
         :type from_phone_number: str
         :param body:
         :type body: str
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -620,6 +627,8 @@ class MerchantApi:
             phone_number_id=phone_number_id,
             from_phone_number=from_phone_number,
             body=body,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -649,6 +658,8 @@ class MerchantApi:
         phone_number_id: Any,
         from_phone_number: Optional[StrictStr] = None,
         body: Optional[StrictStr] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -671,6 +682,10 @@ class MerchantApi:
         :type from_phone_number: str
         :param body:
         :type body: str
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -697,6 +712,8 @@ class MerchantApi:
             phone_number_id=phone_number_id,
             from_phone_number=from_phone_number,
             body=body,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -726,6 +743,8 @@ class MerchantApi:
         phone_number_id: Any,
         from_phone_number: Optional[StrictStr] = None,
         body: Optional[StrictStr] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -748,6 +767,10 @@ class MerchantApi:
         :type from_phone_number: str
         :param body:
         :type body: str
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -774,6 +797,8 @@ class MerchantApi:
             phone_number_id=phone_number_id,
             from_phone_number=from_phone_number,
             body=body,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -798,6 +823,8 @@ class MerchantApi:
         phone_number_id,
         from_phone_number,
         body,
+        start_date,
+        end_date,
         _request_auth,
         _content_type,
         _headers,
@@ -827,6 +854,32 @@ class MerchantApi:
         if body is not None:
             
             _query_params.append(('body', body))
+            
+        if start_date is not None:
+            if isinstance(start_date, datetime):
+                _query_params.append(
+                    (
+                        'startDate',
+                        start_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('startDate', start_date))
+            
+        if end_date is not None:
+            if isinstance(end_date, datetime):
+                _query_params.append(
+                    (
+                        'endDate',
+                        end_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('endDate', end_date))
             
         # process the header parameters
         # process the form parameters
@@ -3561,6 +3614,8 @@ class MerchantApi:
         from_phone_number: Optional[StrictStr] = None,
         page_size: Optional[Union[StrictFloat, StrictInt]] = None,
         page_num: Optional[Union[StrictFloat, StrictInt]] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3585,6 +3640,10 @@ class MerchantApi:
         :type page_size: float
         :param page_num:
         :type page_num: float
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3612,6 +3671,8 @@ class MerchantApi:
             from_phone_number=from_phone_number,
             page_size=page_size,
             page_num=page_num,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3642,6 +3703,8 @@ class MerchantApi:
         from_phone_number: Optional[StrictStr] = None,
         page_size: Optional[Union[StrictFloat, StrictInt]] = None,
         page_num: Optional[Union[StrictFloat, StrictInt]] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3666,6 +3729,10 @@ class MerchantApi:
         :type page_size: float
         :param page_num:
         :type page_num: float
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3693,6 +3760,8 @@ class MerchantApi:
             from_phone_number=from_phone_number,
             page_size=page_size,
             page_num=page_num,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3723,6 +3792,8 @@ class MerchantApi:
         from_phone_number: Optional[StrictStr] = None,
         page_size: Optional[Union[StrictFloat, StrictInt]] = None,
         page_num: Optional[Union[StrictFloat, StrictInt]] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3747,6 +3818,10 @@ class MerchantApi:
         :type page_size: float
         :param page_num:
         :type page_num: float
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3774,6 +3849,8 @@ class MerchantApi:
             from_phone_number=from_phone_number,
             page_size=page_size,
             page_num=page_num,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3799,6 +3876,8 @@ class MerchantApi:
         from_phone_number,
         page_size,
         page_num,
+        start_date,
+        end_date,
         _request_auth,
         _content_type,
         _headers,
@@ -3832,6 +3911,32 @@ class MerchantApi:
         if page_num is not None:
             
             _query_params.append(('pageNum', page_num))
+            
+        if start_date is not None:
+            if isinstance(start_date, datetime):
+                _query_params.append(
+                    (
+                        'startDate',
+                        start_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('startDate', start_date))
+            
+        if end_date is not None:
+            if isinstance(end_date, datetime):
+                _query_params.append(
+                    (
+                        'endDate',
+                        end_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('endDate', end_date))
             
         # process the header parameters
         # process the form parameters

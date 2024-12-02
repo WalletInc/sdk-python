@@ -1935,6 +1935,8 @@ class SMSApi:
         to_phone_number: Optional[StrictStr] = None,
         status: Optional[StrictStr] = None,
         payment_object_broadcast_id: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=10)]] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1959,6 +1961,10 @@ class SMSApi:
         :type status: str
         :param payment_object_broadcast_id:
         :type payment_object_broadcast_id: str
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1986,6 +1992,8 @@ class SMSApi:
             to_phone_number=to_phone_number,
             status=status,
             payment_object_broadcast_id=payment_object_broadcast_id,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2016,6 +2024,8 @@ class SMSApi:
         to_phone_number: Optional[StrictStr] = None,
         status: Optional[StrictStr] = None,
         payment_object_broadcast_id: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=10)]] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2040,6 +2050,10 @@ class SMSApi:
         :type status: str
         :param payment_object_broadcast_id:
         :type payment_object_broadcast_id: str
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2067,6 +2081,8 @@ class SMSApi:
             to_phone_number=to_phone_number,
             status=status,
             payment_object_broadcast_id=payment_object_broadcast_id,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2097,6 +2113,8 @@ class SMSApi:
         to_phone_number: Optional[StrictStr] = None,
         status: Optional[StrictStr] = None,
         payment_object_broadcast_id: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=10)]] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2121,6 +2139,10 @@ class SMSApi:
         :type status: str
         :param payment_object_broadcast_id:
         :type payment_object_broadcast_id: str
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2148,6 +2170,8 @@ class SMSApi:
             to_phone_number=to_phone_number,
             status=status,
             payment_object_broadcast_id=payment_object_broadcast_id,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2173,6 +2197,8 @@ class SMSApi:
         to_phone_number,
         status,
         payment_object_broadcast_id,
+        start_date,
+        end_date,
         _request_auth,
         _content_type,
         _headers,
@@ -2206,6 +2232,32 @@ class SMSApi:
         if payment_object_broadcast_id is not None:
             
             _query_params.append(('paymentObjectBroadcastID', payment_object_broadcast_id))
+            
+        if start_date is not None:
+            if isinstance(start_date, datetime):
+                _query_params.append(
+                    (
+                        'startDate',
+                        start_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('startDate', start_date))
+            
+        if end_date is not None:
+            if isinstance(end_date, datetime):
+                _query_params.append(
+                    (
+                        'endDate',
+                        end_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('endDate', end_date))
             
         # process the header parameters
         # process the form parameters
@@ -6802,6 +6854,8 @@ class SMSApi:
         page_size: Optional[Union[StrictFloat, StrictInt]] = None,
         page_num: Optional[Union[StrictFloat, StrictInt]] = None,
         status: Optional[Any] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6830,6 +6884,10 @@ class SMSApi:
         :type page_num: float
         :param status:
         :type status: SSOutboundStatuses
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6859,6 +6917,8 @@ class SMSApi:
             page_size=page_size,
             page_num=page_num,
             status=status,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6891,6 +6951,8 @@ class SMSApi:
         page_size: Optional[Union[StrictFloat, StrictInt]] = None,
         page_num: Optional[Union[StrictFloat, StrictInt]] = None,
         status: Optional[Any] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6919,6 +6981,10 @@ class SMSApi:
         :type page_num: float
         :param status:
         :type status: SSOutboundStatuses
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6948,6 +7014,8 @@ class SMSApi:
             page_size=page_size,
             page_num=page_num,
             status=status,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6980,6 +7048,8 @@ class SMSApi:
         page_size: Optional[Union[StrictFloat, StrictInt]] = None,
         page_num: Optional[Union[StrictFloat, StrictInt]] = None,
         status: Optional[Any] = None,
+        start_date: Optional[datetime] = None,
+        end_date: Optional[datetime] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7008,6 +7078,10 @@ class SMSApi:
         :type page_num: float
         :param status:
         :type status: SSOutboundStatuses
+        :param start_date:
+        :type start_date: datetime
+        :param end_date:
+        :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7037,6 +7111,8 @@ class SMSApi:
             page_size=page_size,
             page_num=page_num,
             status=status,
+            start_date=start_date,
+            end_date=end_date,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7064,6 +7140,8 @@ class SMSApi:
         page_size,
         page_num,
         status,
+        start_date,
+        end_date,
         _request_auth,
         _content_type,
         _headers,
@@ -7105,6 +7183,32 @@ class SMSApi:
         if status is not None:
             
             _query_params.append(('status', status))
+            
+        if start_date is not None:
+            if isinstance(start_date, datetime):
+                _query_params.append(
+                    (
+                        'startDate',
+                        start_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('startDate', start_date))
+            
+        if end_date is not None:
+            if isinstance(end_date, datetime):
+                _query_params.append(
+                    (
+                        'endDate',
+                        end_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('endDate', end_date))
             
         # process the header parameters
         # process the form parameters
