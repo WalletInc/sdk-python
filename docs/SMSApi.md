@@ -485,7 +485,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_outbound_sms**
-> WTCountResult count_outbound_sms(phone_number_id, to_phone_number=to_phone_number, status=status, payment_object_broadcast_id=payment_object_broadcast_id)
+> WTCountResult count_outbound_sms(phone_number_id, to_phone_number=to_phone_number, status=status, payment_object_broadcast_id=payment_object_broadcast_id, start_date=start_date, end_date=end_date)
 
 Count outbound SMS
 
@@ -513,10 +513,12 @@ with wallet.ApiClient(configuration) as api_client:
     to_phone_number = 'to_phone_number_example' # str |  (optional)
     status = 'status_example' # str |  (optional)
     payment_object_broadcast_id = 'payment_object_broadcast_id_example' # str |  (optional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
         # Count outbound SMS
-        api_response = api_instance.count_outbound_sms(phone_number_id, to_phone_number=to_phone_number, status=status, payment_object_broadcast_id=payment_object_broadcast_id)
+        api_response = api_instance.count_outbound_sms(phone_number_id, to_phone_number=to_phone_number, status=status, payment_object_broadcast_id=payment_object_broadcast_id, start_date=start_date, end_date=end_date)
         print("The response of SMSApi->count_outbound_sms:\n")
         pprint(api_response)
     except Exception as e:
@@ -534,6 +536,8 @@ Name | Type | Description  | Notes
  **to_phone_number** | **str**|  | [optional] 
  **status** | **str**|  | [optional] 
  **payment_object_broadcast_id** | **str**|  | [optional] 
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -1699,7 +1703,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_outbound_smsby_page**
-> FetchOutboundSMSByPage200Response fetch_outbound_smsby_page(phone_number_id, to_phone_number=to_phone_number, payment_object_broadcast_id=payment_object_broadcast_id, page_size=page_size, page_num=page_num, status=status)
+> FetchOutboundSMSByPage200Response fetch_outbound_smsby_page(phone_number_id, to_phone_number=to_phone_number, payment_object_broadcast_id=payment_object_broadcast_id, page_size=page_size, page_num=page_num, status=status, start_date=start_date, end_date=end_date)
 
 Fetch outbound SMSes by page
 
@@ -1729,10 +1733,12 @@ with wallet.ApiClient(configuration) as api_client:
     page_size = 3.4 # float |  (optional)
     page_num = 3.4 # float |  (optional)
     status = wallet.SSOutboundStatuses() # SSOutboundStatuses |  (optional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
         # Fetch outbound SMSes by page
-        api_response = api_instance.fetch_outbound_smsby_page(phone_number_id, to_phone_number=to_phone_number, payment_object_broadcast_id=payment_object_broadcast_id, page_size=page_size, page_num=page_num, status=status)
+        api_response = api_instance.fetch_outbound_smsby_page(phone_number_id, to_phone_number=to_phone_number, payment_object_broadcast_id=payment_object_broadcast_id, page_size=page_size, page_num=page_num, status=status, start_date=start_date, end_date=end_date)
         print("The response of SMSApi->fetch_outbound_smsby_page:\n")
         pprint(api_response)
     except Exception as e:
@@ -1752,6 +1758,8 @@ Name | Type | Description  | Notes
  **page_size** | **float**|  | [optional] 
  **page_num** | **float**|  | [optional] 
  **status** | [**SSOutboundStatuses**](.md)|  | [optional] 
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
 
 ### Return type
 
