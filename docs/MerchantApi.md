@@ -166,7 +166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_inbound_sms**
-> WTCountResult count_inbound_sms(phone_number_id, from_phone_number=from_phone_number, body=body)
+> WTCountResult count_inbound_sms(phone_number_id, from_phone_number=from_phone_number, body=body, start_date=start_date, end_date=end_date)
 
 Count inbound SMSes
 
@@ -193,10 +193,12 @@ with wallet.ApiClient(configuration) as api_client:
     phone_number_id = None # object | 
     from_phone_number = 'from_phone_number_example' # str |  (optional)
     body = 'body_example' # str |  (optional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
         # Count inbound SMSes
-        api_response = api_instance.count_inbound_sms(phone_number_id, from_phone_number=from_phone_number, body=body)
+        api_response = api_instance.count_inbound_sms(phone_number_id, from_phone_number=from_phone_number, body=body, start_date=start_date, end_date=end_date)
         print("The response of MerchantApi->count_inbound_sms:\n")
         pprint(api_response)
     except Exception as e:
@@ -213,6 +215,8 @@ Name | Type | Description  | Notes
  **phone_number_id** | [**object**](.md)|  | 
  **from_phone_number** | **str**|  | [optional] 
  **body** | **str**|  | [optional] 
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
 
 ### Return type
 
@@ -926,7 +930,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_inbound_smsby_page**
-> FetchInboundSMSByPage200Response fetch_inbound_smsby_page(phone_number_id, from_phone_number=from_phone_number, page_size=page_size, page_num=page_num)
+> FetchInboundSMSByPage200Response fetch_inbound_smsby_page(phone_number_id, from_phone_number=from_phone_number, page_size=page_size, page_num=page_num, start_date=start_date, end_date=end_date)
 
 Fetch inbound SMSes by page
 
@@ -954,10 +958,12 @@ with wallet.ApiClient(configuration) as api_client:
     from_phone_number = 'from_phone_number_example' # str |  (optional)
     page_size = 3.4 # float |  (optional)
     page_num = 3.4 # float |  (optional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
         # Fetch inbound SMSes by page
-        api_response = api_instance.fetch_inbound_smsby_page(phone_number_id, from_phone_number=from_phone_number, page_size=page_size, page_num=page_num)
+        api_response = api_instance.fetch_inbound_smsby_page(phone_number_id, from_phone_number=from_phone_number, page_size=page_size, page_num=page_num, start_date=start_date, end_date=end_date)
         print("The response of MerchantApi->fetch_inbound_smsby_page:\n")
         pprint(api_response)
     except Exception as e:
@@ -975,6 +981,8 @@ Name | Type | Description  | Notes
  **from_phone_number** | **str**|  | [optional] 
  **page_size** | **float**|  | [optional] 
  **page_num** | **float**|  | [optional] 
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
 
 ### Return type
 
