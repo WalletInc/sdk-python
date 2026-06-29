@@ -5,31 +5,31 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
-**title** | **str** |  | 
-**notes** | **str** |  | 
-**value_type** | [**PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType**](PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md) |  | 
-**is_loaded** | **bool** |  | 
-**display_value** | **str** |  | [optional] 
-**merchants_reference_id** | **str** |  | [optional] 
-**valid_only_at_pos_register_ids** | **List[str]** |  | [optional] 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
+**title** | **object** |  | 
+**notes** | **object** |  | 
+**value_type** | [**StaticVoucherCampaignValueType**](StaticVoucherCampaignValueType.md) |  | 
+**is_loaded** | **object** |  | 
+**display_value** | **object** |  | [optional] 
+**merchants_reference_id** | **object** |  | [optional] 
+**valid_only_at_pos_register_ids** | **object** |  | [optional] 
 **payment_design_id** | **str** |  | 
 **employee_id** | **str** |  | 
-**reinvestment_sum** | **int** |  | 
-**number_of_vouchers_in_file** | **int** |  | 
+**reinvestment_sum** | **object** |  | 
+**number_of_vouchers_in_file** | **object** |  | 
 **campaign_group_id** | **str** |  | [optional] 
-**bucket** | **str** |  | [optional] 
-**created_by_source_id** | **int** |  | 
-**original_file_name** | **str** |  | [optional] 
+**bucket** | **object** |  | [optional] 
+**created_by_source_id** | **object** |  | 
+**original_file_name** | **object** |  | [optional] 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
-**voucher_type** | **float** |  | 
-**reinvestment_sum_decimal** | **str** |  | 
-**reinvestment_sum_string** | **str** |  | 
-**start_date** | **datetime** |  | 
-**expiration_date** | **datetime** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
+**voucher_type** | **object** |  | 
+**reinvestment_sum_decimal** | **object** |  | 
+**reinvestment_sum_string** | **object** |  | 
+**start_date** | **object** |  | 
+**expiration_date** | **object** |  | 
 
 ## Example
 

@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tier_number** | **str** | The tier number as defined by the merchant | 
-**tier_name** | **str** | The tier name as defined by the merchant | 
-**tier_discount** | **float** | The provided discount as percentage | 
+**tier_number** | **object** | The tier number as defined by the merchant | 
+**tier_name** | **object** | The tier name as defined by the merchant | 
+**tier_discount** | **object** | The provided discount as percentage | 
 **tier_design_id** | **str** |  | 
 **points_design_id** | **str** |  | 
-**id** | **str** | The UUID of this record | 
+**id** | **object** | The UUID of this record | 
 **merchant_id** | **str** |  | 
-**tier_id** | **str** | The id of the membership tier - autopopulated by the service | 
-**created_at** | **datetime** | The timestamp of when this resource was created | 
-**is_active** | **bool** | Denotes if this resource is active | 
+**tier_id** | **object** | The id of the membership tier - autopopulated by the service | 
+**created_at** | **object** | The timestamp of when this resource was created | 
+**is_active** | **object** | Denotes if this resource is active | 
 
 ## Example
 

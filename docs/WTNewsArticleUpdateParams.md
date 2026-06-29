@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** |  | 
+**order_number** | **int** |  | 
 **body** | **str** |  | 
 **url** | **str** |  | 
-**order_number** | **int** |  | 
 **media_url** | **str** |  | [optional] 
 **published_date** | **datetime** |  | [optional] 
 

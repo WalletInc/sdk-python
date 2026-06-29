@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **transaction_type** | [**PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtTransactionType**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtTransactionType.md) |  | 
 **register_id** | [**PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md) |  | 
 **redeemed_source** | **str** |  | 
@@ -22,12 +22,12 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
 **advertisement_credit_id** | **str** |  | 
-**redeemed_amount_decimal** | **str** |  | 
-**redeemed_amount_string** | **str** |  | 
-**authorized_amount_decimal** | **str** |  | 
-**authorized_amount_string** | **str** |  | 
-**date_time_redeemed** | **datetime** |  | 
-**date_time_refunded** | **datetime** |  | 
+**redeemed_amount_decimal** | **object** |  | 
+**redeemed_amount_string** | **object** |  | 
+**authorized_amount_decimal** | **object** |  | 
+**authorized_amount_string** | **object** |  | 
+**date_time_redeemed** | **object** |  | 
+**date_time_refunded** | **object** |  | 
 
 ## Example
 

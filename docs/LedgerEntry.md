@@ -5,31 +5,31 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**register_id** | **str** |  | 
+**register_id** | **object** |  | 
 **register_type** | [**ApplicableTerminals**](ApplicableTerminals.md) |  | 
-**transaction_id** | **str** |  | 
+**transaction_id** | **object** |  | 
 **transaction_type** | [**LedgerEntryTransactionType**](LedgerEntryTransactionType.md) |  | 
-**check_amount** | **float** |  | 
-**transaction_amount** | **float** |  | 
-**check_balance** | **float** |  | 
-**discount_received** | **str** |  | 
-**payment_object_prefix** | **str** |  | 
+**check_amount** | **object** |  | 
+**transaction_amount** | **object** |  | 
+**check_balance** | **object** |  | 
+**discount_received** | **object** |  | 
+**payment_object_prefix** | **object** |  | 
 **payment_object_id** | **str** |  | 
-**parent_object_prefix** | **str** |  | 
+**parent_object_prefix** | **object** |  | 
 **parent_object_id** | [**LedgerEntryParentObjectID**](LedgerEntryParentObjectID.md) |  | 
-**meta_value** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**meta_value** | **object** |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 **refunded_ledger_entry_id** | **str** |  | [optional] 
-**transaction_amount_decimal** | **str** |  | 
-**transaction_amount_string** | **str** |  | 
-**check_amount_decimal** | **str** |  | 
-**check_amount_string** | **str** |  | 
-**check_balance_decimal** | **str** |  | 
-**check_balance_string** | **str** |  | 
+**transaction_amount_decimal** | **object** |  | 
+**transaction_amount_string** | **object** |  | 
+**check_amount_decimal** | **object** |  | 
+**check_amount_string** | **object** |  | 
+**check_balance_decimal** | **object** |  | 
+**check_balance_string** | **object** |  | 
 
 ## Example
 

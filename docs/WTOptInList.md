@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **opt_out_confirmed_response** | **str** |  | 
 **opt_in_confirmed_customer_receives** | **str** |  | 
 **opt_out_confirmed_customer_receives** | **str** |  | 
-**opt_in_confirmed_media_urls** | **List[str]** |  | 
-**opt_out_confirmed_media_urls** | **List[str]** |  | 
+**opt_in_confirmed_media_urls** | **object** |  | 
+**opt_out_confirmed_media_urls** | **object** |  | 
 **is_over21_required** | **bool** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 

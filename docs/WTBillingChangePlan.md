@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**plan_name** | **str** |  | 
+**plan_name** | **object** |  | 
 
 ## Example
 

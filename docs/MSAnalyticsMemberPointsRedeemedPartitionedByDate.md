@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_date** | **str** | Represents the date of points redemption | 
-**points** | **int** | Represents the sum of points redeemed on that particular date | 
+**var_date** | **object** | Represents the date of points redemption | 
+**points** | **object** | Represents the sum of points redeemed on that particular date | 
 
 ## Example
 

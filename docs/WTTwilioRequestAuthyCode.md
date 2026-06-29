@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant_id** | **str** |  | 
-**phone_number** | **str** |  | 
+**phone_number** | **object** |  | 
 
 ## Example
 

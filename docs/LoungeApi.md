@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_lounge**](LoungeApi.md#archive_lounge) | **DELETE** /v2/lounge/{id} | Archive lounge
-[**create_lounge**](LoungeApi.md#create_lounge) | **POST** /v2/lounge | Create lounge
-[**fetch_all_lounge**](LoungeApi.md#fetch_all_lounge) | **GET** /v2/lounge/all | Fetch all lounge
-[**restore_lounge**](LoungeApi.md#restore_lounge) | **PATCH** /v2/lounge/{id} | Restore lounge
-[**update_lounge**](LoungeApi.md#update_lounge) | **PUT** /v2/lounge/{id} | Update lounge
+[**archive_lounge**](LoungeApi.md#archive_lounge) | **DELETE** /v2/lounge/{id} | Archive Lounge
+[**create_lounge**](LoungeApi.md#create_lounge) | **POST** /v2/lounge | Create Lounge
+[**fetch_all_lounge**](LoungeApi.md#fetch_all_lounge) | **GET** /v2/lounge/all | Get all Lounges
+[**restore_lounge**](LoungeApi.md#restore_lounge) | **PATCH** /v2/lounge/{id} | Restore Lounge
+[**update_lounge**](LoungeApi.md#update_lounge) | **PUT** /v2/lounge/{id} | Update Lounge
 
 
 # **archive_lounge**
 > Lounge archive_lounge(id)
 
-Archive lounge
+Archive Lounge
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.LoungeApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive lounge
+        # Archive Lounge
         api_response = api_instance.archive_lounge(id)
         print("The response of LoungeApi->archive_lounge:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_lounge**
 > Lounge create_lounge(wt_lounge_create_params)
 
-Create lounge
+Create Lounge
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_lounge_create_params = wallet.WTLoungeCreateParams() # WTLoungeCreateParams | 
 
     try:
-        # Create lounge
+        # Create Lounge
         api_response = api_instance.create_lounge(wt_lounge_create_params)
         print("The response of LoungeApi->create_lounge:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_lounge**
 > object fetch_all_lounge(is_archive_included=is_archive_included)
 
-Fetch all lounge
+Get all Lounges
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all lounge
+        # Get all Lounges
         api_response = api_instance.fetch_all_lounge(is_archive_included=is_archive_included)
         print("The response of LoungeApi->fetch_all_lounge:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_lounge**
 > Lounge restore_lounge(id)
 
-Restore lounge
+Restore Lounge
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.LoungeApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore lounge
+        # Restore Lounge
         api_response = api_instance.restore_lounge(id)
         print("The response of LoungeApi->restore_lounge:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_lounge**
 > Lounge update_lounge(id, wt_lounge_update_params)
 
-Update lounge
+Update Lounge
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.LoungeApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_lounge_update_params = wallet.WTLoungeUpdateParams() # WTLoungeUpdateParams | 
 
     try:
-        # Update lounge
+        # Update Lounge
         api_response = api_instance.update_lounge(id, wt_lounge_update_params)
         print("The response of LoungeApi->update_lounge:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_lounge_update_params** | [**WTLoungeUpdateParams**](WTLoungeUpdateParams.md)|  | 
 
 ### Return type

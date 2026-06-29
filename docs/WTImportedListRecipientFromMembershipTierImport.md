@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**list_name** | **str** |  | 
+**list_name** | **object** |  | 
 **phone_number_id** | **str** |  | 
 **tier_id** | [**WTImportedListRecipientFromMembershipTierImportTierID**](WTImportedListRecipientFromMembershipTierImportTierID.md) |  | 
 

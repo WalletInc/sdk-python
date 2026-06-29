@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_product**](ProductsApi.md#archive_product) | **DELETE** /v2/products/{id} | Archive product
-[**create_product**](ProductsApi.md#create_product) | **POST** /v2/products | Create product
-[**fetch_all_products**](ProductsApi.md#fetch_all_products) | **GET** /v2/products/all | Fetch all products
-[**restore_product**](ProductsApi.md#restore_product) | **PATCH** /v2/products/{id} | Restore product
-[**update_product**](ProductsApi.md#update_product) | **PUT** /v2/products/{id} | Update product
+[**archive_product**](ProductsApi.md#archive_product) | **DELETE** /v2/products/{id} | Archive Product
+[**create_product**](ProductsApi.md#create_product) | **POST** /v2/products | Create Product
+[**fetch_all_products**](ProductsApi.md#fetch_all_products) | **GET** /v2/products/all | Get all Products
+[**restore_product**](ProductsApi.md#restore_product) | **PATCH** /v2/products/{id} | Restore Product
+[**update_product**](ProductsApi.md#update_product) | **PUT** /v2/products/{id} | Update Product
 
 
 # **archive_product**
 > Product archive_product(id)
 
-Archive product
+Archive Product
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.ProductsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive product
+        # Archive Product
         api_response = api_instance.archive_product(id)
         print("The response of ProductsApi->archive_product:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_product**
 > Product create_product(wt_product_create_params)
 
-Create product
+Create Product
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_product_create_params = wallet.WTProductCreateParams() # WTProductCreateParams | 
 
     try:
-        # Create product
+        # Create Product
         api_response = api_instance.create_product(wt_product_create_params)
         print("The response of ProductsApi->create_product:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_products**
 > object fetch_all_products(is_archive_included=is_archive_included)
 
-Fetch all products
+Get all Products
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all products
+        # Get all Products
         api_response = api_instance.fetch_all_products(is_archive_included=is_archive_included)
         print("The response of ProductsApi->fetch_all_products:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_product**
 > Product restore_product(id)
 
-Restore product
+Restore Product
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.ProductsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore product
+        # Restore Product
         api_response = api_instance.restore_product(id)
         print("The response of ProductsApi->restore_product:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_product**
 > Product update_product(id, wt_product_update_params)
 
-Update product
+Update Product
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.ProductsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_product_update_params = wallet.WTProductUpdateParams() # WTProductUpdateParams | 
 
     try:
-        # Update product
+        # Update Product
         api_response = api_instance.update_product(id, wt_product_update_params)
         print("The response of ProductsApi->update_product:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_product_update_params** | [**WTProductUpdateParams**](WTProductUpdateParams.md)|  | 
 
 ### Return type

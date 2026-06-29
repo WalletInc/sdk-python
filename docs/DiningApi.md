@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_dining**](DiningApi.md#archive_dining) | **DELETE** /v2/dining/{id} | Archive dining
-[**create_dining**](DiningApi.md#create_dining) | **POST** /v2/dining | Create dining
-[**fetch_all_dining**](DiningApi.md#fetch_all_dining) | **GET** /v2/dining/all | Fetch all dining
-[**restore_dining**](DiningApi.md#restore_dining) | **PATCH** /v2/dining/{id} | Restore dining
-[**update_dining**](DiningApi.md#update_dining) | **PUT** /v2/dining/{id} | Update dining
+[**archive_dining**](DiningApi.md#archive_dining) | **DELETE** /v2/dining/{id} | Archive Dining info
+[**create_dining**](DiningApi.md#create_dining) | **POST** /v2/dining | Create Dining info
+[**fetch_all_dining**](DiningApi.md#fetch_all_dining) | **GET** /v2/dining/all | Get all Dining info
+[**restore_dining**](DiningApi.md#restore_dining) | **PATCH** /v2/dining/{id} | Restore Dining info
+[**update_dining**](DiningApi.md#update_dining) | **PUT** /v2/dining/{id} | Update Dining info
 
 
 # **archive_dining**
 > Dining archive_dining(id)
 
-Archive dining
+Archive Dining info
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DiningApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive dining
+        # Archive Dining info
         api_response = api_instance.archive_dining(id)
         print("The response of DiningApi->archive_dining:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_dining**
 > Dining create_dining(wt_dining_create_params)
 
-Create dining
+Create Dining info
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_dining_create_params = wallet.WTDiningCreateParams() # WTDiningCreateParams | 
 
     try:
-        # Create dining
+        # Create Dining info
         api_response = api_instance.create_dining(wt_dining_create_params)
         print("The response of DiningApi->create_dining:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_dining**
 > object fetch_all_dining(is_archive_included=is_archive_included)
 
-Fetch all dining
+Get all Dining info
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all dining
+        # Get all Dining info
         api_response = api_instance.fetch_all_dining(is_archive_included=is_archive_included)
         print("The response of DiningApi->fetch_all_dining:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_dining**
 > Dining restore_dining(id)
 
-Restore dining
+Restore Dining info
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DiningApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore dining
+        # Restore Dining info
         api_response = api_instance.restore_dining(id)
         print("The response of DiningApi->restore_dining:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_dining**
 > Dining update_dining(id, wt_dining_update_params)
 
-Update dining
+Update Dining info
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DiningApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_dining_update_params = wallet.WTDiningUpdateParams() # WTDiningUpdateParams | 
 
     try:
-        # Update dining
+        # Update Dining info
         api_response = api_instance.update_dining(id, wt_dining_update_params)
         print("The response of DiningApi->update_dining:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_dining_update_params** | [**WTDiningUpdateParams**](WTDiningUpdateParams.md)|  | 
 
 ### Return type

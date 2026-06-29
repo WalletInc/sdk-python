@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **list_id** | **str** |  | 
-**source_name** | **str** |  | 
+**source_name** | **object** |  | 
 
 ## Example
 

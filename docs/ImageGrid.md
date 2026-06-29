@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**url** | **str** |  | 
-**media_url** | **str** |  | 
-**sequence_number** | **int** |  | 
-**is_pinned** | **bool** |  | [optional] 
-**id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**title** | **object** |  | 
+**url** | **object** |  | 
+**media_url** | **object** |  | 
+**sequence_number** | **object** |  | 
+**is_pinned** | **object** |  | [optional] 
+**id** | [**AmenityId**](AmenityId.md) |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 **merchant_id** | **str** |  | 
 
 ## Example

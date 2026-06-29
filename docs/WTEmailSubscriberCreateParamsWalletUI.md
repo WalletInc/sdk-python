@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**email_address** | **str** |  | 
+**first_name** | **object** |  | 
+**last_name** | **object** |  | 
+**email_address** | **object** |  | 
 **merchant_id** | **str** |  | 
 
 ## Example

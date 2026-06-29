@@ -5,33 +5,33 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**company_name** | **str** |  | 
-**address1** | **str** |  | 
-**address2** | **str** |  | 
-**city** | **str** |  | 
-**state** | **str** |  | 
-**country** | **str** |  | 
-**phone_number** | **str** |  | 
-**zip** | **str** |  | 
-**currency_abbreviation** | **str** |  | [optional] 
+**company_name** | **object** |  | 
+**address1** | **object** |  | 
+**address2** | **object** |  | 
+**city** | **object** |  | 
+**state** | **object** |  | 
+**country** | **object** |  | 
+**phone_number** | **object** |  | 
+**zip** | **object** |  | 
+**currency_abbreviation** | **object** |  | [optional] 
 **id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**industry** | **str** |  | 
-**industry_name** | **str** |  | 
-**info_genesis_property_id** | **str** |  | 
-**is_frozen** | **bool** |  | 
-**billing_contact_employee_id** | **str** |  | 
-**marketing_contact_employee_id** | **str** |  | 
-**technical_contact_employee_id** | **str** |  | 
-**customer_service_contact_employee_id** | **str** |  | 
-**stripe_customer_id** | **str** |  | 
-**is_payment_method_provided** | **bool** |  | 
-**plan_nickname** | **str** |  | 
-**max_sms_count** | **float** |  | 
-**is_sms_agreement** | **bool** |  | [optional] 
-**is_white_labeled** | **bool** |  | [optional] 
-**is_featured** | **bool** |  | [optional] 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**industry** | **object** |  | 
+**industry_name** | **object** |  | 
+**info_genesis_property_id** | **object** |  | 
+**is_frozen** | **object** |  | 
+**billing_contact_employee_id** | **object** |  | 
+**marketing_contact_employee_id** | **object** |  | 
+**technical_contact_employee_id** | **object** |  | 
+**customer_service_contact_employee_id** | **object** |  | 
+**stripe_customer_id** | **object** |  | 
+**is_payment_method_provided** | **object** |  | 
+**plan_nickname** | **object** |  | 
+**max_sms_count** | **object** |  | 
+**is_sms_agreement** | **object** |  | [optional] 
+**is_white_labeled** | **object** |  | [optional] 
+**is_featured** | **object** |  | [optional] 
 
 ## Example
 

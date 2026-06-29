@@ -5,27 +5,27 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**session_key** | **str** |  | 
-**redeemed_amount** | **int** |  | 
+**session_key** | **object** |  | 
+**redeemed_amount** | **object** |  | 
 **dynamic_voucher_id** | **str** |  | 
-**redeemed_source** | **str** |  | 
-**redeemed_transaction_id** | **str** |  | 
+**redeemed_source** | **object** |  | 
+**redeemed_transaction_id** | **object** |  | 
 **transaction_type** | [**WTDynamicVoucherRedemptionTransactionType**](WTDynamicVoucherRedemptionTransactionType.md) |  | 
-**register_id** | [**PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md) |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**register_id** | [**MSMemberRedemptionRegisterID**](MSMemberRedemptionRegisterID.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
-**redeemed_at** | **datetime** |  | [optional] 
-**refunded_at** | **datetime** |  | [optional] 
-**refunded_transaction_id** | **str** |  | 
-**refunded_amount** | **int** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
+**redeemed_at** | **object** |  | [optional] 
+**refunded_at** | **object** |  | [optional] 
+**refunded_transaction_id** | **object** |  | 
+**refunded_amount** | **object** |  | 
 **status** | [**VSDynamicVoucherStatus**](VSDynamicVoucherStatus.md) |  | 
-**redeemed_amount_decimal** | **str** |  | 
-**redeemed_amount_string** | **str** |  | 
-**discount_received** | **str** |  | 
-**meta_value** | **str** |  | 
+**redeemed_amount_decimal** | **object** |  | 
+**redeemed_amount_string** | **object** |  | 
+**discount_received** | **object** |  | 
+**meta_value** | **object** |  | 
 **parent_object_id** | **str** |  | 
 
 ## Example

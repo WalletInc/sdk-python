@@ -6,9 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**archive_qr_code_design**](QRCodeDesignsApi.md#archive_qr_code_design) | **DELETE** /v2/qrcodedesign/{id} | Archive QR Code Design
 [**create_qr_code_design**](QRCodeDesignsApi.md#create_qr_code_design) | **POST** /v2/qrcodedesign | Create QR Code design
-[**fetch_all_qr_code_designs**](QRCodeDesignsApi.md#fetch_all_qr_code_designs) | **GET** /v2/qrcodedesign/all | Fetch all active QR Code Designs
-[**fetch_qr_code_design_by_id**](QRCodeDesignsApi.md#fetch_qr_code_design_by_id) | **GET** /v2/qrcodedesign/{id} | Fetch QR Code Design
-[**restore_qr_code_design**](QRCodeDesignsApi.md#restore_qr_code_design) | **PATCH** /v2/qrcodedesign/{id} | Restore payment design
+[**fetch_all_qr_code_designs**](QRCodeDesignsApi.md#fetch_all_qr_code_designs) | **GET** /v2/qrcodedesign/all | Get all QR Code Designs
+[**fetch_qr_code_design_by_id**](QRCodeDesignsApi.md#fetch_qr_code_design_by_id) | **GET** /v2/qrcodedesign/{id} | Get QR Code Design
+[**restore_qr_code_design**](QRCodeDesignsApi.md#restore_qr_code_design) | **PATCH** /v2/qrcodedesign/{id} | Restore QR Code Design
 [**update_qr_code_design**](QRCodeDesignsApi.md#update_qr_code_design) | **PUT** /v2/qrcodedesign/{id} | Update QR Code Design
 
 
@@ -37,7 +37,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QRCodeDesignsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
         # Archive QR Code Design
@@ -55,7 +55,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -156,7 +156,7 @@ No authorization required
 # **fetch_all_qr_code_designs**
 > List[WTQRCodeDesign] fetch_all_qr_code_designs(is_archive_included=is_archive_included)
 
-Fetch all active QR Code Designs
+Get all QR Code Designs
 
 ### Example
 
@@ -181,7 +181,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all active QR Code Designs
+        # Get all QR Code Designs
         api_response = api_instance.fetch_all_qr_code_designs(is_archive_included=is_archive_included)
         print("The response of QRCodeDesignsApi->fetch_all_qr_code_designs:\n")
         pprint(api_response)
@@ -225,7 +225,7 @@ No authorization required
 # **fetch_qr_code_design_by_id**
 > WTQRCodeDesign fetch_qr_code_design_by_id(id)
 
-Fetch QR Code Design
+Get QR Code Design
 
 ### Example
 
@@ -247,10 +247,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QRCodeDesignsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch QR Code Design
+        # Get QR Code Design
         api_response = api_instance.fetch_qr_code_design_by_id(id)
         print("The response of QRCodeDesignsApi->fetch_qr_code_design_by_id:\n")
         pprint(api_response)
@@ -265,7 +265,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -294,7 +294,7 @@ No authorization required
 # **restore_qr_code_design**
 > QRCodeDesign restore_qr_code_design(id)
 
-Restore payment design
+Restore QR Code Design
 
 ### Example
 
@@ -316,10 +316,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QRCodeDesignsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore payment design
+        # Restore QR Code Design
         api_response = api_instance.restore_qr_code_design(id)
         print("The response of QRCodeDesignsApi->restore_qr_code_design:\n")
         pprint(api_response)
@@ -334,7 +334,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -386,7 +386,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QRCodeDesignsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wtqr_code_design_update_params = wallet.WTQRCodeDesignUpdateParams() # WTQRCodeDesignUpdateParams | 
 
     try:
@@ -405,7 +405,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wtqr_code_design_update_params** | [**WTQRCodeDesignUpdateParams**](WTQRCodeDesignUpdateParams.md)|  | 
 
 ### Return type

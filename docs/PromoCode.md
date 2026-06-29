@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**description** | **str** |  | 
-**promo_code** | **str** |  | 
-**display_value** | **str** |  | 
-**order_number** | **int** |  | 
-**media_url** | **str** |  | [optional] 
-**start_date** | **datetime** |  | 
-**expiration_date** | **datetime** |  | 
-**id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**title** | **object** |  | 
+**description** | **object** |  | 
+**promo_code** | **object** |  | 
+**display_value** | **object** |  | 
+**order_number** | **object** |  | 
+**media_url** | **object** |  | [optional] 
+**start_date** | **object** |  | 
+**expiration_date** | **object** |  | 
+**id** | [**AmenityId**](AmenityId.md) |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 **merchant_id** | **str** |  | 
 
 ## Example

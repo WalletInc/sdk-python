@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **campaign_id** | **str** |  | 
 **member_id** | **str** |  | [optional] 
 **cell_phone_number** | **str** |  | [optional] 
@@ -27,16 +27,16 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
-**authorized_amount_decimal** | **str** |  | 
-**authorized_amount_string** | **str** |  | 
-**offer_amount_cents_decimal** | **str** |  | 
-**offer_amount_cents_string** | **str** |  | 
-**redeemed_amount_decimal** | **str** |  | 
-**redeemed_amount_string** | **str** |  | 
-**date_time_redeemed** | **datetime** |  | [optional] 
-**date_time_refunded** | **datetime** |  | [optional] 
-**date_time_last_viewed** | **datetime** |  | [optional] 
-**reason_invalid** | **str** |  | [optional] 
+**authorized_amount_decimal** | **object** |  | 
+**authorized_amount_string** | **object** |  | 
+**offer_amount_cents_decimal** | **object** |  | 
+**offer_amount_cents_string** | **object** |  | 
+**redeemed_amount_decimal** | **object** |  | 
+**redeemed_amount_string** | **object** |  | 
+**date_time_redeemed** | **object** |  | [optional] 
+**date_time_refunded** | **object** |  | [optional] 
+**date_time_last_viewed** | **object** |  | [optional] 
+**reason_invalid** | **object** |  | [optional] 
 
 ## Example
 

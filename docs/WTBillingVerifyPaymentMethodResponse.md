@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_payment_method_provided** | **bool** |  | 
+**is_payment_method_provided** | **object** |  | 
 **subscription** | [**SubscriptionPlan**](SubscriptionPlan.md) |  | 
 
 ## Example

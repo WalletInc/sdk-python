@@ -6,15 +6,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**category** | **str** |  | 
-**admin_page** | **str** |  | 
-**display_name** | **str** |  | 
-**system_name** | **str** |  | 
-**is_public** | **bool** |  | 
-**order_number** | **float** |  | 
-**icons** | **List[str]** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**category** | **object** |  | 
+**admin_page** | **object** |  | 
+**display_name** | **object** |  | 
+**system_name** | **object** |  | 
+**is_public** | **object** |  | 
+**order_number** | **object** |  | 
+**icons** | **object** |  | 
 
 ## Example
 

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_static_voucher**](StaticVouchersApi.md#create_static_voucher) | **POST** /v2/payment/staticVoucher | Create static voucher
-[**delete_static_voucher**](StaticVouchersApi.md#delete_static_voucher) | **DELETE** /v2/payment/staticVoucher/{id} | Delete static voucher
-[**fetch_reach_stats_of_all_static_vouchers**](StaticVouchersApi.md#fetch_reach_stats_of_all_static_vouchers) | **GET** /v2/payment/staticVoucher/reach/all | Get the reach statistics of all the static vouchers
-[**fetch_reach_stats_of_individual_static_voucher**](StaticVouchersApi.md#fetch_reach_stats_of_individual_static_voucher) | **GET** /v2/payment/staticVoucher/reach/{staticVoucherID} | Get the reach statistics of an individual static voucher
-[**fetch_static_voucher**](StaticVouchersApi.md#fetch_static_voucher) | **GET** /v2/payment/staticVoucher/{id} | Fetch static voucher
-[**update_static_voucher**](StaticVouchersApi.md#update_static_voucher) | **PUT** /v2/payment/staticVoucher/{id} | Update static voucher
+[**create_static_voucher**](StaticVouchersApi.md#create_static_voucher) | **POST** /v2/payment/staticVoucher | Create Static Voucher
+[**delete_static_voucher**](StaticVouchersApi.md#delete_static_voucher) | **DELETE** /v2/payment/staticVoucher/{id} | Delete Static Voucher
+[**fetch_reach_stats_of_all_static_vouchers**](StaticVouchersApi.md#fetch_reach_stats_of_all_static_vouchers) | **GET** /v2/payment/staticVoucher/reach/all | Get reach statistics of all Static Vouchers
+[**fetch_reach_stats_of_individual_static_voucher**](StaticVouchersApi.md#fetch_reach_stats_of_individual_static_voucher) | **GET** /v2/payment/staticVoucher/reach/{staticVoucherID} | Get reach statistics of a single Static Voucher
+[**fetch_static_voucher**](StaticVouchersApi.md#fetch_static_voucher) | **GET** /v2/payment/staticVoucher/{id} | Get Static Voucher
+[**update_static_voucher**](StaticVouchersApi.md#update_static_voucher) | **PUT** /v2/payment/staticVoucher/{id} | Update Static Voucher
 
 
 # **create_static_voucher**
 > WTStaticVoucher create_static_voucher(wt_static_voucher_create_params)
 
-Create static voucher
+Create Static Voucher
 
 ### Example
 
@@ -41,7 +41,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_static_voucher_create_params = wallet.WTStaticVoucherCreateParams() # WTStaticVoucherCreateParams | 
 
     try:
-        # Create static voucher
+        # Create Static Voucher
         api_response = api_instance.create_static_voucher(wt_static_voucher_create_params)
         print("The response of StaticVouchersApi->create_static_voucher:\n")
         pprint(api_response)
@@ -87,7 +87,7 @@ No authorization required
 # **delete_static_voucher**
 > bool delete_static_voucher(id)
 
-Delete static voucher
+Delete Static Voucher
 
 ### Example
 
@@ -108,10 +108,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.StaticVouchersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Delete static voucher
+        # Delete Static Voucher
         api_response = api_instance.delete_static_voucher(id)
         print("The response of StaticVouchersApi->delete_static_voucher:\n")
         pprint(api_response)
@@ -126,7 +126,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -157,7 +157,7 @@ No authorization required
 # **fetch_reach_stats_of_all_static_vouchers**
 > ReachPerformanceStats fetch_reach_stats_of_all_static_vouchers(broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
 
-Get the reach statistics of all the static vouchers
+Get reach statistics of all Static Vouchers
 
 ### Example
 
@@ -183,7 +183,7 @@ with wallet.ApiClient(configuration) as api_client:
     broadcast_scheduled_end_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
-        # Get the reach statistics of all the static vouchers
+        # Get reach statistics of all Static Vouchers
         api_response = api_instance.fetch_reach_stats_of_all_static_vouchers(broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
         print("The response of StaticVouchersApi->fetch_reach_stats_of_all_static_vouchers:\n")
         pprint(api_response)
@@ -228,7 +228,7 @@ No authorization required
 # **fetch_reach_stats_of_individual_static_voucher**
 > ReachPerformanceStats fetch_reach_stats_of_individual_static_voucher(static_voucher_id, broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
 
-Get the reach statistics of an individual static voucher
+Get reach statistics of a single Static Voucher
 
 ### Example
 
@@ -250,12 +250,12 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.StaticVouchersApi(api_client)
-    static_voucher_id = None # object | 
+    static_voucher_id = 'static_voucher_id_example' # str | 
     broadcast_scheduled_start_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     broadcast_scheduled_end_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
-        # Get the reach statistics of an individual static voucher
+        # Get reach statistics of a single Static Voucher
         api_response = api_instance.fetch_reach_stats_of_individual_static_voucher(static_voucher_id, broadcast_scheduled_start_at=broadcast_scheduled_start_at, broadcast_scheduled_end_at=broadcast_scheduled_end_at)
         print("The response of StaticVouchersApi->fetch_reach_stats_of_individual_static_voucher:\n")
         pprint(api_response)
@@ -270,7 +270,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **static_voucher_id** | [**object**](.md)|  | 
+ **static_voucher_id** | **str**|  | 
  **broadcast_scheduled_start_at** | **datetime**|  | [optional] 
  **broadcast_scheduled_end_at** | **datetime**|  | [optional] 
 
@@ -301,7 +301,7 @@ No authorization required
 # **fetch_static_voucher**
 > WTStaticVoucher fetch_static_voucher(id)
 
-Fetch static voucher
+Get Static Voucher
 
 ### Example
 
@@ -323,10 +323,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.StaticVouchersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch static voucher
+        # Get Static Voucher
         api_response = api_instance.fetch_static_voucher(id)
         print("The response of StaticVouchersApi->fetch_static_voucher:\n")
         pprint(api_response)
@@ -341,7 +341,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -371,7 +371,7 @@ No authorization required
 # **update_static_voucher**
 > WTStaticVoucher update_static_voucher(id, wt_static_voucher_update_params)
 
-Update static voucher
+Update Static Voucher
 
 ### Example
 
@@ -394,11 +394,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.StaticVouchersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_static_voucher_update_params = wallet.WTStaticVoucherUpdateParams() # WTStaticVoucherUpdateParams | 
 
     try:
-        # Update static voucher
+        # Update Static Voucher
         api_response = api_instance.update_static_voucher(id, wt_static_voucher_update_params)
         print("The response of StaticVouchersApi->update_static_voucher:\n")
         pprint(api_response)
@@ -413,7 +413,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_static_voucher_update_params** | [**WTStaticVoucherUpdateParams**](WTStaticVoucherUpdateParams.md)|  | 
 
 ### Return type

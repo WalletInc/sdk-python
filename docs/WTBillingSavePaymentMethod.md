@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payment_method_id** | **str** |  | 
+**payment_method_id** | **object** |  | 
 
 ## Example
 

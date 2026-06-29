@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
 **employee_id** | **str** |  | 
-**action** | **str** |  | 
-**route** | **str** |  | 
-**page_name** | **str** |  | 
+**action** | **object** |  | 
+**route** | **object** |  | 
+**page_name** | **object** |  | 
 
 ## Example
 

@@ -5,20 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**caller_name** | **str** |  | [optional] 
-**caller_type** | **str** |  | [optional] 
+**caller_name** | **object** |  | [optional] 
+**caller_type** | **object** |  | [optional] 
 **opt_in_list_id** | **str** |  | 
-**opt_in_source_id** | [**PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID**](PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID.md) |  | 
-**is_subscribed** | **bool** |  | 
-**is_pending_age21_verification** | **bool** |  | 
-**mobile_phone_number** | **str** |  | 
-**referring_url** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**opt_in_source_id** | [**OptInListSubscriberOptInSourceID**](OptInListSubscriberOptInSourceID.md) |  | 
+**is_subscribed** | **object** |  | 
+**is_pending_age21_verification** | **object** |  | 
+**mobile_phone_number** | **object** |  | 
+**referring_url** | **object** |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
-**opted_status** | **bool** |  | [optional] 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
+**opted_status** | **object** |  | [optional] 
 **source** | [**SSOptInSource**](SSOptInSource.md) |  | [optional] 
 
 ## Example

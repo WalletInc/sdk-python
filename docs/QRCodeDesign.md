@@ -5,18 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | 
-**size** | **int** |  | 
-**margin** | **int** |  | 
-**is_margin_white** | **bool** |  | 
-**corner_radius** | **int** |  | 
-**color_dark_hex** | **str** |  | 
-**color_light_hex** | **str** |  | 
-**background_dimming_hex** | **str** |  | 
-**logo_image_url** | **str** |  | [optional] 
-**background_image_url** | **str** |  | [optional] 
-**animated_gif_background_url** | **str** |  | [optional] 
-**id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
+**name** | **object** |  | 
+**serialized_json_configuration** | **object** | Construct a type with a set of properties K of type T | 
+**serialized_json_border** | **object** | Construct a type with a set of properties K of type T | [optional] 
+**id** | [**AmenityId**](AmenityId.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 

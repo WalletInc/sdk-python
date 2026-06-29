@@ -4,14 +4,14 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetch_apple_wallet_subscriber_activity**](AppleWalletSubscribersApi.md#fetch_apple_wallet_subscriber_activity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Fetch subscriber activity
-[**fetch_apple_wallet_subscribers**](AppleWalletSubscribersApi.md#fetch_apple_wallet_subscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Fetch all subscribers
+[**fetch_apple_wallet_subscriber_activity**](AppleWalletSubscribersApi.md#fetch_apple_wallet_subscriber_activity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity
+[**fetch_apple_wallet_subscribers**](AppleWalletSubscribersApi.md#fetch_apple_wallet_subscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Get all subscribers
 
 
 # **fetch_apple_wallet_subscriber_activity**
 > List[object] fetch_apple_wallet_subscriber_activity(subscription_id)
 
-Fetch subscriber activity
+Get subscriber activity
 
 ### Example
 
@@ -32,10 +32,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.AppleWalletSubscribersApi(api_client)
-    subscription_id = None # object | 
+    subscription_id = 'subscription_id_example' # str | 
 
     try:
-        # Fetch subscriber activity
+        # Get subscriber activity
         api_response = api_instance.fetch_apple_wallet_subscriber_activity(subscription_id)
         print("The response of AppleWalletSubscribersApi->fetch_apple_wallet_subscriber_activity:\n")
         pprint(api_response)
@@ -50,7 +50,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription_id** | [**object**](.md)|  | 
+ **subscription_id** | **str**|  | 
 
 ### Return type
 
@@ -79,7 +79,7 @@ No authorization required
 # **fetch_apple_wallet_subscribers**
 > List[object] fetch_apple_wallet_subscribers(start_date_time=start_date_time, end_date_time=end_date_time)
 
-Fetch all subscribers
+Get all subscribers
 
 ### Example
 
@@ -104,7 +104,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date_time = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
-        # Fetch all subscribers
+        # Get all subscribers
         api_response = api_instance.fetch_apple_wallet_subscribers(start_date_time=start_date_time, end_date_time=end_date_time)
         print("The response of AppleWalletSubscribersApi->fetch_apple_wallet_subscribers:\n")
         pprint(api_response)

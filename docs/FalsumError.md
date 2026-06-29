@@ -6,8 +6,8 @@ The error interface that consists of detailed info about why the validation has 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** |  | 
-**fields** | [**List[FalsumField]**](FalsumField.md) |  | 
+**message** | **object** |  | 
+**fields** | **object** |  | 
 
 ## Example
 

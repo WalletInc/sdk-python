@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_date** | **str** | Represents the date of creation (or addition) of members into the platform | 
-**count** | **int** | Represents the number of members that were added on that particular date | 
+**var_date** | **object** | Represents the date of creation (or addition) of members into the platform | 
+**count** | **object** | Represents the number of members that were added on that particular date | 
 
 ## Example
 

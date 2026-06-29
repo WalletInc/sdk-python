@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**description** | **str** |  | 
-**promo_code** | **str** |  | 
-**display_value** | **str** |  | 
+**title** | **object** |  | 
+**description** | **object** |  | 
+**promo_code** | **object** |  | 
+**display_value** | **object** |  | 
 **order_number** | **int** |  | 
 **media_url** | **str** |  | [optional] 
 **start_date** | **datetime** |  | 

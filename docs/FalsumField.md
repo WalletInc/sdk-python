@@ -6,9 +6,9 @@ Interface that lists the properties of a field that has failed validation
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | Name of the field | 
-**message** | **str** | Error message | 
-**value** | **str** | The provided value | 
+**name** | **object** | Name of the field | 
+**message** | **object** | Error message | 
+**value** | **object** | The provided value | 
 
 ## Example
 

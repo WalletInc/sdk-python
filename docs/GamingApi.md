@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_gaming**](GamingApi.md#archive_gaming) | **DELETE** /v2/gaming/{id} | Archive gaming
-[**create_gaming**](GamingApi.md#create_gaming) | **POST** /v2/gaming | Create gaming
-[**fetch_all_gaming**](GamingApi.md#fetch_all_gaming) | **GET** /v2/gaming/all | Fetch all gaming
-[**restore_gaming**](GamingApi.md#restore_gaming) | **PATCH** /v2/gaming/{id} | Restore gaming
-[**update_gaming**](GamingApi.md#update_gaming) | **PUT** /v2/gaming/{id} | Update gaming
+[**archive_gaming**](GamingApi.md#archive_gaming) | **DELETE** /v2/gaming/{id} | Archive Gaming info
+[**create_gaming**](GamingApi.md#create_gaming) | **POST** /v2/gaming | Create Gaming info
+[**fetch_all_gaming**](GamingApi.md#fetch_all_gaming) | **GET** /v2/gaming/all | Get all Gaming details
+[**restore_gaming**](GamingApi.md#restore_gaming) | **PATCH** /v2/gaming/{id} | Restore Gaming info
+[**update_gaming**](GamingApi.md#update_gaming) | **PUT** /v2/gaming/{id} | Update Gaming info
 
 
 # **archive_gaming**
 > Gaming archive_gaming(id)
 
-Archive gaming
+Archive Gaming info
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.GamingApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive gaming
+        # Archive Gaming info
         api_response = api_instance.archive_gaming(id)
         print("The response of GamingApi->archive_gaming:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_gaming**
 > Gaming create_gaming(wt_gaming_create_params)
 
-Create gaming
+Create Gaming info
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_gaming_create_params = wallet.WTGamingCreateParams() # WTGamingCreateParams | 
 
     try:
-        # Create gaming
+        # Create Gaming info
         api_response = api_instance.create_gaming(wt_gaming_create_params)
         print("The response of GamingApi->create_gaming:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_gaming**
 > object fetch_all_gaming(is_archive_included=is_archive_included)
 
-Fetch all gaming
+Get all Gaming details
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all gaming
+        # Get all Gaming details
         api_response = api_instance.fetch_all_gaming(is_archive_included=is_archive_included)
         print("The response of GamingApi->fetch_all_gaming:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_gaming**
 > Gaming restore_gaming(id)
 
-Restore gaming
+Restore Gaming info
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.GamingApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore gaming
+        # Restore Gaming info
         api_response = api_instance.restore_gaming(id)
         print("The response of GamingApi->restore_gaming:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_gaming**
 > Gaming update_gaming(id, wt_gaming_update_params)
 
-Update gaming
+Update Gaming info
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.GamingApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_gaming_update_params = wallet.WTGamingUpdateParams() # WTGamingUpdateParams | 
 
     try:
-        # Update gaming
+        # Update Gaming info
         api_response = api_instance.update_gaming(id, wt_gaming_update_params)
         print("The response of GamingApi->update_gaming:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_gaming_update_params** | [**WTGamingUpdateParams**](WTGamingUpdateParams.md)|  | 
 
 ### Return type

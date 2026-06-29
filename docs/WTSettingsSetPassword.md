@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**password** | **str** |  | 
+**password** | **object** |  | 
 
 ## Example
 

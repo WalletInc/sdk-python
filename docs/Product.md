@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **category** | **str** |  | 
 **icon_name** | **str** |  | 
 **description** | **str** |  | 
-**plans** | [**List[Plan]**](Plan.md) |  | 
+**plans** | **object** |  | 
 **is_hourly** | **bool** |  | [optional] 
 
 ## Example

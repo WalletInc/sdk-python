@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**check_amount** | **float** |  | 
-**transaction_number** | **str** |  | 
-**meta_value** | **str** |  | [optional] 
+**check_amount** | **object** |  | 
+**transaction_number** | **object** |  | 
+**meta_value** | **object** |  | [optional] 
 
 ## Example
 

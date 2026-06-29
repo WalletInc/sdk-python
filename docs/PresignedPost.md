@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **str** | The URL that should be used as the action of the form. | 
-**fields** | [**PresignedPostFields**](PresignedPostFields.md) |  | 
+**url** | **object** | The URL that should be used as the action of the form. | 
+**fields** | [**PresignedPostFields**](PresignedPostFields.md) | The fields that must be included as hidden inputs on the form. | 
 
 ## Example
 

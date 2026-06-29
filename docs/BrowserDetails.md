@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ip** | **str** |  | 
-**phone_verification_token** | **str** |  | [optional] 
-**session_id** | **str** |  | [optional] 
-**navigator_agent** | **str** |  | [optional] 
-**referrer** | **str** |  | [optional] 
+**ip** | **object** |  | 
+**phone_verification_token** | **object** |  | [optional] 
+**session_id** | **object** |  | [optional] 
+**navigator_agent** | **object** |  | [optional] 
+**referrer** | **object** |  | [optional] 
 
 ## Example
 

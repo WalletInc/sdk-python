@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transaction_id** | **str** | The transaction ID at the POS | 
+**transaction_id** | **object** | The transaction ID at the POS | 
 **transaction_type** | [**MSMemberRedemptionTransactionType**](MSMemberRedemptionTransactionType.md) |  | 
-**amount** | **int** | The number of amount involved in this transaction | 
-**register_id** | [**PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md) |  | [optional] 
-**terminal_type** | **str** | The type of the terminal | 
-**id** | **str** | The UUID of this record | 
+**amount** | **object** | The number of amount involved in this transaction | 
+**register_id** | [**MSMemberRedemptionRegisterID**](MSMemberRedemptionRegisterID.md) |  | [optional] 
+**terminal_type** | **object** | The type of the terminal | 
+**id** | **object** | The UUID of this record | 
 **merchant_credit_id** | **str** |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** | The timestamp of when this resource was created | 
-**is_active** | **bool** | Denotes if this resource is active | 
+**created_at** | **object** | The timestamp of when this resource was created | 
+**is_active** | **object** | Denotes if this resource is active | 
 
 ## Example
 

@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**routing_id** | **str** |  | 
-**xml_output** | **str** |  | 
-**has_error** | **bool** |  | 
-**destination_property_id** | **str** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**routing_id** | **object** |  | 
+**xml_output** | **object** |  | 
+**has_error** | **object** |  | 
+**destination_property_id** | **object** |  | 
 
 ## Example
 

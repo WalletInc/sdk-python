@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**archive_payment_design**](PaymentDesignsApi.md#archive_payment_design) | **DELETE** /v2/payment/design/{id} | Archive payment design
 [**create_payment_design**](PaymentDesignsApi.md#create_payment_design) | **POST** /v2/payment/design | Create payment design
-[**fetch_all_payment_designs**](PaymentDesignsApi.md#fetch_all_payment_designs) | **GET** /v2/payment/design/all | Fetch all active payment designs
-[**fetch_payment_design_by_id**](PaymentDesignsApi.md#fetch_payment_design_by_id) | **GET** /v2/payment/design/{id} | Fetch payment design
+[**fetch_all_payment_designs**](PaymentDesignsApi.md#fetch_all_payment_designs) | **GET** /v2/payment/design/all | Get all payment designs
+[**fetch_payment_design_by_id**](PaymentDesignsApi.md#fetch_payment_design_by_id) | **GET** /v2/payment/design/{id} | Get payment design
 [**restore_payment_design**](PaymentDesignsApi.md#restore_payment_design) | **PATCH** /v2/payment/design/{id} | Restore payment design
 [**update_payment_design**](PaymentDesignsApi.md#update_payment_design) | **PUT** /v2/payment/design/{id} | Update payment design
 
@@ -37,7 +37,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PaymentDesignsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
         # Archive payment design
@@ -55,7 +55,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -156,7 +156,7 @@ No authorization required
 # **fetch_all_payment_designs**
 > List[WTPaymentDesign] fetch_all_payment_designs(is_archive_included=is_archive_included)
 
-Fetch all active payment designs
+Get all payment designs
 
 ### Example
 
@@ -181,7 +181,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all active payment designs
+        # Get all payment designs
         api_response = api_instance.fetch_all_payment_designs(is_archive_included=is_archive_included)
         print("The response of PaymentDesignsApi->fetch_all_payment_designs:\n")
         pprint(api_response)
@@ -225,7 +225,7 @@ No authorization required
 # **fetch_payment_design_by_id**
 > WTPaymentDesign fetch_payment_design_by_id(id)
 
-Fetch payment design
+Get payment design
 
 ### Example
 
@@ -247,10 +247,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PaymentDesignsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch payment design
+        # Get payment design
         api_response = api_instance.fetch_payment_design_by_id(id)
         print("The response of PaymentDesignsApi->fetch_payment_design_by_id:\n")
         pprint(api_response)
@@ -265,7 +265,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -316,7 +316,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PaymentDesignsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
         # Restore payment design
@@ -334,7 +334,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -386,7 +386,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PaymentDesignsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_payment_design_update_params = wallet.WTPaymentDesignUpdateParams() # WTPaymentDesignUpdateParams | 
 
     try:
@@ -405,7 +405,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_payment_design_update_params** | [**WTPaymentDesignUpdateParams**](WTPaymentDesignUpdateParams.md)|  | 
 
 ### Return type

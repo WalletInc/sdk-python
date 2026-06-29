@@ -4,22 +4,22 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_merchant_credit**](MerchantCreditsApi.md#archive_merchant_credit) | **DELETE** /v2/payment/merchantcredit/{id} | Archive merchant credit
-[**create_merchant_credit**](MerchantCreditsApi.md#create_merchant_credit) | **POST** /v2/payment/merchantcredit | Create merchant credit
-[**fetch_merchant_credit_by_id**](MerchantCreditsApi.md#fetch_merchant_credit_by_id) | **GET** /v2/payment/merchantcredit/{id} | Fetch merchant credit
-[**fetch_merchant_credit_count**](MerchantCreditsApi.md#fetch_merchant_credit_count) | **GET** /v2/payment/merchantcredit/count | Fetch all active merchant credits
-[**fetch_merchant_credit_history_log**](MerchantCreditsApi.md#fetch_merchant_credit_history_log) | **POST** /v2/payment/merchantcredit/history/log | Fetch history
-[**fetch_merchant_credit_redemption_log**](MerchantCreditsApi.md#fetch_merchant_credit_redemption_log) | **POST** /v2/payment/merchantcredit/redemption/log | Fetch redemption log
-[**fetch_merchant_credits_by_page**](MerchantCreditsApi.md#fetch_merchant_credits_by_page) | **POST** /v2/payment/merchantcredit/page | Fetch merchant credits by page
-[**restore_merchant_credit**](MerchantCreditsApi.md#restore_merchant_credit) | **PATCH** /v2/payment/merchantcredit/{id} | Restore merchant credit
-[**search_merchant_credits**](MerchantCreditsApi.md#search_merchant_credits) | **POST** /v2/payment/merchantcredit/search | Search for merchant credits
-[**update_merchant_credit**](MerchantCreditsApi.md#update_merchant_credit) | **PUT** /v2/payment/merchantcredit/{id} | Update merchant credit
+[**archive_merchant_credit**](MerchantCreditsApi.md#archive_merchant_credit) | **DELETE** /v2/payment/merchantcredit/{id} | Archive Merchant Credit
+[**create_merchant_credit**](MerchantCreditsApi.md#create_merchant_credit) | **POST** /v2/payment/merchantcredit | Create Merchant Credit
+[**fetch_merchant_credit_by_id**](MerchantCreditsApi.md#fetch_merchant_credit_by_id) | **GET** /v2/payment/merchantcredit/{id} | Get Merchant Credit
+[**fetch_merchant_credit_count**](MerchantCreditsApi.md#fetch_merchant_credit_count) | **GET** /v2/payment/merchantcredit/count | Count all Merchant Credits
+[**fetch_merchant_credit_history_log**](MerchantCreditsApi.md#fetch_merchant_credit_history_log) | **POST** /v2/payment/merchantcredit/history/log | Get history
+[**fetch_merchant_credit_redemption_log**](MerchantCreditsApi.md#fetch_merchant_credit_redemption_log) | **POST** /v2/payment/merchantcredit/redemption/log | Get redemption log
+[**fetch_merchant_credits_by_page**](MerchantCreditsApi.md#fetch_merchant_credits_by_page) | **POST** /v2/payment/merchantcredit/page | Get Merchant Credits
+[**restore_merchant_credit**](MerchantCreditsApi.md#restore_merchant_credit) | **PATCH** /v2/payment/merchantcredit/{id} | Restore Merchant Credit
+[**search_merchant_credits**](MerchantCreditsApi.md#search_merchant_credits) | **POST** /v2/payment/merchantcredit/search | Search for Merchant Credits with Member ID
+[**update_merchant_credit**](MerchantCreditsApi.md#update_merchant_credit) | **PUT** /v2/payment/merchantcredit/{id} | Update Merchant Credit
 
 
 # **archive_merchant_credit**
 > WTMerchantCredit archive_merchant_credit(id)
 
-Archive merchant credit
+Archive Merchant Credit
 
 ### Example
 
@@ -41,10 +41,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantCreditsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive merchant credit
+        # Archive Merchant Credit
         api_response = api_instance.archive_merchant_credit(id)
         print("The response of MerchantCreditsApi->archive_merchant_credit:\n")
         pprint(api_response)
@@ -59,7 +59,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -88,7 +88,7 @@ No authorization required
 # **create_merchant_credit**
 > WTMerchantCredit create_merchant_credit(wt_merchant_credit_creation_params)
 
-Create merchant credit
+Create Merchant Credit
 
 ### Example
 
@@ -114,7 +114,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_merchant_credit_creation_params = wallet.WTMerchantCreditCreationParams() # WTMerchantCreditCreationParams | 
 
     try:
-        # Create merchant credit
+        # Create Merchant Credit
         api_response = api_instance.create_merchant_credit(wt_merchant_credit_creation_params)
         print("The response of MerchantCreditsApi->create_merchant_credit:\n")
         pprint(api_response)
@@ -160,7 +160,7 @@ No authorization required
 # **fetch_merchant_credit_by_id**
 > WTMerchantCredit fetch_merchant_credit_by_id(id)
 
-Fetch merchant credit
+Get Merchant Credit
 
 ### Example
 
@@ -182,10 +182,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantCreditsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch merchant credit
+        # Get Merchant Credit
         api_response = api_instance.fetch_merchant_credit_by_id(id)
         print("The response of MerchantCreditsApi->fetch_merchant_credit_by_id:\n")
         pprint(api_response)
@@ -200,7 +200,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -229,7 +229,7 @@ No authorization required
 # **fetch_merchant_credit_count**
 > FetchMembersCount200Response fetch_merchant_credit_count()
 
-Fetch all active merchant credits
+Count all Merchant Credits
 
 ### Example
 
@@ -253,7 +253,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.MerchantCreditsApi(api_client)
 
     try:
-        # Fetch all active merchant credits
+        # Count all Merchant Credits
         api_response = api_instance.fetch_merchant_credit_count()
         print("The response of MerchantCreditsApi->fetch_merchant_credit_count:\n")
         pprint(api_response)
@@ -294,7 +294,7 @@ No authorization required
 # **fetch_merchant_credit_history_log**
 > MSMerchantCreditHistoryPagination fetch_merchant_credit_history_log(pagination_request_with_id_and_without_sort_options)
 
-Fetch history
+Get history
 
 ### Example
 
@@ -320,7 +320,7 @@ with wallet.ApiClient(configuration) as api_client:
     pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
     try:
-        # Fetch history
+        # Get history
         api_response = api_instance.fetch_merchant_credit_history_log(pagination_request_with_id_and_without_sort_options)
         print("The response of MerchantCreditsApi->fetch_merchant_credit_history_log:\n")
         pprint(api_response)
@@ -364,7 +364,7 @@ No authorization required
 # **fetch_merchant_credit_redemption_log**
 > MSMerchantCreditRedemptionPagination fetch_merchant_credit_redemption_log(pagination_request_with_id_and_without_sort_options)
 
-Fetch redemption log
+Get redemption log
 
 ### Example
 
@@ -390,7 +390,7 @@ with wallet.ApiClient(configuration) as api_client:
     pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
     try:
-        # Fetch redemption log
+        # Get redemption log
         api_response = api_instance.fetch_merchant_credit_redemption_log(pagination_request_with_id_and_without_sort_options)
         print("The response of MerchantCreditsApi->fetch_merchant_credit_redemption_log:\n")
         pprint(api_response)
@@ -434,7 +434,7 @@ No authorization required
 # **fetch_merchant_credits_by_page**
 > List[WTMerchantCredit] fetch_merchant_credits_by_page(pagination_request_with_sort_options)
 
-Fetch merchant credits by page
+Get Merchant Credits
 
 ### Example
 
@@ -460,7 +460,7 @@ with wallet.ApiClient(configuration) as api_client:
     pagination_request_with_sort_options = wallet.PaginationRequestWithSortOptions() # PaginationRequestWithSortOptions | 
 
     try:
-        # Fetch merchant credits by page
+        # Get Merchant Credits
         api_response = api_instance.fetch_merchant_credits_by_page(pagination_request_with_sort_options)
         print("The response of MerchantCreditsApi->fetch_merchant_credits_by_page:\n")
         pprint(api_response)
@@ -504,7 +504,7 @@ No authorization required
 # **restore_merchant_credit**
 > WTMerchantCredit restore_merchant_credit(id)
 
-Restore merchant credit
+Restore Merchant Credit
 
 ### Example
 
@@ -526,10 +526,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantCreditsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore merchant credit
+        # Restore Merchant Credit
         api_response = api_instance.restore_merchant_credit(id)
         print("The response of MerchantCreditsApi->restore_merchant_credit:\n")
         pprint(api_response)
@@ -544,7 +544,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -573,7 +573,7 @@ No authorization required
 # **search_merchant_credits**
 > PaginatedWTMerchantCredits search_merchant_credits(merchant_credit_search)
 
-Search for merchant credits
+Search for Merchant Credits with Member ID
 
 ### Example
 
@@ -599,7 +599,7 @@ with wallet.ApiClient(configuration) as api_client:
     merchant_credit_search = wallet.MerchantCreditSearch() # MerchantCreditSearch | 
 
     try:
-        # Search for merchant credits
+        # Search for Merchant Credits with Member ID
         api_response = api_instance.search_merchant_credits(merchant_credit_search)
         print("The response of MerchantCreditsApi->search_merchant_credits:\n")
         pprint(api_response)
@@ -643,7 +643,7 @@ No authorization required
 # **update_merchant_credit**
 > WTMerchantCredit update_merchant_credit(id, pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number)
 
-Update merchant credit
+Update Merchant Credit
 
 ### Example
 
@@ -666,11 +666,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantCreditsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number = wallet.PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber() # PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber | 
 
     try:
-        # Update merchant credit
+        # Update Merchant Credit
         api_response = api_instance.update_merchant_credit(id, pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number)
         print("The response of MerchantCreditsApi->update_merchant_credit:\n")
         pprint(api_response)
@@ -685,7 +685,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number** | [**PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber**](PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md)|  | 
 
 ### Return type

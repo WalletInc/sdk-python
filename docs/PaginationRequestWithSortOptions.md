@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_archive_included** | **bool** | Denotes if archived records should be included in the response payload | [optional] 
-**page_size** | **int** | Denotes the number of records per page | [optional] 
-**page_num** | **int** | Denotes the page number | [optional] 
-**sort_key** | **str** | Denotes the key using which the records need to be sorted | [optional] 
+**is_archive_included** | **object** | Denotes if archived records should be included in the response payload | [optional] 
+**page_size** | **object** | Denotes the number of records per page | [optional] 
+**page_num** | **object** | Denotes the page number | [optional] 
+**sort_key** | **object** | Denotes the key using which the records need to be sorted | [optional] 
 **sort_order** | [**PaginationRequestWithSortOptionsSortOrder**](PaginationRequestWithSortOptionsSortOrder.md) |  | [optional] 
 
 ## Example

@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**register_id** | **str** |  | 
-**register_name** | **str** |  | 
-**outlet_name** | **str** |  | 
-**outlet_number** | **int** | Stores the outlet number | 
-**profit_center** | **str** |  | 
+**register_id** | **object** |  | 
+**register_name** | **object** |  | 
+**outlet_name** | **object** |  | 
+**outlet_number** | **object** | Stores the outlet number | 
+**profit_center** | **object** |  | 
 
 ## Example
 

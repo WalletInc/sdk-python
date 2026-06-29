@@ -5,30 +5,30 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**business_name** | **str** |  | 
+**business_name** | **object** |  | 
 **business_type** | [**BusinessType**](BusinessType.md) |  | 
 **business_classification** | [**BusinessClassification**](BusinessClassification.md) |  | 
 **business_industry** | [**BusinessIndustry**](BusinessIndustry.md) |  | 
 **tax_id_type** | [**BusinessRegistrationIdentifier**](BusinessRegistrationIdentifier.md) |  | 
-**tax_id** | **str** |  | 
-**website_url** | **str** |  | 
-**social_media_url** | **str** |  | 
-**regions_of_operation** | [**List[BusinessRegionsOfOperation]**](BusinessRegionsOfOperation.md) |  | 
+**tax_id** | **object** |  | 
+**website_url** | **object** |  | 
+**social_media_url** | **object** |  | 
+**regions_of_operation** | **object** |  | 
 **stock_exchange** | [**BusinessStockExchanges**](BusinessStockExchanges.md) |  | [optional] 
-**stock_ticker** | **str** |  | [optional] 
-**messaging_volume_high** | **bool** |  | 
-**address1** | **str** |  | 
-**address2** | **str** |  | [optional] 
-**city** | **str** |  | 
-**state** | **str** |  | 
-**postal_code** | **str** |  | 
-**country** | **str** |  | 
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**email** | **str** |  | 
-**job_title** | **str** |  | 
+**stock_ticker** | **object** |  | [optional] 
+**messaging_volume_high** | **object** |  | 
+**address1** | **object** |  | 
+**address2** | **object** |  | [optional] 
+**city** | **object** |  | 
+**state** | **object** |  | 
+**postal_code** | **object** |  | 
+**country** | **object** |  | 
+**first_name** | **object** |  | 
+**last_name** | **object** |  | 
+**email** | **object** |  | 
+**job_title** | **object** |  | 
 **job_position** | [**JobPosition**](JobPosition.md) |  | 
-**phone_number** | **str** |  | 
+**phone_number** | **object** |  | 
 
 ## Example
 

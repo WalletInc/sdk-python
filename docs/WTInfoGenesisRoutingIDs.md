@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**routing_ids** | **List[str]** |  | 
+**routing_ids** | **object** |  | 
 
 ## Example
 
