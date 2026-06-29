@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wallet_object_id** | **str** |  | 
-**count** | **float** |  | 
-**date_occurred** | **datetime** |  | 
-**wallet_object_name** | **str** |  | 
+**wallet_object_id** | **object** |  | 
+**count** | **object** |  | 
+**date_occurred** | **object** |  | 
+**wallet_object_name** | **object** |  | 
 
 ## Example
 

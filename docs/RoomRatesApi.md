@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_room_rate**](RoomRatesApi.md#archive_room_rate) | **DELETE** /v2/roomRates/{id} | Archive room rate
-[**create_room_rate**](RoomRatesApi.md#create_room_rate) | **POST** /v2/roomRates | Create room rate
-[**fetch_all_room_rates**](RoomRatesApi.md#fetch_all_room_rates) | **GET** /v2/roomRates/all | Fetch all room rates
-[**restore_room_rate**](RoomRatesApi.md#restore_room_rate) | **PATCH** /v2/roomRates/{id} | Restore room rate
-[**update_room_rate**](RoomRatesApi.md#update_room_rate) | **PUT** /v2/roomRates/{id} | Update room rate
+[**archive_room_rate**](RoomRatesApi.md#archive_room_rate) | **DELETE** /v2/roomRates/{id} | Archive Room &amp; Rate
+[**create_room_rate**](RoomRatesApi.md#create_room_rate) | **POST** /v2/roomRates | Create Room &amp; Rate
+[**fetch_all_room_rates**](RoomRatesApi.md#fetch_all_room_rates) | **GET** /v2/roomRates/all | Get all Rooms &amp; Rates
+[**restore_room_rate**](RoomRatesApi.md#restore_room_rate) | **PATCH** /v2/roomRates/{id} | Restore Room &amp; Rate
+[**update_room_rate**](RoomRatesApi.md#update_room_rate) | **PUT** /v2/roomRates/{id} | Update Room &amp; Rate
 
 
 # **archive_room_rate**
 > RoomRate archive_room_rate(id)
 
-Archive room rate
+Archive Room & Rate
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.RoomRatesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive room rate
+        # Archive Room & Rate
         api_response = api_instance.archive_room_rate(id)
         print("The response of RoomRatesApi->archive_room_rate:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_room_rate**
 > RoomRate create_room_rate(wt_room_rate_create_params)
 
-Create room rate
+Create Room & Rate
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_room_rate_create_params = wallet.WTRoomRateCreateParams() # WTRoomRateCreateParams | 
 
     try:
-        # Create room rate
+        # Create Room & Rate
         api_response = api_instance.create_room_rate(wt_room_rate_create_params)
         print("The response of RoomRatesApi->create_room_rate:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_room_rates**
 > object fetch_all_room_rates(is_archive_included=is_archive_included)
 
-Fetch all room rates
+Get all Rooms & Rates
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all room rates
+        # Get all Rooms & Rates
         api_response = api_instance.fetch_all_room_rates(is_archive_included=is_archive_included)
         print("The response of RoomRatesApi->fetch_all_room_rates:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_room_rate**
 > RoomRate restore_room_rate(id)
 
-Restore room rate
+Restore Room & Rate
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.RoomRatesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore room rate
+        # Restore Room & Rate
         api_response = api_instance.restore_room_rate(id)
         print("The response of RoomRatesApi->restore_room_rate:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_room_rate**
 > RoomRate update_room_rate(id, wt_room_rate_update_params)
 
-Update room rate
+Update Room & Rate
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.RoomRatesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_room_rate_update_params = wallet.WTRoomRateUpdateParams() # WTRoomRateUpdateParams | 
 
     try:
-        # Update room rate
+        # Update Room & Rate
         api_response = api_instance.update_room_rate(id, wt_room_rate_update_params)
         print("The response of RoomRatesApi->update_room_rate:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_room_rate_update_params** | [**WTRoomRateUpdateParams**](WTRoomRateUpdateParams.md)|  | 
 
 ### Return type

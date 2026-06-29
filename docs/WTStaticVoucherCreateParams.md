@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**offer_amount_cents** | **int** |  | 
-**member_id** | **str** |  | [optional] 
-**cell_phone** | **str** |  | 
-**campaign_id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**offer_amount_cents** | **object** |  | 
+**member_id** | **object** |  | [optional] 
+**cell_phone** | **object** |  | 
+**campaign_id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 
 ## Example
 

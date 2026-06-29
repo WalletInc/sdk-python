@@ -4,13 +4,13 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetch_active_vouchers**](CustomerApi.md#fetch_active_vouchers) | **GET** /v2/customer/vouchers/active | Fetch active static vouchers
-[**fetch_all_vouchers**](CustomerApi.md#fetch_all_vouchers) | **GET** /v2/customer/vouchers/all | Fetch all static vouchers
-[**fetch_expired_vouchers**](CustomerApi.md#fetch_expired_vouchers) | **GET** /v2/customer/vouchers/expired | Fetch expired static vouchers
-[**fetch_redeemed_vouchers**](CustomerApi.md#fetch_redeemed_vouchers) | **GET** /v2/customer/vouchers/redeemed | Fetch redeemed static vouchers
-[**fetch_refunded_vouchers**](CustomerApi.md#fetch_refunded_vouchers) | **GET** /v2/customer/vouchers/refunded | Fetch refunded static vouchers
-[**fetch_upcoming_vouchers**](CustomerApi.md#fetch_upcoming_vouchers) | **GET** /v2/customer/vouchers/upcoming | Fetch upcoming static vouchers
-[**fetch_wallet_views_for_session**](CustomerApi.md#fetch_wallet_views_for_session) | **GET** /v2/customer/walletViews/session/{id} | Fetch Wallet Views for Session
+[**fetch_active_vouchers**](CustomerApi.md#fetch_active_vouchers) | **GET** /v2/customer/vouchers/active | Get active static vouchers
+[**fetch_all_vouchers**](CustomerApi.md#fetch_all_vouchers) | **GET** /v2/customer/vouchers/all | Get all static vouchers
+[**fetch_expired_vouchers**](CustomerApi.md#fetch_expired_vouchers) | **GET** /v2/customer/vouchers/expired | Get expired static vouchers
+[**fetch_redeemed_vouchers**](CustomerApi.md#fetch_redeemed_vouchers) | **GET** /v2/customer/vouchers/redeemed | Get redeemed static vouchers
+[**fetch_refunded_vouchers**](CustomerApi.md#fetch_refunded_vouchers) | **GET** /v2/customer/vouchers/refunded | Get refunded static vouchers
+[**fetch_upcoming_vouchers**](CustomerApi.md#fetch_upcoming_vouchers) | **GET** /v2/customer/vouchers/upcoming | Get upcoming static vouchers
+[**fetch_wallet_views_for_session**](CustomerApi.md#fetch_wallet_views_for_session) | **GET** /v2/customer/walletViews/session/{id} | Get Wallet Views for Session
 [**search_by_member_id**](CustomerApi.md#search_by_member_id) | **POST** /v2/customer/search/memberID | Find members with memberID
 [**search_by_phone_number**](CustomerApi.md#search_by_phone_number) | **POST** /v2/customer/search/phoneNumber | Find members with phone number
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 # **fetch_active_vouchers**
 > List[StaticVoucher] fetch_active_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
 
-Fetch active static vouchers
+Get active static vouchers
 
 ### Example
 
@@ -44,7 +44,7 @@ with wallet.ApiClient(configuration) as api_client:
     cell_phone_number = 'cell_phone_number_example' # str |  (optional)
 
     try:
-        # Fetch active static vouchers
+        # Get active static vouchers
         api_response = api_instance.fetch_active_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
         print("The response of CustomerApi->fetch_active_vouchers:\n")
         pprint(api_response)
@@ -89,7 +89,7 @@ No authorization required
 # **fetch_all_vouchers**
 > List[StaticVoucher] fetch_all_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
 
-Fetch all static vouchers
+Get all static vouchers
 
 ### Example
 
@@ -115,7 +115,7 @@ with wallet.ApiClient(configuration) as api_client:
     cell_phone_number = 'cell_phone_number_example' # str |  (optional)
 
     try:
-        # Fetch all static vouchers
+        # Get all static vouchers
         api_response = api_instance.fetch_all_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
         print("The response of CustomerApi->fetch_all_vouchers:\n")
         pprint(api_response)
@@ -160,7 +160,7 @@ No authorization required
 # **fetch_expired_vouchers**
 > List[StaticVoucher] fetch_expired_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
 
-Fetch expired static vouchers
+Get expired static vouchers
 
 ### Example
 
@@ -186,7 +186,7 @@ with wallet.ApiClient(configuration) as api_client:
     cell_phone_number = 'cell_phone_number_example' # str |  (optional)
 
     try:
-        # Fetch expired static vouchers
+        # Get expired static vouchers
         api_response = api_instance.fetch_expired_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
         print("The response of CustomerApi->fetch_expired_vouchers:\n")
         pprint(api_response)
@@ -231,7 +231,7 @@ No authorization required
 # **fetch_redeemed_vouchers**
 > List[StaticVoucher] fetch_redeemed_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
 
-Fetch redeemed static vouchers
+Get redeemed static vouchers
 
 ### Example
 
@@ -257,7 +257,7 @@ with wallet.ApiClient(configuration) as api_client:
     cell_phone_number = 'cell_phone_number_example' # str |  (optional)
 
     try:
-        # Fetch redeemed static vouchers
+        # Get redeemed static vouchers
         api_response = api_instance.fetch_redeemed_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
         print("The response of CustomerApi->fetch_redeemed_vouchers:\n")
         pprint(api_response)
@@ -302,7 +302,7 @@ No authorization required
 # **fetch_refunded_vouchers**
 > List[StaticVoucher] fetch_refunded_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
 
-Fetch refunded static vouchers
+Get refunded static vouchers
 
 ### Example
 
@@ -328,7 +328,7 @@ with wallet.ApiClient(configuration) as api_client:
     cell_phone_number = 'cell_phone_number_example' # str |  (optional)
 
     try:
-        # Fetch refunded static vouchers
+        # Get refunded static vouchers
         api_response = api_instance.fetch_refunded_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
         print("The response of CustomerApi->fetch_refunded_vouchers:\n")
         pprint(api_response)
@@ -373,7 +373,7 @@ No authorization required
 # **fetch_upcoming_vouchers**
 > List[StaticVoucher] fetch_upcoming_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
 
-Fetch upcoming static vouchers
+Get upcoming static vouchers
 
 ### Example
 
@@ -399,7 +399,7 @@ with wallet.ApiClient(configuration) as api_client:
     cell_phone_number = 'cell_phone_number_example' # str |  (optional)
 
     try:
-        # Fetch upcoming static vouchers
+        # Get upcoming static vouchers
         api_response = api_instance.fetch_upcoming_vouchers(member_id=member_id, cell_phone_number=cell_phone_number)
         print("The response of CustomerApi->fetch_upcoming_vouchers:\n")
         pprint(api_response)
@@ -444,7 +444,7 @@ No authorization required
 # **fetch_wallet_views_for_session**
 > List[WalletPageView] fetch_wallet_views_for_session(id)
 
-Fetch Wallet Views for Session
+Get Wallet Views for Session
 
 ### Example
 
@@ -469,7 +469,7 @@ with wallet.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
 
     try:
-        # Fetch Wallet Views for Session
+        # Get Wallet Views for Session
         api_response = api_instance.fetch_wallet_views_for_session(id)
         print("The response of CustomerApi->fetch_wallet_views_for_session:\n")
         pprint(api_response)

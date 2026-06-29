@@ -16,21 +16,21 @@ Method | HTTP request | Description
 [**count_merchant_credit_refunds**](InfoGenesisReportsApi.md#count_merchant_credit_refunds) | **POST** /v2/pos/infogenesis/count/merchantCredit/refunds | Count refunded merchant credits
 [**count_static_voucher_redemptions**](InfoGenesisReportsApi.md#count_static_voucher_redemptions) | **POST** /v2/pos/infogenesis/count/staticVoucher/redemptions | Count static voucher redemptions
 [**count_static_voucher_refunds**](InfoGenesisReportsApi.md#count_static_voucher_refunds) | **POST** /v2/pos/infogenesis/count/staticVoucher/refunds | Count static voucher refunds
-[**fetch_info_genesis_authorizations**](InfoGenesisReportsApi.md#fetch_info_genesis_authorizations) | **POST** /v2/pos/infogenesis/authorizations | Fetch InfoGenesis authorizations
-[**fetch_info_genesis_campaign_data**](InfoGenesisReportsApi.md#fetch_info_genesis_campaign_data) | **POST** /v2/pos/infogenesis/campaign | Fetch campaign information
-[**fetch_info_genesis_lookup_requests**](InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests) | **POST** /v2/pos/infogenesis/requests/lookup | Fetch InfoGenesis lookup requests
-[**fetch_info_genesis_lookup_requests_errors**](InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests_errors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Fetch InfoGenesis lookup request errors
-[**fetch_info_genesis_redeemed_static_vouchers**](InfoGenesisReportsApi.md#fetch_info_genesis_redeemed_static_vouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Fetch redeemed static vouchers
-[**fetch_info_genesis_redeemed_unique_posting_ids**](InfoGenesisReportsApi.md#fetch_info_genesis_redeemed_unique_posting_ids) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Fetch redeemed InfoGenesis unique posting IDs
-[**fetch_info_genesis_redemptions**](InfoGenesisReportsApi.md#fetch_info_genesis_redemptions) | **POST** /v2/pos/infogenesis/redemptions | Fetch InfoGenesis redemptions
-[**fetch_info_genesis_refunded_routing_ids**](InfoGenesisReportsApi.md#fetch_info_genesis_refunded_routing_ids) | **POST** /v2/pos/infogenesis/routingIDs/refunded | Fetch refunded InfoGenesis unique posting IDs
-[**fetch_info_genesis_refunded_static_vouchers**](InfoGenesisReportsApi.md#fetch_info_genesis_refunded_static_vouchers) | **POST** /v2/pos/infogenesis/staticVouchers/refunded | Fetch refunded static vouchers
-[**fetch_info_genesis_refunds**](InfoGenesisReportsApi.md#fetch_info_genesis_refunds) | **POST** /v2/pos/infogenesis/refunds | Fetch InfoGenesis refunds
-[**fetch_info_genesis_request**](InfoGenesisReportsApi.md#fetch_info_genesis_request) | **GET** /v2/pos/infogenesis/request/{transactionID} | Fetch InfoGenesis request with transaction ID
-[**fetch_info_genesis_requests**](InfoGenesisReportsApi.md#fetch_info_genesis_requests) | **POST** /v2/pos/infogenesis/requests | Fetch InfoGenesis requests with routing IDs
-[**fetch_info_genesis_response_errors**](InfoGenesisReportsApi.md#fetch_info_genesis_response_errors) | **GET** /v2/pos/infogenesis/responses/errors | Fetch InfoGenesis response errors
-[**fetch_info_genesis_responses**](InfoGenesisReportsApi.md#fetch_info_genesis_responses) | **POST** /v2/pos/infogenesis/responses | Fetch InfoGenesis responses with routing IDs
-[**fetch_info_genesis_transactions_with_unique_posting_ids**](InfoGenesisReportsApi.md#fetch_info_genesis_transactions_with_unique_posting_ids) | **POST** /v2/pos/infogenesis/transactions | Fetch InfoGenesis transactions
+[**fetch_info_genesis_authorizations**](InfoGenesisReportsApi.md#fetch_info_genesis_authorizations) | **POST** /v2/pos/infogenesis/authorizations | Get authorizations
+[**fetch_info_genesis_campaign_data**](InfoGenesisReportsApi.md#fetch_info_genesis_campaign_data) | **POST** /v2/pos/infogenesis/campaign | Get campaign information
+[**fetch_info_genesis_lookup_requests**](InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests) | **POST** /v2/pos/infogenesis/requests/lookup | Get queries
+[**fetch_info_genesis_lookup_requests_errors**](InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests_errors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get queries errors
+[**fetch_info_genesis_redeemed_static_vouchers**](InfoGenesisReportsApi.md#fetch_info_genesis_redeemed_static_vouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Get redeemed static vouchers
+[**fetch_info_genesis_redeemed_unique_posting_ids**](InfoGenesisReportsApi.md#fetch_info_genesis_redeemed_unique_posting_ids) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Get redeemed unique posting IDs
+[**fetch_info_genesis_redemptions**](InfoGenesisReportsApi.md#fetch_info_genesis_redemptions) | **POST** /v2/pos/infogenesis/redemptions | Get redemptions
+[**fetch_info_genesis_refunded_routing_ids**](InfoGenesisReportsApi.md#fetch_info_genesis_refunded_routing_ids) | **POST** /v2/pos/infogenesis/routingIDs/refunded | Get refunded unique posting IDs
+[**fetch_info_genesis_refunded_static_vouchers**](InfoGenesisReportsApi.md#fetch_info_genesis_refunded_static_vouchers) | **POST** /v2/pos/infogenesis/staticVouchers/refunded | Get refunded static vouchers
+[**fetch_info_genesis_refunds**](InfoGenesisReportsApi.md#fetch_info_genesis_refunds) | **POST** /v2/pos/infogenesis/refunds | Get refunds
+[**fetch_info_genesis_request**](InfoGenesisReportsApi.md#fetch_info_genesis_request) | **GET** /v2/pos/infogenesis/request/{transactionID} | Get request
+[**fetch_info_genesis_requests**](InfoGenesisReportsApi.md#fetch_info_genesis_requests) | **POST** /v2/pos/infogenesis/requests | Get requests
+[**fetch_info_genesis_response_errors**](InfoGenesisReportsApi.md#fetch_info_genesis_response_errors) | **GET** /v2/pos/infogenesis/responses/errors | Get response errors
+[**fetch_info_genesis_responses**](InfoGenesisReportsApi.md#fetch_info_genesis_responses) | **POST** /v2/pos/infogenesis/responses | Get responses
+[**fetch_info_genesis_transactions_with_unique_posting_ids**](InfoGenesisReportsApi.md#fetch_info_genesis_transactions_with_unique_posting_ids) | **POST** /v2/pos/infogenesis/transactions | Get transactions
 
 
 # **count_ad_credits_redemptions**
@@ -876,7 +876,7 @@ No authorization required
 # **fetch_info_genesis_authorizations**
 > List[Request] fetch_info_genesis_authorizations(wt_info_genesis_record_filter_parameters)
 
-Fetch InfoGenesis authorizations
+Get authorizations
 
 ### Example
 
@@ -902,7 +902,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_record_filter_parameters = wallet.WTInfoGenesisRecordFilterParameters() # WTInfoGenesisRecordFilterParameters | 
 
     try:
-        # Fetch InfoGenesis authorizations
+        # Get authorizations
         api_response = api_instance.fetch_info_genesis_authorizations(wt_info_genesis_record_filter_parameters)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_authorizations:\n")
         pprint(api_response)
@@ -946,7 +946,7 @@ No authorization required
 # **fetch_info_genesis_campaign_data**
 > bool fetch_info_genesis_campaign_data(wt_info_genesis_record_filter_parameters)
 
-Fetch campaign information
+Get campaign information
 
 ### Example
 
@@ -971,7 +971,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_record_filter_parameters = wallet.WTInfoGenesisRecordFilterParameters() # WTInfoGenesisRecordFilterParameters | 
 
     try:
-        # Fetch campaign information
+        # Get campaign information
         api_response = api_instance.fetch_info_genesis_campaign_data(wt_info_genesis_record_filter_parameters)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_campaign_data:\n")
         pprint(api_response)
@@ -1015,7 +1015,7 @@ No authorization required
 # **fetch_info_genesis_lookup_requests**
 > List[Request] fetch_info_genesis_lookup_requests(wt_info_genesis_record_filter_parameters)
 
-Fetch InfoGenesis lookup requests
+Get queries
 
 ### Example
 
@@ -1041,7 +1041,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_record_filter_parameters = wallet.WTInfoGenesisRecordFilterParameters() # WTInfoGenesisRecordFilterParameters | 
 
     try:
-        # Fetch InfoGenesis lookup requests
+        # Get queries
         api_response = api_instance.fetch_info_genesis_lookup_requests(wt_info_genesis_record_filter_parameters)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_lookup_requests:\n")
         pprint(api_response)
@@ -1085,7 +1085,7 @@ No authorization required
 # **fetch_info_genesis_lookup_requests_errors**
 > List[Request] fetch_info_genesis_lookup_requests_errors(wt_info_genesis_lookup_request_errors)
 
-Fetch InfoGenesis lookup request errors
+Get queries errors
 
 ### Example
 
@@ -1111,7 +1111,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_lookup_request_errors = wallet.WTInfoGenesisLookupRequestErrors() # WTInfoGenesisLookupRequestErrors | 
 
     try:
-        # Fetch InfoGenesis lookup request errors
+        # Get queries errors
         api_response = api_instance.fetch_info_genesis_lookup_requests_errors(wt_info_genesis_lookup_request_errors)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_lookup_requests_errors:\n")
         pprint(api_response)
@@ -1155,7 +1155,7 @@ No authorization required
 # **fetch_info_genesis_redeemed_static_vouchers**
 > List[StaticVoucher] fetch_info_genesis_redeemed_static_vouchers(wt_info_genesis_unique_posting_ids)
 
-Fetch redeemed static vouchers
+Get redeemed static vouchers
 
 ### Example
 
@@ -1181,7 +1181,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_unique_posting_ids = wallet.WTInfoGenesisUniquePostingIDs() # WTInfoGenesisUniquePostingIDs | 
 
     try:
-        # Fetch redeemed static vouchers
+        # Get redeemed static vouchers
         api_response = api_instance.fetch_info_genesis_redeemed_static_vouchers(wt_info_genesis_unique_posting_ids)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_redeemed_static_vouchers:\n")
         pprint(api_response)
@@ -1225,7 +1225,7 @@ No authorization required
 # **fetch_info_genesis_redeemed_unique_posting_ids**
 > List[object] fetch_info_genesis_redeemed_unique_posting_ids(start_date_time, end_date_time)
 
-Fetch redeemed InfoGenesis unique posting IDs
+Get redeemed unique posting IDs
 
 ### Example
 
@@ -1250,7 +1250,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch redeemed InfoGenesis unique posting IDs
+        # Get redeemed unique posting IDs
         api_response = api_instance.fetch_info_genesis_redeemed_unique_posting_ids(start_date_time, end_date_time)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_redeemed_unique_posting_ids:\n")
         pprint(api_response)
@@ -1295,7 +1295,7 @@ No authorization required
 # **fetch_info_genesis_redemptions**
 > List[Request] fetch_info_genesis_redemptions(wt_info_genesis_record_filter_parameters)
 
-Fetch InfoGenesis redemptions
+Get redemptions
 
 ### Example
 
@@ -1321,7 +1321,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_record_filter_parameters = wallet.WTInfoGenesisRecordFilterParameters() # WTInfoGenesisRecordFilterParameters | 
 
     try:
-        # Fetch InfoGenesis redemptions
+        # Get redemptions
         api_response = api_instance.fetch_info_genesis_redemptions(wt_info_genesis_record_filter_parameters)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_redemptions:\n")
         pprint(api_response)
@@ -1365,7 +1365,7 @@ No authorization required
 # **fetch_info_genesis_refunded_routing_ids**
 > List[object] fetch_info_genesis_refunded_routing_ids(start_date_time, end_date_time)
 
-Fetch refunded InfoGenesis unique posting IDs
+Get refunded unique posting IDs
 
 ### Example
 
@@ -1390,7 +1390,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch refunded InfoGenesis unique posting IDs
+        # Get refunded unique posting IDs
         api_response = api_instance.fetch_info_genesis_refunded_routing_ids(start_date_time, end_date_time)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_refunded_routing_ids:\n")
         pprint(api_response)
@@ -1435,7 +1435,7 @@ No authorization required
 # **fetch_info_genesis_refunded_static_vouchers**
 > List[StaticVoucher] fetch_info_genesis_refunded_static_vouchers(wt_info_genesis_routing_ids)
 
-Fetch refunded static vouchers
+Get refunded static vouchers
 
 ### Example
 
@@ -1461,7 +1461,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_routing_ids = wallet.WTInfoGenesisRoutingIDs() # WTInfoGenesisRoutingIDs | 
 
     try:
-        # Fetch refunded static vouchers
+        # Get refunded static vouchers
         api_response = api_instance.fetch_info_genesis_refunded_static_vouchers(wt_info_genesis_routing_ids)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_refunded_static_vouchers:\n")
         pprint(api_response)
@@ -1505,7 +1505,7 @@ No authorization required
 # **fetch_info_genesis_refunds**
 > List[Request] fetch_info_genesis_refunds(wt_info_genesis_record_filter_parameters)
 
-Fetch InfoGenesis refunds
+Get refunds
 
 ### Example
 
@@ -1531,7 +1531,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_record_filter_parameters = wallet.WTInfoGenesisRecordFilterParameters() # WTInfoGenesisRecordFilterParameters | 
 
     try:
-        # Fetch InfoGenesis refunds
+        # Get refunds
         api_response = api_instance.fetch_info_genesis_refunds(wt_info_genesis_record_filter_parameters)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_refunds:\n")
         pprint(api_response)
@@ -1575,7 +1575,7 @@ No authorization required
 # **fetch_info_genesis_request**
 > Request fetch_info_genesis_request(transaction_id)
 
-Fetch InfoGenesis request with transaction ID
+Get request
 
 ### Example
 
@@ -1600,7 +1600,7 @@ with wallet.ApiClient(configuration) as api_client:
     transaction_id = 'transaction_id_example' # str | 
 
     try:
-        # Fetch InfoGenesis request with transaction ID
+        # Get request
         api_response = api_instance.fetch_info_genesis_request(transaction_id)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_request:\n")
         pprint(api_response)
@@ -1644,7 +1644,7 @@ No authorization required
 # **fetch_info_genesis_requests**
 > List[Request] fetch_info_genesis_requests(wt_info_genesis_routing_ids)
 
-Fetch InfoGenesis requests with routing IDs
+Get requests
 
 ### Example
 
@@ -1670,7 +1670,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_routing_ids = wallet.WTInfoGenesisRoutingIDs() # WTInfoGenesisRoutingIDs | 
 
     try:
-        # Fetch InfoGenesis requests with routing IDs
+        # Get requests
         api_response = api_instance.fetch_info_genesis_requests(wt_info_genesis_routing_ids)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_requests:\n")
         pprint(api_response)
@@ -1714,7 +1714,7 @@ No authorization required
 # **fetch_info_genesis_response_errors**
 > List[Response] fetch_info_genesis_response_errors(start_date_time, end_date_time)
 
-Fetch InfoGenesis response errors
+Get response errors
 
 ### Example
 
@@ -1740,7 +1740,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch InfoGenesis response errors
+        # Get response errors
         api_response = api_instance.fetch_info_genesis_response_errors(start_date_time, end_date_time)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_response_errors:\n")
         pprint(api_response)
@@ -1785,7 +1785,7 @@ No authorization required
 # **fetch_info_genesis_responses**
 > List[Response] fetch_info_genesis_responses(wt_info_genesis_routing_ids)
 
-Fetch InfoGenesis responses with routing IDs
+Get responses
 
 ### Example
 
@@ -1811,7 +1811,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_routing_ids = wallet.WTInfoGenesisRoutingIDs() # WTInfoGenesisRoutingIDs | 
 
     try:
-        # Fetch InfoGenesis responses with routing IDs
+        # Get responses
         api_response = api_instance.fetch_info_genesis_responses(wt_info_genesis_routing_ids)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_responses:\n")
         pprint(api_response)
@@ -1855,7 +1855,7 @@ No authorization required
 # **fetch_info_genesis_transactions_with_unique_posting_ids**
 > List[Request] fetch_info_genesis_transactions_with_unique_posting_ids(wt_info_genesis_unique_posting_ids)
 
-Fetch InfoGenesis transactions
+Get transactions
 
 ### Example
 
@@ -1881,7 +1881,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_unique_posting_ids = wallet.WTInfoGenesisUniquePostingIDs() # WTInfoGenesisUniquePostingIDs | 
 
     try:
-        # Fetch InfoGenesis transactions
+        # Get transactions
         api_response = api_instance.fetch_info_genesis_transactions_with_unique_posting_ids(wt_info_genesis_unique_posting_ids)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_transactions_with_unique_posting_ids:\n")
         pprint(api_response)

@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **str** |  | 
-**password** | **str** |  | 
-**token** | **str** |  | 
+**username** | **object** |  | 
+**password** | **object** |  | 
+**token** | **object** |  | 
 
 ## Example
 

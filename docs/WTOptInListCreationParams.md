@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_active** | **bool** |  | 
-**list_name** | **str** |  | 
+**is_active** | **object** |  | 
+**list_name** | **object** |  | 
 **phone_number_id** | **str** |  | 
-**estimated_messages_per_month** | **int** |  | 
-**opt_in_keyword** | **str** |  | 
-**opt_out_keyword** | **str** |  | 
-**opt_in_confirmed_response** | **str** |  | 
-**opt_out_confirmed_response** | **str** |  | 
-**opt_in_confirmed_customer_receives** | **str** |  | 
-**opt_out_confirmed_customer_receives** | **str** |  | 
-**is_over21_required** | **bool** |  | 
-**opt_in_confirmed_media_urls** | **List[str]** |  | [optional] 
-**opt_out_confirmed_media_urls** | **List[str]** |  | [optional] 
+**estimated_messages_per_month** | **object** |  | 
+**opt_in_keyword** | **object** |  | 
+**opt_out_keyword** | **object** |  | 
+**opt_in_confirmed_response** | **object** |  | 
+**opt_out_confirmed_response** | **object** |  | 
+**opt_in_confirmed_customer_receives** | **object** |  | 
+**opt_out_confirmed_customer_receives** | **object** |  | 
+**is_over21_required** | **object** |  | 
+**opt_in_confirmed_media_urls** | **object** |  | [optional] 
+**opt_out_confirmed_media_urls** | **object** |  | [optional] 
 
 ## Example
 

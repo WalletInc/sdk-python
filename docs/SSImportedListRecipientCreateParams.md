@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **imported_list_id** | **str** |  | 
-**mobile_phone_number** | **str** |  | 
+**mobile_phone_number** | **object** |  | 
 
 ## Example
 

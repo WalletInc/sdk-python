@@ -4,19 +4,19 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_virtual_business_card**](VirtualBusinessCardApi.md#archive_virtual_business_card) | **DELETE** /v2/virtualBusinessCard/{id} | Archive VirtualBusinessCard
-[**create_virtual_business_card**](VirtualBusinessCardApi.md#create_virtual_business_card) | **POST** /v2/virtualBusinessCard | Create VirtualBusinessCard
-[**fetch_all_virtual_business_cards**](VirtualBusinessCardApi.md#fetch_all_virtual_business_cards) | **GET** /v2/virtualBusinessCard/all | Fetch all VirtualBusinessCards
-[**fetch_virtual_business_card**](VirtualBusinessCardApi.md#fetch_virtual_business_card) | **GET** /v2/virtualBusinessCard/{id} | Fetch virtual business card
-[**fetch_virtual_business_card_requests**](VirtualBusinessCardApi.md#fetch_virtual_business_card_requests) | **GET** /v2/virtualBusinessCard/requests/{id} | Fetch requests
-[**restore_virtual_business_card**](VirtualBusinessCardApi.md#restore_virtual_business_card) | **PATCH** /v2/virtualBusinessCard/{id} | Restore VirtualBusinessCard
-[**update_virtual_business_card**](VirtualBusinessCardApi.md#update_virtual_business_card) | **PUT** /v2/virtualBusinessCard/{id} | Update VirtualBusinessCard
+[**archive_virtual_business_card**](VirtualBusinessCardApi.md#archive_virtual_business_card) | **DELETE** /v2/virtualBusinessCard/{id} | Archive Virtual Business Card
+[**create_virtual_business_card**](VirtualBusinessCardApi.md#create_virtual_business_card) | **POST** /v2/virtualBusinessCard | Create Virtual Business Card
+[**fetch_all_virtual_business_cards**](VirtualBusinessCardApi.md#fetch_all_virtual_business_cards) | **GET** /v2/virtualBusinessCard/all | Get all Virtual Business Cards
+[**fetch_virtual_business_card**](VirtualBusinessCardApi.md#fetch_virtual_business_card) | **GET** /v2/virtualBusinessCard/{id} | Get Virtual Business Card
+[**fetch_virtual_business_card_requests**](VirtualBusinessCardApi.md#fetch_virtual_business_card_requests) | **GET** /v2/virtualBusinessCard/requests/{id} | Get Virtual Business Card traffic
+[**restore_virtual_business_card**](VirtualBusinessCardApi.md#restore_virtual_business_card) | **PATCH** /v2/virtualBusinessCard/{id} | Restore Virtual Business Card
+[**update_virtual_business_card**](VirtualBusinessCardApi.md#update_virtual_business_card) | **PUT** /v2/virtualBusinessCard/{id} | Update Virtual Business Card
 
 
 # **archive_virtual_business_card**
 > VirtualBusinessCard archive_virtual_business_card(id)
 
-Archive VirtualBusinessCard
+Archive Virtual Business Card
 
 ### Example
 
@@ -38,10 +38,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VirtualBusinessCardApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive VirtualBusinessCard
+        # Archive Virtual Business Card
         api_response = api_instance.archive_virtual_business_card(id)
         print("The response of VirtualBusinessCardApi->archive_virtual_business_card:\n")
         pprint(api_response)
@@ -56,7 +56,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -85,7 +85,7 @@ No authorization required
 # **create_virtual_business_card**
 > VirtualBusinessCard create_virtual_business_card(wt_virtual_business_card_create_params)
 
-Create VirtualBusinessCard
+Create Virtual Business Card
 
 ### Example
 
@@ -111,7 +111,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_virtual_business_card_create_params = wallet.WTVirtualBusinessCardCreateParams() # WTVirtualBusinessCardCreateParams | 
 
     try:
-        # Create VirtualBusinessCard
+        # Create Virtual Business Card
         api_response = api_instance.create_virtual_business_card(wt_virtual_business_card_create_params)
         print("The response of VirtualBusinessCardApi->create_virtual_business_card:\n")
         pprint(api_response)
@@ -155,7 +155,7 @@ No authorization required
 # **fetch_all_virtual_business_cards**
 > object fetch_all_virtual_business_cards(is_archive_included=is_archive_included)
 
-Fetch all VirtualBusinessCards
+Get all Virtual Business Cards
 
 ### Example
 
@@ -179,7 +179,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all VirtualBusinessCards
+        # Get all Virtual Business Cards
         api_response = api_instance.fetch_all_virtual_business_cards(is_archive_included=is_archive_included)
         print("The response of VirtualBusinessCardApi->fetch_all_virtual_business_cards:\n")
         pprint(api_response)
@@ -223,7 +223,7 @@ No authorization required
 # **fetch_virtual_business_card**
 > VirtualBusinessCard fetch_virtual_business_card(id)
 
-Fetch virtual business card
+Get Virtual Business Card
 
 ### Example
 
@@ -245,10 +245,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VirtualBusinessCardApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch virtual business card
+        # Get Virtual Business Card
         api_response = api_instance.fetch_virtual_business_card(id)
         print("The response of VirtualBusinessCardApi->fetch_virtual_business_card:\n")
         pprint(api_response)
@@ -263,7 +263,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -292,7 +292,7 @@ No authorization required
 # **fetch_virtual_business_card_requests**
 > List[WalletPageView] fetch_virtual_business_card_requests(id)
 
-Fetch requests
+Get Virtual Business Card traffic
 
 ### Example
 
@@ -314,10 +314,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VirtualBusinessCardApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch requests
+        # Get Virtual Business Card traffic
         api_response = api_instance.fetch_virtual_business_card_requests(id)
         print("The response of VirtualBusinessCardApi->fetch_virtual_business_card_requests:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -361,7 +361,7 @@ No authorization required
 # **restore_virtual_business_card**
 > VirtualBusinessCard restore_virtual_business_card(id)
 
-Restore VirtualBusinessCard
+Restore Virtual Business Card
 
 ### Example
 
@@ -383,10 +383,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VirtualBusinessCardApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore VirtualBusinessCard
+        # Restore Virtual Business Card
         api_response = api_instance.restore_virtual_business_card(id)
         print("The response of VirtualBusinessCardApi->restore_virtual_business_card:\n")
         pprint(api_response)
@@ -401,7 +401,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -430,7 +430,7 @@ No authorization required
 # **update_virtual_business_card**
 > VirtualBusinessCard update_virtual_business_card(id, wt_virtual_business_card_update_params)
 
-Update VirtualBusinessCard
+Update Virtual Business Card
 
 ### Example
 
@@ -453,11 +453,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VirtualBusinessCardApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_virtual_business_card_update_params = wallet.WTVirtualBusinessCardUpdateParams() # WTVirtualBusinessCardUpdateParams | 
 
     try:
-        # Update VirtualBusinessCard
+        # Update Virtual Business Card
         api_response = api_instance.update_virtual_business_card(id, wt_virtual_business_card_update_params)
         print("The response of VirtualBusinessCardApi->update_virtual_business_card:\n")
         pprint(api_response)
@@ -472,7 +472,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_virtual_business_card_update_params** | [**WTVirtualBusinessCardUpdateParams**](WTVirtualBusinessCardUpdateParams.md)|  | 
 
 ### Return type

@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**body** | **str** |  | 
-**start_date_time** | **datetime** |  | 
-**price** | **str** |  | 
-**url** | **str** |  | 
-**order_number** | **int** | Stores the order number | 
-**is_sold_out** | **bool** | Denotes if the event has been sold out | 
-**media_url** | **str** |  | [optional] 
+**title** | **object** |  | 
+**body** | **object** |  | 
+**start_date_time** | **object** |  | 
+**price** | **object** |  | 
+**url** | **object** |  | 
+**order_number** | **object** | Stores the order number | 
+**is_sold_out** | **object** | Denotes if the event has been sold out | 
+**media_url** | **object** |  | [optional] 
 **payment_design_id** | **str** |  | [optional] 
-**max_comp_tickets** | **float** |  | [optional] 
-**ticket_expiration_date_time** | **datetime** |  | [optional] 
-**redemption_instructions** | **str** |  | [optional] 
+**max_comp_tickets** | **object** |  | [optional] 
+**ticket_expiration_date_time** | **object** |  | [optional] 
+**redemption_instructions** | **object** |  | [optional] 
 
 ## Example
 

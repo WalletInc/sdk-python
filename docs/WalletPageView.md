@@ -5,44 +5,44 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ip** | **str** |  | 
-**wallet_object_id** | **str** |  | 
-**wallet_object_prefix** | **str** |  | 
-**parent_object_id** | **str** |  | 
-**parent_object_prefix** | **str** |  | 
-**session_id** | **str** |  | 
-**navigator_agent** | **str** |  | 
-**browser_name** | **str** |  | 
-**browser_version** | **str** |  | 
-**engine_name** | **str** |  | 
-**engine_version** | **str** |  | 
-**o_s_name** | **str** |  | 
-**o_s_version** | **str** |  | 
-**is_mobile** | **bool** |  | 
-**device_vendor** | **str** |  | 
-**device_model** | **str** |  | 
-**device_type** | **str** |  | 
-**phone_verification_token** | **str** |  | 
-**referring_domain** | **str** |  | [optional] 
-**referrer** | **str** |  | [optional] 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
-**status** | **str** |  | 
-**country** | **str** |  | 
-**country_code** | **str** |  | 
-**region** | **str** |  | 
-**region_name** | **str** |  | 
-**city** | **str** |  | 
-**zip** | **str** |  | 
-**latitude** | **float** |  | 
-**longitude** | **float** |  | 
-**timezone** | **str** |  | 
-**isp** | **str** |  | 
-**org** | **str** |  | 
-**asn** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
+**ip** | **object** |  | 
+**wallet_object_id** | **object** |  | 
+**wallet_object_prefix** | **object** |  | 
+**parent_object_id** | **object** |  | 
+**parent_object_prefix** | **object** |  | 
+**session_id** | **object** |  | 
+**navigator_agent** | **object** |  | 
+**browser_name** | **object** |  | 
+**browser_version** | **object** |  | 
+**engine_name** | **object** |  | 
+**engine_version** | **object** |  | 
+**o_s_name** | **object** |  | 
+**o_s_version** | **object** |  | 
+**is_mobile** | **object** |  | 
+**device_vendor** | **object** |  | 
+**device_model** | **object** |  | 
+**device_type** | **object** |  | 
+**phone_verification_token** | **object** |  | 
+**referring_domain** | **object** |  | [optional] 
+**referrer** | **object** |  | [optional] 
+**id** | **str** |  | 
+**status** | **object** |  | 
+**country** | **object** |  | 
+**country_code** | **object** |  | 
+**region** | **object** |  | 
+**region_name** | **object** |  | 
+**city** | **object** |  | 
+**zip** | **object** |  | 
+**latitude** | **object** |  | 
+**longitude** | **object** |  | 
+**timezone** | **object** |  | 
+**isp** | **object** |  | 
+**org** | **object** |  | 
+**asn** | **object** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
 **merchant_id** | **str** |  | 
-**is_active** | **bool** | Denotes if this resource is active | 
+**is_active** | **object** | Denotes if this resource is active | 
 **geo_point** | [**WTWalletPageViewGeoPoint**](WTWalletPageViewGeoPoint.md) |  | 
 
 ## Example

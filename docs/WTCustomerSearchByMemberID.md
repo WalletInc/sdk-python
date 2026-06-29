@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**member_id** | **str** |  | 
+**member_id** | **object** |  | 
 
 ## Example
 

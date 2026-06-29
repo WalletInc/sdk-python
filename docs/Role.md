@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
-**employees** | [**List[WTEmployee]**](WTEmployee.md) |  | 
-**roles** | [**List[WTRole]**](WTRole.md) |  | 
+**employees** | **object** |  | 
+**roles** | **object** |  | 
 **employee_id** | **str** |  | 
 **merchant_id** | **str** |  | 
 **name** | **str** |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **is_public** | **bool** |  | 
 **order_number** | **float** |  | 
 **is_system** | **bool** |  | 
-**icons** | **List[str]** |  | 
+**icons** | **object** |  | 
 **category** | **str** |  | 
 **admin_page** | **str** |  | 
 

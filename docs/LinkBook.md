@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
+**title** | **object** |  | 
 **url** | **str** |  | 
-**icon** | **str** |  | 
+**icon** | **object** |  | 
 **order_number** | **int** |  | 
-**link_book_section_id** | [**WTLinkBookLinkBookSectionID**](WTLinkBookLinkBookSectionID.md) |  | [optional] 
-**id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
+**link_book_section_id** | [**WTQuickLinkLinkBookSectionID**](WTQuickLinkLinkBookSectionID.md) |  | [optional] 
+**id** | [**AmenityId**](AmenityId.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 

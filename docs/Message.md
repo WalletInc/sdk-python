@@ -6,13 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
 **to_employee** | [**Employee**](Employee.md) |  | [optional] 
 **from_employee** | [**Employee**](Employee.md) |  | [optional] 
-**is_read** | **bool** |  | 
-**subject** | **str** |  | 
-**body** | **str** |  | 
+**is_read** | **object** |  | 
+**subject** | **object** |  | 
+**body** | **object** |  | 
 
 ## Example
 

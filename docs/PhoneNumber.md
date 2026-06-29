@@ -5,28 +5,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message_footer** | **str** |  | 
-**help_response** | **str** |  | 
-**stop_response** | **str** |  | 
-**company_name** | **str** |  | 
-**privacy_policy_url** | **str** |  | 
-**terms_of_service_url** | **str** |  | 
-**help_desk_keyword** | **str** |  | 
-**help_desk_queue_response** | **str** |  | 
-**is_connected_to_watson** | **bool** |  | 
-**watson_conversation_workplace_id** | **str** |  | 
-**watson_username** | **str** |  | 
-**watson_password** | **str** |  | 
-**mobile_number** | **str** |  | 
-**is_short_code** | **bool** |  | 
-**twilio_sid** | **str** |  | 
-**twilio_account_sid** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**message_footer** | **object** |  | 
+**help_response** | **object** |  | 
+**stop_response** | **object** |  | 
+**company_name** | **object** |  | 
+**privacy_policy_url** | **object** |  | 
+**terms_of_service_url** | **object** |  | 
+**help_desk_keyword** | **object** |  | 
+**help_desk_queue_response** | **object** |  | 
+**is_connected_to_watson** | **object** |  | 
+**watson_conversation_workplace_id** | **object** |  | 
+**watson_username** | **object** |  | 
+**watson_password** | **object** |  | 
+**mobile_number** | **object** |  | 
+**is_short_code** | **object** |  | 
+**twilio_sid** | **object** |  | 
+**twilio_account_sid** | **object** |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
-**is_approved** | **bool** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
+**is_approved** | **object** |  | 
 
 ## Example
 

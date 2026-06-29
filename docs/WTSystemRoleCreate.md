@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**display_name** | **str** |  | 
-**webpages_to_add** | **List[str]** |  | 
+**display_name** | **object** |  | 
+**webpages_to_add** | **object** |  | 
 
 ## Example
 

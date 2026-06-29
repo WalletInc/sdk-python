@@ -6,17 +6,19 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**claim_ticket**](InteractionsApi.md#claim_ticket) | **PUT** /wallet/ticket/claim/{id} | Update ticket
 [**create_advertisement_credit_scan**](InteractionsApi.md#create_advertisement_credit_scan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
-[**create_employee_v_card**](InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard
-[**create_ics_file**](InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event
-[**create_virtual_business_card_v_card**](InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Fetch an employee&#39;s VCard
-[**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID
+[**create_employee_v_card**](InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card
+[**create_ics_file**](InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event
+[**create_virtual_business_card_v_card**](InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card
+[**fetch_active_dynamic_vouchers**](InteractionsApi.md#fetch_active_dynamic_vouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a customer&#39;s static vouchers on the basis of a given voucher ID
+[**fetch_advertisement_credit_scans_from_list**](InteractionsApi.md#fetch_advertisement_credit_scans_from_list) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs
+[**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID
 [**fetch_customer_tickets_with_token**](InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket
-[**fetch_dynamic_voucher_with_voucher_id**](InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Fetch dynamic voucher
-[**fetch_member_information**](InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Fetch member information
-[**fetch_static_voucher_with_voucher_id**](InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Fetch static voucher
-[**fetch_wallet_page_with_token**](InteractionsApi.md#fetch_wallet_page_with_token) | **POST** /wallet/page/token | Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
-[**fetch_wallet_payment_objects_with_token**](InteractionsApi.md#fetch_wallet_payment_objects_with_token) | **POST** /wallet/paymentObject/token | Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
-[**find_by_vanity_handle**](InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
+[**fetch_dynamic_voucher_with_voucher_id**](InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher
+[**fetch_member_information**](InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Get member information
+[**fetch_static_voucher_with_voucher_id**](InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher
+[**fetch_wallet_page_with_token**](InteractionsApi.md#fetch_wallet_page_with_token) | **POST** /wallet/page/token | Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+[**fetch_wallet_payment_objects_with_token**](InteractionsApi.md#fetch_wallet_payment_objects_with_token) | **POST** /wallet/paymentObject/token | Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+[**find_by_vanity_handle**](InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle
 [**identify_item**](InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
 [**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL
 [**subscribe_email**](InteractionsApi.md#subscribe_email) | **POST** /wallet/subscribeEmail | Create email subscriber
@@ -49,7 +51,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.InteractionsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     claim_ticket_request = wallet.ClaimTicketRequest() # ClaimTicketRequest | 
 
     try:
@@ -68,7 +70,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **claim_ticket_request** | [**ClaimTicketRequest**](ClaimTicketRequest.md)|  | 
 
 ### Return type
@@ -119,7 +121,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.InteractionsApi(api_client)
-    ad_credit_id = None # object | 
+    ad_credit_id = 'ad_credit_id_example' # str | 
 
     try:
         # Create ad credit scan
@@ -137,7 +139,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ad_credit_id** | [**object**](.md)|  | 
+ **ad_credit_id** | **str**|  | 
 
 ### Return type
 
@@ -165,7 +167,7 @@ No authorization required
 # **create_employee_v_card**
 > str create_employee_v_card(id)
 
-Fetch an employee's VCard
+Download a representative's Virtual Business Card
 
 ### Example
 
@@ -186,10 +188,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.InteractionsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch an employee's VCard
+        # Download a representative's Virtual Business Card
         api_response = api_instance.create_employee_v_card(id)
         print("The response of InteractionsApi->create_employee_v_card:\n")
         pprint(api_response)
@@ -204,7 +206,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -232,7 +234,7 @@ No authorization required
 # **create_ics_file**
 > object create_ics_file(id)
 
-Fetch ICS for live event
+Get ICS for live event
 
 ### Example
 
@@ -253,10 +255,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.InteractionsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch ICS for live event
+        # Get ICS for live event
         api_response = api_instance.create_ics_file(id)
         print("The response of InteractionsApi->create_ics_file:\n")
         pprint(api_response)
@@ -271,7 +273,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -299,7 +301,7 @@ No authorization required
 # **create_virtual_business_card_v_card**
 > str create_virtual_business_card_v_card(id)
 
-Fetch an employee's VCard
+Download a non-representative's Virtual Business Card
 
 ### Example
 
@@ -320,10 +322,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.InteractionsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch an employee's VCard
+        # Download a non-representative's Virtual Business Card
         api_response = api_instance.create_virtual_business_card_v_card(id)
         print("The response of InteractionsApi->create_virtual_business_card_v_card:\n")
         pprint(api_response)
@@ -338,7 +340,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -363,10 +365,148 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **fetch_active_dynamic_vouchers**
+> List[DynamicVoucher] fetch_active_dynamic_vouchers(merchant_id)
+
+Get a customer's static vouchers on the basis of a given voucher ID
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.dynamic_voucher import DynamicVoucher
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.InteractionsApi(api_client)
+    merchant_id = 'merchant_id_example' # str | 
+
+    try:
+        # Get a customer's static vouchers on the basis of a given voucher ID
+        api_response = api_instance.fetch_active_dynamic_vouchers(merchant_id)
+        print("The response of InteractionsApi->fetch_active_dynamic_vouchers:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InteractionsApi->fetch_active_dynamic_vouchers: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **str**|  | 
+
+### Return type
+
+[**List[DynamicVoucher]**](DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_advertisement_credit_scans_from_list**
+> List[object] fetch_advertisement_credit_scans_from_list(merchant_id, fetch_advertisement_credit_scans_from_list_request)
+
+Get multiple credit scans w/ array of IDs
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.fetch_advertisement_credit_scans_from_list_request import FetchAdvertisementCreditScansFromListRequest
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.InteractionsApi(api_client)
+    merchant_id = 'merchant_id_example' # str | 
+    fetch_advertisement_credit_scans_from_list_request = wallet.FetchAdvertisementCreditScansFromListRequest() # FetchAdvertisementCreditScansFromListRequest | 
+
+    try:
+        # Get multiple credit scans w/ array of IDs
+        api_response = api_instance.fetch_advertisement_credit_scans_from_list(merchant_id, fetch_advertisement_credit_scans_from_list_request)
+        print("The response of InteractionsApi->fetch_advertisement_credit_scans_from_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InteractionsApi->fetch_advertisement_credit_scans_from_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **str**|  | 
+ **fetch_advertisement_credit_scans_from_list_request** | [**FetchAdvertisementCreditScansFromListRequest**](FetchAdvertisementCreditScansFromListRequest.md)|  | 
+
+### Return type
+
+**List[object]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **fetch_all_static_vouchers_associated_with_customer_with_voucher_id**
 > List[FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner] fetch_all_static_vouchers_associated_with_customer_with_voucher_id(voucher_id)
 
-Fetch a customer's static vouchers on the basis of a given voucher ID
+Get a customer's static vouchers on the basis of a given voucher ID
 
 ### Example
 
@@ -388,10 +528,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.InteractionsApi(api_client)
-    voucher_id = None # object | 
+    voucher_id = 'voucher_id_example' # str | 
 
     try:
-        # Fetch a customer's static vouchers on the basis of a given voucher ID
+        # Get a customer's static vouchers on the basis of a given voucher ID
         api_response = api_instance.fetch_all_static_vouchers_associated_with_customer_with_voucher_id(voucher_id)
         print("The response of InteractionsApi->fetch_all_static_vouchers_associated_with_customer_with_voucher_id:\n")
         pprint(api_response)
@@ -406,7 +546,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **voucher_id** | [**object**](.md)|  | 
+ **voucher_id** | **str**|  | 
 
 ### Return type
 
@@ -503,7 +643,7 @@ No authorization required
 # **fetch_dynamic_voucher_with_voucher_id**
 > DynamicVoucher fetch_dynamic_voucher_with_voucher_id(voucher_id)
 
-Fetch dynamic voucher
+Get dynamic voucher
 
 ### Example
 
@@ -525,10 +665,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.InteractionsApi(api_client)
-    voucher_id = None # object | 
+    voucher_id = 'voucher_id_example' # str | 
 
     try:
-        # Fetch dynamic voucher
+        # Get dynamic voucher
         api_response = api_instance.fetch_dynamic_voucher_with_voucher_id(voucher_id)
         print("The response of InteractionsApi->fetch_dynamic_voucher_with_voucher_id:\n")
         pprint(api_response)
@@ -543,7 +683,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **voucher_id** | [**object**](.md)|  | 
+ **voucher_id** | **str**|  | 
 
 ### Return type
 
@@ -571,7 +711,7 @@ No authorization required
 # **fetch_member_information**
 > Member fetch_member_information(member_id, merchant_id)
 
-Fetch member information
+Get member information
 
 ### Example
 
@@ -597,7 +737,7 @@ with wallet.ApiClient(configuration) as api_client:
     merchant_id = 'merchant_id_example' # str | 
 
     try:
-        # Fetch member information
+        # Get member information
         api_response = api_instance.fetch_member_information(member_id, merchant_id)
         print("The response of InteractionsApi->fetch_member_information:\n")
         pprint(api_response)
@@ -641,7 +781,7 @@ No authorization required
 # **fetch_static_voucher_with_voucher_id**
 > StaticVoucher fetch_static_voucher_with_voucher_id(voucher_id)
 
-Fetch static voucher
+Get static voucher
 
 ### Example
 
@@ -663,10 +803,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.InteractionsApi(api_client)
-    voucher_id = None # object | 
+    voucher_id = 'voucher_id_example' # str | 
 
     try:
-        # Fetch static voucher
+        # Get static voucher
         api_response = api_instance.fetch_static_voucher_with_voucher_id(voucher_id)
         print("The response of InteractionsApi->fetch_static_voucher_with_voucher_id:\n")
         pprint(api_response)
@@ -681,7 +821,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **voucher_id** | [**object**](.md)|  | 
+ **voucher_id** | **str**|  | 
 
 ### Return type
 
@@ -709,7 +849,7 @@ No authorization required
 # **fetch_wallet_page_with_token**
 > object fetch_wallet_page_with_token(wt_fetch_wallet_payment_objects_with_token)
 
-Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 
 ### Example
 
@@ -734,7 +874,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_fetch_wallet_payment_objects_with_token = wallet.WTFetchWalletPaymentObjectsWithToken() # WTFetchWalletPaymentObjectsWithToken | 
 
     try:
-        # Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+        # Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
         api_response = api_instance.fetch_wallet_page_with_token(wt_fetch_wallet_payment_objects_with_token)
         print("The response of InteractionsApi->fetch_wallet_page_with_token:\n")
         pprint(api_response)
@@ -777,7 +917,7 @@ No authorization required
 # **fetch_wallet_payment_objects_with_token**
 > object fetch_wallet_payment_objects_with_token(wt_fetch_wallet_payment_objects_with_token)
 
-Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 
 ### Example
 
@@ -802,7 +942,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_fetch_wallet_payment_objects_with_token = wallet.WTFetchWalletPaymentObjectsWithToken() # WTFetchWalletPaymentObjectsWithToken | 
 
     try:
-        # Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+        # Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
         api_response = api_instance.fetch_wallet_payment_objects_with_token(wt_fetch_wallet_payment_objects_with_token)
         print("The response of InteractionsApi->fetch_wallet_payment_objects_with_token:\n")
         pprint(api_response)
@@ -845,7 +985,7 @@ No authorization required
 # **find_by_vanity_handle**
 > WalletConfiguration find_by_vanity_handle(handle)
 
-Fetch vanity handle
+Get vanity handle
 
 ### Example
 
@@ -870,7 +1010,7 @@ with wallet.ApiClient(configuration) as api_client:
     handle = 'handle_example' # str | 
 
     try:
-        # Fetch vanity handle
+        # Get vanity handle
         api_response = api_instance.find_by_vanity_handle(handle)
         print("The response of InteractionsApi->find_by_vanity_handle:\n")
         pprint(api_response)

@@ -5,30 +5,30 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**calc_error** | **bool** |  | 
-**calc_error_details** | **str** |  | 
-**current_value** | **float** |  | 
-**current_value_decimal** | **str** |  | 
-**current_value_string** | **str** |  | 
-**time_value_zero** | **bool** |  | 
-**time_value_zero_subtracted_amount** | **float** |  | 
-**total_number_redeemed** | **float** |  | 
-**total_value_redeemed** | **float** |  | 
-**total_budget_remaining** | **float** |  | 
-**maximum_budget_exhausted** | **bool** |  | 
-**maximum_budget_exhausted_by** | **float** |  | 
-**maximum_budget_exhausted_by_decimal** | **str** |  | 
-**maximum_budget_exhausted_by_string** | **str** |  | 
-**maximum_budget_exhausted_total_value_redeemed** | **float** |  | 
-**maximum_budget_exhausted_total_value_redeemed_decimal** | **str** |  | 
-**maximum_budget_exhausted_total_value_redeemed_string** | **str** |  | 
-**total_amount_subtracted** | **float** |  | 
-**total_amount_subtracted_decimal** | **str** |  | 
-**total_amount_subtracted_string** | **str** |  | 
-**total_decremented_multiple** | **float** |  | 
-**redeemed_keys** | **List[str]** |  | 
+**calc_error** | **object** |  | 
+**calc_error_details** | **object** |  | 
+**current_value** | **object** |  | 
+**current_value_decimal** | **object** |  | 
+**current_value_string** | **object** |  | 
+**time_value_zero** | **object** |  | 
+**time_value_zero_subtracted_amount** | **object** |  | 
+**total_number_redeemed** | **object** |  | 
+**total_value_redeemed** | **object** |  | 
+**total_budget_remaining** | **object** |  | 
+**maximum_budget_exhausted** | **object** |  | 
+**maximum_budget_exhausted_by** | **object** |  | 
+**maximum_budget_exhausted_by_decimal** | **object** |  | 
+**maximum_budget_exhausted_by_string** | **object** |  | 
+**maximum_budget_exhausted_total_value_redeemed** | **object** |  | 
+**maximum_budget_exhausted_total_value_redeemed_decimal** | **object** |  | 
+**maximum_budget_exhausted_total_value_redeemed_string** | **object** |  | 
+**total_amount_subtracted** | **object** |  | 
+**total_amount_subtracted_decimal** | **object** |  | 
+**total_amount_subtracted_string** | **object** |  | 
+**total_decremented_multiple** | **object** |  | 
+**redeemed_keys** | **object** |  | 
 **status** | [**WTDynamicVoucherSummaryStatus**](WTDynamicVoucherSummaryStatus.md) |  | 
-**expired** | **bool** |  | 
+**expired** | **object** |  | 
 
 ## Example
 

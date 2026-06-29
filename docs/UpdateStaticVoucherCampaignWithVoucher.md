@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**notes** | **str** |  | 
-**value_type** | [**PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType**](PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md) |  | 
-**display_value** | **str** |  | [optional] 
-**merchants_reference_id** | **str** |  | [optional] 
-**valid_only_at_pos_register_ids** | **List[str]** |  | [optional] 
+**title** | **object** |  | 
+**notes** | **object** |  | 
+**value_type** | [**StaticVoucherCampaignValueType**](StaticVoucherCampaignValueType.md) |  | 
+**display_value** | **object** |  | [optional] 
+**merchants_reference_id** | **object** |  | [optional] 
+**valid_only_at_pos_register_ids** | **object** |  | [optional] 
 **payment_design_id** | **str** |  | 
-**start_date_time** | **datetime** |  | 
-**expiration_date_time** | **datetime** |  | 
-**member_id** | **str** |  | [optional] 
-**offer_amount_cents** | **int** |  | 
-**cell_phone** | **str** |  | [optional] 
-**voucher_id** | [**UpdateStaticVoucherCampaignWithVoucherVoucherID**](UpdateStaticVoucherCampaignWithVoucherVoucherID.md) |  | 
+**start_date_time** | **object** |  | 
+**expiration_date_time** | **object** |  | 
+**member_id** | **object** |  | [optional] 
+**offer_amount_cents** | **object** |  | 
+**cell_phone** | **object** |  | [optional] 
+**voucher_id** | **str** |  | 
 
 ## Example
 

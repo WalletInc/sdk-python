@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** |  | 
-**locale** | **str** |  | 
-**timezone** | **str** |  | 
-**page_num** | **float** |  | 
-**page_size** | **float** |  | 
+**message** | **object** |  | 
+**locale** | **object** |  | 
+**timezone** | **object** |  | 
+**page_num** | **object** |  | 
+**page_size** | **object** |  | 
 
 ## Example
 

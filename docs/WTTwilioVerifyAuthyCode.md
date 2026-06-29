@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant_id** | **str** |  | 
-**phone_number** | **str** |  | 
-**otp** | **str** |  | 
+**phone_number** | **object** |  | 
+**otp** | **object** |  | 
 
 ## Example
 

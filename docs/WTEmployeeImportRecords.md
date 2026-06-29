@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file_name** | **str** |  | 
-**bucket** | **str** |  | 
+**file_name** | **object** |  | 
+**bucket** | **object** |  | 
 
 ## Example
 

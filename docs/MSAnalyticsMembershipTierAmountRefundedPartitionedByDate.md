@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_date** | **str** | Represents the date when the amount was refunded | 
-**amount** | **int** | Represents the amount refunded on that particular date | 
+**var_date** | **object** | Represents the date when the amount was refunded | 
+**amount** | **object** | Represents the amount refunded on that particular date | 
 
 ## Example
 

@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_promo_code**](PromotionCodesApi.md#archive_promo_code) | **DELETE** /v2/promoCodes/{id} | Archive promo code
-[**create_promo_code**](PromotionCodesApi.md#create_promo_code) | **POST** /v2/promoCodes | Create promo code
-[**fetch_all_promo_codes**](PromotionCodesApi.md#fetch_all_promo_codes) | **GET** /v2/promoCodes/all | Fetch all promo codes
-[**restore_promo_code**](PromotionCodesApi.md#restore_promo_code) | **PATCH** /v2/promoCodes/{id} | Restore promo code
-[**update_promo_code**](PromotionCodesApi.md#update_promo_code) | **PUT** /v2/promoCodes/{id} | Update promo code
+[**archive_promo_code**](PromotionCodesApi.md#archive_promo_code) | **DELETE** /v2/promoCodes/{id} | Archive Promotion Code
+[**create_promo_code**](PromotionCodesApi.md#create_promo_code) | **POST** /v2/promoCodes | Create Promotion Code
+[**fetch_all_promo_codes**](PromotionCodesApi.md#fetch_all_promo_codes) | **GET** /v2/promoCodes/all | Get all Promotion Codes
+[**restore_promo_code**](PromotionCodesApi.md#restore_promo_code) | **PATCH** /v2/promoCodes/{id} | Restore Promotion Code
+[**update_promo_code**](PromotionCodesApi.md#update_promo_code) | **PUT** /v2/promoCodes/{id} | Update Promotion Code
 
 
 # **archive_promo_code**
 > PromoCode archive_promo_code(id)
 
-Archive promo code
+Archive Promotion Code
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PromotionCodesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive promo code
+        # Archive Promotion Code
         api_response = api_instance.archive_promo_code(id)
         print("The response of PromotionCodesApi->archive_promo_code:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_promo_code**
 > PromoCode create_promo_code(wt_promo_code_create_params)
 
-Create promo code
+Create Promotion Code
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_promo_code_create_params = wallet.WTPromoCodeCreateParams() # WTPromoCodeCreateParams | 
 
     try:
-        # Create promo code
+        # Create Promotion Code
         api_response = api_instance.create_promo_code(wt_promo_code_create_params)
         print("The response of PromotionCodesApi->create_promo_code:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_promo_codes**
 > object fetch_all_promo_codes(is_archive_included=is_archive_included)
 
-Fetch all promo codes
+Get all Promotion Codes
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all promo codes
+        # Get all Promotion Codes
         api_response = api_instance.fetch_all_promo_codes(is_archive_included=is_archive_included)
         print("The response of PromotionCodesApi->fetch_all_promo_codes:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_promo_code**
 > PromoCode restore_promo_code(id)
 
-Restore promo code
+Restore Promotion Code
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PromotionCodesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore promo code
+        # Restore Promotion Code
         api_response = api_instance.restore_promo_code(id)
         print("The response of PromotionCodesApi->restore_promo_code:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_promo_code**
 > PromoCode update_promo_code(id, wt_promo_code_update_params)
 
-Update promo code
+Update Promotion Code
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PromotionCodesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_promo_code_update_params = wallet.WTPromoCodeUpdateParams() # WTPromoCodeUpdateParams | 
 
     try:
-        # Update promo code
+        # Update Promotion Code
         api_response = api_instance.update_promo_code(id, wt_promo_code_update_params)
         print("The response of PromotionCodesApi->update_promo_code:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_promo_code_update_params** | [**WTPromoCodeUpdateParams**](WTPromoCodeUpdateParams.md)|  | 
 
 ### Return type

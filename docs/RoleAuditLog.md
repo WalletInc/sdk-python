@@ -6,17 +6,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**role_name** | **str** |  | 
-**action** | **str** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**role_name** | **object** |  | 
+**action** | **object** |  | 
 **merchant_id** | **str** |  | 
 **action_by_employee_id** | **str** |  | 
-**action_by_employee_name** | **str** |  | 
+**action_by_employee_name** | **object** |  | 
 **action_on_employee_id** | **str** |  | 
-**action_on_employee_name** | **str** |  | 
-**display_name** | **str** |  | 
-**is_system** | **bool** |  | 
+**action_on_employee_name** | **object** |  | 
+**display_name** | **object** |  | 
+**is_system** | **object** |  | 
 
 ## Example
 

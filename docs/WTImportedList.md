@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **is_active** | **bool** |  | 
 **list_name** | **str** |  | 
 **phone_number_id** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 

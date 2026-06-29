@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**info_genesis_property_id** | **str** |  | 
+**info_genesis_property_id** | **object** |  | 
 
 ## Example
 

@@ -6,15 +6,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant_phone_number_id** | **str** |  | 
-**cell_phone** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**cell_phone** | **object** |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 **employee_id** | **str** |  | 
-**is_resolved** | **bool** |  | 
-**resolved_at** | **datetime** |  | [optional] 
+**is_resolved** | **object** |  | 
+**resolved_at** | **object** |  | [optional] 
 
 ## Example
 

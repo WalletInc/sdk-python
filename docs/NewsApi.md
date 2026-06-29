@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_news_article**](NewsApi.md#archive_news_article) | **DELETE** /v2/news/{id} | Archive news article
-[**create_news_article**](NewsApi.md#create_news_article) | **POST** /v2/news | Create news article
-[**fetch_all_news_articles**](NewsApi.md#fetch_all_news_articles) | **GET** /v2/news/all | Fetch all news articles
-[**restore_news_article**](NewsApi.md#restore_news_article) | **PATCH** /v2/news/{id} | Restore news article
-[**update_news_article**](NewsApi.md#update_news_article) | **PUT** /v2/news/{id} | Update news article
+[**archive_news_article**](NewsApi.md#archive_news_article) | **DELETE** /v2/news/{id} | Archive News &amp; Blog post
+[**create_news_article**](NewsApi.md#create_news_article) | **POST** /v2/news | Create News &amp; Blog post
+[**fetch_all_news_articles**](NewsApi.md#fetch_all_news_articles) | **GET** /v2/news/all | Get all News &amp; Blog posts
+[**restore_news_article**](NewsApi.md#restore_news_article) | **PATCH** /v2/news/{id} | Restore News &amp; Blog post
+[**update_news_article**](NewsApi.md#update_news_article) | **PUT** /v2/news/{id} | Update News &amp; Blog post
 
 
 # **archive_news_article**
 > NewsArticle archive_news_article(id)
 
-Archive news article
+Archive News & Blog post
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.NewsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive news article
+        # Archive News & Blog post
         api_response = api_instance.archive_news_article(id)
         print("The response of NewsApi->archive_news_article:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_news_article**
 > NewsArticle create_news_article(wt_news_article_create_params)
 
-Create news article
+Create News & Blog post
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_news_article_create_params = wallet.WTNewsArticleCreateParams() # WTNewsArticleCreateParams | 
 
     try:
-        # Create news article
+        # Create News & Blog post
         api_response = api_instance.create_news_article(wt_news_article_create_params)
         print("The response of NewsApi->create_news_article:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_news_articles**
 > object fetch_all_news_articles(is_archive_included=is_archive_included)
 
-Fetch all news articles
+Get all News & Blog posts
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all news articles
+        # Get all News & Blog posts
         api_response = api_instance.fetch_all_news_articles(is_archive_included=is_archive_included)
         print("The response of NewsApi->fetch_all_news_articles:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_news_article**
 > NewsArticle restore_news_article(id)
 
-Restore news article
+Restore News & Blog post
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.NewsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore news article
+        # Restore News & Blog post
         api_response = api_instance.restore_news_article(id)
         print("The response of NewsApi->restore_news_article:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_news_article**
 > NewsArticle update_news_article(id, wt_news_article_update_params)
 
-Update news article
+Update News & Blog post
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.NewsApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_news_article_update_params = wallet.WTNewsArticleUpdateParams() # WTNewsArticleUpdateParams | 
 
     try:
-        # Update news article
+        # Update News & Blog post
         api_response = api_instance.update_news_article(id, wt_news_article_update_params)
         print("The response of NewsApi->update_news_article:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_news_article_update_params** | [**WTNewsArticleUpdateParams**](WTNewsArticleUpdateParams.md)|  | 
 
 ### Return type

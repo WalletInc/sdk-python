@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wallet_object_prefix** | **str** |  | 
-**wallet_object_name** | **str** |  | 
-**list** | [**List[WTWalletPageViewCount]**](WTWalletPageViewCount.md) |  | 
+**wallet_object_prefix** | **object** |  | 
+**wallet_object_name** | **object** |  | 
+**list** | **object** |  | 
 
 ## Example
 

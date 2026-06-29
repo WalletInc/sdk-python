@@ -9,29 +9,26 @@ Method | HTTP request | Description
 [**create_employee_peer**](EmployeesApi.md#create_employee_peer) | **POST** /v2/employee/peer | Create employee peer
 [**create_file**](EmployeesApi.md#create_file) | **POST** /v2/employee/file/create | Create file
 [**create_media_file**](EmployeesApi.md#create_media_file) | **POST** /v2/employee/mediaFile | Create media file
-[**create_static_voucher_campaigns_group**](EmployeesApi.md#create_static_voucher_campaigns_group) | **POST** /v2/employee/staticVoucherCampaignsGroup | Create static voucher campaign group
 [**delete_document**](EmployeesApi.md#delete_document) | **DELETE** /v2/employee/document/{documentID} | Delete document
 [**delete_media_file**](EmployeesApi.md#delete_media_file) | **DELETE** /v2/employee/mediaFile/{mediaFileID} | Delete media file
-[**download_file**](EmployeesApi.md#download_file) | **GET** /v2/employee/file/download/{fileID} | Fetch URL for file download
+[**download_file**](EmployeesApi.md#download_file) | **GET** /v2/employee/file/download/{fileID} | Get URL for file download
 [**export_club_members**](EmployeesApi.md#export_club_members) | **PUT** /v2/employee/export/members | Export club members
 [**export_merchant_credits**](EmployeesApi.md#export_merchant_credits) | **PUT** /v2/employee/export/merchantCredits | Export merchant credits
 [**export_static_voucher_campaign**](EmployeesApi.md#export_static_voucher_campaign) | **PUT** /v2/employee/export/staticVoucherCampaign/{campaignID} | Export static voucher campaign
-[**failed_import**](EmployeesApi.md#failed_import) | **GET** /v2/employee/file/imports/failed/{fileID} | Fetch URL to download a failed import
-[**fetch_documents**](EmployeesApi.md#fetch_documents) | **GET** /v2/employee/documents/all | Fetch all documents
-[**fetch_dynamic_vouchers**](EmployeesApi.md#fetch_dynamic_vouchers) | **GET** /v2/employee/dynamicVouchers/all | Fetch all dynamic vouchers
-[**fetch_employee_static_voucher_campaign_groups**](EmployeesApi.md#fetch_employee_static_voucher_campaign_groups) | **GET** /v2/employee/staticVoucherCampaignGroups/all | Fetch static voucher campaign groups
-[**fetch_employee_static_voucher_campaigns**](EmployeesApi.md#fetch_employee_static_voucher_campaigns) | **GET** /v2/employee/staticVoucherCampaigns/all | Fetch static voucher campaigns
-[**fetch_media_files**](EmployeesApi.md#fetch_media_files) | **GET** /v2/employee/mediaFiles/all | Fetch all media files
+[**failed_import**](EmployeesApi.md#failed_import) | **GET** /v2/employee/file/imports/failed/{fileID} | Get URL to download a failed import
+[**fetch_documents**](EmployeesApi.md#fetch_documents) | **GET** /v2/employee/documents/all | Get all documents
+[**fetch_dynamic_vouchers**](EmployeesApi.md#fetch_dynamic_vouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers
+[**fetch_media_files**](EmployeesApi.md#fetch_media_files) | **GET** /v2/employee/mediaFiles/all | Get all media files
 [**fetch_merchant**](EmployeesApi.md#fetch_merchant) | **GET** /v2/employee/merchant | Create employee alert
-[**fetch_messages**](EmployeesApi.md#fetch_messages) | **GET** /v2/employee/messages/all | Fetch all messages
-[**fetch_opt_in_list_source**](EmployeesApi.md#fetch_opt_in_list_source) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source
-[**fetch_opt_in_list_sources_created_by_employee**](EmployeesApi.md#fetch_opt_in_list_sources_created_by_employee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
-[**fetch_peer_activity**](EmployeesApi.md#fetch_peer_activity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity
-[**fetch_peers_permissions**](EmployeesApi.md#fetch_peers_permissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions
-[**fetch_profile_info**](EmployeesApi.md#fetch_profile_info) | **GET** /v2/employee | Retrieve employee&#39;s webpages
+[**fetch_messages**](EmployeesApi.md#fetch_messages) | **GET** /v2/employee/messages/all | Get all messages
+[**fetch_opt_in_list_source**](EmployeesApi.md#fetch_opt_in_list_source) | **GET** /v2/employee/optInListSource/{sourceID} | Get opt in list source
+[**fetch_opt_in_list_sources_created_by_employee**](EmployeesApi.md#fetch_opt_in_list_sources_created_by_employee) | **GET** /v2/employee/optInListSources/all | Get all opt in list sources
+[**fetch_peer_activity**](EmployeesApi.md#fetch_peer_activity) | **GET** /v2/employee/peer/activity/{employeeID} | Get peer activity
+[**fetch_peers_permissions**](EmployeesApi.md#fetch_peers_permissions) | **GET** /v2/employee/peer/permissions/{userID} | Get peer permissions
+[**fetch_profile_info**](EmployeesApi.md#fetch_profile_info) | **GET** /v2/employee | Get employee info
 [**import_club_members**](EmployeesApi.md#import_club_members) | **POST** /v2/employee/import/members | Import club members
 [**import_merchant_credits**](EmployeesApi.md#import_merchant_credits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits
-[**load_webpages_of_employee**](EmployeesApi.md#load_webpages_of_employee) | **GET** /v2/employee/webpages/all | Retrieve employee&#39;s webpages
+[**load_webpages_of_employee**](EmployeesApi.md#load_webpages_of_employee) | **GET** /v2/employee/webpages/all | Get employee&#39;s permissions
 [**modify_peers_roles**](EmployeesApi.md#modify_peers_roles) | **PUT** /v2/employee/peer/permissions/{userID} | Modify peer&#39;s roles
 [**presign_file**](EmployeesApi.md#presign_file) | **POST** /v2/employee/file/presign | Presign file for upload
 [**remove_peer_from_all_roles**](EmployeesApi.md#remove_peer_from_all_roles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles
@@ -77,7 +74,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    user_id = None # object | 
+    user_id = 'user_id_example' # str | 
     wt_employee_peer_roles = wallet.WTEmployeePeerRoles() # WTEmployeePeerRoles | 
 
     try:
@@ -96,7 +93,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | [**object**](.md)|  | 
+ **user_id** | **str**|  | 
  **wt_employee_peer_roles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md)|  | 
 
 ### Return type
@@ -403,76 +400,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_static_voucher_campaigns_group**
-> StaticVoucherCampaignGroup create_static_voucher_campaigns_group(wt_employee_create_static_voucher_campaign_group)
-
-Create static voucher campaign group
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.static_voucher_campaign_group import StaticVoucherCampaignGroup
-from wallet.models.wt_employee_create_static_voucher_campaign_group import WTEmployeeCreateStaticVoucherCampaignGroup
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    wt_employee_create_static_voucher_campaign_group = wallet.WTEmployeeCreateStaticVoucherCampaignGroup() # WTEmployeeCreateStaticVoucherCampaignGroup | 
-
-    try:
-        # Create static voucher campaign group
-        api_response = api_instance.create_static_voucher_campaigns_group(wt_employee_create_static_voucher_campaign_group)
-        print("The response of EmployeesApi->create_static_voucher_campaigns_group:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->create_static_voucher_campaigns_group: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create_static_voucher_campaign_group** | [**WTEmployeeCreateStaticVoucherCampaignGroup**](WTEmployeeCreateStaticVoucherCampaignGroup.md)|  | 
-
-### Return type
-
-[**StaticVoucherCampaignGroup**](StaticVoucherCampaignGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **delete_document**
 > Document delete_document(document_id)
 
@@ -498,7 +425,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    document_id = None # object | 
+    document_id = 'document_id_example' # str | 
 
     try:
         # Delete document
@@ -516,7 +443,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_id** | [**object**](.md)|  | 
+ **document_id** | **str**|  | 
 
 ### Return type
 
@@ -567,7 +494,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    media_file_id = None # object | 
+    media_file_id = 'media_file_id_example' # str | 
 
     try:
         # Delete media file
@@ -585,7 +512,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **media_file_id** | [**object**](.md)|  | 
+ **media_file_id** | **str**|  | 
 
 ### Return type
 
@@ -614,7 +541,7 @@ No authorization required
 # **download_file**
 > str download_file(file_id)
 
-Fetch URL for file download
+Get URL for file download
 
 ### Example
 
@@ -638,7 +565,7 @@ with wallet.ApiClient(configuration) as api_client:
     file_id = 'file_id_example' # str | 
 
     try:
-        # Fetch URL for file download
+        # Get URL for file download
         api_response = api_instance.download_file(file_id)
         print("The response of EmployeesApi->download_file:\n")
         pprint(api_response)
@@ -831,7 +758,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    campaign_id = None # object | 
+    campaign_id = 'campaign_id_example' # str | 
 
     try:
         # Export static voucher campaign
@@ -849,7 +776,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | [**object**](.md)|  | 
+ **campaign_id** | **str**|  | 
 
 ### Return type
 
@@ -878,7 +805,7 @@ No authorization required
 # **failed_import**
 > str failed_import(file_id)
 
-Fetch URL to download a failed import
+Get URL to download a failed import
 
 ### Example
 
@@ -902,7 +829,7 @@ with wallet.ApiClient(configuration) as api_client:
     file_id = 'file_id_example' # str | 
 
     try:
-        # Fetch URL to download a failed import
+        # Get URL to download a failed import
         api_response = api_instance.failed_import(file_id)
         print("The response of EmployeesApi->failed_import:\n")
         pprint(api_response)
@@ -946,7 +873,7 @@ No authorization required
 # **fetch_documents**
 > List[Document] fetch_documents(folder=folder)
 
-Fetch all documents
+Get all documents
 
 ### Example
 
@@ -971,7 +898,7 @@ with wallet.ApiClient(configuration) as api_client:
     folder = 'folder_example' # str |  (optional)
 
     try:
-        # Fetch all documents
+        # Get all documents
         api_response = api_instance.fetch_documents(folder=folder)
         print("The response of EmployeesApi->fetch_documents:\n")
         pprint(api_response)
@@ -1015,7 +942,7 @@ No authorization required
 # **fetch_dynamic_vouchers**
 > List[DynamicVoucher] fetch_dynamic_vouchers(is_archive_included=is_archive_included)
 
-Fetch all dynamic vouchers
+Get all dynamic vouchers
 
 ### Example
 
@@ -1040,7 +967,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all dynamic vouchers
+        # Get all dynamic vouchers
         api_response = api_instance.fetch_dynamic_vouchers(is_archive_included=is_archive_included)
         print("The response of EmployeesApi->fetch_dynamic_vouchers:\n")
         pprint(api_response)
@@ -1081,146 +1008,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_employee_static_voucher_campaign_groups**
-> List[StaticVoucherCampaignGroup] fetch_employee_static_voucher_campaign_groups()
-
-Fetch static voucher campaign groups
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.static_voucher_campaign_group import StaticVoucherCampaignGroup
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-
-    try:
-        # Fetch static voucher campaign groups
-        api_response = api_instance.fetch_employee_static_voucher_campaign_groups()
-        print("The response of EmployeesApi->fetch_employee_static_voucher_campaign_groups:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->fetch_employee_static_voucher_campaign_groups: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List[StaticVoucherCampaignGroup]**](StaticVoucherCampaignGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **fetch_employee_static_voucher_campaigns**
-> List[StaticVoucherCampaign] fetch_employee_static_voucher_campaigns(is_archive_included=is_archive_included, source_id=source_id)
-
-Fetch static voucher campaigns
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.static_voucher_campaign import StaticVoucherCampaign
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    is_archive_included = True # bool |  (optional)
-    source_id = 3.4 # float |  (optional)
-
-    try:
-        # Fetch static voucher campaigns
-        api_response = api_instance.fetch_employee_static_voucher_campaigns(is_archive_included=is_archive_included, source_id=source_id)
-        print("The response of EmployeesApi->fetch_employee_static_voucher_campaigns:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->fetch_employee_static_voucher_campaigns: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional] 
- **source_id** | **float**|  | [optional] 
-
-### Return type
-
-[**List[StaticVoucherCampaign]**](StaticVoucherCampaign.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **fetch_media_files**
 > List[MediaFile] fetch_media_files(folder=folder)
 
-Fetch all media files
+Get all media files
 
 ### Example
 
@@ -1245,7 +1036,7 @@ with wallet.ApiClient(configuration) as api_client:
     folder = 'folder_example' # str |  (optional)
 
     try:
-        # Fetch all media files
+        # Get all media files
         api_response = api_instance.fetch_media_files(folder=folder)
         print("The response of EmployeesApi->fetch_media_files:\n")
         pprint(api_response)
@@ -1353,7 +1144,7 @@ No authorization required
 # **fetch_messages**
 > List[Message] fetch_messages()
 
-Fetch all messages
+Get all messages
 
 ### Example
 
@@ -1377,7 +1168,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.EmployeesApi(api_client)
 
     try:
-        # Fetch all messages
+        # Get all messages
         api_response = api_instance.fetch_messages()
         print("The response of EmployeesApi->fetch_messages:\n")
         pprint(api_response)
@@ -1418,7 +1209,7 @@ No authorization required
 # **fetch_opt_in_list_source**
 > OptInListSource fetch_opt_in_list_source(source_id)
 
-Fetch opt in list source
+Get opt in list source
 
 ### Example
 
@@ -1440,10 +1231,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    source_id = None # object | 
+    source_id = 'source_id_example' # str | 
 
     try:
-        # Fetch opt in list source
+        # Get opt in list source
         api_response = api_instance.fetch_opt_in_list_source(source_id)
         print("The response of EmployeesApi->fetch_opt_in_list_source:\n")
         pprint(api_response)
@@ -1458,7 +1249,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source_id** | [**object**](.md)|  | 
+ **source_id** | **str**|  | 
 
 ### Return type
 
@@ -1487,7 +1278,7 @@ No authorization required
 # **fetch_opt_in_list_sources_created_by_employee**
 > List[OptInListSource] fetch_opt_in_list_sources_created_by_employee()
 
-Fetch all opt in list sources
+Get all opt in list sources
 
 ### Example
 
@@ -1511,7 +1302,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.EmployeesApi(api_client)
 
     try:
-        # Fetch all opt in list sources
+        # Get all opt in list sources
         api_response = api_instance.fetch_opt_in_list_sources_created_by_employee()
         print("The response of EmployeesApi->fetch_opt_in_list_sources_created_by_employee:\n")
         pprint(api_response)
@@ -1552,7 +1343,7 @@ No authorization required
 # **fetch_peer_activity**
 > List[EmployeeActivityLog] fetch_peer_activity(employee_id)
 
-Fetch peer activity
+Get peer activity
 
 ### Example
 
@@ -1574,10 +1365,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    employee_id = None # object | 
+    employee_id = 'employee_id_example' # str | 
 
     try:
-        # Fetch peer activity
+        # Get peer activity
         api_response = api_instance.fetch_peer_activity(employee_id)
         print("The response of EmployeesApi->fetch_peer_activity:\n")
         pprint(api_response)
@@ -1592,7 +1383,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employee_id** | [**object**](.md)|  | 
+ **employee_id** | **str**|  | 
 
 ### Return type
 
@@ -1621,7 +1412,7 @@ No authorization required
 # **fetch_peers_permissions**
 > List[object] fetch_peers_permissions(user_id)
 
-Fetch peer permissions
+Get peer permissions
 
 ### Example
 
@@ -1642,10 +1433,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    user_id = None # object | 
+    user_id = 'user_id_example' # str | 
 
     try:
-        # Fetch peer permissions
+        # Get peer permissions
         api_response = api_instance.fetch_peers_permissions(user_id)
         print("The response of EmployeesApi->fetch_peers_permissions:\n")
         pprint(api_response)
@@ -1660,7 +1451,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | [**object**](.md)|  | 
+ **user_id** | **str**|  | 
 
 ### Return type
 
@@ -1689,7 +1480,7 @@ No authorization required
 # **fetch_profile_info**
 > Employee fetch_profile_info()
 
-Retrieve employee's webpages
+Get employee info
 
 ### Example
 
@@ -1713,7 +1504,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.EmployeesApi(api_client)
 
     try:
-        # Retrieve employee's webpages
+        # Get employee info
         api_response = api_instance.fetch_profile_info()
         print("The response of EmployeesApi->fetch_profile_info:\n")
         pprint(api_response)
@@ -1892,7 +1683,7 @@ No authorization required
 # **load_webpages_of_employee**
 > List[Webpage] load_webpages_of_employee()
 
-Retrieve employee's webpages
+Get employee's permissions
 
 ### Example
 
@@ -1916,7 +1707,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.EmployeesApi(api_client)
 
     try:
-        # Retrieve employee's webpages
+        # Get employee's permissions
         api_response = api_instance.load_webpages_of_employee()
         print("The response of EmployeesApi->load_webpages_of_employee:\n")
         pprint(api_response)
@@ -1979,7 +1770,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    user_id = None # object | 
+    user_id = 'user_id_example' # str | 
     wt_employee_peer_roles = wallet.WTEmployeePeerRoles() # WTEmployeePeerRoles | 
 
     try:
@@ -1998,7 +1789,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | [**object**](.md)|  | 
+ **user_id** | **str**|  | 
  **wt_employee_peer_roles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md)|  | 
 
 ### Return type
@@ -2119,7 +1910,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    user_id = None # object | 
+    user_id = 'user_id_example' # str | 
 
     try:
         # Remove peer from all roles
@@ -2137,7 +1928,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | [**object**](.md)|  | 
+ **user_id** | **str**|  | 
 
 ### Return type
 
@@ -2189,7 +1980,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    advertisement_credit_id = None # object | 
+    advertisement_credit_id = 'advertisement_credit_id_example' # str | 
     wt_employee_schedule_simple_sms = wallet.WTEmployeeScheduleSimpleSMS() # WTEmployeeScheduleSimpleSMS | 
 
     try:
@@ -2208,7 +1999,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertisement_credit_id** | [**object**](.md)|  | 
+ **advertisement_credit_id** | **str**|  | 
  **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  | 
 
 ### Return type
@@ -2262,7 +2053,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    dynamic_voucher_id = None # object | 
+    dynamic_voucher_id = 'dynamic_voucher_id_example' # str | 
     wt_employee_schedule_simple_sms = wallet.WTEmployeeScheduleSimpleSMS() # WTEmployeeScheduleSimpleSMS | 
 
     try:
@@ -2281,7 +2072,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | [**object**](.md)|  | 
+ **dynamic_voucher_id** | **str**|  | 
  **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  | 
 
 ### Return type
@@ -2335,7 +2126,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    dynamic_voucher_id = None # object | 
+    dynamic_voucher_id = 'dynamic_voucher_id_example' # str | 
     wt_employee_schedule_simple_smsto_recipient = wallet.WTEmployeeScheduleSimpleSMSToRecipient() # WTEmployeeScheduleSimpleSMSToRecipient | 
 
     try:
@@ -2354,7 +2145,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | [**object**](.md)|  | 
+ **dynamic_voucher_id** | **str**|  | 
  **wt_employee_schedule_simple_smsto_recipient** | [**WTEmployeeScheduleSimpleSMSToRecipient**](WTEmployeeScheduleSimpleSMSToRecipient.md)|  | 
 
 ### Return type
@@ -2618,7 +2409,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    static_voucher_campaign_id = None # object | 
+    static_voucher_campaign_id = 'static_voucher_campaign_id_example' # str | 
     wt_employee_schedule_sms_campaign_broadcast = wallet.WTEmployeeScheduleSMSCampaignBroadcast() # WTEmployeeScheduleSMSCampaignBroadcast | 
 
     try:
@@ -2637,7 +2428,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **static_voucher_campaign_id** | [**object**](.md)|  | 
+ **static_voucher_campaign_id** | **str**|  | 
  **wt_employee_schedule_sms_campaign_broadcast** | [**WTEmployeeScheduleSMSCampaignBroadcast**](WTEmployeeScheduleSMSCampaignBroadcast.md)|  | 
 
 ### Return type
@@ -2818,7 +2609,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
-    help_desk_request_id = None # object | 
+    help_desk_request_id = 'help_desk_request_id_example' # str | 
 
     try:
         # Resolve help desk request
@@ -2836,7 +2627,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **help_desk_request_id** | [**object**](.md)|  | 
+ **help_desk_request_id** | **str**|  | 
 
 ### Return type
 

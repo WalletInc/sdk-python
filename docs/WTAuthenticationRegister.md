@@ -5,28 +5,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**email** | **str** |  | 
-**password** | **str** |  | 
-**hear_about_us** | **str** |  | [optional] 
-**hear_about_us_details** | **str** |  | [optional] 
-**company_name** | **str** |  | 
-**merchant_type** | **str** |  | 
-**street_address1** | **str** |  | 
-**street_address2** | **str** |  | 
-**city** | **str** |  | 
-**state** | **str** |  | 
-**zip** | **str** |  | 
-**country** | **str** |  | 
-**phone_number** | **str** |  | 
-**ein** | **str** |  | [optional] 
-**ga_client_id** | **str** |  | [optional] 
-**ga_measurement_id** | **str** |  | [optional] 
-**recaptcha_token** | **str** |  | [optional] 
-**affiliate_id** | **str** |  | [optional] 
-**first_promoter_tracking_id** | **str** |  | [optional] 
-**first_promoter_affiliate_id** | **str** |  | [optional] 
+**first_name** | **object** |  | 
+**last_name** | **object** |  | 
+**email** | **object** |  | 
+**password** | **object** |  | 
+**hear_about_us** | **object** |  | [optional] 
+**hear_about_us_details** | **object** |  | [optional] 
+**company_name** | **object** |  | 
+**merchant_type** | **object** |  | 
+**street_address1** | **object** |  | 
+**street_address2** | **object** |  | 
+**city** | **object** |  | 
+**state** | **object** |  | 
+**zip** | **object** |  | 
+**country** | **object** |  | 
+**phone_number** | **object** |  | 
+**ein** | **object** |  | [optional] 
+**ga_client_id** | **object** |  | [optional] 
+**ga_measurement_id** | **object** |  | [optional] 
+**recaptcha_token** | **object** |  | [optional] 
+**affiliate_id** | **object** |  | [optional] 
+**first_promoter_tracking_id** | **object** |  | [optional] 
+**first_promoter_affiliate_id** | **object** |  | [optional] 
 
 ## Example
 

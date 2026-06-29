@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**member_identifier** | **str** | Member ID as represented by the merchant | 
-**first_name** | **str** | An optional first name of the member | [optional] 
-**last_name** | **str** | An optional last name of the member | [optional] 
+**member_identifier** | **object** | Member ID as represented by the merchant | 
+**first_name** | **object** | An optional first name of the member | [optional] 
+**last_name** | **object** | An optional last name of the member | [optional] 
 **membership_tier_id** | **str** |  | 
-**mobile_number** | **str** |  | 
-**email** | **str** |  | 
-**birthday** | **str** | Represents the date of birth of the member. Defaults to 0000-00-00, which represents that the date of birth has not been configured | 
-**points_accrued** | **int** | The number of points that the member has accrued | 
-**id** | **str** | The UUID of this record | 
+**mobile_number** | **object** |  | 
+**email** | **object** |  | 
+**birthday** | **object** | Represents the date of birth of the member. Defaults to 0000-00-00, which represents that the date of birth has not been configured | 
+**points_accrued** | **object** | The number of points that the member has accrued | 
+**id** | **object** | The UUID of this record | 
 **member_id** | **str** |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** | The timestamp of when this resource was created | 
-**is_active** | **bool** | Denotes if this resource is active | 
+**created_at** | **object** | The timestamp of when this resource was created | 
+**is_active** | **object** | Denotes if this resource is active | 
 
 ## Example
 

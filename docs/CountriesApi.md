@@ -4,13 +4,13 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetch_all_countries**](CountriesApi.md#fetch_all_countries) | **GET** /system/countries/all | Fetch all countries
+[**fetch_all_countries**](CountriesApi.md#fetch_all_countries) | **GET** /system/countries/all | Get all Countries with ISO abbreviations &amp; Telephone country code prefixes
 
 
 # **fetch_all_countries**
 > List[FetchAllCountries200ResponseInner] fetch_all_countries()
 
-Fetch all countries
+Get all Countries with ISO abbreviations & Telephone country code prefixes
 
 ### Example
 
@@ -34,7 +34,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.CountriesApi(api_client)
 
     try:
-        # Fetch all countries
+        # Get all Countries with ISO abbreviations & Telephone country code prefixes
         api_response = api_instance.fetch_all_countries()
         print("The response of CountriesApi->fetch_all_countries:\n")
         pprint(api_response)

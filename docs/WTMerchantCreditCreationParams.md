@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mobile_number** | **str** |  | 
-**credit_amount** | **int** | The amount that needs to be credited to the member | 
-**member_id** | **str** | MerchantCredit ID as represented by the merchant | [optional] 
+**mobile_number** | **object** |  | 
+**credit_amount** | **object** | The amount that needs to be credited to the member | 
+**member_id** | **object** | MerchantCredit ID as represented by the merchant | [optional] 
 
 ## Example
 

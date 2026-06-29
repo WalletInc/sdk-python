@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_number_id** | **str** |  | 
-**message_template** | **str** |  | 
-**media_urls** | **List[str]** |  | [optional] 
-**broadcast_scheduled_at** | **datetime** |  | 
+**message_template** | **object** |  | 
+**media_urls** | **object** |  | [optional] 
+**broadcast_scheduled_at** | **object** |  | 
 **list_type** | [**WTEmployeeScheduleSimpleSMSListType**](WTEmployeeScheduleSimpleSMSListType.md) |  | 
 **list_id** | **str** |  | 
 

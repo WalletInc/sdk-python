@@ -5,22 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**username** | **str** |  | 
-**email** | **str** |  | 
-**merchant_id** | **str** |  | 
-**employee_id** | **str** |  | 
-**profile_picture_url** | **str** |  | 
-**job_title** | **str** |  | 
-**department** | **str** |  | 
-**merchant_name** | **str** |  | 
-**merchant_currency_abbreviation** | **str** |  | [optional] 
-**merchant_industry** | **str** |  | 
-**custom_domain** | **str** |  | [optional] 
+**id** | **object** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**first_name** | **object** |  | 
+**last_name** | **object** |  | 
+**username** | **object** |  | 
+**email** | **object** |  | 
+**merchant_id** | **object** |  | 
+**employee_id** | **object** |  | 
+**profile_picture_url** | **object** |  | 
+**job_title** | **object** |  | 
+**department** | **object** |  | 
+**merchant_name** | **object** |  | 
+**merchant_currency_abbreviation** | **object** |  | [optional] 
+**merchant_industry** | **object** |  | 
+**custom_domain** | **object** |  | [optional] 
 
 ## Example
 

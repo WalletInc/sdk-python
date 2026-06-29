@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **entertainment** | **List[object]** |  | 
-**grocery** | **List[object]** |  | 
-**service** | **List[object]** |  | 
-**casino** | **List[object]** |  | 
-**hospitality** | **List[object]** |  | 
-**food** | **List[object]** |  | 
-**retail** | **List[object]** |  | 
+**grocery** | **object** |  | 
+**service** | **object** |  | 
+**casino** | **object** |  | 
+**hospitality** | **object** |  | 
+**food** | **object** |  | 
+**retail** | **object** |  | 
 
 ## Example
 

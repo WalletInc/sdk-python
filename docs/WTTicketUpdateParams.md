@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recipient_phone_number** | **str** |  | [optional] 
-**recipient_email_address** | **str** |  | [optional] 
-**recipient_member_id** | **str** |  | [optional] 
-**is_comp** | **bool** |  | [optional] 
-**quantity** | **float** | The number of tickets allocated to the recipient. | [optional] 
+**recipient_phone_number** | **object** |  | [optional] 
+**recipient_email_address** | **object** |  | [optional] 
+**recipient_member_id** | **object** |  | [optional] 
+**is_comp** | **object** |  | [optional] 
+**quantity** | **object** | The number of tickets allocated to the recipient. | [optional] 
 
 ## Example
 

@@ -6,88 +6,88 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**count_all_subscribers**](AnalyticsApi.md#count_all_subscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers
 [**count_authenticated_sessions**](AnalyticsApi.md#count_authenticated_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions
-[**count_distinct_redemptions**](AnalyticsApi.md#count_distinct_redemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Fetch refund amount of campaigns by Campaign
-[**count_help_desk_requests**](AnalyticsApi.md#count_help_desk_requests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests by date
+[**count_distinct_redemptions**](AnalyticsApi.md#count_distinct_redemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Get refund amount of campaigns by Campaign
+[**count_help_desk_requests**](AnalyticsApi.md#count_help_desk_requests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests
 [**count_inbound_messages**](AnalyticsApi.md#count_inbound_messages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers
 [**count_new_sessions**](AnalyticsApi.md#count_new_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions
 [**count_opt_in_list_subscribers_partitioned_by_date**](AnalyticsApi.md#count_opt_in_list_subscribers_partitioned_by_date) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date
 [**count_outbound_messages**](AnalyticsApi.md#count_outbound_messages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers
 [**count_total_sessions**](AnalyticsApi.md#count_total_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions
-[**count_transactions**](AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
-[**count_verified_wallet_page_views**](AnalyticsApi.md#count_verified_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
-[**count_wallet_page_views**](AnalyticsApi.md#count_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
+[**count_transactions**](AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Get refund amount of campaigns by Campaign
+[**count_verified_wallet_page_views**](AnalyticsApi.md#count_verified_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Get wallet object counts within a given time frame that have a valid phone verification token
+[**count_wallet_page_views**](AnalyticsApi.md#count_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Get wallet object counts within a given time frame
 [**exit_link_summary**](AnalyticsApi.md#exit_link_summary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks
 [**fetch_analytics_ad_credits_count_partitioned_by_employee**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_employee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
 [**fetch_analytics_ad_credits_count_partitioned_by_payment_design**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_payment_design) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design
 [**fetch_analytics_ad_credits_count_partitioned_by_value_type**](AnalyticsApi.md#fetch_analytics_ad_credits_count_partitioned_by_value_type) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type
-[**fetch_analytics_ad_credits_redemptions_amount_partitioned_by_ad_credit_id**](AnalyticsApi.md#fetch_analytics_ad_credits_redemptions_amount_partitioned_by_ad_credit_id) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/adCredit | Fetch redemption amount of ad credits by Ad Credit
-[**fetch_analytics_ad_credits_redemptions_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_ad_credits_redemptions_amount_partitioned_by_date) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/date | Fetch redemption amount of ad credits by date
+[**fetch_analytics_ad_credits_redemptions_amount_partitioned_by_ad_credit_id**](AnalyticsApi.md#fetch_analytics_ad_credits_redemptions_amount_partitioned_by_ad_credit_id) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/adCredit | Get redemption amount of ad credits by Ad Credit
+[**fetch_analytics_ad_credits_redemptions_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_ad_credits_redemptions_amount_partitioned_by_date) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/date | Get redemption amount of ad credits by date
 [**fetch_analytics_ad_credits_redemptions_count_partitioned_by_ad_credit_id**](AnalyticsApi.md#fetch_analytics_ad_credits_redemptions_count_partitioned_by_ad_credit_id) | **GET** /v2/analytics/advertisementCredits/redemptions/count/adCredit | Count redemptions of ad credits by Ad Credit
 [**fetch_analytics_ad_credits_redemptions_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_ad_credits_redemptions_count_partitioned_by_date) | **GET** /v2/analytics/advertisementCredits/redemptions/count/date | Count redemptions of ad credits by date
-[**fetch_analytics_ad_credits_refunds_amount_partitioned_by_ad_credit_id**](AnalyticsApi.md#fetch_analytics_ad_credits_refunds_amount_partitioned_by_ad_credit_id) | **GET** /v2/analytics/advertisementCredits/refunds/amount/adCredit | Fetch refund amount of ad credits by Ad Credit
-[**fetch_analytics_ad_credits_refunds_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_ad_credits_refunds_amount_partitioned_by_date) | **GET** /v2/analytics/advertisementCredits/refunds/amount/date | Fetch refund amount of ad credits by date
+[**fetch_analytics_ad_credits_refunds_amount_partitioned_by_ad_credit_id**](AnalyticsApi.md#fetch_analytics_ad_credits_refunds_amount_partitioned_by_ad_credit_id) | **GET** /v2/analytics/advertisementCredits/refunds/amount/adCredit | Get refund amount of ad credits by Ad Credit
+[**fetch_analytics_ad_credits_refunds_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_ad_credits_refunds_amount_partitioned_by_date) | **GET** /v2/analytics/advertisementCredits/refunds/amount/date | Get refund amount of ad credits by date
 [**fetch_analytics_ad_credits_refunds_count_partitioned_by_ad_credit_id**](AnalyticsApi.md#fetch_analytics_ad_credits_refunds_count_partitioned_by_ad_credit_id) | **GET** /v2/analytics/advertisementCredits/refunds/count/adCredit | Count refunds of ad credits by Ad Credit
 [**fetch_analytics_ad_credits_refunds_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_ad_credits_refunds_count_partitioned_by_date) | **GET** /v2/analytics/advertisementCredits/refunds/count/date | Count refunds of ad credits by date
 [**fetch_analytics_ad_credits_scans_count_partitioned_by_ad_credit_id**](AnalyticsApi.md#fetch_analytics_ad_credits_scans_count_partitioned_by_ad_credit_id) | **GET** /v2/analytics/advertisementCredits/scans/count/adCredit | Count scans of ad credits by Ad Credit
 [**fetch_analytics_ad_credits_scans_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_ad_credits_scans_count_partitioned_by_date) | **GET** /v2/analytics/advertisementCredits/scans/count/date | Count scans of ad credits by date
-[**fetch_analytics_campaign_wallet_page_views**](AnalyticsApi.md#fetch_analytics_campaign_wallet_page_views) | **GET** /v2/analytics/walletPageViews/campaign/{campaignID} | Fetch a campaign&#39;s wallet page views
+[**fetch_analytics_campaign_wallet_page_views**](AnalyticsApi.md#fetch_analytics_campaign_wallet_page_views) | **GET** /v2/analytics/walletPageViews/campaign/{campaignID} | Get a campaign&#39;s wallet page views
 [**fetch_analytics_campaigns_count_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_count_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/count/campaign/created | Count created campaigns by campaign
 [**fetch_analytics_campaigns_count_partitioned_by_employee**](AnalyticsApi.md#fetch_analytics_campaigns_count_partitioned_by_employee) | **GET** /v2/analytics/campaigns/count/employee | Count campaigns by employee
 [**fetch_analytics_campaigns_count_partitioned_by_payment_design**](AnalyticsApi.md#fetch_analytics_campaigns_count_partitioned_by_payment_design) | **GET** /v2/analytics/campaigns/count/paymentDesign | Count campaigns by payment design
 [**fetch_analytics_campaigns_count_partitioned_by_value_type**](AnalyticsApi.md#fetch_analytics_campaigns_count_partitioned_by_value_type) | **GET** /v2/analytics/campaigns/count/valueType | Count campaigns by value type
-[**fetch_analytics_campaigns_redemptions_amount_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_redemptions_amount_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/redemptions/amount/campaign | Fetch redemption amount of campaigns by Campaign
-[**fetch_analytics_campaigns_redemptions_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_redemptions_amount_partitioned_by_date) | **GET** /v2/analytics/campaigns/redemptions/amount/date | Fetch redemption amount of campaigns by date
+[**fetch_analytics_campaigns_redemptions_amount_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_redemptions_amount_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/redemptions/amount/campaign | Get redemption amount of campaigns by Campaign
+[**fetch_analytics_campaigns_redemptions_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_redemptions_amount_partitioned_by_date) | **GET** /v2/analytics/campaigns/redemptions/amount/date | Get redemption amount of campaigns by date
 [**fetch_analytics_campaigns_redemptions_count_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_redemptions_count_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/redemptions/count/campaign | Count redemptions of campaigns by Campaign
 [**fetch_analytics_campaigns_redemptions_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_redemptions_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date
-[**fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Fetch refund amount of campaigns by Campaign
-[**fetch_analytics_campaigns_refunds_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_amount_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/amount/date | Fetch refund amount of campaigns by date
-[**fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Fetch refund amount of campaigns by Campaign
-[**fetch_analytics_campaigns_refunds_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/count/date | Fetch refund amount of campaigns by date
+[**fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Get refund amount of campaigns by Campaign
+[**fetch_analytics_campaigns_refunds_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_amount_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/amount/date | Get refund amount of campaigns by date
+[**fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Get refund amount of campaigns by Campaign
+[**fetch_analytics_campaigns_refunds_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/count/date | Get refund amount of campaigns by date
 [**fetch_analytics_delivered_outbound_messages_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_delivered_outbound_messages_count_partitioned_by_date) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date
 [**fetch_analytics_delivered_outbound_messages_count_partitioned_by_phone_number**](AnalyticsApi.md#fetch_analytics_delivered_outbound_messages_count_partitioned_by_phone_number) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number
-[**fetch_analytics_distinct_wallet_sessions**](AnalyticsApi.md#fetch_analytics_distinct_wallet_sessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Fetch distinct wallet sessions
+[**fetch_analytics_distinct_wallet_sessions**](AnalyticsApi.md#fetch_analytics_distinct_wallet_sessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Get distinct wallet sessions
 [**fetch_analytics_dynamic_vouchers_count_partitioned_by_employee**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_count_partitioned_by_employee) | **GET** /v2/analytics/dynamicVouchers/count/employee | Count dynamic vouchers by employee
 [**fetch_analytics_dynamic_vouchers_count_partitioned_by_payment_design**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_count_partitioned_by_payment_design) | **GET** /v2/analytics/dynamicVouchers/count/paymentDesign | Count dynamic vouchers by payment design
-[**fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_date) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/date | Fetch redemption amount of dynamic vouchers by date
-[**fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_dynamic_voucher_id**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_dynamic_voucher_id) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/dynamicVoucher | Fetch redemption amount of dynamic vouchers by dynamic voucher
+[**fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_date) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/date | Get redemption amount of dynamic vouchers by date
+[**fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_dynamic_voucher_id**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_dynamic_voucher_id) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/dynamicVoucher | Get redemption amount of dynamic vouchers by dynamic voucher
 [**fetch_analytics_dynamic_vouchers_redemptions_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_redemptions_count_partitioned_by_date) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/date | Count redemptions of dynamic vouchers by date
 [**fetch_analytics_dynamic_vouchers_redemptions_count_partitioned_by_dynamic_voucher_id**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_redemptions_count_partitioned_by_dynamic_voucher_id) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/dynamicVoucher | Count redemptions of dynamic vouchers by dynamic voucher
-[**fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_date) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/date | Fetch refund amount of dynamic vouchers by date
-[**fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_dynamic_voucher_id**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_dynamic_voucher_id) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/dynamicVoucher | Fetch refund amount of dynamic vouchers by dynamic voucher
+[**fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_date) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/date | Get refund amount of dynamic vouchers by date
+[**fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_dynamic_voucher_id**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_dynamic_voucher_id) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/dynamicVoucher | Get refund amount of dynamic vouchers by dynamic voucher
 [**fetch_analytics_dynamic_vouchers_refunds_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_refunds_count_partitioned_by_date) | **GET** /v2/analytics/dynamicVouchers/refunds/count/date | Count refunds of dynamic vouchers by date
 [**fetch_analytics_dynamic_vouchers_refunds_count_partitioned_by_dynamic_voucher_id**](AnalyticsApi.md#fetch_analytics_dynamic_vouchers_refunds_count_partitioned_by_dynamic_voucher_id) | **GET** /v2/analytics/dynamicVouchers/refunds/count/dynamicVoucher | Count refunds of dynamic vouchers by dynamic voucher
-[**fetch_analytics_help_desk_requests_created_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_help_desk_requests_created_count_partitioned_by_date) | **GET** /v2/analytics/helpdeskrequests/count/date/created | Count help desk requests by date
+[**fetch_analytics_help_desk_requests_created_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_help_desk_requests_created_count_partitioned_by_date) | **GET** /v2/analytics/helpdeskrequests/count/date/created | Count daily help desk requests
 [**fetch_analytics_help_desk_requests_resolved_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_help_desk_requests_resolved_count_partitioned_by_date) | **GET** /v2/analytics/helpdeskrequests/count/date/resolved | Count resolved help desk requests by date
 [**fetch_analytics_help_desk_requests_resolved_count_partitioned_by_employee**](AnalyticsApi.md#fetch_analytics_help_desk_requests_resolved_count_partitioned_by_employee) | **GET** /v2/analytics/helpdeskrequests/count/employee/resolved | Count resolved help desk requests by employee
 [**fetch_analytics_help_desk_requests_unresolved_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_help_desk_requests_unresolved_count_partitioned_by_date) | **GET** /v2/analytics/helpdeskrequests/count/date/unresolved | Count unresolved help desk requests by date
-[**fetch_analytics_item_wallet_page_views**](AnalyticsApi.md#fetch_analytics_item_wallet_page_views) | **GET** /v2/analytics/walletPageViews/item/{itemID} | Fetch wallet page views of item
+[**fetch_analytics_item_wallet_page_views**](AnalyticsApi.md#fetch_analytics_item_wallet_page_views) | **GET** /v2/analytics/walletPageViews/item/{itemID} | Get wallet page views of item
 [**fetch_analytics_member_count**](AnalyticsApi.md#fetch_analytics_member_count) | **GET** /v2/analytics/membership/member/count | Count members
 [**fetch_analytics_merchant_credit_count**](AnalyticsApi.md#fetch_analytics_merchant_credit_count) | **GET** /v2/analytics/membership/merchantCredit/count | Count merchant credits
-[**fetch_analytics_offer_vs_redeemed_amount_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_offer_vs_redeemed_amount_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/amount/campaign/offerVsRedeemed | Fetch offer vs redeemed amount by campaign
+[**fetch_analytics_offer_vs_redeemed_amount_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_offer_vs_redeemed_amount_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/amount/campaign/offerVsRedeemed | Get offer vs redeemed amount by campaign
 [**fetch_analytics_payment_object_broadcasts_created_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_payment_object_broadcasts_created_count_partitioned_by_date) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/created | Count created broadcasts by date
-[**fetch_analytics_payment_object_broadcasts_individual_execution_time_of_completed_broadcasts**](AnalyticsApi.md#fetch_analytics_payment_object_broadcasts_individual_execution_time_of_completed_broadcasts) | **GET** /v2/analytics/paymentObjectBroadcasts/executionTime/completed | Fetch execution time of completed broadcasts
+[**fetch_analytics_payment_object_broadcasts_individual_execution_time_of_completed_broadcasts**](AnalyticsApi.md#fetch_analytics_payment_object_broadcasts_individual_execution_time_of_completed_broadcasts) | **GET** /v2/analytics/paymentObjectBroadcasts/executionTime/completed | Get execution time of completed broadcasts
 [**fetch_analytics_payment_object_broadcasts_scheduled_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_payment_object_broadcasts_scheduled_count_partitioned_by_date) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/scheduled | Count scheduled broadcasts by date
 [**fetch_analytics_payment_object_broadcasts_scheduled_count_partitioned_by_employee**](AnalyticsApi.md#fetch_analytics_payment_object_broadcasts_scheduled_count_partitioned_by_employee) | **GET** /v2/analytics/paymentObjectBroadcasts/count/employee/scheduled | Count scheduled broadcasts by employee
 [**fetch_analytics_payment_object_broadcasts_scheduled_count_partitioned_by_phone_number**](AnalyticsApi.md#fetch_analytics_payment_object_broadcasts_scheduled_count_partitioned_by_phone_number) | **GET** /v2/analytics/paymentObjectBroadcasts/count/phoneNumber/scheduled | Count scheduled broadcasts by phone number
 [**fetch_analytics_payment_object_broadcasts_scheduled_sms_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_payment_object_broadcasts_scheduled_sms_count_partitioned_by_date) | **GET** /v2/analytics/paymentObjectBroadcasts/sms/count/date/scheduled | Count scheduled SMS broadcasts by date
 [**fetch_analytics_sent_outbound_messages_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_sent_outbound_messages_count_partitioned_by_date) | **GET** /v2/analytics/outboundSMS/count/date/sent | Count sent outbound messages by date
 [**fetch_analytics_sent_outbound_messages_count_partitioned_by_phone_number**](AnalyticsApi.md#fetch_analytics_sent_outbound_messages_count_partitioned_by_phone_number) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/sent | Count sent outbound messages by phone number
-[**fetch_analytics_static_voucher_wallet_page_views**](AnalyticsApi.md#fetch_analytics_static_voucher_wallet_page_views) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Fetch a static voucher&#39;s wallet page views
+[**fetch_analytics_static_voucher_wallet_page_views**](AnalyticsApi.md#fetch_analytics_static_voucher_wallet_page_views) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Get a static voucher&#39;s wallet page views
 [**fetch_analytics_tcpa_filters_create_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_tcpa_filters_create_count_partitioned_by_date) | **GET** /v2/analytics/tcpafilters/count/date/create | Count created TCPA Filter entries by date
 [**fetch_analytics_tcpa_filters_delete_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_tcpa_filters_delete_count_partitioned_by_date) | **GET** /v2/analytics/tcpafilters/count/date/delete | Count deleted TCPA Filter entries by date
 [**fetch_analytics_tcpa_stop_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_tcpa_stop_count_partitioned_by_date) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date
 [**fetch_analytics_tcpa_stop_count_partitioned_by_phone_number**](AnalyticsApi.md#fetch_analytics_tcpa_stop_count_partitioned_by_phone_number) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number
-[**fetch_analytics_total_amount_redeemed_per_merchant_credit**](AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Fetch redeemed amount of merchant credits
-[**fetch_analytics_total_amount_redeemed_per_tier**](AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_tier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Fetch redeemed amoun̥t of tiers
-[**fetch_analytics_total_amount_refunded_per_merchant_credit**](AnalyticsApi.md#fetch_analytics_total_amount_refunded_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Fetch refunded amount of merchant credits
-[**fetch_analytics_total_amount_refunded_per_tier**](AnalyticsApi.md#fetch_analytics_total_amount_refunded_per_tier) | **GET** /v2/analytics/membership/tier/amount/refunded | Fetch refunded amount of tiers
+[**fetch_analytics_total_amount_redeemed_per_merchant_credit**](AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Get redeemed amount of merchant credits
+[**fetch_analytics_total_amount_redeemed_per_tier**](AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_tier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amoun̥t of tiers
+[**fetch_analytics_total_amount_refunded_per_merchant_credit**](AnalyticsApi.md#fetch_analytics_total_amount_refunded_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Get refunded amount of merchant credits
+[**fetch_analytics_total_amount_refunded_per_tier**](AnalyticsApi.md#fetch_analytics_total_amount_refunded_per_tier) | **GET** /v2/analytics/membership/tier/amount/refunded | Get refunded amount of tiers
 [**fetch_analytics_total_points_redeemed**](AnalyticsApi.md#fetch_analytics_total_points_redeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points
 [**fetch_analytics_total_points_refunded**](AnalyticsApi.md#fetch_analytics_total_points_refunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
-[**fetch_analytics_wallet_session_activity**](AnalyticsApi.md#fetch_analytics_wallet_session_activity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
-[**fetch_wallet_page_view_by_id**](AnalyticsApi.md#fetch_wallet_page_view_by_id) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
+[**fetch_analytics_wallet_session_activity**](AnalyticsApi.md#fetch_analytics_wallet_session_activity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Get session activity
+[**fetch_wallet_page_view_by_id**](AnalyticsApi.md#fetch_wallet_page_view_by_id) | **GET** /v2/analytics/walletPageViews/activity/{id} | Get session activity by wallet page view ID
 [**referring_sites_summary**](AnalyticsApi.md#referring_sites_summary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites
-[**sum_revenue**](AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
-[**sum_transactions**](AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
+[**sum_revenue**](AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Get refund amount of campaigns by Campaign
+[**sum_transactions**](AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Get refund amount of campaigns by Campaign
 
 
 # **count_all_subscribers**
@@ -240,7 +240,7 @@ No authorization required
 # **count_distinct_redemptions**
 > object count_distinct_redemptions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -267,7 +267,7 @@ with wallet.ApiClient(configuration) as api_client:
     segment_type = 'segment_type_example' # str |  (optional)
 
     try:
-        # Fetch refund amount of campaigns by Campaign
+        # Get refund amount of campaigns by Campaign
         api_response = api_instance.count_distinct_redemptions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
         print("The response of AnalyticsApi->count_distinct_redemptions:\n")
         pprint(api_response)
@@ -314,7 +314,7 @@ No authorization required
 # **count_help_desk_requests**
 > object count_help_desk_requests(start_date, end_date, locale, timezone, is_resolved=is_resolved)
 
-Count help desk requests by date
+Count help desk requests
 
 ### Example
 
@@ -342,7 +342,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_resolved = True # bool |  (optional)
 
     try:
-        # Count help desk requests by date
+        # Count help desk requests
         api_response = api_instance.count_help_desk_requests(start_date, end_date, locale, timezone, is_resolved=is_resolved)
         print("The response of AnalyticsApi->count_help_desk_requests:\n")
         pprint(api_response)
@@ -742,7 +742,7 @@ No authorization required
 # **count_transactions**
 > object count_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -769,7 +769,7 @@ with wallet.ApiClient(configuration) as api_client:
     segment_type = 'segment_type_example' # str |  (optional)
 
     try:
-        # Fetch refund amount of campaigns by Campaign
+        # Get refund amount of campaigns by Campaign
         api_response = api_instance.count_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
         print("The response of AnalyticsApi->count_transactions:\n")
         pprint(api_response)
@@ -816,7 +816,7 @@ No authorization required
 # **count_verified_wallet_page_views**
 > List[WTWalletObjectPrefixCounts] count_verified_wallet_page_views(start_date, end_date)
 
-Fetch wallet object counts within a given time frame that have a valid phone verification token
+Get wallet object counts within a given time frame that have a valid phone verification token
 
 ### Example
 
@@ -842,7 +842,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch wallet object counts within a given time frame that have a valid phone verification token
+        # Get wallet object counts within a given time frame that have a valid phone verification token
         api_response = api_instance.count_verified_wallet_page_views(start_date, end_date)
         print("The response of AnalyticsApi->count_verified_wallet_page_views:\n")
         pprint(api_response)
@@ -887,7 +887,7 @@ No authorization required
 # **count_wallet_page_views**
 > List[WTWalletObjectPrefixCounts] count_wallet_page_views(start_date, end_date)
 
-Fetch wallet object counts within a given time frame
+Get wallet object counts within a given time frame
 
 ### Example
 
@@ -913,7 +913,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch wallet object counts within a given time frame
+        # Get wallet object counts within a given time frame
         api_response = api_instance.count_wallet_page_views(start_date, end_date)
         print("The response of AnalyticsApi->count_wallet_page_views:\n")
         pprint(api_response)
@@ -1238,7 +1238,7 @@ No authorization required
 # **fetch_analytics_ad_credits_redemptions_amount_partitioned_by_ad_credit_id**
 > List[object] fetch_analytics_ad_credits_redemptions_amount_partitioned_by_ad_credit_id(start_date, end_date)
 
-Fetch redemption amount of ad credits by Ad Credit
+Get redemption amount of ad credits by Ad Credit
 
 ### Example
 
@@ -1263,7 +1263,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch redemption amount of ad credits by Ad Credit
+        # Get redemption amount of ad credits by Ad Credit
         api_response = api_instance.fetch_analytics_ad_credits_redemptions_amount_partitioned_by_ad_credit_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_ad_credits_redemptions_amount_partitioned_by_ad_credit_id:\n")
         pprint(api_response)
@@ -1308,7 +1308,7 @@ No authorization required
 # **fetch_analytics_ad_credits_redemptions_amount_partitioned_by_date**
 > object fetch_analytics_ad_credits_redemptions_amount_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Fetch redemption amount of ad credits by date
+Get redemption amount of ad credits by date
 
 ### Example
 
@@ -1335,7 +1335,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch redemption amount of ad credits by date
+        # Get redemption amount of ad credits by date
         api_response = api_instance.fetch_analytics_ad_credits_redemptions_amount_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_ad_credits_redemptions_amount_partitioned_by_date:\n")
         pprint(api_response)
@@ -1526,7 +1526,7 @@ No authorization required
 # **fetch_analytics_ad_credits_refunds_amount_partitioned_by_ad_credit_id**
 > List[object] fetch_analytics_ad_credits_refunds_amount_partitioned_by_ad_credit_id(start_date, end_date)
 
-Fetch refund amount of ad credits by Ad Credit
+Get refund amount of ad credits by Ad Credit
 
 ### Example
 
@@ -1551,7 +1551,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch refund amount of ad credits by Ad Credit
+        # Get refund amount of ad credits by Ad Credit
         api_response = api_instance.fetch_analytics_ad_credits_refunds_amount_partitioned_by_ad_credit_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_ad_credits_refunds_amount_partitioned_by_ad_credit_id:\n")
         pprint(api_response)
@@ -1596,7 +1596,7 @@ No authorization required
 # **fetch_analytics_ad_credits_refunds_amount_partitioned_by_date**
 > object fetch_analytics_ad_credits_refunds_amount_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Fetch refund amount of ad credits by date
+Get refund amount of ad credits by date
 
 ### Example
 
@@ -1623,7 +1623,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch refund amount of ad credits by date
+        # Get refund amount of ad credits by date
         api_response = api_instance.fetch_analytics_ad_credits_refunds_amount_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_ad_credits_refunds_amount_partitioned_by_date:\n")
         pprint(api_response)
@@ -1958,7 +1958,7 @@ No authorization required
 # **fetch_analytics_campaign_wallet_page_views**
 > List[WTWalletPageView] fetch_analytics_campaign_wallet_page_views(campaign_id)
 
-Fetch a campaign's wallet page views
+Get a campaign's wallet page views
 
 ### Example
 
@@ -1980,10 +1980,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.AnalyticsApi(api_client)
-    campaign_id = None # object | 
+    campaign_id = 'campaign_id_example' # str | 
 
     try:
-        # Fetch a campaign's wallet page views
+        # Get a campaign's wallet page views
         api_response = api_instance.fetch_analytics_campaign_wallet_page_views(campaign_id)
         print("The response of AnalyticsApi->fetch_analytics_campaign_wallet_page_views:\n")
         pprint(api_response)
@@ -1998,7 +1998,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | [**object**](.md)|  | 
+ **campaign_id** | **str**|  | 
 
 ### Return type
 
@@ -2307,7 +2307,7 @@ No authorization required
 # **fetch_analytics_campaigns_redemptions_amount_partitioned_by_campaign_id**
 > List[object] fetch_analytics_campaigns_redemptions_amount_partitioned_by_campaign_id(start_date, end_date)
 
-Fetch redemption amount of campaigns by Campaign
+Get redemption amount of campaigns by Campaign
 
 ### Example
 
@@ -2332,7 +2332,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch redemption amount of campaigns by Campaign
+        # Get redemption amount of campaigns by Campaign
         api_response = api_instance.fetch_analytics_campaigns_redemptions_amount_partitioned_by_campaign_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_campaigns_redemptions_amount_partitioned_by_campaign_id:\n")
         pprint(api_response)
@@ -2377,7 +2377,7 @@ No authorization required
 # **fetch_analytics_campaigns_redemptions_amount_partitioned_by_date**
 > object fetch_analytics_campaigns_redemptions_amount_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Fetch redemption amount of campaigns by date
+Get redemption amount of campaigns by date
 
 ### Example
 
@@ -2404,7 +2404,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch redemption amount of campaigns by date
+        # Get redemption amount of campaigns by date
         api_response = api_instance.fetch_analytics_campaigns_redemptions_amount_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_campaigns_redemptions_amount_partitioned_by_date:\n")
         pprint(api_response)
@@ -2595,7 +2595,7 @@ No authorization required
 # **fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id**
 > List[object] fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id(start_date, end_date)
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -2620,7 +2620,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch refund amount of campaigns by Campaign
+        # Get refund amount of campaigns by Campaign
         api_response = api_instance.fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id:\n")
         pprint(api_response)
@@ -2665,7 +2665,7 @@ No authorization required
 # **fetch_analytics_campaigns_refunds_amount_partitioned_by_date**
 > object fetch_analytics_campaigns_refunds_amount_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Fetch refund amount of campaigns by date
+Get refund amount of campaigns by date
 
 ### Example
 
@@ -2692,7 +2692,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch refund amount of campaigns by date
+        # Get refund amount of campaigns by date
         api_response = api_instance.fetch_analytics_campaigns_refunds_amount_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_campaigns_refunds_amount_partitioned_by_date:\n")
         pprint(api_response)
@@ -2739,7 +2739,7 @@ No authorization required
 # **fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id**
 > List[object] fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id(start_date, end_date)
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -2764,7 +2764,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch refund amount of campaigns by Campaign
+        # Get refund amount of campaigns by Campaign
         api_response = api_instance.fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id:\n")
         pprint(api_response)
@@ -2809,7 +2809,7 @@ No authorization required
 # **fetch_analytics_campaigns_refunds_count_partitioned_by_date**
 > object fetch_analytics_campaigns_refunds_count_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Fetch refund amount of campaigns by date
+Get refund amount of campaigns by date
 
 ### Example
 
@@ -2836,7 +2836,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch refund amount of campaigns by date
+        # Get refund amount of campaigns by date
         api_response = api_instance.fetch_analytics_campaigns_refunds_count_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_campaigns_refunds_count_partitioned_by_date:\n")
         pprint(api_response)
@@ -3027,7 +3027,7 @@ No authorization required
 # **fetch_analytics_distinct_wallet_sessions**
 > object fetch_analytics_distinct_wallet_sessions(start_date=start_date, end_date=end_date)
 
-Fetch distinct wallet sessions
+Get distinct wallet sessions
 
 ### Example
 
@@ -3052,7 +3052,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
-        # Fetch distinct wallet sessions
+        # Get distinct wallet sessions
         api_response = api_instance.fetch_analytics_distinct_wallet_sessions(start_date=start_date, end_date=end_date)
         print("The response of AnalyticsApi->fetch_analytics_distinct_wallet_sessions:\n")
         pprint(api_response)
@@ -3237,7 +3237,7 @@ No authorization required
 # **fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_date**
 > object fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Fetch redemption amount of dynamic vouchers by date
+Get redemption amount of dynamic vouchers by date
 
 ### Example
 
@@ -3264,7 +3264,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch redemption amount of dynamic vouchers by date
+        # Get redemption amount of dynamic vouchers by date
         api_response = api_instance.fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_date:\n")
         pprint(api_response)
@@ -3311,7 +3311,7 @@ No authorization required
 # **fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_dynamic_voucher_id**
 > List[object] fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_dynamic_voucher_id(start_date, end_date)
 
-Fetch redemption amount of dynamic vouchers by dynamic voucher
+Get redemption amount of dynamic vouchers by dynamic voucher
 
 ### Example
 
@@ -3336,7 +3336,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch redemption amount of dynamic vouchers by dynamic voucher
+        # Get redemption amount of dynamic vouchers by dynamic voucher
         api_response = api_instance.fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_dynamic_voucher_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_dynamic_vouchers_redemptions_amount_partitioned_by_dynamic_voucher_id:\n")
         pprint(api_response)
@@ -3525,7 +3525,7 @@ No authorization required
 # **fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_date**
 > object fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Fetch refund amount of dynamic vouchers by date
+Get refund amount of dynamic vouchers by date
 
 ### Example
 
@@ -3552,7 +3552,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch refund amount of dynamic vouchers by date
+        # Get refund amount of dynamic vouchers by date
         api_response = api_instance.fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_date:\n")
         pprint(api_response)
@@ -3599,7 +3599,7 @@ No authorization required
 # **fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_dynamic_voucher_id**
 > List[object] fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_dynamic_voucher_id(start_date, end_date)
 
-Fetch refund amount of dynamic vouchers by dynamic voucher
+Get refund amount of dynamic vouchers by dynamic voucher
 
 ### Example
 
@@ -3624,7 +3624,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch refund amount of dynamic vouchers by dynamic voucher
+        # Get refund amount of dynamic vouchers by dynamic voucher
         api_response = api_instance.fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_dynamic_voucher_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_dynamic_vouchers_refunds_amount_partitioned_by_dynamic_voucher_id:\n")
         pprint(api_response)
@@ -3813,7 +3813,7 @@ No authorization required
 # **fetch_analytics_help_desk_requests_created_count_partitioned_by_date**
 > object fetch_analytics_help_desk_requests_created_count_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Count help desk requests by date
+Count daily help desk requests
 
 ### Example
 
@@ -3840,7 +3840,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Count help desk requests by date
+        # Count daily help desk requests
         api_response = api_instance.fetch_analytics_help_desk_requests_created_count_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_help_desk_requests_created_count_partitioned_by_date:\n")
         pprint(api_response)
@@ -4105,7 +4105,7 @@ No authorization required
 # **fetch_analytics_item_wallet_page_views**
 > object fetch_analytics_item_wallet_page_views(item_id)
 
-Fetch wallet page views of item
+Get wallet page views of item
 
 ### Example
 
@@ -4129,7 +4129,7 @@ with wallet.ApiClient(configuration) as api_client:
     item_id = 'item_id_example' # str | 
 
     try:
-        # Fetch wallet page views of item
+        # Get wallet page views of item
         api_response = api_instance.fetch_analytics_item_wallet_page_views(item_id)
         print("The response of AnalyticsApi->fetch_analytics_item_wallet_page_views:\n")
         pprint(api_response)
@@ -4322,7 +4322,7 @@ No authorization required
 # **fetch_analytics_offer_vs_redeemed_amount_partitioned_by_campaign_id**
 > List[object] fetch_analytics_offer_vs_redeemed_amount_partitioned_by_campaign_id(start_date, end_date)
 
-Fetch offer vs redeemed amount by campaign
+Get offer vs redeemed amount by campaign
 
 ### Example
 
@@ -4347,7 +4347,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch offer vs redeemed amount by campaign
+        # Get offer vs redeemed amount by campaign
         api_response = api_instance.fetch_analytics_offer_vs_redeemed_amount_partitioned_by_campaign_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_offer_vs_redeemed_amount_partitioned_by_campaign_id:\n")
         pprint(api_response)
@@ -4466,7 +4466,7 @@ No authorization required
 # **fetch_analytics_payment_object_broadcasts_individual_execution_time_of_completed_broadcasts**
 > object fetch_analytics_payment_object_broadcasts_individual_execution_time_of_completed_broadcasts(start_date, end_date)
 
-Fetch execution time of completed broadcasts
+Get execution time of completed broadcasts
 
 ### Example
 
@@ -4491,7 +4491,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch execution time of completed broadcasts
+        # Get execution time of completed broadcasts
         api_response = api_instance.fetch_analytics_payment_object_broadcasts_individual_execution_time_of_completed_broadcasts(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_payment_object_broadcasts_individual_execution_time_of_completed_broadcasts:\n")
         pprint(api_response)
@@ -4968,7 +4968,7 @@ No authorization required
 # **fetch_analytics_static_voucher_wallet_page_views**
 > List[WTWalletPageView] fetch_analytics_static_voucher_wallet_page_views(voucher_id)
 
-Fetch a static voucher's wallet page views
+Get a static voucher's wallet page views
 
 ### Example
 
@@ -4990,10 +4990,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.AnalyticsApi(api_client)
-    voucher_id = None # object | 
+    voucher_id = 'voucher_id_example' # str | 
 
     try:
-        # Fetch a static voucher's wallet page views
+        # Get a static voucher's wallet page views
         api_response = api_instance.fetch_analytics_static_voucher_wallet_page_views(voucher_id)
         print("The response of AnalyticsApi->fetch_analytics_static_voucher_wallet_page_views:\n")
         pprint(api_response)
@@ -5008,7 +5008,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **voucher_id** | [**object**](.md)|  | 
+ **voucher_id** | **str**|  | 
 
 ### Return type
 
@@ -5321,7 +5321,7 @@ No authorization required
 # **fetch_analytics_total_amount_redeemed_per_merchant_credit**
 > object fetch_analytics_total_amount_redeemed_per_merchant_credit(start_date, end_date, locale, timezone)
 
-Fetch redeemed amount of merchant credits
+Get redeemed amount of merchant credits
 
 ### Example
 
@@ -5348,7 +5348,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch redeemed amount of merchant credits
+        # Get redeemed amount of merchant credits
         api_response = api_instance.fetch_analytics_total_amount_redeemed_per_merchant_credit(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_total_amount_redeemed_per_merchant_credit:\n")
         pprint(api_response)
@@ -5395,7 +5395,7 @@ No authorization required
 # **fetch_analytics_total_amount_redeemed_per_tier**
 > List[MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate] fetch_analytics_total_amount_redeemed_per_tier(start_date, end_date, locale, timezone)
 
-Fetch redeemed amoun̥t of tiers
+Get redeemed amoun̥t of tiers
 
 ### Example
 
@@ -5423,7 +5423,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch redeemed amoun̥t of tiers
+        # Get redeemed amoun̥t of tiers
         api_response = api_instance.fetch_analytics_total_amount_redeemed_per_tier(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_total_amount_redeemed_per_tier:\n")
         pprint(api_response)
@@ -5470,7 +5470,7 @@ No authorization required
 # **fetch_analytics_total_amount_refunded_per_merchant_credit**
 > object fetch_analytics_total_amount_refunded_per_merchant_credit(start_date, end_date, locale, timezone)
 
-Fetch refunded amount of merchant credits
+Get refunded amount of merchant credits
 
 ### Example
 
@@ -5497,7 +5497,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch refunded amount of merchant credits
+        # Get refunded amount of merchant credits
         api_response = api_instance.fetch_analytics_total_amount_refunded_per_merchant_credit(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_total_amount_refunded_per_merchant_credit:\n")
         pprint(api_response)
@@ -5544,7 +5544,7 @@ No authorization required
 # **fetch_analytics_total_amount_refunded_per_tier**
 > List[MSAnalyticsMembershipTierAmountRefundedPartitionedByDate] fetch_analytics_total_amount_refunded_per_tier(start_date, end_date, locale, timezone)
 
-Fetch refunded amount of tiers
+Get refunded amount of tiers
 
 ### Example
 
@@ -5572,7 +5572,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Fetch refunded amount of tiers
+        # Get refunded amount of tiers
         api_response = api_instance.fetch_analytics_total_amount_refunded_per_tier(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_total_amount_refunded_per_tier:\n")
         pprint(api_response)
@@ -5769,7 +5769,7 @@ No authorization required
 # **fetch_analytics_wallet_session_activity**
 > List[WTWalletPageView] fetch_analytics_wallet_session_activity(session_id)
 
-Fetch session activity
+Get session activity
 
 ### Example
 
@@ -5794,7 +5794,7 @@ with wallet.ApiClient(configuration) as api_client:
     session_id = 'session_id_example' # str | 
 
     try:
-        # Fetch session activity
+        # Get session activity
         api_response = api_instance.fetch_analytics_wallet_session_activity(session_id)
         print("The response of AnalyticsApi->fetch_analytics_wallet_session_activity:\n")
         pprint(api_response)
@@ -5838,7 +5838,7 @@ No authorization required
 # **fetch_wallet_page_view_by_id**
 > WalletPageView fetch_wallet_page_view_by_id(id)
 
-Fetch session activity by wallet page view ID
+Get session activity by wallet page view ID
 
 ### Example
 
@@ -5863,7 +5863,7 @@ with wallet.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
 
     try:
-        # Fetch session activity by wallet page view ID
+        # Get session activity by wallet page view ID
         api_response = api_instance.fetch_wallet_page_view_by_id(id)
         print("The response of AnalyticsApi->fetch_wallet_page_view_by_id:\n")
         pprint(api_response)
@@ -5977,7 +5977,7 @@ No authorization required
 # **sum_revenue**
 > object sum_revenue(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -6004,7 +6004,7 @@ with wallet.ApiClient(configuration) as api_client:
     segment_type = 'segment_type_example' # str |  (optional)
 
     try:
-        # Fetch refund amount of campaigns by Campaign
+        # Get refund amount of campaigns by Campaign
         api_response = api_instance.sum_revenue(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
         print("The response of AnalyticsApi->sum_revenue:\n")
         pprint(api_response)
@@ -6051,7 +6051,7 @@ No authorization required
 # **sum_transactions**
 > object sum_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -6078,7 +6078,7 @@ with wallet.ApiClient(configuration) as api_client:
     segment_type = 'segment_type_example' # str |  (optional)
 
     try:
-        # Fetch refund amount of campaigns by Campaign
+        # Get refund amount of campaigns by Campaign
         api_response = api_instance.sum_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
         print("The response of AnalyticsApi->sum_transactions:\n")
         pprint(api_response)

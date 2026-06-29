@@ -6,11 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_role**](SystemApi.md#create_role) | **POST** /v2/system/roles | Create role
 [**delete_role**](SystemApi.md#delete_role) | **DELETE** /v2/system/roles/{roleID} | Delete role
-[**fetch_audit_log_of_roles**](SystemApi.md#fetch_audit_log_of_roles) | **GET** /v2/system/roles/auditLog | Fetch role&#39;s audit log
-[**fetch_employees_with_role**](SystemApi.md#fetch_employees_with_role) | **GET** /v2/system/roles/employees/{roleID} | Fetch employees with role
-[**fetch_webpages_for_role**](SystemApi.md#fetch_webpages_for_role) | **GET** /v2/system/roles/webpages/{roleID} | Fetch webpages for role
+[**fetch_audit_log_of_roles**](SystemApi.md#fetch_audit_log_of_roles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log
+[**fetch_employees_with_role**](SystemApi.md#fetch_employees_with_role) | **GET** /v2/system/roles/employees/{roleID} | Get employees with role
+[**fetch_webpages_for_role**](SystemApi.md#fetch_webpages_for_role) | **GET** /v2/system/roles/webpages/{roleID} | Get webpages for role
 [**get_payment_prefixes**](SystemApi.md#get_payment_prefixes) | **GET** /v2/system/prefixes | Get payment prefixes
-[**load_role**](SystemApi.md#load_role) | **GET** /v2/system/roles/{roleID} | Fetch role
+[**load_role**](SystemApi.md#load_role) | **GET** /v2/system/roles/{roleID} | Get role
 [**save_role**](SystemApi.md#save_role) | **PUT** /v2/system/roles/{roleID} | Update role
 
 
@@ -155,7 +155,7 @@ No authorization required
 # **fetch_audit_log_of_roles**
 > List[RoleAuditLog] fetch_audit_log_of_roles(start_date_time, end_date_time)
 
-Fetch role's audit log
+Get role's audit log
 
 ### Example
 
@@ -181,7 +181,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Fetch role's audit log
+        # Get role's audit log
         api_response = api_instance.fetch_audit_log_of_roles(start_date_time, end_date_time)
         print("The response of SystemApi->fetch_audit_log_of_roles:\n")
         pprint(api_response)
@@ -226,7 +226,7 @@ No authorization required
 # **fetch_employees_with_role**
 > List[Employee] fetch_employees_with_role(role_id)
 
-Fetch employees with role
+Get employees with role
 
 ### Example
 
@@ -251,7 +251,7 @@ with wallet.ApiClient(configuration) as api_client:
     role_id = 'role_id_example' # str | 
 
     try:
-        # Fetch employees with role
+        # Get employees with role
         api_response = api_instance.fetch_employees_with_role(role_id)
         print("The response of SystemApi->fetch_employees_with_role:\n")
         pprint(api_response)
@@ -295,7 +295,7 @@ No authorization required
 # **fetch_webpages_for_role**
 > List[Webpage] fetch_webpages_for_role(role_id)
 
-Fetch webpages for role
+Get webpages for role
 
 ### Example
 
@@ -320,7 +320,7 @@ with wallet.ApiClient(configuration) as api_client:
     role_id = 'role_id_example' # str | 
 
     try:
-        # Fetch webpages for role
+        # Get webpages for role
         api_response = api_instance.fetch_webpages_for_role(role_id)
         print("The response of SystemApi->fetch_webpages_for_role:\n")
         pprint(api_response)
@@ -428,7 +428,7 @@ No authorization required
 # **load_role**
 > WTRole load_role(role_id)
 
-Fetch role
+Get role
 
 ### Example
 
@@ -453,7 +453,7 @@ with wallet.ApiClient(configuration) as api_client:
     role_id = 'role_id_example' # str | 
 
     try:
-        # Fetch role
+        # Get role
         api_response = api_instance.load_role(role_id)
         print("The response of SystemApi->load_role:\n")
         pprint(api_response)

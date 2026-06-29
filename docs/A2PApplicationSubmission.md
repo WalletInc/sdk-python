@@ -5,42 +5,42 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_twilio_terms_read** | **bool** |  | 
-**is_privacy_policy_on_website** | **bool** |  | 
-**is_tos_on_website** | **bool** |  | 
-**is_stop_understood** | **bool** |  | 
-**is_manual_read** | **bool** |  | 
-**is_ctia_short_code_read** | **bool** |  | 
-**is_standards_understood** | **bool** |  | 
-**is_short_code_understood** | **bool** |  | 
-**is_opt_in_out_understood** | **bool** |  | 
-**is_short_code_transfer_understood** | **bool** |  | 
-**is_pricing_understood** | **bool** |  | 
-**is_short_code_timeline_understood** | **bool** |  | 
-**business_name** | **str** |  | 
+**is_twilio_terms_read** | **object** |  | 
+**is_privacy_policy_on_website** | **object** |  | 
+**is_tos_on_website** | **object** |  | 
+**is_stop_understood** | **object** |  | 
+**is_manual_read** | **object** |  | 
+**is_ctia_short_code_read** | **object** |  | 
+**is_standards_understood** | **object** |  | 
+**is_short_code_understood** | **object** |  | 
+**is_opt_in_out_understood** | **object** |  | 
+**is_short_code_transfer_understood** | **object** |  | 
+**is_pricing_understood** | **object** |  | 
+**is_short_code_timeline_understood** | **object** |  | 
+**business_name** | **object** |  | 
 **business_type** | [**BusinessType**](BusinessType.md) |  | 
 **business_classification** | [**BusinessClassification**](BusinessClassification.md) |  | 
 **business_industry** | [**BusinessIndustry**](BusinessIndustry.md) |  | 
 **tax_id_type** | [**BusinessRegistrationIdentifier**](BusinessRegistrationIdentifier.md) |  | 
-**tax_id** | **str** |  | 
-**website_url** | **str** |  | 
-**social_media_url** | **str** |  | 
-**regions_of_operation** | [**List[BusinessRegionsOfOperation]**](BusinessRegionsOfOperation.md) |  | 
+**tax_id** | **object** |  | 
+**website_url** | **object** |  | 
+**social_media_url** | **object** |  | 
+**regions_of_operation** | **object** |  | 
 **stock_exchange** | [**BusinessStockExchanges**](BusinessStockExchanges.md) |  | [optional] 
-**stock_ticker** | **str** |  | [optional] 
-**messaging_volume_high** | **bool** |  | 
-**address1** | **str** |  | 
-**address2** | **str** |  | [optional] 
-**city** | **str** |  | 
-**state** | **str** |  | 
-**postal_code** | **str** |  | 
-**country** | **str** |  | 
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**email** | **str** |  | 
-**job_title** | **str** |  | 
+**stock_ticker** | **object** |  | [optional] 
+**messaging_volume_high** | **object** |  | 
+**address1** | **object** |  | 
+**address2** | **object** |  | [optional] 
+**city** | **object** |  | 
+**state** | **object** |  | 
+**postal_code** | **object** |  | 
+**country** | **object** |  | 
+**first_name** | **object** |  | 
+**last_name** | **object** |  | 
+**email** | **object** |  | 
+**job_title** | **object** |  | 
 **job_position** | [**JobPosition**](JobPosition.md) |  | 
-**phone_number** | **str** |  | 
+**phone_number** | **object** |  | 
 
 ## Example
 

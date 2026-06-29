@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_date** | **str** | Represents the date of amount redemption | 
-**amount** | **int** | Represents the amount redeemed on that particular date | 
+**var_date** | **object** | Represents the date of amount redemption | 
+**amount** | **object** | Represents the amount redeemed on that particular date | 
 
 ## Example
 

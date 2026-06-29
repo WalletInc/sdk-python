@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**email** | **str** |  | 
-**phone_number** | **str** |  | 
-**is_public_representative** | **bool** |  | 
-**wallet_sequence_number** | **int** |  | 
-**employee_id** | **str** |  | 
-**job_title** | **str** |  | 
-**department** | **str** |  | 
+**first_name** | **object** |  | 
+**last_name** | **object** |  | 
+**email** | **object** |  | 
+**phone_number** | **object** |  | 
+**is_public_representative** | **object** |  | 
+**wallet_sequence_number** | **object** |  | 
+**employee_id** | **object** |  | 
+**job_title** | **object** |  | 
+**department** | **object** |  | 
 **schedule_start_day** | [**EmployeeScheduleStartDay**](EmployeeScheduleStartDay.md) |  | [optional] 
 **schedule_start_hour** | [**EmployeeScheduleStartHour**](EmployeeScheduleStartHour.md) |  | [optional] 
 **schedule_start_minute** | [**EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional] 

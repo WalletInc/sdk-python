@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_service**](ServicesApi.md#archive_service) | **DELETE** /v2/services/{id} | Archive service
-[**create_service**](ServicesApi.md#create_service) | **POST** /v2/services | Create service
-[**fetch_all_services**](ServicesApi.md#fetch_all_services) | **GET** /v2/services/all | Fetch all services
-[**restore_service**](ServicesApi.md#restore_service) | **PATCH** /v2/services/{id} | Restore service
-[**update_service**](ServicesApi.md#update_service) | **PUT** /v2/services/{id} | Update service
+[**archive_service**](ServicesApi.md#archive_service) | **DELETE** /v2/services/{id} | Archive Service
+[**create_service**](ServicesApi.md#create_service) | **POST** /v2/services | Create Service
+[**fetch_all_services**](ServicesApi.md#fetch_all_services) | **GET** /v2/services/all | Get all Services
+[**restore_service**](ServicesApi.md#restore_service) | **PATCH** /v2/services/{id} | Restore Service
+[**update_service**](ServicesApi.md#update_service) | **PUT** /v2/services/{id} | Update Service
 
 
 # **archive_service**
 > Service archive_service(id)
 
-Archive service
+Archive Service
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.ServicesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive service
+        # Archive Service
         api_response = api_instance.archive_service(id)
         print("The response of ServicesApi->archive_service:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_service**
 > Service create_service(wt_service_create_params)
 
-Create service
+Create Service
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_service_create_params = wallet.WTServiceCreateParams() # WTServiceCreateParams | 
 
     try:
-        # Create service
+        # Create Service
         api_response = api_instance.create_service(wt_service_create_params)
         print("The response of ServicesApi->create_service:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_services**
 > object fetch_all_services(is_archive_included=is_archive_included)
 
-Fetch all services
+Get all Services
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all services
+        # Get all Services
         api_response = api_instance.fetch_all_services(is_archive_included=is_archive_included)
         print("The response of ServicesApi->fetch_all_services:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_service**
 > Service restore_service(id)
 
-Restore service
+Restore Service
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.ServicesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore service
+        # Restore Service
         api_response = api_instance.restore_service(id)
         print("The response of ServicesApi->restore_service:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_service**
 > Service update_service(id, wt_service_update_params)
 
-Update service
+Update Service
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.ServicesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_service_update_params = wallet.WTServiceUpdateParams() # WTServiceUpdateParams | 
 
     try:
-        # Update service
+        # Update Service
         api_response = api_instance.update_service(id, wt_service_update_params)
         print("The response of ServicesApi->update_service:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_service_update_params** | [**WTServiceUpdateParams**](WTServiceUpdateParams.md)|  | 
 
 ### Return type

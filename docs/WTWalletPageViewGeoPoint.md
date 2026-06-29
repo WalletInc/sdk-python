@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**longitude** | **float** |  | 
-**latitude** | **float** |  | 
+**longitude** | **object** |  | 
+**latitude** | **object** |  | 
 
 ## Example
 

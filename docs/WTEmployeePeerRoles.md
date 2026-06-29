@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**roles_array** | **List[object]** |  | [optional] 
+**roles_array** | **object** |  | [optional] 
 
 ## Example
 

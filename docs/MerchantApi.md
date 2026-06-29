@@ -9,25 +9,25 @@ Method | HTTP request | Description
 [**count_inbound_sms**](MerchantApi.md#count_inbound_sms) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes
 [**export_inbound_messages**](MerchantApi.md#export_inbound_messages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages
 [**export_outbound_messages**](MerchantApi.md#export_outbound_messages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages
-[**fetch_advertisement_credit_broadcasts**](MerchantApi.md#fetch_advertisement_credit_broadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Fetch all ad credit broadcasts
-[**fetch_custom_roles**](MerchantApi.md#fetch_custom_roles) | **GET** /v2/merchant/roles/custom | Fetch custom roles
-[**fetch_dynamic_voucher_broadcasts**](MerchantApi.md#fetch_dynamic_voucher_broadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Fetch all dynamic voucher broadcasts
-[**fetch_employees**](MerchantApi.md#fetch_employees) | **GET** /v2/merchant/employees/all | Fetch all employees
-[**fetch_help_desk_requests**](MerchantApi.md#fetch_help_desk_requests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Fetch help desk requests
-[**fetch_imported_list**](MerchantApi.md#fetch_imported_list) | **GET** /v2/merchant/lists/imported/{listID} | Fetch imported list
-[**fetch_imported_lists**](MerchantApi.md#fetch_imported_lists) | **GET** /v2/merchant/lists/imported/all | Fetch all imported lists
-[**fetch_inbound_sms**](MerchantApi.md#fetch_inbound_sms) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Fetch inbound SMSes
-[**fetch_inbound_smsby_page**](MerchantApi.md#fetch_inbound_smsby_page) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Fetch inbound SMSes by page
-[**fetch_merchant_outbound_sms**](MerchantApi.md#fetch_merchant_outbound_sms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Fetch outbound SMSes
-[**fetch_merchant_phone_numbers**](MerchantApi.md#fetch_merchant_phone_numbers) | **GET** /v2/merchant/phoneNumbers/all | Fetch all phone numbers
-[**fetch_opt_in_list**](MerchantApi.md#fetch_opt_in_list) | **GET** /v2/merchant/lists/optIn/{listID} | Fetch opt in list
-[**fetch_opt_in_lists**](MerchantApi.md#fetch_opt_in_lists) | **GET** /v2/merchant/lists/optIn/all | Fetch all opt in lists
-[**fetch_phone_number**](MerchantApi.md#fetch_phone_number) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Fetch phone number
-[**fetch_public_employees**](MerchantApi.md#fetch_public_employees) | **GET** /v2/merchant/employees/public | Fetch public representative employees of the merchant
-[**fetch_simple_sms_broadcasts**](MerchantApi.md#fetch_simple_sms_broadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Fetch all simple SMS broadcasts
-[**fetch_static_voucher_campaign_broadcasts**](MerchantApi.md#fetch_static_voucher_campaign_broadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Fetch all static voucher campaign broadcasts
-[**fetch_tcpa_filter**](MerchantApi.md#fetch_tcpa_filter) | **GET** /v2/merchant/tcpa/filter/all | Fetch all TCPA Filters
-[**fetch_wallet_configuration**](MerchantApi.md#fetch_wallet_configuration) | **GET** /v2/merchant/wallet/configuration | Fetch wallet configuration
+[**fetch_advertisement_credit_broadcasts**](MerchantApi.md#fetch_advertisement_credit_broadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Get all ad credit broadcasts
+[**fetch_custom_roles**](MerchantApi.md#fetch_custom_roles) | **GET** /v2/merchant/roles/custom | Get custom roles
+[**fetch_dynamic_voucher_broadcasts**](MerchantApi.md#fetch_dynamic_voucher_broadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Get all dynamic voucher broadcasts
+[**fetch_employees**](MerchantApi.md#fetch_employees) | **GET** /v2/merchant/employees/all | Get all employees
+[**fetch_help_desk_requests**](MerchantApi.md#fetch_help_desk_requests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Get help desk requests
+[**fetch_imported_list**](MerchantApi.md#fetch_imported_list) | **GET** /v2/merchant/lists/imported/{listID} | Get imported list
+[**fetch_imported_lists**](MerchantApi.md#fetch_imported_lists) | **GET** /v2/merchant/lists/imported/all | Get all imported lists
+[**fetch_inbound_sms**](MerchantApi.md#fetch_inbound_sms) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes
+[**fetch_inbound_smsby_page**](MerchantApi.md#fetch_inbound_smsby_page) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Get inbound SMSes by page
+[**fetch_merchant_outbound_sms**](MerchantApi.md#fetch_merchant_outbound_sms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes
+[**fetch_merchant_phone_numbers**](MerchantApi.md#fetch_merchant_phone_numbers) | **GET** /v2/merchant/phoneNumbers/all | Get all phone numbers
+[**fetch_opt_in_list**](MerchantApi.md#fetch_opt_in_list) | **GET** /v2/merchant/lists/optIn/{listID} | Get opt in list
+[**fetch_opt_in_lists**](MerchantApi.md#fetch_opt_in_lists) | **GET** /v2/merchant/lists/optIn/all | Get all opt in lists
+[**fetch_phone_number**](MerchantApi.md#fetch_phone_number) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Get phone number
+[**fetch_public_employees**](MerchantApi.md#fetch_public_employees) | **GET** /v2/merchant/employees/public | Get public representative employees of the merchant
+[**fetch_simple_sms_broadcasts**](MerchantApi.md#fetch_simple_sms_broadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Get all simple SMS broadcasts
+[**fetch_static_voucher_campaign_broadcasts**](MerchantApi.md#fetch_static_voucher_campaign_broadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Get all static voucher campaign broadcasts
+[**fetch_tcpa_filter**](MerchantApi.md#fetch_tcpa_filter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters
+[**fetch_wallet_configuration**](MerchantApi.md#fetch_wallet_configuration) | **GET** /v2/merchant/wallet/configuration | Get wallet configuration
 [**update_merchant**](MerchantApi.md#update_merchant) | **PUT** /v2/merchant | Update merchant details
 [**update_points_of_contact**](MerchantApi.md#update_points_of_contact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact
 [**update_pos_integration**](MerchantApi.md#update_pos_integration) | **PUT** /v2/merchant/pos/integration | Update POS Integration
@@ -121,7 +121,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    broadcast_id = None # object | 
+    broadcast_id = 'broadcast_id_example' # str | 
 
     try:
         # Archive payment object broadcast
@@ -139,7 +139,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **broadcast_id** | [**object**](.md)|  | 
+ **broadcast_id** | **str**|  | 
 
 ### Return type
 
@@ -190,7 +190,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    phone_number_id = None # object | 
+    phone_number_id = 'phone_number_id_example' # str | 
     from_phone_number = 'from_phone_number_example' # str |  (optional)
     body = 'body_example' # str |  (optional)
     start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
@@ -212,7 +212,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**object**](.md)|  | 
+ **phone_number_id** | **str**|  | 
  **from_phone_number** | **str**|  | [optional] 
  **body** | **str**|  | [optional] 
  **start_date** | **datetime**|  | [optional] 
@@ -387,7 +387,7 @@ No authorization required
 # **fetch_advertisement_credit_broadcasts**
 > List[AdvertisementCreditBroadcast] fetch_advertisement_credit_broadcasts(is_archive_included=is_archive_included)
 
-Fetch all ad credit broadcasts
+Get all ad credit broadcasts
 
 ### Example
 
@@ -412,7 +412,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all ad credit broadcasts
+        # Get all ad credit broadcasts
         api_response = api_instance.fetch_advertisement_credit_broadcasts(is_archive_included=is_archive_included)
         print("The response of MerchantApi->fetch_advertisement_credit_broadcasts:\n")
         pprint(api_response)
@@ -456,7 +456,7 @@ No authorization required
 # **fetch_custom_roles**
 > object fetch_custom_roles()
 
-Fetch custom roles
+Get custom roles
 
 ### Example
 
@@ -479,7 +479,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.MerchantApi(api_client)
 
     try:
-        # Fetch custom roles
+        # Get custom roles
         api_response = api_instance.fetch_custom_roles()
         print("The response of MerchantApi->fetch_custom_roles:\n")
         pprint(api_response)
@@ -520,7 +520,7 @@ No authorization required
 # **fetch_dynamic_voucher_broadcasts**
 > List[DynamicVoucherBroadcast] fetch_dynamic_voucher_broadcasts(is_archive_included=is_archive_included)
 
-Fetch all dynamic voucher broadcasts
+Get all dynamic voucher broadcasts
 
 ### Example
 
@@ -545,7 +545,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all dynamic voucher broadcasts
+        # Get all dynamic voucher broadcasts
         api_response = api_instance.fetch_dynamic_voucher_broadcasts(is_archive_included=is_archive_included)
         print("The response of MerchantApi->fetch_dynamic_voucher_broadcasts:\n")
         pprint(api_response)
@@ -589,7 +589,7 @@ No authorization required
 # **fetch_employees**
 > object fetch_employees()
 
-Fetch all employees
+Get all employees
 
 ### Example
 
@@ -612,7 +612,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.MerchantApi(api_client)
 
     try:
-        # Fetch all employees
+        # Get all employees
         api_response = api_instance.fetch_employees()
         print("The response of MerchantApi->fetch_employees:\n")
         pprint(api_response)
@@ -653,7 +653,7 @@ No authorization required
 # **fetch_help_desk_requests**
 > List[HelpDeskRequest] fetch_help_desk_requests(phone_number_id, is_resolved=is_resolved)
 
-Fetch help desk requests
+Get help desk requests
 
 ### Example
 
@@ -675,11 +675,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    phone_number_id = None # object | 
+    phone_number_id = 'phone_number_id_example' # str | 
     is_resolved = True # bool |  (optional)
 
     try:
-        # Fetch help desk requests
+        # Get help desk requests
         api_response = api_instance.fetch_help_desk_requests(phone_number_id, is_resolved=is_resolved)
         print("The response of MerchantApi->fetch_help_desk_requests:\n")
         pprint(api_response)
@@ -694,7 +694,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**object**](.md)|  | 
+ **phone_number_id** | **str**|  | 
  **is_resolved** | **bool**|  | [optional] 
 
 ### Return type
@@ -724,7 +724,7 @@ No authorization required
 # **fetch_imported_list**
 > ImportedList fetch_imported_list(list_id)
 
-Fetch imported list
+Get imported list
 
 ### Example
 
@@ -746,10 +746,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    list_id = None # object | 
+    list_id = 'list_id_example' # str | 
 
     try:
-        # Fetch imported list
+        # Get imported list
         api_response = api_instance.fetch_imported_list(list_id)
         print("The response of MerchantApi->fetch_imported_list:\n")
         pprint(api_response)
@@ -764,7 +764,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | [**object**](.md)|  | 
+ **list_id** | **str**|  | 
 
 ### Return type
 
@@ -793,7 +793,7 @@ No authorization required
 # **fetch_imported_lists**
 > object fetch_imported_lists(is_archive_included=is_archive_included)
 
-Fetch all imported lists
+Get all imported lists
 
 ### Example
 
@@ -817,7 +817,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all imported lists
+        # Get all imported lists
         api_response = api_instance.fetch_imported_lists(is_archive_included=is_archive_included)
         print("The response of MerchantApi->fetch_imported_lists:\n")
         pprint(api_response)
@@ -861,7 +861,7 @@ No authorization required
 # **fetch_inbound_sms**
 > List[InboundSMS] fetch_inbound_sms(phone_number_id, from_phone_number=from_phone_number)
 
-Fetch inbound SMSes
+Get inbound SMSes
 
 ### Example
 
@@ -883,11 +883,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    phone_number_id = None # object | 
+    phone_number_id = 'phone_number_id_example' # str | 
     from_phone_number = 'from_phone_number_example' # str |  (optional)
 
     try:
-        # Fetch inbound SMSes
+        # Get inbound SMSes
         api_response = api_instance.fetch_inbound_sms(phone_number_id, from_phone_number=from_phone_number)
         print("The response of MerchantApi->fetch_inbound_sms:\n")
         pprint(api_response)
@@ -902,7 +902,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**object**](.md)|  | 
+ **phone_number_id** | **str**|  | 
  **from_phone_number** | **str**|  | [optional] 
 
 ### Return type
@@ -932,7 +932,7 @@ No authorization required
 # **fetch_inbound_smsby_page**
 > FetchInboundSMSByPage200Response fetch_inbound_smsby_page(phone_number_id, from_phone_number=from_phone_number, page_size=page_size, page_num=page_num, start_date=start_date, end_date=end_date)
 
-Fetch inbound SMSes by page
+Get inbound SMSes by page
 
 ### Example
 
@@ -954,7 +954,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    phone_number_id = None # object | 
+    phone_number_id = 'phone_number_id_example' # str | 
     from_phone_number = 'from_phone_number_example' # str |  (optional)
     page_size = 3.4 # float |  (optional)
     page_num = 3.4 # float |  (optional)
@@ -962,7 +962,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
-        # Fetch inbound SMSes by page
+        # Get inbound SMSes by page
         api_response = api_instance.fetch_inbound_smsby_page(phone_number_id, from_phone_number=from_phone_number, page_size=page_size, page_num=page_num, start_date=start_date, end_date=end_date)
         print("The response of MerchantApi->fetch_inbound_smsby_page:\n")
         pprint(api_response)
@@ -977,7 +977,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**object**](.md)|  | 
+ **phone_number_id** | **str**|  | 
  **from_phone_number** | **str**|  | [optional] 
  **page_size** | **float**|  | [optional] 
  **page_num** | **float**|  | [optional] 
@@ -1011,7 +1011,7 @@ No authorization required
 # **fetch_merchant_outbound_sms**
 > List[OutboundSMS] fetch_merchant_outbound_sms(phone_number_id, to_phone_number)
 
-Fetch outbound SMSes
+Get outbound SMSes
 
 ### Example
 
@@ -1033,11 +1033,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    phone_number_id = None # object | 
+    phone_number_id = 'phone_number_id_example' # str | 
     to_phone_number = 'to_phone_number_example' # str | 
 
     try:
-        # Fetch outbound SMSes
+        # Get outbound SMSes
         api_response = api_instance.fetch_merchant_outbound_sms(phone_number_id, to_phone_number)
         print("The response of MerchantApi->fetch_merchant_outbound_sms:\n")
         pprint(api_response)
@@ -1052,7 +1052,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**object**](.md)|  | 
+ **phone_number_id** | **str**|  | 
  **to_phone_number** | **str**|  | 
 
 ### Return type
@@ -1082,7 +1082,7 @@ No authorization required
 # **fetch_merchant_phone_numbers**
 > object fetch_merchant_phone_numbers(is_archive_included=is_archive_included, is_approved=is_approved)
 
-Fetch all phone numbers
+Get all phone numbers
 
 ### Example
 
@@ -1107,7 +1107,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_approved = True # bool |  (optional)
 
     try:
-        # Fetch all phone numbers
+        # Get all phone numbers
         api_response = api_instance.fetch_merchant_phone_numbers(is_archive_included=is_archive_included, is_approved=is_approved)
         print("The response of MerchantApi->fetch_merchant_phone_numbers:\n")
         pprint(api_response)
@@ -1152,7 +1152,7 @@ No authorization required
 # **fetch_opt_in_list**
 > OptInList fetch_opt_in_list(list_id)
 
-Fetch opt in list
+Get opt in list
 
 ### Example
 
@@ -1174,10 +1174,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    list_id = None # object | 
+    list_id = 'list_id_example' # str | 
 
     try:
-        # Fetch opt in list
+        # Get opt in list
         api_response = api_instance.fetch_opt_in_list(list_id)
         print("The response of MerchantApi->fetch_opt_in_list:\n")
         pprint(api_response)
@@ -1192,7 +1192,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | [**object**](.md)|  | 
+ **list_id** | **str**|  | 
 
 ### Return type
 
@@ -1221,7 +1221,7 @@ No authorization required
 # **fetch_opt_in_lists**
 > object fetch_opt_in_lists(is_archive_included=is_archive_included)
 
-Fetch all opt in lists
+Get all opt in lists
 
 ### Example
 
@@ -1245,7 +1245,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all opt in lists
+        # Get all opt in lists
         api_response = api_instance.fetch_opt_in_lists(is_archive_included=is_archive_included)
         print("The response of MerchantApi->fetch_opt_in_lists:\n")
         pprint(api_response)
@@ -1289,7 +1289,7 @@ No authorization required
 # **fetch_phone_number**
 > PhoneNumber fetch_phone_number(phone_number_id)
 
-Fetch phone number
+Get phone number
 
 ### Example
 
@@ -1311,10 +1311,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MerchantApi(api_client)
-    phone_number_id = None # object | 
+    phone_number_id = 'phone_number_id_example' # str | 
 
     try:
-        # Fetch phone number
+        # Get phone number
         api_response = api_instance.fetch_phone_number(phone_number_id)
         print("The response of MerchantApi->fetch_phone_number:\n")
         pprint(api_response)
@@ -1329,7 +1329,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**object**](.md)|  | 
+ **phone_number_id** | **str**|  | 
 
 ### Return type
 
@@ -1358,7 +1358,7 @@ No authorization required
 # **fetch_public_employees**
 > object fetch_public_employees()
 
-Fetch public representative employees of the merchant
+Get public representative employees of the merchant
 
 ### Example
 
@@ -1381,7 +1381,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.MerchantApi(api_client)
 
     try:
-        # Fetch public representative employees of the merchant
+        # Get public representative employees of the merchant
         api_response = api_instance.fetch_public_employees()
         print("The response of MerchantApi->fetch_public_employees:\n")
         pprint(api_response)
@@ -1422,7 +1422,7 @@ No authorization required
 # **fetch_simple_sms_broadcasts**
 > List[SimpleSMSBroadcast] fetch_simple_sms_broadcasts(is_archive_included=is_archive_included)
 
-Fetch all simple SMS broadcasts
+Get all simple SMS broadcasts
 
 ### Example
 
@@ -1447,7 +1447,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all simple SMS broadcasts
+        # Get all simple SMS broadcasts
         api_response = api_instance.fetch_simple_sms_broadcasts(is_archive_included=is_archive_included)
         print("The response of MerchantApi->fetch_simple_sms_broadcasts:\n")
         pprint(api_response)
@@ -1491,7 +1491,7 @@ No authorization required
 # **fetch_static_voucher_campaign_broadcasts**
 > List[StaticVoucherCampaignBroadcast] fetch_static_voucher_campaign_broadcasts(is_archive_included=is_archive_included)
 
-Fetch all static voucher campaign broadcasts
+Get all static voucher campaign broadcasts
 
 ### Example
 
@@ -1516,7 +1516,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all static voucher campaign broadcasts
+        # Get all static voucher campaign broadcasts
         api_response = api_instance.fetch_static_voucher_campaign_broadcasts(is_archive_included=is_archive_included)
         print("The response of MerchantApi->fetch_static_voucher_campaign_broadcasts:\n")
         pprint(api_response)
@@ -1560,7 +1560,7 @@ No authorization required
 # **fetch_tcpa_filter**
 > List[Tcpa] fetch_tcpa_filter()
 
-Fetch all TCPA Filters
+Get all TCPA Filters
 
 ### Example
 
@@ -1584,7 +1584,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.MerchantApi(api_client)
 
     try:
-        # Fetch all TCPA Filters
+        # Get all TCPA Filters
         api_response = api_instance.fetch_tcpa_filter()
         print("The response of MerchantApi->fetch_tcpa_filter:\n")
         pprint(api_response)
@@ -1625,7 +1625,7 @@ No authorization required
 # **fetch_wallet_configuration**
 > object fetch_wallet_configuration()
 
-Fetch wallet configuration
+Get wallet configuration
 
 ### Example
 
@@ -1648,7 +1648,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.MerchantApi(api_client)
 
     try:
-        # Fetch wallet configuration
+        # Get wallet configuration
         api_response = api_instance.fetch_wallet_configuration()
         print("The response of MerchantApi->fetch_wallet_configuration:\n")
         pprint(api_response)

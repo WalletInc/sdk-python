@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **price** | **str** |  | 
-**features** | [**List[Feature]**](Feature.md) |  | 
+**features** | **object** |  | 
 **measurement** | **str** |  | [optional] 
 **is_exceeded** | **bool** |  | [optional] 
 **is_current** | **bool** |  | [optional] 

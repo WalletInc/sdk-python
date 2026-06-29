@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
-**title** | **str** |  | 
-**title_full** | **str** |  | 
-**category** | **str** |  | 
-**volume** | **float** |  | [optional] 
-**value** | **float** |  | [optional] 
-**features** | [**List[SubscriptionFeature]**](SubscriptionFeature.md) |  | 
-**pages** | [**List[PortalPage]**](PortalPage.md) |  | 
-**icon_name** | **str** |  | 
-**description** | **str** |  | 
-**is_hourly** | **bool** |  | [optional] 
-**release_status** | **str** |  | [optional] 
+**id** | **object** |  | 
+**title** | **object** |  | 
+**title_full** | **object** |  | 
+**category** | **object** |  | 
+**volume** | **object** |  | [optional] 
+**value** | **object** |  | [optional] 
+**features** | **object** |  | 
+**pages** | **object** |  | 
+**icon_name** | **object** |  | 
+**description** | **object** |  | 
+**is_hourly** | **object** |  | [optional] 
+**release_status** | **object** |  | [optional] 
 
 ## Example
 

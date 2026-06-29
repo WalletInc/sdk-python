@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file_name** | **str** |  | 
-**file_type** | **str** |  | 
+**file_name** | **object** |  | 
+**file_type** | **object** |  | 
 **context** | [**WTEmployeeS3FilePresignContext**](WTEmployeeS3FilePresignContext.md) |  | 
 
 ## Example

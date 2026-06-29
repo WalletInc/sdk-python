@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**order_number** | **int** |  | 
-**body** | **str** |  | 
-**url** | **str** |  | 
-**media_url** | **str** |  | [optional] 
-**published_date** | **datetime** |  | [optional] 
-**id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**title** | **object** |  | 
+**order_number** | **object** |  | 
+**body** | **object** |  | 
+**url** | **object** |  | 
+**media_url** | **object** |  | [optional] 
+**published_date** | **object** |  | [optional] 
+**id** | [**AmenityId**](AmenityId.md) |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 **merchant_id** | **str** |  | 
 
 ## Example

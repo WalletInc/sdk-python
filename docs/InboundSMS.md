@@ -5,42 +5,42 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
-**automated_reply** | **str** |  | 
-**automated_reply_additional_info** | **str** |  | 
-**sms_sid** | **str** |  | 
-**sms_message_sid** | **str** |  | 
-**sms_status** | **str** |  | 
-**messaging_service_sid** | **str** |  | [optional] 
-**account_sid** | **str** |  | 
-**message_sid** | **str** |  | 
-**body** | **str** |  | 
-**num_segments** | **int** |  | 
-**to** | **str** |  | 
-**to_city** | **str** |  | 
-**to_state** | **str** |  | 
-**to_zip** | **str** |  | 
-**to_country** | **str** |  | 
-**var_from** | **str** |  | 
-**from_city** | **str** |  | 
-**from_state** | **str** |  | 
-**from_zip** | **str** |  | 
-**from_country** | **str** |  | 
-**media_urls** | **List[str]** |  | [optional] 
-**watson_intent** | **str** |  | [optional] 
-**watson_intents** | **str** |  | [optional] 
-**watson_context** | **str** |  | [optional] 
-**watson_contexts** | **str** |  | [optional] 
-**num_media** | **int** |  | 
-**api_version** | **str** |  | 
-**is_opt_in** | **bool** |  | [optional] 
-**is_help_desk_request** | **bool** |  | [optional] 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
+**automated_reply** | **object** |  | 
+**automated_reply_additional_info** | **object** |  | 
+**sms_sid** | **object** |  | 
+**sms_message_sid** | **object** |  | 
+**sms_status** | **object** |  | 
+**messaging_service_sid** | **object** |  | [optional] 
+**account_sid** | **object** |  | 
+**message_sid** | **object** |  | 
+**body** | **object** |  | 
+**num_segments** | **object** |  | 
+**to** | **object** |  | 
+**to_city** | **object** |  | 
+**to_state** | **object** |  | 
+**to_zip** | **object** |  | 
+**to_country** | **object** |  | 
+**var_from** | **object** |  | 
+**from_city** | **object** |  | 
+**from_state** | **object** |  | 
+**from_zip** | **object** |  | 
+**from_country** | **object** |  | 
+**media_urls** | **object** |  | [optional] 
+**watson_intent** | **object** |  | [optional] 
+**watson_intents** | **object** |  | [optional] 
+**watson_context** | **object** |  | [optional] 
+**watson_contexts** | **object** |  | [optional] 
+**num_media** | **object** |  | 
+**api_version** | **object** |  | 
+**is_opt_in** | **object** |  | [optional] 
+**is_help_desk_request** | **object** |  | [optional] 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
-**body_lowercase** | **str** |  | 
-**from_localized** | **str** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
+**body_lowercase** | **object** |  | 
+**from_localized** | **object** |  | 
 
 ## Example
 

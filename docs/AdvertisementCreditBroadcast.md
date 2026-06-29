@@ -6,21 +6,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_number_id** | **str** |  | 
-**payment_object_prefix** | [**PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDPaymentObjectPrefix**](PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDPaymentObjectPrefix.md) |  | 
+**payment_object_prefix** | [**StaticVoucherCampaignBroadcastPaymentObjectPrefix**](StaticVoucherCampaignBroadcastPaymentObjectPrefix.md) |  | 
 **payment_object_id** | **str** |  | 
-**message_template** | **str** |  | 
-**media_urls** | **List[str]** |  | 
+**message_template** | **object** |  | 
+**media_urls** | **object** |  | 
 **employee_id** | **str** |  | 
-**broadcast_scheduled_at** | **datetime** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**broadcast_scheduled_at** | **object** |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
-**broadcast_status** | [**PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDBroadcastStatus**](PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDBroadcastStatus.md) |  | 
-**broadcast_queued_at** | **datetime** |  | 
-**broadcast_started_at** | **datetime** |  | 
-**broadcast_completed_at** | **datetime** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
+**broadcast_status** | [**StaticVoucherCampaignBroadcastBroadcastStatus**](StaticVoucherCampaignBroadcastBroadcastStatus.md) |  | 
+**broadcast_queued_at** | **object** |  | 
+**broadcast_started_at** | **object** |  | 
+**broadcast_completed_at** | **object** |  | 
 **list_type** | [**DynamicVoucherBroadcastListType**](DynamicVoucherBroadcastListType.md) |  | 
 **list_id** | **str** |  | 
 **opt_in_list** | [**WTOptInList**](WTOptInList.md) |  | [optional] 

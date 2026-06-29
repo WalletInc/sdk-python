@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nickname** | **str** |  | 
-**destination_url** | **str** |  | 
-**id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
+**nickname** | **object** |  | 
+**destination_url** | **object** |  | 
+**id** | [**AmenityId**](AmenityId.md) |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
 **merchant_id** | **str** |  | 
-**is_active** | **bool** |  | 
+**is_active** | **object** |  | 
 
 ## Example
 

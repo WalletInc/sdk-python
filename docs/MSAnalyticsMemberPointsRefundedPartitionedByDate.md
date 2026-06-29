@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_date** | **str** | Represents the date when the points were refunded | 
-**points** | **int** | Represents the sum of points refunded on that particular date | 
+**var_date** | **object** | Represents the date when the points were refunded | 
+**points** | **object** | Represents the sum of points refunded on that particular date | 
 
 ## Example
 

@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_date_time** | **datetime** |  | 
-**expiration_date_time** | **datetime** |  | 
-**title** | **str** |  | 
-**notes** | **str** |  | 
-**value_type** | [**PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType**](PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md) |  | 
-**display_value** | **str** |  | [optional] 
-**merchants_reference_id** | **str** |  | [optional] 
-**valid_only_at_pos_register_ids** | **List[str]** |  | [optional] 
+**start_date_time** | **object** |  | 
+**expiration_date_time** | **object** |  | 
+**title** | **object** |  | 
+**notes** | **object** |  | 
+**value_type** | [**StaticVoucherCampaignValueType**](StaticVoucherCampaignValueType.md) |  | 
+**display_value** | **object** |  | [optional] 
+**merchants_reference_id** | **object** |  | [optional] 
+**valid_only_at_pos_register_ids** | **object** |  | [optional] 
 **payment_design_id** | **str** |  | 
-**bucket** | **str** |  | [optional] 
-**file_name** | **str** |  | [optional] 
-**source_id** | **int** |  | 
-**campaign_group_id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | [optional] 
+**bucket** | **object** |  | [optional] 
+**file_name** | **object** |  | [optional] 
+**source_id** | **object** |  | 
+**campaign_group_id** | **str** |  | [optional] 
 
 ## Example
 

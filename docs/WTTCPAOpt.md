@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **list_id** | [**WTTCPAOptListID**](WTTCPAOptListID.md) |  | 
 **source_id** | [**WTTCPAOptSourceID**](WTTCPAOptSourceID.md) |  | 
-**phone_number** | **str** |  | 
+**phone_number** | **object** |  | 
 
 ## Example
 

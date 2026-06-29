@@ -6,7 +6,7 @@ From T, pick a set of properties whose keys are in the union K
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **employee_id** | **str** |  | 
 **merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 

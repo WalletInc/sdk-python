@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **redemption_instructions** | **str** |  | [optional] 
 **ticket_expiration_date_time** | **datetime** |  | 
 **max_comp_tickets** | **float** |  | 
-**payment_design_id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
+**payment_design_id** | **str** |  | 
 
 ## Example
 

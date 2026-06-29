@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **value_type** | [**PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType**](PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md) |  | 
 **payment_design_id** | **str** |  | 
 **max_uses** | **int** |  | 
-**discount_value** | **int** |  | 
+**discount_value** | **object** |  | 
 
 ## Example
 

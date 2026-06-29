@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **static_voucher_id** | **str** |  | 
-**message** | **str** |  | 
-**cell_phone_number** | **str** |  | 
+**message** | **object** |  | 
+**cell_phone_number** | **object** |  | 
 
 ## Example
 

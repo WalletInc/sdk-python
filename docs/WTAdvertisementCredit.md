@@ -11,13 +11,13 @@ Name | Type | Description | Notes
 **max_uses** | **int** |  | 
 **discount_value** | **int** |  | 
 **employee_id** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
-**discount_value_decimal** | **str** |  | 
-**discount_value_string** | **str** |  | 
+**discount_value_decimal** | **object** |  | 
+**discount_value_string** | **object** |  | 
 
 ## Example
 
