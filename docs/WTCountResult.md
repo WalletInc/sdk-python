@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **float** |  | 
+**count** | **object** |  | 
 
 ## Example
 

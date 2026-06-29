@@ -5,28 +5,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **employee_id** | **str** |  | 
-**status** | [**PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhoneStatus**](PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhoneStatus.md) |  | 
+**status** | [**OutboundSMSStatus**](OutboundSMSStatus.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
-**body** | **str** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
+**body** | **object** |  | 
 **phone_number_id** | **str** |  | 
-**media_urls** | **List[str]** |  | 
-**payment_object_broadcast_id** | [**PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhonePaymentObjectBroadcastID**](PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhonePaymentObjectBroadcastID.md) |  | [optional] 
-**body_template** | **str** |  | 
-**status_callback** | **str** |  | 
-**is_sent** | **bool** |  | 
-**sent_at** | **datetime** |  | [optional] 
-**delivered_at** | **datetime** |  | [optional] 
-**message_sid** | **str** |  | 
-**num_segments** | **int** |  | [optional] 
-**num_media** | **int** |  | [optional] 
-**error_code** | **str** |  | [optional] 
-**error_message** | **str** |  | [optional] 
-**to** | **str** |  | 
+**media_urls** | **object** |  | 
+**payment_object_broadcast_id** | [**OutboundSMSPaymentObjectBroadcastID**](OutboundSMSPaymentObjectBroadcastID.md) |  | [optional] 
+**body_template** | **object** |  | 
+**status_callback** | **object** |  | 
+**is_sent** | **object** |  | 
+**sent_at** | **object** |  | [optional] 
+**delivered_at** | **object** |  | [optional] 
+**message_sid** | **object** |  | 
+**num_segments** | **object** |  | [optional] 
+**num_media** | **object** |  | [optional] 
+**error_code** | **object** |  | [optional] 
+**error_message** | **object** |  | [optional] 
+**to** | **object** |  | 
 
 ## Example
 

@@ -4,15 +4,15 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetch_all_industries**](IndustriesApi.md#fetch_all_industries) | **GET** /system/industries/all | Fetch all industries
-[**fetch_domains_by_industry**](IndustriesApi.md#fetch_domains_by_industry) | **GET** /system/industries/domains | Fetch all industries
-[**fetch_industries_ids**](IndustriesApi.md#fetch_industries_ids) | **GET** /system/industries/trimmed | Fetch all industries
+[**fetch_all_industries**](IndustriesApi.md#fetch_all_industries) | **GET** /system/industries/all | Get all Industries &amp; Pricing Plans
+[**fetch_domains_by_industry**](IndustriesApi.md#fetch_domains_by_industry) | **GET** /system/industries/domains | Get all white-labeled custom domains by industry
+[**fetch_industries_ids**](IndustriesApi.md#fetch_industries_ids) | **GET** /system/industries/trimmed | Get all Industries &amp; Pricing Plans with trimmed metadata
 
 
 # **fetch_all_industries**
 > List[FetchIndustry200Response] fetch_all_industries()
 
-Fetch all industries
+Get all Industries & Pricing Plans
 
 ### Example
 
@@ -36,7 +36,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.IndustriesApi(api_client)
 
     try:
-        # Fetch all industries
+        # Get all Industries & Pricing Plans
         api_response = api_instance.fetch_all_industries()
         print("The response of IndustriesApi->fetch_all_industries:\n")
         pprint(api_response)
@@ -75,7 +75,7 @@ No authorization required
 # **fetch_domains_by_industry**
 > FetchDomainsByIndustry200Response fetch_domains_by_industry()
 
-Fetch all industries
+Get all white-labeled custom domains by industry
 
 ### Example
 
@@ -99,7 +99,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.IndustriesApi(api_client)
 
     try:
-        # Fetch all industries
+        # Get all white-labeled custom domains by industry
         api_response = api_instance.fetch_domains_by_industry()
         print("The response of IndustriesApi->fetch_domains_by_industry:\n")
         pprint(api_response)
@@ -138,7 +138,7 @@ No authorization required
 # **fetch_industries_ids**
 > object fetch_industries_ids()
 
-Fetch all industries
+Get all Industries & Pricing Plans with trimmed metadata
 
 ### Example
 
@@ -161,7 +161,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.IndustriesApi(api_client)
 
     try:
-        # Fetch all industries
+        # Get all Industries & Pricing Plans with trimmed metadata
         api_response = api_instance.fetch_industries_ids()
         print("The response of IndustriesApi->fetch_industries_ids:\n")
         pprint(api_response)

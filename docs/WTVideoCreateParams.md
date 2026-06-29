@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**description** | **str** |  | 
+**title** | **object** |  | 
+**description** | **object** |  | 
 **order_number** | **int** |  | 
-**media_url** | **str** |  | 
-**additional_info_url** | **str** |  | [optional] 
+**media_url** | **object** |  | 
+**additional_info_url** | **object** |  | [optional] 
 
 ## Example
 

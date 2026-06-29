@@ -4,25 +4,25 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_performance**](PerformancesApi.md#archive_performance) | **DELETE** /v2/performances/{id} | Archive performance
-[**count_claimed_comps**](PerformancesApi.md#count_claimed_comps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed
-[**count_redeemed_comps**](PerformancesApi.md#count_redeemed_comps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed
+[**archive_performance**](PerformancesApi.md#archive_performance) | **DELETE** /v2/performances/{id} | Archive Performance
+[**count_claimed_comps**](PerformancesApi.md#count_claimed_comps) | **GET** /v2/performances/{id}/claimed/count | Count Performance&#39;s claimed Tickets
+[**count_redeemed_comps**](PerformancesApi.md#count_redeemed_comps) | **GET** /v2/performances/{id}/redeemed/count | Count Performance&#39;s redeemed Tickets
 [**create_performance**](PerformancesApi.md#create_performance) | **POST** /v2/performances | Create performance
-[**export_tickets**](PerformancesApi.md#export_tickets) | **POST** /v2/performances/{id}/tickets/export | Update performance
-[**fetch_all_performance_tickets**](PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
-[**fetch_all_performances**](PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Fetch all performances
-[**fetch_performance**](PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Fetch a single performance
-[**fetch_performance_tickets_page**](PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page
-[**import_tickets**](PerformancesApi.md#import_tickets) | **POST** /v2/performances/{id}/tickets/import | Update performance
-[**restore_performance**](PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore performance
-[**save_ticket_settings**](PerformancesApi.md#save_ticket_settings) | **POST** /v2/performances/{id} | Update performance
-[**update_performance**](PerformancesApi.md#update_performance) | **PUT** /v2/performances/{id} | Update performance
+[**export_tickets**](PerformancesApi.md#export_tickets) | **POST** /v2/performances/{id}/tickets/export | Export Performance&#39;s Tickets
+[**fetch_all_performance_tickets**](PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Get Performance&#39;s Tickets
+[**fetch_all_performances**](PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Get all Performances
+[**fetch_performance**](PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Get Performance
+[**fetch_performance_tickets_page**](PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Get Peformance&#39;s Tickets
+[**import_tickets**](PerformancesApi.md#import_tickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets
+[**restore_performance**](PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore Performance
+[**save_ticket_settings**](PerformancesApi.md#save_ticket_settings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings
+[**update_performance**](PerformancesApi.md#update_performance) | **PUT** /v2/performances/{id} | Update Performance
 
 
 # **archive_performance**
 > Performance archive_performance(id)
 
-Archive performance
+Archive Performance
 
 ### Example
 
@@ -44,10 +44,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive performance
+        # Archive Performance
         api_response = api_instance.archive_performance(id)
         print("The response of PerformancesApi->archive_performance:\n")
         pprint(api_response)
@@ -62,7 +62,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -91,7 +91,7 @@ No authorization required
 # **count_claimed_comps**
 > CountClaimedComps200Response count_claimed_comps(id)
 
-Count number claimed
+Count Performance's claimed Tickets
 
 ### Example
 
@@ -113,10 +113,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Count number claimed
+        # Count Performance's claimed Tickets
         api_response = api_instance.count_claimed_comps(id)
         print("The response of PerformancesApi->count_claimed_comps:\n")
         pprint(api_response)
@@ -131,7 +131,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -160,7 +160,7 @@ No authorization required
 # **count_redeemed_comps**
 > CountClaimedComps200Response count_redeemed_comps(id)
 
-Count number redeemed
+Count Performance's redeemed Tickets
 
 ### Example
 
@@ -182,10 +182,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Count number redeemed
+        # Count Performance's redeemed Tickets
         api_response = api_instance.count_redeemed_comps(id)
         print("The response of PerformancesApi->count_redeemed_comps:\n")
         pprint(api_response)
@@ -200,7 +200,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -299,7 +299,7 @@ No authorization required
 # **export_tickets**
 > List[Ticket] export_tickets(id)
 
-Update performance
+Export Performance's Tickets
 
 ### Example
 
@@ -321,10 +321,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Update performance
+        # Export Performance's Tickets
         api_response = api_instance.export_tickets(id)
         print("The response of PerformancesApi->export_tickets:\n")
         pprint(api_response)
@@ -339,7 +339,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -368,7 +368,7 @@ No authorization required
 # **fetch_all_performance_tickets**
 > List[Ticket] fetch_all_performance_tickets(id, is_archive_included=is_archive_included)
 
-Fetch all tickets
+Get Performance's Tickets
 
 ### Example
 
@@ -390,11 +390,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all tickets
+        # Get Performance's Tickets
         api_response = api_instance.fetch_all_performance_tickets(id, is_archive_included=is_archive_included)
         print("The response of PerformancesApi->fetch_all_performance_tickets:\n")
         pprint(api_response)
@@ -409,7 +409,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
@@ -439,7 +439,7 @@ No authorization required
 # **fetch_all_performances**
 > object fetch_all_performances(is_archive_included=is_archive_included)
 
-Fetch all performances
+Get all Performances
 
 ### Example
 
@@ -463,7 +463,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all performances
+        # Get all Performances
         api_response = api_instance.fetch_all_performances(is_archive_included=is_archive_included)
         print("The response of PerformancesApi->fetch_all_performances:\n")
         pprint(api_response)
@@ -507,7 +507,7 @@ No authorization required
 # **fetch_performance**
 > Performance fetch_performance(id)
 
-Fetch a single performance
+Get Performance
 
 ### Example
 
@@ -529,10 +529,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch a single performance
+        # Get Performance
         api_response = api_instance.fetch_performance(id)
         print("The response of PerformancesApi->fetch_performance:\n")
         pprint(api_response)
@@ -547,7 +547,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -576,7 +576,7 @@ No authorization required
 # **fetch_performance_tickets_page**
 > FetchPerformanceTicketsPage200Response fetch_performance_tickets_page(performance_id, page_num, page_size, filter_comps=filter_comps, filter_claimed=filter_claimed, sort_by=sort_by, sort_direction=sort_direction, is_archive_included=is_archive_included)
 
-Fetch tickets by page
+Get Peformance's Tickets
 
 ### Example
 
@@ -584,6 +584,8 @@ Fetch tickets by page
 ```python
 import wallet
 from wallet.models.fetch_performance_tickets_page200_response import FetchPerformanceTicketsPage200Response
+from wallet.models.sort_direction import SortDirection
+from wallet.models.ticket_sort_keys import TicketSortKeys
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -598,17 +600,17 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    performance_id = None # object | 
+    performance_id = 'performance_id_example' # str | 
     page_num = 3.4 # float | 
     page_size = 3.4 # float | 
     filter_comps = True # bool |  (optional)
     filter_claimed = True # bool |  (optional)
-    sort_by = None # object |  (optional)
-    sort_direction = None # object |  (optional)
+    sort_by = wallet.TicketSortKeys() # TicketSortKeys |  (optional)
+    sort_direction = wallet.SortDirection() # SortDirection |  (optional)
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch tickets by page
+        # Get Peformance's Tickets
         api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size, filter_comps=filter_comps, filter_claimed=filter_claimed, sort_by=sort_by, sort_direction=sort_direction, is_archive_included=is_archive_included)
         print("The response of PerformancesApi->fetch_performance_tickets_page:\n")
         pprint(api_response)
@@ -623,13 +625,13 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **performance_id** | [**object**](.md)|  | 
+ **performance_id** | **str**|  | 
  **page_num** | **float**|  | 
  **page_size** | **float**|  | 
  **filter_comps** | **bool**|  | [optional] 
  **filter_claimed** | **bool**|  | [optional] 
- **sort_by** | [**object**](.md)|  | [optional] 
- **sort_direction** | [**object**](.md)|  | [optional] 
+ **sort_by** | [**TicketSortKeys**](.md)|  | [optional] 
+ **sort_direction** | [**SortDirection**](.md)|  | [optional] 
  **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
@@ -659,7 +661,7 @@ No authorization required
 # **import_tickets**
 > str import_tickets(id, import_tickets_request)
 
-Update performance
+Import Performance's Tickets
 
 ### Example
 
@@ -681,11 +683,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     import_tickets_request = wallet.ImportTicketsRequest() # ImportTicketsRequest | 
 
     try:
-        # Update performance
+        # Import Performance's Tickets
         api_response = api_instance.import_tickets(id, import_tickets_request)
         print("The response of PerformancesApi->import_tickets:\n")
         pprint(api_response)
@@ -700,7 +702,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **import_tickets_request** | [**ImportTicketsRequest**](ImportTicketsRequest.md)|  | 
 
 ### Return type
@@ -730,7 +732,7 @@ No authorization required
 # **restore_performance**
 > Performance restore_performance(id)
 
-Restore performance
+Restore Performance
 
 ### Example
 
@@ -752,10 +754,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore performance
+        # Restore Performance
         api_response = api_instance.restore_performance(id)
         print("The response of PerformancesApi->restore_performance:\n")
         pprint(api_response)
@@ -770,7 +772,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -799,7 +801,7 @@ No authorization required
 # **save_ticket_settings**
 > Performance save_ticket_settings(id, save_ticket_settings_request)
 
-Update performance
+Update performance's Ticket Settings
 
 ### Example
 
@@ -822,11 +824,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     save_ticket_settings_request = wallet.SaveTicketSettingsRequest() # SaveTicketSettingsRequest | 
 
     try:
-        # Update performance
+        # Update performance's Ticket Settings
         api_response = api_instance.save_ticket_settings(id, save_ticket_settings_request)
         print("The response of PerformancesApi->save_ticket_settings:\n")
         pprint(api_response)
@@ -841,7 +843,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **save_ticket_settings_request** | [**SaveTicketSettingsRequest**](SaveTicketSettingsRequest.md)|  | 
 
 ### Return type
@@ -871,7 +873,7 @@ No authorization required
 # **update_performance**
 > Performance update_performance(id, wt_performance_update_params)
 
-Update performance
+Update Performance
 
 ### Example
 
@@ -894,11 +896,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.PerformancesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_performance_update_params = wallet.WTPerformanceUpdateParams() # WTPerformanceUpdateParams | 
 
     try:
-        # Update performance
+        # Update Performance
         api_response = api_instance.update_performance(id, wt_performance_update_params)
         print("The response of PerformancesApi->update_performance:\n")
         pprint(api_response)
@@ -913,7 +915,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_performance_update_params** | [**WTPerformanceUpdateParams**](WTPerformanceUpdateParams.md)|  | 
 
 ### Return type

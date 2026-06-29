@@ -4,21 +4,21 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_membership_tier**](MembershipTiersApi.md#archive_membership_tier) | **DELETE** /v2/membership/tier/{id} | Archive tier
-[**create_membership_tier**](MembershipTiersApi.md#create_membership_tier) | **POST** /v2/membership/tier | Create tier
-[**fetch_all_membership_tiers**](MembershipTiersApi.md#fetch_all_membership_tiers) | **GET** /v2/membership/tier/all | Fetch all tiers
-[**fetch_all_membership_tiers_with_member_count**](MembershipTiersApi.md#fetch_all_membership_tiers_with_member_count) | **GET** /v2/membership/tier/allWithMemberCount | Fetch all tiers with member count
-[**fetch_membership_tier_by_id**](MembershipTiersApi.md#fetch_membership_tier_by_id) | **GET** /v2/membership/tier/{id} | Fetch tier
-[**fetch_membership_tier_history_log**](MembershipTiersApi.md#fetch_membership_tier_history_log) | **POST** /v2/membership/tier/history/log | Fetch history
-[**fetch_membership_tier_redemption_log**](MembershipTiersApi.md#fetch_membership_tier_redemption_log) | **POST** /v2/membership/tier/redemption/log | Fetch redemption log
-[**restore_membership_tier**](MembershipTiersApi.md#restore_membership_tier) | **PATCH** /v2/membership/tier/{id} | Restore tier
-[**update_membership_tier**](MembershipTiersApi.md#update_membership_tier) | **PUT** /v2/membership/tier/{id} | Update tier
+[**archive_membership_tier**](MembershipTiersApi.md#archive_membership_tier) | **DELETE** /v2/membership/tier/{id} | Archive Membership Tier
+[**create_membership_tier**](MembershipTiersApi.md#create_membership_tier) | **POST** /v2/membership/tier | Create Membership Tier
+[**fetch_all_membership_tiers**](MembershipTiersApi.md#fetch_all_membership_tiers) | **GET** /v2/membership/tier/all | Get all Membership Tiers
+[**fetch_all_membership_tiers_with_member_count**](MembershipTiersApi.md#fetch_all_membership_tiers_with_member_count) | **GET** /v2/membership/tier/allWithMemberCount | Get all Membership Tiers with member count
+[**fetch_membership_tier_by_id**](MembershipTiersApi.md#fetch_membership_tier_by_id) | **GET** /v2/membership/tier/{id} | Get Membership Tier
+[**fetch_membership_tier_history_log**](MembershipTiersApi.md#fetch_membership_tier_history_log) | **POST** /v2/membership/tier/history/log | Get Membership Tier history
+[**fetch_membership_tier_redemption_log**](MembershipTiersApi.md#fetch_membership_tier_redemption_log) | **POST** /v2/membership/tier/redemption/log | Get Membership Tier redemption log
+[**restore_membership_tier**](MembershipTiersApi.md#restore_membership_tier) | **PATCH** /v2/membership/tier/{id} | Restore Membership Tier
+[**update_membership_tier**](MembershipTiersApi.md#update_membership_tier) | **PUT** /v2/membership/tier/{id} | Update Membership Tier
 
 
 # **archive_membership_tier**
 > WTMembershipTier archive_membership_tier(id)
 
-Archive tier
+Archive Membership Tier
 
 ### Example
 
@@ -40,10 +40,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MembershipTiersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive tier
+        # Archive Membership Tier
         api_response = api_instance.archive_membership_tier(id)
         print("The response of MembershipTiersApi->archive_membership_tier:\n")
         pprint(api_response)
@@ -58,7 +58,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -87,7 +87,7 @@ No authorization required
 # **create_membership_tier**
 > WTMembershipTier create_membership_tier(wt_membership_tier_creation_params)
 
-Create tier
+Create Membership Tier
 
 ### Example
 
@@ -113,7 +113,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_membership_tier_creation_params = wallet.WTMembershipTierCreationParams() # WTMembershipTierCreationParams | 
 
     try:
-        # Create tier
+        # Create Membership Tier
         api_response = api_instance.create_membership_tier(wt_membership_tier_creation_params)
         print("The response of MembershipTiersApi->create_membership_tier:\n")
         pprint(api_response)
@@ -159,7 +159,7 @@ No authorization required
 # **fetch_all_membership_tiers**
 > List[WTMembershipTier] fetch_all_membership_tiers(is_archive_included=is_archive_included)
 
-Fetch all tiers
+Get all Membership Tiers
 
 ### Example
 
@@ -184,7 +184,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all tiers
+        # Get all Membership Tiers
         api_response = api_instance.fetch_all_membership_tiers(is_archive_included=is_archive_included)
         print("The response of MembershipTiersApi->fetch_all_membership_tiers:\n")
         pprint(api_response)
@@ -228,7 +228,7 @@ No authorization required
 # **fetch_all_membership_tiers_with_member_count**
 > List[WTMembershipTierWithMemberCount] fetch_all_membership_tiers_with_member_count(is_archive_included=is_archive_included)
 
-Fetch all tiers with member count
+Get all Membership Tiers with member count
 
 ### Example
 
@@ -253,7 +253,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all tiers with member count
+        # Get all Membership Tiers with member count
         api_response = api_instance.fetch_all_membership_tiers_with_member_count(is_archive_included=is_archive_included)
         print("The response of MembershipTiersApi->fetch_all_membership_tiers_with_member_count:\n")
         pprint(api_response)
@@ -297,7 +297,7 @@ No authorization required
 # **fetch_membership_tier_by_id**
 > WTMembershipTier fetch_membership_tier_by_id(id)
 
-Fetch tier
+Get Membership Tier
 
 ### Example
 
@@ -319,10 +319,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MembershipTiersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch tier
+        # Get Membership Tier
         api_response = api_instance.fetch_membership_tier_by_id(id)
         print("The response of MembershipTiersApi->fetch_membership_tier_by_id:\n")
         pprint(api_response)
@@ -337,7 +337,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -366,7 +366,7 @@ No authorization required
 # **fetch_membership_tier_history_log**
 > MSMembershipTierHistoryPagination fetch_membership_tier_history_log(pagination_request_with_id_and_without_sort_options)
 
-Fetch history
+Get Membership Tier history
 
 ### Example
 
@@ -392,7 +392,7 @@ with wallet.ApiClient(configuration) as api_client:
     pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
     try:
-        # Fetch history
+        # Get Membership Tier history
         api_response = api_instance.fetch_membership_tier_history_log(pagination_request_with_id_and_without_sort_options)
         print("The response of MembershipTiersApi->fetch_membership_tier_history_log:\n")
         pprint(api_response)
@@ -436,7 +436,7 @@ No authorization required
 # **fetch_membership_tier_redemption_log**
 > MSMembershipTierRedemptionPagination fetch_membership_tier_redemption_log(pagination_request_with_id_and_without_sort_options)
 
-Fetch redemption log
+Get Membership Tier redemption log
 
 ### Example
 
@@ -462,7 +462,7 @@ with wallet.ApiClient(configuration) as api_client:
     pagination_request_with_id_and_without_sort_options = wallet.PaginationRequestWithIDAndWithoutSortOptions() # PaginationRequestWithIDAndWithoutSortOptions | 
 
     try:
-        # Fetch redemption log
+        # Get Membership Tier redemption log
         api_response = api_instance.fetch_membership_tier_redemption_log(pagination_request_with_id_and_without_sort_options)
         print("The response of MembershipTiersApi->fetch_membership_tier_redemption_log:\n")
         pprint(api_response)
@@ -506,7 +506,7 @@ No authorization required
 # **restore_membership_tier**
 > WTMembershipTier restore_membership_tier(id)
 
-Restore tier
+Restore Membership Tier
 
 ### Example
 
@@ -531,7 +531,7 @@ with wallet.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
 
     try:
-        # Restore tier
+        # Restore Membership Tier
         api_response = api_instance.restore_membership_tier(id)
         print("The response of MembershipTiersApi->restore_membership_tier:\n")
         pprint(api_response)
@@ -575,7 +575,7 @@ No authorization required
 # **update_membership_tier**
 > WTMembershipTier update_membership_tier(id, wt_membership_tier_update_params)
 
-Update tier
+Update Membership Tier
 
 ### Example
 
@@ -598,11 +598,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.MembershipTiersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_membership_tier_update_params = wallet.WTMembershipTierUpdateParams() # WTMembershipTierUpdateParams | 
 
     try:
-        # Update tier
+        # Update Membership Tier
         api_response = api_instance.update_membership_tier(id, wt_membership_tier_update_params)
         print("The response of MembershipTiersApi->update_membership_tier:\n")
         pprint(api_response)
@@ -617,7 +617,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_membership_tier_update_params** | [**WTMembershipTierUpdateParams**](WTMembershipTierUpdateParams.md)|  | 
 
 ### Return type

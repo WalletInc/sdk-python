@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**email** | **str** |  | 
-**phone_number** | **str** |  | 
-**is_public_representative** | **bool** |  | 
-**wallet_sequence_number** | **int** |  | 
-**employee_id** | **str** |  | 
-**job_title** | **str** |  | 
-**department** | **str** |  | 
+**first_name** | **object** |  | 
+**last_name** | **object** |  | 
+**email** | **object** |  | 
+**phone_number** | **object** |  | 
+**is_public_representative** | **object** |  | 
+**wallet_sequence_number** | **object** |  | 
+**employee_id** | **object** |  | 
+**job_title** | **object** |  | 
+**department** | **object** |  | 
 **schedule_start_day** | [**EmployeeScheduleStartDay**](EmployeeScheduleStartDay.md) |  | [optional] 
 **schedule_start_hour** | [**EmployeeScheduleStartHour**](EmployeeScheduleStartHour.md) |  | [optional] 
 **schedule_start_minute** | [**EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional] 
@@ -23,18 +23,18 @@ Name | Type | Description | Notes
 **schedule_end_minute** | [**EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional] 
 **schedule_end_meridiem** | [**EmployeeScheduleStartMeridiem**](EmployeeScheduleStartMeridiem.md) |  | [optional] 
 **id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**username** | **str** |  | 
-**email_verified** | **str** |  | 
-**profile_picture_url** | **str** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**username** | **object** |  | 
+**email_verified** | **object** |  | 
+**profile_picture_url** | **object** |  | 
 **merchant_id** | **str** |  | 
-**session_token** | **str** |  | 
-**failed_login_attempts** | **float** |  | [optional] 
-**last_login_date** | **datetime** |  | [optional] 
-**cfuvid** | **str** |  | [optional] 
-**schedule** | **object** |  | [optional] 
-**is_email_notification_disabled** | **bool** |  | [optional] 
+**session_token** | **object** |  | 
+**failed_login_attempts** | **object** |  | [optional] 
+**last_login_date** | **object** |  | [optional] 
+**cfuvid** | **object** |  | [optional] 
+**schedule** | **object** | Construct a type with a set of properties K of type T | [optional] 
+**is_email_notification_disabled** | **object** |  | [optional] 
 
 ## Example
 

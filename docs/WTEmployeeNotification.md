@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**WTEmployeeNotificationType**](WTEmployeeNotificationType.md) |  | 
 **title** | **str** |  | 
-**content** | **str** |  | 
+**content** | **object** |  | 
 **payload** | **object** |  | [optional] 
 
 ## Example

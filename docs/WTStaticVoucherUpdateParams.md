@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**member_id** | **str** |  | [optional] 
-**offer_amount_cents** | **int** |  | 
-**cell_phone** | **str** |  | 
+**member_id** | **object** |  | [optional] 
+**offer_amount_cents** | **object** |  | 
+**cell_phone** | **object** |  | 
 
 ## Example
 

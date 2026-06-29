@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
-**subject** | **str** |  | 
-**body** | **str** |  | 
+**subject** | **object** |  | 
+**body** | **object** |  | 
 **severity** | **str** |  | 
 **is_active** | **bool** |  | 
 

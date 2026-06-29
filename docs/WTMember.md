@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **email** | **str** |  | 
 **birthday** | **str** | Represents the date of birth of the member. Defaults to 0000-00-00, which represents that the date of birth has not been configured | 
 **points_accrued** | **int** | The number of points that the member has accrued | 
-**member_id** | **str** | Member ID as represented by the merchant | 
+**member_id** | **object** | Member ID as represented by the merchant | 
 **membership_tier_redeemable_id** | **str** |  | 
 
 ## Example

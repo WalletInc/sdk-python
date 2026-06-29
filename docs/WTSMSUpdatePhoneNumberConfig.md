@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**company_name** | **str** |  | 
-**privacy_policy_url** | **str** |  | [optional] 
-**terms_of_service_url** | **str** |  | [optional] 
-**message_footer** | **str** |  | 
-**stop_response** | **str** |  | 
-**help_response** | **str** |  | 
-**help_desk_keyword** | **str** |  | 
-**help_desk_queue_response** | **str** |  | 
-**is_connected_to_watson** | **bool** |  | [optional] 
-**watson_username** | **str** |  | [optional] 
-**watson_password** | **str** |  | [optional] 
-**watson_conversation_workplace_id** | **str** |  | [optional] 
+**company_name** | **object** |  | 
+**privacy_policy_url** | **object** |  | [optional] 
+**terms_of_service_url** | **object** |  | [optional] 
+**message_footer** | **object** |  | 
+**stop_response** | **object** |  | 
+**help_response** | **object** |  | 
+**help_desk_keyword** | **object** |  | 
+**help_desk_queue_response** | **object** |  | 
+**is_connected_to_watson** | **object** |  | [optional] 
+**watson_username** | **object** |  | [optional] 
+**watson_password** | **object** |  | [optional] 
+**watson_conversation_workplace_id** | **object** |  | [optional] 
 
 ## Example
 

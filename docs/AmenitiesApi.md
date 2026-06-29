@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_amenity**](AmenitiesApi.md#archive_amenity) | **DELETE** /v2/amenities/{id} | Archive amenity
-[**create_amenity**](AmenitiesApi.md#create_amenity) | **POST** /v2/amenities | Create amenity
-[**fetch_all_amenities**](AmenitiesApi.md#fetch_all_amenities) | **GET** /v2/amenities/all | Fetch all amenities
-[**restore_amenity**](AmenitiesApi.md#restore_amenity) | **PATCH** /v2/amenities/{id} | Restore amenity
-[**update_amenity**](AmenitiesApi.md#update_amenity) | **PUT** /v2/amenities/{id} | Update amenity
+[**archive_amenity**](AmenitiesApi.md#archive_amenity) | **DELETE** /v2/amenities/{id} | Archive Amenity
+[**create_amenity**](AmenitiesApi.md#create_amenity) | **POST** /v2/amenities | Create Amenity
+[**fetch_all_amenities**](AmenitiesApi.md#fetch_all_amenities) | **GET** /v2/amenities/all | Get all Amenities
+[**restore_amenity**](AmenitiesApi.md#restore_amenity) | **PATCH** /v2/amenities/{id} | Restore Amenity
+[**update_amenity**](AmenitiesApi.md#update_amenity) | **PUT** /v2/amenities/{id} | Update Amenity
 
 
 # **archive_amenity**
 > Amenity archive_amenity(id)
 
-Archive amenity
+Archive Amenity
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.AmenitiesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive amenity
+        # Archive Amenity
         api_response = api_instance.archive_amenity(id)
         print("The response of AmenitiesApi->archive_amenity:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_amenity**
 > Amenity create_amenity(wt_amenity_create_params)
 
-Create amenity
+Create Amenity
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_amenity_create_params = wallet.WTAmenityCreateParams() # WTAmenityCreateParams | 
 
     try:
-        # Create amenity
+        # Create Amenity
         api_response = api_instance.create_amenity(wt_amenity_create_params)
         print("The response of AmenitiesApi->create_amenity:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_amenities**
 > object fetch_all_amenities(is_archive_included=is_archive_included)
 
-Fetch all amenities
+Get all Amenities
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all amenities
+        # Get all Amenities
         api_response = api_instance.fetch_all_amenities(is_archive_included=is_archive_included)
         print("The response of AmenitiesApi->fetch_all_amenities:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_amenity**
 > Amenity restore_amenity(id)
 
-Restore amenity
+Restore Amenity
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.AmenitiesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore amenity
+        # Restore Amenity
         api_response = api_instance.restore_amenity(id)
         print("The response of AmenitiesApi->restore_amenity:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_amenity**
 > Amenity update_amenity(id, wt_amenity_update_params)
 
-Update amenity
+Update Amenity
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.AmenitiesApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_amenity_update_params = wallet.WTAmenityUpdateParams() # WTAmenityUpdateParams | 
 
     try:
-        # Update amenity
+        # Update Amenity
         api_response = api_instance.update_amenity(id, wt_amenity_update_params)
         print("The response of AmenitiesApi->update_amenity:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_amenity_update_params** | [**WTAmenityUpdateParams**](WTAmenityUpdateParams.md)|  | 
 
 ### Return type

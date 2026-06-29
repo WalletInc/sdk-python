@@ -4,17 +4,17 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_video**](VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive video
-[**create_video**](VideosApi.md#create_video) | **POST** /v2/video | Create video
-[**fetch_all_video**](VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Fetch all video
-[**restore_video**](VideosApi.md#restore_video) | **PATCH** /v2/video/{id} | Restore video
-[**update_video**](VideosApi.md#update_video) | **PUT** /v2/video/{id} | Update video
+[**archive_video**](VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive Video
+[**create_video**](VideosApi.md#create_video) | **POST** /v2/video | Create Video
+[**fetch_all_video**](VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Get all Videos
+[**restore_video**](VideosApi.md#restore_video) | **PATCH** /v2/video/{id} | Restore Video
+[**update_video**](VideosApi.md#update_video) | **PUT** /v2/video/{id} | Update Video
 
 
 # **archive_video**
 > Video archive_video(id)
 
-Archive video
+Archive Video
 
 ### Example
 
@@ -36,10 +36,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VideosApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive video
+        # Archive Video
         api_response = api_instance.archive_video(id)
         print("The response of VideosApi->archive_video:\n")
         pprint(api_response)
@@ -54,7 +54,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 # **create_video**
 > Video create_video(wt_video_create_params)
 
-Create video
+Create Video
 
 ### Example
 
@@ -109,7 +109,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_video_create_params = wallet.WTVideoCreateParams() # WTVideoCreateParams | 
 
     try:
-        # Create video
+        # Create Video
         api_response = api_instance.create_video(wt_video_create_params)
         print("The response of VideosApi->create_video:\n")
         pprint(api_response)
@@ -153,7 +153,7 @@ No authorization required
 # **fetch_all_video**
 > object fetch_all_video(is_archive_included=is_archive_included)
 
-Fetch all video
+Get all Videos
 
 ### Example
 
@@ -177,7 +177,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all video
+        # Get all Videos
         api_response = api_instance.fetch_all_video(is_archive_included=is_archive_included)
         print("The response of VideosApi->fetch_all_video:\n")
         pprint(api_response)
@@ -221,7 +221,7 @@ No authorization required
 # **restore_video**
 > Video restore_video(id)
 
-Restore video
+Restore Video
 
 ### Example
 
@@ -243,10 +243,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VideosApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore video
+        # Restore Video
         api_response = api_instance.restore_video(id)
         print("The response of VideosApi->restore_video:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ No authorization required
 # **update_video**
 > Video update_video(id, wt_video_update_params)
 
-Update video
+Update Video
 
 ### Example
 
@@ -313,11 +313,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VideosApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_video_update_params = wallet.WTVideoUpdateParams() # WTVideoUpdateParams | 
 
     try:
-        # Update video
+        # Update Video
         api_response = api_instance.update_video(id, wt_video_update_params)
         print("The response of VideosApi->update_video:\n")
         pprint(api_response)
@@ -332,7 +332,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_video_update_params** | [**WTVideoUpdateParams**](WTVideoUpdateParams.md)|  | 
 
 ### Return type

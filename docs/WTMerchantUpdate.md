@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**company_name** | **str** |  | 
-**address1** | **str** |  | 
-**address2** | **str** |  | 
-**city** | **str** |  | 
-**state** | **str** |  | 
-**country** | **str** |  | 
-**phone_number** | **str** |  | 
-**zip** | **str** |  | 
-**currency_abbreviation** | **str** |  | [optional] 
+**company_name** | **object** |  | 
+**address1** | **object** |  | 
+**address2** | **object** |  | 
+**city** | **object** |  | 
+**state** | **object** |  | 
+**country** | **object** |  | 
+**phone_number** | **object** |  | 
+**zip** | **object** |  | 
+**currency_abbreviation** | **object** |  | [optional] 
 
 ## Example
 

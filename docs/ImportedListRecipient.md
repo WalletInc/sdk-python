@@ -6,13 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **imported_list_id** | **str** |  | 
-**mobile_phone_number** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**mobile_phone_number** | **object** |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
-**opted_status** | **bool** |  | [optional] 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
+**opted_status** | **object** |  | [optional] 
 
 ## Example
 

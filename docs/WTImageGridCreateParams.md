@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
+**title** | **object** |  | 
 **url** | **str** |  | 
-**media_url** | **str** |  | 
+**media_url** | **object** |  | 
 **sequence_number** | **int** |  | 
 **is_pinned** | **bool** |  | [optional] 
 

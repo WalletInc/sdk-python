@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**List[WTMerchantCredit]**](WTMerchantCredit.md) | Stores the results as an array | 
-**length** | **int** | Denotes the length of the results array | 
-**total** | **int** | Denotes the total number of records present in the database | 
+**results** | **object** | Stores the results as an array | 
+**length** | **object** | Denotes the length of the results array | 
+**total** | **object** | Denotes the total number of records present in the database | 
 
 ## Example
 

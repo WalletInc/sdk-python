@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **aff_sub2** | **str** |  | 
 **cf_affiliate_id** | **object** |  | [optional] 
 **contact_profile** | [**ClickFunnelContactProfile**](ClickFunnelContactProfile.md) |  | [optional] 
-**time_zone** | **str** |  | [optional] 
+**time_zone** | **object** |  | [optional] 
 **company_name** | **str** |  | 
 **company_industry** | **str** |  | 
 **additional_info** | **object** |  | [optional] 

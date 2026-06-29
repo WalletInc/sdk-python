@@ -5,23 +5,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
-**email_address** | **str** |  | 
-**designation** | **str** |  | 
-**phone_number** | **str** |  | 
-**introduction** | **str** |  | [optional] 
-**instagram** | **str** |  | [optional] 
-**facebook** | **str** |  | [optional] 
-**you_tube** | **str** |  | [optional] 
-**twitter** | **str** |  | [optional] 
-**linked_in** | **str** |  | [optional] 
-**whats_app** | **str** |  | [optional] 
-**avatar_url** | **str** |  | [optional] 
-**id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**first_name** | **object** |  | 
+**last_name** | **object** |  | 
+**email_address** | **object** |  | 
+**designation** | **object** |  | 
+**phone_number** | **object** |  | 
+**introduction** | **object** |  | [optional] 
+**instagram** | **object** |  | [optional] 
+**facebook** | **object** |  | [optional] 
+**you_tube** | **object** |  | [optional] 
+**twitter** | **object** |  | [optional] 
+**linked_in** | **object** |  | [optional] 
+**whats_app** | **object** |  | [optional] 
+**avatar_url** | **object** |  | [optional] 
+**id** | [**AmenityId**](AmenityId.md) |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 **merchant_id** | **str** |  | 
 
 ## Example

@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
-**name** | **str** |  | 
-**price** | **float** |  | 
-**nickname** | **str** |  | 
-**examples** | **str** |  | 
-**products** | [**List[SubscriptionProduct]**](SubscriptionProduct.md) |  | 
-**all_pages** | [**List[PortalPage]**](PortalPage.md) |  | 
+**id** | **object** |  | 
+**name** | **object** |  | 
+**price** | **object** |  | 
+**nickname** | **object** |  | 
+**examples** | **object** |  | 
+**products** | **object** |  | 
+**all_pages** | **object** |  | 
 
 ## Example
 

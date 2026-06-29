@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  | 
-**products** | [**List[ClickFunnelProduct]**](ClickFunnelProduct.md) |  | 
+**products** | **object** |  | 
 **member_id** | **object** |  | [optional] 
 **contact** | [**ClickFunnelContact**](ClickFunnelContact.md) |  | 
 **funnel_id** | **float** |  | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | 
 **fulfillment_status** | **object** |  | [optional] 
 **fulfillment_id** | **object** |  | [optional] 
-**fulfillments** | **object** |  | 
+**fulfillments** | **Dict[str, object]** |  | 
 **payments_count** | **object** |  | [optional] 
 **infusionsoft_ccid** | **object** |  | [optional] 
 **oap_customer_id** | **object** |  | [optional] 

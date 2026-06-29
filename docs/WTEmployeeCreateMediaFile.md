@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file_name** | **str** |  | 
+**file_name** | **object** |  | 
 **file_data** | **object** |  | 
-**folder** | **str** |  | [optional] 
+**folder** | **object** |  | [optional] 
 
 ## Example
 

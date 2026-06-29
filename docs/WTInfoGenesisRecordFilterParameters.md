@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_date_time** | **datetime** |  | 
-**end_date_time** | **datetime** |  | 
-**selected_registers** | **List[str]** |  | [optional] 
+**start_date_time** | **object** |  | 
+**end_date_time** | **object** |  | 
+**selected_registers** | **object** |  | [optional] 
 
 ## Example
 

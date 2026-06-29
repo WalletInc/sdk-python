@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **recipient_email_address** | **str** |  | [optional] 
 **recipient_member_id** | **str** |  | [optional] 
 **is_comp** | **bool** |  | [optional] 
-**quantity** | **float** | The number of tickets allocated to the recipient. | [optional] 
+**quantity** | **object** | The number of tickets allocated to the recipient. | [optional] 
 **performance_id** | **str** |  | 
-**id** | [**SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  | 
+**id** | [**AmenityId**](AmenityId.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 

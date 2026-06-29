@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cell_phone** | **str** |  | 
+**cell_phone** | **object** |  | 
 **phone_number_id** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 
 ## Example
 

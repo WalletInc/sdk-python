@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **background_image_url** | **str** |  | [optional] 
 **company_logo_url** | **str** |  | [optional] 
 **employee_id** | **str** |  | 
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 

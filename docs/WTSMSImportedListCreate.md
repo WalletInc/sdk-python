@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_number_id** | **str** |  | 
-**is_active** | **bool** |  | 
-**list_name** | **str** |  | 
+**is_active** | **object** |  | 
+**list_name** | **object** |  | 
 
 ## Example
 

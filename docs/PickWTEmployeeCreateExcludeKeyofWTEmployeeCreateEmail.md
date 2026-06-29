@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 **wallet_sequence_number** | **int** |  | 
 **job_title** | **str** |  | 
 **department** | **str** |  | 
-**schedule_start_day** | [**EmployeeScheduleStartDay**](EmployeeScheduleStartDay.md) |  | [optional] 
-**schedule_start_hour** | [**EmployeeScheduleStartHour**](EmployeeScheduleStartHour.md) |  | [optional] 
-**schedule_start_minute** | [**EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional] 
-**schedule_start_meridiem** | [**EmployeeScheduleStartMeridiem**](EmployeeScheduleStartMeridiem.md) |  | [optional] 
-**schedule_end_day** | [**EmployeeScheduleStartDay**](EmployeeScheduleStartDay.md) |  | [optional] 
-**schedule_end_hour** | [**EmployeeScheduleStartHour**](EmployeeScheduleStartHour.md) |  | [optional] 
-**schedule_end_minute** | [**EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional] 
-**schedule_end_meridiem** | [**EmployeeScheduleStartMeridiem**](EmployeeScheduleStartMeridiem.md) |  | [optional] 
+**schedule_start_day** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay.md) |  | [optional] 
+**schedule_start_hour** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour.md) |  | [optional] 
+**schedule_start_minute** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMinute**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMinute.md) |  | [optional] 
+**schedule_start_meridiem** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMeridiem**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMeridiem.md) |  | [optional] 
+**schedule_end_day** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay.md) |  | [optional] 
+**schedule_end_hour** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour.md) |  | [optional] 
+**schedule_end_minute** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMinute**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMinute.md) |  | [optional] 
+**schedule_end_meridiem** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMeridiem**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMeridiem.md) |  | [optional] 
 
 ## Example
 

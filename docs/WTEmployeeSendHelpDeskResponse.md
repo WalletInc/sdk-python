@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **help_desk_request_id** | **str** |  | 
-**message** | **str** |  | 
-**media_urls** | **List[str]** |  | [optional] 
+**message** | **object** |  | 
+**media_urls** | **object** |  | [optional] 
 
 ## Example
 

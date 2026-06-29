@@ -4,18 +4,18 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_link_book**](QuickLinksApi.md#archive_link_book) | **DELETE** /v2/linkBook/{id} | Archive link
-[**create_link_book**](QuickLinksApi.md#create_link_book) | **POST** /v2/linkBook | Create link
-[**fetch_all_link_book**](QuickLinksApi.md#fetch_all_link_book) | **GET** /v2/linkBook/all | Fetch all links
-[**fetch_link_book_by_id**](QuickLinksApi.md#fetch_link_book_by_id) | **GET** /v2/linkBook/{id} | Fetch link book by id
-[**restore_link_book**](QuickLinksApi.md#restore_link_book) | **PATCH** /v2/linkBook/{id} | Restore link
-[**update_link_book**](QuickLinksApi.md#update_link_book) | **PUT** /v2/linkBook/{id} | Update link
+[**archive_link_book**](QuickLinksApi.md#archive_link_book) | **DELETE** /v2/linkBook/{id} | Archive Quick Link
+[**create_link_book**](QuickLinksApi.md#create_link_book) | **POST** /v2/linkBook | Create Quick Link
+[**fetch_all_link_book**](QuickLinksApi.md#fetch_all_link_book) | **GET** /v2/linkBook/all | Get all Quick Links
+[**fetch_link_book_by_id**](QuickLinksApi.md#fetch_link_book_by_id) | **GET** /v2/linkBook/{id} | Get Quick Link
+[**restore_link_book**](QuickLinksApi.md#restore_link_book) | **PATCH** /v2/linkBook/{id} | Restore Quick Link
+[**update_link_book**](QuickLinksApi.md#update_link_book) | **PUT** /v2/linkBook/{id} | Update Quick Link
 
 
 # **archive_link_book**
 > LinkBook archive_link_book(id)
 
-Archive link
+Archive Quick Link
 
 ### Example
 
@@ -37,10 +37,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QuickLinksApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Archive link
+        # Archive Quick Link
         api_response = api_instance.archive_link_book(id)
         print("The response of QuickLinksApi->archive_link_book:\n")
         pprint(api_response)
@@ -55,7 +55,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -82,9 +82,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_link_book**
-> LinkBook create_link_book(wt_link_book_create_params)
+> LinkBook create_link_book(wt_quick_link_create_params)
 
-Create link
+Create Quick Link
 
 ### Example
 
@@ -92,7 +92,7 @@ Create link
 ```python
 import wallet
 from wallet.models.link_book import LinkBook
-from wallet.models.wt_link_book_create_params import WTLinkBookCreateParams
+from wallet.models.wt_quick_link_create_params import WTQuickLinkCreateParams
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -107,11 +107,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QuickLinksApi(api_client)
-    wt_link_book_create_params = wallet.WTLinkBookCreateParams() # WTLinkBookCreateParams | 
+    wt_quick_link_create_params = wallet.WTQuickLinkCreateParams() # WTQuickLinkCreateParams | 
 
     try:
-        # Create link
-        api_response = api_instance.create_link_book(wt_link_book_create_params)
+        # Create Quick Link
+        api_response = api_instance.create_link_book(wt_quick_link_create_params)
         print("The response of QuickLinksApi->create_link_book:\n")
         pprint(api_response)
     except Exception as e:
@@ -125,7 +125,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_link_book_create_params** | [**WTLinkBookCreateParams**](WTLinkBookCreateParams.md)|  | 
+ **wt_quick_link_create_params** | [**WTQuickLinkCreateParams**](WTQuickLinkCreateParams.md)|  | 
 
 ### Return type
 
@@ -154,7 +154,7 @@ No authorization required
 # **fetch_all_link_book**
 > object fetch_all_link_book(is_archive_included=is_archive_included)
 
-Fetch all links
+Get all Quick Links
 
 ### Example
 
@@ -178,7 +178,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all links
+        # Get all Quick Links
         api_response = api_instance.fetch_all_link_book(is_archive_included=is_archive_included)
         print("The response of QuickLinksApi->fetch_all_link_book:\n")
         pprint(api_response)
@@ -220,16 +220,16 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_link_book_by_id**
-> WTLinkBook fetch_link_book_by_id(id)
+> WTQuickLink fetch_link_book_by_id(id)
 
-Fetch link book by id
+Get Quick Link
 
 ### Example
 
 
 ```python
 import wallet
-from wallet.models.wt_link_book import WTLinkBook
+from wallet.models.wt_quick_link import WTQuickLink
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -244,10 +244,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QuickLinksApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch link book by id
+        # Get Quick Link
         api_response = api_instance.fetch_link_book_by_id(id)
         print("The response of QuickLinksApi->fetch_link_book_by_id:\n")
         pprint(api_response)
@@ -262,11 +262,11 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
-[**WTLinkBook**](WTLinkBook.md)
+[**WTQuickLink**](WTQuickLink.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ No authorization required
 # **restore_link_book**
 > LinkBook restore_link_book(id)
 
-Restore link
+Restore Quick Link
 
 ### Example
 
@@ -313,10 +313,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QuickLinksApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Restore link
+        # Restore Quick Link
         api_response = api_instance.restore_link_book(id)
         print("The response of QuickLinksApi->restore_link_book:\n")
         pprint(api_response)
@@ -331,7 +331,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -358,9 +358,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_link_book**
-> LinkBook update_link_book(id, wt_link_book_update_params)
+> LinkBook update_link_book(id, wt_quick_link_update_params)
 
-Update link
+Update Quick Link
 
 ### Example
 
@@ -368,7 +368,7 @@ Update link
 ```python
 import wallet
 from wallet.models.link_book import LinkBook
-from wallet.models.wt_link_book_update_params import WTLinkBookUpdateParams
+from wallet.models.wt_quick_link_update_params import WTQuickLinkUpdateParams
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -383,12 +383,12 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.QuickLinksApi(api_client)
-    id = None # object | 
-    wt_link_book_update_params = wallet.WTLinkBookUpdateParams() # WTLinkBookUpdateParams | 
+    id = 'id_example' # str | 
+    wt_quick_link_update_params = wallet.WTQuickLinkUpdateParams() # WTQuickLinkUpdateParams | 
 
     try:
-        # Update link
-        api_response = api_instance.update_link_book(id, wt_link_book_update_params)
+        # Update Quick Link
+        api_response = api_instance.update_link_book(id, wt_quick_link_update_params)
         print("The response of QuickLinksApi->update_link_book:\n")
         pprint(api_response)
     except Exception as e:
@@ -402,8 +402,8 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
- **wt_link_book_update_params** | [**WTLinkBookUpdateParams**](WTLinkBookUpdateParams.md)|  | 
+ **id** | **str**|  | 
+ **wt_quick_link_update_params** | [**WTQuickLinkUpdateParams**](WTQuickLinkUpdateParams.md)|  | 
 
 ### Return type
 

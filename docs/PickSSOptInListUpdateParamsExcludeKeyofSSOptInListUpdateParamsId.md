@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **opt_in_confirmed_customer_receives** | **str** |  | 
 **opt_out_confirmed_customer_receives** | **str** |  | 
 **opt_in_confirmed_media_urls** | **List[str]** |  | 
-**opt_out_confirmed_media_urls** | **List[str]** |  | 
+**opt_out_confirmed_media_urls** | **object** |  | 
 **is_over21_required** | **bool** |  | 
 
 ## Example

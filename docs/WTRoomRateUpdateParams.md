@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** |  | 
-**description** | **str** |  | 
-**displayed_price** | **str** |  | [optional] 
+**title** | **object** |  | 
+**description** | **object** |  | 
+**displayed_price** | **object** |  | [optional] 
 **order_number** | **int** |  | 
 **media_url** | **str** |  | [optional] 
-**additional_info_url** | **str** |  | [optional] 
+**additional_info_url** | **object** |  | [optional] 
 
 ## Example
 

@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**member_identifier** | **str** | Optional Member ID as represented by the merchant | [optional] 
-**mobile_number** | **str** |  | 
-**credit_amount** | **int** | The amount that needs to be credited to the member | 
-**id** | **str** | The UUID of this record | 
+**member_identifier** | **object** | Optional Member ID as represented by the merchant | [optional] 
+**mobile_number** | **object** |  | 
+**credit_amount** | **object** | The amount that needs to be credited to the member | 
+**id** | **object** | The UUID of this record | 
 **merchant_credit_id** | **str** |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** | The timestamp of when this resource was created | 
-**is_active** | **bool** | Denotes if this resource is active | 
+**created_at** | **object** | The timestamp of when this resource was created | 
+**is_active** | **object** | Denotes if this resource is active | 
 
 ## Example
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetch_wallet_item_from_woo_commerce_terminal**](WooCommerceTerminalApi.md#fetch_wallet_item_from_woo_commerce_terminal) | **GET** /v2/pos/woocommerce/item/{itemID} | Fetch item
+[**fetch_wallet_item_from_woo_commerce_terminal**](WooCommerceTerminalApi.md#fetch_wallet_item_from_woo_commerce_terminal) | **GET** /v2/pos/woocommerce/item/{itemID} | Get item
 [**redeem_wallet_item_from_woo_commerce_terminal**](WooCommerceTerminalApi.md#redeem_wallet_item_from_woo_commerce_terminal) | **POST** /v2/pos/woocommerce/item/redeem/{itemID} | Redeem item
 [**refund_wallet_item_from_woo_commerce_terminal**](WooCommerceTerminalApi.md#refund_wallet_item_from_woo_commerce_terminal) | **POST** /v2/pos/woocommerce/item/refund/{ledgerEntryID} | Refund transaction
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 # **fetch_wallet_item_from_woo_commerce_terminal**
 > object fetch_wallet_item_from_woo_commerce_terminal(item_id)
 
-Fetch item
+Get item
 
 ### Example
 
@@ -36,7 +36,7 @@ with wallet.ApiClient(configuration) as api_client:
     item_id = 'item_id_example' # str | 
 
     try:
-        # Fetch item
+        # Get item
         api_response = api_instance.fetch_wallet_item_from_woo_commerce_terminal(item_id)
         print("The response of WooCommerceTerminalApi->fetch_wallet_item_from_woo_commerce_terminal:\n")
         pprint(api_response)

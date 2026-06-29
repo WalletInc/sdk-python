@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_number_id** | **str** |  | 
-**message_template** | **str** |  | 
-**send_qr_code** | **bool** |  | 
-**media_urls** | **List[str]** |  | [optional] 
-**broadcast_scheduled_at** | **datetime** |  | 
-**locale** | **str** |  | 
-**timezone** | **str** |  | 
+**message_template** | **object** |  | 
+**send_qr_code** | **object** |  | 
+**media_urls** | **object** |  | [optional] 
+**broadcast_scheduled_at** | **object** |  | 
+**locale** | **object** |  | 
+**timezone** | **object** |  | 
 
 ## Example
 

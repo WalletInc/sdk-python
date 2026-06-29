@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_date_time** | **datetime** |  | 
-**end_date_time** | **datetime** |  | 
-**selected_registers** | **List[str]** |  | [optional] 
-**routing_ids** | **List[str]** |  | [optional] 
+**start_date_time** | **object** |  | 
+**end_date_time** | **object** |  | 
+**selected_registers** | **object** |  | [optional] 
+**routing_ids** | **object** |  | [optional] 
 
 ## Example
 

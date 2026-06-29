@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**phone_verification_token** | **str** |  | 
+**phone_verification_token** | **object** |  | 
 **merchant_id** | **str** |  | 
-**page_type** | **str** |  | 
-**is_refresh** | **bool** |  | [optional] 
-**referrer** | **str** |  | [optional] 
+**page_type** | **object** |  | 
+**is_refresh** | **object** |  | [optional] 
+**referrer** | **object** |  | [optional] 
 
 ## Example
 

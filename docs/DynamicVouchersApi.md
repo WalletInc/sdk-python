@@ -4,21 +4,21 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_dynamic_voucher_campaign**](DynamicVouchersApi.md#archive_dynamic_voucher_campaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive dynamic voucher campaign
-[**create_dynamic_voucher**](DynamicVouchersApi.md#create_dynamic_voucher) | **POST** /v2/payment/dynamicVoucher | Create dynamic voucher
-[**fetch_all_dynamic_vouchers**](DynamicVouchersApi.md#fetch_all_dynamic_vouchers) | **GET** /v2/payment/dynamicVoucher/all | Fetch all active dynamic vouchers
-[**fetch_dynamic_voucher_by_id**](DynamicVouchersApi.md#fetch_dynamic_voucher_by_id) | **GET** /v2/payment/dynamicVoucher/{id} | Fetch dynamic voucher
-[**fetch_dynamic_voucher_redemptions**](DynamicVouchersApi.md#fetch_dynamic_voucher_redemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Fetch redemptions
+[**archive_dynamic_voucher_campaign**](DynamicVouchersApi.md#archive_dynamic_voucher_campaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive Dynamic Voucher Campaign
+[**create_dynamic_voucher**](DynamicVouchersApi.md#create_dynamic_voucher) | **POST** /v2/payment/dynamicVoucher | Create Dynamic Voucher Campaign
+[**fetch_all_dynamic_vouchers**](DynamicVouchersApi.md#fetch_all_dynamic_vouchers) | **GET** /v2/payment/dynamicVoucher/all | Get all Dynamic Voucher Campaigns
+[**fetch_dynamic_voucher_by_id**](DynamicVouchersApi.md#fetch_dynamic_voucher_by_id) | **GET** /v2/payment/dynamicVoucher/{id} | Get Dynamic Voucher Campaign
+[**fetch_dynamic_voucher_redemptions**](DynamicVouchersApi.md#fetch_dynamic_voucher_redemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Get Dynamic Voucher Campaign Redemptions
 [**fetch_reach_stats_of_all_dynamic_vouchers**](DynamicVouchersApi.md#fetch_reach_stats_of_all_dynamic_vouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers
 [**fetch_reach_stats_of_individual_dynamic_voucher**](DynamicVouchersApi.md#fetch_reach_stats_of_individual_dynamic_voucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher
-[**restore_dynamic_voucher_campaign**](DynamicVouchersApi.md#restore_dynamic_voucher_campaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore dynamic voucher campaign
-[**save_dynamic_voucher**](DynamicVouchersApi.md#save_dynamic_voucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update dynamic voucher
+[**restore_dynamic_voucher_campaign**](DynamicVouchersApi.md#restore_dynamic_voucher_campaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore Dynamic Voucher Campaign
+[**save_dynamic_voucher**](DynamicVouchersApi.md#save_dynamic_voucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update Dynamic Voucher Campaign
 
 
 # **archive_dynamic_voucher_campaign**
 > DynamicVoucher archive_dynamic_voucher_campaign(campaign_id)
 
-Archive dynamic voucher campaign
+Archive Dynamic Voucher Campaign
 
 ### Example
 
@@ -40,10 +40,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DynamicVouchersApi(api_client)
-    campaign_id = None # object | 
+    campaign_id = 'campaign_id_example' # str | 
 
     try:
-        # Archive dynamic voucher campaign
+        # Archive Dynamic Voucher Campaign
         api_response = api_instance.archive_dynamic_voucher_campaign(campaign_id)
         print("The response of DynamicVouchersApi->archive_dynamic_voucher_campaign:\n")
         pprint(api_response)
@@ -58,7 +58,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | [**object**](.md)|  | 
+ **campaign_id** | **str**|  | 
 
 ### Return type
 
@@ -87,7 +87,7 @@ No authorization required
 # **create_dynamic_voucher**
 > WTDynamicVoucher create_dynamic_voucher(wt_dynamic_voucher_create_params)
 
-Create dynamic voucher
+Create Dynamic Voucher Campaign
 
 ### Example
 
@@ -113,7 +113,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_dynamic_voucher_create_params = wallet.WTDynamicVoucherCreateParams() # WTDynamicVoucherCreateParams | 
 
     try:
-        # Create dynamic voucher
+        # Create Dynamic Voucher Campaign
         api_response = api_instance.create_dynamic_voucher(wt_dynamic_voucher_create_params)
         print("The response of DynamicVouchersApi->create_dynamic_voucher:\n")
         pprint(api_response)
@@ -159,7 +159,7 @@ No authorization required
 # **fetch_all_dynamic_vouchers**
 > List[WTDynamicVoucher] fetch_all_dynamic_vouchers(is_archive_included=is_archive_included)
 
-Fetch all active dynamic vouchers
+Get all Dynamic Voucher Campaigns
 
 ### Example
 
@@ -184,7 +184,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Fetch all active dynamic vouchers
+        # Get all Dynamic Voucher Campaigns
         api_response = api_instance.fetch_all_dynamic_vouchers(is_archive_included=is_archive_included)
         print("The response of DynamicVouchersApi->fetch_all_dynamic_vouchers:\n")
         pprint(api_response)
@@ -228,7 +228,7 @@ No authorization required
 # **fetch_dynamic_voucher_by_id**
 > WTDynamicVoucher fetch_dynamic_voucher_by_id(id)
 
-Fetch dynamic voucher
+Get Dynamic Voucher Campaign
 
 ### Example
 
@@ -250,10 +250,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DynamicVouchersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch dynamic voucher
+        # Get Dynamic Voucher Campaign
         api_response = api_instance.fetch_dynamic_voucher_by_id(id)
         print("The response of DynamicVouchersApi->fetch_dynamic_voucher_by_id:\n")
         pprint(api_response)
@@ -268,7 +268,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -297,7 +297,7 @@ No authorization required
 # **fetch_dynamic_voucher_redemptions**
 > List[WTDynamicVoucherRedemption] fetch_dynamic_voucher_redemptions(id)
 
-Fetch redemptions
+Get Dynamic Voucher Campaign Redemptions
 
 ### Example
 
@@ -319,10 +319,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DynamicVouchersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
 
     try:
-        # Fetch redemptions
+        # Get Dynamic Voucher Campaign Redemptions
         api_response = api_instance.fetch_dynamic_voucher_redemptions(id)
         print("The response of DynamicVouchersApi->fetch_dynamic_voucher_redemptions:\n")
         pprint(api_response)
@@ -337,7 +337,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -459,7 +459,7 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DynamicVouchersApi(api_client)
-    dynamic_voucher_id = None # object | 
+    dynamic_voucher_id = 'dynamic_voucher_id_example' # str | 
     broadcast_scheduled_start_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     broadcast_scheduled_end_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
@@ -479,7 +479,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | [**object**](.md)|  | 
+ **dynamic_voucher_id** | **str**|  | 
  **broadcast_scheduled_start_at** | **datetime**|  | [optional] 
  **broadcast_scheduled_end_at** | **datetime**|  | [optional] 
 
@@ -510,7 +510,7 @@ No authorization required
 # **restore_dynamic_voucher_campaign**
 > DynamicVoucher restore_dynamic_voucher_campaign(campaign_id)
 
-Restore dynamic voucher campaign
+Restore Dynamic Voucher Campaign
 
 ### Example
 
@@ -532,10 +532,10 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DynamicVouchersApi(api_client)
-    campaign_id = None # object | 
+    campaign_id = 'campaign_id_example' # str | 
 
     try:
-        # Restore dynamic voucher campaign
+        # Restore Dynamic Voucher Campaign
         api_response = api_instance.restore_dynamic_voucher_campaign(campaign_id)
         print("The response of DynamicVouchersApi->restore_dynamic_voucher_campaign:\n")
         pprint(api_response)
@@ -550,7 +550,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | [**object**](.md)|  | 
+ **campaign_id** | **str**|  | 
 
 ### Return type
 
@@ -579,7 +579,7 @@ No authorization required
 # **save_dynamic_voucher**
 > WTDynamicVoucher save_dynamic_voucher(id, wt_dynamic_voucher_update_params)
 
-Update dynamic voucher
+Update Dynamic Voucher Campaign
 
 ### Example
 
@@ -602,11 +602,11 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.DynamicVouchersApi(api_client)
-    id = None # object | 
+    id = 'id_example' # str | 
     wt_dynamic_voucher_update_params = wallet.WTDynamicVoucherUpdateParams() # WTDynamicVoucherUpdateParams | 
 
     try:
-        # Update dynamic voucher
+        # Update Dynamic Voucher Campaign
         api_response = api_instance.save_dynamic_voucher(id, wt_dynamic_voucher_update_params)
         print("The response of DynamicVouchersApi->save_dynamic_voucher:\n")
         pprint(api_response)
@@ -621,7 +621,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **str**|  | 
  **wt_dynamic_voucher_update_params** | [**WTDynamicVoucherUpdateParams**](WTDynamicVoucherUpdateParams.md)|  | 
 
 ### Return type

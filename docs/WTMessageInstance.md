@@ -1,31 +1,10 @@
 # WTMessageInstance
 
-tsoaModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subresource_uris** | **object** | Construct a type with a set of properties K of type T | 
-**api_version** | **str** |  | 
-**price_unit** | **str** |  | 
-**error_code** | **float** |  | 
-**date_created** | **datetime** |  | 
-**date_sent** | **datetime** |  | 
-**sid** | **str** |  | 
-**messaging_service_sid** | **str** |  | 
-**status** | [**MessageStatus**](MessageStatus.md) |  | 
-**num_media** | **str** |  | 
-**account_sid** | **str** |  | 
-**uri** | **str** |  | 
-**error_message** | **str** |  | 
-**price** | **str** |  | 
-**date_updated** | **datetime** |  | 
-**to** | **str** |  | 
-**var_from** | **str** |  | 
-**direction** | [**MessageDirection**](MessageDirection.md) |  | 
-**num_segments** | **str** |  | 
-**body** | **str** |  | 
 
 ## Example
 

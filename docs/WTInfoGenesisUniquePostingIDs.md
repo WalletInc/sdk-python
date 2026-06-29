@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unique_posting_ids** | **List[str]** |  | 
+**unique_posting_ids** | **object** |  | 
 
 ## Example
 

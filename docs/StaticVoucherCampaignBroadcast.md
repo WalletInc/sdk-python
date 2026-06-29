@@ -5,24 +5,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**WTWalletPageViewId**](WTWalletPageViewId.md) |  | 
+**id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **employee_id** | **str** |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 **phone_number_id** | **str** |  | 
-**media_urls** | **List[str]** |  | 
+**media_urls** | **object** |  | 
 **opt_in_list** | [**WTOptInList**](WTOptInList.md) |  | [optional] 
 **imported_list** | [**WTImportedList**](WTImportedList.md) |  | [optional] 
-**broadcast_status** | [**PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDBroadcastStatus**](PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDBroadcastStatus.md) |  | 
-**broadcast_queued_at** | **datetime** |  | 
-**broadcast_started_at** | **datetime** |  | 
-**broadcast_completed_at** | **datetime** |  | 
-**payment_object_prefix** | [**PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDPaymentObjectPrefix**](PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDPaymentObjectPrefix.md) |  | 
+**broadcast_status** | [**StaticVoucherCampaignBroadcastBroadcastStatus**](StaticVoucherCampaignBroadcastBroadcastStatus.md) |  | 
+**broadcast_queued_at** | **object** |  | 
+**broadcast_started_at** | **object** |  | 
+**broadcast_completed_at** | **object** |  | 
+**payment_object_prefix** | [**StaticVoucherCampaignBroadcastPaymentObjectPrefix**](StaticVoucherCampaignBroadcastPaymentObjectPrefix.md) |  | 
 **payment_object_id** | **str** |  | 
-**message_template** | **str** |  | 
-**broadcast_scheduled_at** | **datetime** |  | 
+**message_template** | **object** |  | 
+**broadcast_scheduled_at** | **object** |  | 
 **static_voucher_campaign** | [**StaticVoucherCampaign**](StaticVoucherCampaign.md) |  | 
 
 ## Example

@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tier_number** | **str** | The tier number as defined by the merchant | 
-**tier_name** | **str** | The tier name as defined by the merchant | 
-**tier_discount** | **float** | The provided discount as percentage | 
+**tier_number** | **object** | The tier number as defined by the merchant | 
+**tier_name** | **object** | The tier name as defined by the merchant | 
+**tier_discount** | **object** | The provided discount as percentage | 
 **tier_design_id** | **str** |  | 
 **points_design_id** | **str** |  | 
 

@@ -6,14 +6,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
 **merchant_id** | **str** |  | 
-**file_url** | **str** | The URL of the file | 
-**file_type** | **str** | The type of the file | 
-**file_name** | **str** | The name of the file | 
-**file_size** | **float** | The size of the file | 
-**folder** | **str** | The folder in which the file is stored | 
+**file_url** | **object** | The URL of the file | 
+**file_type** | **object** | The type of the file | 
+**file_name** | **object** | The name of the file | 
+**file_size** | **object** | The size of the file | 
+**folder** | **object** | The folder in which the file is stored | 
 **employee_id** | **str** |  | 
 
 ## Example
