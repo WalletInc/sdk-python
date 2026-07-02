@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wallet"
-version = "2.1.603"
+version = "2.1.604"
 description = "wallet-api"
 authors = ["Development Team <development@wallet.inc>"]
 license = "https://wallet.law"
