@@ -600,6 +600,7 @@ Class | Method | HTTP request | Description
 *VideosApi* | [**archive_video**](docs/VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive Video
 *VideosApi* | [**create_video**](docs/VideosApi.md#create_video) | **POST** /v2/video | Create Video
 *VideosApi* | [**fetch_all_video**](docs/VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Get all Videos
+*VideosApi* | [**presign_video_upload**](docs/VideosApi.md#presign_video_upload) | **POST** /v2/video/presign | Presign a direct-to-R2 video upload
 *VideosApi* | [**restore_video**](docs/VideosApi.md#restore_video) | **PATCH** /v2/video/{id} | Restore Video
 *VideosApi* | [**update_video**](docs/VideosApi.md#update_video) | **PUT** /v2/video/{id} | Update Video
 *VirtualBusinessCardApi* | [**archive_virtual_business_card**](docs/VirtualBusinessCardApi.md#archive_virtual_business_card) | **DELETE** /v2/virtualBusinessCard/{id} | Archive Virtual Business Card
@@ -1014,6 +1015,8 @@ Class | Method | HTTP request | Description
  - [WTTwilioVerifyAuthyCode](docs/WTTwilioVerifyAuthyCode.md)
  - [WTVideoCreateParams](docs/WTVideoCreateParams.md)
  - [WTVideoUpdateParams](docs/WTVideoUpdateParams.md)
+ - [WTVideoUploadPresign](docs/WTVideoUploadPresign.md)
+ - [WTVideoUploadPresignParams](docs/WTVideoUploadPresignParams.md)
  - [WTVirtualBusinessCardCreateParams](docs/WTVirtualBusinessCardCreateParams.md)
  - [WTVirtualBusinessCardUpdateParams](docs/WTVirtualBusinessCardUpdateParams.md)
  - [WTWalletConfigurationSaveWalletRecord](docs/WTWalletConfigurationSaveWalletRecord.md)

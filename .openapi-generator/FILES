@@ -436,6 +436,8 @@ docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTVideoCreateParams.md
 docs/WTVideoUpdateParams.md
+docs/WTVideoUploadPresign.md
+docs/WTVideoUploadPresignParams.md
 docs/WTVirtualBusinessCardCreateParams.md
 docs/WTVirtualBusinessCardUpdateParams.md
 docs/WTWalletConfigurationSaveWalletRecord.md
@@ -464,6 +466,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_wt_video_upload_presign.py
+test/test_wt_video_upload_presign_params.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -902,6 +906,8 @@ wallet/models/wt_twilio_request_authy_code.py
 wallet/models/wt_twilio_verify_authy_code.py
 wallet/models/wt_video_create_params.py
 wallet/models/wt_video_update_params.py
+wallet/models/wt_video_upload_presign.py
+wallet/models/wt_video_upload_presign_params.py
 wallet/models/wt_virtual_business_card_create_params.py
 wallet/models/wt_virtual_business_card_update_params.py
 wallet/models/wt_wallet_configuration_save_wallet_record.py
