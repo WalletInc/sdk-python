@@ -243,6 +243,7 @@ from wallet.models.static_voucher_id import StaticVoucherId
 from wallet.models.status import Status
 from wallet.models.subscription_feature import SubscriptionFeature
 from wallet.models.subscription_plan import SubscriptionPlan
+from wallet.models.subscription_plan_annual import SubscriptionPlanAnnual
 from wallet.models.subscription_product import SubscriptionProduct
 from wallet.models.tcpa import Tcpa
 from wallet.models.thread import Thread

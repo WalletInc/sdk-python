@@ -856,6 +856,7 @@ Class | Method | HTTP request | Description
  - [Status](docs/Status.md)
  - [SubscriptionFeature](docs/SubscriptionFeature.md)
  - [SubscriptionPlan](docs/SubscriptionPlan.md)
+ - [SubscriptionPlanAnnual](docs/SubscriptionPlanAnnual.md)
  - [SubscriptionProduct](docs/SubscriptionProduct.md)
  - [Tcpa](docs/Tcpa.md)
  - [Thread](docs/Thread.md)
