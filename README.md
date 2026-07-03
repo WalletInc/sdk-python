@@ -192,6 +192,7 @@ Class | Method | HTTP request | Description
 *BillingPaymentsApi* | [**buy_special_offer**](docs/BillingPaymentsApi.md#buy_special_offer) | **POST** /v2/billing/products/specialOffers/{productID} | Buy special offer
 *BillingPaymentsApi* | [**cancel_plan**](docs/BillingPaymentsApi.md#cancel_plan) | **DELETE** /v2/billing/plan | Cancel billing plan
 *BillingPaymentsApi* | [**change_plan**](docs/BillingPaymentsApi.md#change_plan) | **PUT** /v2/billing/plan | Change billing plan
+*BillingPaymentsApi* | [**create_billing_portal_session**](docs/BillingPaymentsApi.md#create_billing_portal_session) | **POST** /v2/billing/portal/session | Create a Stripe Billing Portal session
 *BillingPaymentsApi* | [**fetch_add_ons**](docs/BillingPaymentsApi.md#fetch_add_ons) | **GET** /v2/billing/products/addOns | Get add-on products
 *BillingPaymentsApi* | [**fetch_customer_payment_methods**](docs/BillingPaymentsApi.md#fetch_customer_payment_methods) | **GET** /v2/billing/paymentMethods/all | Get payment methods
 *BillingPaymentsApi* | [**fetch_industry**](docs/BillingPaymentsApi.md#fetch_industry) | **GET** /v2/billing/industry | Get merchant&#39;s industry

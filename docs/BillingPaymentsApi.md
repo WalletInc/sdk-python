@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**buy_special_offer**](BillingPaymentsApi.md#buy_special_offer) | **POST** /v2/billing/products/specialOffers/{productID} | Buy special offer
 [**cancel_plan**](BillingPaymentsApi.md#cancel_plan) | **DELETE** /v2/billing/plan | Cancel billing plan
 [**change_plan**](BillingPaymentsApi.md#change_plan) | **PUT** /v2/billing/plan | Change billing plan
+[**create_billing_portal_session**](BillingPaymentsApi.md#create_billing_portal_session) | **POST** /v2/billing/portal/session | Create a Stripe Billing Portal session
 [**fetch_add_ons**](BillingPaymentsApi.md#fetch_add_ons) | **GET** /v2/billing/products/addOns | Get add-on products
 [**fetch_customer_payment_methods**](BillingPaymentsApi.md#fetch_customer_payment_methods) | **GET** /v2/billing/paymentMethods/all | Get payment methods
 [**fetch_industry**](BillingPaymentsApi.md#fetch_industry) | **GET** /v2/billing/industry | Get merchant&#39;s industry
@@ -277,6 +278,70 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_billing_portal_session**
+> object create_billing_portal_session()
+
+Create a Stripe Billing Portal session
+
+### Example
+
+
+```python
+import wallet
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BillingPaymentsApi(api_client)
+
+    try:
+        # Create a Stripe Billing Portal session
+        api_response = api_instance.create_billing_portal_session()
+        print("The response of BillingPaymentsApi->create_billing_portal_session:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingPaymentsApi->create_billing_portal_session: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
