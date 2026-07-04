@@ -16,8 +16,8 @@ Method | HTTP request | Description
 [**fetch_dynamic_voucher_with_voucher_id**](InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher
 [**fetch_member_information**](InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Get member information
 [**fetch_static_voucher_with_voucher_id**](InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher
-[**fetch_wallet_page_with_token**](InteractionsApi.md#fetch_wallet_page_with_token) | **POST** /wallet/page/token | Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
-[**fetch_wallet_payment_objects_with_token**](InteractionsApi.md#fetch_wallet_payment_objects_with_token) | **POST** /wallet/paymentObject/token | Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+[**fetch_wallet_page_with_token**](InteractionsApi.md#fetch_wallet_page_with_token) | **POST** /wallet/page/token | Get page (token-scoped)
+[**fetch_wallet_payment_objects_with_token**](InteractionsApi.md#fetch_wallet_payment_objects_with_token) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped)
 [**find_by_vanity_handle**](InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle
 [**identify_item**](InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
 [**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL
@@ -849,7 +849,7 @@ No authorization required
 # **fetch_wallet_page_with_token**
 > object fetch_wallet_page_with_token(wt_fetch_wallet_payment_objects_with_token)
 
-Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get page (token-scoped)
 
 ### Example
 
@@ -874,7 +874,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_fetch_wallet_payment_objects_with_token = wallet.WTFetchWalletPaymentObjectsWithToken() # WTFetchWalletPaymentObjectsWithToken | 
 
     try:
-        # Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+        # Get page (token-scoped)
         api_response = api_instance.fetch_wallet_page_with_token(wt_fetch_wallet_payment_objects_with_token)
         print("The response of InteractionsApi->fetch_wallet_page_with_token:\n")
         pprint(api_response)
@@ -917,7 +917,7 @@ No authorization required
 # **fetch_wallet_payment_objects_with_token**
 > object fetch_wallet_payment_objects_with_token(wt_fetch_wallet_payment_objects_with_token)
 
-Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get payment objects (token-scoped)
 
 ### Example
 
@@ -942,7 +942,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_fetch_wallet_payment_objects_with_token = wallet.WTFetchWalletPaymentObjectsWithToken() # WTFetchWalletPaymentObjectsWithToken | 
 
     try:
-        # Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+        # Get payment objects (token-scoped)
         api_response = api_instance.fetch_wallet_payment_objects_with_token(wt_fetch_wallet_payment_objects_with_token)
         print("The response of InteractionsApi->fetch_wallet_payment_objects_with_token:\n")
         pprint(api_response)

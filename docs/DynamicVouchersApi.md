@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**fetch_all_dynamic_vouchers**](DynamicVouchersApi.md#fetch_all_dynamic_vouchers) | **GET** /v2/payment/dynamicVoucher/all | Get all Dynamic Voucher Campaigns
 [**fetch_dynamic_voucher_by_id**](DynamicVouchersApi.md#fetch_dynamic_voucher_by_id) | **GET** /v2/payment/dynamicVoucher/{id} | Get Dynamic Voucher Campaign
 [**fetch_dynamic_voucher_redemptions**](DynamicVouchersApi.md#fetch_dynamic_voucher_redemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Get Dynamic Voucher Campaign Redemptions
+[**fetch_dynamic_vouchers**](DynamicVouchersApi.md#fetch_dynamic_vouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers
 [**fetch_reach_stats_of_all_dynamic_vouchers**](DynamicVouchersApi.md#fetch_reach_stats_of_all_dynamic_vouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers
 [**fetch_reach_stats_of_individual_dynamic_voucher**](DynamicVouchersApi.md#fetch_reach_stats_of_individual_dynamic_voucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher
 [**restore_dynamic_voucher_campaign**](DynamicVouchersApi.md#restore_dynamic_voucher_campaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore Dynamic Voucher Campaign
@@ -342,6 +343,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[WTDynamicVoucherRedemption]**](WTDynamicVoucherRedemption.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_dynamic_vouchers**
+> List[DynamicVoucher] fetch_dynamic_vouchers(is_archive_included=is_archive_included)
+
+Get all dynamic vouchers
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.dynamic_voucher import DynamicVoucher
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.DynamicVouchersApi(api_client)
+    is_archive_included = True # bool |  (optional)
+
+    try:
+        # Get all dynamic vouchers
+        api_response = api_instance.fetch_dynamic_vouchers(is_archive_included=is_archive_included)
+        print("The response of DynamicVouchersApi->fetch_dynamic_vouchers:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DynamicVouchersApi->fetch_dynamic_vouchers: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_archive_included** | **bool**|  | [optional] 
+
+### Return type
+
+[**List[DynamicVoucher]**](DynamicVoucher.md)
 
 ### Authorization
 

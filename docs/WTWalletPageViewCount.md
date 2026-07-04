@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **wallet_object_id** | **object** |  | 
 **count** | **object** |  | 
-**date_occurred** | **object** |  | 
+**date_occurred** | **datetime** |  | 
 **wallet_object_name** | **object** |  | 
 
 ## Example
