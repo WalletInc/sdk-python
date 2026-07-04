@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    API
+    Wallet Inc. API reference.  **Spec version 2.2.1**, built 2026-07-04T20:30:37.614Z
 
     The version of the OpenAPI document: 2.2.1
     Contact: development@wallet.inc
@@ -45,7 +45,7 @@ setup(
     license="https://wallet.law",
     long_description_content_type='text/markdown',
     long_description="""\
-    API
+    Wallet Inc. API reference.  **Spec version 2.2.1**, built 2026-07-04T20:30:37.614Z
     """,  # noqa: E501
     package_data={"wallet": ["py.typed"]},
 )

@@ -476,14 +476,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_broadcasts_api.py
-test/test_files_documents_api.py
-test/test_help_desk_api.py
-test/test_import_export_api.py
-test/test_imported_lists_api.py
-test/test_opt_in_lists_api.py
-test/test_phone_numbers_api.py
-test/test_sms_messages_api.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
