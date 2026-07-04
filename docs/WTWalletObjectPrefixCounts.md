@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wallet_object_prefix** | **object** |  | 
-**wallet_object_name** | **object** |  | 
+**wallet_object_prefix** | **str** |  | 
+**wallet_object_name** | **str** |  | 
 **list** | **object** |  | 
 
 ## Example

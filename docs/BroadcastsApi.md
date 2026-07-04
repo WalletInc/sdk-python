@@ -1,37 +1,33 @@
-# wallet.EmployeesApi
+# wallet.BroadcastsApi
 
 All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_peer_to_roles**](EmployeesApi.md#add_peer_to_roles) | **POST** /v2/employee/roles/peer/{userID} | Add peer to roles
-[**create_employee_peer**](EmployeesApi.md#create_employee_peer) | **POST** /v2/employee/peer | Create employee peer
-[**fetch_merchant**](EmployeesApi.md#fetch_merchant) | **GET** /v2/employee/merchant | Create employee alert
-[**fetch_messages**](EmployeesApi.md#fetch_messages) | **GET** /v2/employee/messages/all | Get all messages
-[**fetch_peer_activity**](EmployeesApi.md#fetch_peer_activity) | **GET** /v2/employee/peer/activity/{employeeID} | Get peer activity
-[**fetch_peers_permissions**](EmployeesApi.md#fetch_peers_permissions) | **GET** /v2/employee/peer/permissions/{userID} | Get peer permissions
-[**fetch_profile_info**](EmployeesApi.md#fetch_profile_info) | **GET** /v2/employee | Get employee info
-[**load_webpages_of_employee**](EmployeesApi.md#load_webpages_of_employee) | **GET** /v2/employee/webpages/all | Get employee&#39;s permissions
-[**modify_peers_roles**](EmployeesApi.md#modify_peers_roles) | **PUT** /v2/employee/peer/permissions/{userID} | Modify peer&#39;s roles
-[**remove_peer_from_all_roles**](EmployeesApi.md#remove_peer_from_all_roles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles
-[**set_alerts_read**](EmployeesApi.md#set_alerts_read) | **PATCH** /v2/employee/alerts | Mark alerts as read
-[**set_messages_read**](EmployeesApi.md#set_messages_read) | **PATCH** /v2/employee/messages | Mark messages as read
-[**set_profile_picture**](EmployeesApi.md#set_profile_picture) | **PUT** /v2/employee/profile/picture | Set profile picture
-[**update_email_notification_preference**](EmployeesApi.md#update_email_notification_preference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled
-[**update_employee_peer**](EmployeesApi.md#update_employee_peer) | **PUT** /v2/employee/peer/{userID} | Update peer
+[**archive_payment_object_broadcast**](BroadcastsApi.md#archive_payment_object_broadcast) | **DELETE** /v2/merchant/paymentObjectBroadcast/{broadcastID} | Archive payment object broadcast
+[**fetch_advertisement_credit_broadcasts**](BroadcastsApi.md#fetch_advertisement_credit_broadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Get all ad credit broadcasts
+[**fetch_dynamic_voucher_broadcasts**](BroadcastsApi.md#fetch_dynamic_voucher_broadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Get all dynamic voucher broadcasts
+[**fetch_payment_object_broadcasts**](BroadcastsApi.md#fetch_payment_object_broadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Get payment object broadcasts
+[**fetch_simple_sms_broadcasts**](BroadcastsApi.md#fetch_simple_sms_broadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Get all simple SMS broadcasts
+[**fetch_static_voucher_campaign_broadcasts**](BroadcastsApi.md#fetch_static_voucher_campaign_broadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Get all static voucher campaign broadcasts
+[**schedule_advertisement_credit**](BroadcastsApi.md#schedule_advertisement_credit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit
+[**schedule_dynamic_voucher**](BroadcastsApi.md#schedule_dynamic_voucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list
+[**schedule_dynamic_voucher_to_recipient**](BroadcastsApi.md#schedule_dynamic_voucher_to_recipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to recipient
+[**schedule_simple_sms**](BroadcastsApi.md#schedule_simple_sms) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list
+[**schedule_simple_smsto_recipient**](BroadcastsApi.md#schedule_simple_smsto_recipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient
+[**send_sms_campaign_broadcast**](BroadcastsApi.md#send_sms_campaign_broadcast) | **POST** /v2/employee/sms/schedule/campaign/{staticVoucherCampaignID} | Schedule SMS Campaign Broadcast
 
 
-# **add_peer_to_roles**
-> str add_peer_to_roles(user_id, wt_employee_peer_roles)
+# **archive_payment_object_broadcast**
+> object archive_payment_object_broadcast(broadcast_id)
 
-Add peer to roles
+Archive payment object broadcast
 
 ### Example
 
 
 ```python
 import wallet
-from wallet.models.wt_employee_peer_roles import WTEmployeePeerRoles
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -45,17 +41,16 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    user_id = 'user_id_example' # str | 
-    wt_employee_peer_roles = wallet.WTEmployeePeerRoles() # WTEmployeePeerRoles | 
+    api_instance = wallet.BroadcastsApi(api_client)
+    broadcast_id = 'broadcast_id_example' # str | 
 
     try:
-        # Add peer to roles
-        api_response = api_instance.add_peer_to_roles(user_id, wt_employee_peer_roles)
-        print("The response of EmployeesApi->add_peer_to_roles:\n")
+        # Archive payment object broadcast
+        api_response = api_instance.archive_payment_object_broadcast(broadcast_id)
+        print("The response of BroadcastsApi->archive_payment_object_broadcast:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EmployeesApi->add_peer_to_roles: %s\n" % e)
+        print("Exception when calling BroadcastsApi->archive_payment_object_broadcast: %s\n" % e)
 ```
 
 
@@ -65,142 +60,7 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
- **wt_employee_peer_roles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md)|  | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_employee_peer**
-> Employee create_employee_peer(wt_employee_create)
-
-Create employee peer
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.employee import Employee
-from wallet.models.wt_employee_create import WTEmployeeCreate
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    wt_employee_create = wallet.WTEmployeeCreate() # WTEmployeeCreate | 
-
-    try:
-        # Create employee peer
-        api_response = api_instance.create_employee_peer(wt_employee_create)
-        print("The response of EmployeesApi->create_employee_peer:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->create_employee_peer: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create** | [**WTEmployeeCreate**](WTEmployeeCreate.md)|  | 
-
-### Return type
-
-[**Employee**](Employee.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **fetch_merchant**
-> object fetch_merchant()
-
-Create employee alert
-
-### Example
-
-
-```python
-import wallet
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-
-    try:
-        # Create employee alert
-        api_response = api_instance.fetch_merchant()
-        print("The response of EmployeesApi->fetch_merchant:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->fetch_merchant: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
+ **broadcast_id** | **str**|  | 
 
 ### Return type
 
@@ -226,17 +86,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_messages**
-> List[Message] fetch_messages()
+# **fetch_advertisement_credit_broadcasts**
+> List[AdvertisementCreditBroadcast] fetch_advertisement_credit_broadcasts(is_archive_included=is_archive_included)
 
-Get all messages
+Get all ad credit broadcasts
 
 ### Example
 
 
 ```python
 import wallet
-from wallet.models.message import Message
+from wallet.models.advertisement_credit_broadcast import AdvertisementCreditBroadcast
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -250,81 +110,16 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
+    api_instance = wallet.BroadcastsApi(api_client)
+    is_archive_included = True # bool |  (optional)
 
     try:
-        # Get all messages
-        api_response = api_instance.fetch_messages()
-        print("The response of EmployeesApi->fetch_messages:\n")
+        # Get all ad credit broadcasts
+        api_response = api_instance.fetch_advertisement_credit_broadcasts(is_archive_included=is_archive_included)
+        print("The response of BroadcastsApi->fetch_advertisement_credit_broadcasts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EmployeesApi->fetch_messages: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List[Message]**](Message.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **fetch_peer_activity**
-> List[EmployeeActivityLog] fetch_peer_activity(employee_id)
-
-Get peer activity
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.employee_activity_log import EmployeeActivityLog
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    employee_id = 'employee_id_example' # str | 
-
-    try:
-        # Get peer activity
-        api_response = api_instance.fetch_peer_activity(employee_id)
-        print("The response of EmployeesApi->fetch_peer_activity:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->fetch_peer_activity: %s\n" % e)
+        print("Exception when calling BroadcastsApi->fetch_advertisement_credit_broadcasts: %s\n" % e)
 ```
 
 
@@ -334,11 +129,11 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employee_id** | **str**|  | 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-[**List[EmployeeActivityLog]**](EmployeeActivityLog.md)
+[**List[AdvertisementCreditBroadcast]**](AdvertisementCreditBroadcast.md)
 
 ### Authorization
 
@@ -360,16 +155,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_peers_permissions**
-> List[object] fetch_peers_permissions(user_id)
+# **fetch_dynamic_voucher_broadcasts**
+> List[DynamicVoucherBroadcast] fetch_dynamic_voucher_broadcasts(is_archive_included=is_archive_included)
 
-Get peer permissions
+Get all dynamic voucher broadcasts
 
 ### Example
 
 
 ```python
 import wallet
+from wallet.models.dynamic_voucher_broadcast import DynamicVoucherBroadcast
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -383,16 +179,16 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    user_id = 'user_id_example' # str | 
+    api_instance = wallet.BroadcastsApi(api_client)
+    is_archive_included = True # bool |  (optional)
 
     try:
-        # Get peer permissions
-        api_response = api_instance.fetch_peers_permissions(user_id)
-        print("The response of EmployeesApi->fetch_peers_permissions:\n")
+        # Get all dynamic voucher broadcasts
+        api_response = api_instance.fetch_dynamic_voucher_broadcasts(is_archive_included=is_archive_included)
+        print("The response of BroadcastsApi->fetch_dynamic_voucher_broadcasts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EmployeesApi->fetch_peers_permissions: %s\n" % e)
+        print("Exception when calling BroadcastsApi->fetch_dynamic_voucher_broadcasts: %s\n" % e)
 ```
 
 
@@ -402,11 +198,11 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
+ **is_archive_included** | **bool**|  | [optional] 
 
 ### Return type
 
-**List[object]**
+[**List[DynamicVoucherBroadcast]**](DynamicVoucherBroadcast.md)
 
 ### Authorization
 
@@ -428,17 +224,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_profile_info**
-> Employee fetch_profile_info()
+# **fetch_payment_object_broadcasts**
+> List[StaticVoucherCampaignBroadcast] fetch_payment_object_broadcasts(phone_number_id)
 
-Get employee info
+Get payment object broadcasts
 
 ### Example
 
 
 ```python
 import wallet
-from wallet.models.employee import Employee
+from wallet.models.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -452,147 +248,16 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
+    api_instance = wallet.BroadcastsApi(api_client)
+    phone_number_id = 'phone_number_id_example' # str | 
 
     try:
-        # Get employee info
-        api_response = api_instance.fetch_profile_info()
-        print("The response of EmployeesApi->fetch_profile_info:\n")
+        # Get payment object broadcasts
+        api_response = api_instance.fetch_payment_object_broadcasts(phone_number_id)
+        print("The response of BroadcastsApi->fetch_payment_object_broadcasts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EmployeesApi->fetch_profile_info: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Employee**](Employee.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **load_webpages_of_employee**
-> List[Webpage] load_webpages_of_employee()
-
-Get employee's permissions
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.webpage import Webpage
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-
-    try:
-        # Get employee's permissions
-        api_response = api_instance.load_webpages_of_employee()
-        print("The response of EmployeesApi->load_webpages_of_employee:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->load_webpages_of_employee: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List[Webpage]**](Webpage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **modify_peers_roles**
-> List[object] modify_peers_roles(user_id, wt_employee_peer_roles)
-
-Modify peer's roles
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.wt_employee_peer_roles import WTEmployeePeerRoles
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    user_id = 'user_id_example' # str | 
-    wt_employee_peer_roles = wallet.WTEmployeePeerRoles() # WTEmployeePeerRoles | 
-
-    try:
-        # Modify peer's roles
-        api_response = api_instance.modify_peers_roles(user_id, wt_employee_peer_roles)
-        print("The response of EmployeesApi->modify_peers_roles:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->modify_peers_roles: %s\n" % e)
+        print("Exception when calling BroadcastsApi->fetch_payment_object_broadcasts: %s\n" % e)
 ```
 
 
@@ -602,12 +267,221 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
- **wt_employee_peer_roles** | [**WTEmployeePeerRoles**](WTEmployeePeerRoles.md)|  | 
+ **phone_number_id** | **str**|  | 
 
 ### Return type
 
-**List[object]**
+[**List[StaticVoucherCampaignBroadcast]**](StaticVoucherCampaignBroadcast.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_simple_sms_broadcasts**
+> List[SimpleSMSBroadcast] fetch_simple_sms_broadcasts(is_archive_included=is_archive_included)
+
+Get all simple SMS broadcasts
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.simple_sms_broadcast import SimpleSMSBroadcast
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BroadcastsApi(api_client)
+    is_archive_included = True # bool |  (optional)
+
+    try:
+        # Get all simple SMS broadcasts
+        api_response = api_instance.fetch_simple_sms_broadcasts(is_archive_included=is_archive_included)
+        print("The response of BroadcastsApi->fetch_simple_sms_broadcasts:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BroadcastsApi->fetch_simple_sms_broadcasts: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_archive_included** | **bool**|  | [optional] 
+
+### Return type
+
+[**List[SimpleSMSBroadcast]**](SimpleSMSBroadcast.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_static_voucher_campaign_broadcasts**
+> List[StaticVoucherCampaignBroadcast] fetch_static_voucher_campaign_broadcasts(is_archive_included=is_archive_included)
+
+Get all static voucher campaign broadcasts
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BroadcastsApi(api_client)
+    is_archive_included = True # bool |  (optional)
+
+    try:
+        # Get all static voucher campaign broadcasts
+        api_response = api_instance.fetch_static_voucher_campaign_broadcasts(is_archive_included=is_archive_included)
+        print("The response of BroadcastsApi->fetch_static_voucher_campaign_broadcasts:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BroadcastsApi->fetch_static_voucher_campaign_broadcasts: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_archive_included** | **bool**|  | [optional] 
+
+### Return type
+
+[**List[StaticVoucherCampaignBroadcast]**](StaticVoucherCampaignBroadcast.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **schedule_advertisement_credit**
+> AdvertisementCreditBroadcast schedule_advertisement_credit(advertisement_credit_id, wt_employee_schedule_simple_sms)
+
+Schedule Ad Credit
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.advertisement_credit_broadcast import AdvertisementCreditBroadcast
+from wallet.models.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BroadcastsApi(api_client)
+    advertisement_credit_id = 'advertisement_credit_id_example' # str | 
+    wt_employee_schedule_simple_sms = wallet.WTEmployeeScheduleSimpleSMS() # WTEmployeeScheduleSimpleSMS | 
+
+    try:
+        # Schedule Ad Credit
+        api_response = api_instance.schedule_advertisement_credit(advertisement_credit_id, wt_employee_schedule_simple_sms)
+        print("The response of BroadcastsApi->schedule_advertisement_credit:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BroadcastsApi->schedule_advertisement_credit: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertisement_credit_id** | **str**|  | 
+ **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  | 
+
+### Return type
+
+[**AdvertisementCreditBroadcast**](AdvertisementCreditBroadcast.md)
 
 ### Authorization
 
@@ -624,21 +498,24 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
 **401** | Authentication Failed |  -  |
+**413** | Entity Too Large |  -  |
 **422** | Validation Failed |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_peer_from_all_roles**
-> bool remove_peer_from_all_roles(user_id)
+# **schedule_dynamic_voucher**
+> DynamicVoucherBroadcast schedule_dynamic_voucher(dynamic_voucher_id, wt_employee_schedule_simple_sms)
 
-Remove peer from all roles
+Schedule Dynamic Voucher to list
 
 ### Example
 
 
 ```python
 import wallet
+from wallet.models.dynamic_voucher_broadcast import DynamicVoucherBroadcast
+from wallet.models.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -652,16 +529,17 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    user_id = 'user_id_example' # str | 
+    api_instance = wallet.BroadcastsApi(api_client)
+    dynamic_voucher_id = 'dynamic_voucher_id_example' # str | 
+    wt_employee_schedule_simple_sms = wallet.WTEmployeeScheduleSimpleSMS() # WTEmployeeScheduleSimpleSMS | 
 
     try:
-        # Remove peer from all roles
-        api_response = api_instance.remove_peer_from_all_roles(user_id)
-        print("The response of EmployeesApi->remove_peer_from_all_roles:\n")
+        # Schedule Dynamic Voucher to list
+        api_response = api_instance.schedule_dynamic_voucher(dynamic_voucher_id, wt_employee_schedule_simple_sms)
+        print("The response of BroadcastsApi->schedule_dynamic_voucher:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EmployeesApi->remove_peer_from_all_roles: %s\n" % e)
+        print("Exception when calling BroadcastsApi->schedule_dynamic_voucher: %s\n" % e)
 ```
 
 
@@ -671,7 +549,151 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
+ **dynamic_voucher_id** | **str**|  | 
+ **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  | 
+
+### Return type
+
+[**DynamicVoucherBroadcast**](DynamicVoucherBroadcast.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**413** | Entity Too Large |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **schedule_dynamic_voucher_to_recipient**
+> DynamicVoucherBroadcast schedule_dynamic_voucher_to_recipient(dynamic_voucher_id, wt_employee_schedule_simple_smsto_recipient)
+
+Schedule Dynamic Voucher to recipient
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.dynamic_voucher_broadcast import DynamicVoucherBroadcast
+from wallet.models.wt_employee_schedule_simple_smsto_recipient import WTEmployeeScheduleSimpleSMSToRecipient
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BroadcastsApi(api_client)
+    dynamic_voucher_id = 'dynamic_voucher_id_example' # str | 
+    wt_employee_schedule_simple_smsto_recipient = wallet.WTEmployeeScheduleSimpleSMSToRecipient() # WTEmployeeScheduleSimpleSMSToRecipient | 
+
+    try:
+        # Schedule Dynamic Voucher to recipient
+        api_response = api_instance.schedule_dynamic_voucher_to_recipient(dynamic_voucher_id, wt_employee_schedule_simple_smsto_recipient)
+        print("The response of BroadcastsApi->schedule_dynamic_voucher_to_recipient:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BroadcastsApi->schedule_dynamic_voucher_to_recipient: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamic_voucher_id** | **str**|  | 
+ **wt_employee_schedule_simple_smsto_recipient** | [**WTEmployeeScheduleSimpleSMSToRecipient**](WTEmployeeScheduleSimpleSMSToRecipient.md)|  | 
+
+### Return type
+
+[**DynamicVoucherBroadcast**](DynamicVoucherBroadcast.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**413** | Entity Too Large |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **schedule_simple_sms**
+> bool schedule_simple_sms(wt_employee_schedule_simple_sms)
+
+Schedule Simple SMS broadcast to list
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_employee_schedule_simple_sms import WTEmployeeScheduleSimpleSMS
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BroadcastsApi(api_client)
+    wt_employee_schedule_simple_sms = wallet.WTEmployeeScheduleSimpleSMS() # WTEmployeeScheduleSimpleSMS | 
+
+    try:
+        # Schedule Simple SMS broadcast to list
+        api_response = api_instance.schedule_simple_sms(wt_employee_schedule_simple_sms)
+        print("The response of BroadcastsApi->schedule_simple_sms:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BroadcastsApi->schedule_simple_sms: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_employee_schedule_simple_sms** | [**WTEmployeeScheduleSimpleSMS**](WTEmployeeScheduleSimpleSMS.md)|  | 
 
 ### Return type
 
@@ -683,7 +705,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -692,21 +714,23 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
 **401** | Authentication Failed |  -  |
+**413** | Entity Too Large |  -  |
 **422** | Validation Failed |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_alerts_read**
-> bool set_alerts_read()
+# **schedule_simple_smsto_recipient**
+> bool schedule_simple_smsto_recipient(wt_employee_schedule_simple_smsto_recipient)
 
-Mark alerts as read
+Schedule Simple SMS broadcast to recipient
 
 ### Example
 
 
 ```python
 import wallet
+from wallet.models.wt_employee_schedule_simple_smsto_recipient import WTEmployeeScheduleSimpleSMSToRecipient
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -720,22 +744,26 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
+    api_instance = wallet.BroadcastsApi(api_client)
+    wt_employee_schedule_simple_smsto_recipient = wallet.WTEmployeeScheduleSimpleSMSToRecipient() # WTEmployeeScheduleSimpleSMSToRecipient | 
 
     try:
-        # Mark alerts as read
-        api_response = api_instance.set_alerts_read()
-        print("The response of EmployeesApi->set_alerts_read:\n")
+        # Schedule Simple SMS broadcast to recipient
+        api_response = api_instance.schedule_simple_smsto_recipient(wt_employee_schedule_simple_smsto_recipient)
+        print("The response of BroadcastsApi->schedule_simple_smsto_recipient:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EmployeesApi->set_alerts_read: %s\n" % e)
+        print("Exception when calling BroadcastsApi->schedule_simple_smsto_recipient: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_employee_schedule_simple_smsto_recipient** | [**WTEmployeeScheduleSimpleSMSToRecipient**](WTEmployeeScheduleSimpleSMSToRecipient.md)|  | 
 
 ### Return type
 
@@ -747,7 +775,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -756,21 +784,24 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
 **401** | Authentication Failed |  -  |
+**413** | Entity Too Large |  -  |
 **422** | Validation Failed |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_messages_read**
-> bool set_messages_read()
+# **send_sms_campaign_broadcast**
+> StaticVoucherCampaignBroadcast send_sms_campaign_broadcast(static_voucher_campaign_id, wt_employee_schedule_sms_campaign_broadcast)
 
-Mark messages as read
+Schedule SMS Campaign Broadcast
 
 ### Example
 
 
 ```python
 import wallet
+from wallet.models.static_voucher_campaign_broadcast import StaticVoucherCampaignBroadcast
+from wallet.models.wt_employee_schedule_sms_campaign_broadcast import WTEmployeeScheduleSMSCampaignBroadcast
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -784,81 +815,17 @@ configuration = wallet.Configuration(
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
+    api_instance = wallet.BroadcastsApi(api_client)
+    static_voucher_campaign_id = 'static_voucher_campaign_id_example' # str | 
+    wt_employee_schedule_sms_campaign_broadcast = wallet.WTEmployeeScheduleSMSCampaignBroadcast() # WTEmployeeScheduleSMSCampaignBroadcast | 
 
     try:
-        # Mark messages as read
-        api_response = api_instance.set_messages_read()
-        print("The response of EmployeesApi->set_messages_read:\n")
+        # Schedule SMS Campaign Broadcast
+        api_response = api_instance.send_sms_campaign_broadcast(static_voucher_campaign_id, wt_employee_schedule_sms_campaign_broadcast)
+        print("The response of BroadcastsApi->send_sms_campaign_broadcast:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EmployeesApi->set_messages_read: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **set_profile_picture**
-> str set_profile_picture(wt_employee_create_media_file)
-
-Set profile picture
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.wt_employee_create_media_file import WTEmployeeCreateMediaFile
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    wt_employee_create_media_file = wallet.WTEmployeeCreateMediaFile() # WTEmployeeCreateMediaFile | 
-
-    try:
-        # Set profile picture
-        api_response = api_instance.set_profile_picture(wt_employee_create_media_file)
-        print("The response of EmployeesApi->set_profile_picture:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->set_profile_picture: %s\n" % e)
+        print("Exception when calling BroadcastsApi->send_sms_campaign_broadcast: %s\n" % e)
 ```
 
 
@@ -868,11 +835,12 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_employee_create_media_file** | [**WTEmployeeCreateMediaFile**](WTEmployeeCreateMediaFile.md)|  | 
+ **static_voucher_campaign_id** | **str**|  | 
+ **wt_employee_schedule_sms_campaign_broadcast** | [**WTEmployeeScheduleSMSCampaignBroadcast**](WTEmployeeScheduleSMSCampaignBroadcast.md)|  | 
 
 ### Return type
 
-**str**
+[**StaticVoucherCampaignBroadcast**](StaticVoucherCampaignBroadcast.md)
 
 ### Authorization
 
@@ -889,148 +857,7 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
 **401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_email_notification_preference**
-> Employee update_email_notification_preference(update_email_notification_preference_request)
-
-Changes the employee's email notification preference to enabled or disabled
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.employee import Employee
-from wallet.models.update_email_notification_preference_request import UpdateEmailNotificationPreferenceRequest
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    update_email_notification_preference_request = wallet.UpdateEmailNotificationPreferenceRequest() # UpdateEmailNotificationPreferenceRequest | 
-
-    try:
-        # Changes the employee's email notification preference to enabled or disabled
-        api_response = api_instance.update_email_notification_preference(update_email_notification_preference_request)
-        print("The response of EmployeesApi->update_email_notification_preference:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->update_email_notification_preference: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **update_email_notification_preference_request** | [**UpdateEmailNotificationPreferenceRequest**](UpdateEmailNotificationPreferenceRequest.md)|  | 
-
-### Return type
-
-[**Employee**](Employee.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_employee_peer**
-> Employee update_employee_peer(user_id, wt_employee_update)
-
-Update peer
-
-### Example
-
-
-```python
-import wallet
-from wallet.models.employee import Employee
-from wallet.models.wt_employee_update import WTEmployeeUpdate
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.EmployeesApi(api_client)
-    user_id = 'user_id_example' # str | 
-    wt_employee_update = wallet.WTEmployeeUpdate() # WTEmployeeUpdate | 
-
-    try:
-        # Update peer
-        api_response = api_instance.update_employee_peer(user_id, wt_employee_update)
-        print("The response of EmployeesApi->update_employee_peer:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EmployeesApi->update_employee_peer: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
- **wt_employee_update** | [**WTEmployeeUpdate**](WTEmployeeUpdate.md)|  | 
-
-### Return type
-
-[**Employee**](Employee.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
+**413** | Entity Too Large |  -  |
 **422** | Validation Failed |  -  |
 **500** | Internal Server Error |  -  |
 
