@@ -7,8 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **object** |  | 
 **description** | **object** |  | 
-**order_number** | **int** |  | 
-**media_url** | **object** |  | 
+**order_number** | **object** |  | 
 **additional_info_url** | **object** |  | [optional] 
 
 ## Example

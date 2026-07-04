@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**archive_video**](VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive Video
 [**create_video**](VideosApi.md#create_video) | **POST** /v2/video | Create Video
 [**fetch_all_video**](VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Get all Videos
+[**provision_video_upload**](VideosApi.md#provision_video_upload) | **POST** /v2/video/upload/provision | Provision a direct video upload
 [**restore_video**](VideosApi.md#restore_video) | **PATCH** /v2/video/{id} | Restore Video
 [**update_video**](VideosApi.md#update_video) | **PUT** /v2/video/{id} | Update Video
 
@@ -205,6 +206,76 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **provision_video_upload**
+> WTVideoUploadProvision provision_video_upload(wt_video_upload_provision_params)
+
+Provision a direct video upload
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_video_upload_provision import WTVideoUploadProvision
+from wallet.models.wt_video_upload_provision_params import WTVideoUploadProvisionParams
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.VideosApi(api_client)
+    wt_video_upload_provision_params = wallet.WTVideoUploadProvisionParams() # WTVideoUploadProvisionParams | 
+
+    try:
+        # Provision a direct video upload
+        api_response = api_instance.provision_video_upload(wt_video_upload_provision_params)
+        print("The response of VideosApi->provision_video_upload:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VideosApi->provision_video_upload: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_video_upload_provision_params** | [**WTVideoUploadProvisionParams**](WTVideoUploadProvisionParams.md)|  | 
+
+### Return type
+
+[**WTVideoUploadProvision**](WTVideoUploadProvision.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

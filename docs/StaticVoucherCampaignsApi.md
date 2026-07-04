@@ -17,10 +17,10 @@ Method | HTTP request | Description
 [**fetch_static_voucher_campaign_by_id**](StaticVoucherCampaignsApi.md#fetch_static_voucher_campaign_by_id) | **GET** /v2/payment/staticVoucherCampaign/{id} | Get Static Vouchers Campaign
 [**fetch_static_voucher_campaigns**](StaticVoucherCampaignsApi.md#fetch_static_voucher_campaigns) | **GET** /v2/payment/staticVoucherCampaign/all | Get all Static Vouchers Campaigns
 [**fetch_static_vouchers**](StaticVoucherCampaignsApi.md#fetch_static_vouchers) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/{campaignID} | Get vouchers in Static Vouchers Campaign
-[**fetch_static_vouchers_page**](StaticVoucherCampaignsApi.md#fetch_static_vouchers_page) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get vouchers in Static Vouchers Campaign
+[**fetch_static_vouchers_page**](StaticVoucherCampaignsApi.md#fetch_static_vouchers_page) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get a page of vouchers in a Static Voucher Campaign
 [**fetch_views**](StaticVoucherCampaignsApi.md#fetch_views) | **GET** /v2/payment/staticVoucherCampaign/views/{campaignID} | Get Static Vouchers Campaign traffic
 [**fetch_vouchers_redeemed**](StaticVoucherCampaignsApi.md#fetch_vouchers_redeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Get redeemed vouchers in Static Vouchers Campaign
-[**preview_messages_by_page**](StaticVoucherCampaignsApi.md#preview_messages_by_page) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | View vouchers in Static Voucher Campaign
+[**preview_messages_by_page**](StaticVoucherCampaignsApi.md#preview_messages_by_page) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview generated broadcast messages by page
 [**restore_static_voucher_campaign**](StaticVoucherCampaignsApi.md#restore_static_voucher_campaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore Static Voucher Campaign
 [**update_static_voucher_campaign**](StaticVoucherCampaignsApi.md#update_static_voucher_campaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update Static Voucher Campaign
 [**update_static_voucher_campaign_with_voucher**](StaticVoucherCampaignsApi.md#update_static_voucher_campaign_with_voucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update Static Voucher Campaign with single voucher
@@ -936,7 +936,7 @@ No authorization required
 # **fetch_static_vouchers_page**
 > FetchStaticVouchersPage200Response fetch_static_vouchers_page(campaign_id, pagenum, pagesize)
 
-Get vouchers in Static Vouchers Campaign
+Get a page of vouchers in a Static Voucher Campaign
 
 ### Example
 
@@ -963,7 +963,7 @@ with wallet.ApiClient(configuration) as api_client:
     pagesize = 3.4 # float | 
 
     try:
-        # Get vouchers in Static Vouchers Campaign
+        # Get a page of vouchers in a Static Voucher Campaign
         api_response = api_instance.fetch_static_vouchers_page(campaign_id, pagenum, pagesize)
         print("The response of StaticVoucherCampaignsApi->fetch_static_vouchers_page:\n")
         pprint(api_response)
@@ -1147,7 +1147,7 @@ No authorization required
 # **preview_messages_by_page**
 > VSCampaignGeneratedMessagePagination preview_messages_by_page(campaign_id, wt_static_voucher_campaign_preview_messages_by_page)
 
-View vouchers in Static Voucher Campaign
+Preview generated broadcast messages by page
 
 ### Example
 
@@ -1174,7 +1174,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_static_voucher_campaign_preview_messages_by_page = wallet.WTStaticVoucherCampaignPreviewMessagesByPage() # WTStaticVoucherCampaignPreviewMessagesByPage | 
 
     try:
-        # View vouchers in Static Voucher Campaign
+        # Preview generated broadcast messages by page
         api_response = api_instance.preview_messages_by_page(campaign_id, wt_static_voucher_campaign_preview_messages_by_page)
         print("The response of StaticVoucherCampaignsApi->preview_messages_by_page:\n")
         pprint(api_response)

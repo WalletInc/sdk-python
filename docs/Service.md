@@ -11,11 +11,17 @@ Name | Type | Description | Notes
 **order_number** | **object** |  | 
 **media_url** | **object** |  | [optional] 
 **additional_info_url** | **object** |  | [optional] 
+**price_amount** | **object** |  | [optional] 
+**currency** | **object** |  | [optional] 
+**is_buyable** | **object** |  | [optional] 
+**tax_behavior** | [**ProductTaxBehavior**](ProductTaxBehavior.md) |  | [optional] 
 **id** | [**AmenityId**](AmenityId.md) |  | 
 **created_at** | **object** |  | 
 **updated_at** | **object** |  | 
 **is_active** | **object** |  | 
 **merchant_id** | **str** |  | 
+**stripe_product_id** | **object** |  | [optional] 
+**stripe_price_id** | **object** |  | [optional] 
 
 ## Example
 

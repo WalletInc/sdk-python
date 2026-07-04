@@ -5,16 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **object** |  | 
-**description** | **object** |  | 
-**order_number** | **object** |  | 
-**media_url** | **object** |  | 
-**additional_info_url** | **object** |  | [optional] 
 **id** | [**AmenityId**](AmenityId.md) |  | 
 **created_at** | **object** |  | 
 **updated_at** | **object** |  | 
+**title** | **object** |  | 
+**description** | **object** |  | 
+**order_number** | **object** |  | 
+**additional_info_url** | **object** |  | [optional] 
 **is_active** | **object** |  | 
 **merchant_id** | **str** |  | 
+**provider** | [**VideoProvider**](VideoProvider.md) |  | 
+**asset_id** | **object** |  | 
+**source** | [**WTVideoPlaybackSource**](WTVideoPlaybackSource.md) |  | 
 
 ## Example
 

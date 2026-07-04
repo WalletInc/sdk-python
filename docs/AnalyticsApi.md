@@ -78,7 +78,7 @@ Method | HTTP request | Description
 [**fetch_analytics_tcpa_stop_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_tcpa_stop_count_partitioned_by_date) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date
 [**fetch_analytics_tcpa_stop_count_partitioned_by_phone_number**](AnalyticsApi.md#fetch_analytics_tcpa_stop_count_partitioned_by_phone_number) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number
 [**fetch_analytics_total_amount_redeemed_per_merchant_credit**](AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Get redeemed amount of merchant credits
-[**fetch_analytics_total_amount_redeemed_per_tier**](AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_tier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amoun̥t of tiers
+[**fetch_analytics_total_amount_redeemed_per_tier**](AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_tier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amount of tiers
 [**fetch_analytics_total_amount_refunded_per_merchant_credit**](AnalyticsApi.md#fetch_analytics_total_amount_refunded_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Get refunded amount of merchant credits
 [**fetch_analytics_total_amount_refunded_per_tier**](AnalyticsApi.md#fetch_analytics_total_amount_refunded_per_tier) | **GET** /v2/analytics/membership/tier/amount/refunded | Get refunded amount of tiers
 [**fetch_analytics_total_points_redeemed**](AnalyticsApi.md#fetch_analytics_total_points_redeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points
@@ -5395,7 +5395,7 @@ No authorization required
 # **fetch_analytics_total_amount_redeemed_per_tier**
 > List[MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate] fetch_analytics_total_amount_redeemed_per_tier(start_date, end_date, locale, timezone)
 
-Get redeemed amoun̥t of tiers
+Get redeemed amount of tiers
 
 ### Example
 
@@ -5423,7 +5423,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Get redeemed amoun̥t of tiers
+        # Get redeemed amount of tiers
         api_response = api_instance.fetch_analytics_total_amount_redeemed_per_tier(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_total_amount_redeemed_per_tier:\n")
         pprint(api_response)
