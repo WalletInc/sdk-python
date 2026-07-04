@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -29,7 +30,7 @@ class WTWalletPageViewCount(BaseModel):
     """ # noqa: E501
     wallet_object_id: Optional[Any] = Field(alias="walletObjectID")
     count: Optional[Any]
-    date_occurred: Optional[Any] = Field(alias="dateOccurred")
+    date_occurred: datetime = Field(alias="dateOccurred")
     wallet_object_name: Optional[Any] = Field(alias="walletObjectName")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["walletObjectID", "count", "dateOccurred", "walletObjectName"]
@@ -89,11 +90,6 @@ class WTWalletPageViewCount(BaseModel):
         # and model_fields_set contains the field
         if self.count is None and "count" in self.model_fields_set:
             _dict['count'] = None
-
-        # set to None if date_occurred (nullable) is None
-        # and model_fields_set contains the field
-        if self.date_occurred is None and "date_occurred" in self.model_fields_set:
-            _dict['dateOccurred'] = None
 
         # set to None if wallet_object_name (nullable) is None
         # and model_fields_set contains the field
