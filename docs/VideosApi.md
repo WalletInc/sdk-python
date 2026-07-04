@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**archive_video**](VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive Video
 [**create_video**](VideosApi.md#create_video) | **POST** /v2/video | Create Video
 [**fetch_all_video**](VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Get all Videos
-[**presign_video_upload**](VideosApi.md#presign_video_upload) | **POST** /v2/video/presign | Presign a direct-to-R2 video upload
+[**provision_video_upload**](VideosApi.md#provision_video_upload) | **POST** /v2/video/upload/provision | Provision a direct video upload
 [**restore_video**](VideosApi.md#restore_video) | **PATCH** /v2/video/{id} | Restore Video
 [**update_video**](VideosApi.md#update_video) | **PUT** /v2/video/{id} | Update Video
 
@@ -219,18 +219,18 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **presign_video_upload**
-> WTVideoUploadPresign presign_video_upload(wt_video_upload_presign_params)
+# **provision_video_upload**
+> WTVideoUploadProvision provision_video_upload(wt_video_upload_provision_params)
 
-Presign a direct-to-R2 video upload
+Provision a direct video upload
 
 ### Example
 
 
 ```python
 import wallet
-from wallet.models.wt_video_upload_presign import WTVideoUploadPresign
-from wallet.models.wt_video_upload_presign_params import WTVideoUploadPresignParams
+from wallet.models.wt_video_upload_provision import WTVideoUploadProvision
+from wallet.models.wt_video_upload_provision_params import WTVideoUploadProvisionParams
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -245,15 +245,15 @@ configuration = wallet.Configuration(
 with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.VideosApi(api_client)
-    wt_video_upload_presign_params = wallet.WTVideoUploadPresignParams() # WTVideoUploadPresignParams | 
+    wt_video_upload_provision_params = wallet.WTVideoUploadProvisionParams() # WTVideoUploadProvisionParams | 
 
     try:
-        # Presign a direct-to-R2 video upload
-        api_response = api_instance.presign_video_upload(wt_video_upload_presign_params)
-        print("The response of VideosApi->presign_video_upload:\n")
+        # Provision a direct video upload
+        api_response = api_instance.provision_video_upload(wt_video_upload_provision_params)
+        print("The response of VideosApi->provision_video_upload:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VideosApi->presign_video_upload: %s\n" % e)
+        print("Exception when calling VideosApi->provision_video_upload: %s\n" % e)
 ```
 
 
@@ -263,11 +263,11 @@ with wallet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_video_upload_presign_params** | [**WTVideoUploadPresignParams**](WTVideoUploadPresignParams.md)|  | 
+ **wt_video_upload_provision_params** | [**WTVideoUploadProvisionParams**](WTVideoUploadProvisionParams.md)|  | 
 
 ### Return type
 
-[**WTVideoUploadPresign**](WTVideoUploadPresign.md)
+[**WTVideoUploadProvision**](WTVideoUploadProvision.md)
 
 ### Authorization
 

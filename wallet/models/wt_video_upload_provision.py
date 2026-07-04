@@ -20,19 +20,21 @@ import json
 
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from wallet.models.wt_video_upload_provision_provider import WTVideoUploadProvisionProvider
 from typing import Optional, Set
 from typing_extensions import Self
 
-class WTVideoUpdateParams(BaseModel):
+class WTVideoUploadProvision(BaseModel):
     """
-    WTVideoUpdateParams
+    WTVideoUploadProvision
     """ # noqa: E501
-    title: Optional[Any]
-    description: Optional[Any]
-    order_number: Optional[Any] = Field(alias="orderNumber")
-    additional_info_url: Optional[Any] = Field(default=None, alias="additionalInfoURL")
+    provider: WTVideoUploadProvisionProvider
+    url: Optional[Any]
+    fields: Optional[Dict[str, Any]] = None
+    asset_id: Optional[Any] = Field(alias="assetId")
+    hd_included: Optional[Any] = Field(alias="hdIncluded")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["title", "description", "orderNumber", "additionalInfoURL"]
+    __properties: ClassVar[List[str]] = ["provider", "url", "fields", "assetId", "hdIncluded"]
 
     model_config = {
         "populate_by_name": True,
@@ -52,7 +54,7 @@ class WTVideoUpdateParams(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of WTVideoUpdateParams from a JSON string"""
+        """Create an instance of WTVideoUploadProvision from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,36 +77,34 @@ class WTVideoUpdateParams(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of provider
+        if self.provider:
+            _dict['provider'] = self.provider.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
-        # set to None if title (nullable) is None
+        # set to None if url (nullable) is None
         # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
+        if self.url is None and "url" in self.model_fields_set:
+            _dict['url'] = None
 
-        # set to None if description (nullable) is None
+        # set to None if asset_id (nullable) is None
         # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
+        if self.asset_id is None and "asset_id" in self.model_fields_set:
+            _dict['assetId'] = None
 
-        # set to None if order_number (nullable) is None
+        # set to None if hd_included (nullable) is None
         # and model_fields_set contains the field
-        if self.order_number is None and "order_number" in self.model_fields_set:
-            _dict['orderNumber'] = None
-
-        # set to None if additional_info_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.additional_info_url is None and "additional_info_url" in self.model_fields_set:
-            _dict['additionalInfoURL'] = None
+        if self.hd_included is None and "hd_included" in self.model_fields_set:
+            _dict['hdIncluded'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of WTVideoUpdateParams from a dict"""
+        """Create an instance of WTVideoUploadProvision from a dict"""
         if obj is None:
             return None
 
@@ -112,10 +112,10 @@ class WTVideoUpdateParams(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "title": obj.get("title"),
-            "description": obj.get("description"),
-            "orderNumber": obj.get("orderNumber"),
-            "additionalInfoURL": obj.get("additionalInfoURL")
+            "provider": WTVideoUploadProvisionProvider.from_dict(obj["provider"]) if obj.get("provider") is not None else None,
+            "url": obj.get("url"),
+            "assetId": obj.get("assetId"),
+            "hdIncluded": obj.get("hdIncluded")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

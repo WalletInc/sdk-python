@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
+from wallet.models.video_provider import VideoProvider
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,11 +30,12 @@ class WTVideoCreateParams(BaseModel):
     """ # noqa: E501
     title: Optional[Any]
     description: Optional[Any]
-    order_number: Annotated[int, Field(strict=True, ge=1)] = Field(alias="orderNumber")
-    media_url: Optional[Any] = Field(alias="mediaURL")
+    order_number: Optional[Any] = Field(alias="orderNumber")
     additional_info_url: Optional[Any] = Field(default=None, alias="additionalInfoURL")
+    provider: VideoProvider
+    asset_id: Optional[Any] = Field(alias="assetId")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["title", "description", "orderNumber", "mediaURL", "additionalInfoURL"]
+    __properties: ClassVar[List[str]] = ["title", "description", "orderNumber", "additionalInfoURL", "provider", "assetId"]
 
     model_config = {
         "populate_by_name": True,
@@ -77,6 +78,9 @@ class WTVideoCreateParams(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of provider
+        if self.provider:
+            _dict['provider'] = self.provider.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -92,15 +96,20 @@ class WTVideoCreateParams(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if media_url (nullable) is None
+        # set to None if order_number (nullable) is None
         # and model_fields_set contains the field
-        if self.media_url is None and "media_url" in self.model_fields_set:
-            _dict['mediaURL'] = None
+        if self.order_number is None and "order_number" in self.model_fields_set:
+            _dict['orderNumber'] = None
 
         # set to None if additional_info_url (nullable) is None
         # and model_fields_set contains the field
         if self.additional_info_url is None and "additional_info_url" in self.model_fields_set:
             _dict['additionalInfoURL'] = None
+
+        # set to None if asset_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.asset_id is None and "asset_id" in self.model_fields_set:
+            _dict['assetId'] = None
 
         return _dict
 
@@ -117,8 +126,9 @@ class WTVideoCreateParams(BaseModel):
             "title": obj.get("title"),
             "description": obj.get("description"),
             "orderNumber": obj.get("orderNumber"),
-            "mediaURL": obj.get("mediaURL"),
-            "additionalInfoURL": obj.get("additionalInfoURL")
+            "additionalInfoURL": obj.get("additionalInfoURL"),
+            "provider": VideoProvider.from_dict(obj["provider"]) if obj.get("provider") is not None else None,
+            "assetId": obj.get("assetId")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

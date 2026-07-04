@@ -23,8 +23,8 @@ from typing_extensions import Annotated
 from wallet.models.video import Video
 from wallet.models.wt_video_create_params import WTVideoCreateParams
 from wallet.models.wt_video_update_params import WTVideoUpdateParams
-from wallet.models.wt_video_upload_presign import WTVideoUploadPresign
-from wallet.models.wt_video_upload_presign_params import WTVideoUploadPresignParams
+from wallet.models.wt_video_upload_provision import WTVideoUploadProvision
+from wallet.models.wt_video_upload_provision_params import WTVideoUploadProvisionParams
 
 from wallet.api_client import ApiClient, RequestSerialized
 from wallet.api_response import ApiResponse
@@ -849,9 +849,9 @@ class VideosApi:
 
 
     @validate_call
-    def presign_video_upload(
+    def provision_video_upload(
         self,
-        wt_video_upload_presign_params: WTVideoUploadPresignParams,
+        wt_video_upload_provision_params: WTVideoUploadProvisionParams,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -864,12 +864,12 @@ class VideosApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> WTVideoUploadPresign:
-        """Presign a direct-to-R2 video upload
+    ) -> WTVideoUploadProvision:
+        """Provision a direct video upload
 
 
-        :param wt_video_upload_presign_params: (required)
-        :type wt_video_upload_presign_params: WTVideoUploadPresignParams
+        :param wt_video_upload_provision_params: (required)
+        :type wt_video_upload_provision_params: WTVideoUploadProvisionParams
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -892,8 +892,8 @@ class VideosApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._presign_video_upload_serialize(
-            wt_video_upload_presign_params=wt_video_upload_presign_params,
+        _param = self._provision_video_upload_serialize(
+            wt_video_upload_provision_params=wt_video_upload_provision_params,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -901,7 +901,7 @@ class VideosApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WTVideoUploadPresign",
+            '200': "WTVideoUploadProvision",
             '401': "AuthError",
             '422': "FalsumError",
             '500': "InternalServerError500",
@@ -918,9 +918,9 @@ class VideosApi:
 
 
     @validate_call
-    def presign_video_upload_with_http_info(
+    def provision_video_upload_with_http_info(
         self,
-        wt_video_upload_presign_params: WTVideoUploadPresignParams,
+        wt_video_upload_provision_params: WTVideoUploadProvisionParams,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -933,12 +933,12 @@ class VideosApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[WTVideoUploadPresign]:
-        """Presign a direct-to-R2 video upload
+    ) -> ApiResponse[WTVideoUploadProvision]:
+        """Provision a direct video upload
 
 
-        :param wt_video_upload_presign_params: (required)
-        :type wt_video_upload_presign_params: WTVideoUploadPresignParams
+        :param wt_video_upload_provision_params: (required)
+        :type wt_video_upload_provision_params: WTVideoUploadProvisionParams
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -961,8 +961,8 @@ class VideosApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._presign_video_upload_serialize(
-            wt_video_upload_presign_params=wt_video_upload_presign_params,
+        _param = self._provision_video_upload_serialize(
+            wt_video_upload_provision_params=wt_video_upload_provision_params,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -970,7 +970,7 @@ class VideosApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WTVideoUploadPresign",
+            '200': "WTVideoUploadProvision",
             '401': "AuthError",
             '422': "FalsumError",
             '500': "InternalServerError500",
@@ -987,9 +987,9 @@ class VideosApi:
 
 
     @validate_call
-    def presign_video_upload_without_preload_content(
+    def provision_video_upload_without_preload_content(
         self,
-        wt_video_upload_presign_params: WTVideoUploadPresignParams,
+        wt_video_upload_provision_params: WTVideoUploadProvisionParams,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1003,11 +1003,11 @@ class VideosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Presign a direct-to-R2 video upload
+        """Provision a direct video upload
 
 
-        :param wt_video_upload_presign_params: (required)
-        :type wt_video_upload_presign_params: WTVideoUploadPresignParams
+        :param wt_video_upload_provision_params: (required)
+        :type wt_video_upload_provision_params: WTVideoUploadProvisionParams
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1030,8 +1030,8 @@ class VideosApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._presign_video_upload_serialize(
-            wt_video_upload_presign_params=wt_video_upload_presign_params,
+        _param = self._provision_video_upload_serialize(
+            wt_video_upload_provision_params=wt_video_upload_provision_params,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1039,7 +1039,7 @@ class VideosApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WTVideoUploadPresign",
+            '200': "WTVideoUploadProvision",
             '401': "AuthError",
             '422': "FalsumError",
             '500': "InternalServerError500",
@@ -1051,9 +1051,9 @@ class VideosApi:
         return response_data.response
 
 
-    def _presign_video_upload_serialize(
+    def _provision_video_upload_serialize(
         self,
-        wt_video_upload_presign_params,
+        wt_video_upload_provision_params,
         _request_auth,
         _content_type,
         _headers,
@@ -1077,8 +1077,8 @@ class VideosApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if wt_video_upload_presign_params is not None:
-            _body_params = wt_video_upload_presign_params
+        if wt_video_upload_provision_params is not None:
+            _body_params = wt_video_upload_provision_params
 
 
         # set the HTTP header `Accept`
@@ -1108,7 +1108,7 @@ class VideosApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v2/video/presign',
+            resource_path='/v2/video/upload/provision',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

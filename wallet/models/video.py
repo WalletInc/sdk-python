@@ -22,6 +22,8 @@ from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from wallet.models.amenity_id import AmenityId
+from wallet.models.video_provider import VideoProvider
+from wallet.models.wt_video_playback_source import WTVideoPlaybackSource
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,18 +31,20 @@ class Video(BaseModel):
     """
     Video
     """ # noqa: E501
-    title: Optional[Any]
-    description: Optional[Any]
-    order_number: Optional[Any] = Field(alias="orderNumber")
-    media_url: Optional[Any] = Field(alias="mediaURL")
-    additional_info_url: Optional[Any] = Field(default=None, alias="additionalInfoURL")
     id: AmenityId
     created_at: Optional[Any] = Field(alias="createdAt")
     updated_at: Optional[Any] = Field(alias="updatedAt")
+    title: Optional[Any]
+    description: Optional[Any]
+    order_number: Optional[Any] = Field(alias="orderNumber")
+    additional_info_url: Optional[Any] = Field(default=None, alias="additionalInfoURL")
     is_active: Optional[Any] = Field(alias="isActive")
     merchant_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="merchantID")
+    provider: VideoProvider
+    asset_id: Optional[Any] = Field(alias="assetId")
+    source: WTVideoPlaybackSource
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["title", "description", "orderNumber", "mediaURL", "additionalInfoURL", "id", "createdAt", "updatedAt", "isActive", "merchantID"]
+    __properties: ClassVar[List[str]] = ["id", "createdAt", "updatedAt", "title", "description", "orderNumber", "additionalInfoURL", "isActive", "merchantID", "provider", "assetId", "source"]
 
     model_config = {
         "populate_by_name": True,
@@ -86,10 +90,26 @@ class Video(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of id
         if self.id:
             _dict['id'] = self.id.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of provider
+        if self.provider:
+            _dict['provider'] = self.provider.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of source
+        if self.source:
+            _dict['source'] = self.source.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
+
+        # set to None if created_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.created_at is None and "created_at" in self.model_fields_set:
+            _dict['createdAt'] = None
+
+        # set to None if updated_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.updated_at is None and "updated_at" in self.model_fields_set:
+            _dict['updatedAt'] = None
 
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
@@ -106,30 +126,20 @@ class Video(BaseModel):
         if self.order_number is None and "order_number" in self.model_fields_set:
             _dict['orderNumber'] = None
 
-        # set to None if media_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.media_url is None and "media_url" in self.model_fields_set:
-            _dict['mediaURL'] = None
-
         # set to None if additional_info_url (nullable) is None
         # and model_fields_set contains the field
         if self.additional_info_url is None and "additional_info_url" in self.model_fields_set:
             _dict['additionalInfoURL'] = None
 
-        # set to None if created_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.created_at is None and "created_at" in self.model_fields_set:
-            _dict['createdAt'] = None
-
-        # set to None if updated_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.updated_at is None and "updated_at" in self.model_fields_set:
-            _dict['updatedAt'] = None
-
         # set to None if is_active (nullable) is None
         # and model_fields_set contains the field
         if self.is_active is None and "is_active" in self.model_fields_set:
             _dict['isActive'] = None
+
+        # set to None if asset_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.asset_id is None and "asset_id" in self.model_fields_set:
+            _dict['assetId'] = None
 
         return _dict
 
@@ -143,16 +153,18 @@ class Video(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "title": obj.get("title"),
-            "description": obj.get("description"),
-            "orderNumber": obj.get("orderNumber"),
-            "mediaURL": obj.get("mediaURL"),
-            "additionalInfoURL": obj.get("additionalInfoURL"),
             "id": AmenityId.from_dict(obj["id"]) if obj.get("id") is not None else None,
             "createdAt": obj.get("createdAt"),
             "updatedAt": obj.get("updatedAt"),
+            "title": obj.get("title"),
+            "description": obj.get("description"),
+            "orderNumber": obj.get("orderNumber"),
+            "additionalInfoURL": obj.get("additionalInfoURL"),
             "isActive": obj.get("isActive"),
-            "merchantID": obj.get("merchantID")
+            "merchantID": obj.get("merchantID"),
+            "provider": VideoProvider.from_dict(obj["provider"]) if obj.get("provider") is not None else None,
+            "assetId": obj.get("assetId"),
+            "source": WTVideoPlaybackSource.from_dict(obj["source"]) if obj.get("source") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -257,6 +257,7 @@ from wallet.models.vs_campaign_generated_message_pagination import VSCampaignGen
 from wallet.models.vs_dynamic_voucher_status import VSDynamicVoucherStatus
 from wallet.models.vector_store import VectorStore
 from wallet.models.video import Video
+from wallet.models.video_provider import VideoProvider
 from wallet.models.virtual_business_card import VirtualBusinessCard
 from wallet.models.wta2_p_application_update_params import WTA2PApplicationUpdateParams
 from wallet.models.wt_advertisement_credit import WTAdvertisementCredit
@@ -399,9 +400,12 @@ from wallet.models.wt_ticket_update_params import WTTicketUpdateParams
 from wallet.models.wt_twilio_request_authy_code import WTTwilioRequestAuthyCode
 from wallet.models.wt_twilio_verify_authy_code import WTTwilioVerifyAuthyCode
 from wallet.models.wt_video_create_params import WTVideoCreateParams
+from wallet.models.wt_video_playback_source import WTVideoPlaybackSource
+from wallet.models.wt_video_playback_source_type import WTVideoPlaybackSourceType
 from wallet.models.wt_video_update_params import WTVideoUpdateParams
-from wallet.models.wt_video_upload_presign import WTVideoUploadPresign
-from wallet.models.wt_video_upload_presign_params import WTVideoUploadPresignParams
+from wallet.models.wt_video_upload_provision import WTVideoUploadProvision
+from wallet.models.wt_video_upload_provision_params import WTVideoUploadProvisionParams
+from wallet.models.wt_video_upload_provision_provider import WTVideoUploadProvisionProvider
 from wallet.models.wt_virtual_business_card_create_params import WTVirtualBusinessCardCreateParams
 from wallet.models.wt_virtual_business_card_update_params import WTVirtualBusinessCardUpdateParams
 from wallet.models.wt_wallet_configuration_save_wallet_record import WTWalletConfigurationSaveWalletRecord

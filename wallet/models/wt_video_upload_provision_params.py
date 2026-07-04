@@ -23,16 +23,15 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class WTVideoUpdateParams(BaseModel):
+class WTVideoUploadProvisionParams(BaseModel):
     """
-    WTVideoUpdateParams
+    WTVideoUploadProvisionParams
     """ # noqa: E501
-    title: Optional[Any]
-    description: Optional[Any]
-    order_number: Optional[Any] = Field(alias="orderNumber")
-    additional_info_url: Optional[Any] = Field(default=None, alias="additionalInfoURL")
+    file_name: Optional[Any] = Field(alias="fileName")
+    file_type: Optional[Any] = Field(alias="fileType")
+    max_duration_seconds: Optional[Any] = Field(default=None, alias="maxDurationSeconds")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["title", "description", "orderNumber", "additionalInfoURL"]
+    __properties: ClassVar[List[str]] = ["fileName", "fileType", "maxDurationSeconds"]
 
     model_config = {
         "populate_by_name": True,
@@ -52,7 +51,7 @@ class WTVideoUpdateParams(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of WTVideoUpdateParams from a JSON string"""
+        """Create an instance of WTVideoUploadProvisionParams from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,31 +79,26 @@ class WTVideoUpdateParams(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
-        # set to None if title (nullable) is None
+        # set to None if file_name (nullable) is None
         # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
+        if self.file_name is None and "file_name" in self.model_fields_set:
+            _dict['fileName'] = None
 
-        # set to None if description (nullable) is None
+        # set to None if file_type (nullable) is None
         # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
+        if self.file_type is None and "file_type" in self.model_fields_set:
+            _dict['fileType'] = None
 
-        # set to None if order_number (nullable) is None
+        # set to None if max_duration_seconds (nullable) is None
         # and model_fields_set contains the field
-        if self.order_number is None and "order_number" in self.model_fields_set:
-            _dict['orderNumber'] = None
-
-        # set to None if additional_info_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.additional_info_url is None and "additional_info_url" in self.model_fields_set:
-            _dict['additionalInfoURL'] = None
+        if self.max_duration_seconds is None and "max_duration_seconds" in self.model_fields_set:
+            _dict['maxDurationSeconds'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of WTVideoUpdateParams from a dict"""
+        """Create an instance of WTVideoUploadProvisionParams from a dict"""
         if obj is None:
             return None
 
@@ -112,10 +106,9 @@ class WTVideoUpdateParams(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "title": obj.get("title"),
-            "description": obj.get("description"),
-            "orderNumber": obj.get("orderNumber"),
-            "additionalInfoURL": obj.get("additionalInfoURL")
+            "fileName": obj.get("fileName"),
+            "fileType": obj.get("fileType"),
+            "maxDurationSeconds": obj.get("maxDurationSeconds")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
