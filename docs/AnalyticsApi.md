@@ -6,14 +6,14 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**count_all_subscribers**](AnalyticsApi.md#count_all_subscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers
 [**count_authenticated_sessions**](AnalyticsApi.md#count_authenticated_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions
-[**count_distinct_redemptions**](AnalyticsApi.md#count_distinct_redemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Get refund amount of campaigns by Campaign
+[**count_distinct_redemptions**](AnalyticsApi.md#count_distinct_redemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Count distinct payment object redemptions
 [**count_help_desk_requests**](AnalyticsApi.md#count_help_desk_requests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests
-[**count_inbound_messages**](AnalyticsApi.md#count_inbound_messages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers
+[**count_inbound_messages**](AnalyticsApi.md#count_inbound_messages) | **GET** /v2/analytics/sms/inbound/count | Count inbound SMS messages
 [**count_new_sessions**](AnalyticsApi.md#count_new_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions
 [**count_opt_in_list_subscribers_partitioned_by_date**](AnalyticsApi.md#count_opt_in_list_subscribers_partitioned_by_date) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date
-[**count_outbound_messages**](AnalyticsApi.md#count_outbound_messages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers
+[**count_outbound_messages**](AnalyticsApi.md#count_outbound_messages) | **GET** /v2/analytics/sms/outbound/count | Count outbound SMS messages
 [**count_total_sessions**](AnalyticsApi.md#count_total_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions
-[**count_transactions**](AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Get refund amount of campaigns by Campaign
+[**count_transactions**](AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Count ledger transactions
 [**count_verified_wallet_page_views**](AnalyticsApi.md#count_verified_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Get wallet object counts within a given time frame that have a valid phone verification token
 [**count_wallet_page_views**](AnalyticsApi.md#count_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Get wallet object counts within a given time frame
 [**exit_link_summary**](AnalyticsApi.md#exit_link_summary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks
@@ -41,8 +41,8 @@ Method | HTTP request | Description
 [**fetch_analytics_campaigns_redemptions_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_redemptions_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date
 [**fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Get refund amount of campaigns by Campaign
 [**fetch_analytics_campaigns_refunds_amount_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_amount_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/amount/date | Get refund amount of campaigns by date
-[**fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Get refund amount of campaigns by Campaign
-[**fetch_analytics_campaigns_refunds_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/count/date | Get refund amount of campaigns by date
+[**fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Count refunds of campaigns by Campaign
+[**fetch_analytics_campaigns_refunds_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/count/date | Count refunds of campaigns by date
 [**fetch_analytics_delivered_outbound_messages_count_partitioned_by_date**](AnalyticsApi.md#fetch_analytics_delivered_outbound_messages_count_partitioned_by_date) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date
 [**fetch_analytics_delivered_outbound_messages_count_partitioned_by_phone_number**](AnalyticsApi.md#fetch_analytics_delivered_outbound_messages_count_partitioned_by_phone_number) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number
 [**fetch_analytics_distinct_wallet_sessions**](AnalyticsApi.md#fetch_analytics_distinct_wallet_sessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Get distinct wallet sessions
@@ -86,8 +86,8 @@ Method | HTTP request | Description
 [**fetch_analytics_wallet_session_activity**](AnalyticsApi.md#fetch_analytics_wallet_session_activity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Get session activity
 [**fetch_wallet_page_view_by_id**](AnalyticsApi.md#fetch_wallet_page_view_by_id) | **GET** /v2/analytics/walletPageViews/activity/{id} | Get session activity by wallet page view ID
 [**referring_sites_summary**](AnalyticsApi.md#referring_sites_summary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites
-[**sum_revenue**](AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Get refund amount of campaigns by Campaign
-[**sum_transactions**](AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Get refund amount of campaigns by Campaign
+[**sum_revenue**](AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Sum ledger revenue
+[**sum_transactions**](AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Sum ledger transaction amounts
 
 
 # **count_all_subscribers**
@@ -240,7 +240,7 @@ No authorization required
 # **count_distinct_redemptions**
 > object count_distinct_redemptions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
 
-Get refund amount of campaigns by Campaign
+Count distinct payment object redemptions
 
 ### Example
 
@@ -267,7 +267,7 @@ with wallet.ApiClient(configuration) as api_client:
     segment_type = 'segment_type_example' # str |  (optional)
 
     try:
-        # Get refund amount of campaigns by Campaign
+        # Count distinct payment object redemptions
         api_response = api_instance.count_distinct_redemptions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
         print("The response of AnalyticsApi->count_distinct_redemptions:\n")
         pprint(api_response)
@@ -390,7 +390,7 @@ No authorization required
 # **count_inbound_messages**
 > WTCountResult count_inbound_messages(start_date=start_date, end_date=end_date)
 
-Count opt in list subscribers
+Count inbound SMS messages
 
 ### Example
 
@@ -416,7 +416,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
-        # Count opt in list subscribers
+        # Count inbound SMS messages
         api_response = api_instance.count_inbound_messages(start_date=start_date, end_date=end_date)
         print("The response of AnalyticsApi->count_inbound_messages:\n")
         pprint(api_response)
@@ -601,7 +601,7 @@ No authorization required
 # **count_outbound_messages**
 > WTCountResult count_outbound_messages(start_date=start_date, end_date=end_date)
 
-Count opt in list subscribers
+Count outbound SMS messages
 
 ### Example
 
@@ -627,7 +627,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
     try:
-        # Count opt in list subscribers
+        # Count outbound SMS messages
         api_response = api_instance.count_outbound_messages(start_date=start_date, end_date=end_date)
         print("The response of AnalyticsApi->count_outbound_messages:\n")
         pprint(api_response)
@@ -742,7 +742,7 @@ No authorization required
 # **count_transactions**
 > object count_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
 
-Get refund amount of campaigns by Campaign
+Count ledger transactions
 
 ### Example
 
@@ -769,7 +769,7 @@ with wallet.ApiClient(configuration) as api_client:
     segment_type = 'segment_type_example' # str |  (optional)
 
     try:
-        # Get refund amount of campaigns by Campaign
+        # Count ledger transactions
         api_response = api_instance.count_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
         print("The response of AnalyticsApi->count_transactions:\n")
         pprint(api_response)
@@ -2739,7 +2739,7 @@ No authorization required
 # **fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id**
 > List[object] fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id(start_date, end_date)
 
-Get refund amount of campaigns by Campaign
+Count refunds of campaigns by Campaign
 
 ### Example
 
@@ -2764,7 +2764,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Get refund amount of campaigns by Campaign
+        # Count refunds of campaigns by Campaign
         api_response = api_instance.fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id(start_date, end_date)
         print("The response of AnalyticsApi->fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id:\n")
         pprint(api_response)
@@ -2809,7 +2809,7 @@ No authorization required
 # **fetch_analytics_campaigns_refunds_count_partitioned_by_date**
 > object fetch_analytics_campaigns_refunds_count_partitioned_by_date(start_date, end_date, locale, timezone)
 
-Get refund amount of campaigns by date
+Count refunds of campaigns by date
 
 ### Example
 
@@ -2836,7 +2836,7 @@ with wallet.ApiClient(configuration) as api_client:
     timezone = 'timezone_example' # str | 
 
     try:
-        # Get refund amount of campaigns by date
+        # Count refunds of campaigns by date
         api_response = api_instance.fetch_analytics_campaigns_refunds_count_partitioned_by_date(start_date, end_date, locale, timezone)
         print("The response of AnalyticsApi->fetch_analytics_campaigns_refunds_count_partitioned_by_date:\n")
         pprint(api_response)
@@ -5977,7 +5977,7 @@ No authorization required
 # **sum_revenue**
 > object sum_revenue(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
 
-Get refund amount of campaigns by Campaign
+Sum ledger revenue
 
 ### Example
 
@@ -6004,7 +6004,7 @@ with wallet.ApiClient(configuration) as api_client:
     segment_type = 'segment_type_example' # str |  (optional)
 
     try:
-        # Get refund amount of campaigns by Campaign
+        # Sum ledger revenue
         api_response = api_instance.sum_revenue(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
         print("The response of AnalyticsApi->sum_revenue:\n")
         pprint(api_response)
@@ -6051,7 +6051,7 @@ No authorization required
 # **sum_transactions**
 > object sum_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
 
-Get refund amount of campaigns by Campaign
+Sum ledger transaction amounts
 
 ### Example
 
@@ -6078,7 +6078,7 @@ with wallet.ApiClient(configuration) as api_client:
     segment_type = 'segment_type_example' # str |  (optional)
 
     try:
-        # Get refund amount of campaigns by Campaign
+        # Sum ledger transaction amounts
         api_response = api_instance.sum_transactions(start_date, end_date, transaction_type=transaction_type, segment_type=segment_type)
         print("The response of AnalyticsApi->sum_transactions:\n")
         pprint(api_response)

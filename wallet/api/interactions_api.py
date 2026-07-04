@@ -73,7 +73,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Ticket:
-        """Update ticket
+        """Claim a ticket by ID
 
 
         :param id: (required)
@@ -145,7 +145,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Ticket]:
-        """Update ticket
+        """Claim a ticket by ID
 
 
         :param id: (required)
@@ -217,7 +217,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update ticket
+        """Claim a ticket by ID
 
 
         :param id: (required)
@@ -1400,7 +1400,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[DynamicVoucher]:
-        """Get a customer's static vouchers on the basis of a given voucher ID
+        """Get a merchant's active dynamic vouchers
 
 
         :param merchant_id: (required)
@@ -1468,7 +1468,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[DynamicVoucher]]:
-        """Get a customer's static vouchers on the basis of a given voucher ID
+        """Get a merchant's active dynamic vouchers
 
 
         :param merchant_id: (required)
@@ -1536,7 +1536,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get a customer's static vouchers on the basis of a given voucher ID
+        """Get a merchant's active dynamic vouchers
 
 
         :param merchant_id: (required)
@@ -2212,7 +2212,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[Ticket]:
-        """Update ticket
+        """Get a customer's upcoming tickets via phone verification token
 
 
         :param fetch_customer_tickets_with_token_request: (required)
@@ -2280,7 +2280,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[Ticket]]:
-        """Update ticket
+        """Get a customer's upcoming tickets via phone verification token
 
 
         :param fetch_customer_tickets_with_token_request: (required)
@@ -2348,7 +2348,7 @@ class InteractionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update ticket
+        """Get a customer's upcoming tickets via phone verification token
 
 
         :param fetch_customer_tickets_with_token_request: (required)

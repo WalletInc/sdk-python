@@ -7,16 +7,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **object** |  | 
 **body** | **object** |  | 
-**start_date_time** | **object** |  | 
+**start_date_time** | **datetime** |  | 
 **price** | **object** |  | 
 **url** | **object** |  | 
-**order_number** | **object** | Stores the order number | 
+**order_number** | **object** |  | 
 **is_sold_out** | **object** | Denotes if the event has been sold out | 
-**media_url** | **object** |  | [optional] 
+**media_url** | **str** |  | [optional] 
 **payment_design_id** | **str** |  | [optional] 
-**max_comp_tickets** | **object** |  | [optional] 
-**ticket_expiration_date_time** | **object** |  | [optional] 
-**redemption_instructions** | **object** |  | [optional] 
+**max_comp_tickets** | **float** |  | [optional] 
+**ticket_expiration_date_time** | **datetime** |  | [optional] 
+**redemption_instructions** | **str** |  | [optional] 
 
 ## Example
 

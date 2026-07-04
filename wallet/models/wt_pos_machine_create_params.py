@@ -30,7 +30,7 @@ class WTPosMachineCreateParams(BaseModel):
     register_id: Optional[Any] = Field(alias="registerID")
     register_name: Optional[Any] = Field(alias="registerName")
     outlet_name: Optional[Any] = Field(alias="outletName")
-    outlet_number: Optional[Any] = Field(description="Stores the outlet number", alias="outletNumber")
+    outlet_number: Optional[Any] = Field(alias="outletNumber")
     profit_center: Optional[Any] = Field(alias="profitCenter")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["registerID", "registerName", "outletName", "outletNumber", "profitCenter"]

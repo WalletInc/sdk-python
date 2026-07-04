@@ -31,7 +31,7 @@ class WTPosMachine(BaseModel):
     register_id: Optional[Any] = Field(alias="registerID")
     register_name: Optional[Any] = Field(alias="registerName")
     outlet_name: Optional[Any] = Field(alias="outletName")
-    outlet_number: Optional[Any] = Field(description="Stores the outlet number", alias="outletNumber")
+    outlet_number: Optional[Any] = Field(alias="outletNumber")
     profit_center: Optional[Any] = Field(alias="profitCenter")
     id: Annotated[str, Field(min_length=10, strict=True, max_length=10)]
     created_at: Optional[Any] = Field(alias="createdAt")

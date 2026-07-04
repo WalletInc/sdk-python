@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | **object** | Stores the results as an array | 
+**results** | **object** | The page of records returned for this request. | 
 **length** | **object** | Denotes the length of the results array | 
 **total** | **object** | Denotes the total number of records present in the database | 
 

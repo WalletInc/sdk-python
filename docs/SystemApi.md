@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**fetch_audit_log_of_roles**](SystemApi.md#fetch_audit_log_of_roles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log
 [**fetch_employees_with_role**](SystemApi.md#fetch_employees_with_role) | **GET** /v2/system/roles/employees/{roleID} | Get employees with role
 [**fetch_webpages_for_role**](SystemApi.md#fetch_webpages_for_role) | **GET** /v2/system/roles/webpages/{roleID} | Get webpages for role
-[**get_payment_prefixes**](SystemApi.md#get_payment_prefixes) | **GET** /v2/system/prefixes | Get payment prefixes
+[**get_payment_prefixes**](SystemApi.md#get_payment_prefixes) | **GET** /v2/system/prefixes | Get payment prefixes (empty stub)
 [**load_role**](SystemApi.md#load_role) | **GET** /v2/system/roles/{roleID} | Get role
 [**save_role**](SystemApi.md#save_role) | **PUT** /v2/system/roles/{roleID} | Update role
 
@@ -364,7 +364,7 @@ No authorization required
 # **get_payment_prefixes**
 > List[object] get_payment_prefixes()
 
-Get payment prefixes
+Get payment prefixes (empty stub)
 
 ### Example
 
@@ -387,7 +387,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.SystemApi(api_client)
 
     try:
-        # Get payment prefixes
+        # Get payment prefixes (empty stub)
         api_response = api_instance.get_payment_prefixes()
         print("The response of SystemApi->get_payment_prefixes:\n")
         pprint(api_response)
