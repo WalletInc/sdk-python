@@ -232,6 +232,7 @@ docs/PresignedPost.md
 docs/PresignedPostFields.md
 docs/PrizesApi.md
 docs/Product.md
+docs/ProductTaxBehavior.md
 docs/ProductsApi.md
 docs/ProfileStatuses.md
 docs/PromoCode.md
@@ -470,6 +471,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_product_tax_behavior.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -730,6 +732,7 @@ wallet/models/portal_page.py
 wallet/models/presigned_post.py
 wallet/models/presigned_post_fields.py
 wallet/models/product.py
+wallet/models/product_tax_behavior.py
 wallet/models/profile_statuses.py
 wallet/models/promo_code.py
 wallet/models/qr_code_design.py

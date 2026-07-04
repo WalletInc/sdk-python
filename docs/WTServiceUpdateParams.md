@@ -11,6 +11,10 @@ Name | Type | Description | Notes
 **order_number** | **int** |  | 
 **media_url** | **str** |  | [optional] 
 **additional_info_url** | **object** |  | [optional] 
+**price_amount** | **int** |  | [optional] 
+**currency** | **object** |  | [optional] 
+**is_buyable** | **bool** |  | [optional] 
+**tax_behavior** | [**ProductTaxBehavior**](ProductTaxBehavior.md) |  | [optional] 
 
 ## Example
 

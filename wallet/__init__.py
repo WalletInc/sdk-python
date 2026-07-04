@@ -282,6 +282,7 @@ from wallet.models.portal_page import PortalPage
 from wallet.models.presigned_post import PresignedPost
 from wallet.models.presigned_post_fields import PresignedPostFields
 from wallet.models.product import Product
+from wallet.models.product_tax_behavior import ProductTaxBehavior
 from wallet.models.profile_statuses import ProfileStatuses
 from wallet.models.promo_code import PromoCode
 from wallet.models.qr_code_design import QRCodeDesign

@@ -828,6 +828,7 @@ Class | Method | HTTP request | Description
  - [PresignedPost](docs/PresignedPost.md)
  - [PresignedPostFields](docs/PresignedPostFields.md)
  - [Product](docs/Product.md)
+ - [ProductTaxBehavior](docs/ProductTaxBehavior.md)
  - [ProfileStatuses](docs/ProfileStatuses.md)
  - [PromoCode](docs/PromoCode.md)
  - [QRCodeDesign](docs/QRCodeDesign.md)
