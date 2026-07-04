@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**fetch_audit_log_of_roles**](SystemApi.md#fetch_audit_log_of_roles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log
 [**fetch_employees_with_role**](SystemApi.md#fetch_employees_with_role) | **GET** /v2/system/roles/employees/{roleID} | Get employees with role
 [**fetch_webpages_for_role**](SystemApi.md#fetch_webpages_for_role) | **GET** /v2/system/roles/webpages/{roleID} | Get webpages for role
-[**get_payment_prefixes**](SystemApi.md#get_payment_prefixes) | **GET** /v2/system/prefixes | Get payment prefixes
 [**load_role**](SystemApi.md#load_role) | **GET** /v2/system/roles/{roleID} | Get role
 [**save_role**](SystemApi.md#save_role) | **PUT** /v2/system/roles/{roleID} | Update role
 
@@ -340,70 +339,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[Webpage]**](Webpage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_payment_prefixes**
-> List[object] get_payment_prefixes()
-
-Get payment prefixes
-
-### Example
-
-
-```python
-import wallet
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.SystemApi(api_client)
-
-    try:
-        # Get payment prefixes
-        api_response = api_instance.get_payment_prefixes()
-        print("The response of SystemApi->get_payment_prefixes:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SystemApi->get_payment_prefixes: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**List[object]**
 
 ### Authorization
 

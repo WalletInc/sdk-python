@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, Field
+from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from wallet.models.amenity_id import AmenityId
 from typing import Optional, Set
@@ -32,20 +31,20 @@ class Performance(BaseModel):
     """ # noqa: E501
     title: Optional[Any]
     body: Optional[Any]
-    start_date_time: datetime = Field(alias="startDateTime")
+    start_date_time: Optional[Any] = Field(alias="startDateTime")
     price: Optional[Any]
     url: Optional[Any]
-    order_number: Optional[Any] = Field(description="Stores the order number", alias="orderNumber")
+    order_number: Optional[Any] = Field(alias="orderNumber")
     is_sold_out: Optional[Any] = Field(description="Denotes if the event has been sold out", alias="isSoldOut")
-    media_url: Optional[StrictStr] = Field(default=None, alias="mediaURL")
+    media_url: Optional[Any] = Field(default=None, alias="mediaURL")
     payment_design_id: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=10)]] = Field(default=None, alias="paymentDesignID")
-    max_comp_tickets: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="maxCompTickets")
-    ticket_expiration_date_time: Optional[datetime] = Field(default=None, alias="ticketExpirationDateTime")
-    redemption_instructions: Optional[StrictStr] = Field(default=None, alias="redemptionInstructions")
+    max_comp_tickets: Optional[Any] = Field(default=None, alias="maxCompTickets")
+    ticket_expiration_date_time: Optional[Any] = Field(default=None, alias="ticketExpirationDateTime")
+    redemption_instructions: Optional[Any] = Field(default=None, alias="redemptionInstructions")
     id: AmenityId
-    created_at: datetime = Field(alias="createdAt")
-    updated_at: datetime = Field(alias="updatedAt")
-    is_active: StrictBool = Field(alias="isActive")
+    created_at: Optional[Any] = Field(alias="createdAt")
+    updated_at: Optional[Any] = Field(alias="updatedAt")
+    is_active: Optional[Any] = Field(alias="isActive")
     merchant_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="merchantID")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["title", "body", "startDateTime", "price", "url", "orderNumber", "isSoldOut", "mediaURL", "paymentDesignID", "maxCompTickets", "ticketExpirationDateTime", "redemptionInstructions", "id", "createdAt", "updatedAt", "isActive", "merchantID"]
@@ -109,6 +108,11 @@ class Performance(BaseModel):
         if self.body is None and "body" in self.model_fields_set:
             _dict['body'] = None
 
+        # set to None if start_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.start_date_time is None and "start_date_time" in self.model_fields_set:
+            _dict['startDateTime'] = None
+
         # set to None if price (nullable) is None
         # and model_fields_set contains the field
         if self.price is None and "price" in self.model_fields_set:
@@ -128,6 +132,41 @@ class Performance(BaseModel):
         # and model_fields_set contains the field
         if self.is_sold_out is None and "is_sold_out" in self.model_fields_set:
             _dict['isSoldOut'] = None
+
+        # set to None if media_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.media_url is None and "media_url" in self.model_fields_set:
+            _dict['mediaURL'] = None
+
+        # set to None if max_comp_tickets (nullable) is None
+        # and model_fields_set contains the field
+        if self.max_comp_tickets is None and "max_comp_tickets" in self.model_fields_set:
+            _dict['maxCompTickets'] = None
+
+        # set to None if ticket_expiration_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.ticket_expiration_date_time is None and "ticket_expiration_date_time" in self.model_fields_set:
+            _dict['ticketExpirationDateTime'] = None
+
+        # set to None if redemption_instructions (nullable) is None
+        # and model_fields_set contains the field
+        if self.redemption_instructions is None and "redemption_instructions" in self.model_fields_set:
+            _dict['redemptionInstructions'] = None
+
+        # set to None if created_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.created_at is None and "created_at" in self.model_fields_set:
+            _dict['createdAt'] = None
+
+        # set to None if updated_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.updated_at is None and "updated_at" in self.model_fields_set:
+            _dict['updatedAt'] = None
+
+        # set to None if is_active (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_active is None and "is_active" in self.model_fields_set:
+            _dict['isActive'] = None
 
         return _dict
 

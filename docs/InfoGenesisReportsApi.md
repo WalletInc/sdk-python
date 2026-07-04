@@ -18,8 +18,8 @@ Method | HTTP request | Description
 [**count_static_voucher_refunds**](InfoGenesisReportsApi.md#count_static_voucher_refunds) | **POST** /v2/pos/infogenesis/count/staticVoucher/refunds | Count static voucher refunds
 [**fetch_info_genesis_authorizations**](InfoGenesisReportsApi.md#fetch_info_genesis_authorizations) | **POST** /v2/pos/infogenesis/authorizations | Get authorizations
 [**fetch_info_genesis_campaign_data**](InfoGenesisReportsApi.md#fetch_info_genesis_campaign_data) | **POST** /v2/pos/infogenesis/campaign | Get campaign information
-[**fetch_info_genesis_lookup_requests**](InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests) | **POST** /v2/pos/infogenesis/requests/lookup | Get queries
-[**fetch_info_genesis_lookup_requests_errors**](InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests_errors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get queries errors
+[**fetch_info_genesis_lookup_requests**](InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests) | **POST** /v2/pos/infogenesis/requests/lookup | Get lookup requests
+[**fetch_info_genesis_lookup_requests_errors**](InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests_errors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get lookup request errors
 [**fetch_info_genesis_redeemed_static_vouchers**](InfoGenesisReportsApi.md#fetch_info_genesis_redeemed_static_vouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Get redeemed static vouchers
 [**fetch_info_genesis_redeemed_unique_posting_ids**](InfoGenesisReportsApi.md#fetch_info_genesis_redeemed_unique_posting_ids) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Get redeemed unique posting IDs
 [**fetch_info_genesis_redemptions**](InfoGenesisReportsApi.md#fetch_info_genesis_redemptions) | **POST** /v2/pos/infogenesis/redemptions | Get redemptions
@@ -1015,7 +1015,7 @@ No authorization required
 # **fetch_info_genesis_lookup_requests**
 > List[Request] fetch_info_genesis_lookup_requests(wt_info_genesis_record_filter_parameters)
 
-Get queries
+Get lookup requests
 
 ### Example
 
@@ -1041,7 +1041,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_record_filter_parameters = wallet.WTInfoGenesisRecordFilterParameters() # WTInfoGenesisRecordFilterParameters | 
 
     try:
-        # Get queries
+        # Get lookup requests
         api_response = api_instance.fetch_info_genesis_lookup_requests(wt_info_genesis_record_filter_parameters)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_lookup_requests:\n")
         pprint(api_response)
@@ -1085,7 +1085,7 @@ No authorization required
 # **fetch_info_genesis_lookup_requests_errors**
 > List[Request] fetch_info_genesis_lookup_requests_errors(wt_info_genesis_lookup_request_errors)
 
-Get queries errors
+Get lookup request errors
 
 ### Example
 
@@ -1111,7 +1111,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_info_genesis_lookup_request_errors = wallet.WTInfoGenesisLookupRequestErrors() # WTInfoGenesisLookupRequestErrors | 
 
     try:
-        # Get queries errors
+        # Get lookup request errors
         api_response = api_instance.fetch_info_genesis_lookup_requests_errors(wt_info_genesis_lookup_request_errors)
         print("The response of InfoGenesisReportsApi->fetch_info_genesis_lookup_requests_errors:\n")
         pprint(api_response)

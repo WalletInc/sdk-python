@@ -2212,7 +2212,7 @@ class PerformancesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> FetchPerformanceTicketsPage200Response:
-        """Get Peformance's Tickets
+        """Get Performance's Tickets
 
 
         :param performance_id: (required)
@@ -2309,7 +2309,7 @@ class PerformancesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[FetchPerformanceTicketsPage200Response]:
-        """Get Peformance's Tickets
+        """Get Performance's Tickets
 
 
         :param performance_id: (required)
@@ -2406,7 +2406,7 @@ class PerformancesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Peformance's Tickets
+        """Get Performance's Tickets
 
 
         :param performance_id: (required)

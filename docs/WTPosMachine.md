@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **register_id** | **object** |  | 
 **register_name** | **object** |  | 
 **outlet_name** | **object** |  | 
-**outlet_number** | **object** | Stores the outlet number | 
+**outlet_number** | **object** |  | 
 **profit_center** | **object** |  | 
 **id** | **str** |  | 
 **created_at** | **object** |  | 

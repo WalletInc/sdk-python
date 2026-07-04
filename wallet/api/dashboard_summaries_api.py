@@ -5175,7 +5175,7 @@ class DashboardSummariesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> WTCountResult:
-        """Count Performances
+        """Count subscribers
 
 
         :param start_date_time: (required)
@@ -5248,7 +5248,7 @@ class DashboardSummariesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[WTCountResult]:
-        """Count Performances
+        """Count subscribers
 
 
         :param start_date_time: (required)
@@ -5321,7 +5321,7 @@ class DashboardSummariesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Count Performances
+        """Count subscribers
 
 
         :param start_date_time: (required)

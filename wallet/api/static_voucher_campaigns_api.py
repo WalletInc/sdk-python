@@ -3639,7 +3639,7 @@ class StaticVoucherCampaignsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> FetchStaticVouchersPage200Response:
-        """Get vouchers in Static Vouchers Campaign
+        """Get a page of vouchers in a Static Voucher Campaign
 
 
         :param campaign_id: (required)
@@ -3716,7 +3716,7 @@ class StaticVoucherCampaignsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[FetchStaticVouchersPage200Response]:
-        """Get vouchers in Static Vouchers Campaign
+        """Get a page of vouchers in a Static Voucher Campaign
 
 
         :param campaign_id: (required)
@@ -3793,7 +3793,7 @@ class StaticVoucherCampaignsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get vouchers in Static Vouchers Campaign
+        """Get a page of vouchers in a Static Voucher Campaign
 
 
         :param campaign_id: (required)
@@ -4461,7 +4461,7 @@ class StaticVoucherCampaignsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> VSCampaignGeneratedMessagePagination:
-        """View vouchers in Static Voucher Campaign
+        """Preview generated broadcast messages by page
 
 
         :param campaign_id: (required)
@@ -4534,7 +4534,7 @@ class StaticVoucherCampaignsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[VSCampaignGeneratedMessagePagination]:
-        """View vouchers in Static Voucher Campaign
+        """Preview generated broadcast messages by page
 
 
         :param campaign_id: (required)
@@ -4607,7 +4607,7 @@ class StaticVoucherCampaignsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """View vouchers in Static Voucher Campaign
+        """Preview generated broadcast messages by page
 
 
         :param campaign_id: (required)

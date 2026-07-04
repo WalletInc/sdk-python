@@ -29,7 +29,7 @@ Method | HTTP request | Description
 [**fetch_tcpa_filter**](MerchantApi.md#fetch_tcpa_filter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters
 [**fetch_wallet_configuration**](MerchantApi.md#fetch_wallet_configuration) | **GET** /v2/merchant/wallet/configuration | Get wallet configuration
 [**update_merchant**](MerchantApi.md#update_merchant) | **PUT** /v2/merchant | Update merchant details
-[**update_points_of_contact**](MerchantApi.md#update_points_of_contact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact
+[**update_points_of_contact**](MerchantApi.md#update_points_of_contact) | **PUT** /v2/merchant/pointsOfContact | Update points of contact
 [**update_pos_integration**](MerchantApi.md#update_pos_integration) | **PUT** /v2/merchant/pos/integration | Update POS Integration
 
 
@@ -1758,7 +1758,7 @@ No authorization required
 # **update_points_of_contact**
 > object update_points_of_contact(wt_merchant_update_points_of_contact)
 
-Update billing contact
+Update points of contact
 
 ### Example
 
@@ -1783,7 +1783,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_merchant_update_points_of_contact = wallet.WTMerchantUpdatePointsOfContact() # WTMerchantUpdatePointsOfContact | 
 
     try:
-        # Update billing contact
+        # Update points of contact
         api_response = api_instance.update_points_of_contact(wt_merchant_update_points_of_contact)
         print("The response of MerchantApi->update_points_of_contact:\n")
         pprint(api_response)
