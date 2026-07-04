@@ -34,7 +34,7 @@ Method | HTTP request | Description
 [**remove_peer_from_all_roles**](EmployeesApi.md#remove_peer_from_all_roles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles
 [**schedule_advertisement_credit**](EmployeesApi.md#schedule_advertisement_credit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit
 [**schedule_dynamic_voucher**](EmployeesApi.md#schedule_dynamic_voucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list
-[**schedule_dynamic_voucher_to_recipient**](EmployeesApi.md#schedule_dynamic_voucher_to_recipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dyanamic Voucher to recipient
+[**schedule_dynamic_voucher_to_recipient**](EmployeesApi.md#schedule_dynamic_voucher_to_recipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to recipient
 [**schedule_simple_sms**](EmployeesApi.md#schedule_simple_sms) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list
 [**schedule_simple_smsto_recipient**](EmployeesApi.md#schedule_simple_smsto_recipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient
 [**send_help_desk_response**](EmployeesApi.md#send_help_desk_response) | **POST** /v2/employee/helpDesk/response | Send help desk response
@@ -2103,7 +2103,7 @@ No authorization required
 # **schedule_dynamic_voucher_to_recipient**
 > DynamicVoucherBroadcast schedule_dynamic_voucher_to_recipient(dynamic_voucher_id, wt_employee_schedule_simple_smsto_recipient)
 
-Schedule Dyanamic Voucher to recipient
+Schedule Dynamic Voucher to recipient
 
 ### Example
 
@@ -2130,7 +2130,7 @@ with wallet.ApiClient(configuration) as api_client:
     wt_employee_schedule_simple_smsto_recipient = wallet.WTEmployeeScheduleSimpleSMSToRecipient() # WTEmployeeScheduleSimpleSMSToRecipient | 
 
     try:
-        # Schedule Dyanamic Voucher to recipient
+        # Schedule Dynamic Voucher to recipient
         api_response = api_instance.schedule_dynamic_voucher_to_recipient(dynamic_voucher_id, wt_employee_schedule_simple_smsto_recipient)
         print("The response of EmployeesApi->schedule_dynamic_voucher_to_recipient:\n")
         pprint(api_response)

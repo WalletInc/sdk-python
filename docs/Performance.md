@@ -7,20 +7,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **object** |  | 
 **body** | **object** |  | 
-**start_date_time** | **datetime** |  | 
+**start_date_time** | **object** |  | 
 **price** | **object** |  | 
 **url** | **object** |  | 
-**order_number** | **object** | Stores the order number | 
+**order_number** | **object** |  | 
 **is_sold_out** | **object** | Denotes if the event has been sold out | 
-**media_url** | **str** |  | [optional] 
+**media_url** | **object** |  | [optional] 
 **payment_design_id** | **str** |  | [optional] 
-**max_comp_tickets** | **float** |  | [optional] 
-**ticket_expiration_date_time** | **datetime** |  | [optional] 
-**redemption_instructions** | **str** |  | [optional] 
+**max_comp_tickets** | **object** |  | [optional] 
+**ticket_expiration_date_time** | **object** |  | [optional] 
+**redemption_instructions** | **object** |  | [optional] 
 **id** | [**AmenityId**](AmenityId.md) |  | 
-**created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | 
-**is_active** | **bool** |  | 
+**created_at** | **object** |  | 
+**updated_at** | **object** |  | 
+**is_active** | **object** |  | 
 **merchant_id** | **str** |  | 
 
 ## Example

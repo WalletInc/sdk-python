@@ -21,7 +21,7 @@ Method | HTTP request | Description
 [**fetch_dashboard_redemptions_count**](DashboardSummariesApi.md#fetch_dashboard_redemptions_count) | **GET** /v2/dashboard/count/pos/redemptions | Count POS redemptions
 [**fetch_dashboard_refunds_count**](DashboardSummariesApi.md#fetch_dashboard_refunds_count) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds
 [**fetch_dashboard_wallet_page_views_count**](DashboardSummariesApi.md#fetch_dashboard_wallet_page_views_count) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views
-[**fetch_subscriber_count**](DashboardSummariesApi.md#fetch_subscriber_count) | **GET** /v2/dashboard/count/subscribers | Count Performances
+[**fetch_subscriber_count**](DashboardSummariesApi.md#fetch_subscriber_count) | **GET** /v2/dashboard/count/subscribers | Count subscribers
 
 
 # **count_total_wallet_sessions**
@@ -1236,7 +1236,7 @@ No authorization required
 # **fetch_subscriber_count**
 > WTCountResult fetch_subscriber_count(start_date_time, end_date_time)
 
-Count Performances
+Count subscribers
 
 ### Example
 
@@ -1262,7 +1262,7 @@ with wallet.ApiClient(configuration) as api_client:
     end_date_time = '2013-10-20T19:20:30+01:00' # datetime | 
 
     try:
-        # Count Performances
+        # Count subscribers
         api_response = api_instance.fetch_subscriber_count(start_date_time, end_date_time)
         print("The response of DashboardSummariesApi->fetch_subscriber_count:\n")
         pprint(api_response)

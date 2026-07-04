@@ -27,7 +27,7 @@ class PaginatedWTMerchantCredits(BaseModel):
     """
     PaginatedWTMerchantCredits
     """ # noqa: E501
-    results: Optional[Any] = Field(description="Stores the results as an array")
+    results: Optional[Any] = Field(description="The page of records returned for this request.")
     length: Optional[Any] = Field(description="Denotes the length of the results array")
     total: Optional[Any] = Field(description="Denotes the total number of records present in the database")
     additional_properties: Dict[str, Any] = {}

@@ -4,15 +4,15 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**claim_ticket**](InteractionsApi.md#claim_ticket) | **PUT** /wallet/ticket/claim/{id} | Update ticket
+[**claim_ticket**](InteractionsApi.md#claim_ticket) | **PUT** /wallet/ticket/claim/{id} | Claim a ticket by ID
 [**create_advertisement_credit_scan**](InteractionsApi.md#create_advertisement_credit_scan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
 [**create_employee_v_card**](InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card
 [**create_ics_file**](InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event
 [**create_virtual_business_card_v_card**](InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card
-[**fetch_active_dynamic_vouchers**](InteractionsApi.md#fetch_active_dynamic_vouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a customer&#39;s static vouchers on the basis of a given voucher ID
+[**fetch_active_dynamic_vouchers**](InteractionsApi.md#fetch_active_dynamic_vouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers
 [**fetch_advertisement_credit_scans_from_list**](InteractionsApi.md#fetch_advertisement_credit_scans_from_list) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs
 [**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID
-[**fetch_customer_tickets_with_token**](InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket
+[**fetch_customer_tickets_with_token**](InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token
 [**fetch_dynamic_voucher_with_voucher_id**](InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher
 [**fetch_member_information**](InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Get member information
 [**fetch_static_voucher_with_voucher_id**](InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 # **claim_ticket**
 > Ticket claim_ticket(id, claim_ticket_request)
 
-Update ticket
+Claim a ticket by ID
 
 ### Example
 
@@ -55,7 +55,7 @@ with wallet.ApiClient(configuration) as api_client:
     claim_ticket_request = wallet.ClaimTicketRequest() # ClaimTicketRequest | 
 
     try:
-        # Update ticket
+        # Claim a ticket by ID
         api_response = api_instance.claim_ticket(id, claim_ticket_request)
         print("The response of InteractionsApi->claim_ticket:\n")
         pprint(api_response)
@@ -368,7 +368,7 @@ No authorization required
 # **fetch_active_dynamic_vouchers**
 > List[DynamicVoucher] fetch_active_dynamic_vouchers(merchant_id)
 
-Get a customer's static vouchers on the basis of a given voucher ID
+Get a merchant's active dynamic vouchers
 
 ### Example
 
@@ -393,7 +393,7 @@ with wallet.ApiClient(configuration) as api_client:
     merchant_id = 'merchant_id_example' # str | 
 
     try:
-        # Get a customer's static vouchers on the basis of a given voucher ID
+        # Get a merchant's active dynamic vouchers
         api_response = api_instance.fetch_active_dynamic_vouchers(merchant_id)
         print("The response of InteractionsApi->fetch_active_dynamic_vouchers:\n")
         pprint(api_response)
@@ -574,7 +574,7 @@ No authorization required
 # **fetch_customer_tickets_with_token**
 > List[Ticket] fetch_customer_tickets_with_token(fetch_customer_tickets_with_token_request)
 
-Update ticket
+Get a customer's upcoming tickets via phone verification token
 
 ### Example
 
@@ -600,7 +600,7 @@ with wallet.ApiClient(configuration) as api_client:
     fetch_customer_tickets_with_token_request = wallet.FetchCustomerTicketsWithTokenRequest() # FetchCustomerTicketsWithTokenRequest | 
 
     try:
-        # Update ticket
+        # Get a customer's upcoming tickets via phone verification token
         api_response = api_instance.fetch_customer_tickets_with_token(fetch_customer_tickets_with_token_request)
         print("The response of InteractionsApi->fetch_customer_tickets_with_token:\n")
         pprint(api_response)

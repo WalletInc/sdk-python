@@ -96,14 +96,14 @@ Class | Method | HTTP request | Description
 *AmenitiesApi* | [**update_amenity**](docs/AmenitiesApi.md#update_amenity) | **PUT** /v2/amenities/{id} | Update Amenity
 *AnalyticsApi* | [**count_all_subscribers**](docs/AnalyticsApi.md#count_all_subscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers
 *AnalyticsApi* | [**count_authenticated_sessions**](docs/AnalyticsApi.md#count_authenticated_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions
-*AnalyticsApi* | [**count_distinct_redemptions**](docs/AnalyticsApi.md#count_distinct_redemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Get refund amount of campaigns by Campaign
+*AnalyticsApi* | [**count_distinct_redemptions**](docs/AnalyticsApi.md#count_distinct_redemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Count distinct payment object redemptions
 *AnalyticsApi* | [**count_help_desk_requests**](docs/AnalyticsApi.md#count_help_desk_requests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests
-*AnalyticsApi* | [**count_inbound_messages**](docs/AnalyticsApi.md#count_inbound_messages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers
+*AnalyticsApi* | [**count_inbound_messages**](docs/AnalyticsApi.md#count_inbound_messages) | **GET** /v2/analytics/sms/inbound/count | Count inbound SMS messages
 *AnalyticsApi* | [**count_new_sessions**](docs/AnalyticsApi.md#count_new_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions
 *AnalyticsApi* | [**count_opt_in_list_subscribers_partitioned_by_date**](docs/AnalyticsApi.md#count_opt_in_list_subscribers_partitioned_by_date) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date
-*AnalyticsApi* | [**count_outbound_messages**](docs/AnalyticsApi.md#count_outbound_messages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers
+*AnalyticsApi* | [**count_outbound_messages**](docs/AnalyticsApi.md#count_outbound_messages) | **GET** /v2/analytics/sms/outbound/count | Count outbound SMS messages
 *AnalyticsApi* | [**count_total_sessions**](docs/AnalyticsApi.md#count_total_sessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions
-*AnalyticsApi* | [**count_transactions**](docs/AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Get refund amount of campaigns by Campaign
+*AnalyticsApi* | [**count_transactions**](docs/AnalyticsApi.md#count_transactions) | **GET** /v2/analytics/ledger/transactions/count | Count ledger transactions
 *AnalyticsApi* | [**count_verified_wallet_page_views**](docs/AnalyticsApi.md#count_verified_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Get wallet object counts within a given time frame that have a valid phone verification token
 *AnalyticsApi* | [**count_wallet_page_views**](docs/AnalyticsApi.md#count_wallet_page_views) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Get wallet object counts within a given time frame
 *AnalyticsApi* | [**exit_link_summary**](docs/AnalyticsApi.md#exit_link_summary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks
@@ -131,8 +131,8 @@ Class | Method | HTTP request | Description
 *AnalyticsApi* | [**fetch_analytics_campaigns_redemptions_count_partitioned_by_date**](docs/AnalyticsApi.md#fetch_analytics_campaigns_redemptions_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date
 *AnalyticsApi* | [**fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id**](docs/AnalyticsApi.md#fetch_analytics_campaigns_refunds_amount_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Get refund amount of campaigns by Campaign
 *AnalyticsApi* | [**fetch_analytics_campaigns_refunds_amount_partitioned_by_date**](docs/AnalyticsApi.md#fetch_analytics_campaigns_refunds_amount_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/amount/date | Get refund amount of campaigns by date
-*AnalyticsApi* | [**fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id**](docs/AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Get refund amount of campaigns by Campaign
-*AnalyticsApi* | [**fetch_analytics_campaigns_refunds_count_partitioned_by_date**](docs/AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/count/date | Get refund amount of campaigns by date
+*AnalyticsApi* | [**fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id**](docs/AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_campaign_id) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Count refunds of campaigns by Campaign
+*AnalyticsApi* | [**fetch_analytics_campaigns_refunds_count_partitioned_by_date**](docs/AnalyticsApi.md#fetch_analytics_campaigns_refunds_count_partitioned_by_date) | **GET** /v2/analytics/campaigns/refunds/count/date | Count refunds of campaigns by date
 *AnalyticsApi* | [**fetch_analytics_delivered_outbound_messages_count_partitioned_by_date**](docs/AnalyticsApi.md#fetch_analytics_delivered_outbound_messages_count_partitioned_by_date) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date
 *AnalyticsApi* | [**fetch_analytics_delivered_outbound_messages_count_partitioned_by_phone_number**](docs/AnalyticsApi.md#fetch_analytics_delivered_outbound_messages_count_partitioned_by_phone_number) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number
 *AnalyticsApi* | [**fetch_analytics_distinct_wallet_sessions**](docs/AnalyticsApi.md#fetch_analytics_distinct_wallet_sessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Get distinct wallet sessions
@@ -168,7 +168,7 @@ Class | Method | HTTP request | Description
 *AnalyticsApi* | [**fetch_analytics_tcpa_stop_count_partitioned_by_date**](docs/AnalyticsApi.md#fetch_analytics_tcpa_stop_count_partitioned_by_date) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date
 *AnalyticsApi* | [**fetch_analytics_tcpa_stop_count_partitioned_by_phone_number**](docs/AnalyticsApi.md#fetch_analytics_tcpa_stop_count_partitioned_by_phone_number) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number
 *AnalyticsApi* | [**fetch_analytics_total_amount_redeemed_per_merchant_credit**](docs/AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Get redeemed amount of merchant credits
-*AnalyticsApi* | [**fetch_analytics_total_amount_redeemed_per_tier**](docs/AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_tier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amoun̥t of tiers
+*AnalyticsApi* | [**fetch_analytics_total_amount_redeemed_per_tier**](docs/AnalyticsApi.md#fetch_analytics_total_amount_redeemed_per_tier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amount of tiers
 *AnalyticsApi* | [**fetch_analytics_total_amount_refunded_per_merchant_credit**](docs/AnalyticsApi.md#fetch_analytics_total_amount_refunded_per_merchant_credit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Get refunded amount of merchant credits
 *AnalyticsApi* | [**fetch_analytics_total_amount_refunded_per_tier**](docs/AnalyticsApi.md#fetch_analytics_total_amount_refunded_per_tier) | **GET** /v2/analytics/membership/tier/amount/refunded | Get refunded amount of tiers
 *AnalyticsApi* | [**fetch_analytics_total_points_redeemed**](docs/AnalyticsApi.md#fetch_analytics_total_points_redeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points
@@ -176,8 +176,8 @@ Class | Method | HTTP request | Description
 *AnalyticsApi* | [**fetch_analytics_wallet_session_activity**](docs/AnalyticsApi.md#fetch_analytics_wallet_session_activity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Get session activity
 *AnalyticsApi* | [**fetch_wallet_page_view_by_id**](docs/AnalyticsApi.md#fetch_wallet_page_view_by_id) | **GET** /v2/analytics/walletPageViews/activity/{id} | Get session activity by wallet page view ID
 *AnalyticsApi* | [**referring_sites_summary**](docs/AnalyticsApi.md#referring_sites_summary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites
-*AnalyticsApi* | [**sum_revenue**](docs/AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Get refund amount of campaigns by Campaign
-*AnalyticsApi* | [**sum_transactions**](docs/AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Get refund amount of campaigns by Campaign
+*AnalyticsApi* | [**sum_revenue**](docs/AnalyticsApi.md#sum_revenue) | **GET** /v2/analytics/ledger/revenue/sum | Sum ledger revenue
+*AnalyticsApi* | [**sum_transactions**](docs/AnalyticsApi.md#sum_transactions) | **GET** /v2/analytics/ledger/transactions/sum | Sum ledger transaction amounts
 *AppToPersonA2PRegistrationApi* | [**begin_a2_p_application**](docs/AppToPersonA2PRegistrationApi.md#begin_a2_p_application) | **POST** /v2/a2p/application | Create A2P Application
 *AppToPersonA2PRegistrationApi* | [**fetch_a2_p_application**](docs/AppToPersonA2PRegistrationApi.md#fetch_a2_p_application) | **GET** /v2/a2p/application | Get A2P Application
 *AppToPersonA2PRegistrationApi* | [**fetch_a2_p_registration**](docs/AppToPersonA2PRegistrationApi.md#fetch_a2_p_registration) | **GET** /v2/a2p/registration | Get A2P Registration
@@ -192,6 +192,7 @@ Class | Method | HTTP request | Description
 *BillingPaymentsApi* | [**buy_special_offer**](docs/BillingPaymentsApi.md#buy_special_offer) | **POST** /v2/billing/products/specialOffers/{productID} | Buy special offer
 *BillingPaymentsApi* | [**cancel_plan**](docs/BillingPaymentsApi.md#cancel_plan) | **DELETE** /v2/billing/plan | Cancel billing plan
 *BillingPaymentsApi* | [**change_plan**](docs/BillingPaymentsApi.md#change_plan) | **PUT** /v2/billing/plan | Change billing plan
+*BillingPaymentsApi* | [**create_billing_portal_session**](docs/BillingPaymentsApi.md#create_billing_portal_session) | **POST** /v2/billing/portal/session | Create a Stripe Billing Portal session
 *BillingPaymentsApi* | [**fetch_add_ons**](docs/BillingPaymentsApi.md#fetch_add_ons) | **GET** /v2/billing/products/addOns | Get add-on products
 *BillingPaymentsApi* | [**fetch_customer_payment_methods**](docs/BillingPaymentsApi.md#fetch_customer_payment_methods) | **GET** /v2/billing/paymentMethods/all | Get payment methods
 *BillingPaymentsApi* | [**fetch_industry**](docs/BillingPaymentsApi.md#fetch_industry) | **GET** /v2/billing/industry | Get merchant&#39;s industry
@@ -240,7 +241,7 @@ Class | Method | HTTP request | Description
 *DashboardSummariesApi* | [**fetch_dashboard_redemptions_count**](docs/DashboardSummariesApi.md#fetch_dashboard_redemptions_count) | **GET** /v2/dashboard/count/pos/redemptions | Count POS redemptions
 *DashboardSummariesApi* | [**fetch_dashboard_refunds_count**](docs/DashboardSummariesApi.md#fetch_dashboard_refunds_count) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds
 *DashboardSummariesApi* | [**fetch_dashboard_wallet_page_views_count**](docs/DashboardSummariesApi.md#fetch_dashboard_wallet_page_views_count) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views
-*DashboardSummariesApi* | [**fetch_subscriber_count**](docs/DashboardSummariesApi.md#fetch_subscriber_count) | **GET** /v2/dashboard/count/subscribers | Count Performances
+*DashboardSummariesApi* | [**fetch_subscriber_count**](docs/DashboardSummariesApi.md#fetch_subscriber_count) | **GET** /v2/dashboard/count/subscribers | Count subscribers
 *DiningApi* | [**archive_dining**](docs/DiningApi.md#archive_dining) | **DELETE** /v2/dining/{id} | Archive Dining info
 *DiningApi* | [**create_dining**](docs/DiningApi.md#create_dining) | **POST** /v2/dining | Create Dining info
 *DiningApi* | [**fetch_all_dining**](docs/DiningApi.md#fetch_all_dining) | **GET** /v2/dining/all | Get all Dining info
@@ -290,7 +291,7 @@ Class | Method | HTTP request | Description
 *EmployeesApi* | [**remove_peer_from_all_roles**](docs/EmployeesApi.md#remove_peer_from_all_roles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles
 *EmployeesApi* | [**schedule_advertisement_credit**](docs/EmployeesApi.md#schedule_advertisement_credit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit
 *EmployeesApi* | [**schedule_dynamic_voucher**](docs/EmployeesApi.md#schedule_dynamic_voucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list
-*EmployeesApi* | [**schedule_dynamic_voucher_to_recipient**](docs/EmployeesApi.md#schedule_dynamic_voucher_to_recipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dyanamic Voucher to recipient
+*EmployeesApi* | [**schedule_dynamic_voucher_to_recipient**](docs/EmployeesApi.md#schedule_dynamic_voucher_to_recipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to recipient
 *EmployeesApi* | [**schedule_simple_sms**](docs/EmployeesApi.md#schedule_simple_sms) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list
 *EmployeesApi* | [**schedule_simple_smsto_recipient**](docs/EmployeesApi.md#schedule_simple_smsto_recipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient
 *EmployeesApi* | [**send_help_desk_response**](docs/EmployeesApi.md#send_help_desk_response) | **POST** /v2/employee/helpDesk/response | Send help desk response
@@ -330,8 +331,8 @@ Class | Method | HTTP request | Description
 *InfoGenesisReportsApi* | [**count_static_voucher_refunds**](docs/InfoGenesisReportsApi.md#count_static_voucher_refunds) | **POST** /v2/pos/infogenesis/count/staticVoucher/refunds | Count static voucher refunds
 *InfoGenesisReportsApi* | [**fetch_info_genesis_authorizations**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_authorizations) | **POST** /v2/pos/infogenesis/authorizations | Get authorizations
 *InfoGenesisReportsApi* | [**fetch_info_genesis_campaign_data**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_campaign_data) | **POST** /v2/pos/infogenesis/campaign | Get campaign information
-*InfoGenesisReportsApi* | [**fetch_info_genesis_lookup_requests**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests) | **POST** /v2/pos/infogenesis/requests/lookup | Get queries
-*InfoGenesisReportsApi* | [**fetch_info_genesis_lookup_requests_errors**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests_errors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get queries errors
+*InfoGenesisReportsApi* | [**fetch_info_genesis_lookup_requests**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests) | **POST** /v2/pos/infogenesis/requests/lookup | Get lookup requests
+*InfoGenesisReportsApi* | [**fetch_info_genesis_lookup_requests_errors**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_lookup_requests_errors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get lookup request errors
 *InfoGenesisReportsApi* | [**fetch_info_genesis_redeemed_static_vouchers**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_redeemed_static_vouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Get redeemed static vouchers
 *InfoGenesisReportsApi* | [**fetch_info_genesis_redeemed_unique_posting_ids**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_redeemed_unique_posting_ids) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Get redeemed unique posting IDs
 *InfoGenesisReportsApi* | [**fetch_info_genesis_redemptions**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_redemptions) | **POST** /v2/pos/infogenesis/redemptions | Get redemptions
@@ -343,15 +344,15 @@ Class | Method | HTTP request | Description
 *InfoGenesisReportsApi* | [**fetch_info_genesis_response_errors**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_response_errors) | **GET** /v2/pos/infogenesis/responses/errors | Get response errors
 *InfoGenesisReportsApi* | [**fetch_info_genesis_responses**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_responses) | **POST** /v2/pos/infogenesis/responses | Get responses
 *InfoGenesisReportsApi* | [**fetch_info_genesis_transactions_with_unique_posting_ids**](docs/InfoGenesisReportsApi.md#fetch_info_genesis_transactions_with_unique_posting_ids) | **POST** /v2/pos/infogenesis/transactions | Get transactions
-*InteractionsApi* | [**claim_ticket**](docs/InteractionsApi.md#claim_ticket) | **PUT** /wallet/ticket/claim/{id} | Update ticket
+*InteractionsApi* | [**claim_ticket**](docs/InteractionsApi.md#claim_ticket) | **PUT** /wallet/ticket/claim/{id} | Claim a ticket by ID
 *InteractionsApi* | [**create_advertisement_credit_scan**](docs/InteractionsApi.md#create_advertisement_credit_scan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
 *InteractionsApi* | [**create_employee_v_card**](docs/InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card
 *InteractionsApi* | [**create_ics_file**](docs/InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event
 *InteractionsApi* | [**create_virtual_business_card_v_card**](docs/InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card
-*InteractionsApi* | [**fetch_active_dynamic_vouchers**](docs/InteractionsApi.md#fetch_active_dynamic_vouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a customer&#39;s static vouchers on the basis of a given voucher ID
+*InteractionsApi* | [**fetch_active_dynamic_vouchers**](docs/InteractionsApi.md#fetch_active_dynamic_vouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers
 *InteractionsApi* | [**fetch_advertisement_credit_scans_from_list**](docs/InteractionsApi.md#fetch_advertisement_credit_scans_from_list) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs
 *InteractionsApi* | [**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](docs/InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID
-*InteractionsApi* | [**fetch_customer_tickets_with_token**](docs/InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket
+*InteractionsApi* | [**fetch_customer_tickets_with_token**](docs/InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token
 *InteractionsApi* | [**fetch_dynamic_voucher_with_voucher_id**](docs/InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher
 *InteractionsApi* | [**fetch_member_information**](docs/InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Get member information
 *InteractionsApi* | [**fetch_static_voucher_with_voucher_id**](docs/InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher
@@ -401,7 +402,7 @@ Class | Method | HTTP request | Description
 *MerchantApi* | [**fetch_tcpa_filter**](docs/MerchantApi.md#fetch_tcpa_filter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters
 *MerchantApi* | [**fetch_wallet_configuration**](docs/MerchantApi.md#fetch_wallet_configuration) | **GET** /v2/merchant/wallet/configuration | Get wallet configuration
 *MerchantApi* | [**update_merchant**](docs/MerchantApi.md#update_merchant) | **PUT** /v2/merchant | Update merchant details
-*MerchantApi* | [**update_points_of_contact**](docs/MerchantApi.md#update_points_of_contact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact
+*MerchantApi* | [**update_points_of_contact**](docs/MerchantApi.md#update_points_of_contact) | **PUT** /v2/merchant/pointsOfContact | Update points of contact
 *MerchantApi* | [**update_pos_integration**](docs/MerchantApi.md#update_pos_integration) | **PUT** /v2/merchant/pos/integration | Update POS Integration
 *MerchantCreditsApi* | [**archive_merchant_credit**](docs/MerchantCreditsApi.md#archive_merchant_credit) | **DELETE** /v2/payment/merchantcredit/{id} | Archive Merchant Credit
 *MerchantCreditsApi* | [**create_merchant_credit**](docs/MerchantCreditsApi.md#create_merchant_credit) | **POST** /v2/payment/merchantcredit | Create Merchant Credit
@@ -451,7 +452,7 @@ Class | Method | HTTP request | Description
 *PerformancesApi* | [**fetch_all_performance_tickets**](docs/PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Get Performance&#39;s Tickets
 *PerformancesApi* | [**fetch_all_performances**](docs/PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Get all Performances
 *PerformancesApi* | [**fetch_performance**](docs/PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Get Performance
-*PerformancesApi* | [**fetch_performance_tickets_page**](docs/PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Get Peformance&#39;s Tickets
+*PerformancesApi* | [**fetch_performance_tickets_page**](docs/PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Get Performance&#39;s Tickets
 *PerformancesApi* | [**import_tickets**](docs/PerformancesApi.md#import_tickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets
 *PerformancesApi* | [**restore_performance**](docs/PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore Performance
 *PerformancesApi* | [**save_ticket_settings**](docs/PerformancesApi.md#save_ticket_settings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings
@@ -570,10 +571,10 @@ Class | Method | HTTP request | Description
 *StaticVoucherCampaignsApi* | [**fetch_static_voucher_campaign_by_id**](docs/StaticVoucherCampaignsApi.md#fetch_static_voucher_campaign_by_id) | **GET** /v2/payment/staticVoucherCampaign/{id} | Get Static Vouchers Campaign
 *StaticVoucherCampaignsApi* | [**fetch_static_voucher_campaigns**](docs/StaticVoucherCampaignsApi.md#fetch_static_voucher_campaigns) | **GET** /v2/payment/staticVoucherCampaign/all | Get all Static Vouchers Campaigns
 *StaticVoucherCampaignsApi* | [**fetch_static_vouchers**](docs/StaticVoucherCampaignsApi.md#fetch_static_vouchers) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/{campaignID} | Get vouchers in Static Vouchers Campaign
-*StaticVoucherCampaignsApi* | [**fetch_static_vouchers_page**](docs/StaticVoucherCampaignsApi.md#fetch_static_vouchers_page) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get vouchers in Static Vouchers Campaign
+*StaticVoucherCampaignsApi* | [**fetch_static_vouchers_page**](docs/StaticVoucherCampaignsApi.md#fetch_static_vouchers_page) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get a page of vouchers in a Static Voucher Campaign
 *StaticVoucherCampaignsApi* | [**fetch_views**](docs/StaticVoucherCampaignsApi.md#fetch_views) | **GET** /v2/payment/staticVoucherCampaign/views/{campaignID} | Get Static Vouchers Campaign traffic
 *StaticVoucherCampaignsApi* | [**fetch_vouchers_redeemed**](docs/StaticVoucherCampaignsApi.md#fetch_vouchers_redeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Get redeemed vouchers in Static Vouchers Campaign
-*StaticVoucherCampaignsApi* | [**preview_messages_by_page**](docs/StaticVoucherCampaignsApi.md#preview_messages_by_page) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | View vouchers in Static Voucher Campaign
+*StaticVoucherCampaignsApi* | [**preview_messages_by_page**](docs/StaticVoucherCampaignsApi.md#preview_messages_by_page) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview generated broadcast messages by page
 *StaticVoucherCampaignsApi* | [**restore_static_voucher_campaign**](docs/StaticVoucherCampaignsApi.md#restore_static_voucher_campaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore Static Voucher Campaign
 *StaticVoucherCampaignsApi* | [**update_static_voucher_campaign**](docs/StaticVoucherCampaignsApi.md#update_static_voucher_campaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update Static Voucher Campaign
 *StaticVoucherCampaignsApi* | [**update_static_voucher_campaign_with_voucher**](docs/StaticVoucherCampaignsApi.md#update_static_voucher_campaign_with_voucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update Static Voucher Campaign with single voucher
@@ -588,7 +589,6 @@ Class | Method | HTTP request | Description
 *SystemApi* | [**fetch_audit_log_of_roles**](docs/SystemApi.md#fetch_audit_log_of_roles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log
 *SystemApi* | [**fetch_employees_with_role**](docs/SystemApi.md#fetch_employees_with_role) | **GET** /v2/system/roles/employees/{roleID} | Get employees with role
 *SystemApi* | [**fetch_webpages_for_role**](docs/SystemApi.md#fetch_webpages_for_role) | **GET** /v2/system/roles/webpages/{roleID} | Get webpages for role
-*SystemApi* | [**get_payment_prefixes**](docs/SystemApi.md#get_payment_prefixes) | **GET** /v2/system/prefixes | Get payment prefixes
 *SystemApi* | [**load_role**](docs/SystemApi.md#load_role) | **GET** /v2/system/roles/{roleID} | Get role
 *SystemApi* | [**save_role**](docs/SystemApi.md#save_role) | **PUT** /v2/system/roles/{roleID} | Update role
 *TicketsApi* | [**archive_ticket**](docs/TicketsApi.md#archive_ticket) | **DELETE** /v2/ticket/{id} | Archive Ticket
@@ -599,6 +599,7 @@ Class | Method | HTTP request | Description
 *VideosApi* | [**archive_video**](docs/VideosApi.md#archive_video) | **DELETE** /v2/video/{id} | Archive Video
 *VideosApi* | [**create_video**](docs/VideosApi.md#create_video) | **POST** /v2/video | Create Video
 *VideosApi* | [**fetch_all_video**](docs/VideosApi.md#fetch_all_video) | **GET** /v2/video/all | Get all Videos
+*VideosApi* | [**provision_video_upload**](docs/VideosApi.md#provision_video_upload) | **POST** /v2/video/upload/provision | Provision a direct video upload
 *VideosApi* | [**restore_video**](docs/VideosApi.md#restore_video) | **PATCH** /v2/video/{id} | Restore Video
 *VideosApi* | [**update_video**](docs/VideosApi.md#update_video) | **PUT** /v2/video/{id} | Update Video
 *VirtualBusinessCardApi* | [**archive_virtual_business_card**](docs/VirtualBusinessCardApi.md#archive_virtual_business_card) | **DELETE** /v2/virtualBusinessCard/{id} | Archive Virtual Business Card
@@ -826,6 +827,7 @@ Class | Method | HTTP request | Description
  - [PresignedPost](docs/PresignedPost.md)
  - [PresignedPostFields](docs/PresignedPostFields.md)
  - [Product](docs/Product.md)
+ - [ProductTaxBehavior](docs/ProductTaxBehavior.md)
  - [ProfileStatuses](docs/ProfileStatuses.md)
  - [PromoCode](docs/PromoCode.md)
  - [QRCodeDesign](docs/QRCodeDesign.md)
@@ -856,6 +858,7 @@ Class | Method | HTTP request | Description
  - [Status](docs/Status.md)
  - [SubscriptionFeature](docs/SubscriptionFeature.md)
  - [SubscriptionPlan](docs/SubscriptionPlan.md)
+ - [SubscriptionPlanAnnual](docs/SubscriptionPlanAnnual.md)
  - [SubscriptionProduct](docs/SubscriptionProduct.md)
  - [Tcpa](docs/Tcpa.md)
  - [Thread](docs/Thread.md)
@@ -869,6 +872,7 @@ Class | Method | HTTP request | Description
  - [VSDynamicVoucherStatus](docs/VSDynamicVoucherStatus.md)
  - [VectorStore](docs/VectorStore.md)
  - [Video](docs/Video.md)
+ - [VideoProvider](docs/VideoProvider.md)
  - [VirtualBusinessCard](docs/VirtualBusinessCard.md)
  - [WTA2PApplicationUpdateParams](docs/WTA2PApplicationUpdateParams.md)
  - [WTAdvertisementCredit](docs/WTAdvertisementCredit.md)
@@ -1011,7 +1015,12 @@ Class | Method | HTTP request | Description
  - [WTTwilioRequestAuthyCode](docs/WTTwilioRequestAuthyCode.md)
  - [WTTwilioVerifyAuthyCode](docs/WTTwilioVerifyAuthyCode.md)
  - [WTVideoCreateParams](docs/WTVideoCreateParams.md)
+ - [WTVideoPlaybackSource](docs/WTVideoPlaybackSource.md)
+ - [WTVideoPlaybackSourceType](docs/WTVideoPlaybackSourceType.md)
  - [WTVideoUpdateParams](docs/WTVideoUpdateParams.md)
+ - [WTVideoUploadProvision](docs/WTVideoUploadProvision.md)
+ - [WTVideoUploadProvisionParams](docs/WTVideoUploadProvisionParams.md)
+ - [WTVideoUploadProvisionProvider](docs/WTVideoUploadProvisionProvider.md)
  - [WTVirtualBusinessCardCreateParams](docs/WTVirtualBusinessCardCreateParams.md)
  - [WTVirtualBusinessCardUpdateParams](docs/WTVirtualBusinessCardUpdateParams.md)
  - [WTWalletConfigurationSaveWalletRecord](docs/WTWalletConfigurationSaveWalletRecord.md)

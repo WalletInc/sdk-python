@@ -6893,7 +6893,7 @@ class MerchantApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Update billing contact
+        """Update points of contact
 
 
         :param wt_merchant_update_points_of_contact: (required)
@@ -6962,7 +6962,7 @@ class MerchantApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Update billing contact
+        """Update points of contact
 
 
         :param wt_merchant_update_points_of_contact: (required)
@@ -7031,7 +7031,7 @@ class MerchantApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update billing contact
+        """Update points of contact
 
 
         :param wt_merchant_update_points_of_contact: (required)

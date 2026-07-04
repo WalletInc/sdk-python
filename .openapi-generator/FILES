@@ -232,6 +232,7 @@ docs/PresignedPost.md
 docs/PresignedPostFields.md
 docs/PrizesApi.md
 docs/Product.md
+docs/ProductTaxBehavior.md
 docs/ProductsApi.md
 docs/ProfileStatuses.md
 docs/PromoCode.md
@@ -275,6 +276,7 @@ docs/StaticVouchersApi.md
 docs/Status.md
 docs/SubscriptionFeature.md
 docs/SubscriptionPlan.md
+docs/SubscriptionPlanAnnual.md
 docs/SubscriptionProduct.md
 docs/SystemApi.md
 docs/Tcpa.md
@@ -290,6 +292,7 @@ docs/VSCampaignGeneratedMessagePagination.md
 docs/VSDynamicVoucherStatus.md
 docs/VectorStore.md
 docs/Video.md
+docs/VideoProvider.md
 docs/VideosApi.md
 docs/VirtualBusinessCard.md
 docs/VirtualBusinessCardApi.md
@@ -434,7 +437,12 @@ docs/WTTicketUpdateParams.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTVideoCreateParams.md
+docs/WTVideoPlaybackSource.md
+docs/WTVideoPlaybackSourceType.md
 docs/WTVideoUpdateParams.md
+docs/WTVideoUploadProvision.md
+docs/WTVideoUploadProvisionParams.md
+docs/WTVideoUploadProvisionProvider.md
 docs/WTVirtualBusinessCardCreateParams.md
 docs/WTVirtualBusinessCardUpdateParams.md
 docs/WTWalletConfigurationSaveWalletRecord.md
@@ -463,6 +471,14 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_product_tax_behavior.py
+test/test_subscription_plan_annual.py
+test/test_video_provider.py
+test/test_wt_video_playback_source.py
+test/test_wt_video_playback_source_type.py
+test/test_wt_video_upload_provision.py
+test/test_wt_video_upload_provision_params.py
+test/test_wt_video_upload_provision_provider.py
 tox.ini
 wallet/__init__.py
 wallet/api/__init__.py
@@ -723,6 +739,7 @@ wallet/models/portal_page.py
 wallet/models/presigned_post.py
 wallet/models/presigned_post_fields.py
 wallet/models/product.py
+wallet/models/product_tax_behavior.py
 wallet/models/profile_statuses.py
 wallet/models/promo_code.py
 wallet/models/qr_code_design.py
@@ -753,6 +770,7 @@ wallet/models/static_voucher_id.py
 wallet/models/status.py
 wallet/models/subscription_feature.py
 wallet/models/subscription_plan.py
+wallet/models/subscription_plan_annual.py
 wallet/models/subscription_product.py
 wallet/models/tcpa.py
 wallet/models/thread.py
@@ -763,6 +781,7 @@ wallet/models/update_email_notification_preference_request.py
 wallet/models/update_static_voucher_campaign_with_voucher.py
 wallet/models/vector_store.py
 wallet/models/video.py
+wallet/models/video_provider.py
 wallet/models/virtual_business_card.py
 wallet/models/vs_campaign_generated_message.py
 wallet/models/vs_campaign_generated_message_pagination.py
@@ -899,7 +918,12 @@ wallet/models/wt_ticket_update_params.py
 wallet/models/wt_twilio_request_authy_code.py
 wallet/models/wt_twilio_verify_authy_code.py
 wallet/models/wt_video_create_params.py
+wallet/models/wt_video_playback_source.py
+wallet/models/wt_video_playback_source_type.py
 wallet/models/wt_video_update_params.py
+wallet/models/wt_video_upload_provision.py
+wallet/models/wt_video_upload_provision_params.py
+wallet/models/wt_video_upload_provision_provider.py
 wallet/models/wt_virtual_business_card_create_params.py
 wallet/models/wt_virtual_business_card_update_params.py
 wallet/models/wt_wallet_configuration_save_wallet_record.py

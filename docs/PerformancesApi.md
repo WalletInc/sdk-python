@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**fetch_all_performance_tickets**](PerformancesApi.md#fetch_all_performance_tickets) | **GET** /v2/performances/tickets/all/{id} | Get Performance&#39;s Tickets
 [**fetch_all_performances**](PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Get all Performances
 [**fetch_performance**](PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Get Performance
-[**fetch_performance_tickets_page**](PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Get Peformance&#39;s Tickets
+[**fetch_performance_tickets_page**](PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Get Performance&#39;s Tickets
 [**import_tickets**](PerformancesApi.md#import_tickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets
 [**restore_performance**](PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore Performance
 [**save_ticket_settings**](PerformancesApi.md#save_ticket_settings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings
@@ -576,7 +576,7 @@ No authorization required
 # **fetch_performance_tickets_page**
 > FetchPerformanceTicketsPage200Response fetch_performance_tickets_page(performance_id, page_num, page_size, filter_comps=filter_comps, filter_claimed=filter_claimed, sort_by=sort_by, sort_direction=sort_direction, is_archive_included=is_archive_included)
 
-Get Peformance's Tickets
+Get Performance's Tickets
 
 ### Example
 
@@ -610,7 +610,7 @@ with wallet.ApiClient(configuration) as api_client:
     is_archive_included = True # bool |  (optional)
 
     try:
-        # Get Peformance's Tickets
+        # Get Performance's Tickets
         api_response = api_instance.fetch_performance_tickets_page(performance_id, page_num, page_size, filter_comps=filter_comps, filter_claimed=filter_claimed, sort_by=sort_by, sort_direction=sort_direction, is_archive_included=is_archive_included)
         print("The response of PerformancesApi->fetch_performance_tickets_page:\n")
         pprint(api_response)

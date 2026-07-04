@@ -720,7 +720,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Get refund amount of campaigns by Campaign
+        """Count distinct payment object redemptions
 
 
         :param start_date: (required)
@@ -801,7 +801,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Get refund amount of campaigns by Campaign
+        """Count distinct payment object redemptions
 
 
         :param start_date: (required)
@@ -882,7 +882,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get refund amount of campaigns by Campaign
+        """Count distinct payment object redemptions
 
 
         :param start_date: (required)
@@ -1403,7 +1403,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> WTCountResult:
-        """Count opt in list subscribers
+        """Count inbound SMS messages
 
 
         :param start_date:
@@ -1476,7 +1476,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[WTCountResult]:
-        """Count opt in list subscribers
+        """Count inbound SMS messages
 
 
         :param start_date:
@@ -1549,7 +1549,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Count opt in list subscribers
+        """Count inbound SMS messages
 
 
         :param start_date:
@@ -2303,7 +2303,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> WTCountResult:
-        """Count opt in list subscribers
+        """Count outbound SMS messages
 
 
         :param start_date:
@@ -2376,7 +2376,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[WTCountResult]:
-        """Count opt in list subscribers
+        """Count outbound SMS messages
 
 
         :param start_date:
@@ -2449,7 +2449,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Count opt in list subscribers
+        """Count outbound SMS messages
 
 
         :param start_date:
@@ -2905,7 +2905,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Get refund amount of campaigns by Campaign
+        """Count ledger transactions
 
 
         :param start_date: (required)
@@ -2986,7 +2986,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Get refund amount of campaigns by Campaign
+        """Count ledger transactions
 
 
         :param start_date: (required)
@@ -3067,7 +3067,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get refund amount of campaigns by Campaign
+        """Count ledger transactions
 
 
         :param start_date: (required)
@@ -11572,7 +11572,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[object]:
-        """Get refund amount of campaigns by Campaign
+        """Count refunds of campaigns by Campaign
 
 
         :param start_date: (required)
@@ -11645,7 +11645,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[object]]:
-        """Get refund amount of campaigns by Campaign
+        """Count refunds of campaigns by Campaign
 
 
         :param start_date: (required)
@@ -11718,7 +11718,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get refund amount of campaigns by Campaign
+        """Count refunds of campaigns by Campaign
 
 
         :param start_date: (required)
@@ -11874,7 +11874,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Get refund amount of campaigns by date
+        """Count refunds of campaigns by date
 
 
         :param start_date: (required)
@@ -11955,7 +11955,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Get refund amount of campaigns by date
+        """Count refunds of campaigns by date
 
 
         :param start_date: (required)
@@ -12036,7 +12036,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get refund amount of campaigns by date
+        """Count refunds of campaigns by date
 
 
         :param start_date: (required)
@@ -23178,7 +23178,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate]:
-        """Get redeemed amoun̥t of tiers
+        """Get redeemed amount of tiers
 
 
         :param start_date: (required)
@@ -23259,7 +23259,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate]]:
-        """Get redeemed amoun̥t of tiers
+        """Get redeemed amount of tiers
 
 
         :param start_date: (required)
@@ -23340,7 +23340,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get redeemed amoun̥t of tiers
+        """Get redeemed amount of tiers
 
 
         :param start_date: (required)
@@ -25674,7 +25674,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Get refund amount of campaigns by Campaign
+        """Sum ledger revenue
 
 
         :param start_date: (required)
@@ -25755,7 +25755,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Get refund amount of campaigns by Campaign
+        """Sum ledger revenue
 
 
         :param start_date: (required)
@@ -25836,7 +25836,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get refund amount of campaigns by Campaign
+        """Sum ledger revenue
 
 
         :param start_date: (required)
@@ -26008,7 +26008,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Get refund amount of campaigns by Campaign
+        """Sum ledger transaction amounts
 
 
         :param start_date: (required)
@@ -26089,7 +26089,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Get refund amount of campaigns by Campaign
+        """Sum ledger transaction amounts
 
 
         :param start_date: (required)
@@ -26170,7 +26170,7 @@ class AnalyticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get refund amount of campaigns by Campaign
+        """Sum ledger transaction amounts
 
 
         :param start_date: (required)

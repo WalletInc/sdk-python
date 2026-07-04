@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **examples** | **object** |  | 
 **products** | **object** |  | 
 **all_pages** | **object** |  | 
+**annual** | [**SubscriptionPlanAnnual**](SubscriptionPlanAnnual.md) |  | [optional] 
 
 ## Example
 

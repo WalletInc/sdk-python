@@ -3927,7 +3927,7 @@ class InfoGenesisReportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[Request]:
-        """Get queries
+        """Get lookup requests
 
 
         :param wt_info_genesis_record_filter_parameters: (required)
@@ -3996,7 +3996,7 @@ class InfoGenesisReportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[Request]]:
-        """Get queries
+        """Get lookup requests
 
 
         :param wt_info_genesis_record_filter_parameters: (required)
@@ -4065,7 +4065,7 @@ class InfoGenesisReportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get queries
+        """Get lookup requests
 
 
         :param wt_info_genesis_record_filter_parameters: (required)
@@ -4203,7 +4203,7 @@ class InfoGenesisReportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[Request]:
-        """Get queries errors
+        """Get lookup request errors
 
 
         :param wt_info_genesis_lookup_request_errors: (required)
@@ -4272,7 +4272,7 @@ class InfoGenesisReportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[Request]]:
-        """Get queries errors
+        """Get lookup request errors
 
 
         :param wt_info_genesis_lookup_request_errors: (required)
@@ -4341,7 +4341,7 @@ class InfoGenesisReportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get queries errors
+        """Get lookup request errors
 
 
         :param wt_info_genesis_lookup_request_errors: (required)

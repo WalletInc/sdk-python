@@ -8086,7 +8086,7 @@ class EmployeesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DynamicVoucherBroadcast:
-        """Schedule Dyanamic Voucher to recipient
+        """Schedule Dynamic Voucher to recipient
 
 
         :param dynamic_voucher_id: (required)
@@ -8160,7 +8160,7 @@ class EmployeesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DynamicVoucherBroadcast]:
-        """Schedule Dyanamic Voucher to recipient
+        """Schedule Dynamic Voucher to recipient
 
 
         :param dynamic_voucher_id: (required)
@@ -8234,7 +8234,7 @@ class EmployeesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Schedule Dyanamic Voucher to recipient
+        """Schedule Dynamic Voucher to recipient
 
 
         :param dynamic_voucher_id: (required)
