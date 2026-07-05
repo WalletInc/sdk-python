@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **provider** | [**WTVideoUploadProvisionProvider**](WTVideoUploadProvisionProvider.md) |  | 
 **url** | **object** |  | 
-**fields** | **Dict[str, object]** |  | [optional] 
 **asset_id** | **object** |  | 
 **hd_included** | **object** |  | 
 
