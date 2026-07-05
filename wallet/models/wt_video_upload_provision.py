@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-05T00:23:08.028Z
+    Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-05T06:38:30.500Z
 
     The version of the OpenAPI document: 2.1.604
     Contact: development@wallet.inc
@@ -30,11 +30,10 @@ class WTVideoUploadProvision(BaseModel):
     """ # noqa: E501
     provider: WTVideoUploadProvisionProvider
     url: Optional[Any]
-    fields: Optional[Dict[str, Any]] = None
     asset_id: Optional[Any] = Field(alias="assetId")
     hd_included: Optional[Any] = Field(alias="hdIncluded")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["provider", "url", "fields", "assetId", "hdIncluded"]
+    __properties: ClassVar[List[str]] = ["provider", "url", "assetId", "hdIncluded"]
 
     model_config = {
         "populate_by_name": True,
