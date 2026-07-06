@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-06T15:21:44.764Z
+    Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-06T15:49:12.568Z
 
     The version of the OpenAPI document: 2.1.604
     Contact: development@wallet.inc
@@ -42,10 +42,11 @@ setup(
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
-    license="https://wallet.law",
+    license="Apache-2.0",
+    classifiers=["License :: OSI Approved :: Apache Software License"],
     long_description_content_type='text/markdown',
     long_description="""\
-    Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-06T15:21:44.764Z
+    Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-06T15:49:12.568Z
     """,  # noqa: E501
     package_data={"wallet": ["py.typed"]},
 )
