@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    API
+    Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-06T11:07:48.885Z
 
     The version of the OpenAPI document: 2.1.604
     Contact: development@wallet.inc
@@ -38,9 +38,6 @@ class TestWTVideoUploadProvision(unittest.TestCase):
             return WTVideoUploadProvision(
                 provider = r2,
                 url = None,
-                fields = {
-                    'key' : null
-                    },
                 asset_id = 9f3c1e2a4b.mp4,
                 hd_included = None
             )
