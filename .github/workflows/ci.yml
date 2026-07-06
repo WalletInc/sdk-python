@@ -40,3 +40,52 @@ jobs:
         if: ${{ failure() }}
         run: |
           python3 scripts/failure.py ${{ secrets.SLACK_WEBHOOK_URL }} ${{ github.actor }} ${{ github.repository }} $GITHUB_REF ${{ secrets.SQUADCAST_API_ENDPOINT }}
+
+  # KAN-222: publish the generated Python SDK to PyPI. Mirrors the sdk-csharp NuGet flow: the
+  # client is pushed here by wallet-ts-api CI (version already stamped into setup.py by
+  # generate-clients.py), and this job builds an sdist + wheel and uploads to PyPI on master.
+  # Uses PyPI Trusted Publishing (OIDC) - no long-lived token. Prereq on pypi.org: a trusted
+  # publisher for project "wallet" authorizing WalletInc/sdk-python's ci.yml (environment: pypi).
+  publish:
+    name: Publish to PyPI
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    environment: pypi
+    permissions:
+      id-token: write   # OIDC token PyPI exchanges for a short-lived upload credential
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # The repo has no Python package until wallet-ts-api generates the client into it.
+      # Until then this job is a clean no-op (stays green) instead of failing on build.
+      - name: Check for generated package
+        id: check
+        run: |
+          if [ -f setup.py ] && [ -d wallet ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "No generated SDK yet (waiting on first wallet-ts-api generation); skipping."
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.exists == 'true'
+        with:
+          python-version: '3.x'
+
+      - name: Build sdist + wheel
+        if: steps.check.outputs.exists == 'true'
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build
+
+      # Trusted Publishing: no password/token. skip-existing keeps a re-run at an already
+      # published version green instead of 400-erroring, matching the nuget --skip-duplicate flow.
+      - name: Publish to PyPI
+        if: steps.check.outputs.exists == 'true'
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
