@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from wallet.models.wt_lead_fi_inquiry_result import WTLeadFiInquiryResult
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,10 +30,11 @@ class WTFinancingSoftPullResponse(BaseModel):
     """ # noqa: E501
     authorization_record_id: Optional[Any] = Field(alias="authorizationRecordID")
     qualification_tier: Optional[Any] = Field(default=None, alias="qualificationTier")
+    tier: Optional[Any] = None
     bureaus: Optional[Any]
-    result: Optional[Any] = None
+    result: Optional[WTLeadFiInquiryResult] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["authorizationRecordID", "qualificationTier", "bureaus", "result"]
+    __properties: ClassVar[List[str]] = ["authorizationRecordID", "qualificationTier", "tier", "bureaus", "result"]
 
     model_config = {
         "populate_by_name": True,
@@ -75,6 +77,9 @@ class WTFinancingSoftPullResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of result
+        if self.result:
+            _dict['result'] = self.result.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -90,15 +95,15 @@ class WTFinancingSoftPullResponse(BaseModel):
         if self.qualification_tier is None and "qualification_tier" in self.model_fields_set:
             _dict['qualificationTier'] = None
 
+        # set to None if tier (nullable) is None
+        # and model_fields_set contains the field
+        if self.tier is None and "tier" in self.model_fields_set:
+            _dict['tier'] = None
+
         # set to None if bureaus (nullable) is None
         # and model_fields_set contains the field
         if self.bureaus is None and "bureaus" in self.model_fields_set:
             _dict['bureaus'] = None
-
-        # set to None if result (nullable) is None
-        # and model_fields_set contains the field
-        if self.result is None and "result" in self.model_fields_set:
-            _dict['result'] = None
 
         return _dict
 
@@ -114,8 +119,9 @@ class WTFinancingSoftPullResponse(BaseModel):
         _obj = cls.model_validate({
             "authorizationRecordID": obj.get("authorizationRecordID"),
             "qualificationTier": obj.get("qualificationTier"),
+            "tier": obj.get("tier"),
             "bureaus": obj.get("bureaus"),
-            "result": obj.get("result")
+            "result": WTLeadFiInquiryResult.from_dict(obj["result"]) if obj.get("result") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

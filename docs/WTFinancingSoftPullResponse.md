@@ -7,8 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authorization_record_id** | **object** |  | 
 **qualification_tier** | **object** |  | [optional] 
+**tier** | **object** |  | [optional] 
 **bureaus** | **object** |  | 
-**result** | **object** |  | [optional] 
+**result** | [**WTLeadFiInquiryResult**](WTLeadFiInquiryResult.md) |  | [optional] 
 
 ## Example
 

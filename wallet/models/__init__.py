@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -330,6 +330,12 @@ from wallet.models.wt_info_genesis_lookup_request_errors import WTInfoGenesisLoo
 from wallet.models.wt_info_genesis_record_filter_parameters import WTInfoGenesisRecordFilterParameters
 from wallet.models.wt_info_genesis_routing_ids import WTInfoGenesisRoutingIDs
 from wallet.models.wt_info_genesis_unique_posting_ids import WTInfoGenesisUniquePostingIDs
+from wallet.models.wt_lead_fi_consumer_profile import WTLeadFiConsumerProfile
+from wallet.models.wt_lead_fi_consumer_profile_address import WTLeadFiConsumerProfileAddress
+from wallet.models.wt_lead_fi_consumer_profile_assets import WTLeadFiConsumerProfileAssets
+from wallet.models.wt_lead_fi_consumer_profile_income import WTLeadFiConsumerProfileIncome
+from wallet.models.wt_lead_fi_credit_offer import WTLeadFiCreditOffer
+from wallet.models.wt_lead_fi_inquiry_result import WTLeadFiInquiryResult
 from wallet.models.wt_local_instance import WTLocalInstance
 from wallet.models.wt_lounge_create_params import WTLoungeCreateParams
 from wallet.models.wt_lounge_update_params import WTLoungeUpdateParams

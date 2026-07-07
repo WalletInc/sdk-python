@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -38,8 +38,11 @@ class TestWTFinancingSoftPullResponse(unittest.TestCase):
             return WTFinancingSoftPullResponse(
                 authorization_record_id = None,
                 qualification_tier = None,
+                tier = None,
                 bureaus = None,
-                result = None
+                result = {
+                    'key' : null
+                    }
             )
         else:
             return WTFinancingSoftPullResponse(
