@@ -278,6 +278,7 @@ docs/StaticVoucherCampaignsApi.md
 docs/StaticVoucherId.md
 docs/StaticVouchersApi.md
 docs/Status.md
+docs/StripeConnectApi.md
 docs/SubscriptionFeature.md
 docs/SubscriptionPlan.md
 docs/SubscriptionPlanAnnual.md
@@ -320,6 +321,13 @@ docs/WTBillingChangePlan.md
 docs/WTBillingChangePlanBillingCadence.md
 docs/WTBillingSavePaymentMethod.md
 docs/WTBillingVerifyPaymentMethodResponse.md
+docs/WTConnectAccountStatus.md
+docs/WTConnectMoney.md
+docs/WTConnectOnboardingLinkRequest.md
+docs/WTConnectOnboardingLinkResponse.md
+docs/WTConnectOnboardingStatus.md
+docs/WTConnectPaymentsSummary.md
+docs/WTConnectPaymentsSummaryBalance.md
 docs/WTCountResult.md
 docs/WTCustomerSearchByMemberID.md
 docs/WTCustomerSearchByPhoneNumber.md
@@ -759,6 +767,7 @@ test/test_static_voucher_campaigns_api.py
 test/test_static_voucher_id.py
 test/test_static_vouchers_api.py
 test/test_status.py
+test/test_stripe_connect_api.py
 test/test_subscription_feature.py
 test/test_subscription_plan.py
 test/test_subscription_plan_annual.py
@@ -809,6 +818,13 @@ test/test_wt_billing_change_plan.py
 test/test_wt_billing_change_plan_billing_cadence.py
 test/test_wt_billing_save_payment_method.py
 test/test_wt_billing_verify_payment_method_response.py
+test/test_wt_connect_account_status.py
+test/test_wt_connect_money.py
+test/test_wt_connect_onboarding_link_request.py
+test/test_wt_connect_onboarding_link_response.py
+test/test_wt_connect_onboarding_status.py
+test/test_wt_connect_payments_summary.py
+test/test_wt_connect_payments_summary_balance.py
 test/test_wt_count_result.py
 test/test_wt_customer_search_by_member_id.py
 test/test_wt_customer_search_by_phone_number.py
@@ -1009,6 +1025,7 @@ wallet/api/sms_messages_api.py
 wallet/api/sms_subscribers_api.py
 wallet/api/static_voucher_campaigns_api.py
 wallet/api/static_vouchers_api.py
+wallet/api/stripe_connect_api.py
 wallet/api/system_api.py
 wallet/api/tickets_api.py
 wallet/api/videos_api.py
@@ -1291,6 +1308,13 @@ wallet/models/wt_billing_change_plan.py
 wallet/models/wt_billing_change_plan_billing_cadence.py
 wallet/models/wt_billing_save_payment_method.py
 wallet/models/wt_billing_verify_payment_method_response.py
+wallet/models/wt_connect_account_status.py
+wallet/models/wt_connect_money.py
+wallet/models/wt_connect_onboarding_link_request.py
+wallet/models/wt_connect_onboarding_link_response.py
+wallet/models/wt_connect_onboarding_status.py
+wallet/models/wt_connect_payments_summary.py
+wallet/models/wt_connect_payments_summary_balance.py
 wallet/models/wt_count_result.py
 wallet/models/wt_customer_search_by_member_id.py
 wallet/models/wt_customer_search_by_phone_number.py
