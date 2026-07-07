@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:38:25.478Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:53:52.739Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -50,6 +50,10 @@ class Merchant(BaseModel):
     customer_service_contact_employee_id: Optional[Any] = Field(alias="customerServiceContactEmployeeID")
     stripe_customer_id: Optional[Any] = Field(alias="stripeCustomerID")
     stripe_connect_account_id: Optional[Any] = Field(default=None, alias="stripeConnectAccountID")
+    stripe_connect_charges_enabled: Optional[Any] = Field(default=None, alias="stripeConnectChargesEnabled")
+    stripe_connect_payouts_enabled: Optional[Any] = Field(default=None, alias="stripeConnectPayoutsEnabled")
+    stripe_connect_details_submitted: Optional[Any] = Field(default=None, alias="stripeConnectDetailsSubmitted")
+    stripe_connect_onboarding_status: Optional[Any] = Field(default=None, alias="stripeConnectOnboardingStatus")
     is_payment_method_provided: Optional[Any] = Field(alias="isPaymentMethodProvided")
     plan_nickname: Optional[Any] = Field(alias="planNickname")
     max_sms_count: Optional[Any] = Field(alias="maxSMSCount")
@@ -57,7 +61,7 @@ class Merchant(BaseModel):
     is_white_labeled: Optional[Any] = Field(default=None, alias="isWhiteLabeled")
     is_featured: Optional[Any] = Field(default=None, alias="isFeatured")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["companyName", "address1", "address2", "city", "state", "country", "phoneNumber", "zip", "currencyAbbreviation", "id", "createdAt", "updatedAt", "industry", "industryName", "infoGenesisPropertyID", "isFrozen", "billingContactEmployeeID", "marketingContactEmployeeID", "technicalContactEmployeeID", "customerServiceContactEmployeeID", "stripeCustomerID", "stripeConnectAccountID", "isPaymentMethodProvided", "planNickname", "maxSMSCount", "isSmsAgreement", "isWhiteLabeled", "isFeatured"]
+    __properties: ClassVar[List[str]] = ["companyName", "address1", "address2", "city", "state", "country", "phoneNumber", "zip", "currencyAbbreviation", "id", "createdAt", "updatedAt", "industry", "industryName", "infoGenesisPropertyID", "isFrozen", "billingContactEmployeeID", "marketingContactEmployeeID", "technicalContactEmployeeID", "customerServiceContactEmployeeID", "stripeCustomerID", "stripeConnectAccountID", "stripeConnectChargesEnabled", "stripeConnectPayoutsEnabled", "stripeConnectDetailsSubmitted", "stripeConnectOnboardingStatus", "isPaymentMethodProvided", "planNickname", "maxSMSCount", "isSmsAgreement", "isWhiteLabeled", "isFeatured"]
 
     model_config = {
         "populate_by_name": True,
@@ -210,6 +214,26 @@ class Merchant(BaseModel):
         if self.stripe_connect_account_id is None and "stripe_connect_account_id" in self.model_fields_set:
             _dict['stripeConnectAccountID'] = None
 
+        # set to None if stripe_connect_charges_enabled (nullable) is None
+        # and model_fields_set contains the field
+        if self.stripe_connect_charges_enabled is None and "stripe_connect_charges_enabled" in self.model_fields_set:
+            _dict['stripeConnectChargesEnabled'] = None
+
+        # set to None if stripe_connect_payouts_enabled (nullable) is None
+        # and model_fields_set contains the field
+        if self.stripe_connect_payouts_enabled is None and "stripe_connect_payouts_enabled" in self.model_fields_set:
+            _dict['stripeConnectPayoutsEnabled'] = None
+
+        # set to None if stripe_connect_details_submitted (nullable) is None
+        # and model_fields_set contains the field
+        if self.stripe_connect_details_submitted is None and "stripe_connect_details_submitted" in self.model_fields_set:
+            _dict['stripeConnectDetailsSubmitted'] = None
+
+        # set to None if stripe_connect_onboarding_status (nullable) is None
+        # and model_fields_set contains the field
+        if self.stripe_connect_onboarding_status is None and "stripe_connect_onboarding_status" in self.model_fields_set:
+            _dict['stripeConnectOnboardingStatus'] = None
+
         # set to None if is_payment_method_provided (nullable) is None
         # and model_fields_set contains the field
         if self.is_payment_method_provided is None and "is_payment_method_provided" in self.model_fields_set:
@@ -274,6 +298,10 @@ class Merchant(BaseModel):
             "customerServiceContactEmployeeID": obj.get("customerServiceContactEmployeeID"),
             "stripeCustomerID": obj.get("stripeCustomerID"),
             "stripeConnectAccountID": obj.get("stripeConnectAccountID"),
+            "stripeConnectChargesEnabled": obj.get("stripeConnectChargesEnabled"),
+            "stripeConnectPayoutsEnabled": obj.get("stripeConnectPayoutsEnabled"),
+            "stripeConnectDetailsSubmitted": obj.get("stripeConnectDetailsSubmitted"),
+            "stripeConnectOnboardingStatus": obj.get("stripeConnectOnboardingStatus"),
             "isPaymentMethodProvided": obj.get("isPaymentMethodProvided"),
             "planNickname": obj.get("planNickname"),
             "maxSMSCount": obj.get("maxSMSCount"),
