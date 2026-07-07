@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T18:06:11.567Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T21:13:51.937Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -41,6 +41,13 @@ class TestPrizesApi(unittest.TestCase):
         """
         pass
 
+    def test_create_prize_promotion(self) -> None:
+        """Test case for create_prize_promotion
+
+        Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
+        """
+        pass
+
     def test_fetch_advertisement_credit_by_id(self) -> None:
         """Test case for fetch_advertisement_credit_by_id
 
@@ -62,6 +69,13 @@ class TestPrizesApi(unittest.TestCase):
         """
         pass
 
+    def test_fetch_prize_promotions(self) -> None:
+        """Test case for fetch_prize_promotions
+
+        List the merchant's prize-game promotions
+        """
+        pass
+
     def test_restore_advertisement_credit(self) -> None:
         """Test case for restore_advertisement_credit
 
@@ -73,6 +87,13 @@ class TestPrizesApi(unittest.TestCase):
         """Test case for update_advertisement_credit
 
         Update Prize
+        """
+        pass
+
+    def test_update_prize_promotion(self) -> None:
+        """Test case for update_prize_promotion
+
+        Update a prize-game promotion Deactivate a promotion or bring its end date forward.
         """
         pass
 

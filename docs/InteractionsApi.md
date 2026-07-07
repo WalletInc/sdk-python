@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**create_ics_file**](InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event
 [**create_virtual_business_card_v_card**](InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card
 [**fetch_active_dynamic_vouchers**](InteractionsApi.md#fetch_active_dynamic_vouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers
+[**fetch_active_prize_game_promotion**](InteractionsApi.md#fetch_active_prize_game_promotion) | **GET** /wallet/prizeGame/active/{merchantID} | Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
 [**fetch_advertisement_credit_scans_from_list**](InteractionsApi.md#fetch_advertisement_credit_scans_from_list) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs
 [**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID
 [**fetch_customer_tickets_with_token**](InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token
@@ -20,6 +21,7 @@ Method | HTTP request | Description
 [**fetch_wallet_payment_objects_with_token**](InteractionsApi.md#fetch_wallet_payment_objects_with_token) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped)
 [**find_by_vanity_handle**](InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle
 [**identify_item**](InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
+[**play_prize_game**](InteractionsApi.md#play_prize_game) | **POST** /wallet/prizeGame/play | Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
 [**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL
 [**subscribe_email**](InteractionsApi.md#subscribe_email) | **POST** /wallet/subscribeEmail | Create email subscriber
 [**subscribe_sms**](InteractionsApi.md#subscribe_sms) | **POST** /wallet/subscribeSms | Create sms subscriber
@@ -413,6 +415,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[DynamicVoucher]**](DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_active_prize_game_promotion**
+> WTPrizeGameActivePromotion fetch_active_prize_game_promotion(merchant_id, game_type)
+
+Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_prize_game_active_promotion import WTPrizeGameActivePromotion
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.InteractionsApi(api_client)
+    merchant_id = 'merchant_id_example' # str | 
+    game_type = wallet.WTPrizeGameType() # WTPrizeGameType | 
+
+    try:
+        # Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
+        api_response = api_instance.fetch_active_prize_game_promotion(merchant_id, game_type)
+        print("The response of InteractionsApi->fetch_active_prize_game_promotion:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InteractionsApi->fetch_active_prize_game_promotion: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **str**|  | 
+ **game_type** | [**WTPrizeGameType**](.md)|  | 
+
+### Return type
+
+[**WTPrizeGameActivePromotion**](WTPrizeGameActivePromotion.md)
 
 ### Authorization
 
@@ -1111,6 +1183,75 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **play_prize_game**
+> WTPrizeGamePlayResult play_prize_game(wt_prize_game_play_request)
+
+Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest's My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_prize_game_play_request import WTPrizeGamePlayRequest
+from wallet.models.wt_prize_game_play_result import WTPrizeGamePlayResult
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.InteractionsApi(api_client)
+    wt_prize_game_play_request = wallet.WTPrizeGamePlayRequest() # WTPrizeGamePlayRequest | 
+
+    try:
+        # Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest's My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+        api_response = api_instance.play_prize_game(wt_prize_game_play_request)
+        print("The response of InteractionsApi->play_prize_game:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InteractionsApi->play_prize_game: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_prize_game_play_request** | [**WTPrizeGamePlayRequest**](WTPrizeGamePlayRequest.md)|  | 
+
+### Return type
+
+[**WTPrizeGamePlayResult**](WTPrizeGamePlayResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T18:06:11.567Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T21:13:51.937Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -374,6 +374,18 @@ from wallet.models.wt_performance_update_params import WTPerformanceUpdateParams
 from wallet.models.wt_pos_machine import WTPosMachine
 from wallet.models.wt_pos_machine_create_params import WTPosMachineCreateParams
 from wallet.models.wt_pos_machine_update_params import WTPosMachineUpdateParams
+from wallet.models.wt_prize_game_active_promotion import WTPrizeGameActivePromotion
+from wallet.models.wt_prize_game_play_limit_period import WTPrizeGamePlayLimitPeriod
+from wallet.models.wt_prize_game_play_request import WTPrizeGamePlayRequest
+from wallet.models.wt_prize_game_play_result import WTPrizeGamePlayResult
+from wallet.models.wt_prize_game_play_result_outcome import WTPrizeGamePlayResultOutcome
+from wallet.models.wt_prize_game_play_result_prize import WTPrizeGamePlayResultPrize
+from wallet.models.wt_prize_game_trigger import WTPrizeGameTrigger
+from wallet.models.wt_prize_game_type import WTPrizeGameType
+from wallet.models.wt_prize_promotion import WTPrizePromotion
+from wallet.models.wt_prize_promotion_create_params import WTPrizePromotionCreateParams
+from wallet.models.wt_prize_promotion_prize_tier import WTPrizePromotionPrizeTier
+from wallet.models.wt_prize_promotion_update_params import WTPrizePromotionUpdateParams
 from wallet.models.wt_product_create_params import WTProductCreateParams
 from wallet.models.wt_product_update_params import WTProductUpdateParams
 from wallet.models.wt_promo_code_create_params import WTPromoCodeCreateParams
