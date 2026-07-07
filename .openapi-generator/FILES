@@ -317,6 +317,7 @@ docs/WTAuthenticationRequestResetPassword.md
 docs/WTAuthenticationResetPassword.md
 docs/WTAuthenticationSSOLoginForDiscourse.md
 docs/WTBillingChangePlan.md
+docs/WTBillingChangePlanBillingCadence.md
 docs/WTBillingSavePaymentMethod.md
 docs/WTBillingVerifyPaymentMethodResponse.md
 docs/WTCountResult.md
@@ -797,6 +798,7 @@ test/test_wt_authentication_request_reset_password.py
 test/test_wt_authentication_reset_password.py
 test/test_wt_authentication_sso_login_for_discourse.py
 test/test_wt_billing_change_plan.py
+test/test_wt_billing_change_plan_billing_cadence.py
 test/test_wt_billing_save_payment_method.py
 test/test_wt_billing_verify_payment_method_response.py
 test/test_wt_count_result.py
@@ -1270,6 +1272,7 @@ wallet/models/wt_authentication_request_reset_password.py
 wallet/models/wt_authentication_reset_password.py
 wallet/models/wt_authentication_sso_login_for_discourse.py
 wallet/models/wt_billing_change_plan.py
+wallet/models/wt_billing_change_plan_billing_cadence.py
 wallet/models/wt_billing_save_payment_method.py
 wallet/models/wt_billing_verify_payment_method_response.py
 wallet/models/wt_count_result.py

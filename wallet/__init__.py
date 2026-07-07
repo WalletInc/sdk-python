@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T15:40:46.402Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -351,6 +351,7 @@ from wallet.models.wt_authentication_request_reset_password import WTAuthenticat
 from wallet.models.wt_authentication_reset_password import WTAuthenticationResetPassword
 from wallet.models.wt_authentication_sso_login_for_discourse import WTAuthenticationSSOLoginForDiscourse
 from wallet.models.wt_billing_change_plan import WTBillingChangePlan
+from wallet.models.wt_billing_change_plan_billing_cadence import WTBillingChangePlanBillingCadence
 from wallet.models.wt_billing_save_payment_method import WTBillingSavePaymentMethod
 from wallet.models.wt_billing_verify_payment_method_response import WTBillingVerifyPaymentMethodResponse
 from wallet.models.wt_count_result import WTCountResult

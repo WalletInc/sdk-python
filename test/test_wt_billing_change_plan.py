@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T15:40:46.402Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -36,7 +36,8 @@ class TestWTBillingChangePlan(unittest.TestCase):
         model = WTBillingChangePlan()
         if include_optional:
             return WTBillingChangePlan(
-                plan_name = intro_default
+                plan_name = intro_default,
+                billing_cadence = monthly
             )
         else:
             return WTBillingChangePlan(

@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **plan_name** | **object** |  | 
+**billing_cadence** | [**WTBillingChangePlanBillingCadence**](WTBillingChangePlanBillingCadence.md) |  | [optional] 
 
 ## Example
 
