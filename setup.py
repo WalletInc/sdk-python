@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -46,7 +46,7 @@ setup(
     classifiers=["License :: OSI Approved :: Apache Software License"],
     long_description_content_type='text/markdown',
     long_description="""\
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
     """,  # noqa: E501
     package_data={"wallet": ["py.typed"]},
 )

@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -108,6 +108,13 @@ class TestBillingPaymentsApi(unittest.TestCase):
         """Test case for fetch_usage_summary
 
         Get usage summary
+        """
+        pass
+
+    def test_run_financing_soft_pull(self) -> None:
+        """Test case for run_financing_soft_pull
+
+        Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off).
         """
         pass
 

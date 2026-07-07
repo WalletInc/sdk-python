@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -317,6 +317,8 @@ from wallet.models.wt_employee_send_help_desk_response import WTEmployeeSendHelp
 from wallet.models.wt_employee_update import WTEmployeeUpdate
 from wallet.models.wt_employee_update_records import WTEmployeeUpdateRecords
 from wallet.models.wt_fetch_wallet_payment_objects_with_token import WTFetchWalletPaymentObjectsWithToken
+from wallet.models.wt_financing_soft_pull_request import WTFinancingSoftPullRequest
+from wallet.models.wt_financing_soft_pull_response import WTFinancingSoftPullResponse
 from wallet.models.wt_gaming_create_params import WTGamingCreateParams
 from wallet.models.wt_gaming_update_params import WTGamingUpdateParams
 from wallet.models.wt_image_grid_create_params import WTImageGridCreateParams
