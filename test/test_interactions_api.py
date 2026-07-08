@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T21:13:51.937Z
+    Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-08T14:47:43.573Z
 
     The version of the OpenAPI document: 2.3.1
     Contact: development@wallet.inc
@@ -66,13 +66,6 @@ class TestInteractionsApi(unittest.TestCase):
         """Test case for fetch_active_dynamic_vouchers
 
         Get a merchant's active dynamic vouchers
-        """
-        pass
-
-    def test_fetch_active_prize_game_promotion(self) -> None:
-        """Test case for fetch_active_prize_game_promotion
-
-        Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
         """
         pass
 
@@ -143,13 +136,6 @@ class TestInteractionsApi(unittest.TestCase):
         """Test case for identify_item
 
         Identify item
-        """
-        pass
-
-    def test_play_prize_game(self) -> None:
-        """Test case for play_prize_game
-
-        Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest's My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
         """
         pass
 
