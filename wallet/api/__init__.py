@@ -49,6 +49,7 @@ from wallet.api.shopify_terminal_api import ShopifyTerminalApi
 from wallet.api.short_links_api import ShortLinksApi
 from wallet.api.static_voucher_campaigns_api import StaticVoucherCampaignsApi
 from wallet.api.static_vouchers_api import StaticVouchersApi
+from wallet.api.stripe_connect_api import StripeConnectApi
 from wallet.api.system_api import SystemApi
 from wallet.api.tickets_api import TicketsApi
 from wallet.api.videos_api import VideosApi
