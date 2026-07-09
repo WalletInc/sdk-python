@@ -21,3 +21,7 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# CI is hand-maintained (publish via OIDC, notifier, supported-Python matrix);
+# regeneration must never overwrite it (2026-07-09).
+.github/**
