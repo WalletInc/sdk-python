@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T12:21:17.640Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T12:34:10.651Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -15,10 +15,10 @@
 
 import unittest
 
-from wallet.models.pick_vs_payment_design_create_params_exclude_keyof_vs_payment_design_create_params_employee_id import PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID
+from wallet.models.pick_vs_payment_design_create_params_exclude_keyof_vs_payment_design_create_params_employee_idor_abbreviation_or_acronym import PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym
 
-class TestPickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID(unittest.TestCase):
-    """PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID unit test stubs"""
+class TestPickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym(unittest.TestCase):
+    """PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,24 +26,22 @@ class TestPickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParams
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID:
-        """Test PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID
+    def make_instance(self, include_optional) -> PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym:
+        """Test PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID`
+        # uncomment below to create an instance of `PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym`
         """
-        model = PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID()
+        model = PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym()
         if include_optional:
-            return PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID(
+            return PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym(
                 border_color = '#f0f0f0',
                 border_style_type = Dashed,
                 border_size = '4px',
                 border_radius = 4,
                 font_color = '#777777',
                 font_type = 'Arial',
-                abbreviation = 'ABBR',
-                acronym = 'AR',
                 icon = 'fa-anchor',
                 design_name = 'Thanksgiving Design',
                 display_name = 'Thanksgiving Coupon',
@@ -51,23 +49,21 @@ class TestPickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParams
                 company_logo_url = 'https://example.com/company-logo'
             )
         else:
-            return PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID(
+            return PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym(
                 border_color = '#f0f0f0',
                 border_style_type = Dashed,
                 border_size = '4px',
                 border_radius = 4,
                 font_color = '#777777',
                 font_type = 'Arial',
-                abbreviation = 'ABBR',
-                acronym = 'AR',
                 icon = 'fa-anchor',
                 design_name = 'Thanksgiving Design',
                 display_name = 'Thanksgiving Coupon',
         )
         """
 
-    def testPickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID(self):
-        """Test PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID"""
+    def testPickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym(self):
+        """Test PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

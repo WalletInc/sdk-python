@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T12:21:17.640Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T12:34:10.651Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -42,13 +42,13 @@ class TestWTPaymentDesignUpdateParams(unittest.TestCase):
                 border_radius = 4,
                 font_color = '#777777',
                 font_type = 'Arial',
-                abbreviation = 'ABBR',
-                acronym = 'AR',
                 icon = 'fa-anchor',
                 design_name = 'Thanksgiving Design',
                 display_name = 'Thanksgiving Coupon',
                 background_image_url = '',
-                company_logo_url = 'https://example.com/company-logo'
+                company_logo_url = 'https://example.com/company-logo',
+                abbreviation = '',
+                acronym = ''
             )
         else:
             return WTPaymentDesignUpdateParams(
@@ -58,8 +58,6 @@ class TestWTPaymentDesignUpdateParams(unittest.TestCase):
                 border_radius = 4,
                 font_color = '#777777',
                 font_type = 'Arial',
-                abbreviation = 'ABBR',
-                acronym = 'AR',
                 icon = 'fa-anchor',
                 design_name = 'Thanksgiving Design',
                 display_name = 'Thanksgiving Coupon',

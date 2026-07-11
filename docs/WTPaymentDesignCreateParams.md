@@ -11,13 +11,13 @@ Name | Type | Description | Notes
 **border_radius** | **int** |  | 
 **font_color** | **str** |  | 
 **font_type** | **str** |  | 
-**abbreviation** | **str** |  | 
-**acronym** | **str** |  | 
 **icon** | **str** |  | 
 **design_name** | **str** |  | 
 **display_name** | **str** |  | 
 **background_image_url** | **str** |  | [optional] 
 **company_logo_url** | **str** |  | [optional] 
+**abbreviation** | **str** |  | [optional] 
+**acronym** | **str** |  | [optional] 
 
 ## Example
 

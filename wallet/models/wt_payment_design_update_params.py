@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T12:21:17.640Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T12:34:10.651Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -35,15 +35,15 @@ class WTPaymentDesignUpdateParams(BaseModel):
     border_radius: Annotated[int, Field(le=20, strict=True, ge=0)] = Field(alias="borderRadius")
     font_color: StrictStr = Field(alias="fontColor")
     font_type: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="fontType")
-    abbreviation: Annotated[str, Field(min_length=1, strict=True)]
-    acronym: Annotated[str, Field(min_length=1, strict=True)]
     icon: Annotated[str, Field(min_length=1, strict=True)]
     design_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="designName")
     display_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="displayName")
     background_image_url: Optional[StrictStr] = Field(default=None, alias="backgroundImageURL")
     company_logo_url: Optional[StrictStr] = Field(default=None, alias="companyLogoURL")
+    abbreviation: Optional[StrictStr] = None
+    acronym: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "abbreviation", "acronym", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL"]
+    __properties: ClassVar[List[str]] = ["borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL", "abbreviation", "acronym"]
 
     model_config = {
         "populate_by_name": True,
@@ -112,13 +112,13 @@ class WTPaymentDesignUpdateParams(BaseModel):
             "borderRadius": obj.get("borderRadius"),
             "fontColor": obj.get("fontColor"),
             "fontType": obj.get("fontType"),
-            "abbreviation": obj.get("abbreviation"),
-            "acronym": obj.get("acronym"),
             "icon": obj.get("icon"),
             "designName": obj.get("designName"),
             "displayName": obj.get("displayName"),
             "backgroundImageURL": obj.get("backgroundImageURL"),
-            "companyLogoURL": obj.get("companyLogoURL")
+            "companyLogoURL": obj.get("companyLogoURL"),
+            "abbreviation": obj.get("abbreviation"),
+            "acronym": obj.get("acronym")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
