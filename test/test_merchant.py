@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T14:00:18.428Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T00:43:56.031Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -64,6 +64,7 @@ class TestMerchant(unittest.TestCase):
                 stripe_connect_onboarding_status = None,
                 is_payment_method_provided = None,
                 plan_nickname = None,
+                billing_cadence = None,
                 max_sms_count = None,
                 is_sms_agreement = None,
                 is_white_labeled = None,

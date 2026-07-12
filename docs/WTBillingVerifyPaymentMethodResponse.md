@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_payment_method_provided** | **object** |  | 
 **subscription** | [**SubscriptionPlan**](SubscriptionPlan.md) |  | 
+**billing_cadence** | [**WTBillingVerifyPaymentMethodResponseBillingCadence**](WTBillingVerifyPaymentMethodResponseBillingCadence.md) |  | 
 
 ## Example
 

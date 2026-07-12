@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **stripe_connect_onboarding_status** | **object** |  | [optional] 
 **is_payment_method_provided** | **object** |  | 
 **plan_nickname** | **object** |  | 
+**billing_cadence** | [**WTBillingVerifyPaymentMethodResponseBillingCadence**](WTBillingVerifyPaymentMethodResponseBillingCadence.md) |  | [optional] 
 **max_sms_count** | **object** |  | 
 **is_sms_agreement** | **object** |  | [optional] 
 **is_white_labeled** | **object** |  | [optional] 

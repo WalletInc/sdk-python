@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T14:00:18.428Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T00:43:56.031Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -280,6 +280,11 @@ from wallet.models.wt_billing_change_plan import WTBillingChangePlan
 from wallet.models.wt_billing_change_plan_billing_cadence import WTBillingChangePlanBillingCadence
 from wallet.models.wt_billing_save_payment_method import WTBillingSavePaymentMethod
 from wallet.models.wt_billing_verify_payment_method_response import WTBillingVerifyPaymentMethodResponse
+from wallet.models.wt_billing_verify_payment_method_response_billing_cadence import WTBillingVerifyPaymentMethodResponseBillingCadence
+from wallet.models.wt_certificate_deal_create_request import WTCertificateDealCreateRequest
+from wallet.models.wt_certificate_deal_create_request_entitlement_type import WTCertificateDealCreateRequestEntitlementType
+from wallet.models.wt_certificate_entitlement_snapshot import WTCertificateEntitlementSnapshot
+from wallet.models.wt_certificate_purchase_request import WTCertificatePurchaseRequest
 from wallet.models.wt_connect_account_status import WTConnectAccountStatus
 from wallet.models.wt_connect_money import WTConnectMoney
 from wallet.models.wt_connect_onboarding_link_request import WTConnectOnboardingLinkRequest
@@ -328,6 +333,8 @@ from wallet.models.wt_financing_soft_pull_request import WTFinancingSoftPullRequ
 from wallet.models.wt_financing_soft_pull_response import WTFinancingSoftPullResponse
 from wallet.models.wt_gaming_create_params import WTGamingCreateParams
 from wallet.models.wt_gaming_update_params import WTGamingUpdateParams
+from wallet.models.wt_gift_card_purchase_request import WTGiftCardPurchaseRequest
+from wallet.models.wt_gift_claim_request import WTGiftClaimRequest
 from wallet.models.wt_image_grid_create_params import WTImageGridCreateParams
 from wallet.models.wt_image_grid_update_params import WTImageGridUpdateParams
 from wallet.models.wt_imported_list import WTImportedList
