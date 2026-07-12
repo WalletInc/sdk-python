@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T11:21:53.715Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T12:25:17.674Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -503,6 +503,7 @@ from wallet.models.wt_ticket_create_params import WTTicketCreateParams
 from wallet.models.wt_ticket_update_params import WTTicketUpdateParams
 from wallet.models.wt_twilio_request_authy_code import WTTwilioRequestAuthyCode
 from wallet.models.wt_twilio_verify_authy_code import WTTwilioVerifyAuthyCode
+from wallet.models.wt_twilio_verify_authy_code_response import WTTwilioVerifyAuthyCodeResponse
 from wallet.models.wt_video_create_params import WTVideoCreateParams
 from wallet.models.wt_video_playback_source import WTVideoPlaybackSource
 from wallet.models.wt_video_playback_source_type import WTVideoPlaybackSourceType

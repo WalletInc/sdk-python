@@ -469,6 +469,7 @@ docs/WTTicketCreateParams.md
 docs/WTTicketUpdateParams.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
+docs/WTTwilioVerifyAuthyCodeResponse.md
 docs/WTVideoCreateParams.md
 docs/WTVideoPlaybackSource.md
 docs/WTVideoPlaybackSourceType.md
@@ -967,6 +968,7 @@ test/test_wt_ticket_create_params.py
 test/test_wt_ticket_update_params.py
 test/test_wt_twilio_request_authy_code.py
 test/test_wt_twilio_verify_authy_code.py
+test/test_wt_twilio_verify_authy_code_response.py
 test/test_wt_video_create_params.py
 test/test_wt_video_playback_source.py
 test/test_wt_video_playback_source_type.py
@@ -1469,6 +1471,7 @@ wallet/models/wt_ticket_create_params.py
 wallet/models/wt_ticket_update_params.py
 wallet/models/wt_twilio_request_authy_code.py
 wallet/models/wt_twilio_verify_authy_code.py
+wallet/models/wt_twilio_verify_authy_code_response.py
 wallet/models/wt_video_create_params.py
 wallet/models/wt_video_playback_source.py
 wallet/models/wt_video_playback_source_type.py
