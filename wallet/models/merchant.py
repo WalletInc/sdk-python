@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-09T22:41:01.331Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T09:49:03.606Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from wallet.models.wt_billing_verify_payment_method_response_billing_cadence import WTBillingVerifyPaymentMethodResponseBillingCadence
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -56,12 +57,13 @@ class Merchant(BaseModel):
     stripe_connect_onboarding_status: Optional[Any] = Field(default=None, alias="stripeConnectOnboardingStatus")
     is_payment_method_provided: Optional[Any] = Field(alias="isPaymentMethodProvided")
     plan_nickname: Optional[Any] = Field(alias="planNickname")
+    billing_cadence: Optional[WTBillingVerifyPaymentMethodResponseBillingCadence] = Field(default=None, alias="billingCadence")
     max_sms_count: Optional[Any] = Field(alias="maxSMSCount")
     is_sms_agreement: Optional[Any] = Field(default=None, alias="isSmsAgreement")
     is_white_labeled: Optional[Any] = Field(default=None, alias="isWhiteLabeled")
     is_featured: Optional[Any] = Field(default=None, alias="isFeatured")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["companyName", "address1", "address2", "city", "state", "country", "phoneNumber", "zip", "currencyAbbreviation", "id", "createdAt", "updatedAt", "industry", "industryName", "infoGenesisPropertyID", "isFrozen", "billingContactEmployeeID", "marketingContactEmployeeID", "technicalContactEmployeeID", "customerServiceContactEmployeeID", "stripeCustomerID", "stripeConnectAccountID", "stripeConnectChargesEnabled", "stripeConnectPayoutsEnabled", "stripeConnectDetailsSubmitted", "stripeConnectOnboardingStatus", "isPaymentMethodProvided", "planNickname", "maxSMSCount", "isSmsAgreement", "isWhiteLabeled", "isFeatured"]
+    __properties: ClassVar[List[str]] = ["companyName", "address1", "address2", "city", "state", "country", "phoneNumber", "zip", "currencyAbbreviation", "id", "createdAt", "updatedAt", "industry", "industryName", "infoGenesisPropertyID", "isFrozen", "billingContactEmployeeID", "marketingContactEmployeeID", "technicalContactEmployeeID", "customerServiceContactEmployeeID", "stripeCustomerID", "stripeConnectAccountID", "stripeConnectChargesEnabled", "stripeConnectPayoutsEnabled", "stripeConnectDetailsSubmitted", "stripeConnectOnboardingStatus", "isPaymentMethodProvided", "planNickname", "billingCadence", "maxSMSCount", "isSmsAgreement", "isWhiteLabeled", "isFeatured"]
 
     model_config = {
         "populate_by_name": True,
@@ -104,6 +106,9 @@ class Merchant(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of billing_cadence
+        if self.billing_cadence:
+            _dict['billingCadence'] = self.billing_cadence.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -304,6 +309,7 @@ class Merchant(BaseModel):
             "stripeConnectOnboardingStatus": obj.get("stripeConnectOnboardingStatus"),
             "isPaymentMethodProvided": obj.get("isPaymentMethodProvided"),
             "planNickname": obj.get("planNickname"),
+            "billingCadence": WTBillingVerifyPaymentMethodResponseBillingCadence.from_dict(obj["billingCadence"]) if obj.get("billingCadence") is not None else None,
             "maxSMSCount": obj.get("maxSMSCount"),
             "isSmsAgreement": obj.get("isSmsAgreement"),
             "isWhiteLabeled": obj.get("isWhiteLabeled"),

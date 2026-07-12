@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-09T22:41:01.331Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T09:49:03.606Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -25,7 +25,7 @@ from wallet.models.pick_vs_payment_design_update_params_exclude_keyof_vs_payment
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID(BaseModel):
+class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym(BaseModel):
     """
     From T, pick a set of properties whose keys are in the union K
     """ # noqa: E501
@@ -35,14 +35,12 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
     border_radius: Annotated[int, Field(le=20, strict=True, ge=0)] = Field(alias="borderRadius")
     font_color: StrictStr = Field(alias="fontColor")
     font_type: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="fontType")
-    abbreviation: Annotated[str, Field(min_length=1, strict=True)]
-    acronym: Annotated[str, Field(min_length=1, strict=True)]
     icon: Annotated[str, Field(min_length=1, strict=True)]
     design_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="designName")
     display_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="displayName")
     background_image_url: Optional[StrictStr] = Field(default=None, alias="backgroundImageURL")
     company_logo_url: Optional[StrictStr] = Field(default=None, alias="companyLogoURL")
-    __properties: ClassVar[List[str]] = ["borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "abbreviation", "acronym", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL"]
+    __properties: ClassVar[List[str]] = ["borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL"]
 
     model_config = {
         "populate_by_name": True,
@@ -62,7 +60,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID from a JSON string"""
+        """Create an instance of PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -90,7 +88,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID from a dict"""
+        """Create an instance of PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym from a dict"""
         if obj is None:
             return None
 
@@ -104,8 +102,6 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
             "borderRadius": obj.get("borderRadius"),
             "fontColor": obj.get("fontColor"),
             "fontType": obj.get("fontType"),
-            "abbreviation": obj.get("abbreviation"),
-            "acronym": obj.get("acronym"),
             "icon": obj.get("icon"),
             "designName": obj.get("designName"),
             "displayName": obj.get("displayName"),
