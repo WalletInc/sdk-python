@@ -165,6 +165,8 @@ docs/OptInListSource.md
 docs/OptInListSubscriber.md
 docs/OptInListSubscriberOptInSourceID.md
 docs/OptInListsApi.md
+docs/OrderStatus.md
+docs/OrdersApi.md
 docs/OutboundSMS.md
 docs/OutboundSMSPaymentObjectBroadcastID.md
 docs/OutboundSMSStatus.md
@@ -414,6 +416,8 @@ docs/WTNewsArticleCreateParams.md
 docs/WTNewsArticleUpdateParams.md
 docs/WTOptInList.md
 docs/WTOptInListCreationParams.md
+docs/WTOrder.md
+docs/WTOrderLineItem.md
 docs/WTPassBrandKit.md
 docs/WTPaymentDesign.md
 docs/WTPaymentDesignCreateParams.md
@@ -662,6 +666,8 @@ test/test_opt_in_list_source.py
 test/test_opt_in_list_subscriber.py
 test/test_opt_in_list_subscriber_opt_in_source_id.py
 test/test_opt_in_lists_api.py
+test/test_order_status.py
+test/test_orders_api.py
 test/test_outbound_sms.py
 test/test_outbound_sms_payment_object_broadcast_id.py
 test/test_outbound_sms_status.py
@@ -919,6 +925,8 @@ test/test_wt_news_article_create_params.py
 test/test_wt_news_article_update_params.py
 test/test_wt_opt_in_list.py
 test/test_wt_opt_in_list_creation_params.py
+test/test_wt_order.py
+test/test_wt_order_line_item.py
 test/test_wt_pass_brand_kit.py
 test/test_wt_payment_design.py
 test/test_wt_payment_design_create_params.py
@@ -1024,6 +1032,7 @@ wallet/api/merchant_credits_api.py
 wallet/api/news_api.py
 wallet/api/open_ai_api.py
 wallet/api/opt_in_lists_api.py
+wallet/api/orders_api.py
 wallet/api/payment_designs_api.py
 wallet/api/performances_api.py
 wallet/api/phone_numbers_api.py
@@ -1189,6 +1198,7 @@ wallet/models/opt_in_list.py
 wallet/models/opt_in_list_source.py
 wallet/models/opt_in_list_subscriber.py
 wallet/models/opt_in_list_subscriber_opt_in_source_id.py
+wallet/models/order_status.py
 wallet/models/outbound_sms.py
 wallet/models/outbound_sms_payment_object_broadcast_id.py
 wallet/models/outbound_sms_status.py
@@ -1417,6 +1427,8 @@ wallet/models/wt_news_article_create_params.py
 wallet/models/wt_news_article_update_params.py
 wallet/models/wt_opt_in_list.py
 wallet/models/wt_opt_in_list_creation_params.py
+wallet/models/wt_order.py
+wallet/models/wt_order_line_item.py
 wallet/models/wt_pass_brand_kit.py
 wallet/models/wt_payment_design.py
 wallet/models/wt_payment_design_create_params.py

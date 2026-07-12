@@ -32,6 +32,7 @@ from wallet.api.merchant_credits_api import MerchantCreditsApi
 from wallet.api.news_api import NewsApi
 from wallet.api.open_ai_api import OpenAIApi
 from wallet.api.opt_in_lists_api import OptInListsApi
+from wallet.api.orders_api import OrdersApi
 from wallet.api.payment_designs_api import PaymentDesignsApi
 from wallet.api.performances_api import PerformancesApi
 from wallet.api.phone_numbers_api import PhoneNumbersApi

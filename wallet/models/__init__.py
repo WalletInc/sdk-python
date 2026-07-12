@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T11:13:37.957Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T11:21:53.715Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -146,6 +146,7 @@ from wallet.models.opt_in_list import OptInList
 from wallet.models.opt_in_list_source import OptInListSource
 from wallet.models.opt_in_list_subscriber import OptInListSubscriber
 from wallet.models.opt_in_list_subscriber_opt_in_source_id import OptInListSubscriberOptInSourceID
+from wallet.models.order_status import OrderStatus
 from wallet.models.outbound_sms import OutboundSMS
 from wallet.models.outbound_sms_payment_object_broadcast_id import OutboundSMSPaymentObjectBroadcastID
 from wallet.models.outbound_sms_status import OutboundSMSStatus
@@ -372,6 +373,8 @@ from wallet.models.wt_news_article_create_params import WTNewsArticleCreateParam
 from wallet.models.wt_news_article_update_params import WTNewsArticleUpdateParams
 from wallet.models.wt_opt_in_list import WTOptInList
 from wallet.models.wt_opt_in_list_creation_params import WTOptInListCreationParams
+from wallet.models.wt_order import WTOrder
+from wallet.models.wt_order_line_item import WTOrderLineItem
 from wallet.models.wt_pass_brand_kit import WTPassBrandKit
 from wallet.models.wt_payment_design import WTPaymentDesign
 from wallet.models.wt_payment_design_create_params import WTPaymentDesignCreateParams
