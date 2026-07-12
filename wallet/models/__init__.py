@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:05:00.071Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:15:37.660Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -293,6 +293,7 @@ from wallet.models.wt_connect_onboarding_link_response import WTConnectOnboardin
 from wallet.models.wt_connect_onboarding_status import WTConnectOnboardingStatus
 from wallet.models.wt_connect_payments_summary import WTConnectPaymentsSummary
 from wallet.models.wt_connect_payments_summary_balance import WTConnectPaymentsSummaryBalance
+from wallet.models.wt_connect_requirements import WTConnectRequirements
 from wallet.models.wt_count_result import WTCountResult
 from wallet.models.wt_customer_search_by_member_id import WTCustomerSearchByMemberID
 from wallet.models.wt_customer_search_by_phone_number import WTCustomerSearchByPhoneNumber

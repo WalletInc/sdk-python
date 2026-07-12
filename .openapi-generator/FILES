@@ -336,6 +336,7 @@ docs/WTConnectOnboardingLinkResponse.md
 docs/WTConnectOnboardingStatus.md
 docs/WTConnectPaymentsSummary.md
 docs/WTConnectPaymentsSummaryBalance.md
+docs/WTConnectRequirements.md
 docs/WTCountResult.md
 docs/WTCustomerSearchByMemberID.md
 docs/WTCustomerSearchByPhoneNumber.md
@@ -846,6 +847,7 @@ test/test_wt_connect_onboarding_link_response.py
 test/test_wt_connect_onboarding_status.py
 test/test_wt_connect_payments_summary.py
 test/test_wt_connect_payments_summary_balance.py
+test/test_wt_connect_requirements.py
 test/test_wt_count_result.py
 test/test_wt_customer_search_by_member_id.py
 test/test_wt_customer_search_by_phone_number.py
@@ -1349,6 +1351,7 @@ wallet/models/wt_connect_onboarding_link_response.py
 wallet/models/wt_connect_onboarding_status.py
 wallet/models/wt_connect_payments_summary.py
 wallet/models/wt_connect_payments_summary_balance.py
+wallet/models/wt_connect_requirements.py
 wallet/models/wt_count_result.py
 wallet/models/wt_customer_search_by_member_id.py
 wallet/models/wt_customer_search_by_phone_number.py

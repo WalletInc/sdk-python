@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **charges_enabled** | **object** |  | 
 **payouts_enabled** | **object** |  | 
 **ecommerce_eligible** | **object** |  | 
+**requirements** | [**WTConnectRequirements**](WTConnectRequirements.md) |  | 
 
 ## Example
 

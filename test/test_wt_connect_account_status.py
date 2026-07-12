@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:05:00.071Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:15:37.660Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -41,7 +41,10 @@ class TestWTConnectAccountStatus(unittest.TestCase):
                 details_submitted = None,
                 charges_enabled = None,
                 payouts_enabled = None,
-                ecommerce_eligible = None
+                ecommerce_eligible = None,
+                requirements = {
+                    'key' : null
+                    }
             )
         else:
             return WTConnectAccountStatus(
@@ -51,6 +54,9 @@ class TestWTConnectAccountStatus(unittest.TestCase):
                 charges_enabled = None,
                 payouts_enabled = None,
                 ecommerce_eligible = None,
+                requirements = {
+                    'key' : null
+                    },
         )
         """
 
