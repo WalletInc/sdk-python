@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T09:49:03.606Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:57:46.543Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from wallet.models.wt_connect_onboarding_status import WTConnectOnboardingStatus
+from wallet.models.wt_connect_requirements import WTConnectRequirements
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,8 +35,9 @@ class WTConnectAccountStatus(BaseModel):
     charges_enabled: Optional[Any] = Field(alias="chargesEnabled")
     payouts_enabled: Optional[Any] = Field(alias="payoutsEnabled")
     ecommerce_eligible: Optional[Any] = Field(alias="ecommerceEligible")
+    requirements: WTConnectRequirements
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["accountId", "onboardingStatus", "detailsSubmitted", "chargesEnabled", "payoutsEnabled", "ecommerceEligible"]
+    __properties: ClassVar[List[str]] = ["accountId", "onboardingStatus", "detailsSubmitted", "chargesEnabled", "payoutsEnabled", "ecommerceEligible", "requirements"]
 
     model_config = {
         "populate_by_name": True,
@@ -81,6 +83,9 @@ class WTConnectAccountStatus(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of onboarding_status
         if self.onboarding_status:
             _dict['onboardingStatus'] = self.onboarding_status.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of requirements
+        if self.requirements:
+            _dict['requirements'] = self.requirements.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -128,7 +133,8 @@ class WTConnectAccountStatus(BaseModel):
             "detailsSubmitted": obj.get("detailsSubmitted"),
             "chargesEnabled": obj.get("chargesEnabled"),
             "payoutsEnabled": obj.get("payoutsEnabled"),
-            "ecommerceEligible": obj.get("ecommerceEligible")
+            "ecommerceEligible": obj.get("ecommerceEligible"),
+            "requirements": WTConnectRequirements.from_dict(obj["requirements"]) if obj.get("requirements") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

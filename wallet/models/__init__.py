@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T09:49:03.606Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:57:46.543Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -146,6 +146,7 @@ from wallet.models.opt_in_list import OptInList
 from wallet.models.opt_in_list_source import OptInListSource
 from wallet.models.opt_in_list_subscriber import OptInListSubscriber
 from wallet.models.opt_in_list_subscriber_opt_in_source_id import OptInListSubscriberOptInSourceID
+from wallet.models.order_status import OrderStatus
 from wallet.models.outbound_sms import OutboundSMS
 from wallet.models.outbound_sms_payment_object_broadcast_id import OutboundSMSPaymentObjectBroadcastID
 from wallet.models.outbound_sms_status import OutboundSMSStatus
@@ -292,6 +293,7 @@ from wallet.models.wt_connect_onboarding_link_response import WTConnectOnboardin
 from wallet.models.wt_connect_onboarding_status import WTConnectOnboardingStatus
 from wallet.models.wt_connect_payments_summary import WTConnectPaymentsSummary
 from wallet.models.wt_connect_payments_summary_balance import WTConnectPaymentsSummaryBalance
+from wallet.models.wt_connect_requirements import WTConnectRequirements
 from wallet.models.wt_count_result import WTCountResult
 from wallet.models.wt_customer_search_by_member_id import WTCustomerSearchByMemberID
 from wallet.models.wt_customer_search_by_phone_number import WTCustomerSearchByPhoneNumber
@@ -372,6 +374,8 @@ from wallet.models.wt_news_article_create_params import WTNewsArticleCreateParam
 from wallet.models.wt_news_article_update_params import WTNewsArticleUpdateParams
 from wallet.models.wt_opt_in_list import WTOptInList
 from wallet.models.wt_opt_in_list_creation_params import WTOptInListCreationParams
+from wallet.models.wt_order import WTOrder
+from wallet.models.wt_order_line_item import WTOrderLineItem
 from wallet.models.wt_pass_brand_kit import WTPassBrandKit
 from wallet.models.wt_payment_design import WTPaymentDesign
 from wallet.models.wt_payment_design_create_params import WTPaymentDesignCreateParams
@@ -423,6 +427,7 @@ from wallet.models.wt_ticket_create_params import WTTicketCreateParams
 from wallet.models.wt_ticket_update_params import WTTicketUpdateParams
 from wallet.models.wt_twilio_request_authy_code import WTTwilioRequestAuthyCode
 from wallet.models.wt_twilio_verify_authy_code import WTTwilioVerifyAuthyCode
+from wallet.models.wt_twilio_verify_authy_code_response import WTTwilioVerifyAuthyCodeResponse
 from wallet.models.wt_video_create_params import WTVideoCreateParams
 from wallet.models.wt_video_playback_source import WTVideoPlaybackSource
 from wallet.models.wt_video_playback_source_type import WTVideoPlaybackSourceType
