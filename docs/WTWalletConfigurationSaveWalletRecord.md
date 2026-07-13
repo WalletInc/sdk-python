@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **is_claimed** | **object** |  | [optional] 
 **mobile_app_icon_url** | **object** |  | [optional] 
 **is_age_gate** | **object** |  | [optional] 
+**is_flip_required_for_qr** | **object** |  | [optional] 
 **age_gate_minimum** | **object** |  | [optional] 
 **age_gate_decline_url** | **object** |  | [optional] 
 **social_instagram_url** | **object** |  | [optional] 
