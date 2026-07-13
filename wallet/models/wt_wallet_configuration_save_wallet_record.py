@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:57:46.543Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-13T17:36:00.108Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -86,6 +86,7 @@ class WTWalletConfigurationSaveWalletRecord(BaseModel):
     is_claimed: Optional[Any] = Field(default=None, alias="isClaimed")
     mobile_app_icon_url: Optional[Any] = Field(default=None, alias="mobileAppIconURL")
     is_age_gate: Optional[Any] = Field(default=None, alias="isAgeGate")
+    is_flip_required_for_qr: Optional[Any] = Field(default=None, alias="isFlipRequiredForQR")
     age_gate_minimum: Optional[Any] = Field(default=None, alias="ageGateMinimum")
     age_gate_decline_url: Optional[Any] = Field(default=None, alias="ageGateDeclineURL")
     social_instagram_url: Optional[Any] = Field(default=None, alias="socialInstagramURL")
@@ -105,7 +106,7 @@ class WTWalletConfigurationSaveWalletRecord(BaseModel):
     google_play_store_url: Optional[Any] = Field(default=None, alias="googlePlayStoreURL")
     pass_brand_kit: Optional[WTWalletConfigurationSaveWalletRecordPassBrandKit] = Field(default=None, alias="passBrandKit")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "ageGateMinimum", "ageGateDeclineURL", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "customJS", "customCSS", "nonMobileRedirectURL", "appleAppStoreURL", "googlePlayStoreURL", "passBrandKit"]
+    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "isFlipRequiredForQR", "ageGateMinimum", "ageGateDeclineURL", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "customJS", "customCSS", "nonMobileRedirectURL", "appleAppStoreURL", "googlePlayStoreURL", "passBrandKit"]
 
     model_config = {
         "populate_by_name": True,
@@ -439,6 +440,11 @@ class WTWalletConfigurationSaveWalletRecord(BaseModel):
         if self.is_age_gate is None and "is_age_gate" in self.model_fields_set:
             _dict['isAgeGate'] = None
 
+        # set to None if is_flip_required_for_qr (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_flip_required_for_qr is None and "is_flip_required_for_qr" in self.model_fields_set:
+            _dict['isFlipRequiredForQR'] = None
+
         # set to None if age_gate_minimum (nullable) is None
         # and model_fields_set contains the field
         if self.age_gate_minimum is None and "age_gate_minimum" in self.model_fields_set:
@@ -593,6 +599,7 @@ class WTWalletConfigurationSaveWalletRecord(BaseModel):
             "isClaimed": obj.get("isClaimed"),
             "mobileAppIconURL": obj.get("mobileAppIconURL"),
             "isAgeGate": obj.get("isAgeGate"),
+            "isFlipRequiredForQR": obj.get("isFlipRequiredForQR"),
             "ageGateMinimum": obj.get("ageGateMinimum"),
             "ageGateDeclineURL": obj.get("ageGateDeclineURL"),
             "socialInstagramURL": obj.get("socialInstagramURL"),
