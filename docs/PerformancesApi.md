@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**fetch_all_performances**](PerformancesApi.md#fetch_all_performances) | **GET** /v2/performances/all | Get all Performances
 [**fetch_performance**](PerformancesApi.md#fetch_performance) | **GET** /v2/performances/{id} | Get Performance
 [**fetch_performance_tickets_page**](PerformancesApi.md#fetch_performance_tickets_page) | **GET** /v2/performances/tickets/page/{performanceID} | Get Performance&#39;s Tickets
+[**fetch_ticket_reach_stats_all**](PerformancesApi.md#fetch_ticket_reach_stats_all) | **GET** /v2/performances/reach/all | Ticket reach funnel across all of the merchant&#39;s performances Merchant-wide ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics &gt; Customers &gt; Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+[**fetch_ticket_reach_stats_for_performance**](PerformancesApi.md#fetch_ticket_reach_stats_for_performance) | **GET** /v2/performances/{id}/reach | Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the /tickets \&quot;Show Analytics\&quot; slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance&#39;s all-time funnel.
 [**import_tickets**](PerformancesApi.md#import_tickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets
 [**restore_performance**](PerformancesApi.md#restore_performance) | **PATCH** /v2/performances/{id} | Restore Performance
 [**save_ticket_settings**](PerformancesApi.md#save_ticket_settings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings
@@ -637,6 +639,150 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FetchPerformanceTicketsPage200Response**](FetchPerformanceTicketsPage200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_ticket_reach_stats_all**
+> WTTicketReachStats fetch_ticket_reach_stats_all(start_date=start_date, end_date=end_date)
+
+Ticket reach funnel across all of the merchant's performances Merchant-wide ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics > Customers > Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_ticket_reach_stats import WTTicketReachStats
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.PerformancesApi(api_client)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+
+    try:
+        # Ticket reach funnel across all of the merchant's performances Merchant-wide ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics > Customers > Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+        api_response = api_instance.fetch_ticket_reach_stats_all(start_date=start_date, end_date=end_date)
+        print("The response of PerformancesApi->fetch_ticket_reach_stats_all:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PerformancesApi->fetch_ticket_reach_stats_all: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
+
+### Return type
+
+[**WTTicketReachStats**](WTTicketReachStats.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_ticket_reach_stats_for_performance**
+> WTTicketReachStats fetch_ticket_reach_stats_for_performance(id, start_date=start_date, end_date=end_date)
+
+Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the /tickets \"Show Analytics\" slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance's all-time funnel.
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_ticket_reach_stats import WTTicketReachStats
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.PerformancesApi(api_client)
+    id = 'id_example' # str | 
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+
+    try:
+        # Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the /tickets \"Show Analytics\" slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance's all-time funnel.
+        api_response = api_instance.fetch_ticket_reach_stats_for_performance(id, start_date=start_date, end_date=end_date)
+        print("The response of PerformancesApi->fetch_ticket_reach_stats_for_performance:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PerformancesApi->fetch_ticket_reach_stats_for_performance: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **start_date** | **datetime**|  | [optional] 
+ **end_date** | **datetime**|  | [optional] 
+
+### Return type
+
+[**WTTicketReachStats**](WTTicketReachStats.md)
 
 ### Authorization
 

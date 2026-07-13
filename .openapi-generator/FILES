@@ -467,6 +467,7 @@ docs/WTTCPAOptListID.md
 docs/WTTCPAOptSourceID.md
 docs/WTTicket.md
 docs/WTTicketCreateParams.md
+docs/WTTicketReachStats.md
 docs/WTTicketUpdateParams.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
@@ -967,6 +968,7 @@ test/test_wt_system_approve_phone_number.py
 test/test_wt_system_role_create.py
 test/test_wt_ticket.py
 test/test_wt_ticket_create_params.py
+test/test_wt_ticket_reach_stats.py
 test/test_wt_ticket_update_params.py
 test/test_wt_twilio_request_authy_code.py
 test/test_wt_twilio_verify_authy_code.py
@@ -1471,6 +1473,7 @@ wallet/models/wt_system_approve_phone_number.py
 wallet/models/wt_system_role_create.py
 wallet/models/wt_ticket.py
 wallet/models/wt_ticket_create_params.py
+wallet/models/wt_ticket_reach_stats.py
 wallet/models/wt_ticket_update_params.py
 wallet/models/wt_twilio_request_authy_code.py
 wallet/models/wt_twilio_verify_authy_code.py

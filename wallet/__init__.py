@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T23:33:23.761Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-13T11:57:37.196Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -501,6 +501,7 @@ from wallet.models.wttcpa_opt_list_id import WTTCPAOptListID
 from wallet.models.wttcpa_opt_source_id import WTTCPAOptSourceID
 from wallet.models.wt_ticket import WTTicket
 from wallet.models.wt_ticket_create_params import WTTicketCreateParams
+from wallet.models.wt_ticket_reach_stats import WTTicketReachStats
 from wallet.models.wt_ticket_update_params import WTTicketUpdateParams
 from wallet.models.wt_twilio_request_authy_code import WTTwilioRequestAuthyCode
 from wallet.models.wt_twilio_verify_authy_code import WTTwilioVerifyAuthyCode
