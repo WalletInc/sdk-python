@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-13T16:49:26.518Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-13T17:18:17.401Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -87,6 +87,7 @@ class WalletConfiguration(BaseModel):
     is_claimed: Optional[Any] = Field(default=None, alias="isClaimed")
     mobile_app_icon_url: Optional[Any] = Field(default=None, alias="mobileAppIconURL")
     is_age_gate: Optional[Any] = Field(default=None, alias="isAgeGate")
+    is_flip_required_for_qr: Optional[Any] = Field(default=None, alias="isFlipRequiredForQR")
     age_gate_minimum: Optional[Any] = Field(default=None, alias="ageGateMinimum")
     age_gate_decline_url: Optional[Any] = Field(default=None, alias="ageGateDeclineURL")
     social_instagram_url: Optional[Any] = Field(default=None, alias="socialInstagramURL")
@@ -111,7 +112,7 @@ class WalletConfiguration(BaseModel):
     merchant_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="merchantID")
     android_sha256_fingerprint: Optional[Any] = Field(default=None, description="SHA-256 fingerprint of the merchant's Android signing certificate, in Android's colon-separated uppercase hex format (e.g. \"A1:B2:C3:...\"). Populated by the POST /v2/wallet/android/keystore endpoint and consumed by the assetlinks.json endpoint so Google can verify the merchant's TWA ownership.", alias="androidSHA256Fingerprint")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "ageGateMinimum", "ageGateDeclineURL", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "customJS", "customCSS", "nonMobileRedirectURL", "appleAppStoreURL", "googlePlayStoreURL", "passBrandKit", "id", "createdAt", "updatedAt", "merchantID", "androidSHA256Fingerprint"]
+    __properties: ClassVar[List[str]] = ["headerBackgroundColor", "headerButtonColor", "leftMenuHeaderBackgroundColor", "leftMenuHeaderFontColor", "leftMenuSectionBackgroundColor", "leftMenuSectionFontColor", "companyLogoURL", "headerImageURL", "headerCustomIcon", "welcomeMessage", "isAppleEnabled", "isGoogleEnabled", "isSamsungEnabled", "isAdCredits", "isStaticVouchers", "isDynamicVouchers", "isMembershipTier", "isMembershipPoints", "isMembershipLevel", "isGiftCards", "isGiftCertificates", "isPromotions", "isMerchantCredit", "isTickets", "isNewsArticles", "isPerformances", "isMessages", "isCall", "isRepresentatives", "isProducts", "isServices", "isRoomRates", "isAmenities", "isGaming", "isDining", "isLounges", "isMapDirections", "isLinkBook", "isImageGrid", "isVideos", "isTransactionHistory", "isProfile", "isSettings", "isChatRoom", "isSmsOptIn", "smsOptInSourceID", "isEmailSubscriber", "googleAnalyticsID", "facebookPixelID", "publicChatRoomChannelID", "vanityHandle", "vanityPageWalletPrefix", "merchantCreditPaymentDesignID", "customDomain", "isClaimed", "mobileAppIconURL", "isAgeGate", "isFlipRequiredForQR", "ageGateMinimum", "ageGateDeclineURL", "socialInstagramURL", "socialFacebookURL", "socialYouTubeURL", "socialTwitterURL", "socialLinkedInURL", "socialBackgroundColor", "socialFontColor", "primaryPhoneNumber", "primaryWhatsApp", "primaryEmailAddress", "customJS", "customCSS", "nonMobileRedirectURL", "appleAppStoreURL", "googlePlayStoreURL", "passBrandKit", "id", "createdAt", "updatedAt", "merchantID", "androidSHA256Fingerprint"]
 
     model_config = {
         "populate_by_name": True,
@@ -445,6 +446,11 @@ class WalletConfiguration(BaseModel):
         if self.is_age_gate is None and "is_age_gate" in self.model_fields_set:
             _dict['isAgeGate'] = None
 
+        # set to None if is_flip_required_for_qr (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_flip_required_for_qr is None and "is_flip_required_for_qr" in self.model_fields_set:
+            _dict['isFlipRequiredForQR'] = None
+
         # set to None if age_gate_minimum (nullable) is None
         # and model_fields_set contains the field
         if self.age_gate_minimum is None and "age_gate_minimum" in self.model_fields_set:
@@ -614,6 +620,7 @@ class WalletConfiguration(BaseModel):
             "isClaimed": obj.get("isClaimed"),
             "mobileAppIconURL": obj.get("mobileAppIconURL"),
             "isAgeGate": obj.get("isAgeGate"),
+            "isFlipRequiredForQR": obj.get("isFlipRequiredForQR"),
             "ageGateMinimum": obj.get("ageGateMinimum"),
             "ageGateDeclineURL": obj.get("ageGateDeclineURL"),
             "socialInstagramURL": obj.get("socialInstagramURL"),
