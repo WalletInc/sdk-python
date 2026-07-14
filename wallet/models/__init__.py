@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-14T20:18:10.719Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-14T21:12:12.489Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -40,14 +40,6 @@ from wallet.models.chat_completion_message_function_call import ChatCompletionMe
 from wallet.models.chat_completion_message_tool_call import ChatCompletionMessageToolCall
 from wallet.models.chat_completion_message_tool_call_function import ChatCompletionMessageToolCallFunction
 from wallet.models.claim_ticket_request import ClaimTicketRequest
-from wallet.models.click_funnel_amount import ClickFunnelAmount
-from wallet.models.click_funnel_contact import ClickFunnelContact
-from wallet.models.click_funnel_contact_profile import ClickFunnelContactProfile
-from wallet.models.click_funnel_event import ClickFunnelEvent
-from wallet.models.click_funnel_original_amount import ClickFunnelOriginalAmount
-from wallet.models.click_funnel_product import ClickFunnelProduct
-from wallet.models.click_funnel_purchase import ClickFunnelPurchase
-from wallet.models.click_funnel_registration import ClickFunnelRegistration
 from wallet.models.count_claimed_comps200_response import CountClaimedComps200Response
 from wallet.models.create_file200_response import CreateFile200Response
 from wallet.models.create_run_on_thread_request import CreateRunOnThreadRequest
