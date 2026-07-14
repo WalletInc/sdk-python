@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-14T05:08:58.326Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-14T20:20:23.684Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -34,19 +34,20 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="wallet-api",
-    author="Development Team",
+    description="Official Python SDK for the Wallet Inc CRM & Digital Payments platform.",
+    author="Wallet Inc Development Team",
     author_email="development@wallet.inc",
     url="",
-    keywords=["OpenAPI", "OpenAPI-Generator", "wallet-api"],
+    keywords=['wallet', 'wallet-inc', 'sdk', 'api', 'crm', 'payments', 'rewards', 'vouchers', 'loyalty', 'membership', 'sms'],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     license="Apache-2.0",
+    project_urls={"Homepage": "https://wallet.dev", "Repository": "https://github.com/WalletInc/sdk-python", "Documentation": "https://wallet.dev", "Issues": "https://github.com/WalletInc/sdk-python/issues"},
     classifiers=["License :: OSI Approved :: Apache Software License"],
     long_description_content_type='text/markdown',
     long_description="""\
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-14T05:08:58.326Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-14T20:20:23.684Z
     """,  # noqa: E501
     package_data={"wallet": ["py.typed"]},
 )
