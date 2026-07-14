@@ -25,3 +25,6 @@
 # CI is hand-maintained (publish via OIDC, notifier, supported-Python matrix);
 # regeneration must never overwrite it (2026-07-09).
 .github/**
+
+# Curated Wallet README (KAN-55); the generator must not overwrite it.
+README.md
