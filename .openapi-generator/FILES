@@ -1,8 +1,6 @@
-.github/workflows/python.yml
 .gitignore
 .gitlab-ci.yml
 .travis.yml
-README.md
 docs/A2PApplicationSubmission.md
 docs/APIKeysApi.md
 docs/AdvertisementCredit.md
