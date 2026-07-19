@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**count_inbound_sms**](SMSMessagesApi.md#count_inbound_sms) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes
 [**count_outbound_sms**](SMSMessagesApi.md#count_outbound_sms) | **GET** /v2/sms/outbound/count/{phoneNumberID} | Count outbound SMS
+[**estimate_sms_segments**](SMSMessagesApi.md#estimate_sms_segments) | **POST** /sms/segment-estimate | Estimate SMS/MMS segments for a message
 [**export_inbound_messages**](SMSMessagesApi.md#export_inbound_messages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages
 [**export_outbound_messages**](SMSMessagesApi.md#export_outbound_messages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages
 [**fetch_inbound_sms**](SMSMessagesApi.md#fetch_inbound_sms) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes
@@ -159,6 +160,76 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **estimate_sms_segments**
+> WTSegmentEstimate estimate_sms_segments(wt_segment_estimate_request)
+
+Estimate SMS/MMS segments for a message
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_segment_estimate import WTSegmentEstimate
+from wallet.models.wt_segment_estimate_request import WTSegmentEstimateRequest
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.SMSMessagesApi(api_client)
+    wt_segment_estimate_request = wallet.WTSegmentEstimateRequest() # WTSegmentEstimateRequest | 
+
+    try:
+        # Estimate SMS/MMS segments for a message
+        api_response = api_instance.estimate_sms_segments(wt_segment_estimate_request)
+        print("The response of SMSMessagesApi->estimate_sms_segments:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SMSMessagesApi->estimate_sms_segments: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_segment_estimate_request** | [**WTSegmentEstimateRequest**](WTSegmentEstimateRequest.md)|  | 
+
+### Return type
+
+[**WTSegmentEstimate**](WTSegmentEstimate.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

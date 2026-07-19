@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-17T23:08:27.418Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-19T15:14:41.963Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -398,6 +398,11 @@ from wallet.models.wtsms_import_opt_in_list_subscribers import WTSMSImportOptInL
 from wallet.models.wtsms_imported_list_create import WTSMSImportedListCreate
 from wallet.models.wtsms_opt_in_list_source_create import WTSMSOptInListSourceCreate
 from wallet.models.wtsms_update_phone_number_config import WTSMSUpdatePhoneNumberConfig
+from wallet.models.wt_segment_advisory import WTSegmentAdvisory
+from wallet.models.wt_segment_advisory_recommend import WTSegmentAdvisoryRecommend
+from wallet.models.wt_segment_estimate import WTSegmentEstimate
+from wallet.models.wt_segment_estimate_encoding import WTSegmentEstimateEncoding
+from wallet.models.wt_segment_estimate_request import WTSegmentEstimateRequest
 from wallet.models.wt_service_create_params import WTServiceCreateParams
 from wallet.models.wt_service_update_params import WTServiceUpdateParams
 from wallet.models.wt_settings_set_password import WTSettingsSetPassword
