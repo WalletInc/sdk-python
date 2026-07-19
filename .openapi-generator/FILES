@@ -441,6 +441,11 @@ docs/WTSMSImportOptInListSubscribers.md
 docs/WTSMSImportedListCreate.md
 docs/WTSMSOptInListSourceCreate.md
 docs/WTSMSUpdatePhoneNumberConfig.md
+docs/WTSegmentAdvisory.md
+docs/WTSegmentAdvisoryRecommend.md
+docs/WTSegmentEstimate.md
+docs/WTSegmentEstimateEncoding.md
+docs/WTSegmentEstimateRequest.md
 docs/WTServiceCreateParams.md
 docs/WTServiceUpdateParams.md
 docs/WTSettingsSetPassword.md
@@ -937,6 +942,11 @@ test/test_wt_quick_link_update_params.py
 test/test_wt_role.py
 test/test_wt_room_rate_create_params.py
 test/test_wt_room_rate_update_params.py
+test/test_wt_segment_advisory.py
+test/test_wt_segment_advisory_recommend.py
+test/test_wt_segment_estimate.py
+test/test_wt_segment_estimate_encoding.py
+test/test_wt_segment_estimate_request.py
 test/test_wt_service_create_params.py
 test/test_wt_service_update_params.py
 test/test_wt_settings_set_password.py
@@ -1434,6 +1444,11 @@ wallet/models/wt_quick_link_update_params.py
 wallet/models/wt_role.py
 wallet/models/wt_room_rate_create_params.py
 wallet/models/wt_room_rate_update_params.py
+wallet/models/wt_segment_advisory.py
+wallet/models/wt_segment_advisory_recommend.py
+wallet/models/wt_segment_estimate.py
+wallet/models/wt_segment_estimate_encoding.py
+wallet/models/wt_segment_estimate_request.py
 wallet/models/wt_service_create_params.py
 wallet/models/wt_service_update_params.py
 wallet/models/wt_settings_set_password.py
