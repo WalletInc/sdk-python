@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**fetch_merchant_outbound_sms**](SMSMessagesApi.md#fetch_merchant_outbound_sms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes
 [**fetch_outbound_sms**](SMSMessagesApi.md#fetch_outbound_sms) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS
 [**fetch_outbound_smsby_page**](SMSMessagesApi.md#fetch_outbound_smsby_page) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page
-[**retrieve_sent_and_max_count_of_messages**](SMSMessagesApi.md#retrieve_sent_and_max_count_of_messages) | **GET** /v2/sms/sent | Retrieve the number of messages sent by the merchant within the current billing cycle
+[**retrieve_sent_and_max_count_of_messages**](SMSMessagesApi.md#retrieve_sent_and_max_count_of_messages) | **GET** /v2/sms/sent | Retrieve the message segments used by the merchant within the current billing cycle
 
 
 # **count_inbound_sms**
@@ -767,7 +767,7 @@ No authorization required
 # **retrieve_sent_and_max_count_of_messages**
 > object retrieve_sent_and_max_count_of_messages()
 
-Retrieve the number of messages sent by the merchant within the current billing cycle
+Retrieve the message segments used by the merchant within the current billing cycle
 
 ### Example
 
@@ -790,7 +790,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.SMSMessagesApi(api_client)
 
     try:
-        # Retrieve the number of messages sent by the merchant within the current billing cycle
+        # Retrieve the message segments used by the merchant within the current billing cycle
         api_response = api_instance.retrieve_sent_and_max_count_of_messages()
         print("The response of SMSMessagesApi->retrieve_sent_and_max_count_of_messages:\n")
         pprint(api_response)
