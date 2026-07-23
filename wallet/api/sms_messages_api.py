@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-21T16:57:19.614Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-23T13:46:54.076Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -3271,7 +3271,7 @@ class SMSMessagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Retrieve the number of messages sent by the merchant within the current billing cycle
+        """Retrieve the message segments used by the merchant within the current billing cycle
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -3336,7 +3336,7 @@ class SMSMessagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Retrieve the number of messages sent by the merchant within the current billing cycle
+        """Retrieve the message segments used by the merchant within the current billing cycle
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -3401,7 +3401,7 @@ class SMSMessagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve the number of messages sent by the merchant within the current billing cycle
+        """Retrieve the message segments used by the merchant within the current billing cycle
 
 
         :param _request_timeout: timeout setting for this request. If one
