@@ -232,6 +232,8 @@ docs/Product.md
 docs/ProductKey.md
 docs/ProductTaxBehavior.md
 docs/ProductUpdateEntry.md
+docs/ProductUpdateIngestAck.md
+docs/ProductUpdateIngestBody.md
 docs/ProductUpdateType.md
 docs/ProductsApi.md
 docs/ProfileStatuses.md
@@ -736,6 +738,8 @@ test/test_product.py
 test/test_product_key.py
 test/test_product_tax_behavior.py
 test/test_product_update_entry.py
+test/test_product_update_ingest_ack.py
+test/test_product_update_ingest_body.py
 test/test_product_update_type.py
 test/test_products_api.py
 test/test_profile_statuses.py
@@ -1265,6 +1269,8 @@ wallet/models/product.py
 wallet/models/product_key.py
 wallet/models/product_tax_behavior.py
 wallet/models/product_update_entry.py
+wallet/models/product_update_ingest_ack.py
+wallet/models/product_update_ingest_body.py
 wallet/models/product_update_type.py
 wallet/models/profile_statuses.py
 wallet/models/promo_code.py
