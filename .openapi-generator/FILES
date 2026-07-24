@@ -229,7 +229,10 @@ docs/PresignedPost.md
 docs/PresignedPostFields.md
 docs/PrizesApi.md
 docs/Product.md
+docs/ProductKey.md
 docs/ProductTaxBehavior.md
+docs/ProductUpdateEntry.md
+docs/ProductUpdateType.md
 docs/ProductsApi.md
 docs/ProfileStatuses.md
 docs/PromoCode.md
@@ -730,7 +733,10 @@ test/test_presigned_post.py
 test/test_presigned_post_fields.py
 test/test_prizes_api.py
 test/test_product.py
+test/test_product_key.py
 test/test_product_tax_behavior.py
+test/test_product_update_entry.py
+test/test_product_update_type.py
 test/test_products_api.py
 test/test_profile_statuses.py
 test/test_promo_code.py
@@ -1256,7 +1262,10 @@ wallet/models/portal_page.py
 wallet/models/presigned_post.py
 wallet/models/presigned_post_fields.py
 wallet/models/product.py
+wallet/models/product_key.py
 wallet/models/product_tax_behavior.py
+wallet/models/product_update_entry.py
+wallet/models/product_update_type.py
 wallet/models/profile_statuses.py
 wallet/models/promo_code.py
 wallet/models/qr_code_design.py
