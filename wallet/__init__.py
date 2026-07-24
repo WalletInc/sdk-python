@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-24T21:07:11.653Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-24T21:31:27.998Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -286,6 +286,8 @@ from wallet.models.product import Product
 from wallet.models.product_key import ProductKey
 from wallet.models.product_tax_behavior import ProductTaxBehavior
 from wallet.models.product_update_entry import ProductUpdateEntry
+from wallet.models.product_update_ingest_ack import ProductUpdateIngestAck
+from wallet.models.product_update_ingest_body import ProductUpdateIngestBody
 from wallet.models.product_update_type import ProductUpdateType
 from wallet.models.profile_statuses import ProfileStatuses
 from wallet.models.promo_code import PromoCode
