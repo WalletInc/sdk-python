@@ -5,15 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sort_num** | **float** |  | 
-**name** | **str** |  | 
-**max_volume** | **str** |  | [optional] 
-**measurement** | **str** |  | 
-**description** | **str** |  | 
-**current_volume** | **str** |  | [optional] 
-**is_exceeded** | **bool** |  | [optional] 
-**is_in_use** | **bool** |  | [optional] 
-**is_enabled** | **bool** |  | [optional] 
+**sort_num** | **object** |  | 
+**name** | **object** |  | 
+**slug** | **object** |  | [optional] 
+**max_volume** | **object** |  | [optional] 
+**measurement** | **object** |  | 
+**description** | **object** |  | 
+**current_volume** | **object** |  | [optional] 
+**is_exceeded** | **object** |  | [optional] 
+**is_in_use** | **object** |  | [optional] 
+**is_enabled** | **object** |  | [optional] 
 
 ## Example
 
