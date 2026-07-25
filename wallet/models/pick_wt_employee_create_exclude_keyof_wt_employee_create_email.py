@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:57:05.776Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T21:35:51.140Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -35,10 +35,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail(BaseModel):
     employee_id: Annotated[str, Field(min_length=0, strict=True)] = Field(alias="employeeID")
     first_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="firstName")
     last_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="lastName")
+    job_title: Annotated[str, Field(min_length=0, strict=True)] = Field(alias="jobTitle")
     phone_number: StrictStr = Field(alias="phoneNumber")
     is_public_representative: StrictBool = Field(alias="isPublicRepresentative")
     wallet_sequence_number: StrictInt = Field(alias="walletSequenceNumber")
-    job_title: Annotated[str, Field(min_length=0, strict=True)] = Field(alias="jobTitle")
     department: Annotated[str, Field(min_length=0, strict=True)]
     schedule_start_day: Optional[PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay] = Field(default=None, alias="scheduleStartDay")
     schedule_start_hour: Optional[PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour] = Field(default=None, alias="scheduleStartHour")
@@ -48,7 +48,7 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail(BaseModel):
     schedule_end_hour: Optional[PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour] = Field(default=None, alias="scheduleEndHour")
     schedule_end_minute: Optional[PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMinute] = Field(default=None, alias="scheduleEndMinute")
     schedule_end_meridiem: Optional[PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartMeridiem] = Field(default=None, alias="scheduleEndMeridiem")
-    __properties: ClassVar[List[str]] = ["employeeID", "firstName", "lastName", "phoneNumber", "isPublicRepresentative", "walletSequenceNumber", "jobTitle", "department", "scheduleStartDay", "scheduleStartHour", "scheduleStartMinute", "scheduleStartMeridiem", "scheduleEndDay", "scheduleEndHour", "scheduleEndMinute", "scheduleEndMeridiem"]
+    __properties: ClassVar[List[str]] = ["employeeID", "firstName", "lastName", "jobTitle", "phoneNumber", "isPublicRepresentative", "walletSequenceNumber", "department", "scheduleStartDay", "scheduleStartHour", "scheduleStartMinute", "scheduleStartMeridiem", "scheduleEndDay", "scheduleEndHour", "scheduleEndMinute", "scheduleEndMeridiem"]
 
     model_config = {
         "populate_by_name": True,
@@ -128,10 +128,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail(BaseModel):
             "employeeID": obj.get("employeeID"),
             "firstName": obj.get("firstName"),
             "lastName": obj.get("lastName"),
+            "jobTitle": obj.get("jobTitle"),
             "phoneNumber": obj.get("phoneNumber"),
             "isPublicRepresentative": obj.get("isPublicRepresentative"),
             "walletSequenceNumber": obj.get("walletSequenceNumber"),
-            "jobTitle": obj.get("jobTitle"),
             "department": obj.get("department"),
             "scheduleStartDay": PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay.from_dict(obj["scheduleStartDay"]) if obj.get("scheduleStartDay") is not None else None,
             "scheduleStartHour": PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour.from_dict(obj["scheduleStartHour"]) if obj.get("scheduleStartHour") is not None else None,
