@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.18.0**, built 2026-07-25T12:24:55.786Z
+    Wallet Inc. API reference.  **Spec version 2.18.0**, built 2026-07-25T14:00:11.666Z
 
     The version of the OpenAPI document: 2.18.0
     Contact: development@wallet.inc
@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, Field
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,17 +27,18 @@ class SubscriptionFeature(BaseModel):
     """
     SubscriptionFeature
     """ # noqa: E501
-    sort_num: Union[StrictFloat, StrictInt] = Field(alias="sortNum")
-    name: StrictStr
-    max_volume: Optional[StrictStr] = Field(default=None, alias="maxVolume")
-    measurement: StrictStr
-    description: StrictStr
-    current_volume: Optional[StrictStr] = Field(default=None, alias="currentVolume")
-    is_exceeded: Optional[StrictBool] = Field(default=None, alias="isExceeded")
-    is_in_use: Optional[StrictBool] = Field(default=None, alias="isInUse")
-    is_enabled: Optional[StrictBool] = Field(default=None, alias="isEnabled")
+    sort_num: Optional[Any] = Field(alias="sortNum")
+    name: Optional[Any]
+    slug: Optional[Any] = None
+    max_volume: Optional[Any] = Field(default=None, alias="maxVolume")
+    measurement: Optional[Any]
+    description: Optional[Any]
+    current_volume: Optional[Any] = Field(default=None, alias="currentVolume")
+    is_exceeded: Optional[Any] = Field(default=None, alias="isExceeded")
+    is_in_use: Optional[Any] = Field(default=None, alias="isInUse")
+    is_enabled: Optional[Any] = Field(default=None, alias="isEnabled")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["sortNum", "name", "maxVolume", "measurement", "description", "currentVolume", "isExceeded", "isInUse", "isEnabled"]
+    __properties: ClassVar[List[str]] = ["sortNum", "name", "slug", "maxVolume", "measurement", "description", "currentVolume", "isExceeded", "isInUse", "isEnabled"]
 
     model_config = {
         "populate_by_name": True,
@@ -85,6 +86,56 @@ class SubscriptionFeature(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
+        # set to None if sort_num (nullable) is None
+        # and model_fields_set contains the field
+        if self.sort_num is None and "sort_num" in self.model_fields_set:
+            _dict['sortNum'] = None
+
+        # set to None if name (nullable) is None
+        # and model_fields_set contains the field
+        if self.name is None and "name" in self.model_fields_set:
+            _dict['name'] = None
+
+        # set to None if slug (nullable) is None
+        # and model_fields_set contains the field
+        if self.slug is None and "slug" in self.model_fields_set:
+            _dict['slug'] = None
+
+        # set to None if max_volume (nullable) is None
+        # and model_fields_set contains the field
+        if self.max_volume is None and "max_volume" in self.model_fields_set:
+            _dict['maxVolume'] = None
+
+        # set to None if measurement (nullable) is None
+        # and model_fields_set contains the field
+        if self.measurement is None and "measurement" in self.model_fields_set:
+            _dict['measurement'] = None
+
+        # set to None if description (nullable) is None
+        # and model_fields_set contains the field
+        if self.description is None and "description" in self.model_fields_set:
+            _dict['description'] = None
+
+        # set to None if current_volume (nullable) is None
+        # and model_fields_set contains the field
+        if self.current_volume is None and "current_volume" in self.model_fields_set:
+            _dict['currentVolume'] = None
+
+        # set to None if is_exceeded (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_exceeded is None and "is_exceeded" in self.model_fields_set:
+            _dict['isExceeded'] = None
+
+        # set to None if is_in_use (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_in_use is None and "is_in_use" in self.model_fields_set:
+            _dict['isInUse'] = None
+
+        # set to None if is_enabled (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_enabled is None and "is_enabled" in self.model_fields_set:
+            _dict['isEnabled'] = None
+
         return _dict
 
     @classmethod
@@ -99,6 +150,7 @@ class SubscriptionFeature(BaseModel):
         _obj = cls.model_validate({
             "sortNum": obj.get("sortNum"),
             "name": obj.get("name"),
+            "slug": obj.get("slug"),
             "maxVolume": obj.get("maxVolume"),
             "measurement": obj.get("measurement"),
             "description": obj.get("description"),
