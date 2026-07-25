@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.18.0**, built 2026-07-24T22:46:10.975Z
+    Wallet Inc. API reference.  **Spec version 2.18.0**, built 2026-07-25T12:24:55.786Z
 
     The version of the OpenAPI document: 2.18.0
     Contact: development@wallet.inc
@@ -150,7 +150,6 @@ from wallet.models.fetch_all_ledger_transactions200_response import FetchAllLedg
 from wallet.models.fetch_all_static_vouchers_associated_with_customer_with_voucher_id200_response_inner import FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner
 from wallet.models.fetch_all_static_vouchers_associated_with_customer_with_voucher_id200_response_inner_value_type import FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInnerValueType
 from wallet.models.fetch_customer_tickets_with_token_request import FetchCustomerTicketsWithTokenRequest
-from wallet.models.fetch_domains_by_industry200_response import FetchDomainsByIndustry200Response
 from wallet.models.fetch_imported_list_recipients_by_page200_response import FetchImportedListRecipientsByPage200Response
 from wallet.models.fetch_inbound_smsby_page200_response import FetchInboundSMSByPage200Response
 from wallet.models.fetch_industry200_response import FetchIndustry200Response
