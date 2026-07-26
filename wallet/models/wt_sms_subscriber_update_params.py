@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, Field
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class WTSmsSubscriberUpdateParams(BaseModel):
     """
     WTSmsSubscriberUpdateParams
     """ # noqa: E501
-    mobile_number: StrictStr = Field(alias="mobileNumber")
+    mobile_number: Optional[Any] = Field(alias="mobileNumber")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["mobileNumber"]
 
@@ -76,6 +76,11 @@ class WTSmsSubscriberUpdateParams(BaseModel):
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
+
+        # set to None if mobile_number (nullable) is None
+        # and model_fields_set contains the field
+        if self.mobile_number is None and "mobile_number" in self.model_fields_set:
+            _dict['mobileNumber'] = None
 
         return _dict
 

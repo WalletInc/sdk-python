@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -69,8 +69,10 @@ class A2PApplicationSubmission(BaseModel):
     job_title: Optional[Any] = Field(alias="jobTitle")
     job_position: JobPosition = Field(alias="jobPosition")
     phone_number: Optional[Any] = Field(alias="phoneNumber")
+    brand_contact_email: Optional[Any] = Field(default=None, alias="brandContactEmail")
+    verification_mobile: Optional[Any] = Field(default=None, alias="verificationMobile")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["isTwilioTermsRead", "isPrivacyPolicyOnWebsite", "isTosOnWebsite", "isStopUnderstood", "isManualRead", "isCtiaShortCodeRead", "isStandardsUnderstood", "isShortCodeUnderstood", "isOptInOutUnderstood", "isShortCodeTransferUnderstood", "isPricingUnderstood", "isShortCodeTimelineUnderstood", "businessName", "businessType", "businessClassification", "businessIndustry", "taxIDType", "taxID", "websiteURL", "socialMediaURL", "regionsOfOperation", "stockExchange", "stockTicker", "messagingVolumeHigh", "address1", "address2", "city", "state", "postalCode", "country", "firstName", "lastName", "email", "jobTitle", "jobPosition", "phoneNumber"]
+    __properties: ClassVar[List[str]] = ["isTwilioTermsRead", "isPrivacyPolicyOnWebsite", "isTosOnWebsite", "isStopUnderstood", "isManualRead", "isCtiaShortCodeRead", "isStandardsUnderstood", "isShortCodeUnderstood", "isOptInOutUnderstood", "isShortCodeTransferUnderstood", "isPricingUnderstood", "isShortCodeTimelineUnderstood", "businessName", "businessType", "businessClassification", "businessIndustry", "taxIDType", "taxID", "websiteURL", "socialMediaURL", "regionsOfOperation", "stockExchange", "stockTicker", "messagingVolumeHigh", "address1", "address2", "city", "state", "postalCode", "country", "firstName", "lastName", "email", "jobTitle", "jobPosition", "phoneNumber", "brandContactEmail", "verificationMobile"]
 
     model_config = {
         "populate_by_name": True,
@@ -268,6 +270,16 @@ class A2PApplicationSubmission(BaseModel):
         if self.phone_number is None and "phone_number" in self.model_fields_set:
             _dict['phoneNumber'] = None
 
+        # set to None if brand_contact_email (nullable) is None
+        # and model_fields_set contains the field
+        if self.brand_contact_email is None and "brand_contact_email" in self.model_fields_set:
+            _dict['brandContactEmail'] = None
+
+        # set to None if verification_mobile (nullable) is None
+        # and model_fields_set contains the field
+        if self.verification_mobile is None and "verification_mobile" in self.model_fields_set:
+            _dict['verificationMobile'] = None
+
         return _dict
 
     @classmethod
@@ -315,7 +327,9 @@ class A2PApplicationSubmission(BaseModel):
             "email": obj.get("email"),
             "jobTitle": obj.get("jobTitle"),
             "jobPosition": obj.get("jobPosition"),
-            "phoneNumber": obj.get("phoneNumber")
+            "phoneNumber": obj.get("phoneNumber"),
+            "brandContactEmail": obj.get("brandContactEmail"),
+            "verificationMobile": obj.get("verificationMobile")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

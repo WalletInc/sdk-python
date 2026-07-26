@@ -653,7 +653,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **import_imported_list_recipients**
-> str import_imported_list_recipients(imported_list_id, wt_employee_import_records)
+> str import_imported_list_recipients(imported_list_id, wt_imported_list_recipient_import)
 
 Import imported list recipients
 
@@ -662,7 +662,7 @@ Import imported list recipients
 
 ```python
 import wallet
-from wallet.models.wt_employee_import_records import WTEmployeeImportRecords
+from wallet.models.wt_imported_list_recipient_import import WTImportedListRecipientImport
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -678,11 +678,11 @@ with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.ImportedListsApi(api_client)
     imported_list_id = 'imported_list_id_example' # str | 
-    wt_employee_import_records = wallet.WTEmployeeImportRecords() # WTEmployeeImportRecords | 
+    wt_imported_list_recipient_import = wallet.WTImportedListRecipientImport() # WTImportedListRecipientImport | 
 
     try:
         # Import imported list recipients
-        api_response = api_instance.import_imported_list_recipients(imported_list_id, wt_employee_import_records)
+        api_response = api_instance.import_imported_list_recipients(imported_list_id, wt_imported_list_recipient_import)
         print("The response of ImportedListsApi->import_imported_list_recipients:\n")
         pprint(api_response)
     except Exception as e:
@@ -697,7 +697,7 @@ with wallet.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imported_list_id** | **str**|  | 
- **wt_employee_import_records** | [**WTEmployeeImportRecords**](WTEmployeeImportRecords.md)|  | 
+ **wt_imported_list_recipient_import** | [**WTImportedListRecipientImport**](WTImportedListRecipientImport.md)|  | 
 
 ### Return type
 

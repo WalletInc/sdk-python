@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -34,10 +34,10 @@ class WTEmployeeUpdate(BaseModel):
     employee_id: Optional[Any] = Field(alias="employeeID")
     first_name: Optional[Any] = Field(alias="firstName")
     last_name: Optional[Any] = Field(alias="lastName")
+    job_title: Optional[Any] = Field(alias="jobTitle")
     phone_number: Optional[Any] = Field(alias="phoneNumber")
     is_public_representative: Optional[Any] = Field(alias="isPublicRepresentative")
     wallet_sequence_number: Optional[Any] = Field(alias="walletSequenceNumber")
-    job_title: Optional[Any] = Field(alias="jobTitle")
     department: Optional[Any]
     schedule_start_day: Optional[EmployeeScheduleStartDay] = Field(default=None, alias="scheduleStartDay")
     schedule_start_hour: Optional[EmployeeScheduleStartHour] = Field(default=None, alias="scheduleStartHour")
@@ -48,7 +48,7 @@ class WTEmployeeUpdate(BaseModel):
     schedule_end_minute: Optional[EmployeeScheduleStartMinute] = Field(default=None, alias="scheduleEndMinute")
     schedule_end_meridiem: Optional[EmployeeScheduleStartMeridiem] = Field(default=None, alias="scheduleEndMeridiem")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["employeeID", "firstName", "lastName", "phoneNumber", "isPublicRepresentative", "walletSequenceNumber", "jobTitle", "department", "scheduleStartDay", "scheduleStartHour", "scheduleStartMinute", "scheduleStartMeridiem", "scheduleEndDay", "scheduleEndHour", "scheduleEndMinute", "scheduleEndMeridiem"]
+    __properties: ClassVar[List[str]] = ["employeeID", "firstName", "lastName", "jobTitle", "phoneNumber", "isPublicRepresentative", "walletSequenceNumber", "department", "scheduleStartDay", "scheduleStartHour", "scheduleStartMinute", "scheduleStartMeridiem", "scheduleEndDay", "scheduleEndHour", "scheduleEndMinute", "scheduleEndMeridiem"]
 
     model_config = {
         "populate_by_name": True,
@@ -135,6 +135,11 @@ class WTEmployeeUpdate(BaseModel):
         if self.last_name is None and "last_name" in self.model_fields_set:
             _dict['lastName'] = None
 
+        # set to None if job_title (nullable) is None
+        # and model_fields_set contains the field
+        if self.job_title is None and "job_title" in self.model_fields_set:
+            _dict['jobTitle'] = None
+
         # set to None if phone_number (nullable) is None
         # and model_fields_set contains the field
         if self.phone_number is None and "phone_number" in self.model_fields_set:
@@ -149,11 +154,6 @@ class WTEmployeeUpdate(BaseModel):
         # and model_fields_set contains the field
         if self.wallet_sequence_number is None and "wallet_sequence_number" in self.model_fields_set:
             _dict['walletSequenceNumber'] = None
-
-        # set to None if job_title (nullable) is None
-        # and model_fields_set contains the field
-        if self.job_title is None and "job_title" in self.model_fields_set:
-            _dict['jobTitle'] = None
 
         # set to None if department (nullable) is None
         # and model_fields_set contains the field
@@ -175,10 +175,10 @@ class WTEmployeeUpdate(BaseModel):
             "employeeID": obj.get("employeeID"),
             "firstName": obj.get("firstName"),
             "lastName": obj.get("lastName"),
+            "jobTitle": obj.get("jobTitle"),
             "phoneNumber": obj.get("phoneNumber"),
             "isPublicRepresentative": obj.get("isPublicRepresentative"),
             "walletSequenceNumber": obj.get("walletSequenceNumber"),
-            "jobTitle": obj.get("jobTitle"),
             "department": obj.get("department"),
             "scheduleStartDay": EmployeeScheduleStartDay.from_dict(obj["scheduleStartDay"]) if obj.get("scheduleStartDay") is not None else None,
             "scheduleStartHour": EmployeeScheduleStartHour.from_dict(obj["scheduleStartHour"]) if obj.get("scheduleStartHour") is not None else None,

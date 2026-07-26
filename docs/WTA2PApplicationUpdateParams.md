@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **job_title** | **object** |  | 
 **job_position** | [**JobPosition**](JobPosition.md) |  | 
 **phone_number** | **object** |  | 
+**brand_contact_email** | **object** |  | [optional] 
+**verification_mobile** | **object** |  | [optional] 
 
 ## Example
 

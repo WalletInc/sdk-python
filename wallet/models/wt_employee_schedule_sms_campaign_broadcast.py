@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from wallet.models.wt_message_type import WTMessageType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,8 +36,9 @@ class WTEmployeeScheduleSMSCampaignBroadcast(BaseModel):
     broadcast_scheduled_at: Optional[Any] = Field(alias="broadcastScheduledAt")
     locale: Optional[Any]
     timezone: Optional[Any]
+    message_type: Optional[WTMessageType] = Field(default=None, alias="messageType")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["phoneNumberID", "messageTemplate", "sendQRCode", "mediaURLs", "broadcastScheduledAt", "locale", "timezone"]
+    __properties: ClassVar[List[str]] = ["phoneNumberID", "messageTemplate", "sendQRCode", "mediaURLs", "broadcastScheduledAt", "locale", "timezone", "messageType"]
 
     model_config = {
         "populate_by_name": True,
@@ -79,6 +81,9 @@ class WTEmployeeScheduleSMSCampaignBroadcast(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of message_type
+        if self.message_type:
+            _dict['messageType'] = self.message_type.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -132,7 +137,8 @@ class WTEmployeeScheduleSMSCampaignBroadcast(BaseModel):
             "mediaURLs": obj.get("mediaURLs"),
             "broadcastScheduledAt": obj.get("broadcastScheduledAt"),
             "locale": obj.get("locale"),
-            "timezone": obj.get("timezone")
+            "timezone": obj.get("timezone"),
+            "messageType": WTMessageType.from_dict(obj["messageType"]) if obj.get("messageType") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
