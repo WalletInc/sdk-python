@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **employee_id** | **str** |  | 
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
+**job_title** | **str** |  | 
 **phone_number** | **str** |  | 
 **is_public_representative** | **bool** |  | 
 **wallet_sequence_number** | **int** |  | 
-**job_title** | **str** |  | 
 **department** | **str** |  | 
 **schedule_start_day** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay.md) |  | [optional] 
 **schedule_start_hour** | [**PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour.md) |  | [optional] 

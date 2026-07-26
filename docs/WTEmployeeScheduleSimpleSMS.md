@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **broadcast_scheduled_at** | **object** |  | 
 **list_type** | [**WTEmployeeScheduleSimpleSMSListType**](WTEmployeeScheduleSimpleSMSListType.md) |  | 
 **list_id** | **str** |  | 
+**message_type** | [**WTMessageType**](WTMessageType.md) |  | [optional] 
 
 ## Example
 

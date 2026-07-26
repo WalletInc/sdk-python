@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **broadcast_scheduled_at** | **object** |  | 
 **locale** | **object** |  | 
 **timezone** | **object** |  | 
+**message_type** | [**WTMessageType**](WTMessageType.md) |  | [optional] 
 
 ## Example
 
