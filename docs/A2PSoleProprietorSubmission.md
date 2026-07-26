@@ -18,17 +18,15 @@ Name | Type | Description | Notes
 **country** | **object** |  | 
 **phone_number** | **object** |  | 
 **is_twilio_terms_read** | **object** |  | 
-**is_privacy_policy_on_website** | **object** |  | 
-**is_tos_on_website** | **object** |  | 
-**is_stop_understood** | **object** |  | 
-**is_manual_read** | **object** |  | 
-**is_ctia_short_code_read** | **object** |  | 
-**is_standards_understood** | **object** |  | 
-**is_short_code_understood** | **object** |  | 
-**is_opt_in_out_understood** | **object** |  | 
-**is_short_code_transfer_understood** | **object** |  | 
+**is_wallet_sms_terms_read** | **object** |  | 
 **is_pricing_understood** | **object** |  | 
-**is_short_code_timeline_understood** | **object** |  | 
+**is_privacy_and_tos_present** | **object** |  | 
+**privacy_policy_url** | **object** |  | [optional] 
+**will_obtain_consent** | **object** |  | 
+**will_honor_opt_out** | **object** |  | 
+**will_follow_content_rules** | **object** |  | 
+**will_comply_law_and_hours** | **object** |  | 
+**info_is_accurate** | **object** |  | 
 **verification_mobile** | **str** |  | 
 
 ## Example

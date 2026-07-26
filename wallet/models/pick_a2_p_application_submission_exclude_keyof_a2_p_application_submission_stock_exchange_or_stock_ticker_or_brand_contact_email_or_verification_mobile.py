@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:04:14.279Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:50:01.461Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool
+from pydantic import BaseModel, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from wallet.models.business_classification import BusinessClassification
@@ -57,18 +57,16 @@ class PickA2PApplicationSubmissionExcludeKeyofA2PApplicationSubmissionStockExcha
     country: Annotated[str, Field(min_length=2, strict=True)]
     phone_number: Annotated[str, Field(min_length=7, strict=True)] = Field(alias="phoneNumber")
     is_twilio_terms_read: StrictBool = Field(alias="isTwilioTermsRead")
-    is_privacy_policy_on_website: StrictBool = Field(alias="isPrivacyPolicyOnWebsite")
-    is_tos_on_website: StrictBool = Field(alias="isTosOnWebsite")
-    is_stop_understood: StrictBool = Field(alias="isStopUnderstood")
-    is_manual_read: StrictBool = Field(alias="isManualRead")
-    is_ctia_short_code_read: StrictBool = Field(alias="isCtiaShortCodeRead")
-    is_standards_understood: StrictBool = Field(alias="isStandardsUnderstood")
-    is_short_code_understood: StrictBool = Field(alias="isShortCodeUnderstood")
-    is_opt_in_out_understood: StrictBool = Field(alias="isOptInOutUnderstood")
-    is_short_code_transfer_understood: StrictBool = Field(alias="isShortCodeTransferUnderstood")
+    is_wallet_sms_terms_read: StrictBool = Field(alias="isWalletSmsTermsRead")
     is_pricing_understood: StrictBool = Field(alias="isPricingUnderstood")
-    is_short_code_timeline_understood: StrictBool = Field(alias="isShortCodeTimelineUnderstood")
-    __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "businessClassification", "businessIndustry", "taxIDType", "taxID", "websiteURL", "socialMediaURL", "regionsOfOperation", "messagingVolumeHigh", "jobTitle", "jobPosition", "businessName", "businessType", "address1", "address2", "city", "state", "postalCode", "country", "phoneNumber", "isTwilioTermsRead", "isPrivacyPolicyOnWebsite", "isTosOnWebsite", "isStopUnderstood", "isManualRead", "isCtiaShortCodeRead", "isStandardsUnderstood", "isShortCodeUnderstood", "isOptInOutUnderstood", "isShortCodeTransferUnderstood", "isPricingUnderstood", "isShortCodeTimelineUnderstood"]
+    is_privacy_and_tos_present: StrictBool = Field(alias="isPrivacyAndTosPresent")
+    privacy_policy_url: Optional[StrictStr] = Field(default=None, alias="privacyPolicyUrl")
+    will_obtain_consent: StrictBool = Field(alias="willObtainConsent")
+    will_honor_opt_out: StrictBool = Field(alias="willHonorOptOut")
+    will_follow_content_rules: StrictBool = Field(alias="willFollowContentRules")
+    will_comply_law_and_hours: StrictBool = Field(alias="willComplyLawAndHours")
+    info_is_accurate: StrictBool = Field(alias="infoIsAccurate")
+    __properties: ClassVar[List[str]] = ["firstName", "lastName", "email", "businessClassification", "businessIndustry", "taxIDType", "taxID", "websiteURL", "socialMediaURL", "regionsOfOperation", "messagingVolumeHigh", "jobTitle", "jobPosition", "businessName", "businessType", "address1", "address2", "city", "state", "postalCode", "country", "phoneNumber", "isTwilioTermsRead", "isWalletSmsTermsRead", "isPricingUnderstood", "isPrivacyAndTosPresent", "privacyPolicyUrl", "willObtainConsent", "willHonorOptOut", "willFollowContentRules", "willComplyLawAndHours", "infoIsAccurate"]
 
     model_config = {
         "populate_by_name": True,
@@ -144,17 +142,15 @@ class PickA2PApplicationSubmissionExcludeKeyofA2PApplicationSubmissionStockExcha
             "country": obj.get("country"),
             "phoneNumber": obj.get("phoneNumber"),
             "isTwilioTermsRead": obj.get("isTwilioTermsRead"),
-            "isPrivacyPolicyOnWebsite": obj.get("isPrivacyPolicyOnWebsite"),
-            "isTosOnWebsite": obj.get("isTosOnWebsite"),
-            "isStopUnderstood": obj.get("isStopUnderstood"),
-            "isManualRead": obj.get("isManualRead"),
-            "isCtiaShortCodeRead": obj.get("isCtiaShortCodeRead"),
-            "isStandardsUnderstood": obj.get("isStandardsUnderstood"),
-            "isShortCodeUnderstood": obj.get("isShortCodeUnderstood"),
-            "isOptInOutUnderstood": obj.get("isOptInOutUnderstood"),
-            "isShortCodeTransferUnderstood": obj.get("isShortCodeTransferUnderstood"),
+            "isWalletSmsTermsRead": obj.get("isWalletSmsTermsRead"),
             "isPricingUnderstood": obj.get("isPricingUnderstood"),
-            "isShortCodeTimelineUnderstood": obj.get("isShortCodeTimelineUnderstood")
+            "isPrivacyAndTosPresent": obj.get("isPrivacyAndTosPresent"),
+            "privacyPolicyUrl": obj.get("privacyPolicyUrl"),
+            "willObtainConsent": obj.get("willObtainConsent"),
+            "willHonorOptOut": obj.get("willHonorOptOut"),
+            "willFollowContentRules": obj.get("willFollowContentRules"),
+            "willComplyLawAndHours": obj.get("willComplyLawAndHours"),
+            "infoIsAccurate": obj.get("infoIsAccurate")
         })
         return _obj
 
