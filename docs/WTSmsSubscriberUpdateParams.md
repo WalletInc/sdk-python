@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mobile_number** | **str** |  | 
+**mobile_number** | **object** |  | 
 
 ## Example
 

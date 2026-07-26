@@ -5,7 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mobile_number** | **str** |  | 
+**mobile_number** | **object** |  | 
+**opt_in_source** | **object** |  | [optional] 
+**disclosure_version** | **object** |  | [optional] 
 
 ## Example
 

@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T16:25:34.213Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T16:49:54.662Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, Field
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +27,11 @@ class WTSmsSubscriberCreateParams(BaseModel):
     """
     WTSmsSubscriberCreateParams
     """ # noqa: E501
-    mobile_number: StrictStr = Field(alias="mobileNumber")
+    mobile_number: Optional[Any] = Field(alias="mobileNumber")
+    opt_in_source: Optional[Any] = Field(default=None, alias="optInSource")
+    disclosure_version: Optional[Any] = Field(default=None, alias="disclosureVersion")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["mobileNumber"]
+    __properties: ClassVar[List[str]] = ["mobileNumber", "optInSource", "disclosureVersion"]
 
     model_config = {
         "populate_by_name": True,
@@ -77,6 +79,21 @@ class WTSmsSubscriberCreateParams(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
+        # set to None if mobile_number (nullable) is None
+        # and model_fields_set contains the field
+        if self.mobile_number is None and "mobile_number" in self.model_fields_set:
+            _dict['mobileNumber'] = None
+
+        # set to None if opt_in_source (nullable) is None
+        # and model_fields_set contains the field
+        if self.opt_in_source is None and "opt_in_source" in self.model_fields_set:
+            _dict['optInSource'] = None
+
+        # set to None if disclosure_version (nullable) is None
+        # and model_fields_set contains the field
+        if self.disclosure_version is None and "disclosure_version" in self.model_fields_set:
+            _dict['disclosureVersion'] = None
+
         return _dict
 
     @classmethod
@@ -89,7 +106,9 @@ class WTSmsSubscriberCreateParams(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "mobileNumber": obj.get("mobileNumber")
+            "mobileNumber": obj.get("mobileNumber"),
+            "optInSource": obj.get("optInSource"),
+            "disclosureVersion": obj.get("disclosureVersion")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
