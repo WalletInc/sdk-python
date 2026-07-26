@@ -391,9 +391,11 @@ docs/WTGiftCardPurchaseRequest.md
 docs/WTGiftClaimRequest.md
 docs/WTImageGridCreateParams.md
 docs/WTImageGridUpdateParams.md
+docs/WTImportConsentBasis.md
 docs/WTImportedList.md
 docs/WTImportedListRecipientFromMembershipTierImport.md
 docs/WTImportedListRecipientFromMembershipTierImportTierID.md
+docs/WTImportedListRecipientImport.md
 docs/WTInfoGenesisLookupRequestErrors.md
 docs/WTInfoGenesisRecordFilterParameters.md
 docs/WTInfoGenesisRoutingIDs.md
@@ -920,9 +922,11 @@ test/test_wt_gift_card_purchase_request.py
 test/test_wt_gift_claim_request.py
 test/test_wt_image_grid_create_params.py
 test/test_wt_image_grid_update_params.py
+test/test_wt_import_consent_basis.py
 test/test_wt_imported_list.py
 test/test_wt_imported_list_recipient_from_membership_tier_import.py
 test/test_wt_imported_list_recipient_from_membership_tier_import_tier_id.py
+test/test_wt_imported_list_recipient_import.py
 test/test_wt_info_genesis_lookup_request_errors.py
 test/test_wt_info_genesis_record_filter_parameters.py
 test/test_wt_info_genesis_routing_ids.py
@@ -1442,9 +1446,11 @@ wallet/models/wt_gift_card_purchase_request.py
 wallet/models/wt_gift_claim_request.py
 wallet/models/wt_image_grid_create_params.py
 wallet/models/wt_image_grid_update_params.py
+wallet/models/wt_import_consent_basis.py
 wallet/models/wt_imported_list.py
 wallet/models/wt_imported_list_recipient_from_membership_tier_import.py
 wallet/models/wt_imported_list_recipient_from_membership_tier_import_tier_id.py
+wallet/models/wt_imported_list_recipient_import.py
 wallet/models/wt_info_genesis_lookup_request_errors.py
 wallet/models/wt_info_genesis_record_filter_parameters.py
 wallet/models/wt_info_genesis_routing_ids.py

@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T16:49:54.662Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:04:14.279Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -350,9 +350,11 @@ from wallet.models.wt_gift_card_purchase_request import WTGiftCardPurchaseReques
 from wallet.models.wt_gift_claim_request import WTGiftClaimRequest
 from wallet.models.wt_image_grid_create_params import WTImageGridCreateParams
 from wallet.models.wt_image_grid_update_params import WTImageGridUpdateParams
+from wallet.models.wt_import_consent_basis import WTImportConsentBasis
 from wallet.models.wt_imported_list import WTImportedList
 from wallet.models.wt_imported_list_recipient_from_membership_tier_import import WTImportedListRecipientFromMembershipTierImport
 from wallet.models.wt_imported_list_recipient_from_membership_tier_import_tier_id import WTImportedListRecipientFromMembershipTierImportTierID
+from wallet.models.wt_imported_list_recipient_import import WTImportedListRecipientImport
 from wallet.models.wt_info_genesis_lookup_request_errors import WTInfoGenesisLookupRequestErrors
 from wallet.models.wt_info_genesis_record_filter_parameters import WTInfoGenesisRecordFilterParameters
 from wallet.models.wt_info_genesis_routing_ids import WTInfoGenesisRoutingIDs
