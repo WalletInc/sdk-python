@@ -422,6 +422,7 @@ docs/WTMerchantUpdate.md
 docs/WTMerchantUpdatePOSIntegration.md
 docs/WTMerchantUpdatePointsOfContact.md
 docs/WTMessageInstance.md
+docs/WTMessageType.md
 docs/WTNewsArticleCreateParams.md
 docs/WTNewsArticleUpdateParams.md
 docs/WTOptInList.md
@@ -950,6 +951,7 @@ test/test_wt_merchant_update_pos_integration.py
 test/test_wt_merchant_url_create.py
 test/test_wt_merchant_url_update.py
 test/test_wt_message_instance.py
+test/test_wt_message_type.py
 test/test_wt_news_article_create_params.py
 test/test_wt_news_article_update_params.py
 test/test_wt_opt_in_list.py
@@ -1471,6 +1473,7 @@ wallet/models/wt_merchant_update_pos_integration.py
 wallet/models/wt_merchant_url_create.py
 wallet/models/wt_merchant_url_update.py
 wallet/models/wt_message_instance.py
+wallet/models/wt_message_type.py
 wallet/models/wt_news_article_create_params.py
 wallet/models/wt_news_article_update_params.py
 wallet/models/wt_opt_in_list.py

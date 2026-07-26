@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T10:38:40.665Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T16:25:34.213Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from wallet.models.wt_message_type import WTMessageType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,8 +34,9 @@ class WTEmployeeScheduleSimpleSMSToRecipient(BaseModel):
     media_urls: Optional[Any] = Field(default=None, alias="mediaURLs")
     broadcast_scheduled_at: Optional[Any] = Field(alias="broadcastScheduledAt")
     to_cell_phone: Optional[Any] = Field(alias="toCellPhone")
+    message_type: Optional[WTMessageType] = Field(default=None, alias="messageType")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["phoneNumberID", "messageTemplate", "mediaURLs", "broadcastScheduledAt", "toCellPhone"]
+    __properties: ClassVar[List[str]] = ["phoneNumberID", "messageTemplate", "mediaURLs", "broadcastScheduledAt", "toCellPhone", "messageType"]
 
     model_config = {
         "populate_by_name": True,
@@ -77,6 +79,9 @@ class WTEmployeeScheduleSimpleSMSToRecipient(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of message_type
+        if self.message_type:
+            _dict['messageType'] = self.message_type.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -118,7 +123,8 @@ class WTEmployeeScheduleSimpleSMSToRecipient(BaseModel):
             "messageTemplate": obj.get("messageTemplate"),
             "mediaURLs": obj.get("mediaURLs"),
             "broadcastScheduledAt": obj.get("broadcastScheduledAt"),
-            "toCellPhone": obj.get("toCellPhone")
+            "toCellPhone": obj.get("toCellPhone"),
+            "messageType": WTMessageType.from_dict(obj["messageType"]) if obj.get("messageType") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

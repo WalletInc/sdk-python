@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **media_urls** | **object** |  | [optional] 
 **broadcast_scheduled_at** | **object** |  | 
 **to_cell_phone** | **object** |  | 
+**message_type** | [**WTMessageType**](WTMessageType.md) |  | [optional] 
 
 ## Example
 

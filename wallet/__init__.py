@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T10:38:40.665Z
+    Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T16:25:34.213Z
 
     The version of the OpenAPI document: 2.4.1
     Contact: development@wallet.inc
@@ -458,6 +458,7 @@ from wallet.models.wt_merchant_update import WTMerchantUpdate
 from wallet.models.wt_merchant_update_pos_integration import WTMerchantUpdatePOSIntegration
 from wallet.models.wt_merchant_update_points_of_contact import WTMerchantUpdatePointsOfContact
 from wallet.models.wt_message_instance import WTMessageInstance
+from wallet.models.wt_message_type import WTMessageType
 from wallet.models.wt_news_article_create_params import WTNewsArticleCreateParams
 from wallet.models.wt_news_article_update_params import WTNewsArticleUpdateParams
 from wallet.models.wt_opt_in_list import WTOptInList
