@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **title** | **str** |  | 
 **items** | **object** |  | 
 **published_at** | **str** |  | 
+**content_status** | [**ContentStatus**](ContentStatus.md) |  | [optional] 
 
 ## Example
 
