@@ -47,6 +47,7 @@ docs/ChatCompletionMessageToolCall.md
 docs/ChatCompletionMessageToolCallFunction.md
 docs/ClaimTicketRequest.md
 docs/ClubMembersApi.md
+docs/ContentStatus.md
 docs/CountClaimedComps200Response.md
 docs/CountriesApi.md
 docs/CreateFile200Response.md
@@ -570,6 +571,7 @@ test/test_chat_completion_message_tool_call.py
 test/test_chat_completion_message_tool_call_function.py
 test/test_claim_ticket_request.py
 test/test_club_members_api.py
+test/test_content_status.py
 test/test_count_claimed_comps200_response.py
 test/test_countries_api.py
 test/test_create_file200_response.py
@@ -1147,6 +1149,7 @@ wallet/models/chat_completion_message_function_call.py
 wallet/models/chat_completion_message_tool_call.py
 wallet/models/chat_completion_message_tool_call_function.py
 wallet/models/claim_ticket_request.py
+wallet/models/content_status.py
 wallet/models/count_claimed_comps200_response.py
 wallet/models/create_file200_response.py
 wallet/models/create_run_on_thread_request.py
