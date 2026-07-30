@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T15:01:30.750Z
+    Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T15:35:41.764Z
 
     The version of the OpenAPI document: 2.20.2
     Contact: development@wallet.inc
@@ -87,6 +87,7 @@ class PortalPage(str, Enum):
     NEWS = 'news'
     VIRTUAL_MINUS_BUSINESS_MINUS_CARDS = 'virtual-business-cards'
     QRCODE_MINUS_DESIGNS = 'qrcode-designs'
+    BRANDING_MINUS_WALLET_MINUS_PAGES = 'branding-wallet-pages'
     PRODUCTS = 'products'
     SERVICES = 'services'
     ROOM_MINUS_RATES = 'room-rates'
