@@ -19,6 +19,7 @@ from wallet.api.files_documents_api import FilesDocumentsApi
 from wallet.api.gallery_api import GalleryApi
 from wallet.api.gaming_api import GamingApi
 from wallet.api.gift_cards_api import GiftCardsApi
+from wallet.api.google_wallet_subscribers_api import GoogleWalletSubscribersApi
 from wallet.api.help_desk_api import HelpDeskApi
 from wallet.api.import_export_api import ImportExportApi
 from wallet.api.imported_lists_api import ImportedListsApi

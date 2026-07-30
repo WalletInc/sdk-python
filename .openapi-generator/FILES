@@ -104,6 +104,7 @@ docs/GalleryApi.md
 docs/Gaming.md
 docs/GamingApi.md
 docs/GiftCardsApi.md
+docs/GoogleWalletSubscribersApi.md
 docs/HelpDeskApi.md
 docs/HelpDeskRequest.md
 docs/ImageGrid.md
@@ -630,6 +631,7 @@ test/test_gallery_api.py
 test/test_gaming.py
 test/test_gaming_api.py
 test/test_gift_cards_api.py
+test/test_google_wallet_subscribers_api.py
 test/test_help_desk_api.py
 test/test_help_desk_request.py
 test/test_image_grid.py
@@ -1069,6 +1071,7 @@ wallet/api/files_documents_api.py
 wallet/api/gallery_api.py
 wallet/api/gaming_api.py
 wallet/api/gift_cards_api.py
+wallet/api/google_wallet_subscribers_api.py
 wallet/api/help_desk_api.py
 wallet/api/import_export_api.py
 wallet/api/imported_lists_api.py
