@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-29T17:40:12.924Z
+    Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T12:47:27.912Z
 
     The version of the OpenAPI document: 2.20.2
     Contact: development@wallet.inc
@@ -371,6 +371,7 @@ from wallet.models.wt_billing_change_plan_billing_cadence import WTBillingChange
 from wallet.models.wt_billing_save_payment_method import WTBillingSavePaymentMethod
 from wallet.models.wt_billing_verify_payment_method_response import WTBillingVerifyPaymentMethodResponse
 from wallet.models.wt_billing_verify_payment_method_response_billing_cadence import WTBillingVerifyPaymentMethodResponseBillingCadence
+from wallet.models.wt_branding_footer_link import WTBrandingFooterLink
 from wallet.models.wt_certificate_deal_create_request import WTCertificateDealCreateRequest
 from wallet.models.wt_certificate_deal_create_request_entitlement_type import WTCertificateDealCreateRequestEntitlementType
 from wallet.models.wt_certificate_entitlement_snapshot import WTCertificateEntitlementSnapshot
@@ -481,6 +482,7 @@ from wallet.models.wt_product_create_params import WTProductCreateParams
 from wallet.models.wt_product_update_params import WTProductUpdateParams
 from wallet.models.wt_promo_code_create_params import WTPromoCodeCreateParams
 from wallet.models.wt_promo_code_update_params import WTPromoCodeUpdateParams
+from wallet.models.wt_public_branding import WTPublicBranding
 from wallet.models.wtqr_code_design import WTQRCodeDesign
 from wallet.models.wtqr_code_design_create_params import WTQRCodeDesignCreateParams
 from wallet.models.wtqr_code_design_update_params import WTQRCodeDesignUpdateParams
