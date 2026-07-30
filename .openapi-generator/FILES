@@ -335,6 +335,7 @@ docs/WTBillingChangePlanBillingCadence.md
 docs/WTBillingSavePaymentMethod.md
 docs/WTBillingVerifyPaymentMethodResponse.md
 docs/WTBillingVerifyPaymentMethodResponseBillingCadence.md
+docs/WTBrandingFooterLink.md
 docs/WTCertificateDealCreateRequest.md
 docs/WTCertificateDealCreateRequestEntitlementType.md
 docs/WTCertificateEntitlementSnapshot.md
@@ -445,6 +446,7 @@ docs/WTProductCreateParams.md
 docs/WTProductUpdateParams.md
 docs/WTPromoCodeCreateParams.md
 docs/WTPromoCodeUpdateParams.md
+docs/WTPublicBranding.md
 docs/WTQRCodeDesign.md
 docs/WTQRCodeDesignCreateParams.md
 docs/WTQRCodeDesignUpdateParams.md
@@ -867,6 +869,7 @@ test/test_wt_billing_change_plan_billing_cadence.py
 test/test_wt_billing_save_payment_method.py
 test/test_wt_billing_verify_payment_method_response.py
 test/test_wt_billing_verify_payment_method_response_billing_cadence.py
+test/test_wt_branding_footer_link.py
 test/test_wt_certificate_deal_create_request.py
 test/test_wt_certificate_deal_create_request_entitlement_type.py
 test/test_wt_certificate_entitlement_snapshot.py
@@ -977,6 +980,7 @@ test/test_wt_product_create_params.py
 test/test_wt_product_update_params.py
 test/test_wt_promo_code_create_params.py
 test/test_wt_promo_code_update_params.py
+test/test_wt_public_branding.py
 test/test_wt_quick_link.py
 test/test_wt_quick_link_create_params.py
 test/test_wt_quick_link_link_book_section_id.py
@@ -1392,6 +1396,7 @@ wallet/models/wt_billing_change_plan_billing_cadence.py
 wallet/models/wt_billing_save_payment_method.py
 wallet/models/wt_billing_verify_payment_method_response.py
 wallet/models/wt_billing_verify_payment_method_response_billing_cadence.py
+wallet/models/wt_branding_footer_link.py
 wallet/models/wt_certificate_deal_create_request.py
 wallet/models/wt_certificate_deal_create_request_entitlement_type.py
 wallet/models/wt_certificate_entitlement_snapshot.py
@@ -1502,6 +1507,7 @@ wallet/models/wt_product_create_params.py
 wallet/models/wt_product_update_params.py
 wallet/models/wt_promo_code_create_params.py
 wallet/models/wt_promo_code_update_params.py
+wallet/models/wt_public_branding.py
 wallet/models/wt_quick_link.py
 wallet/models/wt_quick_link_create_params.py
 wallet/models/wt_quick_link_link_book_section_id.py

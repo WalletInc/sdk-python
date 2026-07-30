@@ -81,6 +81,18 @@ Name | Type | Description | Notes
 **apple_app_store_url** | **object** |  | [optional] 
 **google_play_store_url** | **object** |  | [optional] 
 **pass_brand_kit** | [**WTWalletConfigurationSaveWalletRecordPassBrandKit**](WTWalletConfigurationSaveWalletRecordPassBrandKit.md) |  | [optional] 
+**login_logo_url** | **object** |  | [optional] 
+**login_panel_image_url** | **object** |  | [optional] 
+**login_headline** | **object** |  | [optional] 
+**login_subcopy** | **object** |  | [optional] 
+**login_background_color** | **object** |  | [optional] 
+**login_background_image_url** | **object** |  | [optional] 
+**register_url** | **object** |  | [optional] 
+**login_footer_links** | **object** |  | [optional] 
+**desktop_frame_logo_url** | **object** |  | [optional] 
+**desktop_frame_background_color** | **object** |  | [optional] 
+**desktop_frame_background_image_url** | **object** |  | [optional] 
+**desktop_frame_byline** | **object** |  | [optional] 
 **id** | **str** |  | 
 **created_at** | **object** |  | 
 **updated_at** | **object** |  | 
