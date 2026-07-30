@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **company_name** | **str** |  | [optional] 
 **header_background_color** | **str** |  | [optional] 
 **mobile_app_icon_url** | **str** |  | [optional] 
+**show_wallet_credit** | **bool** |  | [optional] 
 **login_logo_url** | **str** |  | [optional] 
 **login_panel_image_url** | **str** |  | [optional] 
 **login_headline** | **str** |  | [optional] 

@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T12:47:27.912Z
+    Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T13:08:16.291Z
 
     The version of the OpenAPI document: 2.20.2
     Contact: development@wallet.inc
@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,6 +30,7 @@ class WTPublicBranding(BaseModel):
     company_name: Optional[StrictStr] = Field(default=None, alias="companyName")
     header_background_color: Optional[StrictStr] = Field(default=None, alias="headerBackgroundColor")
     mobile_app_icon_url: Optional[StrictStr] = Field(default=None, alias="mobileAppIconURL")
+    show_wallet_credit: Optional[StrictBool] = Field(default=None, alias="showWalletCredit")
     login_logo_url: Optional[StrictStr] = Field(default=None, alias="loginLogoURL")
     login_panel_image_url: Optional[StrictStr] = Field(default=None, alias="loginPanelImageURL")
     login_headline: Optional[StrictStr] = Field(default=None, alias="loginHeadline")
@@ -43,7 +44,7 @@ class WTPublicBranding(BaseModel):
     desktop_frame_background_image_url: Optional[StrictStr] = Field(default=None, alias="desktopFrameBackgroundImageURL")
     desktop_frame_byline: Optional[StrictStr] = Field(default=None, alias="desktopFrameByline")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["companyName", "headerBackgroundColor", "mobileAppIconURL", "loginLogoURL", "loginPanelImageURL", "loginHeadline", "loginSubcopy", "loginBackgroundColor", "loginBackgroundImageURL", "registerURL", "loginFooterLinks", "desktopFrameLogoURL", "desktopFrameBackgroundColor", "desktopFrameBackgroundImageURL", "desktopFrameByline"]
+    __properties: ClassVar[List[str]] = ["companyName", "headerBackgroundColor", "mobileAppIconURL", "showWalletCredit", "loginLogoURL", "loginPanelImageURL", "loginHeadline", "loginSubcopy", "loginBackgroundColor", "loginBackgroundImageURL", "registerURL", "loginFooterLinks", "desktopFrameLogoURL", "desktopFrameBackgroundColor", "desktopFrameBackgroundImageURL", "desktopFrameByline"]
 
     model_config = {
         "populate_by_name": True,
@@ -111,6 +112,7 @@ class WTPublicBranding(BaseModel):
             "companyName": obj.get("companyName"),
             "headerBackgroundColor": obj.get("headerBackgroundColor"),
             "mobileAppIconURL": obj.get("mobileAppIconURL"),
+            "showWalletCredit": obj.get("showWalletCredit"),
             "loginLogoURL": obj.get("loginLogoURL"),
             "loginPanelImageURL": obj.get("loginPanelImageURL"),
             "loginHeadline": obj.get("loginHeadline"),
