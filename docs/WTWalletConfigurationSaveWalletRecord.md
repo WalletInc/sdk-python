@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **header_image_url** | **object** |  | [optional] 
 **header_custom_icon** | **object** |  | [optional] 
 **welcome_message** | **object** |  | 
+**home_template** | **object** |  | [optional] 
 **is_apple_enabled** | **object** |  | 
 **is_google_enabled** | **object** |  | 
 **is_samsung_enabled** | **object** |  | 
