@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **subscription** | [**SubscriptionPlan**](SubscriptionPlan.md) |  | 
 **billing_cadence** | [**WTBillingVerifyPaymentMethodResponseBillingCadence**](WTBillingVerifyPaymentMethodResponseBillingCadence.md) |  | 
 **is_trial_eligible** | **object** |  | 
+**subscription_status** | **object** |  | [optional] 
+**trial_end** | **object** |  | [optional] 
 
 ## Example
 
