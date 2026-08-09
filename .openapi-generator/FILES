@@ -2,6 +2,7 @@
 .gitlab-ci.yml
 .travis.yml
 docs/A2PApplicationSubmission.md
+docs/A2PBillingConsent.md
 docs/A2PGovernmentSubmission.md
 docs/A2PNonProfitSubmission.md
 docs/A2PPublicSubmission.md
@@ -529,6 +530,7 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_a2_p_application_submission.py
+test/test_a2_p_billing_consent.py
 test/test_a2_p_government_submission.py
 test/test_a2_p_non_profit_submission.py
 test/test_a2_p_public_submission.py
@@ -1119,6 +1121,7 @@ wallet/configuration.py
 wallet/exceptions.py
 wallet/models/__init__.py
 wallet/models/a2_p_application_submission.py
+wallet/models/a2_p_billing_consent.py
 wallet/models/a2_p_government_submission.py
 wallet/models/a2_p_non_profit_submission.py
 wallet/models/a2_p_public_submission.py

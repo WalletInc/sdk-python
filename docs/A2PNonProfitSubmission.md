@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **messaging_volume_high** | **object** |  | 
 **job_title** | **object** |  | 
 **job_position** | [**JobPosition**](JobPosition.md) |  | 
+**billing_consent** | [**A2PBillingConsent**](A2PBillingConsent.md) |  | [optional] 
 **business_name** | **object** |  | 
 **business_type** | [**BusinessTypeNonProfit**](BusinessTypeNonProfit.md) |  | 
 **address1** | **object** |  | 

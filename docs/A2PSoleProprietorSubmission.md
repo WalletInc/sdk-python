@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **first_name** | **object** |  | 
 **last_name** | **object** |  | 
 **email** | **object** |  | 
+**billing_consent** | [**A2PBillingConsent**](A2PBillingConsent.md) |  | [optional] 
 **business_name** | **object** |  | 
 **business_type** | [**BusinessTypeSoleProprietorship**](BusinessTypeSoleProprietorship.md) |  | 
 **address1** | **object** |  | 

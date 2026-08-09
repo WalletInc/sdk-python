@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **phone_number** | **object** |  | 
 **brand_contact_email** | **object** |  | [optional] 
 **verification_mobile** | **object** |  | [optional] 
+**billing_consent** | [**A2PBillingConsent**](A2PBillingConsent.md) |  | [optional] 
 
 ## Example
 

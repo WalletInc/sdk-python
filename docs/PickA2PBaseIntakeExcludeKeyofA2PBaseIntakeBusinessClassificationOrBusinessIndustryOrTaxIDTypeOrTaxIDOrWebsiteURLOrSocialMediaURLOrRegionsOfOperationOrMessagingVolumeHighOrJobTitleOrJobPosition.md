@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
 **email** | **str** |  | 
+**billing_consent** | [**A2PBillingConsent**](A2PBillingConsent.md) |  | [optional] 
 **business_name** | **str** |  | 
 **business_type** | [**BusinessType**](BusinessType.md) |  | 
 **address1** | **str** |  | 

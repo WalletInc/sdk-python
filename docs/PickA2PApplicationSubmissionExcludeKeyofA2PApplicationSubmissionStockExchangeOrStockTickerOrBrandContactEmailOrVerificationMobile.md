@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **messaging_volume_high** | **bool** |  | 
 **job_title** | **str** |  | 
 **job_position** | [**JobPosition**](JobPosition.md) |  | 
+**billing_consent** | [**A2PBillingConsent**](A2PBillingConsent.md) |  | [optional] 
 **business_name** | **str** |  | 
 **business_type** | [**BusinessType**](BusinessType.md) |  | 
 **address1** | **str** |  | 
