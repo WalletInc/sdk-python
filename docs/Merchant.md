@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 **plan_nickname** | **object** |  | 
 **billing_cadence** | [**WTBillingVerifyPaymentMethodResponseBillingCadence**](WTBillingVerifyPaymentMethodResponseBillingCadence.md) |  | [optional] 
 **max_sms_count** | **object** |  | 
+**max_phone_numbers** | **object** |  | [optional] 
+**subaccount_sid** | **object** |  | [optional] 
 **is_sms_agreement** | **object** |  | [optional] 
 **is_white_labeled** | **object** |  | [optional] 
 **is_featured** | **object** |  | [optional] 

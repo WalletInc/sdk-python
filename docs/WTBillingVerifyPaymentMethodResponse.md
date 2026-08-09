@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **is_trial_eligible** | **object** |  | 
 **subscription_status** | **object** |  | [optional] 
 **trial_end** | **object** |  | [optional] 
+**next_charge_amount** | **object** |  | [optional] 
+**billing_period** | **object** |  | [optional] 
+**next_charge_currency** | **object** |  | [optional] 
 
 ## Example
 
