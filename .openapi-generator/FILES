@@ -471,6 +471,8 @@ docs/WTSegmentAdvisoryRecommend.md
 docs/WTSegmentEstimate.md
 docs/WTSegmentEstimateEncoding.md
 docs/WTSegmentEstimateRequest.md
+docs/WTSendFreeze.md
+docs/WTSendFreezeStatus.md
 docs/WTServiceCreateParams.md
 docs/WTServiceUpdateParams.md
 docs/WTSettingsSetPassword.md
@@ -999,6 +1001,8 @@ test/test_wt_segment_advisory_recommend.py
 test/test_wt_segment_estimate.py
 test/test_wt_segment_estimate_encoding.py
 test/test_wt_segment_estimate_request.py
+test/test_wt_send_freeze.py
+test/test_wt_send_freeze_status.py
 test/test_wt_service_create_params.py
 test/test_wt_service_update_params.py
 test/test_wt_settings_set_password.py
@@ -1528,6 +1532,8 @@ wallet/models/wt_segment_advisory_recommend.py
 wallet/models/wt_segment_estimate.py
 wallet/models/wt_segment_estimate_encoding.py
 wallet/models/wt_segment_estimate_request.py
+wallet/models/wt_send_freeze.py
+wallet/models/wt_send_freeze_status.py
 wallet/models/wt_service_create_params.py
 wallet/models/wt_service_update_params.py
 wallet/models/wt_settings_set_password.py

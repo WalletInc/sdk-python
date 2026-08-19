@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**fetch_merchant_outbound_sms**](SMSMessagesApi.md#fetch_merchant_outbound_sms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes
 [**fetch_outbound_sms**](SMSMessagesApi.md#fetch_outbound_sms) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS
 [**fetch_outbound_smsby_page**](SMSMessagesApi.md#fetch_outbound_smsby_page) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page
+[**fetch_send_freeze_status**](SMSMessagesApi.md#fetch_send_freeze_status) | **GET** /v2/sms/sendfreeze/status | Get the merchant&#39;s outbound-SMS send-freeze status (KAN-440).
 [**retrieve_sent_and_max_count_of_messages**](SMSMessagesApi.md#retrieve_sent_and_max_count_of_messages) | **GET** /v2/sms/sent | Retrieve the message segments used by the merchant within the current billing cycle
 
 
@@ -743,6 +744,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FetchOutboundSMSByPage200Response**](FetchOutboundSMSByPage200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_send_freeze_status**
+> WTSendFreezeStatus fetch_send_freeze_status()
+
+Get the merchant's outbound-SMS send-freeze status (KAN-440).
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_send_freeze_status import WTSendFreezeStatus
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.SMSMessagesApi(api_client)
+
+    try:
+        # Get the merchant's outbound-SMS send-freeze status (KAN-440).
+        api_response = api_instance.fetch_send_freeze_status()
+        print("The response of SMSMessagesApi->fetch_send_freeze_status:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SMSMessagesApi->fetch_send_freeze_status: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**WTSendFreezeStatus**](WTSendFreezeStatus.md)
 
 ### Authorization
 
