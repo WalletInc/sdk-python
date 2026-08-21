@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **object** |  | 
 **order_number** | **object** |  | 
 **additional_info_url** | **object** |  | [optional] 
+**asset_id** | **object** |  | [optional] 
 
 ## Example
 

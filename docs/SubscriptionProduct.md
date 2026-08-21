@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **category** | **object** |  | 
 **volume** | **object** |  | [optional] 
 **value** | **object** |  | [optional] 
+**value_basis** | [**SubscriptionProductValueBasis**](SubscriptionProductValueBasis.md) |  | [optional] 
 **features** | **object** |  | 
 **pages** | **object** |  | 
 **icon_name** | **object** |  | 

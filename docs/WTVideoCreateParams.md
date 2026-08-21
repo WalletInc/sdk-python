@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **description** | **object** |  | 
 **order_number** | **object** |  | 
 **additional_info_url** | **object** |  | [optional] 
-**provider** | [**VideoProvider**](VideoProvider.md) |  | 
 **asset_id** | **object** |  | 
+**provider** | [**VideoProvider**](VideoProvider.md) |  | 
 
 ## Example
 

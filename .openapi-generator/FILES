@@ -298,6 +298,7 @@ docs/SubscriptionFeature.md
 docs/SubscriptionPlan.md
 docs/SubscriptionPlanAnnual.md
 docs/SubscriptionProduct.md
+docs/SubscriptionProductValueBasis.md
 docs/SystemApi.md
 docs/Tcpa.md
 docs/Thread.md
@@ -828,6 +829,7 @@ test/test_subscription_feature.py
 test/test_subscription_plan.py
 test/test_subscription_plan_annual.py
 test/test_subscription_product.py
+test/test_subscription_product_value_basis.py
 test/test_system_api.py
 test/test_tcpa.py
 test/test_thread.py
@@ -1369,6 +1371,7 @@ wallet/models/subscription_feature.py
 wallet/models/subscription_plan.py
 wallet/models/subscription_plan_annual.py
 wallet/models/subscription_product.py
+wallet/models/subscription_product_value_basis.py
 wallet/models/tcpa.py
 wallet/models/thread.py
 wallet/models/ticket.py
