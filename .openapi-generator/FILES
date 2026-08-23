@@ -91,6 +91,8 @@ docs/FetchCustomerTicketsWithTokenRequest.md
 docs/FetchImportedListRecipientsByPage200Response.md
 docs/FetchInboundSMSByPage200Response.md
 docs/FetchIndustry200Response.md
+docs/FetchIndustry200ResponseAnyOf.md
+docs/FetchIndustry200ResponseAnyOf1.md
 docs/FetchMembersCount200Response.md
 docs/FetchOptInListSubscribersByPage200Response.md
 docs/FetchOutboundSMSByPage200Response.md
@@ -336,6 +338,7 @@ docs/WTAuthenticationSSOLoginForDiscourse.md
 docs/WTBillingChangePlan.md
 docs/WTBillingChangePlanBillingCadence.md
 docs/WTBillingSavePaymentMethod.md
+docs/WTBillingSetIndustry.md
 docs/WTBillingVerifyPaymentMethodResponse.md
 docs/WTBillingVerifyPaymentMethodResponseBillingCadence.md
 docs/WTBrandingFooterLink.md
@@ -394,6 +397,10 @@ docs/WTGamingCreateParams.md
 docs/WTGamingUpdateParams.md
 docs/WTGiftCardPurchaseRequest.md
 docs/WTGiftClaimRequest.md
+docs/WTGuestAmountBreakdown.md
+docs/WTGuestCreatePaymentIntentRequest.md
+docs/WTGuestCreatePaymentIntentResponse.md
+docs/WTGuestOrderReceipt.md
 docs/WTImageGridCreateParams.md
 docs/WTImageGridUpdateParams.md
 docs/WTImportConsentBasis.md
@@ -624,6 +631,8 @@ test/test_fetch_customer_tickets_with_token_request.py
 test/test_fetch_imported_list_recipients_by_page200_response.py
 test/test_fetch_inbound_smsby_page200_response.py
 test/test_fetch_industry200_response.py
+test/test_fetch_industry200_response_any_of.py
+test/test_fetch_industry200_response_any_of1.py
 test/test_fetch_members_count200_response.py
 test/test_fetch_opt_in_list_subscribers_by_page200_response.py
 test/test_fetch_outbound_smsby_page200_response.py
@@ -877,6 +886,7 @@ test/test_wt_authentication_sso_login_for_discourse.py
 test/test_wt_billing_change_plan.py
 test/test_wt_billing_change_plan_billing_cadence.py
 test/test_wt_billing_save_payment_method.py
+test/test_wt_billing_set_industry.py
 test/test_wt_billing_verify_payment_method_response.py
 test/test_wt_billing_verify_payment_method_response_billing_cadence.py
 test/test_wt_branding_footer_link.py
@@ -935,6 +945,10 @@ test/test_wt_gaming_create_params.py
 test/test_wt_gaming_update_params.py
 test/test_wt_gift_card_purchase_request.py
 test/test_wt_gift_claim_request.py
+test/test_wt_guest_amount_breakdown.py
+test/test_wt_guest_create_payment_intent_request.py
+test/test_wt_guest_create_payment_intent_response.py
+test/test_wt_guest_order_receipt.py
 test/test_wt_image_grid_create_params.py
 test/test_wt_image_grid_update_params.py
 test/test_wt_import_consent_basis.py
@@ -1206,6 +1220,8 @@ wallet/models/fetch_customer_tickets_with_token_request.py
 wallet/models/fetch_imported_list_recipients_by_page200_response.py
 wallet/models/fetch_inbound_smsby_page200_response.py
 wallet/models/fetch_industry200_response.py
+wallet/models/fetch_industry200_response_any_of.py
+wallet/models/fetch_industry200_response_any_of1.py
 wallet/models/fetch_members_count200_response.py
 wallet/models/fetch_opt_in_list_subscribers_by_page200_response.py
 wallet/models/fetch_outbound_smsby_page200_response.py
@@ -1411,6 +1427,7 @@ wallet/models/wt_authentication_sso_login_for_discourse.py
 wallet/models/wt_billing_change_plan.py
 wallet/models/wt_billing_change_plan_billing_cadence.py
 wallet/models/wt_billing_save_payment_method.py
+wallet/models/wt_billing_set_industry.py
 wallet/models/wt_billing_verify_payment_method_response.py
 wallet/models/wt_billing_verify_payment_method_response_billing_cadence.py
 wallet/models/wt_branding_footer_link.py
@@ -1469,6 +1486,10 @@ wallet/models/wt_gaming_create_params.py
 wallet/models/wt_gaming_update_params.py
 wallet/models/wt_gift_card_purchase_request.py
 wallet/models/wt_gift_claim_request.py
+wallet/models/wt_guest_amount_breakdown.py
+wallet/models/wt_guest_create_payment_intent_request.py
+wallet/models/wt_guest_create_payment_intent_response.py
+wallet/models/wt_guest_order_receipt.py
 wallet/models/wt_image_grid_create_params.py
 wallet/models/wt_image_grid_update_params.py
 wallet/models/wt_import_consent_basis.py

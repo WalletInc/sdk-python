@@ -4,7 +4,7 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_merchant_profile**](MerchantApi.md#archive_merchant_profile) | **DELETE** /v2/merchant/delete | Archive Merchant
+[**archive_merchant_profile**](MerchantApi.md#archive_merchant_profile) | **DELETE** /v2/merchant/delete | Terminate (close) the merchant account
 [**fetch_custom_roles**](MerchantApi.md#fetch_custom_roles) | **GET** /v2/merchant/roles/custom | Get custom roles
 [**fetch_employees**](MerchantApi.md#fetch_employees) | **GET** /v2/merchant/employees/all | Get all employees
 [**fetch_public_employees**](MerchantApi.md#fetch_public_employees) | **GET** /v2/merchant/employees/public | Get public representative employees of the merchant
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 # **archive_merchant_profile**
 > object archive_merchant_profile()
 
-Archive Merchant
+Terminate (close) the merchant account
 
 ### Example
 
@@ -40,7 +40,7 @@ with wallet.ApiClient(configuration) as api_client:
     api_instance = wallet.MerchantApi(api_client)
 
     try:
-        # Archive Merchant
+        # Terminate (close) the merchant account
         api_response = api_instance.archive_merchant_profile()
         print("The response of MerchantApi->archive_merchant_profile:\n")
         pprint(api_response)

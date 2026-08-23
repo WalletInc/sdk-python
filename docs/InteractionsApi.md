@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**claim_ticket**](InteractionsApi.md#claim_ticket) | **PUT** /wallet/ticket/claim/{id} | Claim a ticket by ID
 [**create_advertisement_credit_scan**](InteractionsApi.md#create_advertisement_credit_scan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
 [**create_employee_v_card**](InteractionsApi.md#create_employee_v_card) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card
+[**create_guest_payment_intent**](InteractionsApi.md#create_guest_payment_intent) | **POST** /wallet/payments/createIntent | Create a guest checkout PaymentIntent (KAN-802)
 [**create_ics_file**](InteractionsApi.md#create_ics_file) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event
 [**create_virtual_business_card_v_card**](InteractionsApi.md#create_virtual_business_card_v_card) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card
 [**fetch_active_dynamic_vouchers**](InteractionsApi.md#fetch_active_dynamic_vouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers
@@ -14,6 +15,7 @@ Method | HTTP request | Description
 [**fetch_all_static_vouchers_associated_with_customer_with_voucher_id**](InteractionsApi.md#fetch_all_static_vouchers_associated_with_customer_with_voucher_id) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID
 [**fetch_customer_tickets_with_token**](InteractionsApi.md#fetch_customer_tickets_with_token) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token
 [**fetch_dynamic_voucher_with_voucher_id**](InteractionsApi.md#fetch_dynamic_voucher_with_voucher_id) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher
+[**fetch_guest_order**](InteractionsApi.md#fetch_guest_order) | **GET** /wallet/payments/order/{id} | Fetch a guest order receipt (KAN-802)
 [**fetch_member_information**](InteractionsApi.md#fetch_member_information) | **GET** /wallet/member | Get member information
 [**fetch_static_voucher_with_voucher_id**](InteractionsApi.md#fetch_static_voucher_with_voucher_id) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher
 [**fetch_wallet_page_with_token**](InteractionsApi.md#fetch_wallet_page_with_token) | **POST** /wallet/page/token | Get page (token-scoped)
@@ -219,6 +221,75 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_guest_payment_intent**
+> WTGuestCreatePaymentIntentResponse create_guest_payment_intent(wt_guest_create_payment_intent_request)
+
+Create a guest checkout PaymentIntent (KAN-802)
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_guest_create_payment_intent_request import WTGuestCreatePaymentIntentRequest
+from wallet.models.wt_guest_create_payment_intent_response import WTGuestCreatePaymentIntentResponse
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.InteractionsApi(api_client)
+    wt_guest_create_payment_intent_request = wallet.WTGuestCreatePaymentIntentRequest() # WTGuestCreatePaymentIntentRequest | 
+
+    try:
+        # Create a guest checkout PaymentIntent (KAN-802)
+        api_response = api_instance.create_guest_payment_intent(wt_guest_create_payment_intent_request)
+        print("The response of InteractionsApi->create_guest_payment_intent:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InteractionsApi->create_guest_payment_intent: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_guest_create_payment_intent_request** | [**WTGuestCreatePaymentIntentRequest**](WTGuestCreatePaymentIntentRequest.md)|  | 
+
+### Return type
+
+[**WTGuestCreatePaymentIntentResponse**](WTGuestCreatePaymentIntentResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -688,6 +759,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DynamicVoucher**](DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_guest_order**
+> WTGuestOrderReceipt fetch_guest_order(id, phone_verification_token)
+
+Fetch a guest order receipt (KAN-802)
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_guest_order_receipt import WTGuestOrderReceipt
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.InteractionsApi(api_client)
+    id = 'id_example' # str | 
+    phone_verification_token = 'phone_verification_token_example' # str | 
+
+    try:
+        # Fetch a guest order receipt (KAN-802)
+        api_response = api_instance.fetch_guest_order(id, phone_verification_token)
+        print("The response of InteractionsApi->fetch_guest_order:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InteractionsApi->fetch_guest_order: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **phone_verification_token** | **str**|  | 
+
+### Return type
+
+[**WTGuestOrderReceipt**](WTGuestOrderReceipt.md)
 
 ### Authorization
 

@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**run_financing_soft_pull**](BillingPaymentsApi.md#run_financing_soft_pull) | **POST** /v2/billing/financing/soft-pull | Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off).
 [**save_payment_method**](BillingPaymentsApi.md#save_payment_method) | **PUT** /v2/billing/paymentMethod | Save payment method
 [**set_default_payment_method**](BillingPaymentsApi.md#set_default_payment_method) | **POST** /v2/billing/paymentMethod/default | Set payment method as default
+[**set_industry**](BillingPaymentsApi.md#set_industry) | **PUT** /v2/billing/industry | Set merchant&#39;s industry
 [**upcoming_invoices**](BillingPaymentsApi.md#upcoming_invoices) | **GET** /v2/billing/invoices/upcoming | Get upcoming invoices
 [**verify_payment_method**](BillingPaymentsApi.md#verify_payment_method) | **GET** /v2/billing/paymentMethod | Verify payment method
 
@@ -999,6 +1000,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Merchant**](Merchant.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_industry**
+> FetchIndustry200ResponseAnyOf set_industry(wt_billing_set_industry)
+
+Set merchant's industry
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.fetch_industry200_response_any_of import FetchIndustry200ResponseAnyOf
+from wallet.models.wt_billing_set_industry import WTBillingSetIndustry
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BillingPaymentsApi(api_client)
+    wt_billing_set_industry = wallet.WTBillingSetIndustry() # WTBillingSetIndustry | 
+
+    try:
+        # Set merchant's industry
+        api_response = api_instance.set_industry(wt_billing_set_industry)
+        print("The response of BillingPaymentsApi->set_industry:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingPaymentsApi->set_industry: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_billing_set_industry** | [**WTBillingSetIndustry**](WTBillingSetIndustry.md)|  | 
+
+### Return type
+
+[**FetchIndustry200ResponseAnyOf**](FetchIndustry200ResponseAnyOf.md)
 
 ### Authorization
 

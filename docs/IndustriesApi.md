@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **fetch_all_industries**
-> List[FetchIndustry200Response] fetch_all_industries()
+> List[FetchIndustry200ResponseAnyOf] fetch_all_industries()
 
 Get all Industries & Pricing Plans
 
@@ -19,7 +19,7 @@ Get all Industries & Pricing Plans
 
 ```python
 import wallet
-from wallet.models.fetch_industry200_response import FetchIndustry200Response
+from wallet.models.fetch_industry200_response_any_of import FetchIndustry200ResponseAnyOf
 from wallet.rest import ApiException
 from pprint import pprint
 
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[FetchIndustry200Response]**](FetchIndustry200Response.md)
+[**List[FetchIndustry200ResponseAnyOf]**](FetchIndustry200ResponseAnyOf.md)
 
 ### Authorization
 

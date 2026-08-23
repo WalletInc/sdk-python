@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **industry_name** | **object** |  | 
 **info_genesis_property_id** | **object** |  | 
 **is_frozen** | **object** |  | 
+**is_closed** | **object** |  | 
 **billing_contact_employee_id** | **object** |  | 
 **marketing_contact_employee_id** | **object** |  | 
 **technical_contact_employee_id** | **object** |  | 

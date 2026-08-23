@@ -5,11 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**plans** | [**List[SubscriptionPlan]**](SubscriptionPlan.md) |  | 
-**title** | **str** |  | 
-**icon** | **str** |  | 
-**sort_number** | **str** |  | 
-**id** | **str** |  | 
+**plans** | **object** |  | 
+**title** | **object** |  | 
+**icon** | **object** |  | 
+**sort_number** | **object** |  | 
+**id** | **object** |  | 
+**is_industry_selected** | **object** |  | 
 
 ## Example
 
