@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **cfuvid** | **object** |  | [optional] 
 **schedule** | **object** | Construct a type with a set of properties K of type T | [optional] 
 **is_email_notification_disabled** | **object** |  | [optional] 
+**chrome_theme** | [**EmployeeChromeTheme**](EmployeeChromeTheme.md) |  | [optional] 
 
 ## Example
 

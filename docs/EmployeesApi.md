@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**set_alerts_read**](EmployeesApi.md#set_alerts_read) | **PATCH** /v2/employee/alerts | Mark alerts as read
 [**set_messages_read**](EmployeesApi.md#set_messages_read) | **PATCH** /v2/employee/messages | Mark messages as read
 [**set_profile_picture**](EmployeesApi.md#set_profile_picture) | **PUT** /v2/employee/profile/picture | Set profile picture
+[**update_chrome_theme_preference**](EmployeesApi.md#update_chrome_theme_preference) | **PUT** /v2/employee/chromeThemePreference | Sets the employee&#39;s admin-portal chrome theme (light/dark), synced across devices (KAN-846)
 [**update_email_notification_preference**](EmployeesApi.md#update_email_notification_preference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled
 [**update_employee_peer**](EmployeesApi.md#update_employee_peer) | **PUT** /v2/employee/peer/{userID} | Update peer
 
@@ -873,6 +874,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_chrome_theme_preference**
+> Employee update_chrome_theme_preference(update_chrome_theme_preference_request)
+
+Sets the employee's admin-portal chrome theme (light/dark), synced across devices (KAN-846)
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.employee import Employee
+from wallet.models.update_chrome_theme_preference_request import UpdateChromeThemePreferenceRequest
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.EmployeesApi(api_client)
+    update_chrome_theme_preference_request = wallet.UpdateChromeThemePreferenceRequest() # UpdateChromeThemePreferenceRequest | 
+
+    try:
+        # Sets the employee's admin-portal chrome theme (light/dark), synced across devices (KAN-846)
+        api_response = api_instance.update_chrome_theme_preference(update_chrome_theme_preference_request)
+        print("The response of EmployeesApi->update_chrome_theme_preference:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EmployeesApi->update_chrome_theme_preference: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_chrome_theme_preference_request** | [**UpdateChromeThemePreferenceRequest**](UpdateChromeThemePreferenceRequest.md)|  | 
+
+### Return type
+
+[**Employee**](Employee.md)
 
 ### Authorization
 

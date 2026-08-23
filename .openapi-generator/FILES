@@ -72,6 +72,7 @@ docs/Employee.md
 docs/EmployeeAPIKey.md
 docs/EmployeeActivityLog.md
 docs/EmployeeAlert.md
+docs/EmployeeChromeTheme.md
 docs/EmployeeScheduleStartDay.md
 docs/EmployeeScheduleStartHour.md
 docs/EmployeeScheduleStartMeridiem.md
@@ -308,6 +309,8 @@ docs/Ticket.md
 docs/TicketSortKeys.md
 docs/TicketsApi.md
 docs/TrustBundleStatuses.md
+docs/UpdateChromeThemePreferenceRequest.md
+docs/UpdateChromeThemePreferenceRequestChromeTheme.md
 docs/UpdateEmailNotificationPreferenceRequest.md
 docs/UpdateStaticVoucherCampaignWithVoucher.md
 docs/VSCampaignGeneratedMessage.md
@@ -612,6 +615,7 @@ test/test_employee.py
 test/test_employee_activity_log.py
 test/test_employee_alert.py
 test/test_employee_api_key.py
+test/test_employee_chrome_theme.py
 test/test_employee_schedule_start_day.py
 test/test_employee_schedule_start_hour.py
 test/test_employee_schedule_start_meridiem.py
@@ -848,6 +852,8 @@ test/test_ticket.py
 test/test_ticket_sort_keys.py
 test/test_tickets_api.py
 test/test_trust_bundle_statuses.py
+test/test_update_chrome_theme_preference_request.py
+test/test_update_chrome_theme_preference_request_chrome_theme.py
 test/test_update_email_notification_preference_request.py
 test/test_update_static_voucher_campaign_with_voucher.py
 test/test_vector_store.py
@@ -1202,6 +1208,7 @@ wallet/models/employee.py
 wallet/models/employee_activity_log.py
 wallet/models/employee_alert.py
 wallet/models/employee_api_key.py
+wallet/models/employee_chrome_theme.py
 wallet/models/employee_schedule_start_day.py
 wallet/models/employee_schedule_start_hour.py
 wallet/models/employee_schedule_start_meridiem.py
@@ -1397,6 +1404,8 @@ wallet/models/thread.py
 wallet/models/ticket.py
 wallet/models/ticket_sort_keys.py
 wallet/models/trust_bundle_statuses.py
+wallet/models/update_chrome_theme_preference_request.py
+wallet/models/update_chrome_theme_preference_request_chrome_theme.py
 wallet/models/update_email_notification_preference_request.py
 wallet/models/update_static_voucher_campaign_with_voucher.py
 wallet/models/vector_store.py
