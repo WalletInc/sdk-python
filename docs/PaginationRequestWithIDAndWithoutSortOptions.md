@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**page_size** | **object** | Denotes the number of records per page | [optional] 
 **page_num** | **object** | Denotes the page number | [optional] 
+**page_size** | **object** | Denotes the number of records per page | [optional] 
 **id** | **str** |  | 
 
 ## Example

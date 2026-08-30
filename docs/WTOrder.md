@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **receipt_url** | **object** |  | [optional] 
 **acquisition_source** | **object** |  | [optional] 
 **share_id** | **object** |  | [optional] 
+**donor_note** | **object** |  | [optional] 
 **line_items** | **object** |  | 
 
 ## Example

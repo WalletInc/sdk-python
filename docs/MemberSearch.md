@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_archive_included** | **object** | Denotes if archived records should be included in the response payload | [optional] 
-**page_size** | **object** | Denotes the number of records per page | [optional] 
 **page_num** | **object** | Denotes the page number | [optional] 
+**page_size** | **object** | Denotes the number of records per page | [optional] 
 **sort_order** | [**PaginationRequestWithSortOptionsSortOrder**](PaginationRequestWithSortOptionsSortOrder.md) |  | [optional] 
 **sort_key** | [**MemberSearchSortKey**](MemberSearchSortKey.md) |  | [optional] 
 **search_key** | [**MemberSearchSearchKey**](MemberSearchSearchKey.md) |  | 

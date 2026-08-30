@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **items** | **object** |  | 
 **published_at** | **str** |  | 
 **content_status** | [**ContentStatus**](ContentStatus.md) |  | [optional] 
+**story** | **str** |  | [optional] 
 
 ## Example
 

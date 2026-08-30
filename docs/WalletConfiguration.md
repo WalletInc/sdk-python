@@ -43,6 +43,8 @@ Name | Type | Description | Notes
 **is_dining** | **object** |  | 
 **is_lounges** | **object** |  | 
 **is_map_directions** | **object** |  | 
+**is_donation_enabled** | **object** |  | 
+**donation_label** | [**WTWalletConfigurationSaveWalletRecordDonationLabel**](WTWalletConfigurationSaveWalletRecordDonationLabel.md) |  | [optional] 
 **is_link_book** | **object** |  | 
 **is_image_grid** | **object** |  | 
 **is_videos** | **object** |  | 
@@ -71,6 +73,7 @@ Name | Type | Description | Notes
 **social_you_tube_url** | **object** |  | [optional] 
 **social_twitter_url** | **object** |  | [optional] 
 **social_linked_in_url** | **object** |  | [optional] 
+**social_tik_tok_url** | **object** |  | [optional] 
 **social_background_color** | **object** |  | [optional] 
 **social_font_color** | **object** |  | [optional] 
 **primary_phone_number** | **object** |  | [optional] 

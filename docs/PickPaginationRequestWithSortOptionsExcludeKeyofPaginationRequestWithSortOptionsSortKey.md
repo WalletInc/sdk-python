@@ -7,8 +7,8 @@ From T, pick a set of properties whose keys are in the union K
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_archive_included** | **bool** | Denotes if archived records should be included in the response payload | [optional] 
-**page_size** | **int** | Denotes the number of records per page | [optional] 
 **page_num** | **int** | Denotes the page number | [optional] 
+**page_size** | **int** | Denotes the number of records per page | [optional] 
 **sort_order** | [**PickPaginationRequestWithSortOptionsExcludeKeyofPaginationRequestWithSortOptionsSortKeySortOrder**](PickPaginationRequestWithSortOptionsExcludeKeyofPaginationRequestWithSortOptionsSortKeySortOrder.md) |  | [optional] 
 
 ## Example

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **list_amount_cents** | **object** |  | 
 **credit_applied_cents** | **object** |  | 
+**tip_cents** | **object** |  | 
 **amount_due_cents** | **object** |  | 
 
 ## Example

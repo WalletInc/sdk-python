@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**fetch_active_vouchers**](CustomerApi.md#fetch_active_vouchers) | **GET** /v2/customer/vouchers/active | Get active static vouchers
 [**fetch_all_vouchers**](CustomerApi.md#fetch_all_vouchers) | **GET** /v2/customer/vouchers/all | Get all static vouchers
+[**fetch_customer_by_chat_identity**](CustomerApi.md#fetch_customer_by_chat_identity) | **GET** /customer/chatIdentity/{chatUserID} | Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator&#39;s own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
 [**fetch_expired_vouchers**](CustomerApi.md#fetch_expired_vouchers) | **GET** /v2/customer/vouchers/expired | Get expired static vouchers
 [**fetch_redeemed_vouchers**](CustomerApi.md#fetch_redeemed_vouchers) | **GET** /v2/customer/vouchers/redeemed | Get redeemed static vouchers
 [**fetch_refunded_vouchers**](CustomerApi.md#fetch_refunded_vouchers) | **GET** /v2/customer/vouchers/refunded | Get refunded static vouchers
@@ -136,6 +137,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[StaticVoucher]**](StaticVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_customer_by_chat_identity**
+> object fetch_customer_by_chat_identity(chat_user_id)
+
+Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
+
+### Example
+
+
+```python
+import wallet
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.CustomerApi(api_client)
+    chat_user_id = 'chat_user_id_example' # str | 
+
+    try:
+        # Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
+        api_response = api_instance.fetch_customer_by_chat_identity(chat_user_id)
+        print("The response of CustomerApi->fetch_customer_by_chat_identity:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CustomerApi->fetch_customer_by_chat_identity: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **chat_user_id** | **str**|  | 
+
+### Return type
+
+**object**
 
 ### Authorization
 

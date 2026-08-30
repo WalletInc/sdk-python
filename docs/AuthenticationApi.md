@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**login**](AuthenticationApi.md#login) | **POST** /authentication/login | Login
 [**login_status**](AuthenticationApi.md#login_status) | **GET** /authentication/status/{token} | Retrieve session token status
-[**logout**](AuthenticationApi.md#logout) | **DELETE** /authentication/logout | Logout
 [**register**](AuthenticationApi.md#register) | **POST** /authentication/register | Register
 
 
@@ -128,70 +127,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LoginStatus200Response**](LoginStatus200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Ok |  -  |
-**401** | Authentication Failed |  -  |
-**422** | Validation Failed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **logout**
-> str logout()
-
-Logout
-
-### Example
-
-
-```python
-import wallet
-from wallet.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.wall.et
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wallet.Configuration(
-    host = "https://api.wall.et"
-)
-
-
-# Enter a context with an instance of the API client
-with wallet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wallet.AuthenticationApi(api_client)
-
-    try:
-        # Logout
-        api_response = api_instance.logout()
-        print("The response of AuthenticationApi->logout:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AuthenticationApi->logout: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**str**
 
 ### Authorization
 

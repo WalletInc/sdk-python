@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**fetch_all_merchant_urls**](ShortLinksApi.md#fetch_all_merchant_urls) | **GET** /v2/business/merchantUrl/all | Get all Short Links
 [**fetch_merchant_url**](ShortLinksApi.md#fetch_merchant_url) | **GET** /v2/business/merchantUrl/{id} | Get Short Link
 [**fetch_merchant_url_requests**](ShortLinksApi.md#fetch_merchant_url_requests) | **GET** /v2/business/merchantUrl/requests/{id} | Get Short Link traffic
+[**fetch_merchant_url_requests_paged**](ShortLinksApi.md#fetch_merchant_url_requests_paged) | **GET** /business/merchantUrl/requests/{id}/paged | Get Short Link traffic (paginated)
 [**restore_merchant_url**](ShortLinksApi.md#restore_merchant_url) | **PATCH** /v2/business/merchantUrl/{id} | Restore Short Link
 [**update_merchant_url**](ShortLinksApi.md#update_merchant_url) | **PUT** /v2/business/merchantUrl/{id} | Update Short Link
 
@@ -337,6 +338,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[WalletPageView]**](WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_merchant_url_requests_paged**
+> FetchMerchantURLRequestsPaged200Response fetch_merchant_url_requests_paged(id, page=page, limit=limit)
+
+Get Short Link traffic (paginated)
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.fetch_merchant_url_requests_paged200_response import FetchMerchantURLRequestsPaged200Response
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.ShortLinksApi(api_client)
+    id = 'id_example' # str | 
+    page = 3.4 # float |  (optional)
+    limit = 3.4 # float |  (optional)
+
+    try:
+        # Get Short Link traffic (paginated)
+        api_response = api_instance.fetch_merchant_url_requests_paged(id, page=page, limit=limit)
+        print("The response of ShortLinksApi->fetch_merchant_url_requests_paged:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ShortLinksApi->fetch_merchant_url_requests_paged: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **page** | **float**|  | [optional] 
+ **limit** | **float**|  | [optional] 
+
+### Return type
+
+[**FetchMerchantURLRequestsPaged200Response**](FetchMerchantURLRequestsPaged200Response.md)
 
 ### Authorization
 

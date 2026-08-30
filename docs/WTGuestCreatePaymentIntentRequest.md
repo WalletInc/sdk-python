@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **phone_verification_token** | **object** |  | 
 **object_id** | **object** |  | 
 **credit_id** | **object** |  | [optional] 
+**tip_cents** | **object** |  | [optional] 
 
 ## Example
 

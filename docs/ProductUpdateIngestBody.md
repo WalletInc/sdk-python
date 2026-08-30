@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **title** | **object** | Merchant-facing headline for the release. | 
 **items** | **object** | The release-note bullets, already split by the caller. | 
 **published_at** | **object** | ISO 8601. Optional; defaults to the ingest time. | [optional] 
+**story** | **object** | KAN-874: optional merchant-facing story/narrative for this release (\&quot;what this means for you\&quot;), so What&#39;s New can arrive curated at write time. Optional and content-only: it does NOT affect the hold/ready publish gate (entries still default to hold until Marketing curates them). | [optional] 
 
 ## Example
 

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **you_tube** | **object** |  | [optional] 
 **twitter** | **object** |  | [optional] 
 **linked_in** | **object** |  | [optional] 
+**tik_tok** | **object** |  | [optional] 
 **whats_app** | **object** |  | [optional] 
 **avatar_url** | **object** |  | [optional] 
 **id** | [**AmenityId**](AmenityId.md) |  | 
