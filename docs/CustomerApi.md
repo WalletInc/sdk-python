@@ -221,6 +221,7 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
 **401** | Authentication Failed |  -  |
+**403** | Not available to your merchant |  -  |
 **422** | Validation Failed |  -  |
 **500** | Internal Server Error |  -  |
 
