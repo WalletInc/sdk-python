@@ -159,7 +159,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_customer_by_chat_identity**
-> object fetch_customer_by_chat_identity(chat_user_id)
+> object fetch_customer_by_chat_identity(chat_user_id, identity_only=identity_only)
 
 Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
 
@@ -183,10 +183,11 @@ with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.CustomerApi(api_client)
     chat_user_id = 'chat_user_id_example' # str | 
+    identity_only = True # bool |  (optional)
 
     try:
         # Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
-        api_response = api_instance.fetch_customer_by_chat_identity(chat_user_id)
+        api_response = api_instance.fetch_customer_by_chat_identity(chat_user_id, identity_only=identity_only)
         print("The response of CustomerApi->fetch_customer_by_chat_identity:\n")
         pprint(api_response)
     except Exception as e:
@@ -201,6 +202,7 @@ with wallet.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chat_user_id** | **str**|  | 
+ **identity_only** | **bool**|  | [optional] 
 
 ### Return type
 
