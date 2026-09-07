@@ -314,6 +314,7 @@ docs/TrustBundleStatuses.md
 docs/UpdateChromeThemePreferenceRequest.md
 docs/UpdateChromeThemePreferenceRequestChromeTheme.md
 docs/UpdateEmailNotificationPreferenceRequest.md
+docs/UpdatePageTipsPreferenceRequest.md
 docs/UpdateStaticVoucherCampaignWithVoucher.md
 docs/VSCampaignGeneratedMessage.md
 docs/VSCampaignGeneratedMessagePagination.md
@@ -876,6 +877,7 @@ test/test_trust_bundle_statuses.py
 test/test_update_chrome_theme_preference_request.py
 test/test_update_chrome_theme_preference_request_chrome_theme.py
 test/test_update_email_notification_preference_request.py
+test/test_update_page_tips_preference_request.py
 test/test_update_static_voucher_campaign_with_voucher.py
 test/test_vector_store.py
 test/test_video.py
@@ -1447,6 +1449,7 @@ wallet/models/trust_bundle_statuses.py
 wallet/models/update_chrome_theme_preference_request.py
 wallet/models/update_chrome_theme_preference_request_chrome_theme.py
 wallet/models/update_email_notification_preference_request.py
+wallet/models/update_page_tips_preference_request.py
 wallet/models/update_static_voucher_campaign_with_voucher.py
 wallet/models/vector_store.py
 wallet/models/video.py

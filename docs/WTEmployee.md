@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **schedule** | **object** | Construct a type with a set of properties K of type T | [optional] 
 **is_email_notification_disabled** | **object** |  | [optional] 
 **chrome_theme** | [**EmployeeChromeTheme**](EmployeeChromeTheme.md) |  | [optional] 
+**is_page_tips_disabled** | **object** |  | [optional] 
 
 ## Example
 
