@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **country** | **object** |  | [optional] 
 **phone_number** | **object** |  | [optional] 
 **ein** | **object** |  | [optional] 
+**accepted_terms_version** | **object** |  | [optional] 
+**accepted_privacy_version** | **object** |  | [optional] 
 **utm_source** | **object** |  | [optional] 
 **utm_medium** | **object** |  | [optional] 
 **utm_term** | **object** |  | [optional] 
