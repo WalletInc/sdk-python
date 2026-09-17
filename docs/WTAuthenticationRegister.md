@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **landing_page** | **object** |  | [optional] 
 **ga_client_id** | **object** |  | [optional] 
 **ga_measurement_id** | **object** |  | [optional] 
+**ads_consent_declined** | **object** |  | [optional] 
 **recaptcha_token** | **object** |  | [optional] 
 **affiliate_id** | **object** |  | [optional] 
 **first_promoter_tracking_id** | **object** |  | [optional] 
