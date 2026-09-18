@@ -333,6 +333,7 @@ docs/WTAdvertisementCreditUpdateParams.md
 docs/WTAmenityCreateParams.md
 docs/WTAmenityUpdateParams.md
 docs/WTAndroidKeystoreResponse.md
+docs/WTApplePassStyle.md
 docs/WTAuthenticationCheckSessionTokenStatusResponse.md
 docs/WTAuthenticationForgotPassword.md
 docs/WTAuthenticationLoginRequest.md
@@ -403,6 +404,7 @@ docs/WTGamingCreateParams.md
 docs/WTGamingUpdateParams.md
 docs/WTGiftCardPurchaseRequest.md
 docs/WTGiftClaimRequest.md
+docs/WTGooglePassStyle.md
 docs/WTGuestAmountBreakdown.md
 docs/WTGuestCreatePaymentIntentRequest.md
 docs/WTGuestCreatePaymentIntentResponse.md
@@ -452,6 +454,11 @@ docs/WTOptInListCreationParams.md
 docs/WTOrder.md
 docs/WTOrderLineItem.md
 docs/WTPassBrandKit.md
+docs/WTPassStyleResponse.md
+docs/WTPassStyleResponseApple.md
+docs/WTPassStyleResponseGoogle.md
+docs/WTPassStyleResponseProviders.md
+docs/WTPassStyleResponseProvidersApple.md
 docs/WTPaymentDesign.md
 docs/WTPaymentDesignCreateParams.md
 docs/WTPaymentDesignUpdateParams.md
@@ -538,7 +545,9 @@ docs/WTVideoUploadProvisionProvider.md
 docs/WTVirtualBusinessCardCreateParams.md
 docs/WTVirtualBusinessCardUpdateParams.md
 docs/WTWalletConfigurationSaveWalletRecord.md
+docs/WTWalletConfigurationSaveWalletRecordApplePassStyle.md
 docs/WTWalletConfigurationSaveWalletRecordDonationLabel.md
+docs/WTWalletConfigurationSaveWalletRecordGooglePassStyle.md
 docs/WTWalletConfigurationSaveWalletRecordPassBrandKit.md
 docs/WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md
 docs/WTWalletItemRedemption.md
@@ -546,6 +555,7 @@ docs/WTWalletObjectPrefixCounts.md
 docs/WTWalletPageView.md
 docs/WTWalletPageViewCount.md
 docs/WTWalletPageViewGeoPoint.md
+docs/WTWalletPassProvider.md
 docs/WTWhatsAppInboundWebhook.md
 docs/WTWhatsAppStatusCallback.md
 docs/WalletConfiguration.md
@@ -904,6 +914,7 @@ test/test_wt_advertisement_credit_update_params.py
 test/test_wt_amenity_create_params.py
 test/test_wt_amenity_update_params.py
 test/test_wt_android_keystore_response.py
+test/test_wt_apple_pass_style.py
 test/test_wt_authentication_check_session_token_status_response.py
 test/test_wt_authentication_forgot_password.py
 test/test_wt_authentication_login_request.py
@@ -974,6 +985,7 @@ test/test_wt_gaming_create_params.py
 test/test_wt_gaming_update_params.py
 test/test_wt_gift_card_purchase_request.py
 test/test_wt_gift_claim_request.py
+test/test_wt_google_pass_style.py
 test/test_wt_guest_amount_breakdown.py
 test/test_wt_guest_create_payment_intent_request.py
 test/test_wt_guest_create_payment_intent_response.py
@@ -1023,6 +1035,11 @@ test/test_wt_opt_in_list_creation_params.py
 test/test_wt_order.py
 test/test_wt_order_line_item.py
 test/test_wt_pass_brand_kit.py
+test/test_wt_pass_style_response.py
+test/test_wt_pass_style_response_apple.py
+test/test_wt_pass_style_response_google.py
+test/test_wt_pass_style_response_providers.py
+test/test_wt_pass_style_response_providers_apple.py
 test/test_wt_payment_design.py
 test/test_wt_payment_design_create_params.py
 test/test_wt_payment_design_update_params.py
@@ -1098,7 +1115,9 @@ test/test_wt_video_upload_provision_provider.py
 test/test_wt_virtual_business_card_create_params.py
 test/test_wt_virtual_business_card_update_params.py
 test/test_wt_wallet_configuration_save_wallet_record.py
+test/test_wt_wallet_configuration_save_wallet_record_apple_pass_style.py
 test/test_wt_wallet_configuration_save_wallet_record_donation_label.py
+test/test_wt_wallet_configuration_save_wallet_record_google_pass_style.py
 test/test_wt_wallet_configuration_save_wallet_record_pass_brand_kit.py
 test/test_wt_wallet_configuration_save_wallet_record_sms_opt_in_source_id.py
 test/test_wt_wallet_item_redemption.py
@@ -1106,6 +1125,7 @@ test/test_wt_wallet_object_prefix_counts.py
 test/test_wt_wallet_page_view.py
 test/test_wt_wallet_page_view_count.py
 test/test_wt_wallet_page_view_geo_point.py
+test/test_wt_wallet_pass_provider.py
 test/test_wt_whats_app_inbound_webhook.py
 test/test_wt_whats_app_status_callback.py
 test/test_wta2_p_application_update_params.py
@@ -1468,6 +1488,7 @@ wallet/models/wt_advertisement_credit_update_params.py
 wallet/models/wt_amenity_create_params.py
 wallet/models/wt_amenity_update_params.py
 wallet/models/wt_android_keystore_response.py
+wallet/models/wt_apple_pass_style.py
 wallet/models/wt_authentication_check_session_token_status_response.py
 wallet/models/wt_authentication_forgot_password.py
 wallet/models/wt_authentication_login_request.py
@@ -1538,6 +1559,7 @@ wallet/models/wt_gaming_create_params.py
 wallet/models/wt_gaming_update_params.py
 wallet/models/wt_gift_card_purchase_request.py
 wallet/models/wt_gift_claim_request.py
+wallet/models/wt_google_pass_style.py
 wallet/models/wt_guest_amount_breakdown.py
 wallet/models/wt_guest_create_payment_intent_request.py
 wallet/models/wt_guest_create_payment_intent_response.py
@@ -1587,6 +1609,11 @@ wallet/models/wt_opt_in_list_creation_params.py
 wallet/models/wt_order.py
 wallet/models/wt_order_line_item.py
 wallet/models/wt_pass_brand_kit.py
+wallet/models/wt_pass_style_response.py
+wallet/models/wt_pass_style_response_apple.py
+wallet/models/wt_pass_style_response_google.py
+wallet/models/wt_pass_style_response_providers.py
+wallet/models/wt_pass_style_response_providers_apple.py
 wallet/models/wt_payment_design.py
 wallet/models/wt_payment_design_create_params.py
 wallet/models/wt_payment_design_update_params.py
@@ -1662,7 +1689,9 @@ wallet/models/wt_video_upload_provision_provider.py
 wallet/models/wt_virtual_business_card_create_params.py
 wallet/models/wt_virtual_business_card_update_params.py
 wallet/models/wt_wallet_configuration_save_wallet_record.py
+wallet/models/wt_wallet_configuration_save_wallet_record_apple_pass_style.py
 wallet/models/wt_wallet_configuration_save_wallet_record_donation_label.py
+wallet/models/wt_wallet_configuration_save_wallet_record_google_pass_style.py
 wallet/models/wt_wallet_configuration_save_wallet_record_pass_brand_kit.py
 wallet/models/wt_wallet_configuration_save_wallet_record_sms_opt_in_source_id.py
 wallet/models/wt_wallet_item_redemption.py
@@ -1670,6 +1699,7 @@ wallet/models/wt_wallet_object_prefix_counts.py
 wallet/models/wt_wallet_page_view.py
 wallet/models/wt_wallet_page_view_count.py
 wallet/models/wt_wallet_page_view_geo_point.py
+wallet/models/wt_wallet_pass_provider.py
 wallet/models/wt_whats_app_inbound_webhook.py
 wallet/models/wt_whats_app_status_callback.py
 wallet/models/wta2_p_application_update_params.py

@@ -85,6 +85,8 @@ Name | Type | Description | Notes
 **apple_app_store_url** | **object** |  | [optional] 
 **google_play_store_url** | **object** |  | [optional] 
 **pass_brand_kit** | [**WTWalletConfigurationSaveWalletRecordPassBrandKit**](WTWalletConfigurationSaveWalletRecordPassBrandKit.md) |  | [optional] 
+**google_pass_style** | [**WTWalletConfigurationSaveWalletRecordGooglePassStyle**](WTWalletConfigurationSaveWalletRecordGooglePassStyle.md) |  | [optional] 
+**apple_pass_style** | [**WTWalletConfigurationSaveWalletRecordApplePassStyle**](WTWalletConfigurationSaveWalletRecordApplePassStyle.md) |  | [optional] 
 **login_logo_url** | **object** |  | [optional] 
 **login_panel_image_url** | **object** |  | [optional] 
 **login_headline** | **object** |  | [optional] 
