@@ -161,6 +161,7 @@ docs/MerchantApi.md
 docs/MerchantCreditSearch.md
 docs/MerchantCreditsApi.md
 docs/MerchantNotInitialized.md
+docs/MerchantTermsDocumentType.md
 docs/MerchantURL.md
 docs/Message.md
 docs/ModuleError.md
@@ -362,6 +363,7 @@ docs/WTConnectPaymentsSummary.md
 docs/WTConnectPaymentsSummaryBalance.md
 docs/WTConnectRequirements.md
 docs/WTCountResult.md
+docs/WTCurrentMerchantTermsVersion.md
 docs/WTCustomerSearchByMemberID.md
 docs/WTCustomerSearchByPhoneNumber.md
 docs/WTDiningCreateParams.md
@@ -715,6 +717,7 @@ test/test_merchant_api.py
 test/test_merchant_credit_search.py
 test/test_merchant_credits_api.py
 test/test_merchant_not_initialized.py
+test/test_merchant_terms_document_type.py
 test/test_merchant_url.py
 test/test_message.py
 test/test_module_error.py
@@ -943,6 +946,7 @@ test/test_wt_connect_payments_summary.py
 test/test_wt_connect_payments_summary_balance.py
 test/test_wt_connect_requirements.py
 test/test_wt_count_result.py
+test/test_wt_current_merchant_terms_version.py
 test/test_wt_customer_search_by_member_id.py
 test/test_wt_customer_search_by_phone_number.py
 test/test_wt_dining_create_params.py
@@ -1322,6 +1326,7 @@ wallet/models/member_search_sort_key.py
 wallet/models/merchant.py
 wallet/models/merchant_credit_search.py
 wallet/models/merchant_not_initialized.py
+wallet/models/merchant_terms_document_type.py
 wallet/models/merchant_url.py
 wallet/models/message.py
 wallet/models/module_error.py
@@ -1517,6 +1522,7 @@ wallet/models/wt_connect_payments_summary.py
 wallet/models/wt_connect_payments_summary_balance.py
 wallet/models/wt_connect_requirements.py
 wallet/models/wt_count_result.py
+wallet/models/wt_current_merchant_terms_version.py
 wallet/models/wt_customer_search_by_member_id.py
 wallet/models/wt_customer_search_by_phone_number.py
 wallet/models/wt_dining_create_params.py
