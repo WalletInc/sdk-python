@@ -122,6 +122,7 @@ docs/InfoGenesisReportsApi.md
 docs/InteractionsApi.md
 docs/InternalServerError500.md
 docs/JobPosition.md
+docs/KeywordAutoRespondersApi.md
 docs/LedgerEntry.md
 docs/LedgerEntryParentObjectID.md
 docs/LedgerEntryTransactionType.md
@@ -343,6 +344,11 @@ docs/WTAuthenticationRegister.md
 docs/WTAuthenticationRequestResetPassword.md
 docs/WTAuthenticationResetPassword.md
 docs/WTAuthenticationSSOLoginForDiscourse.md
+docs/WTAutoResponder.md
+docs/WTAutoResponderCreateParams.md
+docs/WTAutoResponderHit.md
+docs/WTAutoResponderHitOutcome.md
+docs/WTAutoResponderUpdateParams.md
 docs/WTBillingChangePlan.md
 docs/WTBillingChangePlanBillingCadence.md
 docs/WTBillingSavePaymentMethod.md
@@ -697,6 +703,7 @@ test/test_info_genesis_reports_api.py
 test/test_interactions_api.py
 test/test_internal_server_error500.py
 test/test_job_position.py
+test/test_keyword_auto_responders_api.py
 test/test_ledger_entry.py
 test/test_ledger_entry_parent_object_id.py
 test/test_ledger_entry_transaction_type.py
@@ -926,6 +933,11 @@ test/test_wt_authentication_register.py
 test/test_wt_authentication_request_reset_password.py
 test/test_wt_authentication_reset_password.py
 test/test_wt_authentication_sso_login_for_discourse.py
+test/test_wt_auto_responder.py
+test/test_wt_auto_responder_create_params.py
+test/test_wt_auto_responder_hit.py
+test/test_wt_auto_responder_hit_outcome.py
+test/test_wt_auto_responder_update_params.py
 test/test_wt_billing_change_plan.py
 test/test_wt_billing_change_plan_billing_cadence.py
 test/test_wt_billing_save_payment_method.py
@@ -1172,6 +1184,7 @@ wallet/api/imported_lists_api.py
 wallet/api/industries_api.py
 wallet/api/info_genesis_reports_api.py
 wallet/api/interactions_api.py
+wallet/api/keyword_auto_responders_api.py
 wallet/api/lounge_api.py
 wallet/api/membership_tiers_api.py
 wallet/api/merchant_api.py
@@ -1502,6 +1515,11 @@ wallet/models/wt_authentication_register.py
 wallet/models/wt_authentication_request_reset_password.py
 wallet/models/wt_authentication_reset_password.py
 wallet/models/wt_authentication_sso_login_for_discourse.py
+wallet/models/wt_auto_responder.py
+wallet/models/wt_auto_responder_create_params.py
+wallet/models/wt_auto_responder_hit.py
+wallet/models/wt_auto_responder_hit_outcome.py
+wallet/models/wt_auto_responder_update_params.py
 wallet/models/wt_billing_change_plan.py
 wallet/models/wt_billing_change_plan_billing_cadence.py
 wallet/models/wt_billing_save_payment_method.py

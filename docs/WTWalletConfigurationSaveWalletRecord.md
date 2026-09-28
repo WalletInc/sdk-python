@@ -5,56 +5,56 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**header_background_color** | **object** |  | 
-**header_button_color** | **object** |  | 
-**left_menu_header_background_color** | **object** |  | 
-**left_menu_header_font_color** | **object** |  | 
-**left_menu_section_background_color** | **object** |  | 
-**left_menu_section_font_color** | **object** |  | 
-**company_logo_url** | **object** |  | 
+**header_background_color** | **object** |  | [optional] 
+**header_button_color** | **object** |  | [optional] 
+**left_menu_header_background_color** | **object** |  | [optional] 
+**left_menu_header_font_color** | **object** |  | [optional] 
+**left_menu_section_background_color** | **object** |  | [optional] 
+**left_menu_section_font_color** | **object** |  | [optional] 
+**company_logo_url** | **object** |  | [optional] 
 **header_image_url** | **object** |  | [optional] 
 **header_custom_icon** | **object** |  | [optional] 
-**welcome_message** | **object** |  | 
+**welcome_message** | **object** |  | [optional] 
 **home_template** | **object** |  | [optional] 
-**is_apple_enabled** | **object** |  | 
-**is_google_enabled** | **object** |  | 
-**is_samsung_enabled** | **object** |  | 
-**is_ad_credits** | **object** |  | 
-**is_static_vouchers** | **object** |  | 
-**is_dynamic_vouchers** | **object** |  | 
-**is_membership_tier** | **object** |  | 
-**is_membership_points** | **object** |  | 
-**is_membership_level** | **object** |  | 
-**is_gift_cards** | **object** |  | 
-**is_gift_certificates** | **object** |  | 
-**is_promotions** | **object** |  | 
-**is_merchant_credit** | **object** |  | 
+**is_apple_enabled** | **object** |  | [optional] 
+**is_google_enabled** | **object** |  | [optional] 
+**is_samsung_enabled** | **object** |  | [optional] 
+**is_ad_credits** | **object** |  | [optional] 
+**is_static_vouchers** | **object** |  | [optional] 
+**is_dynamic_vouchers** | **object** |  | [optional] 
+**is_membership_tier** | **object** |  | [optional] 
+**is_membership_points** | **object** |  | [optional] 
+**is_membership_level** | **object** |  | [optional] 
+**is_gift_cards** | **object** |  | [optional] 
+**is_gift_certificates** | **object** |  | [optional] 
+**is_promotions** | **object** |  | [optional] 
+**is_merchant_credit** | **object** |  | [optional] 
 **is_tickets** | **object** |  | [optional] 
-**is_news_articles** | **object** |  | 
-**is_performances** | **object** |  | 
-**is_messages** | **object** |  | 
-**is_call** | **object** |  | 
-**is_representatives** | **object** |  | 
-**is_products** | **object** |  | 
-**is_services** | **object** |  | 
-**is_room_rates** | **object** |  | 
-**is_amenities** | **object** |  | 
-**is_gaming** | **object** |  | 
-**is_dining** | **object** |  | 
-**is_lounges** | **object** |  | 
-**is_map_directions** | **object** |  | 
-**is_donation_enabled** | **object** |  | 
+**is_news_articles** | **object** |  | [optional] 
+**is_performances** | **object** |  | [optional] 
+**is_messages** | **object** |  | [optional] 
+**is_call** | **object** |  | [optional] 
+**is_representatives** | **object** |  | [optional] 
+**is_products** | **object** |  | [optional] 
+**is_services** | **object** |  | [optional] 
+**is_room_rates** | **object** |  | [optional] 
+**is_amenities** | **object** |  | [optional] 
+**is_gaming** | **object** |  | [optional] 
+**is_dining** | **object** |  | [optional] 
+**is_lounges** | **object** |  | [optional] 
+**is_map_directions** | **object** |  | [optional] 
+**is_donation_enabled** | **object** |  | [optional] 
 **donation_label** | [**WTWalletConfigurationSaveWalletRecordDonationLabel**](WTWalletConfigurationSaveWalletRecordDonationLabel.md) |  | [optional] 
-**is_link_book** | **object** |  | 
-**is_image_grid** | **object** |  | 
-**is_videos** | **object** |  | 
-**is_transaction_history** | **object** |  | 
-**is_profile** | **object** |  | 
-**is_settings** | **object** |  | 
-**is_chat_room** | **object** |  | 
-**is_sms_opt_in** | **object** |  | 
+**is_link_book** | **object** |  | [optional] 
+**is_image_grid** | **object** |  | [optional] 
+**is_videos** | **object** |  | [optional] 
+**is_transaction_history** | **object** |  | [optional] 
+**is_profile** | **object** |  | [optional] 
+**is_settings** | **object** |  | [optional] 
+**is_chat_room** | **object** |  | [optional] 
+**is_sms_opt_in** | **object** |  | [optional] 
 **sms_opt_in_source_id** | [**WTWalletConfigurationSaveWalletRecordSmsOptInSourceID**](WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md) |  | [optional] 
-**is_email_subscriber** | **object** |  | 
+**is_email_subscriber** | **object** |  | [optional] 
 **google_analytics_id** | **object** |  | [optional] 
 **facebook_pixel_id** | **object** |  | [optional] 
 **public_chat_room_channel_id** | **object** |  | [optional] 

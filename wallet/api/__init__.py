@@ -26,6 +26,7 @@ from wallet.api.imported_lists_api import ImportedListsApi
 from wallet.api.industries_api import IndustriesApi
 from wallet.api.info_genesis_reports_api import InfoGenesisReportsApi
 from wallet.api.interactions_api import InteractionsApi
+from wallet.api.keyword_auto_responders_api import KeywordAutoRespondersApi
 from wallet.api.lounge_api import LoungeApi
 from wallet.api.membership_tiers_api import MembershipTiersApi
 from wallet.api.merchant_api import MerchantApi
