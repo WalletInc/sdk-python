@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.50.0**, built 2026-09-30T15:17:15.284Z
+    Wallet Inc. API reference.  **Spec version 2.50.0**, built 2026-10-01T10:08:33.203Z
 
     The version of the OpenAPI document: 2.50.0
     Contact: development@wallet.inc
@@ -605,3 +605,5 @@ from wallet.models.wt_whats_app_status_callback import WTWhatsAppStatusCallback
 from wallet.models.wallet_configuration import WalletConfiguration
 from wallet.models.wallet_page_view import WalletPageView
 from wallet.models.webpage import Webpage
+from wallet.models.whats_new_article import WhatsNewArticle
+from wallet.models.whats_new_stage import WhatsNewStage

@@ -573,6 +573,8 @@ docs/WalletPageView.md
 docs/WalletTransactionLedgerApi.md
 docs/WalletWebTerminalApi.md
 docs/Webpage.md
+docs/WhatsNewArticle.md
+docs/WhatsNewStage.md
 docs/WixTerminalApi.md
 docs/WooCommerceTerminalApi.md
 git_push.sh
@@ -915,6 +917,8 @@ test/test_wallet_page_view.py
 test/test_wallet_transaction_ledger_api.py
 test/test_wallet_web_terminal_api.py
 test/test_webpage.py
+test/test_whats_new_article.py
+test/test_whats_new_stage.py
 test/test_wix_terminal_api.py
 test/test_woo_commerce_terminal_api.py
 test/test_wt_advertisement_credit.py
@@ -1499,6 +1503,8 @@ wallet/models/vs_dynamic_voucher_status.py
 wallet/models/wallet_configuration.py
 wallet/models/wallet_page_view.py
 wallet/models/webpage.py
+wallet/models/whats_new_article.py
+wallet/models/whats_new_stage.py
 wallet/models/wt_advertisement_credit.py
 wallet/models/wt_advertisement_credit_create_params.py
 wallet/models/wt_advertisement_credit_scan.py
