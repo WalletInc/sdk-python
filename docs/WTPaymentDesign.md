@@ -24,6 +24,10 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
+**text_plate** | **bool** |  | 
+**text_plate_opacity** | **float** |  | 
+**text_plate_color** | **str** |  | [optional] 
+**guest_instructions** | **str** |  | 
 
 ## Example
 

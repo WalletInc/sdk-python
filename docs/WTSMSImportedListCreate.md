@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **phone_number_id** | **str** |  | 
 **is_active** | **object** |  | 
 **list_name** | **object** |  | 
+**is_over21_required** | **object** |  | [optional] 
 
 ## Example
 

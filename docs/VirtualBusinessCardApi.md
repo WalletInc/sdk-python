@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**fetch_all_virtual_business_cards**](VirtualBusinessCardApi.md#fetch_all_virtual_business_cards) | **GET** /v2/virtualBusinessCard/all | Get all Virtual Business Cards
 [**fetch_virtual_business_card**](VirtualBusinessCardApi.md#fetch_virtual_business_card) | **GET** /v2/virtualBusinessCard/{id} | Get Virtual Business Card
 [**fetch_virtual_business_card_requests**](VirtualBusinessCardApi.md#fetch_virtual_business_card_requests) | **GET** /v2/virtualBusinessCard/requests/{id} | Get Virtual Business Card traffic
+[**fetch_virtual_business_card_requests_paged**](VirtualBusinessCardApi.md#fetch_virtual_business_card_requests_paged) | **GET** /v2/virtualBusinessCard/requests/{id}/paged | Get Virtual Business Card traffic (paginated)
 [**restore_virtual_business_card**](VirtualBusinessCardApi.md#restore_virtual_business_card) | **PATCH** /v2/virtualBusinessCard/{id} | Restore Virtual Business Card
 [**update_virtual_business_card**](VirtualBusinessCardApi.md#update_virtual_business_card) | **PUT** /v2/virtualBusinessCard/{id} | Update Virtual Business Card
 
@@ -337,6 +338,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[WalletPageView]**](WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_virtual_business_card_requests_paged**
+> FetchMerchantURLRequestsPaged200Response fetch_virtual_business_card_requests_paged(id, page=page, limit=limit)
+
+Get Virtual Business Card traffic (paginated)
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.fetch_merchant_url_requests_paged200_response import FetchMerchantURLRequestsPaged200Response
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.VirtualBusinessCardApi(api_client)
+    id = 'id_example' # str | 
+    page = 3.4 # float |  (optional)
+    limit = 3.4 # float |  (optional)
+
+    try:
+        # Get Virtual Business Card traffic (paginated)
+        api_response = api_instance.fetch_virtual_business_card_requests_paged(id, page=page, limit=limit)
+        print("The response of VirtualBusinessCardApi->fetch_virtual_business_card_requests_paged:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VirtualBusinessCardApi->fetch_virtual_business_card_requests_paged: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **page** | **float**|  | [optional] 
+ **limit** | **float**|  | [optional] 
+
+### Return type
+
+[**FetchMerchantURLRequestsPaged200Response**](FetchMerchantURLRequestsPaged200Response.md)
 
 ### Authorization
 

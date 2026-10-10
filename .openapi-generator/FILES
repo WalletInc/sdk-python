@@ -168,6 +168,7 @@ docs/Message.md
 docs/ModuleError.md
 docs/NewsApi.md
 docs/NewsArticle.md
+docs/NotFound.md
 docs/OAIAssistantUpdateParams.md
 docs/OAIAssistantUpdateParamsCreateParams.md
 docs/OpenAIApi.md
@@ -751,6 +752,7 @@ test/test_ms_merchant_credit_redemption.py
 test/test_ms_merchant_credit_redemption_pagination.py
 test/test_news_api.py
 test/test_news_article.py
+test/test_not_found.py
 test/test_oai_assistant_update_params.py
 test/test_oai_assistant_update_params_create_params.py
 test/test_open_ai_api.py
@@ -1367,6 +1369,7 @@ wallet/models/ms_merchant_credit_history_pagination.py
 wallet/models/ms_merchant_credit_redemption.py
 wallet/models/ms_merchant_credit_redemption_pagination.py
 wallet/models/news_article.py
+wallet/models/not_found.py
 wallet/models/oai_assistant_update_params.py
 wallet/models/oai_assistant_update_params_create_params.py
 wallet/models/opt_in_list.py

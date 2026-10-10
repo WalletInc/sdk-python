@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**is_over21_required** | **bool** |  | [optional] 
 
 ## Example
 

@@ -294,7 +294,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_peer_activity**
-> List[EmployeeActivityLog] fetch_peer_activity(employee_id)
+> List[EmployeeActivityLog] fetch_peer_activity(employee_id, start_date_time=start_date_time, end_date_time=end_date_time, page_size=page_size, page_num=page_num)
 
 Get peer activity
 
@@ -319,10 +319,14 @@ with wallet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet.EmployeesApi(api_client)
     employee_id = 'employee_id_example' # str | 
+    start_date_time = '2013-10-20T19:20:30+01:00' # datetime | Only entries at or after this time (optional)
+    end_date_time = '2013-10-20T19:20:30+01:00' # datetime | Only entries at or before this time (optional)
+    page_size = 3.4 # float | Entries per page, 1 to 1000 (default 1000) (optional)
+    page_num = 3.4 # float | 1-based page number (default 1). A page shorter than pageSize is the last one. (optional)
 
     try:
         # Get peer activity
-        api_response = api_instance.fetch_peer_activity(employee_id)
+        api_response = api_instance.fetch_peer_activity(employee_id, start_date_time=start_date_time, end_date_time=end_date_time, page_size=page_size, page_num=page_num)
         print("The response of EmployeesApi->fetch_peer_activity:\n")
         pprint(api_response)
     except Exception as e:
@@ -337,6 +341,10 @@ with wallet.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **employee_id** | **str**|  | 
+ **start_date_time** | **datetime**| Only entries at or after this time | [optional] 
+ **end_date_time** | **datetime**| Only entries at or before this time | [optional] 
+ **page_size** | **float**| Entries per page, 1 to 1000 (default 1000) | [optional] 
+ **page_num** | **float**| 1-based page number (default 1). A page shorter than pageSize is the last one. | [optional] 
 
 ### Return type
 

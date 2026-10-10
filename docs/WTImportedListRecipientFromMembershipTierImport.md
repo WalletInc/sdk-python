@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **list_name** | **object** |  | 
 **phone_number_id** | **str** |  | 
 **tier_id** | [**WTImportedListRecipientFromMembershipTierImportTierID**](WTImportedListRecipientFromMembershipTierImportTierID.md) |  | 
+**is_over21_required** | **object** |  | [optional] 
 
 ## Example
 

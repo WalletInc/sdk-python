@@ -18,6 +18,10 @@ Name | Type | Description | Notes
 **company_logo_url** | **str** |  | [optional] 
 **abbreviation** | **str** |  | [optional] 
 **acronym** | **str** |  | [optional] 
+**text_plate** | **bool** |  | [optional] 
+**text_plate_opacity** | **object** |  | [optional] 
+**text_plate_color** | **object** |  | [optional] 
+**guest_instructions** | **object** |  | [optional] 
 
 ## Example
 

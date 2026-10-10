@@ -1401,6 +1401,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
+**404** | Not Found |  -  |
 **422** | Validation Failed |  -  |
 **500** | Internal Server Error |  -  |
 
