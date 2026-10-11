@@ -4,12 +4,147 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**delete_custom_domain**](WalletConfigurationApi.md#delete_custom_domain) | **DELETE** /employee/walletConfiguration/customDomain | Remove the custom domain
+[**fetch_custom_domain**](WalletConfigurationApi.md#fetch_custom_domain) | **GET** /employee/walletConfiguration/customDomain | Get the custom domain
 [**fetch_pass_style**](WalletConfigurationApi.md#fetch_pass_style) | **GET** /wallet/passStyle | Get pass styling
 [**generate_android_keystore**](WalletConfigurationApi.md#generate_android_keystore) | **POST** /v2/wallet/android/keystore | Generate Android TWA signing keystore
 [**reset_pass_style**](WalletConfigurationApi.md#reset_pass_style) | **DELETE** /wallet/passStyle/{provider} | Reset one provider&#39;s pass styling
+[**save_custom_domain**](WalletConfigurationApi.md#save_custom_domain) | **PUT** /employee/walletConfiguration/customDomain | Set up a custom domain
 [**save_merchant_credit_payment_design**](WalletConfigurationApi.md#save_merchant_credit_payment_design) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update payment design for merchant credits
 [**save_wallet_record**](WalletConfigurationApi.md#save_wallet_record) | **PUT** /v2/wallet | Update wallet record
 
+
+# **delete_custom_domain**
+> WTCustomDomain delete_custom_domain()
+
+Remove the custom domain
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_custom_domain import WTCustomDomain
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.WalletConfigurationApi(api_client)
+
+    try:
+        # Remove the custom domain
+        api_response = api_instance.delete_custom_domain()
+        print("The response of WalletConfigurationApi->delete_custom_domain:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WalletConfigurationApi->delete_custom_domain: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**WTCustomDomain**](WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**403** | Forbidden |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_custom_domain**
+> WTCustomDomain fetch_custom_domain()
+
+Get the custom domain
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_custom_domain import WTCustomDomain
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.WalletConfigurationApi(api_client)
+
+    try:
+        # Get the custom domain
+        api_response = api_instance.fetch_custom_domain()
+        print("The response of WalletConfigurationApi->fetch_custom_domain:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WalletConfigurationApi->fetch_custom_domain: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**WTCustomDomain**](WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**403** | Forbidden |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_pass_style**
 > WTPassStyleResponse fetch_pass_style()
@@ -209,6 +344,77 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
 **401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **save_custom_domain**
+> WTCustomDomain save_custom_domain(wt_custom_domain_request)
+
+Set up a custom domain
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_custom_domain import WTCustomDomain
+from wallet.models.wt_custom_domain_request import WTCustomDomainRequest
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.WalletConfigurationApi(api_client)
+    wt_custom_domain_request = wallet.WTCustomDomainRequest() # WTCustomDomainRequest | 
+
+    try:
+        # Set up a custom domain
+        api_response = api_instance.save_custom_domain(wt_custom_domain_request)
+        print("The response of WalletConfigurationApi->save_custom_domain:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WalletConfigurationApi->save_custom_domain: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_custom_domain_request** | [**WTCustomDomainRequest**](WTCustomDomainRequest.md)|  | 
+
+### Return type
+
+[**WTCustomDomain**](WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**403** | Forbidden |  -  |
 **422** | Validation Failed |  -  |
 **500** | Internal Server Error |  -  |
 
