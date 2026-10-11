@@ -7,7 +7,7 @@ and no login, unlocked by one SMS code. This is the official Python SDK for the 
 
 - Website: https://wallet.inc
 - Developer docs: https://wallet.dev
-- API status: https://uptime.wallet.inc
+- API status: https://status.wallet.inc
 - All SDKs: https://github.com/walletinc
 
 Wallet Inc. API reference.
