@@ -363,7 +363,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_virtual_business_card_requests_paged**
-> FetchMerchantURLRequestsPaged200Response fetch_virtual_business_card_requests_paged(id, page=page, limit=limit)
+> FetchMerchantURLRequestsPaged200Response fetch_virtual_business_card_requests_paged(id, page=page, limit=limit, traffic_class=traffic_class)
 
 Get Virtual Business Card traffic (paginated)
 
@@ -390,10 +390,11 @@ with wallet.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
     page = 3.4 # float |  (optional)
     limit = 3.4 # float |  (optional)
+    traffic_class = wallet.WTTrafficClass() # WTTrafficClass |  (optional)
 
     try:
         # Get Virtual Business Card traffic (paginated)
-        api_response = api_instance.fetch_virtual_business_card_requests_paged(id, page=page, limit=limit)
+        api_response = api_instance.fetch_virtual_business_card_requests_paged(id, page=page, limit=limit, traffic_class=traffic_class)
         print("The response of VirtualBusinessCardApi->fetch_virtual_business_card_requests_paged:\n")
         pprint(api_response)
     except Exception as e:
@@ -410,6 +411,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **page** | **float**|  | [optional] 
  **limit** | **float**|  | [optional] 
+ **traffic_class** | [**WTTrafficClass**](.md)|  | [optional] 
 
 ### Return type
 

@@ -548,6 +548,7 @@ docs/WTTicket.md
 docs/WTTicketCreateParams.md
 docs/WTTicketReachStats.md
 docs/WTTicketUpdateParams.md
+docs/WTTrafficClass.md
 docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTTwilioVerifyAuthyCodeResponse.md
@@ -1138,6 +1139,7 @@ test/test_wt_ticket.py
 test/test_wt_ticket_create_params.py
 test/test_wt_ticket_reach_stats.py
 test/test_wt_ticket_update_params.py
+test/test_wt_traffic_class.py
 test/test_wt_twilio_request_authy_code.py
 test/test_wt_twilio_verify_authy_code.py
 test/test_wt_twilio_verify_authy_code_response.py
@@ -1730,6 +1732,7 @@ wallet/models/wt_ticket.py
 wallet/models/wt_ticket_create_params.py
 wallet/models/wt_ticket_reach_stats.py
 wallet/models/wt_ticket_update_params.py
+wallet/models/wt_traffic_class.py
 wallet/models/wt_twilio_request_authy_code.py
 wallet/models/wt_twilio_verify_authy_code.py
 wallet/models/wt_twilio_verify_authy_code_response.py
