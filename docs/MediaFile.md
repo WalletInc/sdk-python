@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**created_at** | **object** |  | 
-**updated_at** | **object** |  | 
+**created_at** | **datetime** |  | 
+**updated_at** | **datetime** |  | 
 **merchant_id** | **str** |  | 
 **file_url** | **object** | The URL of the file | 
 **file_type** | **object** | The type of the file | 
@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **file_size** | **object** | The size of the file | 
 **folder** | **object** | The folder in which the file is stored | 
 **employee_id** | **str** |  | 
+**status** | [**WTMediaFileStatus**](WTMediaFileStatus.md) | Processing state of a large upload (KAN-367). Absent on files uploaded the original way, which are always ready. | [optional] 
 
 ## Example
 

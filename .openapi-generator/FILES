@@ -440,6 +440,12 @@ docs/WTLeadFiInquiryResult.md
 docs/WTLocalInstance.md
 docs/WTLoungeCreateParams.md
 docs/WTLoungeUpdateParams.md
+docs/WTMediaFile.md
+docs/WTMediaFileStatus.md
+docs/WTMediaProcessedReport.md
+docs/WTMediaProcessedReportStatus.md
+docs/WTMediaUploadRequest.md
+docs/WTMediaUploadTicket.md
 docs/WTMember.md
 docs/WTMemberCreationParams.md
 docs/WTMembershipTier.md
@@ -504,6 +510,7 @@ docs/WTQuickLinkLinkBookSectionID.md
 docs/WTQuickLinkSectionCreateParams.md
 docs/WTQuickLinkSectionUpdateParams.md
 docs/WTQuickLinkUpdateParams.md
+docs/WTQuietHoursStatus.md
 docs/WTRole.md
 docs/WTRoomRateCreateParams.md
 docs/WTRoomRateUpdateParams.md
@@ -1034,6 +1041,12 @@ test/test_wt_lead_fi_inquiry_result.py
 test/test_wt_local_instance.py
 test/test_wt_lounge_create_params.py
 test/test_wt_lounge_update_params.py
+test/test_wt_media_file.py
+test/test_wt_media_file_status.py
+test/test_wt_media_processed_report.py
+test/test_wt_media_processed_report_status.py
+test/test_wt_media_upload_request.py
+test/test_wt_media_upload_ticket.py
 test/test_wt_member.py
 test/test_wt_member_creation_params.py
 test/test_wt_membership_tier.py
@@ -1095,6 +1108,7 @@ test/test_wt_quick_link_link_book_section_id.py
 test/test_wt_quick_link_section_create_params.py
 test/test_wt_quick_link_section_update_params.py
 test/test_wt_quick_link_update_params.py
+test/test_wt_quiet_hours_status.py
 test/test_wt_role.py
 test/test_wt_room_rate_create_params.py
 test/test_wt_room_rate_update_params.py
@@ -1619,6 +1633,12 @@ wallet/models/wt_lead_fi_inquiry_result.py
 wallet/models/wt_local_instance.py
 wallet/models/wt_lounge_create_params.py
 wallet/models/wt_lounge_update_params.py
+wallet/models/wt_media_file.py
+wallet/models/wt_media_file_status.py
+wallet/models/wt_media_processed_report.py
+wallet/models/wt_media_processed_report_status.py
+wallet/models/wt_media_upload_request.py
+wallet/models/wt_media_upload_ticket.py
 wallet/models/wt_member.py
 wallet/models/wt_member_creation_params.py
 wallet/models/wt_membership_tier.py
@@ -1680,6 +1700,7 @@ wallet/models/wt_quick_link_link_book_section_id.py
 wallet/models/wt_quick_link_section_create_params.py
 wallet/models/wt_quick_link_section_update_params.py
 wallet/models/wt_quick_link_update_params.py
+wallet/models/wt_quiet_hours_status.py
 wallet/models/wt_role.py
 wallet/models/wt_room_rate_create_params.py
 wallet/models/wt_room_rate_update_params.py
