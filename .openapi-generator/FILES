@@ -504,6 +504,7 @@ docs/WTProductUpdateParams.md
 docs/WTPromoCodeCreateParams.md
 docs/WTPromoCodeUpdateParams.md
 docs/WTPublicBranding.md
+docs/WTPublicItemBranding.md
 docs/WTPublicVanityPage.md
 docs/WTPublicVanityPageMerchant.md
 docs/WTQRCodeDesign.md
@@ -1111,6 +1112,7 @@ test/test_wt_product_update_params.py
 test/test_wt_promo_code_create_params.py
 test/test_wt_promo_code_update_params.py
 test/test_wt_public_branding.py
+test/test_wt_public_item_branding.py
 test/test_wt_public_vanity_page.py
 test/test_wt_public_vanity_page_merchant.py
 test/test_wt_quick_link.py
@@ -1709,6 +1711,7 @@ wallet/models/wt_product_update_params.py
 wallet/models/wt_promo_code_create_params.py
 wallet/models/wt_promo_code_update_params.py
 wallet/models/wt_public_branding.py
+wallet/models/wt_public_item_branding.py
 wallet/models/wt_public_vanity_page.py
 wallet/models/wt_public_vanity_page_merchant.py
 wallet/models/wt_quick_link.py
