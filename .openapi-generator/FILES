@@ -574,6 +574,7 @@ docs/WTWalletConfigurationSaveWalletRecordDonationLabel.md
 docs/WTWalletConfigurationSaveWalletRecordGooglePassStyle.md
 docs/WTWalletConfigurationSaveWalletRecordPassBrandKit.md
 docs/WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md
+docs/WTWalletHeaderStyle.md
 docs/WTWalletItemRedemption.md
 docs/WTWalletObjectPrefixCounts.md
 docs/WTWalletPageView.md
@@ -1172,6 +1173,7 @@ test/test_wt_wallet_configuration_save_wallet_record_donation_label.py
 test/test_wt_wallet_configuration_save_wallet_record_google_pass_style.py
 test/test_wt_wallet_configuration_save_wallet_record_pass_brand_kit.py
 test/test_wt_wallet_configuration_save_wallet_record_sms_opt_in_source_id.py
+test/test_wt_wallet_header_style.py
 test/test_wt_wallet_item_redemption.py
 test/test_wt_wallet_object_prefix_counts.py
 test/test_wt_wallet_page_view.py
@@ -1772,6 +1774,7 @@ wallet/models/wt_wallet_configuration_save_wallet_record_donation_label.py
 wallet/models/wt_wallet_configuration_save_wallet_record_google_pass_style.py
 wallet/models/wt_wallet_configuration_save_wallet_record_pass_brand_kit.py
 wallet/models/wt_wallet_configuration_save_wallet_record_sms_opt_in_source_id.py
+wallet/models/wt_wallet_header_style.py
 wallet/models/wt_wallet_item_redemption.py
 wallet/models/wt_wallet_object_prefix_counts.py
 wallet/models/wt_wallet_page_view.py

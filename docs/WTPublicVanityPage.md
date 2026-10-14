@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **vanity_page_wallet_prefix** | **str** |  | [optional] 
 **company_logo_url** | **str** |  | [optional] 
 **header_background_color** | **str** |  | [optional] 
+**header_style** | [**WTWalletHeaderStyle**](WTWalletHeaderStyle.md) |  | [optional] 
 **mobile_app_icon_url** | **str** |  | [optional] 
 **android_sha256_fingerprint** | **object** |  | [optional] 
 **is_call** | **bool** |  | [optional] 

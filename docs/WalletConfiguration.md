@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **header_background_color** | **object** |  | 
 **header_button_color** | **object** |  | 
+**header_style** | [**WTWalletHeaderStyle**](WTWalletHeaderStyle.md) |  | [optional] 
 **left_menu_header_background_color** | **object** |  | 
 **left_menu_header_font_color** | **object** |  | 
 **left_menu_section_background_color** | **object** |  | 
