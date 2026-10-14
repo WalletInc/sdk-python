@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **desktop_frame_background_color** | **str** |  | [optional] 
 **desktop_frame_background_image_url** | **str** |  | [optional] 
 **desktop_frame_byline** | **str** |  | [optional] 
+**custom_domain_paused** | **bool** |  | [optional] 
 
 ## Example
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **dns_target** | **object** | The CNAME target the merchant points their domain at. | 
 **txt** | [**WTCustomDomainTXT**](WTCustomDomainTXT.md) | Present when the merchant must also add a TXT record. | [optional] 
 **error** | [**WTCustomDomainError**](WTCustomDomainError.md) | Present when &#x60;state&#x60; is &#x60;error&#x60;. | [optional] 
+**paused** | **object** | True when the domain is live but the merchant&#39;s plan no longer includes custom domains. Guests are redirected to the same page on wall.et until the merchant upgrades; nothing needs to be set up again. | [optional] 
 
 ## Example
 
