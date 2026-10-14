@@ -372,6 +372,7 @@ docs/WTConnectRequirements.md
 docs/WTCountResult.md
 docs/WTCurrentMerchantTermsVersion.md
 docs/WTCustomDomain.md
+docs/WTCustomDomainAdoption.md
 docs/WTCustomDomainError.md
 docs/WTCustomDomainRequest.md
 docs/WTCustomDomainState.md
@@ -980,6 +981,7 @@ test/test_wt_connect_requirements.py
 test/test_wt_count_result.py
 test/test_wt_current_merchant_terms_version.py
 test/test_wt_custom_domain.py
+test/test_wt_custom_domain_adoption.py
 test/test_wt_custom_domain_error.py
 test/test_wt_custom_domain_request.py
 test/test_wt_custom_domain_state.py
@@ -1579,6 +1581,7 @@ wallet/models/wt_connect_requirements.py
 wallet/models/wt_count_result.py
 wallet/models/wt_current_merchant_terms_version.py
 wallet/models/wt_custom_domain.py
+wallet/models/wt_custom_domain_adoption.py
 wallet/models/wt_custom_domain_error.py
 wallet/models/wt_custom_domain_request.py
 wallet/models/wt_custom_domain_state.py
