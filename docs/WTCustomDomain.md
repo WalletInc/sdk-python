@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **paused** | **object** | True when the domain is live but the merchant&#39;s plan no longer includes custom domains. Guests are redirected to the same page on wall.et until the merchant upgrades; nothing needs to be set up again. | [optional] 
 **adoption** | [**WTCustomDomainAdoption**](WTCustomDomainAdoption.md) | Present while a domain Wallet set up by hand is being moved onto self-serve. The domain stays live throughout. | [optional] 
 **certificate_txt** | [**WTCustomDomainTXT**](WTCustomDomainTXT.md) | Present while adopting: the TXT record that lets the certificate be issued before the domain is switched. | [optional] 
+**grandfathered** | **object** | True for a domain Wallet set up by hand and later moved onto this setup. It is the merchant&#39;s main site, so removing it would take that site offline: offer no \&quot;remove\&quot; action for it. | [optional] 
 
 ## Example
 
