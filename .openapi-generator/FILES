@@ -560,8 +560,10 @@ docs/WTTwilioRequestAuthyCode.md
 docs/WTTwilioVerifyAuthyCode.md
 docs/WTTwilioVerifyAuthyCodeResponse.md
 docs/WTVideoCreateParams.md
+docs/WTVideoOrientation.md
 docs/WTVideoPlaybackSource.md
 docs/WTVideoPlaybackSourceType.md
+docs/WTVideoStatus.md
 docs/WTVideoUpdateParams.md
 docs/WTVideoUploadProvision.md
 docs/WTVideoUploadProvisionParams.md
@@ -1159,8 +1161,10 @@ test/test_wt_twilio_request_authy_code.py
 test/test_wt_twilio_verify_authy_code.py
 test/test_wt_twilio_verify_authy_code_response.py
 test/test_wt_video_create_params.py
+test/test_wt_video_orientation.py
 test/test_wt_video_playback_source.py
 test/test_wt_video_playback_source_type.py
+test/test_wt_video_status.py
 test/test_wt_video_update_params.py
 test/test_wt_video_upload_provision.py
 test/test_wt_video_upload_provision_params.py
@@ -1760,8 +1764,10 @@ wallet/models/wt_twilio_request_authy_code.py
 wallet/models/wt_twilio_verify_authy_code.py
 wallet/models/wt_twilio_verify_authy_code_response.py
 wallet/models/wt_video_create_params.py
+wallet/models/wt_video_orientation.py
 wallet/models/wt_video_playback_source.py
 wallet/models/wt_video_playback_source_type.py
+wallet/models/wt_video_status.py
 wallet/models/wt_video_update_params.py
 wallet/models/wt_video_upload_provision.py
 wallet/models/wt_video_upload_provision_params.py

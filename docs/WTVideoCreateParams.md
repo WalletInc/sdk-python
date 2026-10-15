@@ -7,10 +7,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **object** |  | 
 **description** | **object** |  | 
-**order_number** | **object** |  | 
+**order_number** | **int** |  | 
 **additional_info_url** | **object** |  | [optional] 
 **asset_id** | **object** |  | 
 **provider** | [**VideoProvider**](VideoProvider.md) |  | 
+**width** | **object** |  | [optional] 
+**height** | **object** |  | [optional] 
+**duration_seconds** | **object** |  | [optional] 
+**poster_url** | **object** |  | [optional] 
 
 ## Example
 

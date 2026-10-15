@@ -6,17 +6,23 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**AmenityId**](AmenityId.md) |  | 
-**created_at** | **object** |  | 
-**updated_at** | **object** |  | 
-**title** | **object** |  | 
-**description** | **object** |  | 
-**order_number** | **object** |  | 
-**additional_info_url** | **object** |  | [optional] 
-**is_active** | **object** |  | 
+**created_at** | **datetime** |  | 
+**updated_at** | **datetime** |  | 
+**title** | **str** |  | 
+**description** | **str** |  | 
+**order_number** | **float** |  | 
+**additional_info_url** | **str** |  | [optional] 
+**is_active** | **bool** |  | 
 **merchant_id** | **str** |  | 
 **provider** | [**VideoProvider**](VideoProvider.md) |  | 
 **asset_id** | **object** |  | 
 **source** | [**WTVideoPlaybackSource**](WTVideoPlaybackSource.md) |  | 
+**width** | **object** |  | [optional] 
+**height** | **object** |  | [optional] 
+**orientation** | [**WTVideoOrientation**](WTVideoOrientation.md) |  | [optional] 
+**duration_seconds** | **object** |  | [optional] 
+**poster_url** | **object** |  | [optional] 
+**status** | [**WTVideoStatus**](WTVideoStatus.md) |  | [optional] 
 
 ## Example
 
