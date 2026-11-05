@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **merchants_reference_id** | **object** |  | [optional] 
 **valid_only_at_pos_register_ids** | **object** |  | [optional] 
 **payment_design_id** | **str** |  | 
+**guest_instructions** | **object** |  | [optional] 
 **bucket** | **object** |  | 
 **file_name** | **object** |  | 
 **source_id** | **object** |  | 

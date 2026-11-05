@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **phone_number** | **object** |  | 
 **brand_contact_email** | **object** |  | [optional] 
 **verification_mobile** | **object** |  | [optional] 
+**privacy_policy_url** | **object** |  | [optional] 
 
 ## Example
 

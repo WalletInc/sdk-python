@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **reinvestment_sum_string** | **object** |  | 
 **start_date** | **object** |  | 
 **expiration_date** | **object** |  | 
+**guest_instructions** | **object** |  | [optional] 
 
 ## Example
 

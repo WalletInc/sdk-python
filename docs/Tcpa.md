@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cell_phone** | **object** |  | 
+**cell_phone** | **str** |  | 
 **phone_number_id** | **str** |  | 
 **id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
-**created_at** | **object** |  | 
-**updated_at** | **object** |  | 
-**is_active** | **object** |  | 
+**created_at** | **datetime** |  | 
+**updated_at** | **datetime** |  | 
+**is_active** | **bool** |  | 
 
 ## Example
 

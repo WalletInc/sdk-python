@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**AmenityId**](AmenityId.md) |  | 
+**page_id** | **object** |  | [optional] 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **title** | **str** |  | 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 **duration_seconds** | **object** |  | [optional] 
 **poster_url** | **object** |  | [optional] 
 **status** | [**WTVideoStatus**](WTVideoStatus.md) |  | [optional] 
+**paused** | **bool** |  | [optional] 
 
 ## Example
 

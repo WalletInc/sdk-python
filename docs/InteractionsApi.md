@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**find_by_vanity_handle**](InteractionsApi.md#find_by_vanity_handle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle
 [**identify_item**](InteractionsApi.md#identify_item) | **GET** /wallet/item/identify/{itemID} | Identify item
 [**play_prize_game**](InteractionsApi.md#play_prize_game) | **POST** /wallet/prizeGame/play | Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
+[**price_guest_cart**](InteractionsApi.md#price_guest_cart) | **POST** /wallet/cart/price | Price a guest&#39;s cart
 [**request_merchant_url_redirect**](InteractionsApi.md#request_merchant_url_redirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL
 [**subscribe_email**](InteractionsApi.md#subscribe_email) | **POST** /wallet/subscribeEmail | Create email subscriber
 [**subscribe_sms**](InteractionsApi.md#subscribe_sms) | **POST** /wallet/subscribeSms | Create sms subscriber
@@ -1457,6 +1458,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WTPrizeGamePlayResult**](WTPrizeGamePlayResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **price_guest_cart**
+> WTCartQuote price_guest_cart(wt_cart_price_request)
+
+Price a guest's cart
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_cart_price_request import WTCartPriceRequest
+from wallet.models.wt_cart_quote import WTCartQuote
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.InteractionsApi(api_client)
+    wt_cart_price_request = wallet.WTCartPriceRequest() # WTCartPriceRequest | 
+
+    try:
+        # Price a guest's cart
+        api_response = api_instance.price_guest_cart(wt_cart_price_request)
+        print("The response of InteractionsApi->price_guest_cart:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InteractionsApi->price_guest_cart: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_cart_price_request** | [**WTCartPriceRequest**](WTCartPriceRequest.md)|  | 
+
+### Return type
+
+[**WTCartQuote**](WTCartQuote.md)
 
 ### Authorization
 

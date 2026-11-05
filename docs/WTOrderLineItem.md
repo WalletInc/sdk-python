@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **title_snapshot** | **object** |  | 
 **unit_amount** | **object** |  | 
 **quantity** | **object** |  | 
+**note** | **object** |  | [optional] 
+**menu_item_id** | **object** |  | [optional] 
+**options** | **object** |  | [optional] 
 
 ## Example
 

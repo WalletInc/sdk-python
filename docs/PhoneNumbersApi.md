@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**fetch_phone_number**](PhoneNumbersApi.md#fetch_phone_number) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Get phone number
 [**fetch_sms_agreement**](PhoneNumbersApi.md#fetch_sms_agreement) | **GET** /v2/sms/agreement | Get SMS Agreement
 [**fetch_tcpa_filter**](PhoneNumbersApi.md#fetch_tcpa_filter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters
+[**record_sms_privacy_request**](PhoneNumbersApi.md#record_sms_privacy_request) | **POST** /sms/privacyRequest | Record a request to stop texts
 [**restore_phone_number**](PhoneNumbersApi.md#restore_phone_number) | **PATCH** /v2/sms/phoneNumber/{phoneNumberID} | Restore phone number
 [**send_phone_number_for_verification**](PhoneNumbersApi.md#send_phone_number_for_verification) | **PUT** /v2/sms/phoneNumber/verification/{phoneNumberID} | Request phone number verification
 [**update_phone_number**](PhoneNumbersApi.md#update_phone_number) | **PUT** /v2/sms/phoneNumber/{phoneNumberID} | Update phone number
@@ -479,6 +480,76 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **record_sms_privacy_request**
+> WTTCPAPrivacyRequestResult record_sms_privacy_request(wttcpa_privacy_request)
+
+Record a request to stop texts
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wttcpa_privacy_request import WTTCPAPrivacyRequest
+from wallet.models.wttcpa_privacy_request_result import WTTCPAPrivacyRequestResult
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.PhoneNumbersApi(api_client)
+    wttcpa_privacy_request = wallet.WTTCPAPrivacyRequest() # WTTCPAPrivacyRequest | 
+
+    try:
+        # Record a request to stop texts
+        api_response = api_instance.record_sms_privacy_request(wttcpa_privacy_request)
+        print("The response of PhoneNumbersApi->record_sms_privacy_request:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PhoneNumbersApi->record_sms_privacy_request: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wttcpa_privacy_request** | [**WTTCPAPrivacyRequest**](WTTCPAPrivacyRequest.md)|  | 
+
+### Return type
+
+[**WTTCPAPrivacyRequestResult**](WTTCPAPrivacyRequestResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

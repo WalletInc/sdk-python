@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **member_id** | **object** |  | [optional] 
 **offer_amount_cents** | **object** |  | 
 **cell_phone** | **object** |  | [optional] 
+**guest_instructions** | **object** |  | [optional] 
 **voucher_id** | **str** |  | 
 
 ## Example

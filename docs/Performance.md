@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **ticket_expiration_date_time** | **object** |  | [optional] 
 **redemption_instructions** | **object** |  | [optional] 
 **id** | [**AmenityId**](AmenityId.md) |  | 
+**page_id** | **object** |  | [optional] 
 **created_at** | **object** |  | 
 **updated_at** | **object** |  | 
 **is_active** | **object** |  | 

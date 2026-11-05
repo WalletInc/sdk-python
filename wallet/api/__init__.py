@@ -29,6 +29,7 @@ from wallet.api.interactions_api import InteractionsApi
 from wallet.api.keyword_auto_responders_api import KeywordAutoRespondersApi
 from wallet.api.lounge_api import LoungeApi
 from wallet.api.membership_tiers_api import MembershipTiersApi
+from wallet.api.menus_api import MenusApi
 from wallet.api.merchant_api import MerchantApi
 from wallet.api.merchant_credits_api import MerchantCreditsApi
 from wallet.api.news_api import NewsApi
@@ -45,6 +46,7 @@ from wallet.api.promotion_codes_api import PromotionCodesApi
 from wallet.api.qr_code_designs_api import QRCodeDesignsApi
 from wallet.api.quick_links_api import QuickLinksApi
 from wallet.api.quick_links_section_api import QuickLinksSectionApi
+from wallet.api.related_items_api import RelatedItemsApi
 from wallet.api.room_rates_api import RoomRatesApi
 from wallet.api.sms_messages_api import SMSMessagesApi
 from wallet.api.sms_subscribers_api import SMSSubscribersApi

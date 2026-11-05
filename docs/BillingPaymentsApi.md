@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**fetch_special_offers**](BillingPaymentsApi.md#fetch_special_offers) | **GET** /v2/billing/products/specialOffers | Get special offers
 [**fetch_subscription**](BillingPaymentsApi.md#fetch_subscription) | **GET** /v2/billing/subscription | Get subscription
 [**fetch_usage_summary**](BillingPaymentsApi.md#fetch_usage_summary) | **GET** /v2/billing/summary | Get usage summary
+[**keep_plan**](BillingPaymentsApi.md#keep_plan) | **POST** /billing/plan/keep | Keep the current plan
 [**run_financing_soft_pull**](BillingPaymentsApi.md#run_financing_soft_pull) | **POST** /v2/billing/financing/soft-pull | Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off).
 [**save_payment_method**](BillingPaymentsApi.md#save_payment_method) | **PUT** /v2/billing/paymentMethod | Save payment method
 [**set_default_payment_method**](BillingPaymentsApi.md#set_default_payment_method) | **POST** /v2/billing/paymentMethod/default | Set payment method as default
@@ -791,6 +792,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 **object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **keep_plan**
+> WTBillingKeepPlanResponse keep_plan()
+
+Keep the current plan
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_billing_keep_plan_response import WTBillingKeepPlanResponse
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.BillingPaymentsApi(api_client)
+
+    try:
+        # Keep the current plan
+        api_response = api_instance.keep_plan()
+        print("The response of BillingPaymentsApi->keep_plan:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingPaymentsApi->keep_plan: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**WTBillingKeepPlanResponse**](WTBillingKeepPlanResponse.md)
 
 ### Authorization
 

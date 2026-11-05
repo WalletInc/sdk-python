@@ -21,6 +21,11 @@ Name | Type | Description | Notes
 **acquisition_source** | **object** |  | [optional] 
 **share_id** | **object** |  | [optional] 
 **donor_note** | **object** |  | [optional] 
+**age_requirement** | [**WTAgeRestriction**](WTAgeRestriction.md) |  | [optional] 
+**id_check_required** | **object** |  | [optional] 
+**venue_type** | [**WTMenuVenueType**](WTMenuVenueType.md) |  | [optional] 
+**venue_id** | **object** |  | [optional] 
+**venue_title** | **object** |  | [optional] 
 **line_items** | **object** |  | 
 
 ## Example

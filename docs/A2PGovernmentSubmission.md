@@ -28,11 +28,11 @@ Name | Type | Description | Notes
 **postal_code** | **object** |  | 
 **country** | **object** |  | 
 **phone_number** | **object** |  | 
+**privacy_policy_url** | **object** |  | [optional] 
 **is_twilio_terms_read** | **object** |  | 
 **is_wallet_sms_terms_read** | **object** |  | 
 **is_pricing_understood** | **object** |  | 
 **is_privacy_and_tos_present** | **object** |  | 
-**privacy_policy_url** | **object** |  | [optional] 
 **will_obtain_consent** | **object** |  | 
 **will_honor_opt_out** | **object** |  | 
 **will_follow_content_rules** | **object** |  | 

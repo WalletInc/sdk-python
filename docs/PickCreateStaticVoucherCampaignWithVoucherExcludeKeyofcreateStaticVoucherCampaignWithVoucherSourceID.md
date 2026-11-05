@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **member_id** | **str** |  | [optional] 
 **offer_amount_cents** | **int** |  | 
 **cell_phone** | **str** |  | [optional] 
+**guest_instructions** | **str** |  | [optional] 
 
 ## Example
 

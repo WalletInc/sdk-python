@@ -5,6 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**age_restriction** | [**WTAgeRestriction**](WTAgeRestriction.md) |  | [optional] 
+**id_check_on_handoff** | **bool** |  | [optional] 
+**is_sold_out** | **bool** |  | [optional] 
+**sold_out_until** | **datetime** |  | [optional] 
+**fulfillment_modes** | **object** |  | [optional] 
 **title** | **object** |  | 
 **description** | **object** |  | 
 **displayed_price** | **object** |  | [optional] 

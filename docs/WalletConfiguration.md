@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **is_representatives** | **object** |  | 
 **is_products** | **object** |  | 
 **is_services** | **object** |  | 
+**is_menu** | **object** |  | 
 **is_room_rates** | **object** |  | 
 **is_amenities** | **object** |  | 
 **is_gaming** | **object** |  | 

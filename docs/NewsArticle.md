@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **media_url** | **object** |  | [optional] 
 **published_date** | **object** |  | [optional] 
 **id** | [**AmenityId**](AmenityId.md) |  | 
+**page_id** | **object** |  | [optional] 
 **created_at** | **object** |  | 
 **updated_at** | **object** |  | 
 **is_active** | **object** |  | 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **next_charge_amount** | **object** |  | [optional] 
 **billing_period** | **object** |  | [optional] 
 **next_charge_currency** | **object** |  | [optional] 
+**scheduled_downgrade_at** | **object** |  | [optional] 
 
 ## Example
 
