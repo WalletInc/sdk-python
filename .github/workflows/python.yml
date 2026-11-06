@@ -15,9 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # 3.7 and 3.8 are EOL and 3.7 is no longer provisionable on current
-        # ubuntu-latest runners (setup-python fails, fail-fast cancels the matrix).
-        python-version: ["3.9", "3.10", "3.11"]
+        # Only versions setup-python can provision on ubuntu-latest. 3.7 and 3.8 went first; 3.9 (EOL
+        # October 2025) followed when ubuntu-latest moved to 26.04 in November 2026. One missing version
+        # fails the whole matrix (fail-fast), so drop a version as soon as the runner stops carrying it.
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v3
