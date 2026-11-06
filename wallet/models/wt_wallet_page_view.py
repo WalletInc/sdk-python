@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from wallet.models.traffic_class import TrafficClass
 from wallet.models.wt_wallet_page_view_geo_point import WTWalletPageViewGeoPoint
 from typing import Optional, Set
 from typing_extensions import Self
@@ -49,6 +50,7 @@ class WTWalletPageView(BaseModel):
     phone_verification_token: Optional[Any] = Field(alias="phoneVerificationToken")
     referring_domain: Optional[Any] = Field(default=None, alias="referringDomain")
     referrer: Optional[Any] = None
+    traffic_class: Optional[TrafficClass] = Field(default=None, alias="trafficClass")
     id: Annotated[str, Field(min_length=10, strict=True, max_length=12)]
     status: Optional[Any]
     country: Optional[Any]
@@ -69,7 +71,7 @@ class WTWalletPageView(BaseModel):
     is_active: Optional[Any] = Field(description="Denotes if this resource is active", alias="isActive")
     geo_point: WTWalletPageViewGeoPoint = Field(alias="geoPoint")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["ip", "walletObjectID", "walletObjectPrefix", "parentObjectID", "parentObjectPrefix", "sessionID", "navigatorAgent", "browserName", "browserVersion", "engineName", "engineVersion", "oSName", "oSVersion", "isMobile", "deviceVendor", "deviceModel", "deviceType", "phoneVerificationToken", "referringDomain", "referrer", "id", "status", "country", "countryCode", "region", "regionName", "city", "zip", "latitude", "longitude", "timezone", "isp", "org", "asn", "createdAt", "updatedAt", "merchantID", "isActive", "geoPoint"]
+    __properties: ClassVar[List[str]] = ["ip", "walletObjectID", "walletObjectPrefix", "parentObjectID", "parentObjectPrefix", "sessionID", "navigatorAgent", "browserName", "browserVersion", "engineName", "engineVersion", "oSName", "oSVersion", "isMobile", "deviceVendor", "deviceModel", "deviceType", "phoneVerificationToken", "referringDomain", "referrer", "trafficClass", "id", "status", "country", "countryCode", "region", "regionName", "city", "zip", "latitude", "longitude", "timezone", "isp", "org", "asn", "createdAt", "updatedAt", "merchantID", "isActive", "geoPoint"]
 
     model_config = {
         "populate_by_name": True,
@@ -112,6 +114,9 @@ class WTWalletPageView(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of traffic_class
+        if self.traffic_class:
+            _dict['trafficClass'] = self.traffic_class.to_dict()
         # override the default output from pydantic by calling `to_dict()` of geo_point
         if self.geo_point:
             _dict['geoPoint'] = self.geo_point.to_dict()
@@ -332,6 +337,7 @@ class WTWalletPageView(BaseModel):
             "phoneVerificationToken": obj.get("phoneVerificationToken"),
             "referringDomain": obj.get("referringDomain"),
             "referrer": obj.get("referrer"),
+            "trafficClass": TrafficClass.from_dict(obj["trafficClass"]) if obj.get("trafficClass") is not None else None,
             "id": obj.get("id"),
             "status": obj.get("status"),
             "country": obj.get("country"),

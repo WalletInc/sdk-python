@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**guest_instructions** | **str** |  | 
 **border_color** | **str** |  | 
 **border_style_type** | [**PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType**](PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.md) |  | 
 **border_size** | **str** |  | 
@@ -18,16 +19,15 @@ Name | Type | Description | Notes
 **display_name** | **str** |  | 
 **background_image_url** | **str** |  | [optional] 
 **company_logo_url** | **str** |  | [optional] 
+**text_plate** | **bool** |  | 
+**text_plate_opacity** | **float** |  | 
+**text_plate_color** | **str** |  | [optional] 
 **employee_id** | **str** |  | 
 **id** | [**StaticVoucherId**](StaticVoucherId.md) |  | 
 **merchant_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **is_active** | **bool** |  | 
-**text_plate** | **bool** |  | 
-**text_plate_opacity** | **float** |  | 
-**text_plate_color** | **str** |  | [optional] 
-**guest_instructions** | **str** |  | 
 
 ## Example
 

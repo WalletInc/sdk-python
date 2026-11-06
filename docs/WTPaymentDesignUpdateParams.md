@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**guest_instructions** | **object** |  | [optional] 
 **border_color** | **str** |  | 
 **border_style_type** | [**PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType**](PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.md) |  | 
 **border_size** | **str** |  | 
@@ -16,12 +17,11 @@ Name | Type | Description | Notes
 **display_name** | **str** |  | 
 **background_image_url** | **str** |  | [optional] 
 **company_logo_url** | **str** |  | [optional] 
-**abbreviation** | **str** |  | [optional] 
-**acronym** | **str** |  | [optional] 
 **text_plate** | **bool** |  | [optional] 
 **text_plate_opacity** | **object** |  | [optional] 
-**text_plate_color** | **object** |  | [optional] 
-**guest_instructions** | **object** |  | [optional] 
+**text_plate_color** | **str** |  | [optional] 
+**abbreviation** | **str** |  | [optional] 
+**acronym** | **str** |  | [optional] 
 
 ## Example
 

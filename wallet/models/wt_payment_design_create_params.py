@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -29,6 +29,7 @@ class WTPaymentDesignCreateParams(BaseModel):
     """
     WTPaymentDesignCreateParams
     """ # noqa: E501
+    guest_instructions: Optional[Any] = Field(default=None, alias="guestInstructions")
     border_color: StrictStr = Field(alias="borderColor")
     border_style_type: PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType = Field(alias="borderStyleType")
     border_size: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="borderSize")
@@ -40,14 +41,13 @@ class WTPaymentDesignCreateParams(BaseModel):
     display_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="displayName")
     background_image_url: Optional[StrictStr] = Field(default=None, alias="backgroundImageURL")
     company_logo_url: Optional[StrictStr] = Field(default=None, alias="companyLogoURL")
-    abbreviation: Optional[StrictStr] = None
-    acronym: Optional[StrictStr] = None
     text_plate: Optional[StrictBool] = Field(default=None, alias="textPlate")
     text_plate_opacity: Optional[Any] = Field(default=None, alias="textPlateOpacity")
-    text_plate_color: Optional[Any] = Field(default=None, alias="textPlateColor")
-    guest_instructions: Optional[Any] = Field(default=None, alias="guestInstructions")
+    text_plate_color: Optional[StrictStr] = Field(default=None, alias="textPlateColor")
+    abbreviation: Optional[StrictStr] = None
+    acronym: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL", "abbreviation", "acronym", "textPlate", "textPlateOpacity", "textPlateColor", "guestInstructions"]
+    __properties: ClassVar[List[str]] = ["guestInstructions", "borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL", "textPlate", "textPlateOpacity", "textPlateColor", "abbreviation", "acronym"]
 
     model_config = {
         "populate_by_name": True,
@@ -98,20 +98,15 @@ class WTPaymentDesignCreateParams(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
-        # set to None if text_plate_opacity (nullable) is None
-        # and model_fields_set contains the field
-        if self.text_plate_opacity is None and "text_plate_opacity" in self.model_fields_set:
-            _dict['textPlateOpacity'] = None
-
-        # set to None if text_plate_color (nullable) is None
-        # and model_fields_set contains the field
-        if self.text_plate_color is None and "text_plate_color" in self.model_fields_set:
-            _dict['textPlateColor'] = None
-
         # set to None if guest_instructions (nullable) is None
         # and model_fields_set contains the field
         if self.guest_instructions is None and "guest_instructions" in self.model_fields_set:
             _dict['guestInstructions'] = None
+
+        # set to None if text_plate_opacity (nullable) is None
+        # and model_fields_set contains the field
+        if self.text_plate_opacity is None and "text_plate_opacity" in self.model_fields_set:
+            _dict['textPlateOpacity'] = None
 
         return _dict
 
@@ -125,6 +120,7 @@ class WTPaymentDesignCreateParams(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "guestInstructions": obj.get("guestInstructions"),
             "borderColor": obj.get("borderColor"),
             "borderStyleType": PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.from_dict(obj["borderStyleType"]) if obj.get("borderStyleType") is not None else None,
             "borderSize": obj.get("borderSize"),
@@ -136,12 +132,11 @@ class WTPaymentDesignCreateParams(BaseModel):
             "displayName": obj.get("displayName"),
             "backgroundImageURL": obj.get("backgroundImageURL"),
             "companyLogoURL": obj.get("companyLogoURL"),
-            "abbreviation": obj.get("abbreviation"),
-            "acronym": obj.get("acronym"),
             "textPlate": obj.get("textPlate"),
             "textPlateOpacity": obj.get("textPlateOpacity"),
             "textPlateColor": obj.get("textPlateColor"),
-            "guestInstructions": obj.get("guestInstructions")
+            "abbreviation": obj.get("abbreviation"),
+            "acronym": obj.get("acronym")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -5,7 +5,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -353,6 +353,7 @@ from wallet.models.tcpa import Tcpa
 from wallet.models.thread import Thread
 from wallet.models.ticket import Ticket
 from wallet.models.ticket_sort_keys import TicketSortKeys
+from wallet.models.traffic_class import TrafficClass
 from wallet.models.trust_bundle_statuses import TrustBundleStatuses
 from wallet.models.update_chrome_theme_preference_request import UpdateChromeThemePreferenceRequest
 from wallet.models.update_chrome_theme_preference_request_chrome_theme import UpdateChromeThemePreferenceRequestChromeTheme

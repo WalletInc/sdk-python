@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **employee_id** | **str** |  | 
 **reinvestment_sum** | **object** |  | 
 **number_of_vouchers_in_file** | **object** |  | 
+**guest_instructions** | **object** |  | [optional] 
 **campaign_group_id** | **str** |  | [optional] 
 **bucket** | **object** |  | [optional] 
 **created_by_source_id** | **object** |  | 
@@ -30,7 +31,6 @@ Name | Type | Description | Notes
 **reinvestment_sum_string** | **object** |  | 
 **start_date** | **object** |  | 
 **expiration_date** | **object** |  | 
-**guest_instructions** | **object** |  | [optional] 
 
 ## Example
 

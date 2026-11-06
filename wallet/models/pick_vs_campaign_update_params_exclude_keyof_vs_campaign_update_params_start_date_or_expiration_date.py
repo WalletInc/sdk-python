@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -41,7 +41,8 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
     employee_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="employeeID")
     reinvestment_sum: Annotated[int, Field(strict=True, ge=0)] = Field(alias="reinvestmentSum")
     number_of_vouchers_in_file: Annotated[int, Field(strict=True, ge=0)] = Field(alias="numberOfVouchersInFile")
-    __properties: ClassVar[List[str]] = ["id", "title", "notes", "valueType", "isLoaded", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "employeeID", "reinvestmentSum", "numberOfVouchersInFile"]
+    guest_instructions: Optional[StrictStr] = Field(default=None, alias="guestInstructions")
+    __properties: ClassVar[List[str]] = ["id", "title", "notes", "valueType", "isLoaded", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "employeeID", "reinvestmentSum", "numberOfVouchersInFile", "guestInstructions"]
 
     model_config = {
         "populate_by_name": True,
@@ -108,7 +109,8 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
             "paymentDesignID": obj.get("paymentDesignID"),
             "employeeID": obj.get("employeeID"),
             "reinvestmentSum": obj.get("reinvestmentSum"),
-            "numberOfVouchersInFile": obj.get("numberOfVouchersInFile")
+            "numberOfVouchersInFile": obj.get("numberOfVouchersInFile"),
+            "guestInstructions": obj.get("guestInstructions")
         })
         return _obj
 

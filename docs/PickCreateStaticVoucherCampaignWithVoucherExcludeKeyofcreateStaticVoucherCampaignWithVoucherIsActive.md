@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 **merchants_reference_id** | **str** |  | [optional] 
 **valid_only_at_pos_register_ids** | **List[str]** |  | [optional] 
 **payment_design_id** | **str** |  | 
+**guest_instructions** | **str** |  | [optional] 
 **start_date_time** | **datetime** |  | 
 **expiration_date_time** | **datetime** |  | 
 **source_id** | **int** |  | 
 **member_id** | **str** |  | [optional] 
 **offer_amount_cents** | **int** |  | 
 **cell_phone** | **str** |  | [optional] 
-**guest_instructions** | **str** |  | [optional] 
 
 ## Example
 

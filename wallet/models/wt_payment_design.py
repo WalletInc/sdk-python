@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -31,6 +31,7 @@ class WTPaymentDesign(BaseModel):
     """
     WTPaymentDesign
     """ # noqa: E501
+    guest_instructions: StrictStr = Field(alias="guestInstructions")
     border_color: StrictStr = Field(alias="borderColor")
     border_style_type: PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType = Field(alias="borderStyleType")
     border_size: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="borderSize")
@@ -44,18 +45,17 @@ class WTPaymentDesign(BaseModel):
     display_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="displayName")
     background_image_url: Optional[StrictStr] = Field(default=None, alias="backgroundImageURL")
     company_logo_url: Optional[StrictStr] = Field(default=None, alias="companyLogoURL")
+    text_plate: StrictBool = Field(alias="textPlate")
+    text_plate_opacity: Union[StrictFloat, StrictInt] = Field(alias="textPlateOpacity")
+    text_plate_color: Optional[StrictStr] = Field(default=None, alias="textPlateColor")
     employee_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="employeeID")
     id: StaticVoucherId
     merchant_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="merchantID")
     created_at: datetime = Field(alias="createdAt")
     updated_at: datetime = Field(alias="updatedAt")
     is_active: StrictBool = Field(alias="isActive")
-    text_plate: StrictBool = Field(alias="textPlate")
-    text_plate_opacity: Union[StrictFloat, StrictInt] = Field(alias="textPlateOpacity")
-    text_plate_color: Optional[StrictStr] = Field(default=None, alias="textPlateColor")
-    guest_instructions: StrictStr = Field(alias="guestInstructions")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "abbreviation", "acronym", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL", "employeeID", "id", "merchantID", "createdAt", "updatedAt", "isActive", "textPlate", "textPlateOpacity", "textPlateColor", "guestInstructions"]
+    __properties: ClassVar[List[str]] = ["guestInstructions", "borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "abbreviation", "acronym", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL", "textPlate", "textPlateOpacity", "textPlateColor", "employeeID", "id", "merchantID", "createdAt", "updatedAt", "isActive"]
 
     model_config = {
         "populate_by_name": True,
@@ -121,6 +121,7 @@ class WTPaymentDesign(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "guestInstructions": obj.get("guestInstructions"),
             "borderColor": obj.get("borderColor"),
             "borderStyleType": PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.from_dict(obj["borderStyleType"]) if obj.get("borderStyleType") is not None else None,
             "borderSize": obj.get("borderSize"),
@@ -134,16 +135,15 @@ class WTPaymentDesign(BaseModel):
             "displayName": obj.get("displayName"),
             "backgroundImageURL": obj.get("backgroundImageURL"),
             "companyLogoURL": obj.get("companyLogoURL"),
+            "textPlate": obj.get("textPlate"),
+            "textPlateOpacity": obj.get("textPlateOpacity"),
+            "textPlateColor": obj.get("textPlateColor"),
             "employeeID": obj.get("employeeID"),
             "id": StaticVoucherId.from_dict(obj["id"]) if obj.get("id") is not None else None,
             "merchantID": obj.get("merchantID"),
             "createdAt": obj.get("createdAt"),
             "updatedAt": obj.get("updatedAt"),
-            "isActive": obj.get("isActive"),
-            "textPlate": obj.get("textPlate"),
-            "textPlateOpacity": obj.get("textPlateOpacity"),
-            "textPlateColor": obj.get("textPlateColor"),
-            "guestInstructions": obj.get("guestInstructions")
+            "isActive": obj.get("isActive")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

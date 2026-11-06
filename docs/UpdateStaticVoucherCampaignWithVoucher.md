@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 **merchants_reference_id** | **object** |  | [optional] 
 **valid_only_at_pos_register_ids** | **object** |  | [optional] 
 **payment_design_id** | **str** |  | 
+**guest_instructions** | **object** |  | [optional] 
 **start_date_time** | **object** |  | 
 **expiration_date_time** | **object** |  | 
 **member_id** | **object** |  | [optional] 
 **offer_amount_cents** | **object** |  | 
 **cell_phone** | **object** |  | [optional] 
-**guest_instructions** | **object** |  | [optional] 
 **voucher_id** | **str** |  | 
 
 ## Example

@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -42,6 +42,7 @@ class StaticVoucherCampaign(BaseModel):
     employee_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="employeeID")
     reinvestment_sum: Optional[Any] = Field(alias="reinvestmentSum")
     number_of_vouchers_in_file: Optional[Any] = Field(alias="numberOfVouchersInFile")
+    guest_instructions: Optional[Any] = Field(default=None, alias="guestInstructions")
     campaign_group_id: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=10)]] = Field(default=None, alias="campaignGroupID")
     bucket: Optional[Any] = None
     created_by_source_id: Optional[Any] = Field(alias="createdBySourceID")
@@ -55,9 +56,8 @@ class StaticVoucherCampaign(BaseModel):
     reinvestment_sum_string: Optional[Any] = Field(alias="reinvestmentSum_string")
     start_date: Optional[Any] = Field(alias="startDate")
     expiration_date: Optional[Any] = Field(alias="expirationDate")
-    guest_instructions: Optional[Any] = Field(default=None, alias="guestInstructions")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "title", "notes", "valueType", "isLoaded", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "employeeID", "reinvestmentSum", "numberOfVouchersInFile", "campaignGroupID", "bucket", "createdBySourceID", "originalFileName", "merchantID", "createdAt", "updatedAt", "isActive", "voucherType", "reinvestmentSum_decimal", "reinvestmentSum_string", "startDate", "expirationDate", "guestInstructions"]
+    __properties: ClassVar[List[str]] = ["id", "title", "notes", "valueType", "isLoaded", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "employeeID", "reinvestmentSum", "numberOfVouchersInFile", "guestInstructions", "campaignGroupID", "bucket", "createdBySourceID", "originalFileName", "merchantID", "createdAt", "updatedAt", "isActive", "voucherType", "reinvestmentSum_decimal", "reinvestmentSum_string", "startDate", "expirationDate"]
 
     model_config = {
         "populate_by_name": True,
@@ -151,6 +151,11 @@ class StaticVoucherCampaign(BaseModel):
         if self.number_of_vouchers_in_file is None and "number_of_vouchers_in_file" in self.model_fields_set:
             _dict['numberOfVouchersInFile'] = None
 
+        # set to None if guest_instructions (nullable) is None
+        # and model_fields_set contains the field
+        if self.guest_instructions is None and "guest_instructions" in self.model_fields_set:
+            _dict['guestInstructions'] = None
+
         # set to None if bucket (nullable) is None
         # and model_fields_set contains the field
         if self.bucket is None and "bucket" in self.model_fields_set:
@@ -206,11 +211,6 @@ class StaticVoucherCampaign(BaseModel):
         if self.expiration_date is None and "expiration_date" in self.model_fields_set:
             _dict['expirationDate'] = None
 
-        # set to None if guest_instructions (nullable) is None
-        # and model_fields_set contains the field
-        if self.guest_instructions is None and "guest_instructions" in self.model_fields_set:
-            _dict['guestInstructions'] = None
-
         return _dict
 
     @classmethod
@@ -235,6 +235,7 @@ class StaticVoucherCampaign(BaseModel):
             "employeeID": obj.get("employeeID"),
             "reinvestmentSum": obj.get("reinvestmentSum"),
             "numberOfVouchersInFile": obj.get("numberOfVouchersInFile"),
+            "guestInstructions": obj.get("guestInstructions"),
             "campaignGroupID": obj.get("campaignGroupID"),
             "bucket": obj.get("bucket"),
             "createdBySourceID": obj.get("createdBySourceID"),
@@ -247,8 +248,7 @@ class StaticVoucherCampaign(BaseModel):
             "reinvestmentSum_decimal": obj.get("reinvestmentSum_decimal"),
             "reinvestmentSum_string": obj.get("reinvestmentSum_string"),
             "startDate": obj.get("startDate"),
-            "expirationDate": obj.get("expirationDate"),
-            "guestInstructions": obj.get("guestInstructions")
+            "expirationDate": obj.get("expirationDate")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

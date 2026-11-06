@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **valid_only_at_pos_register_ids** | **List[str]** |  | [optional] 
 **payment_design_id** | **str** |  | 
 **employee_id** | **str** |  | 
+**guest_instructions** | **str** |  | [optional] 
 **campaign_group_id** | **str** |  | [optional] 
 **bucket** | **str** |  | [optional] 
 **created_by_source_id** | **int** |  | 

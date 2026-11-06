@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -36,15 +36,15 @@ class UpdateStaticVoucherCampaignWithVoucher(BaseModel):
     merchants_reference_id: Optional[Any] = Field(default=None, alias="merchantsReferenceID")
     valid_only_at_pos_register_ids: Optional[Any] = Field(default=None, alias="validOnlyAtPOSRegisterIDs")
     payment_design_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="paymentDesignID")
+    guest_instructions: Optional[Any] = Field(default=None, alias="guestInstructions")
     start_date_time: Optional[Any] = Field(alias="startDateTime")
     expiration_date_time: Optional[Any] = Field(alias="expirationDateTime")
     member_id: Optional[Any] = Field(default=None, alias="memberID")
     offer_amount_cents: Optional[Any] = Field(alias="offerAmountCents")
     cell_phone: Optional[Any] = Field(default=None, alias="cellPhone")
-    guest_instructions: Optional[Any] = Field(default=None, alias="guestInstructions")
     voucher_id: Annotated[str, Field(min_length=10, strict=True, max_length=12)] = Field(alias="voucherID")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["title", "notes", "valueType", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "startDateTime", "expirationDateTime", "memberID", "offerAmountCents", "cellPhone", "guestInstructions", "voucherID"]
+    __properties: ClassVar[List[str]] = ["title", "notes", "valueType", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "guestInstructions", "startDateTime", "expirationDateTime", "memberID", "offerAmountCents", "cellPhone", "voucherID"]
 
     model_config = {
         "populate_by_name": True,
@@ -120,6 +120,11 @@ class UpdateStaticVoucherCampaignWithVoucher(BaseModel):
         if self.valid_only_at_pos_register_ids is None and "valid_only_at_pos_register_ids" in self.model_fields_set:
             _dict['validOnlyAtPOSRegisterIDs'] = None
 
+        # set to None if guest_instructions (nullable) is None
+        # and model_fields_set contains the field
+        if self.guest_instructions is None and "guest_instructions" in self.model_fields_set:
+            _dict['guestInstructions'] = None
+
         # set to None if start_date_time (nullable) is None
         # and model_fields_set contains the field
         if self.start_date_time is None and "start_date_time" in self.model_fields_set:
@@ -145,11 +150,6 @@ class UpdateStaticVoucherCampaignWithVoucher(BaseModel):
         if self.cell_phone is None and "cell_phone" in self.model_fields_set:
             _dict['cellPhone'] = None
 
-        # set to None if guest_instructions (nullable) is None
-        # and model_fields_set contains the field
-        if self.guest_instructions is None and "guest_instructions" in self.model_fields_set:
-            _dict['guestInstructions'] = None
-
         return _dict
 
     @classmethod
@@ -169,12 +169,12 @@ class UpdateStaticVoucherCampaignWithVoucher(BaseModel):
             "merchantsReferenceID": obj.get("merchantsReferenceID"),
             "validOnlyAtPOSRegisterIDs": obj.get("validOnlyAtPOSRegisterIDs"),
             "paymentDesignID": obj.get("paymentDesignID"),
+            "guestInstructions": obj.get("guestInstructions"),
             "startDateTime": obj.get("startDateTime"),
             "expirationDateTime": obj.get("expirationDateTime"),
             "memberID": obj.get("memberID"),
             "offerAmountCents": obj.get("offerAmountCents"),
             "cellPhone": obj.get("cellPhone"),
-            "guestInstructions": obj.get("guestInstructions"),
             "voucherID": obj.get("voucherID")
         })
         # store additional fields in additional_properties

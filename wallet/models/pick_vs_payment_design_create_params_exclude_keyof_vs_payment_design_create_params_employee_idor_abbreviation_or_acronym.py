@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, Field, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from wallet.models.pick_vs_payment_design_update_params_exclude_keyof_vs_payment_design_update_params_id_border_style_type import PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType
 from typing import Optional, Set
@@ -29,6 +29,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
     """
     From T, pick a set of properties whose keys are in the union K
     """ # noqa: E501
+    guest_instructions: Optional[StrictStr] = Field(default=None, alias="guestInstructions")
     border_color: StrictStr = Field(alias="borderColor")
     border_style_type: PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType = Field(alias="borderStyleType")
     border_size: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="borderSize")
@@ -40,7 +41,10 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
     display_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="displayName")
     background_image_url: Optional[StrictStr] = Field(default=None, alias="backgroundImageURL")
     company_logo_url: Optional[StrictStr] = Field(default=None, alias="companyLogoURL")
-    __properties: ClassVar[List[str]] = ["borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL"]
+    text_plate: Optional[StrictBool] = Field(default=None, alias="textPlate")
+    text_plate_opacity: Optional[Union[Annotated[float, Field(le=0.8, strict=True, ge=0.2)], Annotated[int, Field(le=0, strict=True, ge=1)]]] = Field(default=None, alias="textPlateOpacity")
+    text_plate_color: Optional[StrictStr] = Field(default=None, alias="textPlateColor")
+    __properties: ClassVar[List[str]] = ["guestInstructions", "borderColor", "borderStyleType", "borderSize", "borderRadius", "fontColor", "fontType", "icon", "designName", "displayName", "backgroundImageURL", "companyLogoURL", "textPlate", "textPlateOpacity", "textPlateColor"]
 
     model_config = {
         "populate_by_name": True,
@@ -96,6 +100,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "guestInstructions": obj.get("guestInstructions"),
             "borderColor": obj.get("borderColor"),
             "borderStyleType": PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.from_dict(obj["borderStyleType"]) if obj.get("borderStyleType") is not None else None,
             "borderSize": obj.get("borderSize"),
@@ -106,7 +111,10 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
             "designName": obj.get("designName"),
             "displayName": obj.get("displayName"),
             "backgroundImageURL": obj.get("backgroundImageURL"),
-            "companyLogoURL": obj.get("companyLogoURL")
+            "companyLogoURL": obj.get("companyLogoURL"),
+            "textPlate": obj.get("textPlate"),
+            "textPlateOpacity": obj.get("textPlateOpacity"),
+            "textPlateColor": obj.get("textPlateColor")
         })
         return _obj
 

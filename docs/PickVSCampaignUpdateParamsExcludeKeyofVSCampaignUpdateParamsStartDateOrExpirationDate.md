@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **employee_id** | **str** |  | 
 **reinvestment_sum** | **int** |  | 
 **number_of_vouchers_in_file** | **int** |  | 
+**guest_instructions** | **str** |  | [optional] 
 
 ## Example
 

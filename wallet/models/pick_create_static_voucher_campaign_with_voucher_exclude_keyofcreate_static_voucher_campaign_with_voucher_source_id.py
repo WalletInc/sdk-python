@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -37,13 +37,13 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
     merchants_reference_id: Optional[StrictStr] = Field(default=None, alias="merchantsReferenceID")
     valid_only_at_pos_register_ids: Optional[List[StrictStr]] = Field(default=None, alias="validOnlyAtPOSRegisterIDs")
     payment_design_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="paymentDesignID")
+    guest_instructions: Optional[StrictStr] = Field(default=None, alias="guestInstructions")
     start_date_time: datetime = Field(alias="startDateTime")
     expiration_date_time: datetime = Field(alias="expirationDateTime")
     member_id: Optional[StrictStr] = Field(default=None, alias="memberID")
     offer_amount_cents: Annotated[int, Field(strict=True, ge=0)] = Field(alias="offerAmountCents")
     cell_phone: Optional[StrictStr] = Field(default=None, alias="cellPhone")
-    guest_instructions: Optional[StrictStr] = Field(default=None, alias="guestInstructions")
-    __properties: ClassVar[List[str]] = ["title", "notes", "valueType", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "startDateTime", "expirationDateTime", "memberID", "offerAmountCents", "cellPhone", "guestInstructions"]
+    __properties: ClassVar[List[str]] = ["title", "notes", "valueType", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "guestInstructions", "startDateTime", "expirationDateTime", "memberID", "offerAmountCents", "cellPhone"]
 
     model_config = {
         "populate_by_name": True,
@@ -106,12 +106,12 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
             "merchantsReferenceID": obj.get("merchantsReferenceID"),
             "validOnlyAtPOSRegisterIDs": obj.get("validOnlyAtPOSRegisterIDs"),
             "paymentDesignID": obj.get("paymentDesignID"),
+            "guestInstructions": obj.get("guestInstructions"),
             "startDateTime": obj.get("startDateTime"),
             "expirationDateTime": obj.get("expirationDateTime"),
             "memberID": obj.get("memberID"),
             "offerAmountCents": obj.get("offerAmountCents"),
-            "cellPhone": obj.get("cellPhone"),
-            "guestInstructions": obj.get("guestInstructions")
+            "cellPhone": obj.get("cellPhone")
         })
         return _obj
 

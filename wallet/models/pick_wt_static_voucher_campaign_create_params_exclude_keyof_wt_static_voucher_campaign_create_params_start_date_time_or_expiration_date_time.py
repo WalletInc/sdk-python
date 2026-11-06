@@ -3,7 +3,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+    Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
 
     The version of the OpenAPI document: 2.61.0
     Contact: development@wallet.inc
@@ -38,11 +38,12 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
     valid_only_at_pos_register_ids: Optional[List[StrictStr]] = Field(default=None, alias="validOnlyAtPOSRegisterIDs")
     payment_design_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="paymentDesignID")
     employee_id: Annotated[str, Field(min_length=10, strict=True, max_length=10)] = Field(alias="employeeID")
+    guest_instructions: Optional[StrictStr] = Field(default=None, alias="guestInstructions")
     campaign_group_id: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=10)]] = Field(default=None, alias="campaignGroupID")
     bucket: Optional[StrictStr] = None
     created_by_source_id: StrictInt = Field(alias="createdBySourceID")
     original_file_name: Optional[StrictStr] = Field(default=None, alias="originalFileName")
-    __properties: ClassVar[List[str]] = ["title", "notes", "valueType", "isLoaded", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "employeeID", "campaignGroupID", "bucket", "createdBySourceID", "originalFileName"]
+    __properties: ClassVar[List[str]] = ["title", "notes", "valueType", "isLoaded", "displayValue", "merchantsReferenceID", "validOnlyAtPOSRegisterIDs", "paymentDesignID", "employeeID", "guestInstructions", "campaignGroupID", "bucket", "createdBySourceID", "originalFileName"]
 
     model_config = {
         "populate_by_name": True,
@@ -107,6 +108,7 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
             "validOnlyAtPOSRegisterIDs": obj.get("validOnlyAtPOSRegisterIDs"),
             "paymentDesignID": obj.get("paymentDesignID"),
             "employeeID": obj.get("employeeID"),
+            "guestInstructions": obj.get("guestInstructions"),
             "campaignGroupID": obj.get("campaignGroupID"),
             "bucket": obj.get("bucket"),
             "createdBySourceID": obj.get("createdBySourceID"),

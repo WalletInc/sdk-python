@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **phone_verification_token** | **object** |  | 
 **referring_domain** | **object** |  | [optional] 
 **referrer** | **object** |  | [optional] 
+**traffic_class** | [**TrafficClass**](TrafficClass.md) |  | [optional] 
 **id** | **str** |  | 
 **status** | **object** |  | 
 **country** | **object** |  | 

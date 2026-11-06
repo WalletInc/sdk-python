@@ -315,6 +315,7 @@ docs/Thread.md
 docs/Ticket.md
 docs/TicketSortKeys.md
 docs/TicketsApi.md
+docs/TrafficClass.md
 docs/TrustBundleStatuses.md
 docs/UpdateChromeThemePreferenceRequest.md
 docs/UpdateChromeThemePreferenceRequestChromeTheme.md
@@ -985,6 +986,7 @@ test/test_thread.py
 test/test_ticket.py
 test/test_ticket_sort_keys.py
 test/test_tickets_api.py
+test/test_traffic_class.py
 test/test_trust_bundle_statuses.py
 test/test_update_chrome_theme_preference_request.py
 test/test_update_chrome_theme_preference_request_chrome_theme.py
@@ -1664,6 +1666,7 @@ wallet/models/tcpa.py
 wallet/models/thread.py
 wallet/models/ticket.py
 wallet/models/ticket_sort_keys.py
+wallet/models/traffic_class.py
 wallet/models/trust_bundle_statuses.py
 wallet/models/update_chrome_theme_preference_request.py
 wallet/models/update_chrome_theme_preference_request_chrome_theme.py

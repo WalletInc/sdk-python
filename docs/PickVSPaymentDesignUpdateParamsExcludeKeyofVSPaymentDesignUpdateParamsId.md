@@ -6,6 +6,7 @@ From T, pick a set of properties whose keys are in the union K
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**guest_instructions** | **str** |  | [optional] 
 **border_color** | **str** |  | 
 **border_style_type** | [**PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType**](PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.md) |  | 
 **border_size** | **str** |  | 
@@ -19,6 +20,9 @@ Name | Type | Description | Notes
 **display_name** | **str** |  | 
 **background_image_url** | **str** |  | [optional] 
 **company_logo_url** | **str** |  | [optional] 
+**text_plate** | **bool** |  | [optional] 
+**text_plate_opacity** | **float** |  | [optional] 
+**text_plate_color** | **str** |  | [optional] 
 
 ## Example
 
