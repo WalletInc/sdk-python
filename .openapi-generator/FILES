@@ -166,7 +166,6 @@ docs/MerchantNotInitialized.md
 docs/MerchantTermsDocumentType.md
 docs/MerchantURL.md
 docs/Message.md
-docs/ModuleError.md
 docs/NewsApi.md
 docs/NewsArticle.md
 docs/NotFound.md
@@ -178,7 +177,6 @@ docs/OptInListSource.md
 docs/OptInListSubscriber.md
 docs/OptInListSubscriberOptInSourceID.md
 docs/OptInListsApi.md
-docs/Order.md
 docs/OrderStatus.md
 docs/OrdersApi.md
 docs/OutboundSMS.md
@@ -652,6 +650,9 @@ docs/WTWalletPassProvider.md
 docs/WTWalletSectionAccess.md
 docs/WTWalletSectionTopItem.md
 docs/WTWalletSectionViews.md
+docs/WTWebsiteWidget.md
+docs/WTWebsiteWidgetEmbedders.md
+docs/WTWebsiteWidgetOriginsUpdate.md
 docs/WTWhatsAppInboundWebhook.md
 docs/WTWhatsAppStatusCallback.md
 docs/WalletConfiguration.md
@@ -818,7 +819,6 @@ test/test_merchant_not_initialized.py
 test/test_merchant_terms_document_type.py
 test/test_merchant_url.py
 test/test_message.py
-test/test_module_error.py
 test/test_ms_analytics_member_count_partitioned_by_date.py
 test/test_ms_analytics_member_points_redeemed_partitioned_by_date.py
 test/test_ms_analytics_member_points_refunded_partitioned_by_date.py
@@ -849,7 +849,6 @@ test/test_opt_in_list_source.py
 test/test_opt_in_list_subscriber.py
 test/test_opt_in_list_subscriber_opt_in_source_id.py
 test/test_opt_in_lists_api.py
-test/test_order.py
 test/test_order_status.py
 test/test_orders_api.py
 test/test_outbound_sms.py
@@ -1317,6 +1316,9 @@ test/test_wt_wallet_pass_provider.py
 test/test_wt_wallet_section_access.py
 test/test_wt_wallet_section_top_item.py
 test/test_wt_wallet_section_views.py
+test/test_wt_website_widget.py
+test/test_wt_website_widget_embedders.py
+test/test_wt_website_widget_origins_update.py
 test/test_wt_whats_app_inbound_webhook.py
 test/test_wt_whats_app_status_callback.py
 test/test_wta2_p_application_update_params.py
@@ -1524,7 +1526,6 @@ wallet/models/merchant_not_initialized.py
 wallet/models/merchant_terms_document_type.py
 wallet/models/merchant_url.py
 wallet/models/message.py
-wallet/models/module_error.py
 wallet/models/ms_analytics_member_count_partitioned_by_date.py
 wallet/models/ms_analytics_member_points_redeemed_partitioned_by_date.py
 wallet/models/ms_analytics_member_points_refunded_partitioned_by_date.py
@@ -1552,7 +1553,6 @@ wallet/models/opt_in_list.py
 wallet/models/opt_in_list_source.py
 wallet/models/opt_in_list_subscriber.py
 wallet/models/opt_in_list_subscriber_opt_in_source_id.py
-wallet/models/order.py
 wallet/models/order_status.py
 wallet/models/outbound_sms.py
 wallet/models/outbound_sms_payment_object_broadcast_id.py
@@ -1989,6 +1989,9 @@ wallet/models/wt_wallet_pass_provider.py
 wallet/models/wt_wallet_section_access.py
 wallet/models/wt_wallet_section_top_item.py
 wallet/models/wt_wallet_section_views.py
+wallet/models/wt_website_widget.py
+wallet/models/wt_website_widget_embedders.py
+wallet/models/wt_website_widget_origins_update.py
 wallet/models/wt_whats_app_inbound_webhook.py
 wallet/models/wt_whats_app_status_callback.py
 wallet/models/wta2_p_application_update_params.py

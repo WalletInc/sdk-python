@@ -7,11 +7,13 @@ Method | HTTP request | Description
 [**delete_custom_domain**](WalletConfigurationApi.md#delete_custom_domain) | **DELETE** /employee/walletConfiguration/customDomain | Remove the custom domain
 [**fetch_custom_domain**](WalletConfigurationApi.md#fetch_custom_domain) | **GET** /employee/walletConfiguration/customDomain | Get the custom domain
 [**fetch_pass_style**](WalletConfigurationApi.md#fetch_pass_style) | **GET** /wallet/passStyle | Get pass styling
+[**fetch_website_widget**](WalletConfigurationApi.md#fetch_website_widget) | **GET** /merchant/wallet/widget | Get website widget settings
 [**generate_android_keystore**](WalletConfigurationApi.md#generate_android_keystore) | **POST** /v2/wallet/android/keystore | Generate Android TWA signing keystore
 [**reset_pass_style**](WalletConfigurationApi.md#reset_pass_style) | **DELETE** /wallet/passStyle/{provider} | Reset one provider&#39;s pass styling
 [**save_custom_domain**](WalletConfigurationApi.md#save_custom_domain) | **PUT** /employee/walletConfiguration/customDomain | Set up a custom domain
 [**save_merchant_credit_payment_design**](WalletConfigurationApi.md#save_merchant_credit_payment_design) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update payment design for merchant credits
 [**save_wallet_record**](WalletConfigurationApi.md#save_wallet_record) | **PUT** /v2/wallet | Update wallet record
+[**save_website_widget_origins**](WalletConfigurationApi.md#save_website_widget_origins) | **PUT** /merchant/wallet/widget/origins | Set the websites allowed to show the wallet
 
 
 # **delete_custom_domain**
@@ -190,6 +192,71 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**WTPassStyleResponse**](WTPassStyleResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_website_widget**
+> WTWebsiteWidget fetch_website_widget()
+
+Get website widget settings
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_website_widget import WTWebsiteWidget
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.WalletConfigurationApi(api_client)
+
+    try:
+        # Get website widget settings
+        api_response = api_instance.fetch_website_widget()
+        print("The response of WalletConfigurationApi->fetch_website_widget:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WalletConfigurationApi->fetch_website_widget: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**WTWebsiteWidget**](WTWebsiteWidget.md)
 
 ### Authorization
 
@@ -537,6 +604,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 **object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
+**422** | Validation Failed |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **save_website_widget_origins**
+> WTWebsiteWidget save_website_widget_origins(wt_website_widget_origins_update)
+
+Set the websites allowed to show the wallet
+
+### Example
+
+
+```python
+import wallet
+from wallet.models.wt_website_widget import WTWebsiteWidget
+from wallet.models.wt_website_widget_origins_update import WTWebsiteWidgetOriginsUpdate
+from wallet.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.wall.et
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet.Configuration(
+    host = "https://api.wall.et"
+)
+
+
+# Enter a context with an instance of the API client
+with wallet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet.WalletConfigurationApi(api_client)
+    wt_website_widget_origins_update = wallet.WTWebsiteWidgetOriginsUpdate() # WTWebsiteWidgetOriginsUpdate | 
+
+    try:
+        # Set the websites allowed to show the wallet
+        api_response = api_instance.save_website_widget_origins(wt_website_widget_origins_update)
+        print("The response of WalletConfigurationApi->save_website_widget_origins:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WalletConfigurationApi->save_website_widget_origins: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_website_widget_origins_update** | [**WTWebsiteWidgetOriginsUpdate**](WTWebsiteWidgetOriginsUpdate.md)|  | 
+
+### Return type
+
+[**WTWebsiteWidget**](WTWebsiteWidget.md)
 
 ### Authorization
 
