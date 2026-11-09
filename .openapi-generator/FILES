@@ -598,6 +598,10 @@ docs/WTServiceUpdateParams.md
 docs/WTSettingsSetPassword.md
 docs/WTShareActivityReport.md
 docs/WTShareActivityRow.md
+docs/WTSmsCreditGrant.md
+docs/WTSmsCreditGrantCreate.md
+docs/WTSmsCreditOverdraftUpdate.md
+docs/WTSmsCreditSummary.md
 docs/WTSmsSubscriberCreateParams.md
 docs/WTSmsSubscriberCreateParamsWalletUI.md
 docs/WTSmsSubscriberUpdateParams.md
@@ -1274,6 +1278,10 @@ test/test_wt_service_update_params.py
 test/test_wt_settings_set_password.py
 test/test_wt_share_activity_report.py
 test/test_wt_share_activity_row.py
+test/test_wt_sms_credit_grant.py
+test/test_wt_sms_credit_grant_create.py
+test/test_wt_sms_credit_overdraft_update.py
+test/test_wt_sms_credit_summary.py
 test/test_wt_sms_subscriber_create_params.py
 test/test_wt_sms_subscriber_create_params_wallet_ui.py
 test/test_wt_sms_subscriber_update_params.py
@@ -1949,6 +1957,10 @@ wallet/models/wt_service_update_params.py
 wallet/models/wt_settings_set_password.py
 wallet/models/wt_share_activity_report.py
 wallet/models/wt_share_activity_row.py
+wallet/models/wt_sms_credit_grant.py
+wallet/models/wt_sms_credit_grant_create.py
+wallet/models/wt_sms_credit_overdraft_update.py
+wallet/models/wt_sms_credit_summary.py
 wallet/models/wt_sms_subscriber_create_params.py
 wallet/models/wt_sms_subscriber_create_params_wallet_ui.py
 wallet/models/wt_sms_subscriber_update_params.py

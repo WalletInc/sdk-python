@@ -4,7 +4,7 @@
 """
     wallet-api
 
-    Wallet Inc. API reference.  **Spec version 2.64.4**, built 2026-11-09T17:46:16.469Z
+    Wallet Inc. API reference.  **Spec version 2.64.4**, built 2026-11-09T20:24:08.798Z
 
     The version of the OpenAPI document: 2.64.4
     Contact: development@wallet.inc
@@ -553,6 +553,10 @@ from wallet.models.wt_service_update_params import WTServiceUpdateParams
 from wallet.models.wt_settings_set_password import WTSettingsSetPassword
 from wallet.models.wt_share_activity_report import WTShareActivityReport
 from wallet.models.wt_share_activity_row import WTShareActivityRow
+from wallet.models.wt_sms_credit_grant import WTSmsCreditGrant
+from wallet.models.wt_sms_credit_grant_create import WTSmsCreditGrantCreate
+from wallet.models.wt_sms_credit_overdraft_update import WTSmsCreditOverdraftUpdate
+from wallet.models.wt_sms_credit_summary import WTSmsCreditSummary
 from wallet.models.wt_sms_subscriber_create_params import WTSmsSubscriberCreateParams
 from wallet.models.wt_sms_subscriber_create_params_wallet_ui import WTSmsSubscriberCreateParamsWalletUI
 from wallet.models.wt_sms_subscriber_update_params import WTSmsSubscriberUpdateParams
