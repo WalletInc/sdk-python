@@ -57,6 +57,7 @@ Name | Type | Description | Notes
 **is_sms_opt_in** | **object** |  | 
 **sms_opt_in_source_id** | [**WTWalletConfigurationSaveWalletRecordSmsOptInSourceID**](WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md) |  | [optional] 
 **is_email_subscriber** | **object** |  | 
+**is_social_hub** | **object** |  | [optional] 
 **google_analytics_id** | **object** |  | [optional] 
 **facebook_pixel_id** | **object** |  | [optional] 
 **public_chat_room_channel_id** | **object** |  | [optional] 

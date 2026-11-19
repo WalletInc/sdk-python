@@ -1058,6 +1058,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
+**401** | Authentication Failed |  -  |
 **422** | Validation Failed |  -  |
 **500** | Internal Server Error |  -  |
 

@@ -4,14 +4,14 @@ All URIs are relative to *https://api.wall.et*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetch_apple_wallet_subscriber_activity**](AppleWalletSubscribersApi.md#fetch_apple_wallet_subscriber_activity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity
+[**fetch_apple_wallet_subscriber_activity**](AppleWalletSubscribersApi.md#fetch_apple_wallet_subscriber_activity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity Scoped to the caller&#39;s merchant: the subscription must belong to them.
 [**fetch_apple_wallet_subscribers**](AppleWalletSubscribersApi.md#fetch_apple_wallet_subscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Get all subscribers
 
 
 # **fetch_apple_wallet_subscriber_activity**
 > List[object] fetch_apple_wallet_subscriber_activity(subscription_id)
 
-Get subscriber activity
+Get subscriber activity Scoped to the caller's merchant: the subscription must belong to them.
 
 ### Example
 
@@ -35,7 +35,7 @@ with wallet.ApiClient(configuration) as api_client:
     subscription_id = 'subscription_id_example' # str | 
 
     try:
-        # Get subscriber activity
+        # Get subscriber activity Scoped to the caller's merchant: the subscription must belong to them.
         api_response = api_instance.fetch_apple_wallet_subscriber_activity(subscription_id)
         print("The response of AppleWalletSubscribersApi->fetch_apple_wallet_subscriber_activity:\n")
         pprint(api_response)
