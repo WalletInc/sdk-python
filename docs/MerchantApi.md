@@ -21,6 +21,7 @@ Terminate (close) the merchant account
 
 ### Example
 
+* Api Key Authentication (api_token):
 
 ```python
 import wallet
@@ -33,6 +34,16 @@ configuration = wallet.Configuration(
     host = "https://api.wall.et"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: api_token
+configuration.api_key['api_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
@@ -60,7 +71,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -85,6 +96,7 @@ Get custom roles
 
 ### Example
 
+* Api Key Authentication (api_token):
 
 ```python
 import wallet
@@ -97,6 +109,16 @@ configuration = wallet.Configuration(
     host = "https://api.wall.et"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: api_token
+configuration.api_key['api_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
@@ -124,7 +146,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -149,6 +171,7 @@ Get all employees
 
 ### Example
 
+* Api Key Authentication (api_token):
 
 ```python
 import wallet
@@ -161,6 +184,16 @@ configuration = wallet.Configuration(
     host = "https://api.wall.et"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: api_token
+configuration.api_key['api_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
@@ -188,7 +221,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -213,6 +246,7 @@ Get public representative employees of the merchant
 
 ### Example
 
+* Api Key Authentication (api_token):
 
 ```python
 import wallet
@@ -225,6 +259,16 @@ configuration = wallet.Configuration(
     host = "https://api.wall.et"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: api_token
+configuration.api_key['api_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
@@ -252,7 +296,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -277,6 +321,7 @@ Get wallet configuration
 
 ### Example
 
+* Api Key Authentication (api_token):
 
 ```python
 import wallet
@@ -289,6 +334,16 @@ configuration = wallet.Configuration(
     host = "https://api.wall.et"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: api_token
+configuration.api_key['api_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
@@ -316,7 +371,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -341,6 +396,7 @@ Update merchant details
 
 ### Example
 
+* Api Key Authentication (api_token):
 
 ```python
 import wallet
@@ -354,6 +410,16 @@ configuration = wallet.Configuration(
     host = "https://api.wall.et"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: api_token
+configuration.api_key['api_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
@@ -385,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -410,6 +476,7 @@ Update points of contact
 
 ### Example
 
+* Api Key Authentication (api_token):
 
 ```python
 import wallet
@@ -423,6 +490,16 @@ configuration = wallet.Configuration(
     host = "https://api.wall.et"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: api_token
+configuration.api_key['api_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
@@ -454,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -479,6 +556,7 @@ Update POS Integration
 
 ### Example
 
+* Api Key Authentication (api_token):
 
 ```python
 import wallet
@@ -492,6 +570,16 @@ configuration = wallet.Configuration(
     host = "https://api.wall.et"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: api_token
+configuration.api_key['api_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with wallet.ApiClient(configuration) as api_client:
@@ -523,7 +611,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
