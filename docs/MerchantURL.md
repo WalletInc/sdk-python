@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nickname** | **object** |  | 
 **destination_url** | **object** |  | 
+**custom_path** | **object** |  | [optional] 
 **id** | [**AmenityId**](AmenityId.md) |  | 
 **created_at** | **object** |  | 
 **updated_at** | **object** |  | 

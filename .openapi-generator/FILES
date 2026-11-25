@@ -507,6 +507,7 @@ docs/WTMenuVenueType.md
 docs/WTMerchantCredit.md
 docs/WTMerchantCreditCreationParams.md
 docs/WTMerchantURLCreate.md
+docs/WTMerchantURLPathRequest.md
 docs/WTMerchantURLUpdate.md
 docs/WTMerchantUpdate.md
 docs/WTMerchantUpdatePOSIntegration.md
@@ -1219,6 +1220,7 @@ test/test_wt_merchant_update.py
 test/test_wt_merchant_update_points_of_contact.py
 test/test_wt_merchant_update_pos_integration.py
 test/test_wt_merchant_url_create.py
+test/test_wt_merchant_url_path_request.py
 test/test_wt_merchant_url_update.py
 test/test_wt_message_instance.py
 test/test_wt_message_type.py
@@ -1919,6 +1921,7 @@ wallet/models/wt_merchant_update.py
 wallet/models/wt_merchant_update_points_of_contact.py
 wallet/models/wt_merchant_update_pos_integration.py
 wallet/models/wt_merchant_url_create.py
+wallet/models/wt_merchant_url_path_request.py
 wallet/models/wt_merchant_url_update.py
 wallet/models/wt_message_instance.py
 wallet/models/wt_message_type.py

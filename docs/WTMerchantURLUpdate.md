@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nickname** | **str** |  | 
 **destination_url** | **str** |  | 
+**custom_path** | **str** |  | [optional] 
 
 ## Example
 
