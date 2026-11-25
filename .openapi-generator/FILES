@@ -523,6 +523,7 @@ docs/WTOrderLineItem.md
 docs/WTOrderLineOption.md
 docs/WTOrderingSettings.md
 docs/WTOrderingSettingsUpdateParams.md
+docs/WTOtpChannel.md
 docs/WTPassBrandKit.md
 docs/WTPassStyleResponse.md
 docs/WTPassStyleResponseApple.md
@@ -1233,6 +1234,7 @@ test/test_wt_order_line_item.py
 test/test_wt_order_line_option.py
 test/test_wt_ordering_settings.py
 test/test_wt_ordering_settings_update_params.py
+test/test_wt_otp_channel.py
 test/test_wt_pass_brand_kit.py
 test/test_wt_pass_style_response.py
 test/test_wt_pass_style_response_apple.py
@@ -1934,6 +1936,7 @@ wallet/models/wt_order_line_item.py
 wallet/models/wt_order_line_option.py
 wallet/models/wt_ordering_settings.py
 wallet/models/wt_ordering_settings_update_params.py
+wallet/models/wt_otp_channel.py
 wallet/models/wt_pass_brand_kit.py
 wallet/models/wt_pass_style_response.py
 wallet/models/wt_pass_style_response_apple.py

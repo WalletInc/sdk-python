@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant_id** | **str** |  | 
 **phone_number** | **object** |  | 
+**channel** | [**WTOtpChannel**](WTOtpChannel.md) |  | [optional] 
 **otp** | **object** |  | 
 
 ## Example
